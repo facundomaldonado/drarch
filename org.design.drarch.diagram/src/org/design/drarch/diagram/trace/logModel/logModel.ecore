@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logModel"
+    nsURI="http:///drarch/trace/logModel.ecore" nsPrefix="drarch.trace.logModel">
+  <eClassifiers xsi:type="ecore:EClass" name="LogNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Materialization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//EStringToLogNodeMapEntry"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyLogNode" eSuperTypes="#//LogNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Responsibility">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="materializations" upperBound="-1"
+        eType="#//Materialization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagLogNode" eSuperTypes="#//LogNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="childrens" eType="#//LogNode[]_1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="ecore:EClass ../../../../../org.isistan.flabot.trace/src/org/isistan/flabot/trace/log.ecore#//Tag"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EStringToLogNodeMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//LogNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="LogNodeArray" instanceClassName="drarch.trace.logModel.LogNode[]"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LogNode[]_1" instanceClassName="drarch.trace.logModel.LogNode[]"/>
+</ecore:EPackage>
