@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ucmModel"
+    nsURI="http:///drarch/diagram/ucmModel.ecore" nsPrefix="drarch.diagram.ucmModel">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentRole">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definedClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="component" eType="#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Path">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+        eType="#//PathNode" eOpposite="#//PathNode/path"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startNodes" upperBound="-1"
+        eType="#//PathNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endNodes" upperBound="-1"
+        eType="#//PathNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PathNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" eType="#//Path" eOpposite="#//Path/nodes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" upperBound="-1"
+        eType="#//PathNode" eOpposite="#//PathNode/next"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" upperBound="-1" eType="#//PathNode"
+        eOpposite="#//PathNode/previous"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="responsibilityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCMDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//UCMModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCMModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paths" upperBound="-1"
+        eType="#//Path"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentRoles" upperBound="-1"
+        eType="#//ComponentRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Component" instanceClassName="drarch.diagram.model.Component"/>
+</ecore:EPackage>
