@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Drarch Ui Plug-in
+Bundle-SymbolicName: org.design.rules4Java.ui; singleton:=true
+Bundle-Version: 3.1
+Bundle-Activator: org.design.rules4Java.ui.UiPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.design.rules4Java.engine,
+ org.design.rules4Java.engine.jqueryImpl,
+ org.design.rules4Java.util,
+ org.design.drarch.diagram,
+ org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ui.forms,
+ org.eclipse.jdt.core,
+ org.eclipse.help
+Eclipse-AutoStart: true
+Export-Package: org.design.rules4Java.ui,
+ org.design.rules4Java.ui.view.action,
+ org.design.rules4Java.ui.view.dialogs,
+ org.design.rules4Java.ui.view.editor,
+ org.design.rules4Java.ui.view.editor.dialogs,
+ org.design.rules4Java.ui.view.modelProviders,
+ org.design.rules4Java.ui.view.modelProviders.model,
+ org.design.rules4Java.ui.view.modelProviders.vars,
+ org.design.rules4Java.ui.view.wizard
+Bundle-ClassPath: rules4Java.ui.jar

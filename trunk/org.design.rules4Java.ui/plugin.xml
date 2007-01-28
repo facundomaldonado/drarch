@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="Rules4Java"
+            class="org.design.rules4Java.ui.view.wizard.Rules4JavaNewWizard"
+            icon="icons/sample.gif"
+            id="rules4Java.ui.view.wizard.Rules4JavaNewWizard"
+            name="rules4Java Wizard"/>
+      <category
+            id="org.design.rules4Java.ui.categoty"
+            name="Rules4Java"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.design.rules4Java.ui.view.editor.DrarchMultiPageEditor"
+            contributorClass="org.design.rules4Java.ui.view.editor.DrarchMultiPageContributor"
+            default="true"
+            extensions="drarch"
+            icon="icons/sample.gif"
+            id="org.design.rules4Java.ui.editor"
+            name="MultiPage Editor"/>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc/toc.xml"
+            primary="true"/>
+      <toc
+            file="toc/tocoverview.xml"
+            primary="false"/>
+      <toc
+            file="toc/tocgettingstarted.xml"
+            primary="false"/>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts file="toc/contextFiles/editorHelpContext.xml"/>
+   </extension>
+	<extension point="org.eclipse.ui.perspectiveExtensions">
+- <perspectiveExtension targetID="org.eclipse.ui.resourcePerspective">
+  <view ratio="0.5" relative="org.eclipse.ui.views.TaskList" relationship="right" id="org.design.drarch.views.SuggestsView" /> 
+  </perspectiveExtension>
+  </extension>
+</plugin>
