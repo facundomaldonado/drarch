@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Context help-->
+<contexts>
+	<context id="buttonId" title="Editor Help">
+		<description>This is the help for Drarch Multipage editor</description>
+		<topic label="Type Hierarchy" href="html/overview/TypeHierarchy.html"></topic>
+		<topic label="Core Fact Predicates" href="html/overview/CoreFactPredicates.html"></topic>
+		<topic label="Drarch Predicates" href="html/overview/DrarchPredicates.html" />
+	</context>
+</contexts>
