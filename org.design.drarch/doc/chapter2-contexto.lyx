@@ -1,8 +1,32 @@
-#LyX 1.4.3-4 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.3-5 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
 \textclass book
+\begin_preamble
+%\usepackage{a4wide}
+\date{}  % Suppress date, no space penalty
+\usepackage[spanish]{babel}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\usepackage[chapter]{algorithm}
+\renewcommand{\listalgorithmname}{Índice de algoritmos}
+\floatname{algorithm}{Algoritmo}
+\usepackage[nottoc]{tocbibind}
+\usepackage[%
+    colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,%
+    pdftitle={ArchSync}, 
+    pdfauthor={Martín Blech, Juan Pablo Carlino}, 
+    pdfsubject={},
+    pdfkeywords={Software Architecture, Use Case Maps, Software Configuration Management, Synchronization, Traceability},
+    %backref,
+    pdfstartview=FitH,%
+    %plainpages=false,
+    pdfpagelabels,%
+    bookmarksopen=true,%
+    bookmarksopenlevel=1,%
+    pagebackref=true,% 
+    bookmarksnumbered=true]{hyperref}
+\end_preamble
 \language spanish
 \inputencoding auto
 \fontscheme ae
@@ -25,16 +49,1746 @@
 \defskip medskip
 \quotes_language english
 \papercolumns 1
-\papersides 1
+\papersides 2
 \paperpagestyle default
 \tracking_changes false
-\output_changes false
+\output_changes true
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
+\begin_inset LatexCommand \label{cha:Contexto}
+
+\end_inset
+
 Contexto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+todo: descripcion del capitulo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand \label{sec:Arquitectura-de-Software}
+
+\end_inset
+
+Arquitecturas de software
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+definir el concepto
+\end_layout
+
+\begin_layout Standard
+enfatizar su importancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand \label{sec:Representación-de-Arquitecturas}
+
+\end_inset
+
+Representación de Arquitecturas de software
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+una intro
+\end_layout
+
+\begin_layout Standard
+uml
+\end_layout
+
+\begin_layout Standard
+componentes y ucm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagramas de Componentes
+\end_layout
+
+\begin_layout Section
+Diagramas de UCMs
+\end_layout
+
+\begin_layout Section
+Sistemas sin Arquitecturas 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+otro nomnbre mejor para esta section
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+legados
+\end_layout
+
+\begin_layout Standard
+not update
+\end_layout
+
+\begin_layout Standard
+metodologias agiles????
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand \label{sec:Arquitectura-de-Software}
+
+\end_inset
+
+Arquitecturas de software
+\end_layout
+
+\begin_layout Standard
+Si bien no existe una única definición de arquitectura de software universalment
+e aceptada, generalmente todas lo hacen en función de conceptos comunes.
+ En todas se encuentra la noción de descomposición de un sistema en diferentes
+ partes, de relaciones existentes entre estas partes, de abstracción de
+ las propiedades que no sean externamente visibles ni relevantes para la
+ interacción de sus elementos.
+ Adicionalmente, se sabe que existen diferentes perspectivas desde las que
+ se puede observar un sistema según las propiedades de interés y que ninguna
+ de estas vistas conforma la arquitectura en si.
+ En su libro 
+\emph on
+Software Architecture in Practice
+\emph default
+\InsetSpace ~
+
+\emph on
+
+\begin_inset LatexCommand \cite{SAIP}
+
+\end_inset
+
+
+\emph default
+, Bass et.al.
+ proponen una definición que abarca gran parte de las características antes
+ mencionadas:
+\end_layout
+
+\begin_layout Quote
+
+\emph on
+La arquitectura de software de un programa o sistema de computación es la
+ estructura o estructuras del sistema, las cuales abarcan los elementos
+ de software, las propiedades externamente visibles de esos elementos, y
+ las relaciones entre ellos.
+\end_layout
+
+\begin_layout Standard
+Como se desprende de esta definición, una arquitectura de software puede
+ abarcar 
+\emph on
+más de una estructura o vista
+\emph default
+.
+ Un ejemplo que puede ilustrar esta propiedad es observar la estructura
+ que presentan normalmente los proyectos de desarrollo.
+ Generalmente éstos son particionados en módulos con una cierta cantidad
+ de responsabilidades fundamentales asignadas, que luego son asignadas a
+ diferentes equipos para su de\SpecialChar \-
+sa\SpecialChar \-
+rro\SpecialChar \-
+llo.
+ Cada uno de estos módulos contiene programas y datos accesibles desde otros
+ elementos, además de otros atributos que son privados.
+ Éste tipo de estructura se emplea a menudo para describir un sistema y
+ define principalmente cómo se divide y asigna su funcionalidad, por esta
+ razón, representa una perspectiva estática.
+ Por otro lado, existen estructuras que centran su atención en cómo los
+ elementos interactúan en tiempo de ejecución para alcanzar la funcionalidad
+ propuesta.
+ Aquí el foco se pone sobre la manera en que los diferentes módulos interactúan
+ para ejecutarse en diferentes procesos y como se comunican y sincronizan
+ entre ellos.
+ A pesar de que ambas vistas aportan información sobre la arquitectura,
+ ninguna de ellas la describe en su totalidad.
+ 
+\end_layout
+
+\begin_layout Standard
+La definición precedente también caracteriza a las vistas del sistema por
+ estar compuestas de elementos de software, de propiedades externamente
+ visibles y de relaciones entre ellos.
+ Esto implica que no es relevante en este nivel, y por lo tanto se omite,
+ la información de los elementos que no es pertinente a su interacción.
+ Justamente por ser una abstracción de un sistema complejo, la arquitectura
+ de software oculta los detalles que no afectan la manera en que los diferentes
+ elementos usan, son usados por, se relacionan con o interactúan con otros
+ elementos.
+\end_layout
+
+\begin_layout Standard
+Una de las implicancias de la definición de arquitectura, es su omnipresencia
+ en cualquier sistema de software, aunque ésta no se encuentre documentada.
+ Cualquier sistema posee elementos distinguibles con propiedades y relaciones
+ asociadas, sin embargo no siempre existe alguien que conozca esta arquitectura,
+ de aquí que resulte muy importante su documentación.
+\end_layout
+
+\begin_layout Standard
+Finalmente, de la definición se deduce que el comportamiento de los elementos
+ de software también forma parte de la arquitectura.
+ Tal como ocurre con las propiedades meramente internas de los elementos
+ de software, el comportamiento relevante en este nivel (y por lo tanto,
+ integrante de la arquitectura) es aquel que afecte cómo los demás elementos
+ tienen que ser escritos y de qué manera deben comunicarse con él, como
+ así también aquellos que determinen el cumplimiento o no de alguna característi
+ca deseable en el sistema completo.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset LatexCommand \label{sub:Documentación}
+
+\end_inset
+
+Documentación 
+\end_layout
+
+\begin_layout Standard
+La documentación de una arquitectura es una etapa crucial de su construcción.
+ Incluso con una arquitectura excelente, si ésta no es bien entendida y
+ bien comunicada --en otras palabras, bien documentada-- es muy probable
+ que el proyecto falle
+\begin_inset LatexCommand \cite{CLEMENTS02}
+
+\end_inset
+
+.
+ Si uno se toma el trabajo de crear una arquitectura robusta, 
+\emph on
+debe
+\emph default
+ describirla con suficiente detalle, sin ambigüedad y organizada de manera
+ tal que los demás puedan encontrar la información que necesitan.
+ Si no se logra esto, todo el esfuerzo habrá sido en vano ya que la arquitectura
+ no podrá ser usada.
+\end_layout
+
+\begin_layout Standard
+La documentación de la arquitectura es tanto prescriptiva como descriptiva
+ 
+\begin_inset LatexCommand \cite{SAIP}
+
+\end_inset
+
+.
+ Ésto es, para desarrolladores con determinados roles, ella impone restricciones
+ que deben cumplirse al momento de tomar decisiones de diseño más detallado.
+ Para otras audiencias, su documentación describe las decisiones tomadas
+ sobre el diseño y por lo tanto, que cosas son ciertas sobre la arquitectura.
+\end_layout
+
+\begin_layout Standard
+Quizás el concepto más importante asociado con la documentación de arquitecturas
+ de software es el de 
+\emph on
+vista
+\emph default
+.
+ Recordando la definición de la sección anterior, vemos a la arquitectura
+ como 
+\begin_inset Quotes eld
+\end_inset
+
+la estructura o estructuras del sistema, que abarcan los elementos, sus
+ propiedades externamente visibles, y las relaciones entre ellos
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Una vista es una 
+\emph on
+representación
+\emph default
+ coherente de esos los elementos importantes que constituyen un sistema,
+ tal como lo son el software o el hardware, respecto a la forma en que los
+ involucrados la leen y escriben.
+ La vista provee el principio básico de la documentación de una arquitectura
+ de software:
+\end_layout
+
+\begin_layout Quote
+Documentar una arquitectura significa documentar las vistas relevantes y
+ luego agregar la documentación que se aplica a más de una vista.
+\end_layout
+
+\begin_layout Standard
+Éste principio es útil porque separa el problema de la documentación en
+ las siguientes partes 
+\begin_inset LatexCommand \cite{CLEMENTS02}
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Description
+Elección\InsetSpace ~
+de\InsetSpace ~
+las\InsetSpace ~
+vistas\InsetSpace ~
+relevantes.
+ La elección depende de los usos que se le espera dar a la documentación.
+ A través de estas vistas se deben expresar al menos tres aspectos del sistema:
+ (a) cómo está estructurado el conjunto de unidades de implementación, (b)
+ cómo está estructurado el conjunto de elementos que tienen 
+\emph on
+comportamiento
+\emph default
+ e interacciones en tiempo de ejecución y (c) cómo se relaciona con elementos
+ de su ambiente que no son software.
+\end_layout
+
+\begin_layout Description
+Documentación\InsetSpace ~
+de\InsetSpace ~
+una\InsetSpace ~
+vista.
+ Si bien no existe un template estándar de documentación de vistas, es esperable
+ que contenga al menos la siguiente información:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Presentación primaria: por lo general es un gráfico; presenta los elementos
+ principales y sus relaciones.
+\end_layout
+
+\begin_layout Enumerate
+Catálogo de elementos: detalla los elementos y relaciones presentados en
+ la presentación primaria.
+\end_layout
+
+\begin_layout Enumerate
+Diagrama de contexto: muestra cómo lo reflejado en la vista se relaciona
+ con su ambiente usando el vocabulario de la misma.
+\end_layout
+
+\begin_layout Enumerate
+Guía de variabilidad: explica en detalle los puntos de variación que son
+ parte de la arquitectura y están explicados en esta vista.
+\end_layout
+
+\begin_layout Enumerate
+Razonamiento arquitectónico: explica cómo el diseño reflejado en esta vista
+ llegó a ser como es.
+\end_layout
+
+\begin_layout Enumerate
+Glosario de términos.
+\end_layout
+
+\begin_layout Enumerate
+Otra información.
+\end_layout
+
+\begin_layout Description
+Documentación\InsetSpace ~
+de\InsetSpace ~
+comportamiento.
+ Las vistas presentan 
+\emph on
+información estructural
+\emph default
+ del sistema.
+ Sin embargo, ésta información 
+\emph on
+no es suficiente
+\emph default
+ para razonar acerca de ciertas propiedades del mismo.
+ Exactamente qué aspectos del comportamiento modelar va a depender del tipo
+ de sistema que se está diseñando: en un sistema de tiempo real importan
+ las propiedades temporales de los eventos; mientras que en un sistema bancario
+ las secuencias de eventos, las transacciones atómicas y los procedimientos
+ de rollback son lo más importante.
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Documentación\InsetSpace ~
+de\InsetSpace ~
+la\InsetSpace ~
+información\InsetSpace ~
+que\InsetSpace ~
+se\InsetSpace ~
+aplica\InsetSpace ~
+a\InsetSpace ~
+más\InsetSpace ~
+de\InsetSpace ~
+una\InsetSpace ~
+vista.
+ Cons\SpecialChar \-
+ti\SpecialChar \-
+tu\SpecialChar \-
+ye el complemento de la documentación de las vistas, es decir la
+ información que se aplica a más de una vista o al paquete de documentación
+ en sí.
+ Consiste de tres aspectos principales, el cómo, el qué y el por qué:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Cómo está organizada la documentación, de manera que los interesados en
+ la arquitectura pueden encontrar la información que necesitan eficientemente.
+\end_layout
+
+\begin_layout Description
+Qué es la arquitectura: una descripción general del sistema para orientar
+ al lector acerca del propósito del sistema, la forma en que las vistas
+ se relacionan entre sí, una lista de elementos y dónde aparecen, y un glosario
+ que se aplica a toda la arquitectura.
+\end_layout
+
+\begin_layout Description
+Por\InsetSpace ~
+qué la arquitectura es como es: el contexto del sistema, restricciones
+ externas que han sido impuestas para darle forma a la arquitectura de cierta
+ manera, y el razonamiento para las decisiones de mayor granularidad y escala.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+La documentación de la arquitectura libera al arquitecto de tener que contestar
+ cientos de preguntas acerca de ella.
+ Para crear la documentación, se deben entender a todas las partes interesadas
+ y cómo esperan usarla.
+ Por lo tanto, todos los interesados deben ser tenidos en cuenta a la hora
+ de elegir las vistas relevantes.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand \label{sec:ADLs}
+
+\end_inset
+
+ADLs
+\end_layout
+
+\begin_layout Standard
+El desarrollo de software basado en arquitectura ha desplazado el foco de
+ atención sobre las ``líneas de código'' hacia elementos arquitectónicos
+ de mayor granularidad (componentes de software y conectores) y en la estructura
+ de interconexión entre ellos.
+ Para soportar al desarrollo basado en la arquitectura, son necesarias notacione
+s formales de modelado y análisis junto con herramientas de desarrollo que
+ operen sobre las especificaciones arquitectónicas.
+ Ante esta necesidad, se han propuesto los 
+\emph on
+lenguajes de descripción arquitectónica
+\emph default
+ (ADLs) y sus respectivas herramientas.
+ Definido de forma general, 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+un ADL para aplicaciones de software se centra en la estructura de alto
+ nivel de la aplicación general en lugar de los detalles de implementación
+ de módulos específicos
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset LatexCommand \cite{VESTAL93}
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Varios ADLs han sido propuestos para el modelado de arquitecturas tanto
+ para dominios particulares como para propósitos generales.
+ Entre ellos podemos destacar 
+\emph on
+Aesop
+\emph default
+, 
+\emph on
+ArTek
+\emph default
+, 
+\emph on
+C2
+\emph default
+, 
+\emph on
+Darwin
+\emph default
+, 
+\emph on
+LILEANNA
+\emph default
+, 
+\emph on
+MetaH
+\emph default
+, 
+\emph on
+Rapide
+\emph default
+, 
+\emph on
+SADL
+\emph default
+, 
+\emph on
+UniCon
+\emph default
+, 
+\emph on
+Weaves
+\emph default
+ y 
+\emph on
+Wright
+\emph default
+.
+ También se ha trabajado en un lenguaje de intercambio arquitectónico llamado
+ 
+\emph on
+ACME
+\emph default
+ 
+\begin_inset LatexCommand \cite{ACME}
+
+\end_inset
+
+, para soportar el mapeo de especificaciones arquitectónicas entre diferentes
+ 
+\emph on
+ADLs
+\emph default
+ y por tanto, permitir la integración de herramientas de soporte como 
+\emph on
+AcmeStudio
+\emph default
+ (Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:AcmeStudio}
+
+\end_inset
+
+) 
+\begin_inset LatexCommand \cite{SCHMERL04}
+
+\end_inset
+
+.
+ Aunque 
+\emph on
+ACME
+\emph default
+ no es estrictamente un ADL, comparte varias de sus características.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/acmestudio.png
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:AcmeStudio}
+
+\end_inset
+
+
+\emph on
+AcmeStudio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, aún no hay mucho consenso en la comunidad sobre lo que realmente
+ es un ADL, qué aspectos de una arquitectura deberían ser modelados por
+ un ADL y qué debería ser intercambiado en un lenguaje de intercambio.
+\end_layout
+
+\begin_layout Standard
+Recientemente Medvidovic et.
+ al.
+ 
+\begin_inset LatexCommand \cite{medvidovic00classification}
+
+\end_inset
+
+ han propuesto una definición en base a la de 
+\emph on
+arquitectura de software
+\emph default
+ presentada en la sección 
+\begin_inset LatexCommand \ref{sec:Arquitectura-de-Software}
+
+\end_inset
+
+, donde enuncian que 
+\begin_inset Quotes eld
+\end_inset
+
+un ADL es un lenguaje que ofrece características para modelar la arquitectura
+ 
+\emph on
+conceptual
+\emph default
+ de un sistema de software, distinguida de la 
+\emph on
+implementación
+\emph default
+ del sistema.
+\begin_inset Quotes erd
+\end_inset
+
+ Los ADLs proveen tanto una sintaxis concreta como un framework conceptual
+ para caracterizar arquitecturas 
+\begin_inset LatexCommand \cite{GARLAN97}
+
+\end_inset
+
+.
+ El framework conceptual refleja características del dominio para el cual
+ se pretende el ADL y/o el estilo arquitectónico.
+ Este framework suele incluir la teoría semántica detrás del ADL en cuestión
+ (por ejemplo, redes de Petri, máquinas de estado, etc.).
+ A su vez, Medvidovic et.
+ al.
+ definen los requerimientos de un ADL y un framework de clasificación: 
+\begin_inset Quotes eld
+\end_inset
+
+un ADL debe modelar explícitamente 
+\emph on
+componentes
+\emph default
+, 
+\emph on
+conectores
+\emph default
+ y sus 
+\emph on
+configuraciones
+\emph default
+; mas aún, para ser auténticamente útil y usable, debe ofrecer una 
+\emph on
+herramienta de soporte
+\emph default
+ para el desarrollo y la evolución basada en la arquitectura
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los elementos fundamentales de un ADL son los 
+\emph on
+componentes
+\emph default
+, los 
+\emph on
+conectores
+\emph default
+ y las 
+\emph on
+configuraciones arquitectónicas
+\emph default
+.
+ Para poder inferir cualquier tipo de información sobre una arquitectura,
+ al menos las 
+\emph on
+interfaces de los componentes
+\emph default
+ constituyentes deben modelarse.
+ Sin esta información, una descripción arquitectónica se transformaría en
+ una colección de identificadores interconectados, similar a los diagramas
+ de 
+\begin_inset Quotes eld
+\end_inset
+
+cajas y líneas" sin semántica detrás.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/taxonomiaADL.eps
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:Framework-de-clasificación}
+
+\end_inset
+
+Framework de clasificación y comparación para ADLs.
+ Características esenciales de modelado se resaltan en negrita.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si bien cada ADL tiene características propias, todos comparten ciertos
+ conceptos y estructuras principales:
+\end_layout
+
+\begin_layout Description
+Componentes.
+ Representan los elementos primarios de un sistema, tanto computacionales
+ como de almacenamiento de información.
+ Además, los componentes constan de interfaces, que son puntos especialmente
+ designados para in\SpecialChar \-
+te\SpecialChar \-
+rac\SpecialChar \-
+tuar con el ambiente.
+\end_layout
+
+\begin_layout Description
+Conectores.
+ Representan las interacciones entre componentes, es decir que actúan como
+ mediadores en la comunicación y coordinación de actividades entre componentes.
+ También tienen interfaces, que definen los roles que los componentes pueden
+ cumplir en las interacciones que describen.
+\end_layout
+
+\begin_layout Description
+Sistemas.
+ Pueden ser vistos como grafos o configuraciones de componentes y conectores.
+ Pueden ser jerárquicos, de manera que los componentes y conectores pueden
+ representar internamente subsistemas con diferentes arquitecturas.
+\end_layout
+
+\begin_layout Description
+Propiedades.
+ Se usan generalmente para representar información semántica acerca de un
+ sistema que va más allá de la estructura.
+\end_layout
+
+\begin_layout Description
+Restricciones.
+ Representan reglas de diseño o sentencias invariantes que deberían ser
+ ciertas a lo largo de la evolución del diseño arquitectónico.
+\end_layout
+
+\begin_layout Description
+Estilos.
+ Pueden ser vistos como familias de sistemas relacionados.
+ Un estilo arquitectónico define básicamente un vocabulario de tipos de
+ elementos de diseño y de reglas para componerlos.
+\end_layout
+
+\begin_layout Standard
+En la Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:Framework-de-clasificación}
+
+\end_inset
+
+ se muestra el framework de clasificación y comparación para ADLs propuesto
+ en 
+\begin_inset LatexCommand \cite{medvidovic00classification}
+
+\end_inset
+
+.
+ Independientemente de la naturaleza del ADL (propósito específico o general),
+ los tipos deseados de representación, manipulación y las cualidades de
+ los modelos arquitectónicos identificados en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:Framework-de-clasificación}
+
+\end_inset
+
+ se mantienen constantes.
+ En el cuadro 
+\begin_inset LatexCommand \ref{cap:Espectro-de-aplicación}
+
+\end_inset
+
+ se pueden ver los espectros de aplicación de algunos ADLs muy difundidos.
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+
+\family sans
+\size scriptsize
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="9text%">
+<column alignment="center" valignment="top" leftline="true" width="15text%">
+<column alignment="center" valignment="top" leftline="true" width="15text%">
+<column alignment="center" valignment="top" leftline="true" width="15text%">
+<column alignment="center" valignment="top" leftline="true" width="15text%">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="15text%">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+ADL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+ACME
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+C2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+MetaH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+Rapide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+UniCon
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+Foco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+Intercambio arquitectónico, predominantemente en el nivel estructural
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+Arquitecturas de sistemas altamente distribuidos, evolutivos y dinámicos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+Arquitecturas dentro del dominio del control, navegación y asistencia (GN&C)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+Modelado y simulación del comportamiento descripto por una arquitectura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size scriptsize
+Generación de código para interconectar componentes existentes utilizando
+ protocolos comunes de interacción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:Espectro-de-aplicación}
+
+\end_inset
+
+Espectro de aplicación de ADLs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand \label{sec:Use-Case-Maps}
+
+\end_inset
+
+Use-Case Maps
+\end_layout
+
+\begin_layout Standard
+Los use case maps (UCM) son una notación para diseño de alto nivel que ayuda
+ a las personas tanto a expresar como a razonar acerca de los patrones de
+ comportamiento de alta granularidad de un sistema 
+\begin_inset LatexCommand \cite{BUHR95}
+
+\end_inset
+
+.
+ El nombre proviene del hecho de que son una notación visual para casos
+ de uso y una extensión de ellos hacia el diseño de alto nivel.
+ Sin embargo, el modelo no depende de la definición de casos de uso: provee
+ su propia definición en sus propios términos.
+\end_layout
+
+\begin_layout Standard
+Los UCMs no son un lenguaje apropiado para especificación formal de comportamien
+to, ya que deliberadamente dejan algunas decisiones abiertas para ser tomadas
+ durante el diseño detallado.
+ Los UCM son solamente una notación para razonar y explicar el comportamiento
+ de un sistema.
+ Es importante de tener esto presente ya que es fácil caer en la trampa
+ de buscar o colocar más información de la que corresponde encontrar en
+ ellos.
+\end_layout
+
+\begin_layout Subsection
+Notación básica e interpretación
+\end_layout
+
+\begin_layout Standard
+A continuación se da una breve descripción de los diferentes elementos visuales
+ que conforman la notación, junto con los conceptos asociados a cada uno
+ de ellos.
+ La idea principal detrás de los UCMs es la de modelar los casos de uso
+ mediante secuencias causales (en adelante, 
+\emph on
+paths
+\emph default
+) a través de estructuras organizacionales, de esta manera combinando vistas
+ estructurales y comportamentales de la arquitectura del sistema.
+ Los UCMs tienen cuatro elementos principales: responsabilidades, paths,
+ componentes y acoplamientos entre paths.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/responsibility.png
+
+\end_inset
+
+\InsetSpace ~
+Responsabilidades.
+ Expresan las funciones de las que cada componente es responsable.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/path.png
+
+\end_inset
+
+\InsetSpace ~
+Paths.
+ Trazan la progresión de causas y efectos entre responsabilidades.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/component.png
+
+\end_inset
+
+\InsetSpace ~
+Componentes.
+ Actúan como contenedores de responsabilidades.
+\end_layout
+
+\begin_layout Description
+Acoplamientos.
+ Sirven para conectar paths y así lograr patrones de mayor granularidad.
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/andFork.png
+
+\end_inset
+
+\InsetSpace ~
+And\InsetSpace ~
+Forks.
+ Indican la bifurcación en dos paths concurrentes.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/andJoin.png
+
+\end_inset
+
+\InsetSpace ~
+And\InsetSpace ~
+Joins.
+ Indican la unión de dos paths concurrentes.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/orFork.png
+
+\end_inset
+
+\InsetSpace ~
+Or\InsetSpace ~
+Forks.
+ Indican el fin de un segmento causal común entre dos paths.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/orJoin.png
+
+\end_inset
+
+\InsetSpace ~
+Or\InsetSpace ~
+Joins.
+ Indican el comienzo de un segmento causal común entre dos paths.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+\begin_inset LatexCommand \label{sub:Ejemplo-UCM}
+
+\end_inset
+
+Ejemplo
+\end_layout
+
+\begin_layout Standard
+La Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:Ejemplo-de-UCM}
+
+\end_inset
+
+ muestra un ejemplo de UCMs, donde hay un simple escenario de 
+\begin_inset Quotes eld
+\end_inset
+
+asignación de nombre de usuario
+\begin_inset Quotes erd
+\end_inset
+
+ para un sistema de manejo de cuentas de usuario.
+ El sistema está organizado alrededor de un estilo Model-View-Controller
+ 
+\begin_inset LatexCommand \cite{BUSCHMANN96}
+
+\end_inset
+
+, en el cual el componente 
+\emph on
+Model
+\emph default
+ y sus componentes 
+\emph on
+View
+\emph default
+ están desacoplados por medio de un componente 
+\emph on
+Controller
+\emph default
+.
+ La responsabilidad 
+\emph on
+receiveWidgetEvent
+\emph default
+ en 
+\emph on
+Controller
+\emph default
+ traduce el evento producido por una 
+\emph on
+View
+\emph default
+ a la responsabilidad 
+\emph on
+setUserName
+\emph default
+ en 
+\emph on
+Modelo
+\emph default
+, la cual entonces activa la responsabilidad 
+\emph on
+notifyModelObservers
+\emph default
+ también en 
+\emph on
+Model
+\emph default
+.
+ Cuando se envía una notificación de cambio desde 
+\emph on
+Model
+\emph default
+ a 
+\emph on
+Controller
+\emph default
+, ésto causa la activación de la responsabilidad 
+\emph on
+handleModelChangeEvent
+\emph default
+, lo que finalmente dispara la actualización de 
+\emph on
+View
+\emph default
+ al ejecutar la responsabilidad 
+\emph on
+updateView
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/ucm-mvc-es.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:Ejemplo-de-UCM}
+
+\end_inset
+
+Ejemplo de UCM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rol en la documentación de arquitecturas
+\end_layout
+
+\begin_layout Standard
+Documentar el comportamiento añade detalle semántico relacionado con el
+ tiempo a los elementos y sus interacciones.
+ Los modelos comportamentales agregan información que revela el orden de
+ las interacciones entre los elementos, las oportunidades para concurrencia,
+ y las dependencias que tienen las interacciones con el tiempo.
+\end_layout
+
+\begin_layout Standard
+Para atribuir comportamiento a elementos de una descripción arquitectónica,
+ es necesario agregar 
+\begin_inset Quotes eld
+\end_inset
+
+tejido conectivo
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset LatexCommand \cite{BUHR96,BUHR99}
+
+\end_inset
+
+.
+ Una forma de introducir este tipo de tejido es usar conexiones que soportan
+ interacciones (llamadas o mensajes) entre elementos a través de interfaces.
+ Dichas interfaces definen los nombres y parámetros de todas las posibles
+ interacciones, ocultando detalles de la lógica interna de los componentes.
+ A estas conexiones se les puede atribuir comportamiento al describir esce\SpecialChar \-
+na\SpecialChar \-
+rios
+ de interacción usando diagramas de interacción UML (también conocidos como
+ diagramas de secuencia de mensajes).
+ Sin embargo, la combinación de conexiones, documentación de interfaces
+ y diagramas de interacción muchas veces se excede en cantidad de detalles
+ -tales como 
+\emph on
+operaciones
+\emph default
+, 
+\emph on
+ensamblaje
+\emph default
+ y 
+\emph on
+estructura de herencia
+\emph default
+ en sistemas orientados a objetos- y hace difícil entender sistemas de cualquier
+ tamaño y complejidad.
+ Es necesario tomar distancia de estos detalles para entender un sistema
+ en términos arquitectónicos.
+\end_layout
+
+\begin_layout Standard
+Los UCMs suben el nivel de abstracción al simplificar los más importantes
+ factores de complejidad:
+\end_layout
+
+\begin_layout Description
+Operaciones.
+ Las secuencias de invocación de operaciones son reemplazadas por 
+\emph on
+paths
+\emph default
+ causa-efecto.
+ El comportamiento no se representa en términos de interacciones entre component
+es a través de mensajes, sino en términos de secuencias causa-efecto entre
+ 
+\emph on
+responsabilidades
+\emph default
+ de los componentes.
+ En otras palabras, las interfaces de los componentes, y las interacciones
+ entre interfaces, tales como llamadas y mensajes, son consideradas detalles.
+ Las responsabilidades pueden ser de mayor granularidad que las llamadas
+ y mensajes, y de esta manera se reduce el nivel de compromiso con los detalles.
+\end_layout
+
+\begin_layout Description
+Ensamblaje\InsetSpace ~
+y\InsetSpace ~
+Estructura\InsetSpace ~
+de\InsetSpace ~
+Herencia.
+ A nivel de UCMs, el único requerimiento para la 
+\begin_inset Quotes eld
+\end_inset
+
+conectabilidad
+\begin_inset Quotes erd
+\end_inset
+
+ de un componente es que sea capaz de realizar las responsabilidades requeridas.
+ Los detalles necesarios para realmente conectar (física o lógicamente)
+ un componente pueden ser diferidos hacia otro tipo de documentación.
+ A su vez, la dependencia de las descripciones de comportamiento sobre los
+ detalles como la estructura de herencia también es eliminada por el hecho
+ de que los UCMs son modelos independientes de las descripciones de clases.
+\end_layout
+
+\begin_layout Standard
+Los UCMs pueden ser derivados a partir de requerimientos informales o de
+ casos de uso, si están disponibles.
+ Las responsabilidades tienen que estar especificadas o ser inferidas de
+ estos requerimientos.
+ Se pueden crear casos de uso separados para funcionalidades individuales
+ del sistema o inclusive para escenarios individuales.
+ Muchas veces, la forma de modelar una interacción con UCMs depende de la
+ intención del arquitecto.
+ Sin embargo, el fuerte de esta notación reside principalmente en la integración
+ de escenarios relacionados.
+ En tales casos, los UCMs pueden usarse para ilustrar y razonar respecto
+ a concurrencia, como por ejemplo en problemas de contención de recursos
+ (múltiples paths usando un elemento, como se muestra en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:UCM-contencion-recursos}
+
+\end_inset
+
+) o posibles situaciones de deadlock (dos paths en direcciones opuestas
+ a través de al menos dos elementos en común, como se muestra en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:UCM-deadlock}
+
+\end_inset
+
+).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "45col%"
+special "none"
+height "1pt"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/ucmConcurrency.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:UCM-contencion-recursos}
+
+\end_inset
+
+UCM de un problema de contención de recursos
+\end_layout
+
+\end_inset
+
+
+\hfill
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "45col%"
+special "none"
+height "1pt"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/ucmDeadlock.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:UCM-deadlock}
+
+\end_inset
+
+UCM de una posible situación de deadlock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand \label{sec:Erosión-Arquitectónica}
+
+\end_inset
+
+Erosión arquitectónica
+\end_layout
+
+\begin_layout Standard
+En la sección 
+\begin_inset LatexCommand \ref{sub:Documentación}
+
+\end_inset
+
+ se explicaron las razones principales por las que la documentación de una
+ arquitectura es fundamental para el desarrollo de software.
+ La documentación es la vía de comunicación entre desarrolladores, y permite
+ que el sistema se diseñe, implemente, pruebe, instale y mantenga siguiendo
+ a la arquitectura que lo sostiene.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, asegurarse de que un sistema sea construido en conformidad
+ con su diseño arquitectónico durante su desarrollo, evolución y mantenimiento
+ es importante, ya que divergencias significativas entre arquitectura e
+ implementación pueden comprometer la estructura, estilo y propiedades que
+ han sido establecidas mediante cuidadoso análisis a nivel arquitectónico
+ 
+\begin_inset LatexCommand \cite{ABIANTOUN05b}
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Durante las diferentes etapas del desarrollo de software, pueden producirse
+ cambios en la documentación arquitectónica que luego no son reflejados
+ en el código (Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:Cambio-en-la-arquitectura-no-reflejado-en-el-codigo}
+
+\end_inset
+
+), o cambios en el código que no son apropiadamente acomodados en la documentaci
+ón (Figura\InsetSpace ~
+
+\begin_inset LatexCommand \ref{cap:Cambio-en-el-codigo-no-reflejado-en-la-arquitectura}
+
+\end_inset
+
+).
+ Siendo la arquitectura una guía fundamental durante todo el ciclo de vida
+ del sistema, el desfasaje entre documentación e implementación de una arquitect
+ura se hará cada vez más difícil de remediar por sus desarrolladores, finalmente
+ deteriorando la calidad del producto.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/developmentEvol2.eps
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:Cambio-en-la-arquitectura-no-reflejado-en-el-codigo}
+
+\end_inset
+
+Cambio en la documentación arquitectónica no reflejado en el código.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../tesis tincho/img/developmentEvol.eps
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Caption
+\begin_inset LatexCommand \label{cap:Cambio-en-el-codigo-no-reflejado-en-la-arquitectura}
+
+\end_inset
+
+Cambio en el código no reflejado en la documentación arquitectónica.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Durante la última década, han sido desarrollados y aplicados varios modelos
+ y análisis de arquitecturas de software, para el estudio de la confiabilidad
+ o la performance.
+ Sin embargo, éstos análisis de propiedades arquitectónicas pueden predecir
+ la calidad del sistema siempre y cuando éste haya sido implementado y mantenido
+ de acuerdo a lo prescripto por la arquitectura.
+ El desarrollo de un sistema de software confiable entonces necesita de
+ la prevención y corrección de violaciones a las prescripciones arquitectónicas.
+\end_layout
+
+\begin_layout Standard
+Desafortunadamente, debido a la evolución natural del sistema, es probable
+ que la arquitectura y la implementación pierdan consistencia.
+ Una vez que el diseño arquitectónico está listo, típicamente todos los
+ esfuerzos se focalizan en la implementación, y esto hace que la documentación
+ se desactualice progresivamente.
+ Por ejemplo, nuevos requerimientos pueden causar un rediseño de la arquitectura
+, con cambios consecuentes en algunas partes de la implementación; y por
+ otro lado, algunas tareas de mantenimiento pueden producir cambios en el
+ código que deberían ser reflejados en modificaciones de la arquitectura.
+ Si bien es aceptable que exista temporalmente cierto desfasaje, normalmente
+ los desarrolladores trabajan en la implementación sin mantener el modelo
+ arquitectónico, el cual rápidamente queda desactualizado.
+\end_layout
+
+\begin_layout Standard
+En algunos casos, los desarrolladores pueden introducir sutiles diferencias
+ estructurales que invalidan intenciones claves de la arquitectura.
+ Por ejemplo, en un sistema estructurado en capas, es posible que un programador
+ inadvertido genere dependencias no deseadas al saltear la capa inmediatamente
+ inferior.
+ Análogamente, en el desarrollo de sistemas web multibanda es común el error
+ de invocar directamente a la base de datos desde la banda de presentación.
+ Como resultado, los arquitectos a menudo deben lidiar en sus análisis con
+ conocimiento incompleto e incorrecto debido a defectos en la documentación
+ 
+\begin_inset LatexCommand \cite{ALDRICH05}
+
+\end_inset
+
+.
+ En estos casos, las relaciones de los componentes (en el nivel arquitectónico)
+ con clases y métodos (en el nivel de implementación) ya no se mantienen,
+ y los desarrolladores deben restablecer la consistencia manualmente.
+ Éste fenómeno se conoce como 
+\emph on
+corrimiento arquitectura-implementación
+\emph default
+ 
+\begin_inset LatexCommand \cite{PERRY92}
+
+\end_inset
+
+ o 
+\emph on
+erosión arquitectónica
+\emph default
+.
+ Si no se maneja correctamente, revierte los beneficios del desarrollo centrado
+ en la arquitectura, ya que se pierde la trazabilidad entre re\SpecialChar \-
+que\SpecialChar \-
+ri\SpecialChar \-
+mien\SpecialChar \-
+tos,
+ decisiones de diseño y artefactos de implementación.
+ Hasta hoy en día, el problema ha sido atacado a través de enfoques basados
+ en ingeniería reversa, con resultados dispares.
+ La falta de herramientas de soporte adecuadas para generar código por medio
+ de especificaciones arquitectónicas es todavía un problema para muchos
+ proyectos de software.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand \label{sec:Conclusión}
+
+\end_inset
+
+Conclusión
+\end_layout
+
+\begin_layout Standard
+En este capítulo se introdujo el concepto de arquitectura de software, una
+ disciplina que cumple un rol central en la toma de decisiones de diseño
+ y en la comunicación entre todos los participantes del desarrollo de un
+ producto de software.
+ Como vehículo de comunicación, su documentación es fundamental, pues la
+ falta de ella, o peor aún, el descuido al producirla y mantenerla, anulan
+ o revierten todos los beneficios que el desarrollo centrado en la arquitectura
+ puede aportar.
+\end_layout
+
+\begin_layout Standard
+Posteriormente se presentó la notación de UCMs, un modelo para la descripción
+ de patrones de comportamiento y algunos aspectos estructurales en un alto
+ nivel de abs\SpecialChar \-
+trac\SpecialChar \-
+ción y granularidad.
+ Esta notación es especialmente útil para la documentación de comportamiento
+ a nivel arquitectónico, ya que permite expresar, analizar y comunicar las
+ trazas causa-efecto que proyectan los casos de uso sobre el sistema, dejando
+ de lado los detalles contextualmente irrelevantes.
+\end_layout
+
+\begin_layout Standard
+En último lugar se ofreció una breve descripción al problema de erosión
+ arquitectónica.
+ Debido a la evolución natural de un sistema de software, es muy probable
+ que la arquitectura documentada y su implementación pierdan consistencia,
+ lo que puede perjudicar todos los beneficios del desarrollo centrado en
+ la arquitectura.
+ Éste problema ha motivado la creación de herramientas que, mediante diversos
+ enfoques, intentan mantener la consistencia documentación-implementación.
+ El capítulo siguiente se centra precisamente en estas herramientas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand \bibtex[plain]{TESIS}
+
+\end_inset
+
+
 \end_layout
 
 \end_body
