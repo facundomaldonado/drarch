@@ -9,46 +9,46 @@ import org.osgi.framework.BundleContext;
  */
 public class EnginePlugin extends AbstractUIPlugin {
 
-	//The shared instance.
-	private static EnginePlugin plugin;
-	
-	/**
-	 * The constructor.
-	 */
-	public EnginePlugin() {
-		plugin = this;
-	}
+  //The shared instance.
+  private static EnginePlugin plugin;
 
-	/**
-	 * This method is called upon plug-in activation
-	 */
-	public void start(BundleContext context) throws Exception {
-		super.start(context);
-	}
+  /**
+   * The constructor.
+   */
+  public EnginePlugin() {
+    plugin = this;
+  }
 
-	/**
-	 * This method is called when the plug-in is stopped
-	 */
-	public void stop(BundleContext context) throws Exception {
-		super.stop(context);
-		plugin = null;
-	}
+  /**
+   * This method is called upon plug-in activation
+   */
+  public void start(BundleContext context) throws Exception {
+    super.start(context);
+  }
 
-	/**
-	 * Returns the shared instance.
-	 */
-	public static EnginePlugin getDefault() {
-		return plugin;
-	}
+  /**
+   * This method is called when the plug-in is stopped
+   */
+  public void stop(BundleContext context) throws Exception {
+    super.stop(context);
+    plugin = null;
+  }
 
-	/**
-	 * Returns an image descriptor for the image file at the given
-	 * plug-in relative path.
-	 *
-	 * @param path the path
-	 * @return the image descriptor
-	 */
-	public static ImageDescriptor getImageDescriptor(String path) {
-		return AbstractUIPlugin.imageDescriptorFromPlugin("rules4Java.engine", path);
-	}
+  /**
+   * Returns the shared instance.
+   */
+  public static EnginePlugin getDefault() {
+    return plugin;
+  }
+
+  /**
+   * Returns an image descriptor for the image file at the given
+   * plug-in relative path.
+   *
+   * @param path the path
+   * @return the image descriptor
+   */
+  public static ImageDescriptor getImageDescriptor(String path) {
+    return AbstractUIPlugin.imageDescriptorFromPlugin("rules4Java.engine", path);
+  }
 }
