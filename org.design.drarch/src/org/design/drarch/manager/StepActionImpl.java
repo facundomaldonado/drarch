@@ -9,25 +9,24 @@ import org.design.rules4Java.engine.ruleModel.Rule;
 
 public class StepActionImpl extends StepAction {
 
-	public StepActionImpl(Rule r) {
-		super(r);
-	}
+  public StepActionImpl(Rule r) {
+    super(r);
+  }
 
-	
-	public void applyFacts(){
-		super.applyFacts();
-		if (listFacts.size()>0){
-			loadModel();
-		}
-	}
-	protected void loadModel() {
-		LoadModelAction action= new LoadModelAction(Application.getInstance().getQueryEngine());
-		action.run();
-	}
+  public void applyFacts(){
+    super.applyFacts();
+    if (listFacts.size()>0){
+      loadModel();
+    }
+  }
+  protected void loadModel() {
+    LoadModelAction action= new LoadModelAction(Application.getInstance()
+        .getQueryEngine());
+    action.run();
+  }
 
-	@Override
-	protected KnowledgeBase getKnowledgeBase() {
-		return Application.getInstance().getKnowledegeBase();
-	}
-
+  @Override
+  protected KnowledgeBase getKnowledgeBase() {
+    return Application.getInstance().getKnowledegeBase();
+  }
 }
