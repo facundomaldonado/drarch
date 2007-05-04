@@ -1,0 +1,14 @@
+#summary How to install and configure Drarch.
+#labels Phase-Deploy
+
+= Introduction =
+
+To use Drarch, you need to make sure that you already has a project into Eclipse. Then, you need the followings plug-in installed: JQuery, Flabot, EMF and GEF.
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
