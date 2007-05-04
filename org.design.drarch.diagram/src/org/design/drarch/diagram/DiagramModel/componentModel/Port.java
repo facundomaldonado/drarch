@@ -1,58 +1,54 @@
 package org.design.drarch.diagram.DiagramModel.componentModel;
 
-
-
 public class Port {
-	private String name;
-	private Interface required;
-	private Interface provided;
-	private Component component;
-	
-	
-	public Port(Component c){
-		this.name = "noname";
-		this.component = c;
-		this.provided = null;
-		this.required = null;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
+  private String name;
+  private Interface required;
+  private Interface provided;
+  private Component component;
 
+  public Port(Component c){
+    this.name = "noname";
+    this.component = c;
+    this.provided = null;
+    this.required = null;
+  }
 
-	public Component getComponent() {
-		return component;
-	}
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public Interface getProvided() {
-		return provided;
-	}
+  public Component getComponent() {
+    return component;
+  }
 
-	public void setProvided(Interface provideds) {
-		this.provided = provideds;
-	}
+  public Interface getProvided() {
+    return provided;
+  }
 
-	public Interface getRequired() {
-		return required;
-	}
+  public void setProvided(Interface provideds) {
+    this.provided = provideds;
+  }
 
-	public void setRequired(Interface requireds) {
-		this.required = requireds;
-	}
+  public Interface getRequired() {
+    return required;
+  }
 
-	public boolean hasProvidedInterface() {
-		if (provided == null)
-			return false;
-		return true;
-	}
-	public boolean hasRequiredInterface() {
-		if (required == null)
-			return false;
-		return true;
-	}
+  public void setRequired(Interface requireds) {
+    this.required = requireds;
+  }
+
+  public boolean hasProvidedInterface() {
+    if (provided == null)
+      return false;
+    return true;
+  }
+  
+  public boolean hasRequiredInterface() {
+    if (required == null)
+      return false;
+    return true;
+  }
 }
