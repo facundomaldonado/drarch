@@ -7,32 +7,32 @@ import tyRuBa.engine.Frame;
 import tyRuBa.util.ElementSource;
 
 public class ResultSetImpl implements ResultSet {
-	
-	protected ElementSource queryResult;
-	
-	protected ResultSetImpl() {
-		super();
-	}
-	
-	public boolean hasMoreElements() {
-		return queryResult.hasMoreElements();
-	}
 
-	public QueryResult next() {
-		QueryResult nextResult= createQueryResult();
-		((QueryResultImpl)nextResult).setFrame((Frame)queryResult.nextElement());
-		return nextResult;
-	}
+  protected ElementSource queryResult;
 
-	private QueryResult createQueryResult() {
-		return new QueryResultImpl();
-	}
-	
-	public ElementSource getQueryResult() {
-		return queryResult;
-	}
+  protected ResultSetImpl() {
+    super();
+  }
 
-	public void setQueryResult(ElementSource queryResult) {
-		this.queryResult = queryResult;
-	}
+  public boolean hasMoreElements() {
+    return queryResult.hasMoreElements();
+  }
+
+  public QueryResult next() {
+    QueryResult nextResult= createQueryResult();
+    ((QueryResultImpl)nextResult).setFrame((Frame)queryResult.nextElement());
+    return nextResult;
+  }
+
+  private QueryResult createQueryResult() {
+    return new QueryResultImpl();
+  }
+
+  public ElementSource getQueryResult() {
+    return queryResult;
+  }
+
+  public void setQueryResult(ElementSource queryResult) {
+    this.queryResult = queryResult;
+  }
 }
