@@ -17,9 +17,9 @@ public interface PathNode extends EObject {
    */
   String getResponsibilityName();
   /**
-   * Sets the value of the '{@link org.design.drarch.diagram.ucmModel
-   *      .PathNode#getResponsibilityName <em>Responsibility Name</em>}' 
-   *      attribute.
+   * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
+   *    .ucmModel.PathNode#getResponsibilityName <em>Responsibility Name</em>}' 
+   *    attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Responsibility Name</em>' attribute.
@@ -29,14 +29,14 @@ public interface PathNode extends EObject {
   void setResponsibilityName(String value);
 
   /**
-   * @model opposite="nodes"
-   * @return
+   * @model opposite = "nodes"
+   * @return The Path.
    */
   Path getPath();
 
   /**
-   * Sets the value of the '{@link org.design.drarch.diagram.ucmModel
-   *    .PathNode#getPath <em>Path</em>}' reference.
+   * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
+   *    .ucmModel.PathNode#getPath <em>Path</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Path</em>' reference.
@@ -46,16 +46,16 @@ public interface PathNode extends EObject {
   void setPath(Path value);
 
   /**
-   * @model type="PathNode" opposite="next"
-   * @return
+   * @model type = "PathNode" opposite = "next"
+   * @return The provious list.
    */
-  EList getPrevious();
+  EList<PathNode> getPrevious();
 
   /**
-   * @model type="PathNode" opposite="previous"
-   * @return
+   * @model type = "PathNode" opposite = "previous"
+   * @return The next PathNode.
    */
-  EList getNext();	
+  EList<PathNode> getNext();	
   boolean addPrevious(PathNode previous);
   boolean removePrevious(PathNode previous);
   boolean addNext(PathNode next);

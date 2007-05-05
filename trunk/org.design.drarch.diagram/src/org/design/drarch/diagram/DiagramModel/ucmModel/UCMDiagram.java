@@ -13,7 +13,7 @@ public interface UCMDiagram extends EObject {
 
   /**
    * @model
-   * @return
+   * @return The ucm model.
    */
   UCMModel getModel();
 

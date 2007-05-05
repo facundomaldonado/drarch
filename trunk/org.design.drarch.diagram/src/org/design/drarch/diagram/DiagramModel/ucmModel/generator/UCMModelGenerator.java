@@ -1,5 +1,10 @@
 package org.design.drarch.diagram.DiagramModel.ucmModel.generator;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,25 +29,26 @@ import org.design.rules4Java.engine.ruleModel.RuleModelFactory;
 import org.design.rules4Java.engine.ruleModel.Var;
 import org.design.rules4Java.util.Util;
 
-@SuppressWarnings("unchecked")
 public class UCMModelGenerator {
 
   private UCMModel model;
   private UCMModel alternativeModel;
   private QueryEngine queryEngine;
-  private List<NodeInfo> sortedNodes = new ArrayList();
+  private List<NodeInfo> sortedNodes = new ArrayList<NodeInfo>();
   private Path path;
   private Path alternativePath;
-  private List<ComponentRole> componentRoles = new ArrayList();
+  private List<ComponentRole> componentRoles = new ArrayList<ComponentRole>();
   
   // componentName - list<className>.
-  private Map<String,List<String>> comp_class = new HashMap(); 
+  private Map<String, List<String>> comp_class = new HashMap<String, 
+      List<String>>(); 
   
   // className - list<methodName>
-  private Map<String,List<String>> class_meth = new HashMap(); 
+  private Map<String, List<String>> class_meth = new HashMap<String, 
+      List<String>>(); 
 
   // responsabilityName, componentName.
-  private Map<String,String> resp_comp = new HashMap();
+  private Map<String, String> resp_comp = new HashMap<String, String>();
 
   @SuppressWarnings("unchecked")
   public UCMModelGenerator(){
@@ -51,7 +57,6 @@ public class UCMModelGenerator {
     queryEngine=Util.getInstance().getQueryEngine();
   }
 
-  @SuppressWarnings("unchecked")
   private List<NodeInfo> getNodesFromBase() {
     
     // Recupero las responsabilidades.
@@ -118,13 +123,13 @@ public class UCMModelGenerator {
       if (comp_class.containsKey(componentName)) {
         comp_class.get(componentName).add(node.className);
       } else {
-        comp_class.put(componentName,new ArrayList());
+        comp_class.put(componentName, new ArrayList<String>());
         comp_class.get(componentName).add(node.className);
       }
       if (class_meth.containsKey(node.className)) {
         class_meth.get(node.className).add(node.methodName);
       } else {
-        class_meth.put(node.className,new ArrayList());
+        class_meth.put(node.className,new ArrayList<String>());
         class_meth.get(node.className).add(node.methodName);
       }
       
@@ -164,7 +169,7 @@ public class UCMModelGenerator {
   
   public void make(){
     getNodesFromBase();
-    List nodes = getNodes();
+    List<NodeInfo> nodes = getNodes();
     
     // Ordenada por id de ejecucion.
     processNodes(nodes);
@@ -172,8 +177,8 @@ public class UCMModelGenerator {
     model.getPaths().add(path);
     alternativeModel = UcmModelFactory.eINSTANCE.createUCMModel();
     alternativeModel.getPaths().add(alternativePath);
-    for(Iterator i=componentRoles.iterator();i.hasNext();) {
-      ComponentRole componentRole = (ComponentRole) i.next();
+    for (Iterator<ComponentRole> i = componentRoles.iterator(); i.hasNext(); ) {
+      ComponentRole componentRole = i.next();
       model.getComponentRoles().add(componentRole);
       alternativeModel.getComponentRoles().add(componentRole);
     }

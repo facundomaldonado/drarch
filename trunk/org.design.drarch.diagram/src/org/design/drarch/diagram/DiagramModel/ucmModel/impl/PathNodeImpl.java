@@ -30,10 +30,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.design.drarch.diagram.ucmModel.impl.PathNodeImpl#getPath <em>Path</em>}</li>
- *   <li>{@link org.design.drarch.diagram.ucmModel.impl.PathNodeImpl#getPrevious <em>Previous</em>}</li>
- *   <li>{@link org.design.drarch.diagram.ucmModel.impl.PathNodeImpl#getNext <em>Next</em>}</li>
- *   <li>{@link org.design.drarch.diagram.ucmModel.impl.PathNodeImpl#getResponsibilityName <em>Responsibility Name</em>}</li>
+ *   <li>{@link org.design.drarch.diagram.DiagramModel.ucmModel.impl.PathNodeImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link org.design.drarch.diagram.DiagramModel.ucmModel.impl.PathNodeImpl#getPrevious <em>Previous</em>}</li>
+ *   <li>{@link org.design.drarch.diagram.DiagramModel.ucmModel.impl.PathNodeImpl#getNext <em>Next</em>}</li>
+ *   <li>{@link org.design.drarch.diagram.DiagramModel.ucmModel.impl.PathNodeImpl#getResponsibilityName <em>Responsibility Name</em>}</li>
  * </ul>
  * </p>
  *

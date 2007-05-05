@@ -3,6 +3,11 @@ package org.design.drarch.diagram.DiagramModel.componentModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class Component {
   private String name;
   private List ports;
