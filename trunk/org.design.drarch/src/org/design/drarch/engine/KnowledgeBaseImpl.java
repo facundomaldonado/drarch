@@ -8,7 +8,11 @@ import java.io.PrintWriter;
 import org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl;
 import org.design.rules4Java.util.Util;
 
-
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class KnowledgeBaseImpl extends KnowledgeBaseAbstractImpl{
 
   private static final String FILE_NAME = "KnowledgeBase.rub";
