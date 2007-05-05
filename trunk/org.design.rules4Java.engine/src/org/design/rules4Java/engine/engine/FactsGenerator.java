@@ -26,8 +26,8 @@ public class FactsGenerator {
    * @return List of parsed Facts
    */
   @SuppressWarnings("unchecked") 
-  public List<FactSet> getFacts(List<Suggest> suggestList, FactSet factSetTemplate, 
-      List<Var> varList){
+  public List<FactSet> getFacts(List<Suggest> suggestList, 
+      FactSet factSetTemplate, List<Var> varList) {
     List finalFacts = new LinkedList();
     
     /*
@@ -49,9 +49,9 @@ public class FactsGenerator {
           String factText= factTemplate.getFactText();
 
           /**
-           * recorro la lista de var, obteniendo el valor de
+           * Recorro la lista de var, obteniendo el valor de
            * cada una del resultado del query y reemplazandola
-           * en el template del fact
+           * en el template del fact.
            */
           for (Iterator<Var> ivar = varList.iterator(); ivar.hasNext(); ) {
             Var var = ivar.next();

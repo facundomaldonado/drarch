@@ -10,10 +10,10 @@ import org.design.rules4Java.engine.ruleModel.Rule;
 import java.util.Iterator;
 import java.util.List;
 
-
 /**
  * 
- * @author pelado
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
 public abstract class StepAction {
 
@@ -34,12 +34,11 @@ public abstract class StepAction {
   /**
    * @param facts
    */
-  @SuppressWarnings("unchecked")
   public void loadFacts(List<FactSet> facts){
     listFacts = facts;
   }
 
-  public void applyFacts(){
+  public void applyFacts() {
     if (listFacts.size() > 0) {
       base = getKnowledgeBase();
       for (Iterator<FactSet> iFacts = listFacts.iterator(); iFacts
@@ -53,16 +52,16 @@ public abstract class StepAction {
     }
   }
 
-  public List<FactSet> getPublishedFacts(){
+  public List<FactSet> getPublishedFacts() {
     lastRuleFacts = ruleManager.getFacts(currentRule, currentRuleSuggests);
     return lastRuleFacts;
   }
 
-  public List<Suggest> getSuggests(){
+  public List<Suggest> getSuggests() {
     return currentRuleSuggests;
   }
 
-  public void run(){
+  public void run() {
     applyFacts();
     ResultSet queryResult = ruleManager.evaluateRule(currentRule);
     currentRuleSuggests = ruleManager.getSuggests(currentRule, queryResult);
