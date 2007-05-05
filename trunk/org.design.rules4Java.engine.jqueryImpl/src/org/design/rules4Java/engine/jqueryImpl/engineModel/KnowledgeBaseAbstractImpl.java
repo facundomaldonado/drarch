@@ -12,7 +12,11 @@ import java.io.PrintWriter;
 
 import javax.imageio.stream.FileImageOutputStream;
 
-
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
   protected File file;
 
