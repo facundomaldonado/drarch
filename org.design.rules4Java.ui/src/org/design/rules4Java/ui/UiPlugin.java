@@ -8,9 +8,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * The main plugin class to be used in the desktop.
+ * The main plugin class to be used in the desktop. 
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
 public class UiPlugin extends AbstractUIPlugin {
+  
   private static final String iconPath = "/icons/";
 
   //The shared instance.
@@ -49,7 +53,8 @@ public class UiPlugin extends AbstractUIPlugin {
    * Returns an image descriptor for the image file at the given
    * plug-in relative path.
    *
-   * @return the image descriptor
+   * @param name the name of the image descriptor.
+   * @return the image descriptor.
    */
   public static ImageDescriptor getImageDescriptor(String name) {
     try {
