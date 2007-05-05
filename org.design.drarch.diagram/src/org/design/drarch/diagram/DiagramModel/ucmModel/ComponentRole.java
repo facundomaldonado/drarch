@@ -15,7 +15,7 @@ public interface ComponentRole extends EObject{
   /**
    * Nombre del Componente
    * @model
-   * @return
+   * @return The name of the ComponentRole.
    */
   String getName();
 
@@ -32,8 +32,9 @@ public interface ComponentRole extends EObject{
 
   /**
    * Nombre de la clase que define la materializacion de la responsabilidad
+   * 
    * @model  
-   * @return
+   * @return The name of the defined class.
    */
   String getDefinedClass();
 
@@ -52,7 +53,7 @@ public interface ComponentRole extends EObject{
   /**
    * Nombre del metodo que se ejecuto
    * @model
-   * @return
+   * @return The Begavior name.
    */
   String getBehaviorName();
 
@@ -69,7 +70,7 @@ public interface ComponentRole extends EObject{
 
   /**
    * @model
-   * @return
+   * @return The Component.
    */
   Component getComponent();
   

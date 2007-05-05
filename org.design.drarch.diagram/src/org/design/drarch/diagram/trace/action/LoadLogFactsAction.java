@@ -18,8 +18,12 @@ import org.eclipse.jface.action.Action;
 import org.isistan.flabot.engine.executionstate.TraceLogManager;
 import org.isistan.flabot.trace.log.TraceLog;
 
-
-
+/**
+ * 
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class LoadLogFactsAction extends Action {
 	private List responsibilities;
 	private LogSearcher searcher;

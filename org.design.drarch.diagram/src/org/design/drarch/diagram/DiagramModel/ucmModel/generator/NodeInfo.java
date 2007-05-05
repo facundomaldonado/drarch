@@ -1,5 +1,10 @@
 package org.design.drarch.diagram.DiagramModel.ucmModel.generator;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class NodeInfo {
   public String responsibilityName;
   public String execId;

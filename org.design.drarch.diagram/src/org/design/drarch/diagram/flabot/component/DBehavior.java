@@ -2,6 +2,12 @@ package org.design.drarch.diagram.flabot.component;
 
 import java.util.Vector;
 
+/**
+ * 
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class DBehavior {
 
 	String method;

@@ -5,6 +5,11 @@ import org.design.drarch.diagram.DiagramModel.IModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class ComponentModel implements IModel {
   private String name;
   private List components;

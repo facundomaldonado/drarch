@@ -1,5 +1,10 @@
 package org.design.drarch.diagram.DiagramModel.componentModel;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class Interface {
   private String name;
   private Port port;

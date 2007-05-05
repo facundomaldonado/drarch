@@ -34,7 +34,12 @@ import org.isistan.flabot.edit.editormodel.FlabotFileModel;
 import org.isistan.flabot.edit.multipage.FlabotMultiPageEditor;
 import org.isistan.flabot.util.emf.WorkaroundURIConverter;
 
-
+/**
+ * 
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class DiagramManager implements IDiagramManager{
 	private Vector components;
 	private Vector ucms;

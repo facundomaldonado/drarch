@@ -14,7 +14,7 @@ public interface UCMModel extends EObject {
 
   /**
    * @model
-   * @return
+   * @return The name of the model.
    */
   String getName();
 
@@ -30,13 +30,13 @@ public interface UCMModel extends EObject {
 
   /**
    * @model type="Path" 
-   * @return
+   * @return the list of Path
    */
-  EList getPaths();
+  EList<Path> getPaths();
 
   /**
    * @model type="ComponentRole"
-   * @return
+   * @return the list of ComponentRole
    */
-  EList getComponentRoles();
+  EList<ComponentRole> getComponentRoles();
 }

@@ -22,7 +22,12 @@ import org.isistan.flabot.edit.editormodel.Point;
 import org.isistan.flabot.edit.ucmmodel.UCMDiagram;
 import org.isistan.flabot.edit.ucmmodel.UcmmodelFactory;
 
-
+/**
+ * 
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class UCMDiagrams {
 	private CoreModel coreModel;
 	private UCMDiagram diagram;

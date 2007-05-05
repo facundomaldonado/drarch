@@ -5,7 +5,12 @@ import org.design.drarch.diagram.DiagramModel.ucmModel.generator.UCMModelGenerat
 import org.design.drarch.diagram.flabot.DiagramManager;
 import org.eclipse.jface.action.Action;
 
-
+/**
+ * 
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class AnaliceLogTraceAction extends Action {
 
 	public AnaliceLogTraceAction(){
