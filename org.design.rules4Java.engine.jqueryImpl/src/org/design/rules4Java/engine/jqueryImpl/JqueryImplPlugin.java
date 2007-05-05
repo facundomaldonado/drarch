@@ -9,7 +9,6 @@ import org.osgi.framework.BundleContext;
  *
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
- *
  */
 public class JqueryImplPlugin extends AbstractUIPlugin {
 
