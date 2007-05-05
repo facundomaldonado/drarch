@@ -8,6 +8,11 @@ import org.design.rules4Java.ui.view.modelProviders.model.TreeObject;
 import org.design.rules4Java.ui.view.modelProviders.model.TreeParent;
 import org.eclipse.jface.action.Action;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class ExecuteStepAction extends Action {
 
   private TreeParent root;

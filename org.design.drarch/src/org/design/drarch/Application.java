@@ -19,6 +19,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class Application {
 
   private static final String DEFAULT_XML_RULES = "DefaultRules.drarch";
