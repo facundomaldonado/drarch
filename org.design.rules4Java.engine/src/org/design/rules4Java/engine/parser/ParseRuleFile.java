@@ -13,6 +13,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 
+/**
+ * 
+ * @author nicolasfrontini@gmail.com (Nicolas Frontini)
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ */
 public class ParseRuleFile {
   private String path;
   private DrarchFileModel fileModel;
