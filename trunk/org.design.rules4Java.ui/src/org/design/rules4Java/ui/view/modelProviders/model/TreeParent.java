@@ -16,30 +16,33 @@ public class TreeParent extends TreeObject {
     children.add(child);
     child.setParent(this);
   }
+
   public void removeChild(TreeObject child) {
     children.remove(child);
     child.setParent(null);
   }
+
   /**
-   * @return  Returns the children.
-   * @uml.property  name="children"
+   * @return Returns the children.
+   * @uml.property name="children"
    */
   @SuppressWarnings("unchecked")
-  public TreeObject [] getChildren() {
+  public TreeObject[] getChildren() {
     return children.toArray(new TreeObject[children.size()]);
   }
+
   public boolean hasChildren() {
-    return children.size()>0;
+    return children.size() > 0;
   }
 
   public void setSelected(boolean selected) {
     super.setSelected(selected);
-    for (Iterator<TreeObject> i = children.iterator(); i.hasNext(); ){
+    for (Iterator<TreeObject> i = children.iterator(); i.hasNext();) {
       i.next().setSelected(selected);
     }
   }
 
-  public List<TreeObject> getChildrens(){
+  public List<TreeObject> getChildrens() {
     return children;
   }
 }

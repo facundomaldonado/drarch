@@ -11,16 +11,16 @@ public class GetRulesFromFile extends Action {
   private DrarchFileModel fileModel;
   private ParseRuleFile parser;
 
-  public GetRulesFromFile(String path){
-    parser=new ParseRuleFile(path);
+  public GetRulesFromFile(String path) {
+    parser = new ParseRuleFile(path);
   }
 
- public void run(){
+  public void run() {
     parser.parseFile();
     fileModel = parser.getFileModel();
   }
 
-  public List<Rule> getRuleList(){
+  public List<Rule> getRuleList() {
     return fileModel.getRules();
   }
 }

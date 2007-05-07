@@ -27,9 +27,9 @@ public class Rules4JavaNewWizardPage extends WizardPage {
   private ISelection selection;
 
   public Rules4JavaNewWizardPage(ISelection selection) {
-    super("New Rules File"); 
-    setTitle("New Rules File"); 
-    setDescription("description"); 
+    super("New Rules File");
+    setTitle("New Rules File");
+    setDescription("description");
     this.selection = selection;
   }
 
@@ -40,7 +40,7 @@ public class Rules4JavaNewWizardPage extends WizardPage {
     layout.numColumns = 3;
     layout.verticalSpacing = 9;
     Label label = new Label(container, SWT.NULL);
-    label.setText("container"); 
+    label.setText("container");
     containerText = new Text(container, SWT.BORDER | SWT.SINGLE);
     GridData gd = new GridData(GridData.FILL_HORIZONTAL);
     containerText.setLayoutData(gd);
@@ -50,14 +50,14 @@ public class Rules4JavaNewWizardPage extends WizardPage {
       }
     });
     Button button = new Button(container, SWT.PUSH);
-    button.setText("browse"); 
+    button.setText("browse");
     button.addSelectionListener(new SelectionAdapter() {
       public void widgetSelected(SelectionEvent e) {
         handleBrowse();
       }
     });
     label = new Label(container, SWT.NULL);
-    label.setText("fileName"); 
+    label.setText("fileName");
     fileText = new Text(container, SWT.BORDER | SWT.SINGLE);
     gd = new GridData(GridData.FILL_HORIZONTAL);
     fileText.setLayoutData(gd);
@@ -70,7 +70,7 @@ public class Rules4JavaNewWizardPage extends WizardPage {
     dialogChanged();
     setControl(container);
   }
-  
+
   /**
    * Tests if the current workbench selection is a suitable container to use.
    */
@@ -78,8 +78,7 @@ public class Rules4JavaNewWizardPage extends WizardPage {
     if (selection != null && selection.isEmpty() == false
         && selection instanceof IStructuredSelection) {
       IStructuredSelection ssel = (IStructuredSelection) selection;
-      if (ssel.size() > 1)
-        return;
+      if (ssel.size() > 1) return;
       Object obj = ssel.getFirstElement();
       IContainer container;
       if (obj instanceof IJavaProject) {
@@ -102,9 +101,9 @@ public class Rules4JavaNewWizardPage extends WizardPage {
    * the container field.
    */
   private void handleBrowse() {
-    ContainerSelectionDialog dialog = new ContainerSelectionDialog(
-        getShell(), ResourcesPlugin.getWorkspace().getRoot(), false,
-        "select File Container"); 
+    ContainerSelectionDialog dialog = new ContainerSelectionDialog(getShell(),
+        ResourcesPlugin.getWorkspace().getRoot(), false,
+        "select File Container");
     if (dialog.open() == ContainerSelectionDialog.OK) {
       Object[] result = dialog.getResult();
       if (result.length == 1) {
@@ -117,8 +116,8 @@ public class Rules4JavaNewWizardPage extends WizardPage {
    * Ensures that both text fields are set.
    */
   private void dialogChanged() {
-    IResource container = ResourcesPlugin.getWorkspace().getRoot()
-    .findMember(new Path(getContainerName()));
+    IResource container = ResourcesPlugin.getWorkspace().getRoot().findMember(
+        new Path(getContainerName()));
     String fileName = getFileName();
 
     if (getContainerName().length() == 0) {
@@ -127,7 +126,7 @@ public class Rules4JavaNewWizardPage extends WizardPage {
     }
     if (container == null
         || (container.getType() & (IResource.PROJECT | IResource.FOLDER)) == 0) {
-      updateStatus("select a correct container"); 
+      updateStatus("select a correct container");
       return;
     }
     if (!container.isAccessible()) {

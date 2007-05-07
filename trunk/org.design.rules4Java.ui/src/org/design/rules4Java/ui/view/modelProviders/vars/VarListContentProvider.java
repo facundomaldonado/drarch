@@ -4,12 +4,13 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
 
-public class VarListContentProvider implements IStructuredContentProvider, IVarListViewer {
+public class VarListContentProvider implements IStructuredContentProvider,
+    IVarListViewer {
 
   private VarList varList;
   private TableViewer viewer;
 
-  public VarListContentProvider(VarList varList, TableViewer viewer){
+  public VarListContentProvider(VarList varList, TableViewer viewer) {
     super();
     this.varList = varList;
     this.viewer = viewer;

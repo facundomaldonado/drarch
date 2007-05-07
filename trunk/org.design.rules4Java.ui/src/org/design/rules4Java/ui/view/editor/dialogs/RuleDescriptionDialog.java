@@ -35,10 +35,10 @@ public class RuleDescriptionDialog extends Dialog {
   }
 
   protected void createButtonsForButtonBar(Composite parent) {
-    createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, 
+    createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL,
         true);
-    createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants
-        .CANCEL_LABEL, false);
+    createButton(parent, IDialogConstants.CANCEL_ID,
+        IDialogConstants.CANCEL_LABEL, false);
   }
 
   protected Control createDialogArea(Composite parent) {
@@ -54,14 +54,14 @@ public class RuleDescriptionDialog extends Dialog {
     textLData.horizontalAlignment = GridData.FILL;
     textLData.verticalAlignment = GridData.FILL;
     textLData.horizontalSpan = 3;
-    textLData.verticalSpan= 2;
+    textLData.verticalSpan = 2;
     descriptionText = new Text(composite1, SWT.NONE | SWT.BORDER);
     descriptionText.setText(description);
     descriptionText.setLayoutData(textLData);
     return parent;
   }
 
-  public String getdescription(){
+  public String getdescription() {
     return description;
   }
 }

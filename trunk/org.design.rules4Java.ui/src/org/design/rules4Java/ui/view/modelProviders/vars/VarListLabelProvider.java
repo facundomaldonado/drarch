@@ -7,19 +7,19 @@ import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 
-public class VarListLabelProvider extends LabelProvider implements 
-    ITableLabelProvider{
+public class VarListLabelProvider extends LabelProvider implements
+    ITableLabelProvider {
 
   public static final String CHECKED_IMAGE = "checked";
   public static final String UNCHECKED_IMAGE = "unchecked";
-  
+
   // For the checkbox images.
   private ImageRegistry imageRegistry;
 
   /**
    * Note: An image registry owns all of the image objects registered with it,
    * and automatically disposes of them the SWT Display is disposed.
-   */  
+   */
   public VarListLabelProvider() {
     super();
     imageRegistry = new ImageRegistry();
@@ -33,36 +33,39 @@ public class VarListLabelProvider extends LabelProvider implements
 
   public Image getImage(boolean isSelected) {
     String key = isSelected ? CHECKED_IMAGE : UNCHECKED_IMAGE;
-    return  imageRegistry.get(key);
+    return imageRegistry.get(key);
   }
 
   public String getText(Object element) {
-    return ((Var)element).getVar();
+    return ((Var) element).getVar();
   }
 
-  public void addListener(ILabelProviderListener listener) {}
+  public void addListener(ILabelProviderListener listener) {
+  }
 
-  public void dispose() {}
+  public void dispose() {
+  }
 
   public boolean isLabelProperty(Object element, String property) {
     return false;
   }
 
-  public void removeListener(ILabelProviderListener listener) {}
+  public void removeListener(ILabelProviderListener listener) {
+  }
 
   public Image getColumnImage(Object element, int columnIndex) {
-    return (columnIndex == 0) ? getImage(((Var)element).isSelected()) : null;
+    return (columnIndex == 0) ? getImage(((Var) element).isSelected()) : null;
   }
 
   public String getColumnText(Object element, int columnIndex) {
     String result = "";
     Var elem = (Var) element;
     switch (columnIndex) {
-    case 0:  
+    case 0:
       result = elem.getVar();
       break;
-    default :
-      break; 	
+    default:
+      break;
     }
     return result;
   }

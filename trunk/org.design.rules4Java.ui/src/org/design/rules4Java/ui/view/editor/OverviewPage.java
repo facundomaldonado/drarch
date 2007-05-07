@@ -75,32 +75,36 @@ public class OverviewPage extends DrarchFormPage {
     form.setText("Overview");
     GridLayout layout = new GridLayout();
     layout.numColumns = 2;
-    layout.makeColumnsEqualWidth=true;
+    layout.makeColumnsEqualWidth = true;
     form.getBody().setLayout(layout);
     Label label;
     GridData gd;
-    
+
     // First section: General information.
-    Section section = toolkit.createSection(form.getBody(), 
-        Section.DESCRIPTION|Section.EXPANDED|Section.FOCUS_TITLE);
-    ImageHyperlink helpImage=new ImageHyperlink(section,SWT.PUSH );
-    helpImage.setBackground(new Color(Display.getCurrent(),255,255,255));
-    Image helpIcon= UiPlugin.getImageDescriptor("help.gif").createImage();
+    Section section = toolkit.createSection(form.getBody(), Section.DESCRIPTION
+        | Section.EXPANDED | Section.FOCUS_TITLE);
+    ImageHyperlink helpImage = new ImageHyperlink(section, SWT.PUSH);
+    helpImage.setBackground(new Color(Display.getCurrent(), 255, 255, 255));
+    Image helpIcon = UiPlugin.getImageDescriptor("help.gif").createImage();
     helpImage.setImage(helpIcon);
-    final String helpId= "org.design.rules4Java.ui.buttonId";
-    PlatformUI.getWorkbench().getHelpSystem().setHelp(helpImage,helpId);
+    final String helpId = "org.design.rules4Java.ui.buttonId";
+    PlatformUI.getWorkbench().getHelpSystem().setHelp(helpImage, helpId);
     helpImage.addHyperlinkListener(new IHyperlinkListener() {
       public void linkActivated(HyperlinkEvent e) {
         PlatformUI.getWorkbench().getHelpSystem().displayHelp(helpId);
-        //TODO: ??? no se por que no muestra la ayuda
+        // TODO: ??? no se por que no muestra la ayuda
       }
-      public void linkExited(HyperlinkEvent e) {}
-      public void linkEntered(HyperlinkEvent e) {}
+
+      public void linkExited(HyperlinkEvent e) {
+      }
+
+      public void linkEntered(HyperlinkEvent e) {
+      }
     });
     section.setTextClient(helpImage);
     section.setToolTipText("Rules file information");
     gd = new GridData(GridData.FILL_HORIZONTAL);
-    gd.grabExcessHorizontalSpace=true;
+    gd.grabExcessHorizontalSpace = true;
     section.setLayoutData(gd);
     section.addExpansionListener(new ExpansionAdapter() {
       public void expansionStateChanged(ExpansionEvent e) {
@@ -109,12 +113,12 @@ public class OverviewPage extends DrarchFormPage {
     });
     section.setText("General Information");
     toolkit.createCompositeSeparator(section);
-    section.setDescription("This section describes general information " +
-        "about this Rules file:");
+    section.setDescription("This section describes general information "
+        + "about this Rules file:");
     Composite sectionClient = toolkit.createComposite(section);
     TableWrapLayout clientLayout = new TableWrapLayout();
     clientLayout.numColumns = 3;
-    clientLayout.makeColumnsEqualWidth=true;
+    clientLayout.makeColumnsEqualWidth = true;
     sectionClient.setLayout(clientLayout);
     spart = new SectionPart(section);
     managedForm.addPart(spart);
@@ -123,14 +127,14 @@ public class OverviewPage extends DrarchFormPage {
     label.setLayoutData(td);
     Text text = toolkit.createText(sectionClient, getModel().getFileName());
     td = new TableWrapData(TableWrapData.FILL_GRAB);
-    td.grabHorizontal=true;
-    td.colspan=2;
+    td.grabHorizontal = true;
+    td.colspan = 2;
     text.setLayoutData(td);
     label = toolkit.createLabel(sectionClient, "Rules count:");
     td = new TableWrapData(TableWrapData.LEFT);
     label.setLayoutData(td);
-    DrarchFileModel model=getModel();
-    if (model != null){
+    DrarchFileModel model = getModel();
+    if (model != null) {
       text = toolkit.createText(sectionClient, String.valueOf(model.getRules()
           .size()));
     } else {
@@ -143,8 +147,8 @@ public class OverviewPage extends DrarchFormPage {
     section.setClient(sectionClient);
 
     // Second section: Rule content.
-    section = toolkit.createSection(form.getBody(),	Section.DESCRIPTION | 
-        Section.EXPANDED |Section.FOCUS_TITLE);
+    section = toolkit.createSection(form.getBody(), Section.DESCRIPTION
+        | Section.EXPANDED | Section.FOCUS_TITLE);
     section.setToolTipText("Show selected rule information");
     gd = new GridData(GridData.FILL_BOTH);
     gd.grabExcessVerticalSpace = true;
@@ -159,24 +163,24 @@ public class OverviewPage extends DrarchFormPage {
     section.setText("Selected Rule content");
     toolkit.createCompositeSeparator(section);
     section.setDescription("The content is made up of three sections:");
-    ruleSectionClient= toolkit.createComposite(section);
-    GridLayout clientGridLayout = new GridLayout(1,true);
+    ruleSectionClient = toolkit.createComposite(section);
+    GridLayout clientGridLayout = new GridLayout(1, true);
     ruleSectionClient.setLayout(clientGridLayout);
 
     // Query Section.
-    Section subSection= toolkit.createSection(ruleSectionClient, 
+    Section subSection = toolkit.createSection(ruleSectionClient,
         Section.EXPANDED | Section.DESCRIPTION | Section.TREE_NODE);
     subSection.setToolTipText("Show the query and the selected variables");
     gd = new GridData(GridData.FILL_BOTH);
-    gd.horizontalSpan=2;
+    gd.horizontalSpan = 2;
     subSection.setLayoutData(gd);
     subSection.setText("Query Description");
     toolkit.createCompositeSeparator(subSection);
-    subSection.setDescription("Represent the query that will be executed"); 
+    subSection.setDescription("Represent the query that will be executed");
     Composite querySectionClient = toolkit.createComposite(subSection);
     GridLayout queryClientGridLayout = new GridLayout();
     queryClientGridLayout.numColumns = 2;
-    querySectionClient.setLayout(queryClientGridLayout );
+    querySectionClient.setLayout(queryClientGridLayout);
     GridData LabelLData = new GridData();
     LabelLData.verticalAlignment = GridData.FILL;
     GridData TextLData = new GridData();
@@ -186,23 +190,25 @@ public class OverviewPage extends DrarchFormPage {
     TextLData.grabExcessHorizontalSpace = true;
     TextLData.grabExcessVerticalSpace = true;
     toolkit.createLabel(querySectionClient, "Query Text : ");
-    queryText= toolkit.createText(querySectionClient, "", SWT.MULTI | 
-        SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
-    TextLData.verticalSpan= 5;
+    queryText = toolkit.createText(querySectionClient, "", SWT.MULTI
+        | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
+    TextLData.verticalSpan = 5;
     queryText.setLayoutData(TextLData);
     queryText.setEditable(false);
     final Button setQueryButton;
-    Button editQueryButton = toolkit.createButton(querySectionClient, 
-        "edit", SWT.NONE);
-    setQueryButton=toolkit.createButton(querySectionClient, "set ", SWT.NONE);
+    Button editQueryButton = toolkit.createButton(querySectionClient, "edit",
+        SWT.NONE);
+    setQueryButton = toolkit.createButton(querySectionClient, "set ", SWT.NONE);
     setQueryButton.setEnabled(false);
     setQueryButton.addSelectionListener(new SelectionListener() {
-      public void widgetDefaultSelected(SelectionEvent e) {}
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
+
       public void widgetSelected(SelectionEvent e) {
-        String newQueryString=queryText.getText();
-        Query q=currentRule.getQuery();
-        if (q==null){
-          q=RuleModelFactory.eINSTANCE.createQuery();
+        String newQueryString = queryText.getText();
+        Query q = currentRule.getQuery();
+        if (q == null) {
+          q = RuleModelFactory.eINSTANCE.createQuery();
           currentRule.setQuery(q);
         }
         q.setQueryString(newQueryString);
@@ -212,53 +218,55 @@ public class OverviewPage extends DrarchFormPage {
       }
     });
     editQueryButton.addSelectionListener(new SelectionListener() {
-      public void widgetDefaultSelected(SelectionEvent e) {}
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
+
       public void widgetSelected(SelectionEvent e) {
         queryText.setEditable(true);
         setQueryButton.setEnabled(true);
       }
     });
-    Section varSubSection= toolkit.createSection(querySectionClient, 
+    Section varSubSection = toolkit.createSection(querySectionClient,
         Section.EXPANDED | Section.DESCRIPTION | Section.TREE_NODE);
     varSubSection.setToolTipText("get vars from query");
     gd = new GridData(GridData.FILL_BOTH);
-    gd.horizontalSpan=2;
+    gd.horizontalSpan = 2;
     varSubSection.setLayoutData(gd);
     varSubSection.setText("Query Vars");
     toolkit.createCompositeSeparator(varSubSection);
-    varSubSection.setDescription("Vars from query"); 
+    varSubSection.setDescription("Vars from query");
     Composite varsSectionClient = toolkit.createComposite(varSubSection);
     GridLayout varsClientGridLayout = new GridLayout();
     varsClientGridLayout.numColumns = 2;
-    varsSectionClient.setLayout(varsClientGridLayout );
+    varsSectionClient.setLayout(varsClientGridLayout);
 
     toolkit.createLabel(varsSectionClient, "Choosen Vars : ");
 
-    varsText = new org.eclipse.swt.widgets.List(varsSectionClient, SWT.BORDER | 
-        SWT.V_SCROLL);
+    varsText = new org.eclipse.swt.widgets.List(varsSectionClient, SWT.BORDER
+        | SWT.V_SCROLL);
     TextLData.verticalSpan = 15;
     varsText.setLayoutData(TextLData);
 
-    Button varsButton = toolkit.createButton(varsSectionClient, "get Vars", 
+    Button varsButton = toolkit.createButton(varsSectionClient, "get Vars",
         SWT.NONE);
-    varsButton.addSelectionListener(new SelectionListener(){
+    varsButton.addSelectionListener(new SelectionListener() {
       public void widgetSelected(SelectionEvent e) {
         QueryVarsDialog queryVarsDialog = new QueryVarsDialog(currentRule
             .getQuery().getQueryString());
         queryVarsDialog.open();
         List vars = queryVarsDialog.getVars();
-        if (vars.size()>0){
-          String[] values={};
+        if (vars.size() > 0) {
+          String[] values = {};
           varsText.setItems(values);
           Query q = currentRule.getQuery();
-          if (q == null){
+          if (q == null) {
             q = RuleModelFactory.eINSTANCE.createQuery();
             currentRule.setQuery(q);
           }
           q.getChosenVars().clear();
-          Iterator varI=vars.iterator();
+          Iterator varI = vars.iterator();
           while (varI.hasNext()) {
-            String var = (String)varI.next();
+            String var = (String) varI.next();
             varsText.add(var);
             Var v = RuleModelFactory.eINSTANCE.createVar();
             v.setVarText(var);
@@ -267,89 +275,96 @@ public class OverviewPage extends DrarchFormPage {
           spart.markDirty();
         }
       }
-      public void widgetDefaultSelected(SelectionEvent e) {}
+
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
     });
     varSubSection.setClient(varsSectionClient);
     subSection.setClient(querySectionClient);
 
-    // Suggest Section. 
-    subSection= toolkit.createSection(ruleSectionClient,Section.EXPANDED | 
-        Section.DESCRIPTION | Section.TREE_NODE);
+    // Suggest Section.
+    subSection = toolkit.createSection(ruleSectionClient, Section.EXPANDED
+        | Section.DESCRIPTION | Section.TREE_NODE);
     subSection.setToolTipText("Show the suggest Template for the current rule");
     gd = new GridData(GridData.FILL_BOTH);
     gd.horizontalSpan = 2;
     subSection.setLayoutData(gd);
     subSection.setText("Suggest Description");
     toolkit.createCompositeSeparator(subSection);
-    subSection.setDescription("Suggest Template Description"); 
+    subSection.setDescription("Suggest Template Description");
     Composite suggestSectionClient = toolkit.createComposite(subSection);
     GridLayout suggestClientGridLayout = new GridLayout();
     suggestClientGridLayout.numColumns = 2;
-    suggestSectionClient.setLayout(suggestClientGridLayout );
+    suggestSectionClient.setLayout(suggestClientGridLayout);
     toolkit.createLabel(suggestSectionClient, "Suggest Template : ");
-    suggestTemplateText= toolkit.createText(suggestSectionClient, "", 
+    suggestTemplateText = toolkit.createText(suggestSectionClient, "",
         SWT.MULTI | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
     suggestTemplateText.setLayoutData(TextLData);
     suggestTemplateText.setEditable(false);
-    final Button setSuggestButton; 
-    Button editSuggestButton = toolkit.createButton(suggestSectionClient, 
+    final Button setSuggestButton;
+    Button editSuggestButton = toolkit.createButton(suggestSectionClient,
         "edit", SWT.NONE);
-    setSuggestButton =toolkit.createButton(suggestSectionClient, "set ", 
+    setSuggestButton = toolkit.createButton(suggestSectionClient, "set ",
         SWT.NONE);
     setSuggestButton.setEnabled(false);
     setSuggestButton.addSelectionListener(new SelectionListener() {
       public void widgetDefaultSelected(SelectionEvent e) {
       }
+
       public void widgetSelected(SelectionEvent e) {
-        String newSuggest=suggestTemplateText.getText();
+        String newSuggest = suggestTemplateText.getText();
         currentRule.setSuggestTemplate(newSuggest);
         spart.markDirty();
         setSuggestButton.setEnabled(false);
       }
     });
     editSuggestButton.addSelectionListener(new SelectionListener() {
-      public void widgetDefaultSelected(SelectionEvent e) {}
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
+
       public void widgetSelected(SelectionEvent e) {
         suggestTemplateText.setEditable(true);
         setSuggestButton.setEnabled(true);
       }
     });
     subSection.setClient(suggestSectionClient);
-    
-    // Facts Section. 
-    subSection = toolkit.createSection(ruleSectionClient, Section.EXPANDED | 
-        Section.DESCRIPTION | Section.TREE_NODE);
+
+    // Facts Section.
+    subSection = toolkit.createSection(ruleSectionClient, Section.EXPANDED
+        | Section.DESCRIPTION | Section.TREE_NODE);
     subSection.setToolTipText("Show the facts templates in order of execution");
     gd = new GridData(GridData.FILL_BOTH);
-    gd.horizontalSpan=2;
+    gd.horizontalSpan = 2;
     subSection.setLayoutData(gd);
     subSection.setText("Facts Description");
     toolkit.createCompositeSeparator(subSection);
-    subSection.setDescription("Facts Templates Description"); 
+    subSection.setDescription("Facts Templates Description");
     Composite factsSectionClient = toolkit.createComposite(subSection);
     GridLayout factsClientGridLayout = new GridLayout();
     factsClientGridLayout.numColumns = 2;
-    factsSectionClient.setLayout(factsClientGridLayout );
+    factsSectionClient.setLayout(factsClientGridLayout);
     toolkit.createLabel(factsSectionClient, "Facts Templates : ");
-    factsTemplateText= new org.eclipse.swt.widgets.List(factsSectionClient, 
-        SWT.MULTI | SWT.BORDER | SWT.V_SCROLL );
+    factsTemplateText = new org.eclipse.swt.widgets.List(factsSectionClient,
+        SWT.MULTI | SWT.BORDER | SWT.V_SCROLL);
     factsTemplateText.setLayoutData(TextLData);
-    factsTemplateText.addSelectionListener(new SelectionListener(){
+    factsTemplateText.addSelectionListener(new SelectionListener() {
       public void widgetSelected(SelectionEvent e) {
         deleteFactButton.setEnabled(true);
       }
-      public void widgetDefaultSelected(SelectionEvent e) {}
+
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
     });
-    Button addFactButton =toolkit.createButton(factsSectionClient, " New  ", 
+    Button addFactButton = toolkit.createButton(factsSectionClient, " New  ",
         SWT.NONE);
-    addFactButton.addSelectionListener(new SelectionListener(){
+    addFactButton.addSelectionListener(new SelectionListener() {
       public void widgetSelected(SelectionEvent e) {
         NewFactDialog factDialog = new NewFactDialog();
         factDialog.open();
         String factText = factDialog.getFact();
         Fact fact = RuleModelFactory.eINSTANCE.createFact();
         fact.setFactText(factText);
-        FactSet factSet=currentRule.getFactSet();
+        FactSet factSet = currentRule.getFactSet();
         if (factSet == null) {
           FactSet newFactSet = RuleModelFactory.eINSTANCE.createFactSet();
           currentRule.setFactSet(newFactSet);
@@ -358,28 +373,32 @@ public class OverviewPage extends DrarchFormPage {
         factsTemplateText.add(factText);
         spart.markDirty();
       }
-      public void widgetDefaultSelected(SelectionEvent e) {}
+
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
     });
-    deleteFactButton =toolkit.createButton(factsSectionClient, "Remove", 
+    deleteFactButton = toolkit.createButton(factsSectionClient, "Remove",
         SWT.NONE);
     deleteFactButton.setEnabled(false);
-    deleteFactButton.addSelectionListener(new SelectionListener(){
+    deleteFactButton.addSelectionListener(new SelectionListener() {
       public void widgetSelected(SelectionEvent e) {
-        String[] selectedFact=factsTemplateText.getSelection();
+        String[] selectedFact = factsTemplateText.getSelection();
         for (int i = 0; i < selectedFact.length; i++) {
           currentRule.getFactSet().getFactTemplates().remove(i);
           factsTemplateText.remove(i);
         }
         spart.markDirty();
       }
-      public void widgetDefaultSelected(SelectionEvent e) {}
+
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
     });
     subSection.setClient(factsSectionClient);
     section.setClient(ruleSectionClient);
 
     // Rules information.
-    section = toolkit.createSection(form.getBody(), Section.DESCRIPTION | 
-        Section.EXPANDED | Section.FOCUS_TITLE);
+    section = toolkit.createSection(form.getBody(), Section.DESCRIPTION
+        | Section.EXPANDED | Section.FOCUS_TITLE);
     section.setToolTipText("Show the availables rules in the selected file");
     gd = new GridData(GridData.FILL_BOTH);
     gd.widthHint = 200;
@@ -392,22 +411,23 @@ public class OverviewPage extends DrarchFormPage {
     });
     section.setText("Rules Information");
     toolkit.createCompositeSeparator(section);
-    section.setDescription("This section describes general information about this Rules file:");
+    section
+        .setDescription("This section describes general information about this Rules file:");
     sectionClient = toolkit.createComposite(section);
-    GridLayout rulesClientGridLayout = new GridLayout(3,true);
+    GridLayout rulesClientGridLayout = new GridLayout(3, true);
     sectionClient.setLayout(rulesClientGridLayout);
     spart = new SectionPart(section);
     managedForm.addPart(spart);
     label = toolkit.createLabel(sectionClient, "Rules Available:");
     gd = new GridData(GridData.BEGINNING);
-    gd.horizontalSpan=3;
+    gd.horizontalSpan = 3;
     label.setLayoutData(gd);
     spart = new SectionPart(section);
     managedForm.addPart(spart);
     Tree tree = toolkit.createTree(sectionClient, SWT.BORDER | SWT.V_SCROLL);
     gd = new GridData(GridData.FILL_BOTH);
-    gd.horizontalSpan=2;
-    gd.verticalSpan=3;
+    gd.horizontalSpan = 2;
+    gd.verticalSpan = 3;
     tree.setLayoutData(gd);
     treeViewer = new TreeViewer(tree);
     treeViewer.setUseHashlookup(true);
@@ -419,11 +439,11 @@ public class OverviewPage extends DrarchFormPage {
       public void selectionChanged(SelectionChangedEvent event) {
         IStructuredSelection selection = (IStructuredSelection) event
             .getSelection();
-        TreeObject node=(TreeObject)selection.getFirstElement();
-        if (node!=null) {
-          if ((!node.getName().equals("Rules"))&&(node.getName().startsWith(
-              "Rule :"))) {	
-            currentRule=(Rule)node.getValue();
+        TreeObject node = (TreeObject) selection.getFirstElement();
+        if (node != null) {
+          if ((!node.getName().equals("Rules"))
+              && (node.getName().startsWith("Rule :"))) {
+            currentRule = (Rule) node.getValue();
             setValues();
           }
         }
@@ -434,16 +454,18 @@ public class OverviewPage extends DrarchFormPage {
     gd = new GridData(GridData.CENTER);
     addRule.setLayoutData(gd);
     addRule.addSelectionListener(new SelectionListener() {
-      public void widgetDefaultSelected(SelectionEvent e) {}
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
+
       public void widgetSelected(SelectionEvent e) {
         RuleDescriptionDialog descriptionDialog = new RuleDescriptionDialog();
         descriptionDialog.open();
-        String description=descriptionDialog.getdescription();
+        String description = descriptionDialog.getdescription();
         if (!description.equals("")) {
-          Rule newRule=RuleModelFactory.eINSTANCE.createRule();
+          Rule newRule = RuleModelFactory.eINSTANCE.createRule();
           newRule.setDescription(description);
           DrarchFileModel curr_model = getModel();
-          if (curr_model != null){
+          if (curr_model != null) {
             getModel().getRules().add(newRule);
             treeViewer.setInput(getRoot());
             spart.markDirty();
@@ -451,34 +473,39 @@ public class OverviewPage extends DrarchFormPage {
         }
       }
     });
-    Button editRule = toolkit.createButton(sectionClient, "Edit Rule", 
-        SWT.PUSH);
+    Button editRule = toolkit
+        .createButton(sectionClient, "Edit Rule", SWT.PUSH);
     gd = new GridData(GridData.CENTER);
     editRule.setLayoutData(gd);
-    editRule.addSelectionListener(new SelectionListener(){
+    editRule.addSelectionListener(new SelectionListener() {
       public void widgetSelected(SelectionEvent e) {
         ruleSectionClient.setEnabled(true);
       }
-      public void widgetDefaultSelected(SelectionEvent e) {}
+
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
     });
 
-    //Remove button.
-    Button removeRule = toolkit.createButton(sectionClient, "Remove ", 
-        SWT.PUSH);
+    // Remove button.
+    Button removeRule = toolkit
+        .createButton(sectionClient, "Remove ", SWT.PUSH);
     gd = new GridData(GridData.CENTER);
     removeRule.setLayoutData(gd);
     removeRule.addSelectionListener(new SelectionListener() {
-      public void widgetDefaultSelected(SelectionEvent e) {}
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
+
       public void widgetSelected(SelectionEvent e) {
-        IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
+        IStructuredSelection selection = (IStructuredSelection) treeViewer
+            .getSelection();
         TreeObject node = (TreeObject) selection.getFirstElement();
-        if(node.getValue() instanceof Rule){
+        if (node.getValue() instanceof Rule) {
           Rule currentRule = (Rule) node.getValue();
           getModel().getRules().remove(currentRule);
           treeViewer.setInput(getRoot());
           spart.markDirty();
         } else {
-          MessageDialog.openError(form.getShell(), "Error: Deleting Rule", 
+          MessageDialog.openError(form.getShell(), "Error: Deleting Rule",
               "Select a rule please");
         }
       }
@@ -489,12 +516,12 @@ public class OverviewPage extends DrarchFormPage {
   protected void setValues() {
     clearValues();
     Query query = currentRule.getQuery();
-    if (query!=null){
+    if (query != null) {
       queryText.setText(currentRule.getQuery().getQueryString());
       List<Var> varList = query.getChosenVars();
       if (varList != null) {
         for (Iterator<Var> varI = currentRule.getQuery().getChosenVars()
-            .iterator(); varI.hasNext(); ) {
+            .iterator(); varI.hasNext();) {
           varsText.add(varI.next().getVarText());
         }
       }
@@ -504,14 +531,14 @@ public class OverviewPage extends DrarchFormPage {
     if (currentRuleFactSet != null) {
       List<Fact> factList = currentRule.getFactSet().getFactTemplates();
       if (factList != null) {
-        for (Iterator<Fact> factI=factList.iterator(); factI.hasNext(); ) {
+        for (Iterator<Fact> factI = factList.iterator(); factI.hasNext();) {
           factsTemplateText.add(factI.next().getFactText());
         }
       }
     }
   }
-  
-  private void clearValues(){
+
+  private void clearValues() {
     queryText.setText("".trim());
     String[] values = {};
     varsText.setItems(values);
@@ -522,12 +549,12 @@ public class OverviewPage extends DrarchFormPage {
   private TreeParent getRoot() {
     TreeParent root = new TreeParent("");
     if (getModel() != null) {
-      for (Iterator<Rule> i = getModel().getRules().iterator(); i.hasNext(); ) {
+      for (Iterator<Rule> i = getModel().getRules().iterator(); i.hasNext();) {
         int index = 0;
         Rule r = i.next();
         TreeParent node = new TreeParent("Rule : " + index++);
         node.setValue(r);
-        TreeObject descriptionNode=new TreeObject(r.getDescription());
+        TreeObject descriptionNode = new TreeObject(r.getDescription());
         node.addChild(descriptionNode);
         root.addChild(node);
       }

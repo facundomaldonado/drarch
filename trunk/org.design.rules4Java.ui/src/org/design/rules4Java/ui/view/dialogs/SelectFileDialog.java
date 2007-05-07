@@ -25,7 +25,7 @@ public class SelectFileDialog extends Dialog {
     Composite comp = new Composite(parent, SWT.NONE);
     GridLayout layout = new GridLayout(2, false);
     comp.setLayout(layout);
-    Label l=new Label(comp, SWT.LEFT);
+    Label l = new Label(comp, SWT.LEFT);
     l.setText("File Name : ");
     fileNameText = new Text(comp, SWT.BORDER);
     GridData gd = new GridData();
