@@ -7,15 +7,16 @@ public class FileSelectionAction extends Action {
 
   private String filePath;
 
-  public FileSelectionAction() {}
+  public FileSelectionAction() {
+  }
 
   public void run() {
     FileNameDialog dialog = new FileNameDialog();
     dialog.open();
-    filePath= dialog.getFileName();
+    filePath = dialog.getFileName();
   }
 
   public String getfileName() {
-    return  filePath;
+    return filePath;
   }
 }

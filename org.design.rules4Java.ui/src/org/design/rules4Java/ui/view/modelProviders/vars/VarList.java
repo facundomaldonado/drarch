@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Set;
 
 public class VarList {
-  private List<Var> vars = new ArrayList<Var>(); 
+  private List<Var> vars = new ArrayList<Var>();
   private Set<IVarListViewer> changeListeners = new HashSet<IVarListViewer>();
 
-  public VarList(){
+  public VarList() {
   }
 
-  public VarList(List<Var> newVars){
+  public VarList(List<Var> newVars) {
     vars = newVars;
   }
 
@@ -30,8 +30,8 @@ public class VarList {
 
   public void removeVar(Var v) {
     vars.remove(v);
-    for (Iterator<IVarListViewer> iterator = changeListeners.iterator(); 
-        iterator.hasNext(); ) {
+    for (Iterator<IVarListViewer> iterator = changeListeners.iterator(); iterator
+        .hasNext();) {
       iterator.next().removeVar(v);
     }
   }
@@ -44,7 +44,7 @@ public class VarList {
     changeListeners.add(viewer);
   }
 
-  public int size(){
+  public int size() {
     return vars.size();
   }
 }

@@ -6,9 +6,10 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.PlatformUI;
 
 public class LoadRuleFileAction extends Action {
-  private String fileName="";
+  private String fileName = "";
 
-  public LoadRuleFileAction() {}
+  public LoadRuleFileAction() {
+  }
 
   public void run() {
     FileDialog dialog = new FileDialog(PlatformUI.getWorkbench()

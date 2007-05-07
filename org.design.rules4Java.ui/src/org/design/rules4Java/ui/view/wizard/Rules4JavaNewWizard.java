@@ -37,7 +37,7 @@ public class Rules4JavaNewWizard extends Wizard implements INewWizard {
   private Rules4JavaNewWizardPage page;
   private ISelection selection;
 
-  public Rules4JavaNewWizard(){
+  public Rules4JavaNewWizard() {
     super();
     setNeedsProgressMonitor(true);
     setWindowTitle("New Drarch File Wizard");
@@ -56,8 +56,8 @@ public class Rules4JavaNewWizard extends Wizard implements INewWizard {
     final String containerName = page.getContainerName();
     final String fileName = page.getFileName();
     IRunnableWithProgress op = new IRunnableWithProgress() {
-      public void run(IProgressMonitor monitor) throws 
-          InvocationTargetException {
+      public void run(IProgressMonitor monitor)
+          throws InvocationTargetException {
         try {
           doFinish(containerName, fileName, monitor);
         } catch (CoreException e) {
@@ -80,7 +80,7 @@ public class Rules4JavaNewWizard extends Wizard implements INewWizard {
     return true;
   }
 
-  private void doFinish(String containerName, String fileName, 
+  private void doFinish(String containerName, String fileName,
       IProgressMonitor monitor) throws CoreException {
     // Create a sample file.
     monitor.beginTask("beginTaskName" + fileName, 2);
@@ -98,9 +98,9 @@ public class Rules4JavaNewWizard extends Wizard implements INewWizard {
       } else {
         file.create(stream, true, monitor);
       }
-      stream.close();			
+      stream.close();
     } catch (IOException e) {
-      //TODO: tratar esta exception.
+      // TODO: tratar esta exception.
     }
     monitor.worked(1);
     getShell().getDisplay().asyncExec(new Runnable() {
@@ -135,10 +135,10 @@ public class Rules4JavaNewWizard extends Wizard implements INewWizard {
   public void init(IWorkbench workbench, IStructuredSelection selection) {
     this.selection = selection;
   }
-  
+
   private void throwCoreException(String message) throws CoreException {
-    IStatus status = new Status(IStatus.ERROR, "drarch", IStatus.OK, 
-        message, null);
+    IStatus status = new Status(IStatus.ERROR, "drarch", IStatus.OK, message,
+        null);
     throw new CoreException(status);
   }
 }

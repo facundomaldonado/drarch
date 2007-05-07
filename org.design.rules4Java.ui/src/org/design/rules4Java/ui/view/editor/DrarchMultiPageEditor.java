@@ -28,15 +28,15 @@ import java.util.Map;
 public class DrarchMultiPageEditor extends MultiPageEditorPart implements
     Adapter {
 
-  private static final Map SAVE_OPTIONS = Collections.singletonMap(XMLResource
-      .OPTION_ENCODING, "ISO-8859-15");
+  private static final Map SAVE_OPTIONS = Collections.singletonMap(
+      XMLResource.OPTION_ENCODING, "ISO-8859-15");
   private boolean dirty = false;
   private DrarchMultipagePropertiesEditor properties;
   private DrarchFileModel fileModel;
   private ResourceSet resourceSet = new ResourceSetImpl();
   private Resource resource;
 
-  public DrarchMultiPageEditor(){
+  public DrarchMultiPageEditor() {
     super();
   }
 
@@ -49,22 +49,21 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
   }
 
   /**
-   * Returns the active nested editor if there is one.
-   * Subclasses should not override this method.
+   * Returns the active nested editor if there is one. Subclasses should not
+   * override this method.
    * 
    * @return the active nested editor, or {code null} if none
    */
   public IEditorPart getActiveEditor() {
     int index = getActivePage();
-    if (index != -1)
-      return getEditor(index);
+    if (index != -1) return getEditor(index);
     return null;
-  }    
+  }
 
   @Override
   public int getActivePage() {
     return super.getActivePage();
-  }	
+  }
 
   @Override
   public void setActivePage(int pageIndex) {
@@ -72,7 +71,7 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
   }
 
   /**
-   * Creates page 0 of the multi-page editor, which is a flabot multipage 
+   * Creates page 0 of the multi-page editor, which is a flabot multipage
    * properties editor.
    */
   void createPage0() {
@@ -81,8 +80,8 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
       int index = addPage(properties, getEditorInput());
       setPageText(index, "propertiesTabName");
     } catch (PartInitException e) {
-      ErrorDialog.openError(getSite().getShell(), "error Creating Nested " +
-            "Editor Dialog Name", null, e.getStatus());
+      ErrorDialog.openError(getSite().getShell(), "error Creating Nested "
+          + "Editor Dialog Name", null, e.getStatus());
     }
   }
 
@@ -111,19 +110,20 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
   }
 
   @Override
-  public void doSaveAs() {}
+  public void doSaveAs() {
+  }
 
   @Override
   public boolean isSaveAsAllowed() {
     return true;
   }
 
-  public void notifyChanged(Notification arg0) {}
+  public void notifyChanged(Notification arg0) {
+  }
 
   public void init(IEditorSite site, IEditorInput editorInput)
       throws PartInitException {
-    if (!(editorInput instanceof IFileEditorInput ||
-        editorInput instanceof IPathEditorInput))
+    if (!(editorInput instanceof IFileEditorInput || editorInput instanceof IPathEditorInput))
       throw new PartInitException("invalidInput");
     super.init(site, editorInput);
     fileModel.eAdapters().add(this);
@@ -132,15 +132,15 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
   protected void setInput(IEditorInput input) {
     super.setInput(input);
     URI uri = getURI(input);
-    
+
     /*
-     * Initialize packages so their factories are registered and the 
-     * editorModel is loaded correctly.
+     * Initialize packages so their factories are registered and the editorModel
+     * is loaded correctly.
      */
     RuleModelPackage mpp = RuleModelPackage.eINSTANCE;
 
     /*
-     * Modify the load options so that files are loaded even without the 
+     * Modify the load options so that files are loaded even without the
      * required EMF packages.
      */
     resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,
@@ -152,6 +152,7 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
       fileModel = (DrarchFileModel) resource.getContents().get(0);
     }
   }
+
   /**
    * Extract the path from the given input.
    * 
@@ -171,7 +172,7 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
     }
     throw new RuntimeException("invalidInput");
   }
-  
+
   public DrarchFileModel getModel() {
     return fileModel;
   }
@@ -184,7 +185,8 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
     return null;
   }
 
-  public void setTarget(Notifier arg0) {}
+  public void setTarget(Notifier arg0) {
+  }
 
   public boolean isAdapterForType(Object arg0) {
     return false;

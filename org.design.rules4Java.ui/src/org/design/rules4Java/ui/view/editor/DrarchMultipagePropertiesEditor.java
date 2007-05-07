@@ -19,11 +19,11 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
   private OverviewPage overviewPage;
   private TextEditor textEditor;
 
-  public DrarchMultipagePropertiesEditor(final DrarchFileModel model){
+  public DrarchMultipagePropertiesEditor(final DrarchFileModel model) {
     this.model = model;
   }
 
-  public DrarchFileModel getModel(){
+  public DrarchFileModel getModel() {
     return model;
   }
 
@@ -35,8 +35,7 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
 
   public IEditorPart getActiveEditor() {
     IEditorPart editor = super.getActiveEditor();
-    if (editor == null)
-      editor = getTextEditor();
+    if (editor == null) editor = getTextEditor();
     return editor;
   }
 
@@ -46,11 +45,11 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
   private void addRawTextPage() {
     try {
       textEditor = new TextEditor();
-      final int index = addPage(getTextEditor(), getEditorInput());			
+      final int index = addPage(getTextEditor(), getEditorInput());
       setPageText(index, "Raw XML");
     } catch (final PartInitException e) {
-      ErrorDialog.openError(getSite().getShell(), "Error creating nested " +
-          "text editor page",null,e.getStatus());
+      ErrorDialog.openError(getSite().getShell(), "Error creating nested "
+          + "text editor page", null, e.getStatus());
     }
   }
 
@@ -62,8 +61,8 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
       overviewPage = new OverviewPage(this, getModel());
       addPage(overviewPage);
     } catch (final PartInitException e) {
-      ErrorDialog.openError(getSite().getShell(), "Error creating nested " +
-          "overview page", null, e.getStatus());
+      ErrorDialog.openError(getSite().getShell(), "Error creating nested "
+          + "overview page", null, e.getStatus());
     }
   }
 
@@ -78,7 +77,8 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
   }
 
   @Override
-  public void doSaveAs() {}
+  public void doSaveAs() {
+  }
 
   @Override
   public boolean isSaveAsAllowed() {
@@ -99,8 +99,8 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
     return textEditor;
   }
 
-  private static class FormEditorSelectionProvider extends 
-  MultiPageSelectionProvider {
+  private static class FormEditorSelectionProvider extends
+      MultiPageSelectionProvider {
     private ISelection globalSelection;
 
     /**
@@ -112,10 +112,10 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
 
     public ISelection getSelection() {
       final IEditorPart activeEditor = ((FormEditor) getMultiPageEditor())
-      .getActiveEditor();
+          .getActiveEditor();
       if (activeEditor != null) {
         final ISelectionProvider selectionProvider = activeEditor.getSite()
-        .getSelectionProvider();
+            .getSelectionProvider();
         if (selectionProvider != null) {
           return selectionProvider.getSelection();
         }
@@ -125,10 +125,10 @@ public class DrarchMultipagePropertiesEditor extends FormEditor {
 
     public void setSelection(final ISelection selection) {
       final IEditorPart activeEditor = ((FormEditor) getMultiPageEditor())
-      .getActiveEditor();
+          .getActiveEditor();
       if (activeEditor != null) {
         final ISelectionProvider selectionProvider = activeEditor.getSite()
-        .getSelectionProvider();
+            .getSelectionProvider();
         if (selectionProvider != null) {
           selectionProvider.setSelection(selection);
         }

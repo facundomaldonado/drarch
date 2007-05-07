@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
 
 public class FileNameDialog extends Dialog {
-  private String fileName="default_name.flabot";
+  private String fileName = "default_name.flabot";
   private Text fileNameText;
   private Composite composite1;
 
@@ -36,8 +36,8 @@ public class FileNameDialog extends Dialog {
   protected void createButtonsForButtonBar(Composite parent) {
     createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL,
         true);
-    createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants
-        .CANCEL_LABEL, false);
+    createButton(parent, IDialogConstants.CANCEL_ID,
+        IDialogConstants.CANCEL_LABEL, false);
   }
 
   protected Control createDialogArea(Composite parent) {
@@ -53,7 +53,7 @@ public class FileNameDialog extends Dialog {
     textLData.horizontalAlignment = GridData.FILL;
     textLData.verticalAlignment = GridData.FILL;
     textLData.horizontalSpan = 3;
-    textLData.verticalSpan= 2;
+    textLData.verticalSpan = 2;
     fileNameText = new Text(composite1, SWT.NONE | SWT.BORDER);
     fileNameText.setText(fileName);
     fileNameText.setLayoutData(textLData);

@@ -55,15 +55,14 @@ public class QueryVarsDialog extends Dialog {
 
   protected void configureShell(Shell shell) {
     super.configureShell(shell);
-    if (title != null)
-      shell.setText(title);
+    if (title != null) shell.setText(title);
   }
 
   protected void createButtonsForButtonBar(Composite parent) {
-    createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, 
+    createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL,
         true);
-    createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants
-        .CANCEL_LABEL, false);
+    createButton(parent, IDialogConstants.CANCEL_ID,
+        IDialogConstants.CANCEL_LABEL, false);
   }
 
   protected Control createDialogArea(Composite parent) {
@@ -80,24 +79,25 @@ public class QueryVarsDialog extends Dialog {
     textLData.verticalAlignment = GridData.FILL;
     textLData.horizontalSpan = 2;
     textLData.verticalSpan = 10;
-    Table table= new Table(composite1,SWT.BORDER );
+    Table table = new Table(composite1, SWT.BORDER);
     table.setLayoutData(textLData);
-    viewer= new TableViewer(table);
-    //	Create the cell editors
+    viewer = new TableViewer(table);
+    // Create the cell editors
     CellEditor[] editors = new CellEditor[1];
-    //Column 1 : Completed (Checkbox)
+    // Column 1 : Completed (Checkbox)
     editors[0] = new CheckboxCellEditor(table);
     viewer.setCellEditors(editors);
-    viewer.setContentProvider(new VarListContentProvider(varList,viewer));
+    viewer.setContentProvider(new VarListContentProvider(varList, viewer));
     viewer.setLabelProvider(new VarListLabelProvider());
-    viewer.addSelectionChangedListener(new ISelectionChangedListener(){
+    viewer.addSelectionChangedListener(new ISelectionChangedListener() {
       public void selectionChanged(SelectionChangedEvent event) {
-        IStructuredSelection selection = (IStructuredSelection) event.getSelection();
-        Var var=(Var)selection.getFirstElement();
-        if(!(var==null)){
+        IStructuredSelection selection = (IStructuredSelection) event
+            .getSelection();
+        Var var = (Var) selection.getFirstElement();
+        if (!(var == null)) {
           System.out.println(viewer.isCellEditorActive());
           var.setSelected(!var.isSelected());
-          viewer.update(var,null);
+          viewer.update(var, null);
           viewer.refresh();
         }
       }
@@ -116,54 +116,55 @@ public class QueryVarsDialog extends Dialog {
         viewer.setInput(varList);
         viewer.refresh();
       }
-      public void widgetDefaultSelected(SelectionEvent e) {}
+
+      public void widgetDefaultSelected(SelectionEvent e) {
+      }
     });
     return parent;
   }
 
   protected void getVarsFromQuery() {
-    String queryAux=query;
-    char[] querya=queryAux.toCharArray();
-    List vars=new ArrayList();
-    int index=0;
-    int ini=0;
-    int end=query.length();
-    try{
-      while (end>index){
-        ini=queryAux.indexOf("?");
-        index=ini;
-        while ((!(query.charAt(index) == ',') &&
-            !(query.charAt(index)==')') &&
-            !(query.charAt(index)==' ')) && 
-            (index<=end)  ){
+    String queryAux = query;
+    char[] querya = queryAux.toCharArray();
+    List vars = new ArrayList();
+    int index = 0;
+    int ini = 0;
+    int end = query.length();
+    try {
+      while (end > index) {
+        ini = queryAux.indexOf("?");
+        index = ini;
+        while ((!(query.charAt(index) == ',') && !(query.charAt(index) == ')') && !(query
+            .charAt(index) == ' '))
+            && (index <= end)) {
           index++;
         }
-        Var var=new Var(query.substring(ini,index));
-        if (!vars.contains(var.getVar())){
+        Var var = new Var(query.substring(ini, index));
+        if (!vars.contains(var.getVar())) {
           vars.add(var.getVar());
           varList.addVar(var);
         }
-        querya[ini]='.';
+        querya[ini] = '.';
         index++;
-        queryAux=new String(querya);				
-      }}
-    catch (Exception e) {
-      String[] labels={"ok"};
-      MessageDialog errorDialog= new MessageDialog(
-          PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),"Query Declaration Error",null,"Review query declaration",MessageDialog.ERROR,labels,0);
+        queryAux = new String(querya);
+      }
+    } catch (Exception e) {
+      String[] labels = {"ok"};
+      MessageDialog errorDialog = new MessageDialog(PlatformUI.getWorkbench()
+          .getActiveWorkbenchWindow().getShell(), "Query Declaration Error",
+          null, "Review query declaration", MessageDialog.ERROR, labels, 0);
       errorDialog.open();
     }
   }
 
-  private void doFinish(){
-    for (Iterator<Var> i = varList.getVars().iterator(); i.hasNext(); ) {
-      Var var= i.next();
-      if (var.isSelected())
-        choosenVars.add(var.getVar());
+  private void doFinish() {
+    for (Iterator<Var> i = varList.getVars().iterator(); i.hasNext();) {
+      Var var = i.next();
+      if (var.isSelected()) choosenVars.add(var.getVar());
     }
   }
 
-  public List<String> getVars(){
+  public List<String> getVars() {
     return choosenVars;
   }
 }

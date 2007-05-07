@@ -17,7 +17,7 @@ public abstract class DrarchFormPage extends FormPage {
    * Provides access to the drarch file editorModel.
    * 
    * @return Returns the {@code DrarchFileModel}.
-   */	
+   */
   public DrarchFileModel getModel() {
     return model;
   }
