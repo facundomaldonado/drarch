@@ -17,10 +17,11 @@ public interface Rule extends EObject {
   Query getQuery();
 
   /**
-   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getQuery <em>Query</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Query</em>' containment reference.
+   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getQuery <em>Query</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
+   * @param value the new value of the '<em>Query</em>' containment
+   *        reference.
    * @see #getQuery()
    * @generated
    */
@@ -32,25 +33,27 @@ public interface Rule extends EObject {
   FactSet getFactSet();
 
   /**
-   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getFactSet <em>Fact Set</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fact Set</em>' containment reference.
+   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getFactSet <em>Fact Set</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
+   * @param value the new value of the '<em>Fact Set</em>' containment
+   *        reference.
    * @see #getFactSet()
    * @generated
    */
   void setFactSet(FactSet value);
 
   /**
-   *  @model
+   * @model
    */
   String getSuggestTemplate();
 
   /**
-   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getSuggestTemplate <em>Suggest Template</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Suggest Template</em>' attribute.
+   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getSuggestTemplate <em>Suggest Template</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
+   * @param value the new value of the '<em>Suggest Template</em>'
+   *        attribute.
    * @see #getSuggestTemplate()
    * @generated
    */
@@ -61,11 +64,11 @@ public interface Rule extends EObject {
    * @return description of the rule
    */
   String getDescription();
-  
+
   /**
-   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Rule#getDescription <em>Description</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Description</em>' attribute.
    * @see #getDescription()
    * @generated

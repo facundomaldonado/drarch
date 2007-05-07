@@ -13,17 +13,18 @@ public interface KnowledgeBase {
    * @param predicate
    */
   void addFact(String predicate);
-  
+
   /**
    * @param predicate
    * @return true if predicate exist in the data base
-   * @throws Exception 
+   * @throws Exception
    */
   boolean exist(String predicate) throws Exception;
-  
+
   /**
    * @param predicate
    */
   void removeFact(String predicate);
+
   void generateFile();
 }

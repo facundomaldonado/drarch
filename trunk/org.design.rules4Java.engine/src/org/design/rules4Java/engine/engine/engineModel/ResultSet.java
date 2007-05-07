@@ -10,6 +10,7 @@ public interface ResultSet {
    * @retur true if has mode elements
    */
   boolean hasMoreElements();
+
   /**
    * @return next result
    */

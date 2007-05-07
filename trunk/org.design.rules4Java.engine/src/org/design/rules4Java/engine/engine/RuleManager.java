@@ -21,7 +21,7 @@ public class RuleManager {
   private FactsGenerator factsGenerator = new FactsGenerator();
   private static RuleManager instance;
 
-  public RuleManager(){
+  public RuleManager() {
     super();
   }
 
@@ -36,7 +36,7 @@ public class RuleManager {
    * @param rule
    * @return the result of evaluate that rule
    */
-  ResultSet evaluateRule(Rule rule){
+  ResultSet evaluateRule(Rule rule) {
     ResultSet queryResult = queryEngine.evaluateQuery(rule.getQuery());
     return queryResult;
   }
@@ -47,20 +47,20 @@ public class RuleManager {
    * @return a list with the parsed suggests
    */
   public List<Suggest> getSuggests(Rule rule, ResultSet queryResult) {
-    List<Var> vars=rule.getQuery().getChosenVars();
-    List<Suggest> suggests = suggestMaker.getSuggests(queryResult, 
-        rule.getSuggestTemplate(), vars);
+    List<Var> vars = rule.getQuery().getChosenVars();
+    List<Suggest> suggests = suggestMaker.getSuggests(queryResult, rule
+        .getSuggestTemplate(), vars);
     return suggests;
   }
 
   /**
    * @param rule
    * @param suggests
-   * @return given the suggest list return  a list of Facts
+   * @return given the suggest list return a list of Facts
    */
-  List<FactSet> getFacts(Rule rule, List<Suggest> suggests){
+  List<FactSet> getFacts(Rule rule, List<Suggest> suggests) {
     List<Var> vars = rule.getQuery().getChosenVars();
-    List<FactSet> facts = factsGenerator.getFacts(suggests, rule.getFactSet(), 
+    List<FactSet> facts = factsGenerator.getFacts(suggests, rule.getFactSet(),
         vars);
     return facts;
   }
@@ -68,7 +68,7 @@ public class RuleManager {
   /**
    * @return query engine
    */
-  QueryEngine getQueryEngine(){
+  QueryEngine getQueryEngine() {
     return queryEngine;
   }
 

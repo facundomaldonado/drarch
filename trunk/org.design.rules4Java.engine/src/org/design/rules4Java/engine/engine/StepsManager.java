@@ -20,9 +20,9 @@ public abstract class StepsManager {
   private int currentIndexStep;
   private StepAction currentStep;
   protected static StepsManager instance;
-  
+
   protected abstract List<Rule> getDefaultList();
-  
+
   protected abstract StepAction createStepAction(Rule rule);
 
   protected StepsManager() {
@@ -49,7 +49,7 @@ public abstract class StepsManager {
     }
     if (hasBackStep()) {
       StepAction backStep = steps.get(currentIndexStep - 1);
-      currentStep.loadFacts(backStep.getPublishedFacts());		
+      currentStep.loadFacts(backStep.getPublishedFacts());
     } else {
       currentStep.loadFacts(new LinkedList<FactSet>());
     }
@@ -66,7 +66,7 @@ public abstract class StepsManager {
 
   public void loadStepsfromFile() {
     List<Rule> rules = getDefaultList();
-    for (Iterator<Rule> iter = rules.iterator(); iter.hasNext(); ) {
+    for (Iterator<Rule> iter = rules.iterator(); iter.hasNext();) {
       Rule rule = iter.next();
       StepAction step = createStepAction(rule);
       steps.add(step);

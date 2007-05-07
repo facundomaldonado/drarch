@@ -25,7 +25,7 @@ public class ParseRuleFile {
   private Resource resource;
 
   public ParseRuleFile(String path) {
-    this.path=path;
+    this.path = path;
   }
 
   public void parseFile() {
@@ -33,7 +33,7 @@ public class ParseRuleFile {
     resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,
         Boolean.TRUE);
     resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
-        Resource.Factory.Registry.DEFAULT_EXTENSION, 
+        Resource.Factory.Registry.DEFAULT_EXTENSION,
         new XMIResourceFactoryImpl());
     URI uri = URI.createFileURI(new File(path.toString()).getAbsolutePath());
     if (resource == null) {

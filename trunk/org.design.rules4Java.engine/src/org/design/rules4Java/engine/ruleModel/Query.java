@@ -9,17 +9,18 @@ import org.eclipse.emf.ecore.EObject;
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public interface Query extends EObject{
+public interface Query extends EObject {
 
   /**
    * @model
-   * @return query string 
+   * @return query string
    */
   String getQueryString();
+
   /**
-   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Query#getQueryString <em>Query String</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * Sets the value of the '{@link org.design.rules4Java.engine.ruleModel.Query#getQueryString <em>Query String</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Query String</em>' attribute.
    * @see #getQueryString()
    * @generated
