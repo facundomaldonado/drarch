@@ -9,7 +9,7 @@ import org.osgi.framework.BundleContext;
  */
 public class DiagramPlugin extends AbstractUIPlugin {
 
-  //The shared instance.
+  // The shared instance.
   private static DiagramPlugin plugin;
 
   /**
@@ -42,9 +42,9 @@ public class DiagramPlugin extends AbstractUIPlugin {
   }
 
   /**
-   * Returns an image descriptor for the image file at the given
-   * plug-in relative path.
-   *
+   * Returns an image descriptor for the image file at the given plug-in
+   * relative path.
+   * 
    * @param path the path
    * @return the image descriptor
    */

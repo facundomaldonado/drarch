@@ -11,7 +11,7 @@ public class Relationship {
   private Component target;
   private String stereotype;
 
-  public Relationship(){
+  public Relationship() {
     this.name = "noname";
     this.stereotype = "";
   }
@@ -23,19 +23,19 @@ public class Relationship {
   public void setSource(Component source) {
     this.source = source;
   }
-  
+
   public Component getTarget() {
     return target;
   }
-  
+
   public void setTarget(Component target) {
     this.target = target;
   }
-  
+
   public String getName() {
     return name;
   }
-  
+
   public void setName(String name) {
     this.name = name;
   }
@@ -48,7 +48,7 @@ public class Relationship {
     this.stereotype = stereotype;
   }
 
-  public boolean hasSteroitype(){
+  public boolean hasSteroitype() {
     if (!stereotype.equalsIgnoreCase("")) {
       return false;
     }

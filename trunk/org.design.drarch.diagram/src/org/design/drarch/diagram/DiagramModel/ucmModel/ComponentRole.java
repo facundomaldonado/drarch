@@ -10,10 +10,11 @@ import org.eclipse.emf.ecore.EObject;
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public interface ComponentRole extends EObject{
+public interface ComponentRole extends EObject {
 
   /**
    * Nombre del Componente
+   * 
    * @model
    * @return The name of the ComponentRole.
    */
@@ -21,9 +22,9 @@ public interface ComponentRole extends EObject{
 
   /**
    * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
-   *    .ucmModel.ComponentRole#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * .ucmModel.ComponentRole#getName <em>Name</em>}' attribute. <!--
+   * begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Name</em>' attribute.
    * @see #getName()
    * @generated
@@ -33,17 +34,16 @@ public interface ComponentRole extends EObject{
   /**
    * Nombre de la clase que define la materializacion de la responsabilidad
    * 
-   * @model  
+   * @model
    * @return The name of the defined class.
    */
   String getDefinedClass();
 
   /**
    * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
-   *    .ucmModel.ComponentRole#getDefinedClass <em>Defined Class</em>}' 
-   *    attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * .ucmModel.ComponentRole#getDefinedClass <em>Defined Class</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Defined Class</em>' attribute.
    * @see #getDefinedClass()
    * @generated
@@ -52,6 +52,7 @@ public interface ComponentRole extends EObject{
 
   /**
    * Nombre del metodo que se ejecuto
+   * 
    * @model
    * @return The Begavior name.
    */
@@ -59,9 +60,9 @@ public interface ComponentRole extends EObject{
 
   /**
    * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
-   *    .ucmModel.ComponentRole#getBehaviorName <em>Behavior Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * .ucmModel.ComponentRole#getBehaviorName <em>Behavior Name</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Behavior Name</em>' attribute.
    * @see #getBehaviorName()
    * @generated
@@ -73,12 +74,12 @@ public interface ComponentRole extends EObject{
    * @return The Component.
    */
   Component getComponent();
-  
+
   /**
    * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
-   *    .ucmModel.ComponentRole#getComponent <em>Component</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * .ucmModel.ComponentRole#getComponent <em>Component</em>}' attribute.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Component</em>' attribute.
    * @see #getComponent()
    * @generated

@@ -51,8 +51,8 @@ public class LogSearcher {
   }
 
   public TagLogNode getRootNode() {
-    Tag rootTag=getRoot(log);
-    TagLogNode rootNode= LogModelFactory.eINSTANCE.createTagLogNode();
+    Tag rootTag = getRoot(log);
+    TagLogNode rootNode = LogModelFactory.eINSTANCE.createTagLogNode();
     rootNode.setName("ROOT");
     rootNode.setTag(rootTag);
     return rootNode;
@@ -63,52 +63,54 @@ public class LogSearcher {
     Tag log = TagUtil.createChildTag(root, "log", true);
     Tag contexts = TagUtil.createChildTag(root, "contexts", true);
     int index = 0;
-    for (Iterator iter = traceLog.getTags().iterator(); iter.hasNext(); ) {
+    for (Iterator iter = traceLog.getTags().iterator(); iter.hasNext();) {
       Tag tag = (Tag) iter.next();
       TagUtil.addChildTag(log, tag, Integer.toString(index++), false);
     }
-    for (Iterator iter = traceLog.getContexts().iterator(); iter.hasNext(); 
-    ) {
+    for (Iterator iter = traceLog.getContexts().iterator(); iter.hasNext();) {
       LogContext context = (LogContext) iter.next();
-      Tag contextTag=TagUtil.createChildTag(contexts, context.getName(), true);
-      int contextIndex=0;
+      Tag contextTag = TagUtil
+          .createChildTag(contexts, context.getName(), true);
+      int contextIndex = 0;
       for (Iterator tagIter = context.getTags().iterator(); tagIter.hasNext();) {
         Tag tag = (Tag) tagIter.next();
-        TagUtil.addChildTag(contextTag, tag, Integer.toString(contextIndex++), false);
+        TagUtil.addChildTag(contextTag, tag, Integer.toString(contextIndex++),
+            false);
       }
     }
-    //TagTreeModel.show("Trace log","trace log", root);
+    // TagTreeModel.show("Trace log","trace log", root);
     return root;
   }
 
   @SuppressWarnings("unchecked")
-  public void make(){
-    TagLogNode node= getRootNode();
-    LogNode[] nodesChild=node.getChildrens();
+  public void make() {
+    TagLogNode node = getRootNode();
+    LogNode[] nodesChild = node.getChildrens();
 
-    LogNode contexts=nodesChild[0];
+    LogNode contexts = nodesChild[0];
 
-    LogNode[] responsabilidades=((TagLogNode)contexts).getChildrens();
+    LogNode[] responsabilidades = ((TagLogNode) contexts).getChildrens();
     for (int i = 0; i < responsabilidades.length; i++) {
-      Responsibility r=LogModelFactory.eINSTANCE.createResponsibility();
-      String respName=((TagLogNode)responsabilidades[i]).getName();
+      Responsibility r = LogModelFactory.eINSTANCE.createResponsibility();
+      String respName = ((TagLogNode) responsabilidades[i]).getName();
       System.out.println(respName);
-      String rress=((org.isistan.flabot.coremodel.Responsibility)coreModel.getResponsibilities().get(i)).getName();
+      String rress = ((org.isistan.flabot.coremodel.Responsibility) coreModel
+          .getResponsibilities().get(i)).getName();
       System.out.println(rress);
       r.setName(rress);
 
-      LogNode[] executions=((TagLogNode)responsabilidades[i]).getChildrens();
-      for (int k = 0; k < executions.length; k++) {				
-        LogNode[] mater_info=((TagLogNode)executions[k]).getChildrens();
-        InnerTag m=LogModelFactory.eINSTANCE.createInnerTag();				
+      LogNode[] executions = ((TagLogNode) responsabilidades[i]).getChildrens();
+      for (int k = 0; k < executions.length; k++) {
+        LogNode[] mater_info = ((TagLogNode) executions[k]).getChildrens();
+        InnerTag m = LogModelFactory.eINSTANCE.createInnerTag();
         for (int j = 0; j < mater_info.length; j++) {
-          LogNode info=(LogNode)mater_info[j];
-          m.getTags().put(info.getName(),info);
+          LogNode info = (LogNode) mater_info[j];
+          m.getTags().put(info.getName(), info);
         }
         r.getExecutions().add(m);
       }
       responsibilities.add(r);
-    }		
+    }
   }
 
   public List getResponsibilities() {
@@ -116,12 +118,12 @@ public class LogSearcher {
     return responsibilities;
   }
 
-  public InnerTag getTagLogNodeInfo(TagLogNode logNode){
-    InnerTag infoInnerTag=LogModelFactory.eINSTANCE.createInnerTag();
-    LogNode[] childs=logNode.getChildrens();
+  public InnerTag getTagLogNodeInfo(TagLogNode logNode) {
+    InnerTag infoInnerTag = LogModelFactory.eINSTANCE.createInnerTag();
+    LogNode[] childs = logNode.getChildrens();
     for (int j = 0; j < childs.length; j++) {
-      LogNode info=(LogNode)childs[j];
-      infoInnerTag.getTags().put(info.getName(),info);
+      LogNode info = (LogNode) childs[j];
+      infoInnerTag.getTags().put(info.getName(), info);
     }
     return infoInnerTag;
   }
@@ -132,14 +134,14 @@ public class LogSearcher {
     public int compare(Object o1, Object o2) {
       if (o1 instanceof NodeInfo && o2 instanceof NodeInfo) {
         try {
-          int value1 = Integer.parseInt(((NodeInfo)o1).execId);
-          int value2 = Integer.parseInt(((NodeInfo)o2).execId);
+          int value1 = Integer.parseInt(((NodeInfo) o1).execId);
+          int value2 = Integer.parseInt(((NodeInfo) o2).execId);
           return value1 - value2;
+        } catch (NumberFormatException nfe) {
         }
-        catch (NumberFormatException nfe) {}
       }
       if (o1 instanceof Comparable && o2 instanceof Comparable) {
-        return ((Comparable)o1).compareTo((Comparable)o2);
+        return ((Comparable) o1).compareTo((Comparable) o2);
       }
       return 0;
     }

@@ -11,10 +11,16 @@ import org.design.drarch.diagram.DiagramModel.ucmModel.UCMModel;
 public interface IDiagramManager {
 
   public void createComponentDiagram(String name);
+
   public void createUCMDiagram(String name);
+
   public void createComponentDiagram(ComponentModel model);
+
   public void createUCMDiagram(UCMModel model);
+
   public Object getComponentsDiagram(String name);
+
   public Object getUCMDiagram(String name);
+
   public void update(boolean componentDiagram);
 }

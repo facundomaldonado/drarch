@@ -38,65 +38,64 @@ public class UCMModelGenerator {
   private Path path;
   private Path alternativePath;
   private List<ComponentRole> componentRoles = new ArrayList<ComponentRole>();
-  
+
   // componentName - list<className>.
-  private Map<String, List<String>> comp_class = new HashMap<String, 
-      List<String>>(); 
-  
+  private Map<String, List<String>> comp_class = new HashMap<String, List<String>>();
+
   // className - list<methodName>
-  private Map<String, List<String>> class_meth = new HashMap<String, 
-      List<String>>(); 
+  private Map<String, List<String>> class_meth = new HashMap<String, List<String>>();
 
   // responsabilityName, componentName.
   private Map<String, String> resp_comp = new HashMap<String, String>();
 
   @SuppressWarnings("unchecked")
-  public UCMModelGenerator(){
-    model= UcmModelFactory.eINSTANCE.createUCMModel();
-    alternativeModel= UcmModelFactory.eINSTANCE.createUCMModel();
-    queryEngine=Util.getInstance().getQueryEngine();
+  public UCMModelGenerator() {
+    model = UcmModelFactory.eINSTANCE.createUCMModel();
+    alternativeModel = UcmModelFactory.eINSTANCE.createUCMModel();
+    queryEngine = Util.getInstance().getQueryEngine();
   }
 
   private List<NodeInfo> getNodesFromBase() {
-    
+
     // Recupero las responsabilidades.
-    ResultSet responsibilityQueryResult=getResponsibilities();
-    while (responsibilityQueryResult.hasMoreElements()){
+    ResultSet responsibilityQueryResult = getResponsibilities();
+    while (responsibilityQueryResult.hasMoreElements()) {
       QueryResult r_result = responsibilityQueryResult.next();
-      String responsibilityName=r_result.getValueOfVar("?R");
+      String responsibilityName = r_result.getValueOfVar("?R");
       ResultSet executionQueryResult = getExecutions(responsibilityName);
-      while (executionQueryResult.hasMoreElements()){
-        QueryResult e_result=executionQueryResult.next();
-        String execId=e_result.getValueOfVar("?I");
+      while (executionQueryResult.hasMoreElements()) {
+        QueryResult e_result = executionQueryResult.next();
+        String execId = e_result.getValueOfVar("?I");
 
         // Para ese id recupero toda la info.
         String methodName = getExecutedMethod(execId);
 
         // Clase que lo declara.
         String className = getExecutedClass(execId);
-        NodeInfo node = new NodeInfo(responsibilityName, execId, className, 
+        NodeInfo node = new NodeInfo(responsibilityName, execId, className,
             methodName);
         sortedNodes.add(node);
       }
     }
     return sortedNodes;
   }
-  
+
   private void getComponentRoles() {
-    List<String> responsibilities=getResponsibilites();
-    for(Iterator<String> i = responsibilities.iterator(); i.hasNext(); ) {
+    List<String> responsibilities = getResponsibilites();
+    for (Iterator<String> i = responsibilities.iterator(); i.hasNext();) {
       String resp = i.next();
-      Component component= getComponent(resp);
-      if (component!=null){
-        ComponentRole compRole=UcmModelFactory.eINSTANCE.createComponentRole();
+      Component component = getComponent(resp);
+      if (component != null) {
+        ComponentRole compRole = UcmModelFactory.eINSTANCE
+            .createComponentRole();
         compRole.setComponent(component);
         compRole.setName(component.getName());
         componentRoles.add(compRole);
-        resp_comp.put(resp,compRole.getName());
+        resp_comp.put(resp, compRole.getName());
       }
     }
   }
-  
+
   private void getPathNodes(List<NodeInfo> nodes) {
     path = UcmModelFactory.eINSTANCE.createPath();
     alternativePath = UcmModelFactory.eINSTANCE.createPath();
@@ -106,17 +105,17 @@ public class UCMModelGenerator {
     PathNode startAlternativeNode = UcmModelFactory.eINSTANCE.createPathNode();
     startAlternativeNode.setResponsibilityName("Start");
     alternativePath.getStartNodes().add(startAlternativeNode);
-    PathNode endNode=UcmModelFactory.eINSTANCE.createPathNode();
+    PathNode endNode = UcmModelFactory.eINSTANCE.createPathNode();
     endNode.setResponsibilityName("End");
     path.getEndNodes().add(endNode);
-    PathNode endAlternativeNode=UcmModelFactory.eINSTANCE.createPathNode();
+    PathNode endAlternativeNode = UcmModelFactory.eINSTANCE.createPathNode();
     endAlternativeNode.setResponsibilityName("End");
     alternativePath.getEndNodes().add(endAlternativeNode);
 
     PathNode lastNode = startNode;
     PathNode lastAlternativeNode = startAlternativeNode;
 
-    for (Iterator<NodeInfo> i = nodes.iterator(); i.hasNext(); ) {
+    for (Iterator<NodeInfo> i = nodes.iterator(); i.hasNext();) {
       NodeInfo node = i.next();
 
       String componentName = resp_comp.get(node.responsibilityName);
@@ -129,10 +128,10 @@ public class UCMModelGenerator {
       if (class_meth.containsKey(node.className)) {
         class_meth.get(node.className).add(node.methodName);
       } else {
-        class_meth.put(node.className,new ArrayList<String>());
+        class_meth.put(node.className, new ArrayList<String>());
         class_meth.get(node.className).add(node.methodName);
       }
-      
+
       // Voy obteniendo las ejecuciones en orden.
       if (!(lastNode.getResponsibilityName().equals(componentName))) {
         PathNode actualNode = UcmModelFactory.eINSTANCE.createPathNode();
@@ -143,10 +142,12 @@ public class UCMModelGenerator {
       }
       int index = (node.className).lastIndexOf(".");
       String className = node.className;
-      lastNode.addComment(" - " + className.substring(index+1, className
-          .length()) + "->" + node.methodName + "\n");
-      lastAlternativeNode.addComment(" - " + className.substring(index + 1, 
-          className.length()) + "->" + node.methodName + "\n");
+      lastNode.addComment(" - "
+          + className.substring(index + 1, className.length()) + "->"
+          + node.methodName + "\n");
+      lastAlternativeNode.addComment(" - "
+          + className.substring(index + 1, className.length()) + "->"
+          + node.methodName + "\n");
       PathNode actualAlternativeNode = UcmModelFactory.eINSTANCE
           .createPathNode();
       actualAlternativeNode.setResponsibilityName(componentName);
@@ -159,25 +160,25 @@ public class UCMModelGenerator {
   }
 
   private void processNodes(List<NodeInfo> nodes) {
-    
+
     // Creo los Components roles.
     getComponentRoles();
-    
+
     // Creo los pathNodes.
     getPathNodes(nodes);
   }
-  
-  public void make(){
+
+  public void make() {
     getNodesFromBase();
     List<NodeInfo> nodes = getNodes();
-    
+
     // Ordenada por id de ejecucion.
     processNodes(nodes);
     model = UcmModelFactory.eINSTANCE.createUCMModel();
     model.getPaths().add(path);
     alternativeModel = UcmModelFactory.eINSTANCE.createUCMModel();
     alternativeModel.getPaths().add(alternativePath);
-    for (Iterator<ComponentRole> i = componentRoles.iterator(); i.hasNext(); ) {
+    for (Iterator<ComponentRole> i = componentRoles.iterator(); i.hasNext();) {
       ComponentRole componentRole = i.next();
       model.getComponentRoles().add(componentRole);
       alternativeModel.getComponentRoles().add(componentRole);
@@ -185,7 +186,7 @@ public class UCMModelGenerator {
     getNodes();
   }
 
-  public UCMModel getModel(){
+  public UCMModel getModel() {
     model.setName("UCM - 2");
     return model;
   }
@@ -194,24 +195,24 @@ public class UCMModelGenerator {
     alternativeModel.setName("UCM - 1");
     return alternativeModel;
   }
-  
+
   public List<String> getResponsibilites() {
-    List<String> responsibilities = new ArrayList();
+    List<String> responsibilities = new ArrayList<String>();
     ResultSet respResultSet = getResponsibilities();
-    while(respResultSet.hasMoreElements()) {
+    while (respResultSet.hasMoreElements()) {
       QueryResult q_r = respResultSet.next();
       responsibilities.add(q_r.getValueOfVar("?R"));
     }
-    return responsibilities;	
+    return responsibilities;
   }
 
   public ResultSet getResponsibilities() {
     Query q = RuleModelFactory.eINSTANCE.createQuery();
-    q.setQueryString( LogQueryFactory.DEFAULT_RESPONSIBILITY_QUERY );
+    q.setQueryString(LogQueryFactory.DEFAULT_RESPONSIBILITY_QUERY);
     Var v1 = RuleModelFactory.eINSTANCE.createVar();
     v1.setVarText("?R");
     q.getChosenVars().add(v1);
-    
+
     // Recupero las responsabilidades.
     ResultSet responsibilityQueryResult = queryEngine.evaluateQuery(q);
     return responsibilityQueryResult;
@@ -219,9 +220,9 @@ public class UCMModelGenerator {
 
   public ResultSet getExecutions(String responsibilityName) {
     Query q = RuleModelFactory.eINSTANCE.createQuery();
-    String queryString = LogQueryFactory.DEFAULT_EXECUTION_QUERY ;
-    queryString = queryString.replace("?R",responsibilityName);
-    q.setQueryString( queryString );
+    String queryString = LogQueryFactory.DEFAULT_EXECUTION_QUERY;
+    queryString = queryString.replace("?R", responsibilityName);
+    q.setQueryString(queryString);
     Var v = RuleModelFactory.eINSTANCE.createVar();
     v.setVarText("?I");
     q.getChosenVars().add(v);
@@ -229,11 +230,11 @@ public class UCMModelGenerator {
     return executionQueryResult;
   }
 
-  public String getExecutedMethod(String execId){
+  public String getExecutedMethod(String execId) {
     Query q = RuleModelFactory.eINSTANCE.createQuery();
     String queryString = LogQueryFactory.DEFAULT_METHOD_QUERY;
-    queryString = queryString.replace("?I",execId);
-    q.setQueryString( queryString );
+    queryString = queryString.replace("?I", execId);
+    q.setQueryString(queryString);
     Var v = RuleModelFactory.eINSTANCE.createVar();
     v.setVarText("?M");
     q.getChosenVars().add(v);
@@ -243,11 +244,11 @@ public class UCMModelGenerator {
     return methodName;
   }
 
-  public String getExecutedClass(String execId){
+  public String getExecutedClass(String execId) {
     Query q = RuleModelFactory.eINSTANCE.createQuery();
-    String queryString=LogQueryFactory.DEFAULT_CLASS_QUERY;
-    queryString = queryString.replace("?I",execId);
-    q.setQueryString( queryString );
+    String queryString = LogQueryFactory.DEFAULT_CLASS_QUERY;
+    queryString = queryString.replace("?I", execId);
+    q.setQueryString(queryString);
     Var v = RuleModelFactory.eINSTANCE.createVar();
     v.setVarText("?C");
     q.getChosenVars().add(v);
@@ -271,7 +272,7 @@ public class UCMModelGenerator {
       QueryResult qr = result.next();
       componentName = qr.getValueOfVar("?C");
     }
-    if(!componentName.equals("") || componentName != null) {
+    if (!componentName.equals("") || componentName != null) {
       Component component = DiagramManager.getInstance().getCurrentModel()
           .getComponent(componentName);
       if (component != null) {
@@ -283,29 +284,30 @@ public class UCMModelGenerator {
 
   @SuppressWarnings("unused")
   private String getClassName(String className) {
-    int lastIndex=className.lastIndexOf(".");
+    int lastIndex = className.lastIndexOf(".");
     return className.substring(lastIndex + 1, className.length());
   }
 
   @SuppressWarnings("unused")
   private String getPackageName(String className) {
     int lastIndex = className.lastIndexOf(".");
-    int index=className.substring(0, lastIndex).lastIndexOf(".");
+    int index = className.substring(0, lastIndex).lastIndexOf(".");
     if (index > 0) {
-      String comp=className.substring(index + 1, lastIndex);
-      if (comp.toLowerCase().equals(comp)){
+      String comp = className.substring(index + 1, lastIndex);
+      if (comp.toLowerCase().equals(comp)) {
         // Es paquete.
-        return className.substring(0,index);
-      } else { 
+        return className.substring(0, index);
+      } else {
         // Es clase interna.
         return getPackageName(className.substring(0, index));
       }
     }
     return className.substring(0, lastIndex);
   }
-  
+
   /**
    * retorna la lista ordenada de ejecuciones, por id de ejecucion
+   * 
    * @return lista de NodeInfo
    */
   public List<NodeInfo> getNodes() {

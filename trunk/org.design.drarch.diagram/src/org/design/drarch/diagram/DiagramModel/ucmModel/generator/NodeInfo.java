@@ -12,12 +12,12 @@ public class NodeInfo {
   public String methodName;
   public String objectId;
 
-  public String toString(){
-    return (execId + " " + responsibilityName + " " + methodName + " " + 
-        className + " " + objectId);
+  public String toString() {
+    return (execId + " " + responsibilityName + " " + methodName + " "
+        + className + " " + objectId);
   }
 
-  public NodeInfo(String r_n, String e_id, String c_n, String m_n){
+  public NodeInfo(String r_n, String e_id, String c_n, String m_n) {
     responsibilityName = r_n;
     execId = e_id;
     className = c_n;
