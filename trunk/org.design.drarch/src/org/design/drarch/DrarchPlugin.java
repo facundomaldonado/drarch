@@ -16,7 +16,7 @@ public class DrarchPlugin extends AbstractUIPlugin {
 
   private static final String iconPath = "/icons/";
 
-  //The shared instance.
+  // The shared instance.
   private static DrarchPlugin plugin;
 
   /**
@@ -49,9 +49,9 @@ public class DrarchPlugin extends AbstractUIPlugin {
   }
 
   /**
-   * Returns an image descriptor for the image file at the given
-   * plug-in relative path.
-   *
+   * Returns an image descriptor for the image file at the given plug-in
+   * relative path.
+   * 
    * @return the image descriptor
    */
   public static ImageDescriptor getImageDescriptor(String name) {

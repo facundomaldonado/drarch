@@ -29,7 +29,7 @@ public class Application {
   private static final String DEFAULT_XML_RULES = "DefaultRules.drarch";
   private static Application instance;
   private QueryEngine queryEngine;
-  private SuggestMaker suggester=new SuggestMaker();
+  private SuggestMaker suggester = new SuggestMaker();
   private IWorkingSet currentWorkingSet;
   private IWorkingSetManager workingSetManager;
   private DrarchPlugin plugin;
@@ -42,62 +42,62 @@ public class Application {
   private StepsManager stepManager;
 
   private Application() {
-    plugin= DrarchPlugin.getDefault();
+    plugin = DrarchPlugin.getDefault();
     workingSetManager = plugin.getWorkbench().getWorkingSetManager();
     externalFilePath = null;
   }
 
-  public void init(){
+  public void init() {
     queryEngine = new QueryEngineImpl();
     queryEngine.setWorkingSet(currentWorkingSet);
     Util.getInstance().setCurrentWorkingSet(currentWorkingSet);
     queryEngine.setWorkingSetManager(workingSetManager);
-    (( QueryEngineImpl)queryEngine).init();
+    ((QueryEngineImpl) queryEngine).init();
     Util.getInstance().setQueryEngine(queryEngine);
-    ruleManager= RuleManager.getInstance();
+    ruleManager = RuleManager.getInstance();
     ruleManager.setQueryEngine(queryEngine);
     ruleManager.setSuggestMaker(suggester);
     parseRulesFile();
     stepManager = StepsManagerImpl.getInstance();
     knowledgeBase = new KnowledgeBaseImpl();
     knowledgeBase.generateFile();
-    ((KnowledgeBaseImpl)knowledgeBase).setInclude(((QueryEngineImpl)queryEngine).getWorkingSetNode());
+    ((KnowledgeBaseImpl) knowledgeBase)
+        .setInclude(((QueryEngineImpl) queryEngine).getWorkingSetNode());
     Util.getInstance().setBase(knowledgeBase);
   }
 
   public static synchronized Application getInstance() {
-    if (instance == null)
-      instance =  new Application();
-    return instance;	
+    if (instance == null) instance = new Application();
+    return instance;
   }
 
-  @SuppressWarnings("unchecked")
-  private void parseRulesFile(){
+  private void parseRulesFile() {
     try {
       String path;
-      externalFilePath= Util.getInstance().getExternalFilePath();
-      if (externalFilePath == null){
+      externalFilePath = Util.getInstance().getExternalFilePath();
+      if (externalFilePath == null) {
         URL relativeURL = DrarchPlugin.getDefault().getBundle().getEntry("/");
         URL localURL = FileLocator.toFileURL(relativeURL);
         path = localURL.getPath() + "res/rules/" + DEFAULT_XML_RULES;
-      }
-      else {
+      } else {
         path = externalFilePath;
       }
       ParseRuleFile parser = new ParseRuleFile(path);
       parser.parseFile();
-      defaultsRules=parser.getFileModel().getRules();
+      defaultsRules = parser.getFileModel().getRules();
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
-  public List getDefaultList(){
+  public List<Rule> getDefaultList() {
     return defaultsRules;
   }
+
   public QueryEngine getQueryEngine() {
     return queryEngine;
   }
+
   public IWorkingSet getCurrentWorkingSet() {
     return currentWorkingSet;
   }

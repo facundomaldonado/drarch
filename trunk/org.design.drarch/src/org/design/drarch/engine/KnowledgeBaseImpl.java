@@ -13,21 +13,21 @@ import org.design.rules4Java.util.Util;
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public class KnowledgeBaseImpl extends KnowledgeBaseAbstractImpl{
+public class KnowledgeBaseImpl extends KnowledgeBaseAbstractImpl {
 
   private static final String FILE_NAME = "KnowledgeBase.rub";
 
-  public KnowledgeBaseImpl(){
+  public KnowledgeBaseImpl() {
     super();
   }
 
   public void generateFile() {
-    //	genera el archivo con los hechos
+    // genera el archivo con los hechos
     new File(Util.getInstance().getPath() + "/Drarch/rules").mkdirs();
-    file = new File(Util.getInstance().getPath()+"/Drarch/rules/" + FILE_NAME);
+    file = new File(Util.getInstance().getPath() + "/Drarch/rules/" + FILE_NAME);
     try {
       file.createNewFile();
-      //Declaretion of predicates
+      // Declaretion of predicates
       PrintWriter writer = new PrintWriter(new FileWriter(file));
       writer.println("component :: Object");
       writer.println("MODES");
@@ -84,8 +84,11 @@ public class KnowledgeBaseImpl extends KnowledgeBaseAbstractImpl{
       writer.println("MODES");
       writer.println("(F, F) IS NONDET");
       writer.println("END");
-      writer.println("");	
-      writer.println("association :: Object, Object, Object"); //asocia un componente, un paquete y un .java
+      writer.println("");
+      writer.println("association :: Object, Object, Object"); // asocia un
+                                                                // componente,
+                                                                // un paquete y
+                                                                // un .java
       writer.println("MODES");
       writer.println("(F, F, F) IS NONDET");
       writer.println("END");
@@ -95,23 +98,25 @@ public class KnowledgeBaseImpl extends KnowledgeBaseAbstractImpl{
       writer.println("(F) IS NONDET");
       writer.println("END");
       writer.println("");
-      writer.println("responsibilityExecution :: Object, Object"); //id de ejec, resp name
-      writer.println("MODES");
-      writer.println("(F, F) IS NONDET");
-      writer.println("END");
-      writer.println("");	
-      //id de ejec, method name
-      writer.println("executionMethod :: Object, Object"); 
+      writer.println("responsibilityExecution :: Object, Object"); // id de
+                                                                    // ejec,
+                                                                    // resp name
       writer.println("MODES");
       writer.println("(F, F) IS NONDET");
       writer.println("END");
       writer.println("");
-      //id de ejec, class name
-      writer.println("executionDeclaredClass:: Object, Object");  
+      // id de ejec, method name
+      writer.println("executionMethod :: Object, Object");
       writer.println("MODES");
       writer.println("(F, F) IS NONDET");
       writer.println("END");
-      writer.println("");	
+      writer.println("");
+      // id de ejec, class name
+      writer.println("executionDeclaredClass:: Object, Object");
+      writer.println("MODES");
+      writer.println("(F, F) IS NONDET");
+      writer.println("END");
+      writer.println("");
       writer.println();
       writer.close();
     } catch (IOException e) {

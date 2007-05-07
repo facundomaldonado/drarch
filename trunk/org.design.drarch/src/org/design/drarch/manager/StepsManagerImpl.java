@@ -11,14 +11,14 @@ import org.design.rules4Java.engine.ruleModel.Rule;
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public class StepsManagerImpl extends StepsManager{
+public class StepsManagerImpl extends StepsManager {
 
-  public StepsManagerImpl(){
+  public StepsManagerImpl() {
     super();
   }
 
   public static StepsManager getInstance() {
-    if (instance == null){
+    if (instance == null) {
       instance = new StepsManagerImpl();
     }
     return instance;

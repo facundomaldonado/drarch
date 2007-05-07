@@ -48,7 +48,7 @@ public class SuggestsViewer {
   private TreeViewer treeViewer;
   private Tree tree;
   private Composite baseComposite;
-  private TreeParent root=new TreeParent("");
+  private TreeParent root = new TreeParent("");
   private IWorkingSetManager workingSetManager;
   private Action selectWorkingSetAction;
   private Action nextStepAction;
@@ -58,11 +58,12 @@ public class SuggestsViewer {
   private StepsManager stepManager;
 
   public SuggestsViewer(Composite parent, IViewPart view) {
-    this.workingSetManager= Application.getInstance().getWorkingSetManager();
+    this.workingSetManager = Application.getInstance().getWorkingSetManager();
     this.addChildControl(parent);
     this.createActions();
-    this.createMenus(parent,view);
+    this.createMenus(parent, view);
   }
+
   /**
    * Return the parent composite
    */
@@ -70,17 +71,17 @@ public class SuggestsViewer {
     return baseComposite.getParent();
   }
 
-  private void createMenus(Composite parent, IViewPart view){
-    IMenuManager menuMgr= view.getViewSite().getActionBars().getMenuManager();
+  private void createMenus(Composite parent, IViewPart view) {
+    IMenuManager menuMgr = view.getViewSite().getActionBars().getMenuManager();
 
     MenuManager ucmMenu = new MenuManager("UCM");
-    //ucmMenu.add(new GenerateUCM("Generate UCM"));
+    // ucmMenu.add(new GenerateUCM("Generate UCM"));
     menuMgr.add(ucmMenu);
 
     MenuManager rulesMenu = new MenuManager("Drarch Actions");
 
     // add actions to menu
-    //menuMgr.add(importRuleAction);
+    // menuMgr.add(importRuleAction);
     menuMgr.add(new Separator());
     rulesMenu.add(selectWorkingSetAction);
     rulesMenu.add(new Separator());
@@ -88,15 +89,16 @@ public class SuggestsViewer {
     rulesMenu.add(analiceLog);
     menuMgr.add(rulesMenu);
 
-    MenuManager importMenu= new MenuManager("Rules");
+    MenuManager importMenu = new MenuManager("Rules");
     importMenu.add(chooseDefaultRulesFile);
     importMenu.add(importRuleAction);
 
     menuMgr.add(new Separator());
     menuMgr.add(importMenu);
 
-    //add actions to toolbar
-    IToolBarManager toolMgr = view.getViewSite().getActionBars().getToolBarManager();
+    // add actions to toolbar
+    IToolBarManager toolMgr = view.getViewSite().getActionBars()
+        .getToolBarManager();
     toolMgr.add(importRuleAction);
     toolMgr.add(new Separator());
     toolMgr.add(selectWorkingSetAction);
@@ -105,85 +107,90 @@ public class SuggestsViewer {
   }
 
 
-  private void createActions(){
+  private void createActions() {
 
-    selectWorkingSetAction = new Action("Select WorkingSet"){
+    selectWorkingSetAction = new Action("Select WorkingSet") {
       public void run() {
         doSelectWorkingSetAction();
       }
 
     };
-    selectWorkingSetAction.setImageDescriptor(DrarchPlugin.getImageDescriptor("projects.gif"));
+    selectWorkingSetAction.setImageDescriptor(DrarchPlugin
+        .getImageDescriptor("projects.gif"));
     selectWorkingSetAction.setToolTipText("Select Working Set");
-    nextStepAction= new Action("Next Steps"){
-      public void run(){
+    nextStepAction = new Action("Next Steps") {
+      public void run() {
         doNextStepAction();
       }
     };
-    nextStepAction.setImageDescriptor(DrarchPlugin.getImageDescriptor("ff.gif"));
+    nextStepAction
+        .setImageDescriptor(DrarchPlugin.getImageDescriptor("ff.gif"));
     nextStepAction.setToolTipText("Next Step");
 
 
-    importRuleAction = new Action("Import Rules"){
+    importRuleAction = new Action("Import Rules") {
       public void run() {
         doimportRuleAction();
       }
     };
-    importRuleAction.setImageDescriptor(DrarchPlugin.getImageDescriptor("import_wiz.gif"));
+    importRuleAction.setImageDescriptor(DrarchPlugin
+        .getImageDescriptor("import_wiz.gif"));
     importRuleAction.setToolTipText("Import Rule XML");
 
-    chooseDefaultRulesFile= new Action("Use default rules"){
-      public void run(){
+    chooseDefaultRulesFile = new Action("Use default rules") {
+      public void run() {
         Util.getInstance().setExternalFilePath("");
       }
     };
 
-    analiceLog= new Action(" analize LogTrace "){
-      public void run(){
-        AnaliceLogTraceAction analiceLog=new AnaliceLogTraceAction();
+    analiceLog = new Action(" analize LogTrace ") {
+      public void run() {
+        AnaliceLogTraceAction analiceLog = new AnaliceLogTraceAction();
         analiceLog.run();
       }
     };
   }
 
   protected void doimportRuleAction() {
-    LoadRuleFileAction load= new LoadRuleFileAction();
+    LoadRuleFileAction load = new LoadRuleFileAction();
     load.run();
-    String fileName=load.getFileName();
+    String fileName = load.getFileName();
     System.out.println(fileName);
   }
 
   protected void doNextStepAction() {
-    //TODO: Esto se podira mejorar
-    stepManager= StepsManagerImpl.getInstance();
-    if (stepManager.hasNext()){
+    // TODO: Esto se podira mejorar
+    stepManager = StepsManagerImpl.getInstance();
+    if (stepManager.hasNext()) {
 
       stepManager.startStep();
       List currentStepSuggests = stepManager.getStepSuggests();
 
-      ExecuteStepAction execStep=new ExecuteStepAction(currentStepSuggests, stepManager.getNumberStep());
+      ExecuteStepAction execStep = new ExecuteStepAction(currentStepSuggests,
+          stepManager.getNumberStep());
       execStep.run();
       setInput(execStep.getInPut());
       stepManager.nextStep();
-    }
-    else{
+    } else {
       System.out.println("No more steps: SuggestsViewer.java");
     }
   }
 
   protected void doSelectWorkingSetAction() {
     String[] buttons = {"OK"};
-    MessageDialog message = new MessageDialog( 	PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
-        "Information Message" , null, "Important! \n\nOnly select the .java files." , 0, buttons, 0);
+    MessageDialog message = new MessageDialog(PlatformUI.getWorkbench()
+        .getActiveWorkbenchWindow().getShell(), "Information Message", null,
+        "Important! \n\nOnly select the .java files.", 0, buttons, 0);
     message.open();
 
-    SelectWorkingSetAction action= new SelectWorkingSetAction(workingSetManager);
+    SelectWorkingSetAction action = new SelectWorkingSetAction(
+        workingSetManager);
     action.run();
-    if (action.getWorkingSet() != null){
-      root= new TreeParent("");
+    if (action.getWorkingSet() != null) {
+      root = new TreeParent("");
       treeViewer.setInput(root);
       treeViewer.refresh();
-    }		
+    }
   }
 
   private void addChildControl(Composite parent) {
@@ -197,7 +204,7 @@ public class SuggestsViewer {
     treeViewerLData.grabExcessVerticalSpace = true;
     treeViewerLData.horizontalAlignment = GridData.FILL;
     treeViewerLData.verticalAlignment = GridData.FILL;
-    tree = new Tree(baseComposite,SWT.BORDER | SWT.V_SCROLL);
+    tree = new Tree(baseComposite, SWT.BORDER | SWT.V_SCROLL);
     tree.setLayoutData(treeViewerLData);
     tree.setLayoutDeferred(true);
     createTree();
@@ -207,39 +214,41 @@ public class SuggestsViewer {
     treeViewer.setInput(root);
   }
 
-  private void createTree(){
-    TreeColumn column=new TreeColumn(tree,SWT.LEFT,0);
+  private void createTree() {
+    TreeColumn column = new TreeColumn(tree, SWT.LEFT, 0);
     column.setText("Suggests");
     column.setWidth(800);
   }
 
   private void createTreeViewer() {
-    treeViewer= new TreeViewer(tree);
+    treeViewer = new TreeViewer(tree);
     treeViewer.setUseHashlookup(true);
     CellEditor[] editors = new CellEditor[2];
     editors[0] = new CheckboxCellEditor(tree);
     treeViewer.setCellEditors(editors);
-    treeViewer.addSelectionChangedListener(new ISelectionChangedListener(){
+    treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
       public void selectionChanged(SelectionChangedEvent event) {
-        IStructuredSelection selection = (IStructuredSelection) event.getSelection();
-        TreeObject node=(TreeObject)selection.getFirstElement();
-        if (node!=null){
+        IStructuredSelection selection = (IStructuredSelection) event
+            .getSelection();
+        TreeObject node = (TreeObject) selection.getFirstElement();
+        if (node != null) {
           if (node instanceof TreeParent) {
+            //TODO: y esto????????
             node = (TreeParent) node;
           }
           node.setSelected(!node.isSelected());
-          treeViewer.update(node,null);
+          treeViewer.update(node, null);
           treeViewer.refresh();
         }
       }
     });
   }
 
-  public void setInput(TreeParent input){
+  public void setInput(TreeParent input) {
     root.addChild(input);
-    PlatformUI.getWorkbench().getDisplay().asyncExec( new Runnable(){
-      public void run () {
+    PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+      public void run() {
         treeViewer.setInput(root);
         treeViewer.refresh();
       }
