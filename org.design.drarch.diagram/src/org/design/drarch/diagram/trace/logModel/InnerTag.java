@@ -7,14 +7,15 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * @model
  * @author pela
- *
+ * 
  */
 public interface InnerTag extends EObject {
-	
-	/**
-	 * get properties and tags
-	 * @model keyType="String" valueType="LogNode"
-	 * @return
-	 */
-	EMap getTags();
+
+  /**
+   * get properties and tags
+   * 
+   * @model keyType="String" valueType="LogNode"
+   * @return A Map.
+   */
+  EMap<String, LogNode> getTags();
 }

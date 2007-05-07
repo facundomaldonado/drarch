@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public interface Responsibility extends EObject{
+public interface Responsibility extends EObject {
 
   /**
    * @model
@@ -18,9 +18,9 @@ public interface Responsibility extends EObject{
   String getName();
 
   /**
-   * Sets the value of the '{@link org.design.drarch.diagram.trace.logModel.Responsibility#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * Sets the value of the '{@link org.design.drarch.diagram.trace.logModel.Responsibility#getName <em>Name</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Name</em>' attribute.
    * @see #getName()
    * @generated

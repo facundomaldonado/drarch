@@ -28,26 +28,26 @@ public class LoadModelAction extends Action {
 
   private QueryEngine queryEngine;
 
-  public LoadModelAction(QueryEngine qEngine){
+  public LoadModelAction(QueryEngine qEngine) {
     queryEngine = qEngine;
-    ((QueryEngineImpl)queryEngine).getWorkingSetNode().reloadRules();
+    ((QueryEngineImpl) queryEngine).getWorkingSetNode().reloadRules();
   }
 
-  public ResultSet getResultQuery(String consult, List varList){
-    Query query= RuleModelFactory.eINSTANCE.createQuery();
+  public ResultSet getResultQuery(String consult, List varList) {
+    Query query = RuleModelFactory.eINSTANCE.createQuery();
     query.setQueryString(consult);
     return queryEngine.evaluateQuery(query);
   }
 
   @SuppressWarnings("unchecked")
-  public ResultSet getComponents(){
+  public ResultSet getComponents() {
     LinkedList varList = new LinkedList();
     varList.add("?C");
     return getResultQuery("component(?C)", varList);
   }
 
   @SuppressWarnings("unchecked")
-  public ResultSet getPorts(String component){
+  public ResultSet getPorts(String component) {
     LinkedList varList = new LinkedList();
     varList.add("?P");
     return getResultQuery("port(?P), hasPort(" + component + ",?P). ", varList);
@@ -57,18 +57,19 @@ public class LoadModelAction extends Action {
   private ResultSet getProvidedInterface(String port) {
     LinkedList varList = new LinkedList();
     varList.add("?I");
-    return getResultQuery("hasProvidedInterface(" + port + ", ?I), " +
-        "interfaceModel(?I).", varList);
+    return getResultQuery("hasProvidedInterface(" + port + ", ?I), "
+        + "interfaceModel(?I).", varList);
   }
 
   @SuppressWarnings("unchecked")
   private ResultSet getRequiredInterface(String port) {
     LinkedList varList = new LinkedList();
     varList.add("?I");
-    return getResultQuery("hasRequiredInterface(" + port + ", ?I), " +
-        "interfaceModel(?I).", varList);
+    return getResultQuery("hasRequiredInterface(" + port + ", ?I), "
+        + "interfaceModel(?I).", varList);
   }
-  public void run(){
+
+  public void run() {
     DiagramManager diagramManager = DiagramManager.getInstance();
     diagramManager.createComponentDiagram(getModel());
     diagramManager.update(true);
@@ -78,18 +79,18 @@ public class LoadModelAction extends Action {
   public ComponentModel getModel() {
     ComponentModel cModel = new ComponentModel();
     ResultSet allComponents = getComponents();
-    while (allComponents.hasMoreElements()){
+    while (allComponents.hasMoreElements()) {
       QueryResult resultComponent = allComponents.next();
       String component = resultComponent.getValueOfVar("?C");
       cModel.createComponent(component);
 
       ResultSet ports = getPorts(component);
-      while (ports.hasMoreElements()){
-        QueryResult  resultPort = ports.next();
-        Port port = cModel.createPort(resultPort.getValueOfVar("?P"),
-            component); 
+      while (ports.hasMoreElements()) {
+        QueryResult resultPort = ports.next();
+        Port port = cModel
+            .createPort(resultPort.getValueOfVar("?P"), component);
         ResultSet providedInterfaceName = getProvidedInterface(port.getName());
-        while (providedInterfaceName.hasMoreElements()){
+        while (providedInterfaceName.hasMoreElements()) {
           Interface providedInterface = new Interface();
           QueryResult resultProvided = providedInterfaceName.next();
           providedInterface.setName(resultProvided.getValueOfVar("?I"));
@@ -97,7 +98,7 @@ public class LoadModelAction extends Action {
           providedInterface.setPort(port);
         }
         ResultSet requiredInterfaceName = getRequiredInterface(port.getName());
-        while (requiredInterfaceName.hasMoreElements()){
+        while (requiredInterfaceName.hasMoreElements()) {
           Interface requiredInterface = new Interface();
           QueryResult resultRequired = requiredInterfaceName.next();
           requiredInterface.setName(resultRequired.getValueOfVar("?I"));
@@ -105,78 +106,73 @@ public class LoadModelAction extends Action {
           requiredInterface.setPort(port);
         }
         cModel.getComponent(component).addPort(port);
-      } 
+      }
       List association = new ArrayList();
       ResultSet resultSetAssociation = getAssociation(resultComponent
           .getValueOfVar("?C"));
-      while (resultSetAssociation.hasMoreElements()){
+      while (resultSetAssociation.hasMoreElements()) {
         QueryResult ResultAssociation = resultSetAssociation.next();
         DObject dObject = new DObject();
         dObject.setBehavior(null);
         dObject.setClassName(ResultAssociation.getValueOfVar("?ClassName")
             .toString());
         dObject.setJavaFileDescriptor(ResultAssociation.getValueOfVar(
-        "?FileName").toString());
+            "?FileName").toString());
         dObject.setPackageName(ResultAssociation.getValueOfVar("?PackageName")
             .toString());
         association.add(dObject);
       }
-      cModel.setAssociations(resultComponent.getValueOfVar("?C"), 
-          association);
+      cModel.setAssociations(resultComponent.getValueOfVar("?C"), association);
     }
 
     ResultSet links = getLinks();
-    while (links.hasMoreElements()){
+    while (links.hasMoreElements()) {
       QueryResult link = links.next();
-      cModel.createLinkInterface(	link.getValueOfVar("?Cp"), 
-          link.getValueOfVar("?Cr"),
-          link.getValueOfVar("?Pp"),
-          link.getValueOfVar("?Pr"),
-          link.getValueOfVar("?Ip"),
-          link.getValueOfVar("?Ir"));
+      cModel.createLinkInterface(link.getValueOfVar("?Cp"), link
+          .getValueOfVar("?Cr"), link.getValueOfVar("?Pp"), link
+          .getValueOfVar("?Pr"), link.getValueOfVar("?Ip"), link
+          .getValueOfVar("?Ir"));
     }
 
     ResultSet relationships = getRelationships();
-    while (relationships.hasMoreElements()){
+    while (relationships.hasMoreElements()) {
       QueryResult relation = relationships.next();
-      cModel.createRelationship(	relation.getValueOfVar("?Ccreator"),
-          relation.getValueOfVar("?Ccreated"),
-          relation.getValueOfVar("?Stereotype"));
+      cModel.createRelationship(relation.getValueOfVar("?Ccreator"), relation
+          .getValueOfVar("?Ccreated"), relation.getValueOfVar("?Stereotype"));
     }
 
     ResultSet responsibilities = getResponsibiliies();
-    while (responsibilities.hasMoreElements()){
+    while (responsibilities.hasMoreElements()) {
       QueryResult responsibility = responsibilities.next();
       cModel.createResponsibility(responsibility.getValueOfVar("?Res"));
     }
 
     ResultSet responsibilitiesReg = getResponsibiliiesRegistration();
-    while (responsibilitiesReg.hasMoreElements()){
+    while (responsibilitiesReg.hasMoreElements()) {
       QueryResult responsibilityReg = responsibilitiesReg.next();
 
-      cModel.RegisterResponsability(	responsibilityReg.getValueOfVar("?Comp"), 
-          responsibilityReg.getValueOfVar("?Res")	);
+      cModel.RegisterResponsability(responsibilityReg.getValueOfVar("?Comp"),
+          responsibilityReg.getValueOfVar("?Res"));
 
       // Se mapean las clases y metodos a cada responsabilidad.
       Vector mapping = new Vector();
       ResultSet resultSetMappingClass = getMappingClass(responsibilityReg
           .getValueOfVar("?Res"));
-      while (resultSetMappingClass.hasMoreElements()){
+      while (resultSetMappingClass.hasMoreElements()) {
         QueryResult ResultMappingClass = resultSetMappingClass.next();
         DObject dObject = new DObject();
         dObject.setClassName(ResultMappingClass.getValueOfVar("?ClassName")
             .toString());
         dObject.setJavaFileDescriptor(ResultMappingClass.getValueOfVar(
-        "?FileName").toString());
+            "?FileName").toString());
         dObject.setPackageName(ResultMappingClass.getValueOfVar("?PackageName")
             .toString());
 
-        ResultSet resultSetMappingMethod = 
-          getMappingMethod(	ResultMappingClass.getValueOfVar("?PackageName")
-              .toString(),
-              ResultMappingClass.getValueOfVar("?ClassName").toString() );
+        ResultSet resultSetMappingMethod = getMappingMethod(ResultMappingClass
+            .getValueOfVar("?PackageName").toString(), ResultMappingClass
+            .getValueOfVar("?ClassName").toString());
         Vector behaviors = new Vector();
-        while (resultSetMappingMethod.hasMoreElements()){
+        while (resultSetMappingMethod.hasMoreElements()) {
           QueryResult resultMappingMethod = resultSetMappingMethod.next();
           DBehavior behavior = new DBehavior();
           behavior.setMethod(resultMappingMethod.getValueOfVar("?MethodName"));
@@ -184,11 +180,11 @@ public class LoadModelAction extends Action {
               .replace("%", ""));
           ResultSet resultSetMappingArguments = getMappingArguments(
               ResultMappingClass.getValueOfVar("?PackageName").toString(),
-              ResultMappingClass.getValueOfVar("?ClassName").toString(), 
+              ResultMappingClass.getValueOfVar("?ClassName").toString(),
               resultMappingMethod.getValueOfVar("?MethodName").toString());
-          while (resultSetMappingArguments.hasMoreElements()){
+          while (resultSetMappingArguments.hasMoreElements()) {
             QueryResult resultMappingArguments = resultSetMappingArguments
-            .next();
+                .next();
             behavior.addArgumentType(resultMappingArguments.getValueOfVar(
                 "?ParamsList").toString());
           }
@@ -197,21 +193,22 @@ public class LoadModelAction extends Action {
         dObject.setBehavior(behaviors);
         mapping.add(dObject);
       }
-      cModel.addMappingResponsibility(responsibilityReg.getValueOfVar("?Res"), 
+      cModel.addMappingResponsibility(responsibilityReg.getValueOfVar("?Res"),
           mapping);
     }
     return cModel;
   }
+
   @SuppressWarnings("unchecked")
-  private ResultSet getMappingArguments(String packageName, String className, 
+  private ResultSet getMappingArguments(String packageName, String className,
       String methodName) {
     LinkedList varList = new LinkedList();
     varList.add("?ParamsList");
-    return getResultQuery("package(?P), name(?P," + packageName + "), " +
-        "child(?P,?File), javaFile(?File), child(?File, ?Class), " +
-        "type(?Class), name(?Class, " + className + "),	method(?Class," +
-        " ?Method),	name(?Method, " + methodName + "), params(?Method, " +
-        "?ParamsList) ", varList);
+    return getResultQuery("package(?P), name(?P," + packageName + "), "
+        + "child(?P,?File), javaFile(?File), child(?File, ?Class), "
+        + "type(?Class), name(?Class, " + className + "),	method(?Class,"
+        + " ?Method),	name(?Method, " + methodName + "), params(?Method, "
+        + "?ParamsList) ", varList);
   }
 
   @SuppressWarnings("unchecked")
@@ -219,11 +216,11 @@ public class LoadModelAction extends Action {
     LinkedList varList = new LinkedList();
     varList.add("?MethodName");
     varList.add("?Type");
-    return getResultQuery(	"package(?P), name(?P, " + packageName + "), " +
-        "child(?P,?CU), name(?class, " + className + "), child(?CU, " +
-        "?class),Type(?class), javaFile(?CU), method(?class,?Method), " +
-        "returns(?Method, ?Type), name(?Method, ?MethodName)" //, " + 
-        , varList);
+    return getResultQuery("package(?P), name(?P, " + packageName + "), "
+        + "child(?P,?CU), name(?class, " + className + "), child(?CU, "
+        + "?class),Type(?class), javaFile(?CU), method(?class,?Method), "
+        + "returns(?Method, ?Type), name(?Method, ?MethodName)" // , " +
+    , varList);
   }
 
   @SuppressWarnings("unchecked")
@@ -233,9 +230,9 @@ public class LoadModelAction extends Action {
     varList.add("?PackageName");
     varList.add("?FileName");
 
-    return getResultQuery("mapping(" + responsibility + ", ?PackageName, " +
-        "?FileName), name(?File, ?FileName), javaFile(?File), " +
-        "child(?File, ?Class), name(?Class, ?ClassName)", varList);
+    return getResultQuery("mapping(" + responsibility + ", ?PackageName, "
+        + "?FileName), name(?File, ?FileName), javaFile(?File), "
+        + "child(?File, ?Class), name(?Class, ?ClassName)", varList);
   }
 
   @SuppressWarnings("unchecked")
@@ -244,9 +241,9 @@ public class LoadModelAction extends Action {
     varList.add("?ClassName");
     varList.add("?PackageName");
     varList.add("?FileName");
-    return getResultQuery("association(" + component + ", ?PackageName, " +
-        "?FileName), name(?File, ?FileName), child(?File, ?Class), " +
-        "javaFile(?File), name(?Class, ?ClassName)", varList);
+    return getResultQuery("association(" + component + ", ?PackageName, "
+        + "?FileName), name(?File, ?FileName), child(?File, ?Class), "
+        + "javaFile(?File), name(?Class, ?ClassName)", varList);
   }
 
   @SuppressWarnings("unchecked")
@@ -270,7 +267,7 @@ public class LoadModelAction extends Action {
     varList.add("?Ccreator");
     varList.add("?Ccreated");
     varList.add("?Stereotype");
-    return getResultQuery("relationship(?Ccreator, ?Ccreated, ?Stereotype)", 
+    return getResultQuery("relationship(?Ccreator, ?Ccreated, ?Stereotype)",
         varList);
   }
 
@@ -283,9 +280,9 @@ public class LoadModelAction extends Action {
     varList.add("?Pr");
     varList.add("?Cp");
     varList.add("?Cr");
-    return getResultQuery("interfaceLink(?Ip, ?Ir)," +
-        "interfaceModel(?Ip), interfaceModel(?Ir), NOT(equals(?Ip, ?Ir))," +
-        "hasProvidedInterface(?Pp, ?Ip), hasRequiredInterface(?Pr, ?Ir), " +
-        "hasPort(?Cr, ?Pr), hasPort(?Cp, ?Pp).", varList);
+    return getResultQuery("interfaceLink(?Ip, ?Ir),"
+        + "interfaceModel(?Ip), interfaceModel(?Ir), NOT(equals(?Ip, ?Ir)),"
+        + "hasProvidedInterface(?Pp, ?Ip), hasRequiredInterface(?Pr, ?Ir), "
+        + "hasPort(?Cr, ?Pr), hasPort(?Cp, ?Pp).", varList);
   }
 }

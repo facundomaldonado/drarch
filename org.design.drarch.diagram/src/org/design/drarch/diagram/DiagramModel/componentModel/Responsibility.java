@@ -15,7 +15,7 @@ public class Responsibility {
   private String description;
   private List<String> mapping;
 
-  public Responsibility(){
+  public Responsibility() {
     mapping = new ArrayList<String>();
   }
 
@@ -44,13 +44,12 @@ public class Responsibility {
   }
 
   public boolean hasComponent() {
-    if (component != null)
-      return true;
+    if (component != null) return true;
     return false;
   }
 
   @SuppressWarnings("unchecked")
-  public void addMapping(String className){
+  public void addMapping(String className) {
     mapping.add(className);
   }
 

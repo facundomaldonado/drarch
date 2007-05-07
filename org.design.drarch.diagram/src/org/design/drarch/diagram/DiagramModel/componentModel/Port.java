@@ -11,7 +11,7 @@ public class Port {
   private Interface provided;
   private Component component;
 
-  public Port(Component c){
+  public Port(Component c) {
     this.name = "noname";
     this.component = c;
     this.provided = null;
@@ -21,6 +21,7 @@ public class Port {
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
@@ -46,14 +47,12 @@ public class Port {
   }
 
   public boolean hasProvidedInterface() {
-    if (provided == null)
-      return false;
+    if (provided == null) return false;
     return true;
   }
-  
+
   public boolean hasRequiredInterface() {
-    if (required == null)
-      return false;
+    if (required == null) return false;
     return true;
   }
 }

@@ -13,23 +13,23 @@ import org.eclipse.jface.action.Action;
  */
 public class AnaliceLogTraceAction extends Action {
 
-	public AnaliceLogTraceAction(){
-	}
-	
-	public void run(){
-		LoadLogFactsAction loadLogFacts= new LoadLogFactsAction();
-		loadLogFacts.run();
-		
-		UCMModelGenerator ucmGenerator= new UCMModelGenerator();
-		ucmGenerator.make();
-		
-		
-		//alternativeModel
-		UCMModel alternativeModel = ucmGenerator.getAlternativeModel();
-		DiagramManager.getInstance().createUCMDiagram(alternativeModel);
-		
-		
-		UCMModel model= ucmGenerator.getModel();
-		DiagramManager.getInstance().createUCMDiagram(model);
-	}
+  public AnaliceLogTraceAction() {
+  }
+
+  public void run() {
+    LoadLogFactsAction loadLogFacts = new LoadLogFactsAction();
+    loadLogFacts.run();
+
+    UCMModelGenerator ucmGenerator = new UCMModelGenerator();
+    ucmGenerator.make();
+
+
+    // alternativeModel
+    UCMModel alternativeModel = ucmGenerator.getAlternativeModel();
+    DiagramManager.getInstance().createUCMDiagram(alternativeModel);
+
+
+    UCMModel model = ucmGenerator.getModel();
+    DiagramManager.getInstance().createUCMDiagram(model);
+  }
 }

@@ -16,13 +16,14 @@ public interface PathNode extends EObject {
    * @model
    */
   String getResponsibilityName();
+
   /**
    * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
-   *    .ucmModel.PathNode#getResponsibilityName <em>Responsibility Name</em>}' 
-   *    attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Responsibility Name</em>' attribute.
+   * .ucmModel.PathNode#getResponsibilityName <em>Responsibility Name</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
+   * @param value the new value of the '<em>Responsibility Name</em>'
+   *        attribute.
    * @see #getResponsibilityName()
    * @generated
    */
@@ -36,9 +37,9 @@ public interface PathNode extends EObject {
 
   /**
    * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel
-   *    .ucmModel.PathNode#getPath <em>Path</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * .ucmModel.PathNode#getPath <em>Path</em>}' reference. <!--
+   * begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Path</em>' reference.
    * @see #getPath()
    * @generated
@@ -55,13 +56,21 @@ public interface PathNode extends EObject {
    * @model type = "PathNode" opposite = "previous"
    * @return The next PathNode.
    */
-  EList<PathNode> getNext();	
+  EList<PathNode> getNext();
+
   boolean addPrevious(PathNode previous);
+
   boolean removePrevious(PathNode previous);
+
   boolean addNext(PathNode next);
+
   boolean removeNext(PathNode next);
+
   boolean isStart();
+
   boolean isEnd();
+
   void addComment(String string);
-  String getComment();	
+
+  String getComment();
 }

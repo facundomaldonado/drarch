@@ -13,7 +13,7 @@ public class Component {
   private List ports;
   private List association;
 
-  public Component(){
+  public Component() {
     this.name = "noname";
     this.ports = new ArrayList();
     this.association = new ArrayList();
@@ -22,6 +22,7 @@ public class Component {
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
@@ -31,14 +32,14 @@ public class Component {
     ports.add(portProvided);
   }
 
-  public List getAllPorts(){
+  public List getAllPorts() {
     return ports;
   }
 
-  public Port getPort(String portName){
+  public Port getPort(String portName) {
     for (int i = 0; i < ports.size(); i++) {
       Port port = (Port) ports.get(i);
-      if (port.getName().equals(portName)){
+      if (port.getName().equals(portName)) {
         return port;
       }
     }

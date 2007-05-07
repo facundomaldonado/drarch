@@ -10,7 +10,7 @@ public class InterfaceLink {
   private Interface source;
   private Interface target;
 
-  public InterfaceLink(){
+  public InterfaceLink() {
     this.name = "noname";
   }
 

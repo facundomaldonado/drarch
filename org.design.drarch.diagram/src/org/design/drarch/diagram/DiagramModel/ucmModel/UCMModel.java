@@ -19,9 +19,9 @@ public interface UCMModel extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel.ucmModel.UCMModel#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * Sets the value of the '{@link org.design.drarch.diagram.DiagramModel.ucmModel.UCMModel#getName <em>Name</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Name</em>' attribute.
    * @see #getName()
    * @generated
@@ -29,7 +29,7 @@ public interface UCMModel extends EObject {
   void setName(String value);
 
   /**
-   * @model type="Path" 
+   * @model type="Path"
    * @return the list of Path
    */
   EList<Path> getPaths();

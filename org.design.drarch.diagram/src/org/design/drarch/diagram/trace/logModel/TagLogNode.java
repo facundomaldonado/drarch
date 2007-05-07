@@ -8,18 +8,18 @@ import org.isistan.flabot.trace.log.Tag;
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public interface TagLogNode extends LogNode{
+public interface TagLogNode extends LogNode {
 
   /**
    * @model Type"LogNode" containment="true"
-   * @return
+   * @return an array of LogNode
    */
   LogNode[] getChildrens();
 
   /**
-   * Sets the value of the '{@link org.design.drarch.diagram.trace.logModel.TagLogNode#getChildrens <em>Childrens</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * Sets the value of the '{@link org.design.drarch.diagram.trace.logModel.TagLogNode#getChildrens <em>Childrens</em>}'
+   * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Childrens</em>' attribute.
    * @see #getChildrens()
    * @generated
@@ -33,9 +33,9 @@ public interface TagLogNode extends LogNode{
   Tag getTag();
 
   /**
-   * Sets the value of the '{@link org.design.drarch.diagram.trace.logModel.TagLogNode#getTag <em>Tag</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * Sets the value of the '{@link org.design.drarch.diagram.trace.logModel.TagLogNode#getTag <em>Tag</em>}'
+   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @param value the new value of the '<em>Tag</em>' reference.
    * @see #getTag()
    * @generated

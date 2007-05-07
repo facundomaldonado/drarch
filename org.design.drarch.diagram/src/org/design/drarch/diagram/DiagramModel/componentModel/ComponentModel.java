@@ -17,7 +17,7 @@ public class ComponentModel implements IModel {
   private List responsibilities;
   private List interfaceLinks;
 
-  public ComponentModel(){
+  public ComponentModel() {
     this.name = null;
     this.components = new ArrayList();
     this.interfaceLinks = new ArrayList();
@@ -33,30 +33,30 @@ public class ComponentModel implements IModel {
     this.name = name;
   }
 
-  public Component getComponent(String componentName){
+  public Component getComponent(String componentName) {
     for (int i = 0; i < components.size(); i++) {
-      Component c = (Component)components.get(i);
-      if (componentName.equals(c.getName())){
+      Component c = (Component) components.get(i);
+      if (componentName.equals(c.getName())) {
         return c;
       }
     }
     return null;
   }
 
-  public Responsibility getResponsibilitie(String name){
+  public Responsibility getResponsibilitie(String name) {
     for (int i = 0; i < responsibilities.size(); i++) {
-      Responsibility r = (Responsibility)responsibilities.get(i);
-      if (name.equals(r.getName())){
+      Responsibility r = (Responsibility) responsibilities.get(i);
+      if (name.equals(r.getName())) {
         return r;
       }
     }
     return null;
   }
 
-  public boolean existComponent(String componentName){
+  public boolean existComponent(String componentName) {
     for (int i = 0; i < components.size(); i++) {
-      Component c = (Component)components.get(i);
-      if (componentName.equals(c.getName())){
+      Component c = (Component) components.get(i);
+      if (componentName.equals(c.getName())) {
         return true;
       }
     }
@@ -65,28 +65,28 @@ public class ComponentModel implements IModel {
 
 
   @SuppressWarnings("unchecked")
-  public void createComponent(String name){
-    if (!existComponent(name)){
+  public void createComponent(String name) {
+    if (!existComponent(name)) {
       Component c = new Component();
       c.setName(name);
       components.add(c);
-    }
-    else {
-      System.out.println("ComponentModel.crateComponent(): The componene allready exist" );
+    } else {
+      System.out
+          .println("ComponentModel.crateComponent(): The componene allready exist");
     }
   }
 
   @SuppressWarnings("unchecked")
-  public void createLinkInterface(String componentProvided, 
-      String componentRequired,
-      String portProvided, 
-      String portRequired, 
-      String interfaceProvided, 
-      String interfaceRequired){
+  public void createLinkInterface(String componentProvided,
+      String componentRequired, String portProvided, String portRequired,
+      String interfaceProvided, String interfaceRequired) {
 
-    //if (existComponent(componentProvided)&&(existComponent(componentRequired)))
-    Interface providedInterface = getComponent(componentProvided).getPort(portProvided).getProvided();
-    Interface requiredInterface = getComponent(componentRequired).getPort(portRequired).getRequired();
+    // if
+    // (existComponent(componentProvided)&&(existComponent(componentRequired)))
+    Interface providedInterface = getComponent(componentProvided).getPort(
+        portProvided).getProvided();
+    Interface requiredInterface = getComponent(componentRequired).getPort(
+        portRequired).getRequired();
     InterfaceLink interfaceLink = new InterfaceLink();
     interfaceLink.setSource(providedInterface);
     interfaceLink.setTarget(requiredInterface);
@@ -95,7 +95,7 @@ public class ComponentModel implements IModel {
   }
 
   @SuppressWarnings("unchecked")
-  public List<String> getAllComponents(){
+  public List<String> getAllComponents() {
     return this.components;
   }
 
@@ -110,7 +110,8 @@ public class ComponentModel implements IModel {
   }
 
   @SuppressWarnings("unchecked")
-  public void createRelationship(String componentSource, String componentTarget, String stereotype) {
+  public void createRelationship(String componentSource,
+      String componentTarget, String stereotype) {
     Relationship relationship = new Relationship();
     relationship.setSource(getComponent(componentSource));
     relationship.setTarget(getComponent(componentTarget));
@@ -122,7 +123,7 @@ public class ComponentModel implements IModel {
     return relationships;
   }
 
-  public List getResponsibilities(){
+  public List getResponsibilities() {
     return responsibilities;
   }
 
@@ -136,7 +137,7 @@ public class ComponentModel implements IModel {
   public void RegisterResponsability(String component, String res) {
     for (int i = 0; i < responsibilities.size(); i++) {
       Responsibility responsibility = (Responsibility) responsibilities.get(i);
-      if (responsibility.getName().equals(res)){
+      if (responsibility.getName().equals(res)) {
         responsibility.setComponent(getComponent(component));
       }
     }
@@ -150,7 +151,8 @@ public class ComponentModel implements IModel {
     getComponent(componentName).setAssociation(associations);
   }
 
-  public void addMappingResponsibility(String responsibilityName, List mapping) {
+  public void addMappingResponsibility(String responsibilityName, 
+      List<String> mapping) {
     Responsibility r = getResponsibilitie(responsibilityName);
     r.setMapping(mapping);
   }
