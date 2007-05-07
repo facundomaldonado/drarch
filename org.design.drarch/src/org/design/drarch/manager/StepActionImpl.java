@@ -17,14 +17,15 @@ public class StepActionImpl extends StepAction {
     super(r);
   }
 
-  public void applyFacts(){
+  public void applyFacts() {
     super.applyFacts();
-    if (listFacts.size()>0){
+    if (listFacts.size() > 0) {
       loadModel();
     }
   }
+
   protected void loadModel() {
-    LoadModelAction action= new LoadModelAction(Application.getInstance()
+    LoadModelAction action = new LoadModelAction(Application.getInstance()
         .getQueryEngine());
     action.run();
   }
