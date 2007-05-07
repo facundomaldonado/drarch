@@ -17,19 +17,18 @@ public class Util {
     return externalFilePath;
   }
 
-  private Util(){
+  private Util() {
   }
 
-  public static Util getInstance(){
+  public static Util getInstance() {
     if (instance == null) {
       instance = new Util();
     }
-    return instance;	
+    return instance;
   }
 
   public void setExternalFilePath(String externalFilePath) {
-    if (externalFilePath.equals(""))
-      externalFilePath = null;
+    if (externalFilePath.equals("")) externalFilePath = null;
 
     this.externalFilePath = externalFilePath;
   }
@@ -47,15 +46,16 @@ public class Util {
 
     return path;
   }
+
   private IWorkingSet getCurrentWorkingSet() {
     return currentWorkingSet;
   }
 
-  public void setCurrentWorkingSet(IWorkingSet current){
-    this.currentWorkingSet=current;
+  public void setCurrentWorkingSet(IWorkingSet current) {
+    this.currentWorkingSet = current;
   }
 
-  public QueryEngine getQueryEngine(){
+  public QueryEngine getQueryEngine() {
     return queryEngine;
   }
 
