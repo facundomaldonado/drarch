@@ -17,10 +17,10 @@ public class QueryResultImpl implements QueryResult {
     String result = "";
     if (frame.containsKey(RBVariable.make(var))) {
       Object res = frame.get(RBVariable.make(var));
-      
+
       // Posiblemente esto no quede asi.
-      if (res instanceof RBRepAsJavaObjectCompoundTerm){
-        result = (String)((RBRepAsJavaObjectCompoundTerm)res).getValue();
+      if (res instanceof RBRepAsJavaObjectCompoundTerm) {
+        result = (String) ((RBRepAsJavaObjectCompoundTerm) res).getValue();
       } else {
         result = res.toString();
       }

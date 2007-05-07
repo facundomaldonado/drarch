@@ -19,8 +19,8 @@ public class ResultSetImpl implements ResultSet {
   }
 
   public QueryResult next() {
-    QueryResult nextResult= createQueryResult();
-    ((QueryResultImpl)nextResult).setFrame((Frame)queryResult.nextElement());
+    QueryResult nextResult = createQueryResult();
+    ((QueryResultImpl) nextResult).setFrame((Frame) queryResult.nextElement());
     return nextResult;
   }
 
