@@ -20,16 +20,16 @@ import javax.imageio.stream.FileImageOutputStream;
 public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
   protected File file;
 
-  public KnowledgeBaseAbstractImpl(){
+  public KnowledgeBaseAbstractImpl() {
   }
 
   public void addFact(String predicate) {
     try {
-      if (!exist(predicate)){
+      if (!exist(predicate)) {
         FileImageOutputStream fios = new FileImageOutputStream(file);
         fios.seek(file.length());
         predicate = predicate + "\n";
-        byte [] utf8Bytes = predicate.getBytes ("UTF-8"); 
+        byte[] utf8Bytes = predicate.getBytes("UTF-8");
         fios.write(utf8Bytes);
         fios.close();
       }
@@ -45,8 +45,8 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
   public boolean exist(String predicate) throws Exception {
     FileImageOutputStream fios = new FileImageOutputStream(file);
     String index = "";
-    while (index != null){
-      if (index.equals(predicate)){
+    while (index != null) {
+      if (index.equals(predicate)) {
         return true;
       }
       index = fios.readLine();
@@ -55,17 +55,17 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
     return false;
   }
 
-  public void removeFact(String predicate){
+  public void removeFact(String predicate) {
     try {
       FileImageOutputStream fios = new FileImageOutputStream(file);
       String index = "";
-      while (index != null){
-        if (index.equals(predicate)){
+      while (index != null) {
+        if (index.equals(predicate)) {
           String erase = new String();
           fios.seek(fios.getStreamPosition() - predicate.length() - 1);
-          for (int i = 0; i < predicate.length(); i++) 
+          for (int i = 0; i < predicate.length(); i++)
             erase = erase + " ";
-          byte [] utf8Bytes = erase.getBytes ("UTF-8"); 
+          byte[] utf8Bytes = erase.getBytes("UTF-8");
           fios.write(utf8Bytes);
         }
         index = fios.readLine();
@@ -79,7 +79,7 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
     }
   }
 
-  public void setInclude(WorkingSetNode workingSetNode){
+  public void setInclude(WorkingSetNode workingSetNode) {
     File userIncludeFile = new File(workingSetNode.getUserIncludeFile());
     PrintWriter writer;
     try {

@@ -21,9 +21,9 @@ public class QueryEngineImpl implements QueryEngine {
     super();
   }
 
-  public void init(){
+  public void init() {
     workingSetNode = new WorkingSetNode(getWorkingSet());
-    query= new ca.ubc.jquery.query.Query(workingSetNode);
+    query = new ca.ubc.jquery.query.Query(workingSetNode);
   }
 
   public IWorkingSetManager getWorkingSetManager() {
@@ -31,7 +31,7 @@ public class QueryEngineImpl implements QueryEngine {
   }
 
   public void setWorkingSetManager(IWorkingSetManager value) {
-    workingSetManager=value;
+    workingSetManager = value;
   }
 
   public WorkingSetNode getWorkingSetNode() {
@@ -49,8 +49,8 @@ public class QueryEngineImpl implements QueryEngine {
   public ResultSet evaluateQuery(Query q) {
     query.setQuery(q.getQueryString());
     try {
-      ResultSet result= createResultSet();
-      ((ResultSetImpl)result).setQueryResult(query.execute());
+      ResultSet result = createResultSet();
+      ((ResultSetImpl) result).setQueryResult(query.execute());
       return result;
     } catch (ParseException e) {
       e.printStackTrace();
