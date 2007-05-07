@@ -25,37 +25,36 @@ public class FactsGenerator {
    * @param varList
    * @return List of parsed Facts
    */
-  @SuppressWarnings("unchecked") 
-  public List<FactSet> getFacts(List<Suggest> suggestList, 
+  @SuppressWarnings("unchecked")
+  public List<FactSet> getFacts(List<Suggest> suggestList,
       FactSet factSetTemplate, List<Var> varList) {
     List finalFacts = new LinkedList();
-    
+
     /*
      * Recorro la lista de sugerencias tomando las que estan aceptadas.
      */
-    for (Iterator<Suggest> iSug = suggestList.iterator(); iSug.hasNext(); ) {
+    for (Iterator<Suggest> iSug = suggestList.iterator(); iSug.hasNext();) {
       Suggest s = iSug.next();
-      if (s.getApply()){
+      if (s.getApply()) {
         QueryResult result = s.getResult();
-        
+
         /*
-         * Recorro el template de facts tomando sentencia por sentencia y 
+         * Recorro el template de facts tomando sentencia por sentencia y
          * reemplazando las variables por el valor correspondiente.
          */
         FactSet finalFactSet = RuleModelFactory.eINSTANCE.createFactSet();
         for (Iterator<Fact> itemplate = factSetTemplate.getFactTemplates()
-            .iterator(); itemplate.hasNext(); ) {
+            .iterator(); itemplate.hasNext();) {
           Fact factTemplate = itemplate.next();
-          String factText= factTemplate.getFactText();
+          String factText = factTemplate.getFactText();
 
           /**
-           * Recorro la lista de var, obteniendo el valor de
-           * cada una del resultado del query y reemplazandola
-           * en el template del fact.
+           * Recorro la lista de var, obteniendo el valor de cada una del
+           * resultado del query y reemplazandola en el template del fact.
            */
-          for (Iterator<Var> ivar = varList.iterator(); ivar.hasNext(); ) {
+          for (Iterator<Var> ivar = varList.iterator(); ivar.hasNext();) {
             Var var = ivar.next();
-            String value=result.getValueOfVar(var.getVarText());
+            String value = result.getValueOfVar(var.getVarText());
             if (!value.equals("")) {
               factText = factText.replace(var.getVarText(), value);
             }

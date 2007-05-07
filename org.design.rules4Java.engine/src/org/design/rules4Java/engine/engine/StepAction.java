@@ -23,10 +23,10 @@ public abstract class StepAction {
   protected KnowledgeBase base;
   protected List<FactSet> lastRuleFacts;
   protected List<Suggest> currentRuleSuggests;
-  
+
   protected abstract KnowledgeBase getKnowledgeBase();
-  
-  public StepAction(Rule r){
+
+  public StepAction(Rule r) {
     currentRule = r;
     ruleManager = RuleManager.getInstance();
   }
@@ -34,18 +34,17 @@ public abstract class StepAction {
   /**
    * @param facts
    */
-  public void loadFacts(List<FactSet> facts){
+  public void loadFacts(List<FactSet> facts) {
     listFacts = facts;
   }
 
   public void applyFacts() {
     if (listFacts.size() > 0) {
       base = getKnowledgeBase();
-      for (Iterator<FactSet> iFacts = listFacts.iterator(); iFacts
-          .hasNext(); ) {
+      for (Iterator<FactSet> iFacts = listFacts.iterator(); iFacts.hasNext();) {
         FactSet set = iFacts.next();
         for (Iterator<Fact> ifacts = set.getFactTemplates().iterator(); ifacts
-            .hasNext(); ) {
+            .hasNext();) {
           base.addFact(ifacts.next().getFactText());
         }
       }

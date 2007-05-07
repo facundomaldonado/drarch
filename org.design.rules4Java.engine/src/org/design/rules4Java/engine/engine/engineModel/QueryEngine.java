@@ -16,8 +16,12 @@ public interface QueryEngine {
    * @return WorkingSetManager
    */
   IWorkingSetManager getWorkingSetManager();
+
   void setWorkingSetManager(IWorkingSetManager value);
+
   IWorkingSet getWorkingSet();
+
   void setWorkingSet(IWorkingSet value);
+
   ResultSet evaluateQuery(Query q);
 }
