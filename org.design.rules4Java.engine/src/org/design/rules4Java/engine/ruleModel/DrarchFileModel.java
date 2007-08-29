@@ -15,7 +15,7 @@ public interface DrarchFileModel extends EObject {
    * @return list of rules of the model
    * @model type = "Rule" containment = "true"
    */
-  EList<Rule> getRules();
+  EList getRules();
 
   /**
    * Returns the value of the '<em><b>File Name</b></em>' attribute. The

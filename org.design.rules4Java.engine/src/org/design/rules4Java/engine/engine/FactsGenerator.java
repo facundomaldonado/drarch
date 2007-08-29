@@ -25,10 +25,9 @@ public class FactsGenerator {
    * @param varList
    * @return List of parsed Facts
    */
-  @SuppressWarnings("unchecked")
   public List<FactSet> getFacts(List<Suggest> suggestList,
       FactSet factSetTemplate, List<Var> varList) {
-    List finalFacts = new LinkedList();
+    List<FactSet> finalFacts = new LinkedList<FactSet>();
 
     /*
      * Recorro la lista de sugerencias tomando las que estan aceptadas.

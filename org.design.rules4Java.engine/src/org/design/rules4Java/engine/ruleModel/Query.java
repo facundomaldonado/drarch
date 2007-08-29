@@ -31,5 +31,5 @@ public interface Query extends EObject {
    * @model type="Var" containment="true"
    * @return vars of the query
    */
-  EList<Var> getChosenVars();
+  EList getChosenVars();
 }
