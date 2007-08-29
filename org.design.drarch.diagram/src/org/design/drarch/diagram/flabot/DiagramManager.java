@@ -1,8 +1,9 @@
 package org.design.drarch.diagram.flabot;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Vector;
+import java.util.List;
 
 import org.design.drarch.diagram.DiagramPlugin;
 import org.design.drarch.diagram.IDiagramManager;
@@ -41,8 +42,8 @@ import org.isistan.flabot.util.emf.WorkaroundURIConverter;
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
 public class DiagramManager implements IDiagramManager {
-  private Vector components;
-  private Vector ucms;
+  private List<ComponentsDiagram> components;
+  private List<UCMDiagrams> ucms;
   private FlabotFileModel flabotFileModel;
   private String fileName;
   private static DiagramManager instance;
@@ -52,8 +53,8 @@ public class DiagramManager implements IDiagramManager {
 
   public DiagramManager() {
     fileName = "ComponentDiagram.flabot";
-    components = new Vector();
-    ucms = new Vector();
+    components = new ArrayList<ComponentsDiagram>();
+    ucms = new ArrayList<UCMDiagrams>();
     coreModel = CoremodelFactory.eINSTANCE.createCoreModel();
     flabotFileModel = EditormodelFactory.eINSTANCE.createFlabotFileModel();
 
@@ -77,12 +78,11 @@ public class DiagramManager implements IDiagramManager {
     UCMDiagrams ucmDiagrams = new UCMDiagrams(model.getName());
 
     for (int i = 0; i < model.getComponentRoles().size(); i++) {
-      ComponentRole componentRole = (ComponentRole) model.getComponentRoles()
-          .get(i);
+      ComponentRole componentRole = (ComponentRole) model.getComponentRoles().get(i);
       ucmDiagrams.createComponentRole(componentRole.getName());
     }
 
-    Vector pathResponsibility = new Vector();
+    List<List<String>> pathResponsibility = new ArrayList<List<String>>();
     for (int i = 0; i < model.getPaths().size(); i++) {
       Path path = (Path) model.getPaths().get(i);
       for (int j = 0; j < path.getNodes().size(); j++) {
@@ -93,7 +93,7 @@ public class DiagramManager implements IDiagramManager {
         ucmDiagrams.addNote(pathNode.getResponsibilityName(), pathNode
             .getComment());
         PathNode pathNodePrevius = ((PathNode) pathNode.getPrevious().get(0));
-        Vector peerNodes = new Vector();
+        List<String> peerNodes = new ArrayList<String>();
         peerNodes.add(0, pathNode.getResponsibilityName());
         peerNodes.add(1, pathNodePrevius.getResponsibilityName());
 
@@ -118,12 +118,12 @@ public class DiagramManager implements IDiagramManager {
     ComponentsDiagram componentsDiagram = new ComponentsDiagram(model.getName());
 
     // Crea todos los componentes, los puertos y las interfaces
-    Vector componentsModel = model.getAllComponents();
+    List<Component> componentsModel = model.getAllComponents();
     for (int i = 0; i < componentsModel.size(); i++) {
       Component c = (Component) componentsModel.get(i);
       componentsDiagram.createComponent(c.getName());
 
-      Vector ports = c.getAllPorts();
+      List<Port> ports = c.getAllPorts();
       for (int j = 0; j < ports.size(); j++) {
         Port port = (Port) ports.get(j);
         componentsDiagram.createPort(c.getName(), port.getName());
@@ -138,7 +138,7 @@ public class DiagramManager implements IDiagramManager {
           .getAssociations(c.getName()));
     }
     // Crea links entre las interfaces
-    Vector interfaceLinksModel = model.getInterfaceLinks();
+    List<InterfaceLink> interfaceLinksModel = model.getInterfaceLinks();
     for (int i = 0; i < interfaceLinksModel.size(); i++) {
       InterfaceLink interfaceLink = (InterfaceLink) interfaceLinksModel.get(i);
       String componentSource = interfaceLink.getSource().getPort()
@@ -151,7 +151,7 @@ public class DiagramManager implements IDiagramManager {
               .getName(), interfaceLink.getTarget().getName());
     }
     // Crea relaciones entre componentes
-    Vector relationships = model.getRelationships();
+    List<Relationship> relationships = model.getRelationships();
     for (int i = 0; i < relationships.size(); i++) {
       Relationship relation = (Relationship) relationships.get(i);
       componentsDiagram.createRelationship(relation.getSource().getName(),
@@ -159,7 +159,7 @@ public class DiagramManager implements IDiagramManager {
     }
 
     // Crea responsabilidades
-    Vector responsibilities = model.getResponsibilities();
+    List<Responsibility> responsibilities = model.getResponsibilities();
     for (int i = 0; i < responsibilities.size(); i++) {
       Responsibility responsibility = (Responsibility) responsibilities.get(i);
       componentsDiagram.createResponsibility(responsibility.getName());

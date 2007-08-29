@@ -10,12 +10,12 @@ import java.util.List;
  */
 public class Component {
   private String name;
-  private List ports;
+  private List<Port> ports;
   private List association;
 
   public Component() {
     this.name = "noname";
-    this.ports = new ArrayList();
+    this.ports = new ArrayList<Port>();
     this.association = new ArrayList();
   }
 

@@ -31,5 +31,5 @@ public interface Responsibility extends EObject {
    * @model type = "InnerTag"
    * @return The InnerTag list.
    */
-  EList<InnerTag> getExecutions();
+  EList getExecutions();
 }

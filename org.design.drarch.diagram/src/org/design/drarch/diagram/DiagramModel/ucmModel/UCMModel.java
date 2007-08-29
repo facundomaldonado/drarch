@@ -32,11 +32,11 @@ public interface UCMModel extends EObject {
    * @model type="Path"
    * @return the list of Path
    */
-  EList<Path> getPaths();
+  EList getPaths();
 
   /**
    * @model type="ComponentRole"
    * @return the list of ComponentRole
    */
-  EList<ComponentRole> getComponentRoles();
+  EList getComponentRoles();
 }

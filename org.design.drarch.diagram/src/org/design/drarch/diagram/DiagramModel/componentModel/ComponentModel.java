@@ -12,17 +12,17 @@ import java.util.List;
  */
 public class ComponentModel implements IModel {
   private String name;
-  private List components;
-  private List relationships;
-  private List responsibilities;
-  private List interfaceLinks;
+  private List<Component> components;
+  private List<Relationship> relationships;
+  private List<Responsibility> responsibilities;
+  private List<InterfaceLink> interfaceLinks;
 
   public ComponentModel() {
     this.name = null;
-    this.components = new ArrayList();
-    this.interfaceLinks = new ArrayList();
-    this.relationships = new ArrayList();
-    this.responsibilities = new ArrayList();
+    this.components = new ArrayList<Component>();
+    this.interfaceLinks = new ArrayList<InterfaceLink>();
+    this.relationships = new ArrayList<Relationship>();
+    this.responsibilities = new ArrayList<Responsibility>();
   }
 
   public String getName() {
@@ -64,13 +64,13 @@ public class ComponentModel implements IModel {
   }
 
 
-  @SuppressWarnings("unchecked")
   public void createComponent(String name) {
     if (!existComponent(name)) {
       Component c = new Component();
       c.setName(name);
       components.add(c);
     } else {
+    	//TODO remove
       System.out
           .println("ComponentModel.crateComponent(): The componene allready exist");
     }
@@ -95,11 +95,11 @@ public class ComponentModel implements IModel {
   }
 
   @SuppressWarnings("unchecked")
-  public List<String> getAllComponents() {
+  public List<Component> getAllComponents() {
     return this.components;
   }
 
-  public List getInterfaceLinks() {
+  public List<InterfaceLink> getInterfaceLinks() {
     return this.interfaceLinks;
   }
 
@@ -119,15 +119,14 @@ public class ComponentModel implements IModel {
     this.relationships.add(relationship);
   }
 
-  public List getRelationships() {
+  public List<Relationship> getRelationships() {
     return relationships;
   }
 
-  public List getResponsibilities() {
+  public List<Responsibility> getResponsibilities() {
     return responsibilities;
   }
 
-  @SuppressWarnings("unchecked")
   public void createResponsibility(String name) {
     Responsibility responsibility = new Responsibility();
     responsibility.setName(name);
@@ -151,8 +150,7 @@ public class ComponentModel implements IModel {
     getComponent(componentName).setAssociation(associations);
   }
 
-  public void addMappingResponsibility(String responsibilityName, 
-      List<String> mapping) {
+  public void addMappingResponsibility(String responsibilityName, List<String> mapping) {
     Responsibility r = getResponsibilitie(responsibilityName);
     r.setMapping(mapping);
   }

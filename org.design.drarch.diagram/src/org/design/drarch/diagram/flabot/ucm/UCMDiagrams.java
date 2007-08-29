@@ -1,7 +1,7 @@
 package org.design.drarch.diagram.flabot.ucm;
 
 import java.util.Hashtable;
-import java.util.Vector;
+import java.util.List;
 
 import org.design.drarch.diagram.flabot.DiagramManager;
 import org.isistan.flabot.coremodel.ComponentModel;
@@ -103,7 +103,7 @@ public class UCMDiagrams {
   }
 
   @SuppressWarnings("unchecked")
-  public void createPath(Vector pathResponsibility) {
+  public void createPath(List<List<String>> pathResponsibility) {
     // Modelo
     Path path = CoremodelFactory.eINSTANCE.createPath();
     SimplePathNode startNode = CoremodelFactory.eINSTANCE
@@ -121,7 +121,7 @@ public class UCMDiagrams {
 
     SimplePathNode previusNode = startNode;
     for (int i = 0; i < pathResponsibility.size(); i++) {
-      Vector peer = (Vector) pathResponsibility.get(i);
+      List<String> peer = (List<String>) pathResponsibility.get(i);
 
       previusNode = addResponsibilityNode(path, (String) peer.get(0),
           previusNode);
@@ -132,7 +132,6 @@ public class UCMDiagrams {
 
     diagram.getMap().getPaths().add(path);
     drawNodes(path);
-    System.out.print("");
     drawConnections(path);
     createNote(path);
   }
