@@ -16,7 +16,6 @@ import org.design.drarch.diagram.DiagramModel.ucmModel.UcmModelPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 

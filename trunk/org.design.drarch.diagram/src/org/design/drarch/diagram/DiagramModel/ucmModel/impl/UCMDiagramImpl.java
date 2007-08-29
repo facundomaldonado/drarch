@@ -9,11 +9,9 @@ import org.design.drarch.diagram.DiagramModel.ucmModel.UCMDiagram;
 import org.design.drarch.diagram.DiagramModel.ucmModel.UCMModel;
 import org.design.drarch.diagram.DiagramModel.ucmModel.UcmModelPackage;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 

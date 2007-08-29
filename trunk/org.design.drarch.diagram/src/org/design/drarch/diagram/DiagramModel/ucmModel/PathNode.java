@@ -50,13 +50,13 @@ public interface PathNode extends EObject {
    * @model type = "PathNode" opposite = "next"
    * @return The provious list.
    */
-  EList<PathNode> getPrevious();
+  EList getPrevious();
 
   /**
    * @model type = "PathNode" opposite = "previous"
    * @return The next PathNode.
    */
-  EList<PathNode> getNext();
+  EList getNext();
 
   boolean addPrevious(PathNode previous);
 

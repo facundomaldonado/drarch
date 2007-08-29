@@ -17,5 +17,5 @@ public interface InnerTag extends EObject {
    * @model keyType="String" valueType="LogNode"
    * @return A Map.
    */
-  EMap<String, LogNode> getTags();
+  EMap getTags();
 }

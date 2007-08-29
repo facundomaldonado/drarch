@@ -1,6 +1,6 @@
 package org.design.drarch.diagram.flabot.component;
 
-import java.util.Vector;
+import java.util.List;
 
 import org.design.drarch.diagram.flabot.DiagramManager;
 import org.eclipse.emf.common.util.EList;
@@ -25,8 +25,8 @@ import org.isistan.flabot.edit.editormodel.Point;
 import org.isistan.flabot.edit.editormodel.VisualModel;
 import org.isistan.flabot.engine.executionstate.ExecutionstateFactory;
 import org.isistan.flabot.engine.executionstate.TraceBasedStateDeterminationStrategy;
-import org.isistan.flabot.engine.executionstate.javalogtrace.JavalogTraceInferenceStrategy;
-import org.isistan.flabot.engine.executionstate.javalogtrace.JavalogtraceFactory;
+//import org.isistan.flabot.engine.executionstate.javalogtrace.JavalogTraceInferenceStrategy;
+//import org.isistan.flabot.engine.executionstate.javalogtrace.JavalogtraceFactory;
 import org.isistan.flabot.launcher.LauncherPlugin;
 import org.isistan.flabot.launcher.filter.filtermodel.FiltermodelFactory;
 import org.isistan.flabot.launcher.filter.filtermodel.LogFilter;
@@ -79,7 +79,6 @@ public class ComponentsDiagram {
    * 
    * @param name
    */
-  @SuppressWarnings("unchecked")
   public void createComponent(String name) {
     if (!existComponent(name)) {
       ComponentModel component = CoremodelFactory.eINSTANCE
@@ -432,7 +431,7 @@ public class ComponentsDiagram {
     }
   }
 
-  public void setScope(String componentName, Vector association) {
+  public void setScope(String componentName, List association) {
     if (association != null) {
       if (association.size() > 0) {
         ComponentModel component = getComponentModel(componentName);
@@ -504,15 +503,15 @@ public class ComponentsDiagram {
 
     TraceBasedStateDeterminationStrategy traceStrategy = ExecutionstateFactory.eINSTANCE
         .createTraceBasedStateDeterminationStrategy();
-    JavalogTraceInferenceStrategy inferenceStrategy = JavalogtraceFactory.eINSTANCE
-        .createJavalogTraceInferenceStrategy();
-    inferenceStrategy
-        .setPrologCode("executionState('Faulty') :- texecutionTag(T), isExitError(T). "
-            + "executionState('Executed') :- texecutionTag(_)."
-            + "executionState('NotExecuted').");
-    inferenceStrategy.setStateDeterminationStrategy(traceStrategy);
-    traceStrategy.setTraceInferenceStrategy(inferenceStrategy);
-    traceStrategy.setResponsibility(responsibility);
+//    JavalogTraceInferenceStrategy inferenceStrategy = JavalogtraceFactory.eINSTANCE
+//        .createJavalogTraceInferenceStrategy();
+//    inferenceStrategy
+//        .setPrologCode("executionState('Faulty') :- texecutionTag(T), isExitError(T). "
+//            + "executionState('Executed') :- texecutionTag(_)."
+//            + "executionState('NotExecuted').");
+//    inferenceStrategy.setStateDeterminationStrategy(traceStrategy);
+//    traceStrategy.setTraceInferenceStrategy(inferenceStrategy);
+//    traceStrategy.setResponsibility(responsibility);
 
     // traceStrategy.setResponsibility(responsibility);
     responsibility.putExtendedData("org.isistan.flabot.engine",
@@ -538,7 +537,7 @@ public class ComponentsDiagram {
   }
 
 
-  public void mappingResponsibility(String responsibilityName, Vector mapping) {
+  public void mappingResponsibility(String responsibilityName, List mapping) {
 
     if (mapping != null) {
       if (mapping.size() > 0) {

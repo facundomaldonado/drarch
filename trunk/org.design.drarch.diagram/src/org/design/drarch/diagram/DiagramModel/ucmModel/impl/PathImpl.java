@@ -11,15 +11,11 @@ import org.design.drarch.diagram.DiagramModel.ucmModel.Path;
 import org.design.drarch.diagram.DiagramModel.ucmModel.PathNode;
 import org.design.drarch.diagram.DiagramModel.ucmModel.UcmModelPackage;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -186,20 +182,19 @@ public class PathImpl extends EObjectImpl implements Path {
    * 
    * @generated
    */
-  @SuppressWarnings("unchecked")
   public void eSet(EStructuralFeature eFeature, Object newValue) {
     switch (eDerivedStructuralFeatureID(eFeature)) {
     case UcmModelPackage.PATH__NODES:
       getNodes().clear();
-      getNodes().addAll((Collection) newValue);
+      getNodes().addAll((Collection<? extends PathNode>) newValue);
       return;
     case UcmModelPackage.PATH__START_NODES:
       getStartNodes().clear();
-      getStartNodes().addAll((Collection) newValue);
+      getStartNodes().addAll((Collection<? extends PathNode>) newValue);
       return;
     case UcmModelPackage.PATH__END_NODES:
       getEndNodes().clear();
-      getEndNodes().addAll((Collection) newValue);
+      getEndNodes().addAll((Collection<? extends PathNode>) newValue);
       return;
     }
     eDynamicSet(eFeature, newValue);

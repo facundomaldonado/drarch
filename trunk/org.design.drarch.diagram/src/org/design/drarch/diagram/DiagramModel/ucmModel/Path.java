@@ -16,17 +16,17 @@ public interface Path extends EObject {
    * @model type="PathNode" opposite="path"
    * @return the PathNode list.
    */
-  EList<PathNode> getNodes();
+  EList getNodes();
 
   /**
    * @model type="PathNode"
    * @return the PathNode list.
    */
-  EList<PathNode> getStartNodes();
+  EList getStartNodes();
 
   /**
    * @model type="PathNode"
    * @return the Path Node list.
    */
-  EList<PathNode> getEndNodes();
+  EList getEndNodes();
 }
