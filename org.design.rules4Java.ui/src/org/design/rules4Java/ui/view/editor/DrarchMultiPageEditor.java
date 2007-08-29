@@ -137,7 +137,7 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
      * Initialize packages so their factories are registered and the editorModel
      * is loaded correctly.
      */
-    RuleModelPackage mpp = RuleModelPackage.eINSTANCE;
+//    RuleModelPackage mpp = RuleModelPackage.eINSTANCE;
 
     /*
      * Modify the load options so that files are loaded even without the

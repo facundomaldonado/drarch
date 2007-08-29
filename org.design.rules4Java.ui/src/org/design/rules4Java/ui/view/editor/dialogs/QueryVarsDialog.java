@@ -126,7 +126,7 @@ public class QueryVarsDialog extends Dialog {
   protected void getVarsFromQuery() {
     String queryAux = query;
     char[] querya = queryAux.toCharArray();
-    List vars = new ArrayList();
+    List<String> vars = new ArrayList<String>();
     int index = 0;
     int ini = 0;
     int end = query.length();
