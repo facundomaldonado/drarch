@@ -25,7 +25,7 @@ public class StepsManagerImpl extends StepsManager {
   }
 
   @Override
-  protected List getDefaultList() {
+  protected List<Rule> getDefaultList() {
     return Application.getInstance().getDefaultList();
   }
 
