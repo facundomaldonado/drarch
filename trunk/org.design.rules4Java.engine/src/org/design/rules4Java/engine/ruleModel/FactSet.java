@@ -14,5 +14,5 @@ public interface FactSet extends EObject {
   /**
    * @model type = "Fact" containment = "true"
    */
-  EList<Fact> getFactTemplates();
+  EList getFactTemplates();
 }

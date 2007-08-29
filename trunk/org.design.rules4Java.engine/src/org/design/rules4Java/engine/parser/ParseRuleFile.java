@@ -29,12 +29,13 @@ public class ParseRuleFile {
   }
 
   public void parseFile() {
-    RuleModelPackage rmp = RuleModelPackage.eINSTANCE;
-    resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,
-        Boolean.TRUE);
-    resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
-        Resource.Factory.Registry.DEFAULT_EXTENSION,
-        new XMIResourceFactoryImpl());
+    //RuleModelPackage rmp = RuleModelPackage.eINSTANCE;
+    
+    resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+    
+    resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
+    			.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+    				 new XMIResourceFactoryImpl());
     URI uri = URI.createFileURI(new File(path.toString()).getAbsolutePath());
     if (resource == null) {
       resource = resourceSet.getResource(uri, true);
