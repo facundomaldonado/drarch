@@ -137,14 +137,13 @@ public class DrarchMultiPageEditor extends MultiPageEditorPart implements
      * Initialize packages so their factories are registered and the editorModel
      * is loaded correctly.
      */
-//    RuleModelPackage mpp = RuleModelPackage.eINSTANCE;
+    RuleModelPackage rmp = RuleModelPackage.eINSTANCE;
 
     /*
      * Modify the load options so that files are loaded even without the
      * required EMF packages.
      */
-    resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,
-        Boolean.TRUE);
+    resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
     if (resource == null) {
       resource = resourceSet.getResource(uri, true);
     }
