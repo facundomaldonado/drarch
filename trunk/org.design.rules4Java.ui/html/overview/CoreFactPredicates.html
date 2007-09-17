@@ -1,0 +1,1653 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Core Fact Predicates</title>
+</head>
+
+<body>
+<h3><span lang=EN-US style='mso-ansi-language:EN-US'>Core Fact
+Predicates</span></h3>
+
+<p><span lang=EN-US style='mso-ansi-language:EN-US'>These are the
+predicates that directly operate on the facts that are stored in the
+fact database. All other predicates are derived from these with rules.</span></p>
+
+<h4><span lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>Unary
+Predicates</span></h4>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="62%"
+	style='width:62.8%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+	<tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+		<td width="25%" style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Predicate</b></span><b> <span class=SpellE>Name</span></b></p>
+		</td>
+		<td width="25%" style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Argument</b></span><b> <span class=SpellE>Type</span></b></p>
+		</td>
+		<td width="48%" style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Description</b></span><b></b></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:1'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span style='font-size:10.0pt'>cu</span></code></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal>CU</p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>cu(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a Compilation Unit
+		(.class or .java file)&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:2'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>package</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Package</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>package(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a package&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:3'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>class</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>class(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a class&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:4'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>interface</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>interface(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is an interface&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:5'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>method</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Method</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>method(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a method&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:6'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span style='font-size:10.0pt'>constructor</span></code></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal>Constructor</p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>constructor(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a constructor&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:7'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>initializer</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Initializer</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>initializer</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is an <span class=SpellE>initializer</span>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:8'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>field</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Field</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>field(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a field&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:9'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>bookmark</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Bookmark</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>bookmark(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a bookmark&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:10'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>warning</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Warning</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>warning(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a compiler
+		warning&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:11'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span style='font-size:10.0pt'>error</span></code></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal>Error</p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span style='font-size:10.0pt'>error(?X)</span></code>
+		<span class=SpellE>means</span>: &quot;<code><span
+			style='font-size:10.0pt'>?X</span></code> <span class=SpellE>is</span>
+		a <span class=SpellE>compiler</span> error&quot;</p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:12;mso-yfti-lastrow:yes'>
+		<td width="25%" valign=top
+			style='width:25.0%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>task</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Task</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.14%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>task(?X)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a task&quot;</span></p>
+		</td>
+	</tr>
+</table>
+
+<h4><span class=SpellE><span style='font-family:Arial'>Binary</span></span><span
+	style='font-family:Arial'> <span class=SpellE>Predicates</span></span></h4>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="63%"
+	style='width:63.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+	<tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+		<td width="24%" style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Predicate</b></span><b> <span class=SpellE>Name</span></b></p>
+		</td>
+		<td width="25%" style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Argument</b></span><b> <span class=SpellE>Types</span></b></p>
+		</td>
+		<td width="48%" style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Description</b></span><b></b></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:1'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>priority</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Task</span>, <span class=SpellE>String</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>priority(?T,?P)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Task </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has priority </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?P</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:2'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>name</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>String</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>name(?E,?S)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Element </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?E</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has name </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?S</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:3'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>child</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>Element</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>child(?<span
+			class=SpellE>Sup,?Sub</span>)</span></code><span lang=EN-US
+			style='mso-ansi-language:EN-US'> means: &quot;Element </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?Sup</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has a child </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?Sub</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:4'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>extends</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span>, <span
+			class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>extends(?C1,?C2)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Class (or
+		Interface) </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?C1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> extends Class (or
+		Interface) </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?C2</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:5'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>implements</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span>, <span
+			class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>implements(?C,?I)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Class </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> implements Interface </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?I</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:6'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>throws</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>throws(?C,?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Callable
+		</span><code><span lang=EN-US
+			style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> throws </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:7'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>type</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Field</span>, <span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>type(?F,?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Field </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?F</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is of type </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:8'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>modifier</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>String</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>modifier(?E,?S)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Element </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?E</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has modifier (<span
+			class=SpellE>i.e</span> public, private, static, etc) </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?S</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:9'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>arg</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>arg</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?C,?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Callable </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has an argument of type </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:10'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>returns</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>returns(?C,?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Callable
+		</span><code><span lang=EN-US
+			style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> returns Type </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes'>
+		<td width="24%" valign=top
+			style='width:24.92%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>signature</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.22%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>String</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.3%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>signature(?C,?S)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Callable
+		</span><code><span lang=EN-US
+			style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has signature </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?S</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+</table>
+
+<h4><span class=SpellE><span style='font-family:Arial'>Ternary</span></span><span
+	style='font-family:Arial'> <span class=SpellE>Predicates</span></span></h4>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="63%"
+	style='width:63.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+	<tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+		<td width="24%" style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Predicate</b></span><b> <span class=SpellE>Name</span></b></p>
+		</td>
+		<td width="25%" style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Argument</b></span><b> <span class=SpellE>Types</span></b></p>
+		</td>
+		<td width="48%" style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Description</b></span><b></b></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:1'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>methodCall</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Method</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>methodCall</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?B,?M,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> calls Method </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?M</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:2'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>thisCall</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal>Constructor, Constructor, <span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>methodCall</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?C1,?C2,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Constructor
+		</span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?C1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> makes a &quot;this&quot;
+		call to Constructor </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>?C2</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:3'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>superCall</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>Callable</span>, <span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>superCall</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?C1,?C2,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Callable </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> makes a &quot;super&quot;
+		call to Callable </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>?C2</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:4'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>constructorCall</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, Constructor, <span
+			class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>constructorCall</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?B,?C,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> calls Constructor </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:5'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>instanceOf</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>RefType</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>instanceOf</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?B,?T,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> performs an <span
+			class=SpellE>instanceof</span> test for type </span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:6'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>reads</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Field</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>reads(?B,?F,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> reads field </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?F</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:7'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>writes</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Field</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>writes(?B,?F,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> writes to field </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?F</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:8'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>param</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>Type</span>, <span class=SpellE>Integer</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>param</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?C,?T,?N)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Callable </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has an argument of type </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> as its </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?N</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>th argument&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes'>
+		<td width="24%" valign=top
+			style='width:24.44%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>tag</span></code></span></p>
+		</td>
+		<td width="25%" valign=top
+			style='width:25.68%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>String</span>, <span class=SpellE>String</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.32%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>tag(?E,?N,?V)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Element </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?E</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has <span class=SpellE>javadoc</span>
+		tag </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?N</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> with value </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?V</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+</table>
+
+<h3><span lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>Derived
+Predicates</span></h3>
+
+<p><span lang=EN-US style='mso-ansi-language:EN-US'>These are useful
+predicates that have been derived from the core fact predicates using
+rules. The rule declarations are contained in the <span class=SpellE>derived_preds.rub</span>
+file.</span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="63%"
+	style='width:63.6%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+	<tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+		<td width="25%" style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Predicate</b></span><b> <span class=SpellE>Name</span></b></p>
+		</td>
+		<td width="23%" style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Argument</b></span><b> <span class=SpellE>Types</span></b></p>
+		</td>
+		<td width="48%" style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal align=center style='text-align:center'><span
+			class=SpellE><b>Description</b></span><b></b></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:1'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>type</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>type(?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a type (a class,
+		interface, or primitive)&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:2'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>element</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>element(?E)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is an element&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:3'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>likeThis</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>Element</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>likeThis</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?E1,?E2)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?E1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> and </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?E2</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> have the same name, but
+		are not the same object&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:4'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>strongLikeThis</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>Callable</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>strongLikeThis</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?C1,?C1)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> and </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C2</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> have the same
+		signature&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:5'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>child</span></code></span><code><span
+			style='font-size:10.0pt'>+</span></code></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>Element</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>child+(?E1,?E1)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?E2</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> has </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>?E1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> as one of its
+		ancestors&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:6'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>package</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>Package</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>package(?E,?P)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Element </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?E</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is in package </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?P</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:7'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span style='font-size:10.0pt'>constructor</span></code></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Class</span>, Constructor</p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span style='font-size:10.0pt'>constructor(?CL,?CON)</span></code>
+		<span class=SpellE>means</span>: &quot;<span class=SpellE>Class</span>
+		<code><span style='font-size:10.0pt'>?CL</span></code> declares
+		constructor <code><span style='font-size:10.0pt'>?CON</span></code>&quot;</p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:8'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>method</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span>, <span class=SpellE>Method</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>method(?T,?M)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Type </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> declares method </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?M</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:9'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>subtype</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span>, <span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>subtype(?T1,?T2)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T2</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is a direct subtype of
+		</span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?T1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:10'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>subtype</span></code></span><code><span
+			style='font-size:10.0pt'>+</span></code></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span>, <span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>subtype+(?T1,?T2)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T2</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is in </span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T1</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'>'s type hierarchy&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:11'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>subtype</span></code></span><code><span
+			style='font-size:10.0pt'>*</span></code></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span>, <span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>subtype*(?T1,?T2)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T2</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> is in </span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?T1</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'>'s type hierarchy (</span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?T2</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> can equal </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>)&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:12'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>field</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span>, <span class=SpellE>Field</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>field(?T,?F)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Type </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> declares field </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?F</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:13'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>inheritedField</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span>, <span class=SpellE>Field</span>,
+		<span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>inheritedField</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?<span
+			class=SpellE>T,?F,?InhT</span>)</span></code><span lang=EN-US
+			style='mso-ansi-language:EN-US'> means: &quot;Type </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> <span class=SpellE>inherites</span>
+		field </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>?F</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> from type </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>?<span
+			class=SpellE>InhT</span></span></code><span lang=EN-US
+			style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:14'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>calls</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Callable</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>calls(?B,?C,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> calls </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:15'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>staticCall</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Callable</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>staticCall</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?B,?C,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;<span
+			class=SpellE>Block<code><span style='font-size:10.0pt'>?B</span></code></span>
+		statically calls </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:16'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>dynamicCall</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Callable</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>dynamicCall</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?B,?C,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> dynamically calls </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:17'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>polyCalls</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Callable</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>polyCalls</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?B,?C,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> calls polymorphic
+		callable </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:18'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>accesses</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Block</span>, <span class=SpellE>Field</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>accesses(?B,?F,?L)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Block </span><code><span
+			lang=EN-US style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?B</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> accesses field </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?F</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:19'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>inheritedMethod</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span>, <span class=SpellE>Callable</span>,
+		<span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>inheritedMethod</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?T,?C,?SUP)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;Type </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> inherits </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> from </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?SUP</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:20'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>overrides</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Callable</span>, <span
+			class=SpellE>Callable</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>overrides(?C1,?C2)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Callable
+		</span><code><span lang=EN-US
+			style='font-size:
+  10.0pt;mso-ansi-language:EN-US'>?C1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> overrides callable </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C2</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:21'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>creator</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Class</span>, <span class=SpellE>Block</span>,
+		<span class=SpellE>SourceLocation</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>creator(?C1, ?<span
+			class=SpellE>Ctor</span>, ?L)</span></code><span lang=EN-US
+			style='mso-ansi-language:EN-US'> means: &quot;Class </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C1</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is created by block </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?<span
+			class=SpellE>Ctor</span></span></code><span lang=EN-US
+			style='mso-ansi-language:
+  EN-US'> at location </span><code><span
+			lang=EN-US style='font-size:10.0pt;
+  mso-ansi-language:EN-US'>?L</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:22'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>implements</span></code></span><code><span
+			style='font-size:10.0pt'>+</span></code></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Class</span>, <span class=SpellE>Interface</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>implements+(?C,?I)</span></code><span
+			lang=EN-US style='mso-ansi-language:
+  EN-US'> means: &quot;Interface
+		</span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?I</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is implemented by </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> or an ancestor of </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?C</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:23'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>outerType</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Type</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>outerType</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is an outer type&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:24'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>nestedType</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>nestedType</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is a nested type&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:25'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>memberType</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>memberType</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is a member type&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:26'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>staticNestedType</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>nestedType</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is a static nested
+		type&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:27'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>localType</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>localType</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is a local type&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:28'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>anonymousType</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RefType</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>anonymousType</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?T)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?T</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> is an anonymous
+		type&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:29'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>viewFromHere</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, [<span
+			class=SpellE>Element</span>]</p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>viewFromHere</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?<span
+			class=SpellE>X,?ViewStructure</span>)</span></code><span lang=EN-US
+			style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?<span
+			class=SpellE>ViewStructure</span></span></code><span lang=EN-US
+			style='mso-ansi-language:EN-US'> is a tree representation of all
+		child relationships below parent element </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?X</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:30'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>re_match</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>RegExp</span>, <span
+			class=SpellE>String</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>re_match</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?RE,?S)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;String </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?S</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> matches Regular
+		Expression </span><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>?RE</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+	<tr style='mso-yfti-irow:31;mso-yfti-lastrow:yes'>
+		<td width="25%" valign=top
+			style='width:25.74%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span
+			style='font-size:10.0pt'>re_name</span></code></span></p>
+		</td>
+		<td width="23%" valign=top
+			style='width:23.9%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE>Element</span>, <span
+			class=SpellE>RegExp</span></p>
+		</td>
+		<td width="48%" valign=top
+			style='width:48.8%;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+		<p class=MsoNormal><span class=SpellE><code><span lang=EN-US
+			style='font-size:10.0pt;mso-ansi-language:EN-US'>re_name</span></code></span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(?E,?RE)</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> means: &quot;</span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?E</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'> has a name that matches </span><code><span
+			lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>?RE</span></code><span
+			lang=EN-US style='mso-ansi-language:EN-US'>&quot;</span></p>
+		</td>
+	</tr>
+</table>
+
+<p><span lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;</span></p>
+</body>
+</html>
