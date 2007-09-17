@@ -1,0 +1,2433 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<org.isistan.flabot.edit.editormodel:FlabotFileModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.isistan.flabot.coremodel="http:///org/isistan/flabot/coremodel.ecore" xmlns:org.isistan.flabot.edit.componentmodel="http:///org/isistan/flabot/edit/componentmodel.ecore" xmlns:org.isistan.flabot.edit.editormodel="http:///org/isistan/flabot/edit/editormodel.ecore" xmlns:org.isistan.flabot.edit.ucmmodel="http:///org/isistan/flabot/edit/ucmmodel.ecore" xmlns:org.isistan.flabot.engine.executionstate="http:///org/isistan/flabot/engine/executionstate.ecore" xmlns:org.isistan.flabot.engine.executionstate.javalogtrace="http:///org/isistan/flabot/engine/executionstate/javalogtrace.ecore" xmlns:org.isistan.flabot.launcher.filter.filtermodel="http:///org/isistan/flabot/launcher/filter/filtermodel.ecore" xmlns:org.isistan.flabot.mapping.mappingmodel="http:///org/isistan/flabot/mapping/mappingmodel.ecore" openDiagrams="//@diagrams.0 //@diagrams.1 //@diagrams.2 //@diagrams.3 //@diagrams.4 //@diagrams.5 //@diagrams.6 //@diagrams.7 //@diagrams.8 //@diagrams.9">
+  <coreModel>
+    <components name="RuleManager" features="//@coreModel/@responsibilities.0">
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.engine" behaviorPattern="" classPattern="@org\.design\.rules4Java\.engine\.engine\.RuleManager" javaFilePattern="org\.design\.rules4Java\.engine\.engine\.RuleManager"/>
+      </extendedData>
+      <ownedPorts name="port_RuleManager">
+        <provideds name="interfaceP_RuleManager" port="//@coreModel/@components.0/@ownedPorts.0"/>
+        <requireds name="interfaceR_RuleManager" port="//@coreModel/@components.0/@ownedPorts.0"/>
+      </ownedPorts>
+      <ownedPorts name="port_RuleManager">
+        <provideds name="interfaceP_RuleManager" port="//@coreModel/@components.0/@ownedPorts.1"/>
+        <requireds name="interfaceR_RuleManager" port="//@coreModel/@components.0/@ownedPorts.1"/>
+      </ownedPorts>
+      <ownedPorts name="port_RuleManager">
+        <provideds name="interfaceP_RuleManager" port="//@coreModel/@components.0/@ownedPorts.2"/>
+        <requireds name="interfaceR_RuleManager" port="//@coreModel/@components.0/@ownedPorts.2"/>
+      </ownedPorts>
+      <ownedPorts name="port_RuleManager">
+        <provideds name="interfaceP_RuleManager" port="//@coreModel/@components.0/@ownedPorts.3"/>
+        <requireds name="interfaceR_RuleManager" port="//@coreModel/@components.0/@ownedPorts.3"/>
+      </ownedPorts>
+    </components>
+    <components name="StepsManager" features="//@coreModel/@responsibilities.2">
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.drarch\.manager|org\.design\.rules4Java\.engine\.engine" behaviorPattern="" classPattern="@org\.design\.drarch\.manager\.StepsManagerImpl|@org\.design\.rules4Java\.engine\.engine\.StepsManager" javaFilePattern="org\.design\.drarch\.manager\.StepsManagerImpl|org\.design\.rules4Java\.engine\.engine\.StepsManager"/>
+      </extendedData>
+      <ownedPorts name="port_StepsManager">
+        <requireds name="interfaceR_StepsManager" port="//@coreModel/@components.1/@ownedPorts.0"/>
+      </ownedPorts>
+    </components>
+    <components name="StepAction" features="//@coreModel/@responsibilities.3">
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.drarch\.manager|org\.design\.rules4Java\.engine\.engine" behaviorPattern="" classPattern="@org\.design\.drarch\.manager\.StepActionImpl|@org\.design\.rules4Java\.engine\.engine\.StepAction" javaFilePattern="org\.design\.drarch\.manager\.StepActionImpl|org\.design\.rules4Java\.engine\.engine\.StepAction"/>
+      </extendedData>
+      <ownedPorts name="port_StepAction">
+        <requireds name="interfaceR_StepAction" port="//@coreModel/@components.2/@ownedPorts.0"/>
+      </ownedPorts>
+      <ownedPorts name="port_StepAction">
+        <requireds name="interfaceR_StepAction" port="//@coreModel/@components.2/@ownedPorts.1"/>
+      </ownedPorts>
+      <ownedPorts name="port_StepAction">
+        <requireds name="interfaceR_StepAction" port="//@coreModel/@components.2/@ownedPorts.2"/>
+      </ownedPorts>
+      <ownedPorts name="port_StepAction">
+        <provideds name="interfaceP_StepAction" port="//@coreModel/@components.2/@ownedPorts.3"/>
+        <requireds name="interfaceR_StepAction" port="//@coreModel/@components.2/@ownedPorts.3"/>
+      </ownedPorts>
+    </components>
+    <components name="QueryEngine" features="//@coreModel/@responsibilities.4">
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel|org\.design\.rules4Java\.engine\.engine\.engineModel" behaviorPattern="" classPattern="@org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl|@org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine" javaFilePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine"/>
+      </extendedData>
+      <ownedPorts name="port_QueryEngine">
+        <provideds name="interfaceP_QueryEngine" port="//@coreModel/@components.3/@ownedPorts.0"/>
+      </ownedPorts>
+      <ownedPorts name="port_QueryEngine">
+        <provideds name="interfaceP_QueryEngine" port="//@coreModel/@components.3/@ownedPorts.1"/>
+      </ownedPorts>
+    </components>
+    <components name="KnowledgeBase" features="//@coreModel/@responsibilities.5">
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel|org\.design\.rules4Java\.engine\.engine\.engineModel" behaviorPattern="" classPattern="@org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl|@org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase" javaFilePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl|org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase"/>
+      </extendedData>
+      <ownedPorts name="port_KnowledgeBase">
+        <provideds name="interfaceP_KnowledgeBase" port="//@coreModel/@components.4/@ownedPorts.0"/>
+      </ownedPorts>
+    </components>
+    <components name="SuggestMaker" features="//@coreModel/@responsibilities.11">
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.engine" behaviorPattern="" classPattern="@org\.design\.rules4Java\.engine\.engine\.SuggestMaker" javaFilePattern="org\.design\.rules4Java\.engine\.engine\.SuggestMaker"/>
+      </extendedData>
+      <ownedPorts name="port_SuggestMaker">
+        <provideds name="interfaceP_SuggestMaker" port="//@coreModel/@components.5/@ownedPorts.0"/>
+      </ownedPorts>
+      <ownedPorts name="port_SuggestMaker">
+        <provideds name="interfaceP_SuggestMaker" port="//@coreModel/@components.5/@ownedPorts.1"/>
+      </ownedPorts>
+      <ownedPorts name="port_SuggestMaker">
+        <provideds name="interfaceP_SuggestMaker" port="//@coreModel/@components.5/@ownedPorts.2"/>
+      </ownedPorts>
+      <ownedPorts name="port_SuggestMaker">
+        <provideds name="interfaceP_SuggestMaker" port="//@coreModel/@components.5/@ownedPorts.3"/>
+      </ownedPorts>
+    </components>
+    <components name="FactsGenerator" features="//@coreModel/@responsibilities.18">
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.engine" behaviorPattern="" classPattern="@org\.design\.rules4Java\.engine\.engine\.FactsGenerator" javaFilePattern="org\.design\.rules4Java\.engine\.engine\.FactsGenerator"/>
+      </extendedData>
+      <ownedPorts name="port_FactsGenerator">
+        <provideds name="interfaceP_FactsGenerator" port="//@coreModel/@components.6/@ownedPorts.0"/>
+      </ownedPorts>
+      <ownedPorts name="port_FactsGenerator">
+        <provideds name="interfaceP_FactsGenerator" port="//@coreModel/@components.6/@ownedPorts.1"/>
+      </ownedPorts>
+      <ownedPorts name="port_FactsGenerator">
+        <provideds name="interfaceP_FactsGenerator" port="//@coreModel/@components.6/@ownedPorts.2"/>
+      </ownedPorts>
+      <ownedPorts name="port_FactsGenerator">
+        <provideds name="interfaceP_FactsGenerator" port="//@coreModel/@components.6/@ownedPorts.3"/>
+      </ownedPorts>
+    </components>
+    <responsibilities name="RuleManager" components="//@coreModel/@components.0">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.0">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.launcher|logFilter">
+        <value xsi:type="org.isistan.flabot.launcher.filter.filtermodel:LogFilter" gaugeTypes="7"/>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.engine" behaviorPattern="org\.design\.rules4Java\.engine\.engine\.RuleManager#getInstance\(\):org\.design\.rules4Java\.engine\.engine\.RuleManager|org\.design\.rules4Java\.engine\.engine\.RuleManager#evaluateRule\(org\.design\.rules4Java\.engine\.ruleModel\.Rule\):org\.design\.rules4Java\.engine\.engine\.engineModel\.ResultSet|org\.design\.rules4Java\.engine\.engine\.RuleManager#getSuggests\(org\.design\.rules4Java\.engine\.ruleModel\.Ruleorg\.design\.rules4Java\.engine\.engine\.engineModel\.ResultSet\):java\.util\.List|org\.design\.rules4Java\.engine\.engine\.RuleManager#getFacts\(org\.design\.rules4Java\.engine\.ruleModel\.Rulejava\.util\.List\):java\.util\.List|org\.design\.rules4Java\.engine\.engine\.RuleManager#getQueryEngine\(\):org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine|org\.design\.rules4Java\.engine\.engine\.RuleManager#setQueryEngine\(org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine\):void|org\.design\.rules4Java\.engine\.engine\.RuleManager#getSuggestMaker\(\):org\.design\.rules4Java\.engine\.engine\.SuggestMaker|org\.design\.rules4Java\.engine\.engine\.RuleManager#setSuggestMaker\(org\.design\.rules4Java\.engine\.engine\.SuggestMaker\):void" classPattern="org\.design\.rules4Java\.engine\.engine\.RuleManager" javaFilePattern="org\.design\.rules4Java\.engine\.engine\.RuleManager"/>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="RuleManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.1">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepsManager" components="//@coreModel/@components.1">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.2">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.launcher|logFilter">
+        <value xsi:type="org.isistan.flabot.launcher.filter.filtermodel:LogFilter" gaugeTypes="7"/>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.drarch\.manager|org\.design\.rules4Java\.engine\.engine" behaviorPattern="org\.design\.drarch\.manager\.StepsManagerImpl#getInstance\(\):org\.design\.rules4Java\.engine\.engine\.StepsManager|org\.design\.drarch\.manager\.StepsManagerImpl#getDefaultList\(\):java\.util\.List|org\.design\.drarch\.manager\.StepsManagerImpl#createStepAction\(org\.design\.rules4Java\.engine\.ruleModel\.Rule\):org\.design\.rules4Java\.engine\.engine\.StepAction|org\.design\.rules4Java\.engine\.engine\.StepsManager#nextStep\(\):void|org\.design\.rules4Java\.engine\.engine\.StepsManager#hasNext\(\):boolean|org\.design\.rules4Java\.engine\.engine\.StepsManager#startStep\(\):void|org\.design\.rules4Java\.engine\.engine\.StepsManager#hasBackStep\(\):boolean|org\.design\.rules4Java\.engine\.engine\.StepsManager#getStepSuggests\(\):java\.util\.List|org\.design\.rules4Java\.engine\.engine\.StepsManager#loadStepsfromFile\(\):void|org\.design\.rules4Java\.engine\.engine\.StepsManager#getNumberStep\(\):int|org\.design\.rules4Java\.engine\.engine\.StepsManager#restart\(\):void|org\.design\.rules4Java\.engine\.engine\.StepsManager#getDefaultList\(\):java\.util\.List|org\.design\.rules4Java\.engine\.engine\.StepsManager#createStepAction\(org\.design\.rules4Java\.engine\.ruleModel\.Rule\):org\.design\.rules4Java\.engine\.engine\.StepAction" classPattern="org\.design\.drarch\.manager\.StepsManagerImpl|org\.design\.rules4Java\.engine\.engine\.StepsManager" javaFilePattern="org\.design\.drarch\.manager\.StepsManagerImpl|org\.design\.rules4Java\.engine\.engine\.StepsManager"/>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepAction" components="//@coreModel/@components.2">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.3">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.launcher|logFilter">
+        <value xsi:type="org.isistan.flabot.launcher.filter.filtermodel:LogFilter" gaugeTypes="7"/>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.drarch\.manager|org\.design\.rules4Java\.engine\.engine" behaviorPattern="org\.design\.drarch\.manager\.StepActionImpl#applyFacts\(\):void|org\.design\.drarch\.manager\.StepActionImpl#loadModel\(\):void|org\.design\.drarch\.manager\.StepActionImpl#getKnowledgeBase\(\):org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase|org\.design\.rules4Java\.engine\.engine\.StepAction#loadFacts\(java\.util\.List\):void|org\.design\.rules4Java\.engine\.engine\.StepAction#applyFacts\(\):void|org\.design\.rules4Java\.engine\.engine\.StepAction#getPublishedFacts\(\):java\.util\.List|org\.design\.rules4Java\.engine\.engine\.StepAction#getSuggests\(\):java\.util\.List|org\.design\.rules4Java\.engine\.engine\.StepAction#run\(\):void|org\.design\.rules4Java\.engine\.engine\.StepAction#getKnowledgeBase\(\):org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase" classPattern="org\.design\.drarch\.manager\.StepActionImpl|org\.design\.rules4Java\.engine\.engine\.StepAction" javaFilePattern="org\.design\.drarch\.manager\.StepActionImpl|org\.design\.rules4Java\.engine\.engine\.StepAction"/>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="QueryEngine" components="//@coreModel/@components.3">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.4">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.launcher|logFilter">
+        <value xsi:type="org.isistan.flabot.launcher.filter.filtermodel:LogFilter" gaugeTypes="7"/>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel|org\.design\.rules4Java\.engine\.engine\.engineModel" behaviorPattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#init\(\):void|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#getWorkingSetManager\(\):org\.eclipse\.ui\.IWorkingSetManager|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#setWorkingSetManager\(org\.eclipse\.ui\.IWorkingSetManager\):void|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#getWorkingSetNode\(\):ca\.ubc\.jquery\.gui\.results\.WorkingSetNode|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#getWorkingSet\(\):org\.eclipse\.ui\.IWorkingSet|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#setWorkingSet\(org\.eclipse\.ui\.IWorkingSet\):void|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#evaluateQuery\(org\.design\.rules4Java\.engine\.ruleModel\.Query\):org\.design\.rules4Java\.engine\.engine\.engineModel\.ResultSet|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl#createResultSet\(\):org\.design\.rules4Java\.engine\.engine\.engineModel\.ResultSet|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine#getWorkingSetManager\(\):org\.eclipse\.ui\.IWorkingSetManager|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine#setWorkingSetManager\(org\.eclipse\.ui\.IWorkingSetManager\):void|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine#getWorkingSet\(\):org\.eclipse\.ui\.IWorkingSet|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine#setWorkingSet\(org\.eclipse\.ui\.IWorkingSet\):void|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine#evaluateQuery\(org\.design\.rules4Java\.engine\.ruleModel\.Query\):org\.design\.rules4Java\.engine\.engine\.engineModel\.ResultSet" classPattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine" javaFilePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.QueryEngineImpl|org\.design\.rules4Java\.engine\.engine\.engineModel\.QueryEngine"/>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="KnowledgeBase" components="//@coreModel/@components.4">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.5">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.launcher|logFilter">
+        <value xsi:type="org.isistan.flabot.launcher.filter.filtermodel:LogFilter" gaugeTypes="7"/>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel|org\.design\.rules4Java\.engine\.engine\.engineModel" behaviorPattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl#addFact\(java\.lang\.String\):void|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl#exist\(java\.lang\.String\):boolean|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl#removeFact\(java\.lang\.String\):void|org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl#setInclude\(ca\.ubc\.jquery\.gui\.results\.WorkingSetNode\):void|org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase#addFact\(java\.lang\.String\):void|org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase#exist\(java\.lang\.String\):boolean|org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase#removeFact\(java\.lang\.String\):void|org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase#generateFile\(\):void" classPattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl|org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase" javaFilePattern="org\.design\.rules4Java\.engine\.jqueryImpl\.engineModel\.KnowledgeBaseAbstractImpl|org\.design\.rules4Java\.engine\.engine\.engineModel\.KnowledgeBase"/>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="RuleManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.6">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepsManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.7">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepAction">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.8">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="QueryEngine">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.9">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="KnowledgeBase">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.10">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="SuggestMaker" components="//@coreModel/@components.5">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.11">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.launcher|logFilter">
+        <value xsi:type="org.isistan.flabot.launcher.filter.filtermodel:LogFilter" gaugeTypes="7"/>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.engine" behaviorPattern="org\.design\.rules4Java\.engine\.engine\.SuggestMaker#getSuggests\(org\.design\.rules4Java\.engine\.engine\.engineModel\.ResultSetjava\.lang\.Stringjava\.util\.List\):java\.util\.List&lt;Suggest>|org\.design\.rules4Java\.engine\.engine\.SuggestMaker#replaceVarByValue\(java\.lang\.String\):java\.lang\.String|org\.design\.rules4Java\.engine\.engine\.SuggestMaker#parseSuggest\(java\.util\.Listjava\.lang\.String\):java\.lang\.String" classPattern="org\.design\.rules4Java\.engine\.engine\.SuggestMaker" javaFilePattern="org\.design\.rules4Java\.engine\.engine\.SuggestMaker"/>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="RuleManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.12">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepsManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.13">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepAction">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.14">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="QueryEngine">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.15">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="KnowledgeBase">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.16">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="SuggestMaker">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.17">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="FactsGenerator" components="//@coreModel/@components.6">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.18">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.launcher|logFilter">
+        <value xsi:type="org.isistan.flabot.launcher.filter.filtermodel:LogFilter" gaugeTypes="7"/>
+      </extendedData>
+      <extendedData key="org.isistan.flabot.mapping|mapping">
+        <value xsi:type="org.isistan.flabot.mapping.mappingmodel:PatternMapping" packagePattern="org\.design\.rules4Java\.engine\.engine" behaviorPattern="org\.design\.rules4Java\.engine\.engine\.FactsGenerator#getFacts\(java\.util\.Listorg\.design\.rules4Java\.engine\.ruleModel\.FactSet\):java\.util\.List" classPattern="org\.design\.rules4Java\.engine\.engine\.FactsGenerator" javaFilePattern="org\.design\.rules4Java\.engine\.engine\.FactsGenerator"/>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="RuleManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.19">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepsManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.20">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepAction">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.21">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="QueryEngine">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.22">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="KnowledgeBase">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.23">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="SuggestMaker">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.24">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="FactsGenerator">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.25">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="RuleManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.26">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepsManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.27">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepAction">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.28">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="QueryEngine">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.29">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="KnowledgeBase">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.30">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="SuggestMaker">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.31">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="FactsGenerator">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.32">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="RuleManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.33">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepsManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.34">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepAction">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.35">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="QueryEngine">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.36">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="KnowledgeBase">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.37">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="SuggestMaker">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.38">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="FactsGenerator">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.39">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="RuleManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.40">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepsManager">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.41">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="StepAction">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.42">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="QueryEngine">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.43">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="KnowledgeBase">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.44">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="SuggestMaker">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.45">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <responsibilities name="FactsGenerator">
+      <extendedData key="org.isistan.flabot.engine|stateDeterminationStrategy">
+        <value xsi:type="org.isistan.flabot.engine.executionstate:TraceBasedStateDeterminationStrategy" responsibility="//@coreModel/@responsibilities.46">
+          <traceInferenceStrategy xsi:type="org.isistan.flabot.engine.executionstate.javalogtrace:JavalogTraceInferenceStrategy" prologCode="executionState('Faulty') :- texecutionTag(T), isExitError(T). executionState('Executed') :- texecutionTag(_).executionState('NotExecuted')."/>
+        </value>
+      </extendedData>
+    </responsibilities>
+    <useCaseMaps name="UCM - 1">
+      <paths name="NonamePath" endNodes="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.1" startNodes="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.0">
+        <nodes xsi:type="org.isistan.flabot.coremodel:SimplePathNode" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.2" name="StartNode"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:SimplePathNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.38" name="EndNode"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.0" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.3" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.2" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.4" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.3" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.5" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.4" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.6" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.5" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.7" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.6" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.8" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.7" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.9" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.8" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.10" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.9" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.11" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.10" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.12" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.11" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.13" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.12" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.14" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.13" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.15" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.14" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.16" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.15" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.17" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.16" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.18" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.17" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.19" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.18" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.20" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.19" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.21" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.20" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.22" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.21" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.23" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.22" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.24" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.23" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.25" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.24" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.26" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.25" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.27" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.26" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.28" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.27" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.29" name="StepsManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.2" role="//@coreModel/@useCaseMaps.0/@componentRoles.1"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.28" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.30" name="StepsManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.2" role="//@coreModel/@useCaseMaps.0/@componentRoles.1"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.29" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.31" name="StepsManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.2" role="//@coreModel/@useCaseMaps.0/@componentRoles.1"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.30" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.32" name="StepsManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.2" role="//@coreModel/@useCaseMaps.0/@componentRoles.1"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.31" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.33" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.32" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.34" name="StepAction" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.3" role="//@coreModel/@useCaseMaps.0/@componentRoles.2"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.33" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.35" name="StepAction" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.3" role="//@coreModel/@useCaseMaps.0/@componentRoles.2"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.34" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.36" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.35" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.37" name="StepsManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.2" role="//@coreModel/@useCaseMaps.0/@componentRoles.1"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.36" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.38" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.37" next="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.1" name="RuleManager" map="//@coreModel/@useCaseMaps.0" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.0/@componentRoles.0"/>
+      </paths>
+      <componentRoles name="RuleManager" component="//@coreModel/@components.0"/>
+      <componentRoles name="StepsManager" component="//@coreModel/@components.1"/>
+      <componentRoles name="StepAction" component="//@coreModel/@components.2"/>
+      <componentRoles name="QueryEngine" component="//@coreModel/@components.3"/>
+    </useCaseMaps>
+    <useCaseMaps name="UCM - 2">
+      <paths name="NonamePath" endNodes="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.1" startNodes="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.0">
+        <nodes xsi:type="org.isistan.flabot.coremodel:SimplePathNode" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.2" name="StartNode"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:SimplePathNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.8" name="EndNode"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.0" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.3" name="RuleManager" map="//@coreModel/@useCaseMaps.1" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.1/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.2" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.4" name="StepsManager" map="//@coreModel/@useCaseMaps.1" responsibility="//@coreModel/@responsibilities.2" role="//@coreModel/@useCaseMaps.1/@componentRoles.1"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.3" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.5" name="RuleManager" map="//@coreModel/@useCaseMaps.1" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.1/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.4" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.6" name="StepAction" map="//@coreModel/@useCaseMaps.1" responsibility="//@coreModel/@responsibilities.3" role="//@coreModel/@useCaseMaps.1/@componentRoles.2"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.5" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.7" name="RuleManager" map="//@coreModel/@useCaseMaps.1" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.1/@componentRoles.0"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.6" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.8" name="StepsManager" map="//@coreModel/@useCaseMaps.1" responsibility="//@coreModel/@responsibilities.2" role="//@coreModel/@useCaseMaps.1/@componentRoles.1"/>
+        <nodes xsi:type="org.isistan.flabot.coremodel:ResponsibilityNode" previous="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.7" next="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.1" name="RuleManager" map="//@coreModel/@useCaseMaps.1" responsibility="//@coreModel/@responsibilities.0" role="//@coreModel/@useCaseMaps.1/@componentRoles.0"/>
+      </paths>
+      <componentRoles name="RuleManager" component="//@coreModel/@components.0"/>
+      <componentRoles name="StepsManager" component="//@coreModel/@components.1"/>
+      <componentRoles name="StepAction" component="//@coreModel/@components.2"/>
+      <componentRoles name="QueryEngine" component="//@coreModel/@components.3"/>
+    </useCaseMaps>
+    <interfaceLinks source="//@coreModel/@components.5/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.0/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.2/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.6/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.5/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.0/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.2/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.6/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.5/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.0/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.2/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.6/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.3/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.5/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.0/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.2/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.6/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.3/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.0/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.2/@ownedPorts.3/@provideds.0" target="//@coreModel/@components.1/@ownedPorts.0/@requireds.0"/>
+    <interfaceLinks source="//@coreModel/@components.4/@ownedPorts.0/@provideds.0" target="//@coreModel/@components.2/@ownedPorts.0/@requireds.0"/>
+    <relationships stereotype="//@coreModel/@stereotypes.0" source="//@coreModel/@components.2" target="//@coreModel/@components.1"/>
+    <relationships stereotype="//@coreModel/@stereotypes.1" source="//@coreModel/@components.2" target="//@coreModel/@components.1"/>
+    <relationships stereotype="//@coreModel/@stereotypes.2" source="//@coreModel/@components.2" target="//@coreModel/@components.1"/>
+    <stereotypes name="creator"/>
+    <stereotypes name="creator"/>
+    <stereotypes name="creator"/>
+  </coreModel>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 1" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 2" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1">
+      <location x="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2">
+      <location x="500"/>
+      <size width="201" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3">
+      <location y="250"/>
+      <size width="215" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4">
+      <location x="250" y="250"/>
+      <size width="235" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 3" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1">
+      <location x="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2">
+      <location x="500"/>
+      <size width="201" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3">
+      <location y="250"/>
+      <size width="215" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4">
+      <location x="250" y="250"/>
+      <size width="235" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5">
+      <location x="500" y="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 4" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1">
+      <location x="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2">
+      <location x="500"/>
+      <size width="201" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3">
+      <location x="750"/>
+      <size width="215" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4">
+      <location y="250"/>
+      <size width="235" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5">
+      <location x="250" y="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6">
+      <location x="500" y="250"/>
+      <size width="232" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 5" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <children semanticModel="//@coreModel/@components.0/@ownedPorts.0">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.0/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.1" target="//@diagrams.4/@children.2/@children.0/@children.0">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.0/@requireds.0" targetConnections="//@diagrams.4/@children.5/@children.0/@children.0/@sourceConnections.0 //@diagrams.4/@children.6/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="25"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="50"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1">
+      <location x="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2">
+      <children semanticModel="//@coreModel/@components.2/@ownedPorts.0">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2/@ownedPorts.0/@requireds.0" targetConnections="//@diagrams.4/@children.0/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500"/>
+      <size width="201" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3">
+      <location x="750"/>
+      <size width="215" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4">
+      <location y="250"/>
+      <size width="235" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5">
+      <children semanticModel="//@coreModel/@components.5/@ownedPorts.0">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5/@ownedPorts.0/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.0" target="//@diagrams.4/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="250" y="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6">
+      <children semanticModel="//@coreModel/@components.6/@ownedPorts.0">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6/@ownedPorts.0/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.2" target="//@diagrams.4/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500" y="250"/>
+      <size width="232" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 6" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <children semanticModel="//@coreModel/@components.0/@ownedPorts.1">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.1/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.4" target="//@diagrams.5/@children.2/@children.0/@children.0">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.1/@requireds.0" targetConnections="//@diagrams.5/@children.5/@children.0/@children.0/@sourceConnections.0 //@diagrams.5/@children.6/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="25"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="50"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1" targetConnections="//@diagrams.5/@children.2/@sourceConnections.0">
+      <location x="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2">
+      <children semanticModel="//@coreModel/@components.2/@ownedPorts.1">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2/@ownedPorts.1/@requireds.0" targetConnections="//@diagrams.5/@children.0/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500"/>
+      <size width="201" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@coreModel/@relationships.0" target="//@diagrams.5/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3">
+      <location x="750"/>
+      <size width="215" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4">
+      <location y="250"/>
+      <size width="235" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5">
+      <children semanticModel="//@coreModel/@components.5/@ownedPorts.1">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5/@ownedPorts.1/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.3" target="//@diagrams.5/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="250" y="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6">
+      <children semanticModel="//@coreModel/@components.6/@ownedPorts.1">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6/@ownedPorts.1/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.5" target="//@diagrams.5/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500" y="250"/>
+      <size width="232" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 7" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <children semanticModel="//@coreModel/@components.0/@ownedPorts.2">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.2/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.7" target="//@diagrams.6/@children.2/@children.0/@children.0">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.2/@requireds.0" targetConnections="//@diagrams.6/@children.5/@children.0/@children.0/@sourceConnections.0 //@diagrams.6/@children.6/@children.0/@children.0/@sourceConnections.0 //@diagrams.6/@children.3/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="25"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="50"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1" targetConnections="//@diagrams.6/@children.2/@sourceConnections.0">
+      <location x="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2">
+      <children semanticModel="//@coreModel/@components.2/@ownedPorts.2">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2/@ownedPorts.2/@requireds.0" targetConnections="//@diagrams.6/@children.0/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500"/>
+      <size width="201" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@coreModel/@relationships.1" target="//@diagrams.6/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3">
+      <children semanticModel="//@coreModel/@components.3/@ownedPorts.0">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3/@ownedPorts.0/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.9" target="//@diagrams.6/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="750"/>
+      <size width="215" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4">
+      <location y="250"/>
+      <size width="235" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5">
+      <children semanticModel="//@coreModel/@components.5/@ownedPorts.2">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5/@ownedPorts.2/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.6" target="//@diagrams.6/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="250" y="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6">
+      <children semanticModel="//@coreModel/@components.6/@ownedPorts.2">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6/@ownedPorts.2/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.8" target="//@diagrams.6/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500" y="250"/>
+      <size width="232" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.componentmodel:ComponentDiagram" name="# 8" coreModel="//@coreModel">
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0">
+      <children semanticModel="//@coreModel/@components.0/@ownedPorts.3">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.3/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.11" target="//@diagrams.7/@children.2/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.0/@ownedPorts.3/@requireds.0" targetConnections="//@diagrams.7/@children.5/@children.0/@children.0/@sourceConnections.0 //@diagrams.7/@children.6/@children.0/@children.0/@sourceConnections.0 //@diagrams.7/@children.3/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="25"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="50"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location/>
+      <size width="216" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1" targetConnections="//@diagrams.7/@children.2/@sourceConnections.0">
+      <children semanticModel="//@coreModel/@components.1/@ownedPorts.0">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.1/@ownedPorts.0/@requireds.0" targetConnections="//@diagrams.7/@children.2/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2">
+      <children semanticModel="//@coreModel/@components.2/@ownedPorts.3">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2/@ownedPorts.3/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.14" target="//@diagrams.7/@children.1/@children.0/@children.0">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.2/@ownedPorts.3/@requireds.0" targetConnections="//@diagrams.7/@children.0/@children.0/@children.0/@sourceConnections.0 //@diagrams.7/@children.4/@children.0/@children.0/@sourceConnections.0">
+          <location x="2" y="25"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </children>
+        <location/>
+        <size width="40" height="50"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500"/>
+      <size width="201" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@coreModel/@relationships.2" target="//@diagrams.7/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3">
+      <children semanticModel="//@coreModel/@components.3/@ownedPorts.1">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.3/@ownedPorts.1/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.13" target="//@diagrams.7/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="750"/>
+      <size width="215" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4">
+      <children semanticModel="//@coreModel/@components.4/@ownedPorts.0">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.4/@ownedPorts.0/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.15" target="//@diagrams.7/@children.2/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location y="250"/>
+      <size width="235" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5">
+      <children semanticModel="//@coreModel/@components.5/@ownedPorts.3">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.5/@ownedPorts.3/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.10" target="//@diagrams.7/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="250" y="250"/>
+      <size width="224" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6">
+      <children semanticModel="//@coreModel/@components.6/@ownedPorts.3">
+        <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@components.6/@ownedPorts.3/@provideds.0">
+          <location x="2" y="2"/>
+          <size width="40" height="15"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+          <sourceConnections semanticModel="//@coreModel/@interfaceLinks.12" target="//@diagrams.7/@children.0/@children.0/@children.1">
+            <location/>
+            <size width="-1" height="-1"/>
+            <backgroundColor red="255" green="255" blue="255"/>
+            <foregroundColor/>
+          </sourceConnections>
+        </children>
+        <location/>
+        <size width="40" height="25"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </children>
+      <location x="500" y="250"/>
+      <size width="232" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.ucmmodel:UCMDiagram" name="UCM - 1" coreModel="//@coreModel" map="//@coreModel/@useCaseMaps.0">
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.2"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.3"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.4"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.5"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.6"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.7"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.8"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.9"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.10"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.11"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.12"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.13"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.14"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.15"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.16"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.17"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.18"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.19"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.20"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.21"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.22"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.23"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.24"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.25"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.26"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.27"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.28"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.29"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.30"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.31"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.32"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getStepSuggests&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.33"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getStepSuggests&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.34"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.35"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.36"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.37"/>
+    <notes note="Suggested names:&#xA;" targets="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.38"/>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@componentRoles.0">
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.2" targetConnections="//@diagrams.8/@children.4/@sourceConnections.0 //@diagrams.8/@children.6/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.1">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.3" targetConnections="//@diagrams.8/@children.0/@children.0/@sourceConnections.0 //@diagrams.8/@children.7/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.2">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.4" targetConnections="//@diagrams.8/@children.0/@children.1/@sourceConnections.0 //@diagrams.8/@children.8/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.3">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.5" targetConnections="//@diagrams.8/@children.0/@children.2/@sourceConnections.0 //@diagrams.8/@children.9/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.4">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.6" targetConnections="//@diagrams.8/@children.0/@children.3/@sourceConnections.0 //@diagrams.8/@children.10/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.5">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.7" targetConnections="//@diagrams.8/@children.0/@children.4/@sourceConnections.0 //@diagrams.8/@children.11/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.6">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.8" targetConnections="//@diagrams.8/@children.0/@children.5/@sourceConnections.0 //@diagrams.8/@children.12/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.7">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.9" targetConnections="//@diagrams.8/@children.0/@children.6/@sourceConnections.0 //@diagrams.8/@children.13/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.8">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.10" targetConnections="//@diagrams.8/@children.0/@children.7/@sourceConnections.0 //@diagrams.8/@children.14/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.9">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.11" targetConnections="//@diagrams.8/@children.0/@children.8/@sourceConnections.0 //@diagrams.8/@children.15/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.10">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.12" targetConnections="//@diagrams.8/@children.0/@children.9/@sourceConnections.0 //@diagrams.8/@children.16/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.11">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.13" targetConnections="//@diagrams.8/@children.0/@children.10/@sourceConnections.0 //@diagrams.8/@children.17/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.12">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.14" targetConnections="//@diagrams.8/@children.0/@children.11/@sourceConnections.0 //@diagrams.8/@children.18/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.13">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.15" targetConnections="//@diagrams.8/@children.0/@children.12/@sourceConnections.0 //@diagrams.8/@children.19/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.14">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.16" targetConnections="//@diagrams.8/@children.0/@children.13/@sourceConnections.0 //@diagrams.8/@children.20/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.15">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.17" targetConnections="//@diagrams.8/@children.0/@children.14/@sourceConnections.0 //@diagrams.8/@children.21/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.16">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.18" targetConnections="//@diagrams.8/@children.0/@children.15/@sourceConnections.0 //@diagrams.8/@children.22/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.17">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.19" targetConnections="//@diagrams.8/@children.0/@children.16/@sourceConnections.0 //@diagrams.8/@children.23/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.18">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.20" targetConnections="//@diagrams.8/@children.0/@children.17/@sourceConnections.0 //@diagrams.8/@children.24/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.19">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.21" targetConnections="//@diagrams.8/@children.0/@children.18/@sourceConnections.0 //@diagrams.8/@children.25/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.20">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.22" targetConnections="//@diagrams.8/@children.0/@children.19/@sourceConnections.0 //@diagrams.8/@children.26/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.21">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.23" targetConnections="//@diagrams.8/@children.0/@children.20/@sourceConnections.0 //@diagrams.8/@children.27/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.22">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.24" targetConnections="//@diagrams.8/@children.0/@children.21/@sourceConnections.0 //@diagrams.8/@children.28/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.23">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.25" targetConnections="//@diagrams.8/@children.0/@children.22/@sourceConnections.0 //@diagrams.8/@children.29/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.24">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.26" targetConnections="//@diagrams.8/@children.0/@children.23/@sourceConnections.0 //@diagrams.8/@children.30/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.25">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.27" targetConnections="//@diagrams.8/@children.0/@children.24/@sourceConnections.0 //@diagrams.8/@children.31/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.1/@children.0">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.32" targetConnections="//@diagrams.8/@children.1/@children.3/@sourceConnections.0 //@diagrams.8/@children.36/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.2/@children.0">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.35" targetConnections="//@diagrams.8/@children.2/@children.1/@sourceConnections.0 //@diagrams.8/@children.39/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.1/@children.4">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.37" targetConnections="//@diagrams.8/@children.1/@children.4/@sourceConnections.0 //@diagrams.8/@children.41/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.29">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.38" targetConnections="//@diagrams.8/@children.0/@children.28/@sourceConnections.0 //@diagrams.8/@children.42/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.5">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <location/>
+      <size width="191" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@componentRoles.1">
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.28" targetConnections="//@diagrams.8/@children.0/@children.25/@sourceConnections.0 //@diagrams.8/@children.32/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.1/@children.1">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.29" targetConnections="//@diagrams.8/@children.1/@children.0/@sourceConnections.0 //@diagrams.8/@children.33/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.1/@children.2">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.30" targetConnections="//@diagrams.8/@children.1/@children.1/@sourceConnections.0 //@diagrams.8/@children.34/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.1/@children.3">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.31" targetConnections="//@diagrams.8/@children.1/@children.2/@sourceConnections.0 //@diagrams.8/@children.35/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.26">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.36" targetConnections="//@diagrams.8/@children.0/@children.27/@sourceConnections.0 //@diagrams.8/@children.40/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.28">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <location x="250"/>
+      <size width="207" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@componentRoles.2">
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.33" targetConnections="//@diagrams.8/@children.0/@children.26/@sourceConnections.0 //@diagrams.8/@children.37/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.2/@children.1">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.34" targetConnections="//@diagrams.8/@children.2/@children.0/@sourceConnections.0 //@diagrams.8/@children.38/@sourceConnections.0">
+        <location/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.27">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <location x="500"/>
+      <size width="161" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@componentRoles.3">
+      <location x="750"/>
+      <size width="189" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.0">
+      <location x="1000"/>
+      <size width="15" height="15"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@coreModel/@useCaseMaps.0/@paths.0" target="//@diagrams.8/@children.0/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.0/@paths.0/@nodes.1" targetConnections="//@diagrams.8/@children.0/@children.29/@sourceConnections.0">
+      <location x="1250"/>
+      <size width="15" height="15"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.0">
+      <location x="1500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.0" target="//@diagrams.8/@children.0/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.1">
+      <location x="1750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.1" target="//@diagrams.8/@children.0/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.2">
+      <location y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.2" target="//@diagrams.8/@children.0/@children.2">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.3">
+      <location x="250" y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.3" target="//@diagrams.8/@children.0/@children.3">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.4">
+      <location x="500" y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.4" target="//@diagrams.8/@children.0/@children.4">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.5">
+      <location x="750" y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.5" target="//@diagrams.8/@children.0/@children.5">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.6">
+      <location x="1000" y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.6" target="//@diagrams.8/@children.0/@children.6">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.7">
+      <location x="1250" y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.7" target="//@diagrams.8/@children.0/@children.7">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.8">
+      <location x="1500" y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.8" target="//@diagrams.8/@children.0/@children.8">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.9">
+      <location x="1750" y="250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.9" target="//@diagrams.8/@children.0/@children.9">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.10">
+      <location y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.10" target="//@diagrams.8/@children.0/@children.10">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.11">
+      <location x="250" y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.11" target="//@diagrams.8/@children.0/@children.11">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.12">
+      <location x="500" y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.12" target="//@diagrams.8/@children.0/@children.12">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.13">
+      <location x="750" y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.13" target="//@diagrams.8/@children.0/@children.13">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.14">
+      <location x="1000" y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.14" target="//@diagrams.8/@children.0/@children.14">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.15">
+      <location x="1250" y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.15" target="//@diagrams.8/@children.0/@children.15">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.16">
+      <location x="1500" y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.16" target="//@diagrams.8/@children.0/@children.16">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.17">
+      <location x="1750" y="500"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.17" target="//@diagrams.8/@children.0/@children.17">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.18">
+      <location y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.18" target="//@diagrams.8/@children.0/@children.18">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.19">
+      <location x="250" y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.19" target="//@diagrams.8/@children.0/@children.19">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.20">
+      <location x="500" y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.20" target="//@diagrams.8/@children.0/@children.20">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.21">
+      <location x="750" y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.21" target="//@diagrams.8/@children.0/@children.21">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.22">
+      <location x="1000" y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.22" target="//@diagrams.8/@children.0/@children.22">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.23">
+      <location x="1250" y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.23" target="//@diagrams.8/@children.0/@children.23">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.24">
+      <location x="1500" y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.24" target="//@diagrams.8/@children.0/@children.24">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.25">
+      <location x="1750" y="750"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.25" target="//@diagrams.8/@children.0/@children.25">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.26">
+      <location y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.26" target="//@diagrams.8/@children.1/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.27">
+      <location x="250" y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.27" target="//@diagrams.8/@children.1/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.28">
+      <location x="500" y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.28" target="//@diagrams.8/@children.1/@children.2">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.29">
+      <location x="750" y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.29" target="//@diagrams.8/@children.1/@children.3">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.30">
+      <location x="1000" y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.30" target="//@diagrams.8/@children.0/@children.26">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.31">
+      <location x="1250" y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.31" target="//@diagrams.8/@children.2/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.32">
+      <location x="1500" y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.32" target="//@diagrams.8/@children.2/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.33">
+      <location x="1750" y="1000"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.33" target="//@diagrams.8/@children.0/@children.27">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.34">
+      <location y="1250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.34" target="//@diagrams.8/@children.1/@children.4">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.35">
+      <location x="250" y="1250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.35" target="//@diagrams.8/@children.0/@children.28">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.8/@notes.36">
+      <location x="500" y="1250"/>
+      <size width="200" height="50"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.8/@notes.36" target="//@diagrams.8/@children.0/@children.29">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+  </diagrams>
+  <diagrams xsi:type="org.isistan.flabot.edit.ucmmodel:UCMDiagram" name="UCM - 2" coreModel="//@coreModel" map="//@coreModel/@useCaseMaps.1">
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA; - StepsManager->nextStep&#xA;" targets="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.2"/>
+    <notes note="Suggested names:&#xA; - StepAction->getSuggests&#xA;" targets="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.3"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA; - StepsManager->nextStep&#xA;" targets="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.4"/>
+    <notes note="Suggested names:&#xA; - QueryEngineImpl->evaluateQuery&#xA; - QueryEngineImpl->createResultSet&#xA;" targets="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.5"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA; - StepsManager->nextStep&#xA;" targets="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.6"/>
+    <notes note="Suggested names:&#xA; - StepAction->getSuggests&#xA;" targets="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.7"/>
+    <notes note="Suggested names:&#xA; - StepsManager->getNumberStep&#xA; - StepsManager->nextStep&#xA;" targets="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.8"/>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@componentRoles.0">
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.2" targetConnections="//@diagrams.9/@children.4/@sourceConnections.0 //@diagrams.9/@children.6/@sourceConnections.0">
+        <location x="77" y="221"/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.1/@children.0">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.4" targetConnections="//@diagrams.9/@children.1/@children.0/@sourceConnections.0 //@diagrams.9/@children.8/@sourceConnections.0">
+        <location x="62" y="82"/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.2/@children.0">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.6" targetConnections="//@diagrams.9/@children.2/@children.0/@sourceConnections.0 //@diagrams.9/@children.10/@sourceConnections.0">
+        <location x="233" y="37"/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.1/@children.1">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.8" targetConnections="//@diagrams.9/@children.1/@children.1/@sourceConnections.0 //@diagrams.9/@children.12/@sourceConnections.0">
+        <location x="150" y="308"/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.5">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <location x="202" y="227"/>
+      <size width="271" height="354"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@componentRoles.1">
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.3" targetConnections="//@diagrams.9/@children.0/@children.0/@sourceConnections.0 //@diagrams.9/@children.7/@sourceConnections.0">
+        <location x="39" y="121"/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.0/@children.1">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.7" targetConnections="//@diagrams.9/@children.0/@children.2/@sourceConnections.0 //@diagrams.9/@children.11/@sourceConnections.0">
+        <location x="140" y="103"/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.0/@children.3">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <location x="617" y="226"/>
+      <size width="207" height="175"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@componentRoles.2">
+      <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.5" targetConnections="//@diagrams.9/@children.0/@children.1/@sourceConnections.0 //@diagrams.9/@children.9/@sourceConnections.0">
+        <location x="56" y="81"/>
+        <size width="15" height="15"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.0/@children.2">
+          <location/>
+          <size width="-1" height="-1"/>
+          <backgroundColor red="255" green="255" blue="255"/>
+          <foregroundColor/>
+        </sourceConnections>
+      </children>
+      <location x="249" y="39"/>
+      <size width="161" height="144"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@componentRoles.3">
+      <location x="639" y="32"/>
+      <size width="189" height="60"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.0">
+      <location x="83" y="391"/>
+      <size width="15" height="15"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@coreModel/@useCaseMaps.1/@paths.0" target="//@diagrams.9/@children.0/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@coreModel/@useCaseMaps.1/@paths.0/@nodes.1" targetConnections="//@diagrams.9/@children.0/@children.3/@sourceConnections.0">
+      <location x="259" y="643"/>
+      <size width="15" height="15"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.9/@notes.0">
+      <location x="-24" y="470"/>
+      <size width="200" height="72"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.9/@notes.0" target="//@diagrams.9/@children.0/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.9/@notes.1">
+      <location x="639" y="465"/>
+      <size width="200" height="59"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.9/@notes.1" target="//@diagrams.9/@children.1/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.9/@notes.2">
+      <location x="-26" y="262"/>
+      <size width="200" height="72"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.9/@notes.2" target="//@diagrams.9/@children.0/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.9/@notes.3">
+      <location x="-16" y="82"/>
+      <size width="201" height="72"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.9/@notes.3" target="//@diagrams.9/@children.2/@children.0">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.9/@notes.4">
+      <location x="537" y="124"/>
+      <size width="200" height="72"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.9/@notes.4" target="//@diagrams.9/@children.0/@children.2">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.9/@notes.5">
+      <location x="862" y="406"/>
+      <size width="200" height="59"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.9/@notes.5" target="//@diagrams.9/@children.1/@children.1">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="org.isistan.flabot.edit.editormodel:NodeVisualModel" semanticModel="//@diagrams.9/@notes.6">
+      <location x="-27" y="565"/>
+      <size width="200" height="72"/>
+      <backgroundColor red="255" green="255" blue="255"/>
+      <foregroundColor/>
+      <sourceConnections semanticModel="//@diagrams.9/@notes.6" target="//@diagrams.9/@children.0/@children.3">
+        <location/>
+        <size width="-1" height="-1"/>
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+      </sourceConnections>
+    </children>
+  </diagrams>
+  <folder name="Diagrams" fileModel="/"/>
+</org.isistan.flabot.edit.editormodel:FlabotFileModel>

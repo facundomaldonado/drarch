@@ -1,0 +1,669 @@
+component :: Object
+MODES
+(F) IS NONDET
+END
+
+interfaceLink :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+interfaceModel :: String
+MODES
+(F) IS NONDET
+END
+
+port :: String
+MODES
+(F) IS NONDET
+END
+
+hasPort :: String, String
+MODES
+(F,F) IS NONDET
+END
+
+hasProvidedInterface :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+hasRequiredInterface :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+mapping :: Object, Object, Object
+MODES
+(F, F, F) IS NONDET
+END
+
+relationship :: String, String, String
+MODES
+(F, F, F) IS NONDET
+END
+
+responsibility :: Object
+MODES
+(F) IS NONDET
+END
+
+hasResponsibility :: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+association :: Object, Object, Object
+MODES
+(F, F, F) IS NONDET
+END
+
+logResponsibility:: Object
+MODES
+(F) IS NONDET
+END
+
+responsibilityExecution :: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+executionMethod :: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+executionDeclaredClass:: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+
+component(RuleManager).
+association(RuleManager, org.design.rules4Java.engine.engine,RuleManager.java).
+responsibility(RuleManager).
+hasResponsibility(RuleManager, RuleManager).
+mapping(RuleManager, org.design.rules4Java.engine.engine, RuleManager.java).
+component(DiagramManager).
+association(DiagramManager, org.design.drarch.diagram.flabot,DiagramManager.java).
+responsibility(DiagramManager).
+hasResponsibility(DiagramManager, DiagramManager).
+mapping(DiagramManager, org.design.drarch.diagram.flabot, DiagramManager.java).
+component(StepsManager).
+association(StepsManager, org.design.drarch.manager,StepsManagerImpl.java).
+association(StepsManager, org.design.rules4Java.engine.engine,StepsManager.java).
+responsibility(StepsManager).
+hasResponsibility(StepsManager, StepsManager).
+mapping(StepsManager, org.design.drarch.manager, StepsManagerImpl.java).
+mapping(StepsManager, org.design.rules4Java.engine.engine, StepsManager.java).
+component(StepAction).
+association(StepAction, org.design.drarch.manager,StepActionImpl.java).
+association(StepAction, org.design.rules4Java.engine.engine,StepAction.java).
+responsibility(StepAction).
+hasResponsibility(StepAction, StepAction).
+mapping(StepAction, org.design.drarch.manager, StepActionImpl.java).
+mapping(StepAction, org.design.rules4Java.engine.engine, StepAction.java).
+component(QueryEngine).
+association(QueryEngine, org.design.rules4Java.engine.jqueryImpl.engineModel,QueryEngineImpl.java).
+association(QueryEngine, org.design.rules4Java.engine.engine.engineModel,QueryEngine.java).
+responsibility(QueryEngine).
+hasResponsibility(QueryEngine, QueryEngine).
+mapping(QueryEngine, org.design.rules4Java.engine.jqueryImpl.engineModel, QueryEngineImpl.java).
+mapping(QueryEngine, org.design.rules4Java.engine.engine.engineModel, QueryEngine.java).
+component(KnowledgeBase).
+association(KnowledgeBase, org.design.rules4Java.engine.jqueryImpl.engineModel,KnowledgeBaseAbstractImpl.java).
+association(KnowledgeBase, org.design.rules4Java.engine.engine.engineModel,KnowledgeBase.java).
+responsibility(KnowledgeBase).
+hasResponsibility(KnowledgeBase, KnowledgeBase).
+mapping(KnowledgeBase, org.design.rules4Java.engine.jqueryImpl.engineModel, KnowledgeBaseAbstractImpl.java).
+mapping(KnowledgeBase, org.design.rules4Java.engine.engine.engineModel, KnowledgeBase.java).
+component(SuggestMaker).
+association(SuggestMaker, org.design.rules4Java.engine.engine,SuggestMaker.java).
+responsibility(SuggestMaker).
+hasResponsibility(SuggestMaker, SuggestMaker).
+mapping(SuggestMaker, org.design.rules4Java.engine.engine, SuggestMaker.java).
+component(FactsGenerator).
+association(FactsGenerator, org.design.rules4Java.engine.engine,FactsGenerator.java).
+responsibility(FactsGenerator).
+hasResponsibility(FactsGenerator, FactsGenerator).
+mapping(FactsGenerator, org.design.rules4Java.engine.engine, FactsGenerator.java).
+port(port_SuggestMaker).
+port(port_RuleManager).
+hasPort(RuleManager, port_RuleManager).
+hasPort(SuggestMaker, port_SuggestMaker).
+interfaceModel(interfaceP_SuggestMaker).
+interfaceModel(interfaceR_RuleManager).
+hasProvidedInterface(port_SuggestMaker, interfaceP_SuggestMaker).
+hasRequiredInterface(port_RuleManager, interfaceR_RuleManager).
+interfaceLink(interfaceP_SuggestMaker, interfaceR_RuleManager).
+port(port_StepAction).
+hasPort(StepAction, port_StepAction).
+interfaceModel(interfaceP_RuleManager).
+interfaceModel(interfaceR_StepAction).
+hasProvidedInterface(port_RuleManager, interfaceP_RuleManager).
+hasRequiredInterface(port_StepAction, interfaceR_StepAction).
+interfaceLink(interfaceP_RuleManager, interfaceR_StepAction).
+port(port_FactsGenerator).
+hasPort(FactsGenerator, port_FactsGenerator).
+interfaceModel(interfaceP_FactsGenerator).
+hasProvidedInterface(port_FactsGenerator, interfaceP_FactsGenerator).
+interfaceLink(interfaceP_FactsGenerator, interfaceR_RuleManager).
+relationship(StepsManager, StepAction, creator).
+port(port_QueryEngine).
+hasPort(QueryEngine, port_QueryEngine).
+interfaceModel(interfaceP_QueryEngine).
+hasProvidedInterface(port_QueryEngine, interfaceP_QueryEngine).
+interfaceLink(interfaceP_QueryEngine, interfaceR_RuleManager).
+port(port_StepsManager).
+hasPort(StepsManager, port_StepsManager).
+interfaceModel(interfaceP_StepAction).
+interfaceModel(interfaceR_StepsManager).
+hasProvidedInterface(port_StepAction, interfaceP_StepAction).
+hasRequiredInterface(port_StepsManager, interfaceR_StepsManager).
+interfaceLink(interfaceP_StepAction, interfaceR_StepsManager).
+port(port_KnowledgeBase).
+hasPort(KnowledgeBase, port_KnowledgeBase).
+interfaceModel(interfaceP_KnowledgeBase).
+hasProvidedInterface(port_KnowledgeBase, interfaceP_KnowledgeBase).
+interfaceLink(interfaceP_KnowledgeBase, interfaceR_StepAction).
+logResponsibility(RuleManager).
+responsibilityExecution(RuleManager,88).
+executionMethod(88,getFacts).
+executionDeclaredClass(88,org.design.rules4Java.engine.engine.RuleManager).
+responsibilityExecution(RuleManager,135).
+executionMethod(135,evaluateRule).
+executionDeclaredClass(135,org.design.rules4Java.engine.engine.RuleManager).
+responsibilityExecution(RuleManager,138).
+executionMethod(138,getSuggests).
+executionDeclaredClass(138,org.design.rules4Java.engine.engine.RuleManager).
+logResponsibility(DiagramManager).
+responsibilityExecution(DiagramManager,139).
+executionMethod(139,parseSuggest).
+executionDeclaredClass(139,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,140).
+executionMethod(140,replaceVarByValue).
+executionDeclaredClass(140,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,141).
+executionMethod(141,replaceVarByValue).
+executionDeclaredClass(141,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,142).
+executionMethod(142,parseSuggest).
+executionDeclaredClass(142,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,143).
+executionMethod(143,replaceVarByValue).
+executionDeclaredClass(143,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,144).
+executionMethod(144,replaceVarByValue).
+executionDeclaredClass(144,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,145).
+executionMethod(145,parseSuggest).
+executionDeclaredClass(145,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,146).
+executionMethod(146,replaceVarByValue).
+executionDeclaredClass(146,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(DiagramManager,147).
+executionMethod(147,replaceVarByValue).
+executionDeclaredClass(147,org.design.rules4Java.engine.engine.SuggestMaker).
+responsibilityExecution(RuleManager,103).
+executionMethod(103,getInstance).
+executionDeclaredClass(103,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,126).
+executionMethod(126,getCoreModel).
+executionDeclaredClass(126,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,127).
+executionMethod(127,getFlabotEditorPart).
+executionDeclaredClass(127,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,128).
+executionMethod(128,getInstance).
+executionDeclaredClass(128,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,129).
+executionMethod(129,getCore).
+executionDeclaredClass(129,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,130).
+executionMethod(130,getCoreModel).
+executionDeclaredClass(130,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,131).
+executionMethod(131,getFlabotEditorPart).
+executionDeclaredClass(131,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,132).
+executionMethod(132,update).
+executionDeclaredClass(132,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,133).
+executionMethod(133,getFlabotEditorPart).
+executionDeclaredClass(133,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,134).
+executionMethod(134,save).
+executionDeclaredClass(134,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(DiagramManager,89).
+executionMethod(89,getFacts).
+executionDeclaredClass(89,org.design.rules4Java.engine.engine.FactsGenerator).
+logResponsibility(StepsManager).
+responsibilityExecution(StepsManager,83).
+executionMethod(83,getInstance).
+executionDeclaredClass(83,org.design.drarch.manager.StepsManagerImpl).
+responsibilityExecution(StepsManager,84).
+executionMethod(84,hasNext).
+executionDeclaredClass(84,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,85).
+executionMethod(85,startStep).
+executionDeclaredClass(85,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,86).
+executionMethod(86,hasBackStep).
+executionDeclaredClass(86,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,148).
+executionMethod(148,getStepSuggests).
+executionDeclaredClass(148,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,150).
+executionMethod(150,getNumberStep).
+executionDeclaredClass(150,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,151).
+executionMethod(151,nextStep).
+executionDeclaredClass(151,org.design.rules4Java.engine.engine.StepsManager).
+logResponsibility(StepAction).
+responsibilityExecution(StepAction,87).
+executionMethod(87,getPublishedFacts).
+executionDeclaredClass(87,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,90).
+executionMethod(90,loadFacts).
+executionDeclaredClass(90,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,91).
+executionMethod(91,run).
+executionDeclaredClass(91,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,92).
+executionMethod(92,applyFacts).
+executionDeclaredClass(92,org.design.drarch.manager.StepActionImpl).
+responsibilityExecution(StepAction,93).
+executionMethod(93,applyFacts).
+executionDeclaredClass(93,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,94).
+executionMethod(94,getKnowledgeBase).
+executionDeclaredClass(94,org.design.drarch.manager.StepActionImpl).
+responsibilityExecution(StepAction,101).
+executionMethod(101,loadModel).
+executionDeclaredClass(101,org.design.drarch.manager.StepActionImpl).
+responsibilityExecution(StepAction,149).
+executionMethod(149,getSuggests).
+executionDeclaredClass(149,org.design.rules4Java.engine.engine.StepAction).
+logResponsibility(QueryEngine).
+responsibilityExecution(QueryEngine,102).
+executionMethod(102,getWorkingSetNode).
+executionDeclaredClass(102,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,104).
+executionMethod(104,evaluateQuery).
+executionDeclaredClass(104,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,113).
+executionMethod(113,createResultSet).
+executionDeclaredClass(113,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,114).
+executionMethod(114,evaluateQuery).
+executionDeclaredClass(114,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,115).
+executionMethod(115,createResultSet).
+executionDeclaredClass(115,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,116).
+executionMethod(116,evaluateQuery).
+executionDeclaredClass(116,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,117).
+executionMethod(117,createResultSet).
+executionDeclaredClass(117,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,118).
+executionMethod(118,evaluateQuery).
+executionDeclaredClass(118,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,119).
+executionMethod(119,createResultSet).
+executionDeclaredClass(119,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,120).
+executionMethod(120,evaluateQuery).
+executionDeclaredClass(120,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,121).
+executionMethod(121,createResultSet).
+executionDeclaredClass(121,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,122).
+executionMethod(122,evaluateQuery).
+executionDeclaredClass(122,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,105).
+executionMethod(105,createResultSet).
+executionDeclaredClass(105,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,123).
+executionMethod(123,createResultSet).
+executionDeclaredClass(123,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,124).
+executionMethod(124,evaluateQuery).
+executionDeclaredClass(124,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,125).
+executionMethod(125,createResultSet).
+executionDeclaredClass(125,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,136).
+executionMethod(136,evaluateQuery).
+executionDeclaredClass(136,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,137).
+executionMethod(137,createResultSet).
+executionDeclaredClass(137,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,106).
+executionMethod(106,evaluateQuery).
+executionDeclaredClass(106,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,107).
+executionMethod(107,createResultSet).
+executionDeclaredClass(107,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,108).
+executionMethod(108,evaluateQuery).
+executionDeclaredClass(108,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,109).
+executionMethod(109,createResultSet).
+executionDeclaredClass(109,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,110).
+executionMethod(110,evaluateQuery).
+executionDeclaredClass(110,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,111).
+executionMethod(111,createResultSet).
+executionDeclaredClass(111,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,112).
+executionMethod(112,evaluateQuery).
+executionDeclaredClass(112,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+logResponsibility(KnowledgeBase).
+responsibilityExecution(KnowledgeBase,95).
+executionMethod(95,addFact).
+executionDeclaredClass(95,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,96).
+executionMethod(96,exist).
+executionDeclaredClass(96,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,97).
+executionMethod(97,addFact).
+executionDeclaredClass(97,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,98).
+executionMethod(98,exist).
+executionDeclaredClass(98,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,99).
+executionMethod(99,addFact).
+executionDeclaredClass(99,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,100).
+executionMethod(100,exist).
+executionDeclaredClass(100,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(RuleManager,157).
+executionMethod(157,getFacts).
+executionDeclaredClass(157,org.design.rules4Java.engine.engine.RuleManager).
+responsibilityExecution(RuleManager,240).
+executionMethod(240,evaluateRule).
+executionDeclaredClass(240,org.design.rules4Java.engine.engine.RuleManager).
+responsibilityExecution(RuleManager,243).
+executionMethod(243,getSuggests).
+executionDeclaredClass(243,org.design.rules4Java.engine.engine.RuleManager).
+responsibilityExecution(RuleManager,190).
+executionMethod(190,getInstance).
+executionDeclaredClass(190,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,231).
+executionMethod(231,getCoreModel).
+executionDeclaredClass(231,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,232).
+executionMethod(232,getFlabotEditorPart).
+executionDeclaredClass(232,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,233).
+executionMethod(233,getInstance).
+executionDeclaredClass(233,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,234).
+executionMethod(234,getCore).
+executionDeclaredClass(234,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,235).
+executionMethod(235,getCoreModel).
+executionDeclaredClass(235,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,236).
+executionMethod(236,getFlabotEditorPart).
+executionDeclaredClass(236,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,237).
+executionMethod(237,update).
+executionDeclaredClass(237,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,238).
+executionMethod(238,getFlabotEditorPart).
+executionDeclaredClass(238,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(RuleManager,239).
+executionMethod(239,save).
+executionDeclaredClass(239,org.design.drarch.diagram.flabot.DiagramManager).
+responsibilityExecution(DiagramManager,158).
+executionMethod(158,getFacts).
+executionDeclaredClass(158,org.design.rules4Java.engine.engine.FactsGenerator).
+responsibilityExecution(StepsManager,152).
+executionMethod(152,getInstance).
+executionDeclaredClass(152,org.design.drarch.manager.StepsManagerImpl).
+responsibilityExecution(StepsManager,153).
+executionMethod(153,hasNext).
+executionDeclaredClass(153,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,154).
+executionMethod(154,startStep).
+executionDeclaredClass(154,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,155).
+executionMethod(155,hasBackStep).
+executionDeclaredClass(155,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,244).
+executionMethod(244,getStepSuggests).
+executionDeclaredClass(244,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,246).
+executionMethod(246,getNumberStep).
+executionDeclaredClass(246,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepsManager,247).
+executionMethod(247,nextStep).
+executionDeclaredClass(247,org.design.rules4Java.engine.engine.StepsManager).
+responsibilityExecution(StepAction,156).
+executionMethod(156,getPublishedFacts).
+executionDeclaredClass(156,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,159).
+executionMethod(159,loadFacts).
+executionDeclaredClass(159,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,160).
+executionMethod(160,run).
+executionDeclaredClass(160,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,161).
+executionMethod(161,applyFacts).
+executionDeclaredClass(161,org.design.drarch.manager.StepActionImpl).
+responsibilityExecution(StepAction,162).
+executionMethod(162,applyFacts).
+executionDeclaredClass(162,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(StepAction,163).
+executionMethod(163,getKnowledgeBase).
+executionDeclaredClass(163,org.design.drarch.manager.StepActionImpl).
+responsibilityExecution(StepAction,188).
+executionMethod(188,loadModel).
+executionDeclaredClass(188,org.design.drarch.manager.StepActionImpl).
+responsibilityExecution(StepAction,245).
+executionMethod(245,getSuggests).
+executionDeclaredClass(245,org.design.rules4Java.engine.engine.StepAction).
+responsibilityExecution(QueryEngine,189).
+executionMethod(189,getWorkingSetNode).
+executionDeclaredClass(189,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,191).
+executionMethod(191,evaluateQuery).
+executionDeclaredClass(191,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,200).
+executionMethod(200,createResultSet).
+executionDeclaredClass(200,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,201).
+executionMethod(201,evaluateQuery).
+executionDeclaredClass(201,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,202).
+executionMethod(202,createResultSet).
+executionDeclaredClass(202,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,203).
+executionMethod(203,evaluateQuery).
+executionDeclaredClass(203,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,204).
+executionMethod(204,createResultSet).
+executionDeclaredClass(204,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,205).
+executionMethod(205,evaluateQuery).
+executionDeclaredClass(205,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,206).
+executionMethod(206,createResultSet).
+executionDeclaredClass(206,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,207).
+executionMethod(207,evaluateQuery).
+executionDeclaredClass(207,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,208).
+executionMethod(208,createResultSet).
+executionDeclaredClass(208,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,209).
+executionMethod(209,evaluateQuery).
+executionDeclaredClass(209,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,192).
+executionMethod(192,createResultSet).
+executionDeclaredClass(192,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,210).
+executionMethod(210,createResultSet).
+executionDeclaredClass(210,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,211).
+executionMethod(211,evaluateQuery).
+executionDeclaredClass(211,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,212).
+executionMethod(212,createResultSet).
+executionDeclaredClass(212,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,213).
+executionMethod(213,evaluateQuery).
+executionDeclaredClass(213,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,214).
+executionMethod(214,createResultSet).
+executionDeclaredClass(214,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,215).
+executionMethod(215,evaluateQuery).
+executionDeclaredClass(215,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,216).
+executionMethod(216,createResultSet).
+executionDeclaredClass(216,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,217).
+executionMethod(217,evaluateQuery).
+executionDeclaredClass(217,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,218).
+executionMethod(218,createResultSet).
+executionDeclaredClass(218,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,219).
+executionMethod(219,evaluateQuery).
+executionDeclaredClass(219,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,193).
+executionMethod(193,evaluateQuery).
+executionDeclaredClass(193,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,220).
+executionMethod(220,createResultSet).
+executionDeclaredClass(220,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,221).
+executionMethod(221,evaluateQuery).
+executionDeclaredClass(221,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,222).
+executionMethod(222,createResultSet).
+executionDeclaredClass(222,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,223).
+executionMethod(223,evaluateQuery).
+executionDeclaredClass(223,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,224).
+executionMethod(224,createResultSet).
+executionDeclaredClass(224,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,225).
+executionMethod(225,evaluateQuery).
+executionDeclaredClass(225,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,226).
+executionMethod(226,createResultSet).
+executionDeclaredClass(226,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,227).
+executionMethod(227,evaluateQuery).
+executionDeclaredClass(227,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,228).
+executionMethod(228,createResultSet).
+executionDeclaredClass(228,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,229).
+executionMethod(229,evaluateQuery).
+executionDeclaredClass(229,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,194).
+executionMethod(194,createResultSet).
+executionDeclaredClass(194,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,230).
+executionMethod(230,createResultSet).
+executionDeclaredClass(230,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,241).
+executionMethod(241,evaluateQuery).
+executionDeclaredClass(241,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,242).
+executionMethod(242,createResultSet).
+executionDeclaredClass(242,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,195).
+executionMethod(195,evaluateQuery).
+executionDeclaredClass(195,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,196).
+executionMethod(196,createResultSet).
+executionDeclaredClass(196,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,197).
+executionMethod(197,evaluateQuery).
+executionDeclaredClass(197,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,198).
+executionMethod(198,createResultSet).
+executionDeclaredClass(198,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(QueryEngine,199).
+executionMethod(199,evaluateQuery).
+executionDeclaredClass(199,org.design.rules4Java.engine.jqueryImpl.engineModel.QueryEngineImpl).
+responsibilityExecution(KnowledgeBase,164).
+executionMethod(164,addFact).
+executionDeclaredClass(164,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,165).
+executionMethod(165,exist).
+executionDeclaredClass(165,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,174).
+executionMethod(174,addFact).
+executionDeclaredClass(174,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,175).
+executionMethod(175,exist).
+executionDeclaredClass(175,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,176).
+executionMethod(176,addFact).
+executionDeclaredClass(176,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,177).
+executionMethod(177,exist).
+executionDeclaredClass(177,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,178).
+executionMethod(178,addFact).
+executionDeclaredClass(178,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,179).
+executionMethod(179,exist).
+executionDeclaredClass(179,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,180).
+executionMethod(180,addFact).
+executionDeclaredClass(180,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,181).
+executionMethod(181,exist).
+executionDeclaredClass(181,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,182).
+executionMethod(182,addFact).
+executionDeclaredClass(182,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,183).
+executionMethod(183,exist).
+executionDeclaredClass(183,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,166).
+executionMethod(166,addFact).
+executionDeclaredClass(166,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,184).
+executionMethod(184,addFact).
+executionDeclaredClass(184,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,185).
+executionMethod(185,exist).
+executionDeclaredClass(185,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,186).
+executionMethod(186,addFact).
+executionDeclaredClass(186,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,187).
+executionMethod(187,exist).
+executionDeclaredClass(187,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,167).
+executionMethod(167,exist).
+executionDeclaredClass(167,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,168).
+executionMethod(168,addFact).
+executionDeclaredClass(168,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,169).
+executionMethod(169,exist).
+executionDeclaredClass(169,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,170).
+executionMethod(170,addFact).
+executionDeclaredClass(170,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,171).
+executionMethod(171,exist).
+executionDeclaredClass(171,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,172).
+executionMethod(172,addFact).
+executionDeclaredClass(172,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
+responsibilityExecution(KnowledgeBase,173).
+executionMethod(173,exist).
+executionDeclaredClass(173,org.design.rules4Java.engine.jqueryImpl.engineModel.KnowledgeBaseAbstractImpl).
