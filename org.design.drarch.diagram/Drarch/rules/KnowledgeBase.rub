@@ -1,0 +1,130 @@
+component :: Object
+MODES
+(F) IS NONDET
+END
+
+interfaceLink :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+interfaceModel :: String
+MODES
+(F) IS NONDET
+END
+
+port :: String
+MODES
+(F) IS NONDET
+END
+
+hasPort :: String, String
+MODES
+(F,F) IS NONDET
+END
+
+hasProvidedInterface :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+hasRequiredInterface :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+mapping :: Object, Object, Object
+MODES
+(F, F, F) IS NONDET
+END
+
+relationship :: String, String, String
+MODES
+(F, F, F) IS NONDET
+END
+
+responsibility :: Object
+MODES
+(F) IS NONDET
+END
+
+hasResponsibility :: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+association :: Object, Object, Object
+MODES
+(F, F, F) IS NONDET
+END
+
+logResponsibility:: Object
+MODES
+(F) IS NONDET
+END
+
+responsibilityExecution :: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+executionMethod :: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+executionDeclaredClass:: Object, Object
+MODES
+(F, F) IS NONDET
+END
+
+
+component(org.design.drarch.diagram.flabot.component).
+component(org.design.drarch.diagram.DiagramModel.componentModel).
+component(org.design.drarch.diagram.flabot.ucm).
+component(org.design.drarch.diagram.DiagramModel.ucmModel).
+association(org.design.drarch.diagram.flabot.component, org.design.drarch.diagram.flabot.component,DObject.java).
+responsibility(org.design.drarch.diagram.flabot.component).
+hasResponsibility(org.design.drarch.diagram.flabot.component, org.design.drarch.diagram.flabot.component).
+mapping(org.design.drarch.diagram.flabot.component, org.design.drarch.diagram.flabot.component, DObject.java).
+association(org.design.drarch.diagram.flabot.component, org.design.drarch.diagram.flabot.component,DBehavior.java).
+mapping(org.design.drarch.diagram.flabot.component, org.design.drarch.diagram.flabot.component, DBehavior.java).
+association(org.design.drarch.diagram.flabot.component, org.design.drarch.diagram.flabot.component,ComponentsDiagram.java).
+mapping(org.design.drarch.diagram.flabot.component, org.design.drarch.diagram.flabot.component, ComponentsDiagram.java).
+association(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel,Responsibility.java).
+responsibility(org.design.drarch.diagram.DiagramModel.componentModel).
+hasResponsibility(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel).
+mapping(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, Responsibility.java).
+association(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel,ComponentModel.java).
+mapping(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, ComponentModel.java).
+association(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel,InterfaceLink.java).
+mapping(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, InterfaceLink.java).
+association(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel,Port.java).
+mapping(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, Port.java).
+association(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel,Relationship.java).
+mapping(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, Relationship.java).
+association(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel,Component.java).
+mapping(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, Component.java).
+association(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel,Interface.java).
+mapping(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, Interface.java).
+association(org.design.drarch.diagram.flabot.ucm, org.design.drarch.diagram.flabot.ucm,UCMDiagrams.java).
+responsibility(org.design.drarch.diagram.flabot.ucm).
+hasResponsibility(org.design.drarch.diagram.flabot.ucm, org.design.drarch.diagram.flabot.ucm).
+mapping(org.design.drarch.diagram.flabot.ucm, org.design.drarch.diagram.flabot.ucm, UCMDiagrams.java).
+association(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel,ComponentRole.java).
+responsibility(org.design.drarch.diagram.DiagramModel.ucmModel).
+hasResponsibility(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel).
+mapping(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel, ComponentRole.java).
+association(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel,UCMDiagram.java).
+mapping(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel, UCMDiagram.java).
+association(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel,Path.java).
+mapping(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel, Path.java).
+association(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel,UcmModelFactory.java).
+mapping(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel, UcmModelFactory.java).
+association(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel,UCMModel.java).
+mapping(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel, UCMModel.java).
+association(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel,PathNode.java).
+mapping(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel, PathNode.java).
+association(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel,UcmModelPackage.java).
+mapping(org.design.drarch.diagram.DiagramModel.ucmModel, org.design.drarch.diagram.DiagramModel.ucmModel, UcmModelPackage.java).
+relationship(org.design.drarch.diagram.DiagramModel.componentModel, org.design.drarch.diagram.DiagramModel.componentModel, creator).
