@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Drarch Plug-in
+Bundle-SymbolicName: org.design.drarch; singleton:=true
+Bundle-Version: 3.1
+Bundle-Activator: org.design.drarch.DrarchPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.design.rules4Java.engine,
+ org.design.rules4Java.util,
+ org.design.drarch.diagram,
+ org.design.rules4Java.ui,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ ca.ubc.jquery,
+ org.eclipse.core.resources
+Eclipse-LazyStart: true
+Export-Package: org.design.drarch.engine,
+ org.design.drarch.manager,
+ org.design.drarch.views,
+ org.design.drarch.views.action
+Bundle-ClassPath: drarch.jar
