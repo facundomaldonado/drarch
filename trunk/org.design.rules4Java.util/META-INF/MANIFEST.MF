@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Drarch Util Plug-in
+Bundle-SymbolicName: org.design.rules4Java.util
+Bundle-Version: 3.1
+Bundle-Activator: org.design.rules4Java.util.UtilPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.design.rules4Java.engine,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Eclipse-AutoStart: true
+Export-Package: org.design.rules4Java.util
+Bundle-ClassPath: rules4Java.util.jar
