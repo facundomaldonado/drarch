@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- RULES DEFINITION-->
+<stage>
+	<rule>
+		<query>
+			<queryText>package(?P)</queryText>
+			<var>?P</var>
+		</query>
+		<suggest>El paquete ?P se mapeara al componente ?P</suggest>
+		<fact>component(?P)</fact>
+	</rule>
+	<rule>
+		<query>
+			<queryText>package(?P), child(?P,?C),child(?C,?T),Type(?T),javaFile(?C)</queryText>
+			<var>?P</var>
+			<var>?C</var>
+		</query>
+		<suggest>El componente ?P se materializa en la unidad de compilacion ?C</suggest>
+		<fact>materialization(?P, ?C)</fact>
+	</rule>
+	<rule>
+		<query>
+			<queryText>package(?P)</queryText>
+			<var>?P</var>
+		</query>
+		<suggest>El paquete ?P se mapeara al componente ?P</suggest>
+		<fact>component(?P)</fact>
+	</rule>
+</stage>

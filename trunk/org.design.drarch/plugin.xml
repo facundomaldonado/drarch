@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="org.design.drarch.view.category"
+            class="org.design.drarch.views.SuggestsView"
+            icon="icons/sample.gif"
+            id="org.design.drarch.views.SuggestsView"
+            name="Suggest View"/>
+      <category
+            id="org.design.drarch.view.category"
+            name="Drarch"/>
+   </extension>
+
+</plugin>
