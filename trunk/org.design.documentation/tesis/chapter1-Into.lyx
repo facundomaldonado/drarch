@@ -1,0 +1,210 @@
+#LyX 1.4.3-5 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass book
+\language spanish
+\inputencoding auto
+\fontscheme ae
+\graphics default
+\paperfontsize 11
+\spacing single
+\papersize a4paper
+\use_geometry true
+\use_amsmath 2
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 1.7in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introducción
+\end_layout
+
+\begin_layout Standard
+La Arquitectura de Software de un sistema sirve para capturar las principales
+ decisiones de diseño del sistema.
+ Estas primeras decisiones son las más difíciles de tomar correctamente,
+ las más difíciles de cambiar más adelante en el proceso de desarrollo y
+ sus efectos son los que más perduran en el ciclo de vida de un sistema.
+ En particular, una arquitectura abarca aspectos estructurales y de comportamien
+to: los aspectos estructurales se refieren a vistas estáticas del sistema,
+ mientras que los aspectos de comportamiento se refieren a vistas dinámicas
+ del sistema.
+ Por ejemplo, los diagramas de componentes sirven para representar aspectos
+ estructurales, mientras que los Use Case Maps [UCMBOOK] proveen un modelo
+ para aspectos de comportamiento.
+ Así y todo, aún con la ayuda de las arquitecturas, entender cómo funciona
+ un sistema complejo y comunicárselo a los demás continua siendo un problema
+ para muchas organizaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+En general, todo sistema que involucra software posee una arquitectura de
+ software.
+ Sin embargo, no necesariamente existe en la práctica una documentación
+ acertada de esta arquitectura.
+ Suele suceder que la gente que diseñó el sistema se ha ido de la organización,
+ que la documentación es escasa y está desactualizada, que el código fuente
+ se ha perdido, y lo único con que se cuenta es con el código ejecutable
+ binario.
+ En estas situaciones, dado que una arquitectura puede existir independientement
+e de su especificación, es que cobran importancia las enfoques de documentación
+ y reconstrucción de arquitecturas[SAIP].
+\end_layout
+
+\begin_layout Section
+Motivación 
+\end_layout
+
+\begin_layout Standard
+La Reconstrucción de Arquitecturas es una técnica para generar representaciones
+ arquitectónicas de un sistema que puede ser utilizada de diversas formas.
+ El principal uso de esta representación es el de documentar la arquitectura
+ existente de un sistema.
+ Si no existe la documentación o la documentación disponible esta desactualizada
+, la representación obtenida mediante la reconstrucción puede ser usada
+ como una base para la re-documentación de la arquitectura.
+ Esta representación también puede ser usada como un punto de comienzo para
+ realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
+ Finalmente, la representación puede ser usada como una forma de identificar
+ componentes reusables ó para establecer una arquitectura base dentro de
+ una línea de productos de software [Rick2003].
+\end_layout
+
+\begin_layout Standard
+Algunas soluciones a la Reconstrucción de Arquitecturas han sido propuestas
+ en [BOWMAN99, GALL95, TZERPOS96, Harris1995, Rick2003, GUO99].
+ En la mayoría, la arquitectura del sistema se extrae principalmente por
+ medio del análisis del código fuente.
+ En otras, la información se obtiene tanto del código fuente como del sistema
+ en ejecución ó sólo reconstruye arquitecturas de sistemas implementados
+ utilizando patrones de diseño.
+ Muchos de los enfoques mencionados sólo muestran aspectos estructurales
+ (diagramas de clases) y muy pocos muestran resultados que permitan visualizar
+ el comportamiento del sistema (ej: diagramas de UCMs ó de secuencia).
+ 
+\end_layout
+
+\begin_layout Standard
+Estos enfoques presentan el resultado de la reconstrucción en un solo paso
+ y el arquitecto no ve el progreso del proceso de reconstrucción.
+ Esto hace que el proceso no se pueda "guiar" a medida que se reconstruye
+ la arquitectura.
+ Es decir, no se tiene control sobre qué y cómo se recupera la información,
+ ni puede intervenir si lo considera necesario.
+ Además, no es posible manipular la información de forma interactiva, perdiendo
+ así la posibilidad de contar con la experiencia del arquitecto y su conocimient
+o en el dominio.
+ Por otro lado, ninguno de estos enfoques mantiene la información recuperada
+ de tal forma que sea flexible su manipulación.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Objetivos y restricciones - Propuesta 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La propuesta de este trabajo consiste en recuperar la arquitectura de un
+ sistema ya implementado.
+ Con el objetivo de superar las limitaciones de los enfoques mencionados
+ anteriormente, se pretende recuperar tanto la estructura como el comportamiento
+ del sistema a analizar.
+ 
+\end_layout
+
+\begin_layout Standard
+A partir de la información estática se pretende extraer los componentes
+ arquitectónicos.
+ Como lenguaje de especificación estructural para esto se sugieren los diagramas
+ de componentes UML.
+ 
+\end_layout
+
+\begin_layout Standard
+Además del modelo estructural, se debería soportar un modelo de comportamiento.
+ Debido a que el código fuente no aporta toda la información relevante del
+ comportamiento del sistema, la información obtenida del sistema en tiempo
+ de ejecución podría contribuir al modelo de comportamiento.
+ Para dicho modelo se sugieren los diagramas de UCMs.
+ 
+\end_layout
+
+\begin_layout Standard
+Otro de los puntos de este trabajo, planteado principalmente para atacar
+ la mayor deficiencia de los enfoques actuales, seria el permitir la interacción
+ del usuario (arquitecto) en el proceso de reconstrucción.
+ El arquitecto participaría refinando la especificación.
+ De esta manera, se le otorgaría la posibilidad de visualizar (por medio
+ de los diagramas) los resultados intermedios y se le permitiría incrementar
+ a cada paso el nivel de detalle.
+ 
+\end_layout
+
+\begin_layout Standard
+La información extraída del sistema debería estar representada de forma
+ tal que permita ser manipulada de forma sencilla y flexible.
+ Teniendo en cuenta que la programación lógica permite realizar consultas
+ flexibles, la información podría estar representada con hechos y reglas
+ al estilo Prolog, para lo cuál se podría utilizar JavLog [JAVALOG] ó JQuery
+ [Volder2006, Janzen2003].
+\end_layout
+
+\begin_layout Standard
+La Figura 1 muestra un esquema del enfoque a desarrollar.
+ La información estática es procesada por la herramienta (Tool).
+ Luego, se generan vistas parciales que son validadas por el arquitecto.
+ En base a lo observado, el arquitecto puede interactuar con la herramienta
+ para refinar aún más la especificación y volver a obtener nuevas vistas.
+ 
+\end_layout
+
+\begin_layout Standard
+Figura 1: Propuesta de Recuperación de Arquitecturas.
+ 
+\end_layout
+
+\begin_layout Standard
+Para la implementación del trabajo se tomará como base el proyecto FLABot
+ [SORIA04], ya que posee un editor de Componentes, un editor de Use Case
+ Maps, ambos integrados a la plataforma Eclipse[Eclipse].
+\end_layout
+
+\begin_layout Standard
+Finalmente, una contribución del trabajo es facilitar la tarea de los mismos
+ arquitectos del sistema: ya que al tener vistas que representan la estructura
+ y el comportamiento de un sistema, se pueden detectar con mayor claridad
+ violaciones a condiciones estructurales y/o comportamentales cometidas
+ durante el desarrollo o el mantenimiento.
+ 
+\end_layout
+
+\end_body
+\end_document

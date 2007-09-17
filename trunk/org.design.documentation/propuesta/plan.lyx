@@ -1,0 +1,529 @@
+#LyX 1.4.3-4 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{a4wide}
+\usepackage[small,bf,compact]{titlesec}
+\usepackage{plain}
+\end_preamble
+\language spanish
+\inputencoding default
+\fontscheme pslatex
+\graphics default
+\paperfontsize 10
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 2
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes true
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Propuesta de trabajo Final de la Carrera
+\newline
+Ingeniería de Sistemas
+\end_layout
+
+\begin_layout Author
+
+\noun on
+Un Enfoque Basado En Queries Para La Reconstrucción De Arquitecturas
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Director: Ing.
+ Álvaro Soria
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Co-Director: Dr.
+ J.
+ Andrés Diaz Pace
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Alumnos: Nicolás Frontini y Facundo Maldonado
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+La Arquitectura de Software de un sistema sirve para capturar las principales
+ decisiones de diseño del sistema.
+ Estas primeras decisiones son las más difíciles de tomar correctamente,
+ las más difíciles de cambiar más adelante en el proceso de desarrollo y
+ sus efectos son los que más perduran en el ciclo de vida de un sistema.
+ En particular, una arquitectura abarca aspectos estructurales y de comportamien
+to: los aspectos estructurales se refieren a vistas estáticas del sistema,
+ mientras que los aspectos de comportamiento se refieren a vistas dinámicas
+ del sistema.
+ Por ejemplo, los diagramas de componentes sirven para representar aspectos
+ estructurales, mientras que los Use Case Maps 
+\begin_inset LatexCommand \cite{UCMBOOK}
+
+\end_inset
+
+ proveen un modelo para aspectos de comportamiento.
+ Así y todo, aún con la ayuda de las arquitecturas, entender cómo funciona
+ un sistema complejo y comunicárselo a los demás continua siendo un problema
+ para muchas organizaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+En general, todo sistema que involucra software posee una arquitectura de
+ software.
+ Sin embargo, no necesariamente existe en la práctica una documentación
+ acertada de esta arquitectura.
+ Suele suceder que la gente que diseñó el sistema se ha ido de la organización,
+ que la documentación es escasa y está des\SpecialChar \-
+actua\SpecialChar \-
+li\SpecialChar \-
+za\SpecialChar \-
+da, que el código fuente
+ se ha perdido, y lo único con que se cuenta es con el código ejecutable
+ binario.
+ En estas situaciones, dado que una arquitectura puede existir independientement
+e de su especificación, es que cobran importancia las enfoques de documentación
+ y reconstrucción de arquitecturas
+\begin_inset LatexCommand \cite{SAIP}
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Motivación 
+\end_layout
+
+\begin_layout Standard
+La Reconstrucción de Arquitecturas es una técnica para generar representaciones
+ arquitectónicas de un sistema que puede ser utilizada de diversas formas.
+ El principal uso de esta representación es el de documentar la arquitectura
+ existente de un sistema.
+ Si no existe la documentación o la documentación disponible esta desactualizada
+, la representación obtenida mediante la reconstrucción puede ser usada
+ como una base para la re-documentación de la arquitectura.
+ Esta representación también puede ser usada como un punto de comienzo para
+ realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
+ Finalmente, la re\SpecialChar \-
+pre\SpecialChar \-
+sen\SpecialChar \-
+ta\SpecialChar \-
+ción puede ser usada como una forma de identificar
+ componentes reusables ó para establecer una arquitectura base dentro de
+ una línea de productos de software 
+\begin_inset LatexCommand \cite{Rick2003}
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Algunas soluciones a la Reconstrucción de Arquitecturas han sido propuestas
+ en 
+\begin_inset LatexCommand \cite{BOWMAN99,GALL95,TZERPOS96,Harris1995,Rick2003,GUO99}
+
+\end_inset
+
+.
+ En la mayoría, la arquitectura del sistema se extrae principalmente por
+ medio del análisis del código fuente.
+ En otras, la información se obtiene tanto del código fuente como del sistema
+ en ejecución ó sólo re\SpecialChar \-
+cons\SpecialChar \-
+tru\SpecialChar \-
+ye arquitecturas de sistemas implementados
+ utilizando patrones de diseño.
+ Muchos de los enfoques mencionados sólo muestran aspectos estructurales
+ (diagramas de clases) y muy pocos muestran resultados que permitan visualizar
+ el comportamiento del sistema (ej: diagramas de UCMs ó de secuencia).
+ 
+\end_layout
+
+\begin_layout Standard
+Estos enfoques presentan el resultado de la reconstrucción en un solo paso
+ y el arquitecto no ve el progreso del proceso de reconstrucción.
+ Esto hace que el proceso no se pueda 
+\begin_inset Quotes eld
+\end_inset
+
+guiar
+\begin_inset Quotes erd
+\end_inset
+
+ a medida que se reconstruye la arquitectura.
+ Es decir, no se tiene control sobre qué y cómo se recupera la información,
+ ni puede intervenir si lo considera necesario.
+ Además, no es posible manipular la información de forma interactiva, perdiendo
+ así la posibilidad de contar con la experiencia del arquitecto y su conocimient
+o en el dominio.
+ Por otro lado, ninguno de estos enfoques mantiene la información recuperada
+ de tal forma que sea flexible su manipulación.
+ 
+\end_layout
+
+\begin_layout Section
+Propuesta 
+\end_layout
+
+\begin_layout Standard
+La propuesta de este trabajo consiste en recuperar la arquitectura de un
+ sistema ya implementado.
+ Con el objetivo de superar las limitaciones de los enfoques mencionados
+ anteriormente, se pretende recuperar tanto la estructura como el comportamiento
+ del sistema a analizar.
+ 
+\end_layout
+
+\begin_layout Standard
+A partir de la información estática se pretende extraer los componentes
+ arquitectónicos.
+ Como lenguaje de especificación estructural para esto se sugieren los diagramas
+ de componentes UML.
+ 
+\end_layout
+
+\begin_layout Standard
+Además del modelo estructural, se debería soportar un modelo de comportamiento.
+ Debido a que el código fuente no aporta toda la información relevante del
+ comportamiento del sistema, la información obtenida del sistema en tiempo
+ de ejecución podría contribuir al modelo de comportamiento.
+ Para dicho modelo se sugieren los diagramas de UCMs.
+ 
+\end_layout
+
+\begin_layout Standard
+Otro de los puntos de este trabajo, planteado principalmente para atacar
+ la mayor deficiencia de los enfoques actuales, seria el permitir la interacción
+ del usuario (arquitecto) en el proceso de reconstrucción.
+ El arquitecto participaría refinando la especificación.
+ De esta manera, se le otorgaría la posibilidad de vi\SpecialChar \-
+sua\SpecialChar \-
+li\SpecialChar \-
+zar (por medio
+ de los diagramas) los resultados intermedios y se le permitiría incrementar
+ a cada paso el nivel de detalle.
+ 
+\end_layout
+
+\begin_layout Standard
+La información extraída del sistema debería estar representada de forma
+ tal que permita ser manipulada de forma sencilla y flexible.
+ Teniendo en cuenta que la programación lógica permite realizar consultas
+ flexibles, la información podría estar representada con hechos y reglas
+ al estilo Prolog, para lo cuál se podría utilizar JavLog 
+\begin_inset LatexCommand \cite{JAVALOG}
+
+\end_inset
+
+ ó JQuery 
+\begin_inset LatexCommand \cite{Volder2006,Janzen2003}
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La Figura 1 muestra un esquema del enfoque a desarrollar.
+ La información estática es procesada por la herramienta (Tool).
+ Luego, se generan vistas parciales que son validadas por el arquitecto.
+ En base a lo observado, el arquitecto puede interactuar con la herramienta
+ para refinar aún más la especificación y volver a obtener nuevas vistas.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/propuesta.png
+	lyxscale 80
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Figura 1: Propuesta de Recuperación de Arquitecturas.
+ 
+\end_layout
+
+\begin_layout Standard
+Para la implementación del trabajo se tomará como base el proyecto FLABot
+ 
+\begin_inset LatexCommand \cite{SORIA04}
+
+\end_inset
+
+, ya que posee un editor de Componentes, un editor de Use Case Maps, ambos
+ integrados a la plataforma Eclipse
+\begin_inset LatexCommand \citet{Eclipse}
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Finalmente, una contribución del trabajo es facilitar la tarea de los mismos
+ arquitectos del sistema: ya que al tener vistas que representan la estructura
+ y el comportamiento de un sistema, se pueden detectar con mayor claridad
+ violaciones a condiciones estructurales y/o comportamentales cometidas
+ durante el desarrollo o el mantenimiento.
+ 
+\end_layout
+
+\begin_layout Section
+Cronograma de actividades 
+\end_layout
+
+\begin_layout Standard
+A continuación se presenta el cronograma de las actividades propuestas --y
+ su duración estimada en meses-- que conformarán el desarrollo de nuestro
+ trabajo final.
+ El tiempo total del trabajo se fijó en aproximadamente ocho meses.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\series bold
+Actividad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\series bold
+Duración Estimada
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Relevamiento de Información sobre reconstrucción de Arquitecturas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2 semanas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Evaluación de los enfoques de reconstrucción de Arquitecturas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3 semanas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Planteo de los requerimientos (*)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4 semanas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Análisis y diseño, basado en los requerimientos planteados (*)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+5 semanas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Implementación del prototipo (*)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+8 semanas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Elaboración de ejemplos y testeo del prototipo (*)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+5 semanas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Documentación y elaboración del informe (*)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+7 semanas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nota: la herramienta será diseñada e implementada mendiante una serie de
+ prototipos incrementales.
+ Por lo tanto, algunas de las tareas marcadas con (*) podrán ser realizadas
+ en paralelo.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\begin_inset LatexCommand \bibtex[plain]{bibliography}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
