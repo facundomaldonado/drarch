@@ -1,9 +1,8 @@
 package org.design.drarch.views.action;
 
-import org.design.drarch.Application;
+import org.design.drarch.DrarchApplication;
+import org.design.drarch.DrarchEngineImpl;
 import org.design.drarch.diagram.flabot.DiagramManager;
-import org.design.drarch.manager.StepsManagerImpl;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.util.ResourceLocator;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -33,36 +32,40 @@ public class SelectWorkingSetAction extends Action {
   }
 
   public void run() {
-    window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-    workingSet = selectWorkingSet();
-    if (workingSet != null) {
-    	ResourceLocator.INSTANCE.registerCurrentWorkingSet(workingSet);
-      try {
+//    window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+//    workingSet = selectWorkingSet();
+//    if (workingSet != null) {
+//    	ResourceLocator.INSTANCE.registerCurrentWorkingSet(workingSet);
+//      try {
     	  //Inicializar ENGINE
-    	  Application.getInstance().initEngine();
-    	  StepsManagerImpl.getInstance().restart();
-          DiagramManager.getInstance().restart();
-      } catch (DrarchEngineModelException e) {
-  	    // TODO Auto-generated catch block
-  	    e.printStackTrace();
-      }
+//    	  Application.getInstance().initEngine();
+//    	  StepsManagerImpl.getInstance().restart();
+//    	  org.design.drarch.INSTANCE.startEngine();
+//          DiagramManager.getInstance().restart();
+//      } catch (DrarchEngineModelException e) {
+//  	    // TODO Auto-generated catch block
+//  	    e.printStackTrace();
+//      }
       //Si todo esta bien, elijo el archivo flabot destino
+	  DrarchApplication.INSTANCE.getDrarchEngine().startEngine();
+	  
       FileSelectionAction act = new FileSelectionAction();
       act.run();
       String fileName = act.getfileName();
       DiagramManager.getInstance().setFileName(fileName);
-    }
-    else {
-    	String[] buttons = {"OK"};
-		MessageDialog informationMessage = 
-				new MessageDialog(
-					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
-					"Information Message",
-					null,
-					"Warning! \n\nNo workingSet selected.", 0,
-					buttons, 0);
-		informationMessage.open();
-    }
+      
+//    }
+//    else {
+//    	String[] buttons = {"OK"};
+//		MessageDialog informationMessage = 
+//				new MessageDialog(
+//					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
+//					"Information Message",
+//					null,
+//					"Warning! \n\nNo workingSet selected.", 0,
+//					buttons, 0);
+//		informationMessage.open();
+//    }
   }
 
   private IWorkingSet selectWorkingSet() {
