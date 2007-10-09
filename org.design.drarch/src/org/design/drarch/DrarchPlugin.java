@@ -18,7 +18,7 @@ public class DrarchPlugin extends AbstractUIPlugin {
 
   // The shared instance.
   private static DrarchPlugin plugin;
-
+  
   /**
    * The constructor.
    */

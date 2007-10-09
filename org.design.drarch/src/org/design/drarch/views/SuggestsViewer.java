@@ -3,20 +3,20 @@ package org.design.drarch.views;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.design.drarch.Application;
+import org.design.drarch.DrarchApplication;
 import org.design.drarch.DrarchPlugin;
-import org.design.drarch.manager.StepsManagerImpl;
+import org.design.drarch.diagram.trace.uiAction.AnaliceLogTraceAction;
 import org.design.drarch.views.action.ExecuteStepAction;
 import org.design.drarch.views.action.LoadRuleFileAction;
 import org.design.drarch.views.action.SelectWorkingSetAction;
+import org.design.rules4Java.engine.DrarchEngine;
 import org.design.rules4Java.engine.coreEngine.StepsManager;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
+import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.ui.view.modelProviders.SuggestTreeContentProvider;
 import org.design.rules4Java.ui.view.modelProviders.SuggestTreeLabelProvider;
 import org.design.rules4Java.ui.view.modelProviders.model.TreeObject;
 import org.design.rules4Java.ui.view.modelProviders.model.TreeParent;
-import org.design.rules4Java.util.ResourceLocator;
-import org.design.rules4Java.util.Util;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
@@ -139,7 +139,8 @@ public class SuggestsViewer {
 
 		chooseDefaultRulesFile = new Action("Use default rules") {
 			public void run() {
-				ResourceLocator.INSTANCE.registerSelectedRuleSource("");
+				//TODO sacar
+				DrarchApplication.INSTANCE.getCurrentSession().setPathtoSelectedRulesSource("");
 			}
 		};
 
@@ -147,9 +148,11 @@ public class SuggestsViewer {
 			public void run() {
 				// TODO: DESCOMENTAR Y VER CUANDO ARRACA NO CARGAR COSAS QUE NO
 				// ESTAN DSIPONIBLES
-				// AnaliceLogTraceAction analiceLog = new
-				// AnaliceLogTraceAction(null, null);
-				// analiceLog.run();
+				KnowledgeBase knowledgeBase = DrarchApplication.INSTANCE.getDrarchEngine().getKnowledgeBase();
+				QueryEngine queryEngine = DrarchApplication.INSTANCE.getDrarchEngine().getQueryEngine();
+				
+				 AnaliceLogTraceAction analiceLog = new AnaliceLogTraceAction(queryEngine, knowledgeBase);
+				 analiceLog.run();
 			}
 		};
 	}
@@ -163,7 +166,7 @@ public class SuggestsViewer {
 
 	protected void doNextStepAction() {
 		// TODO: Esto se podria mejorar
-		stepManager = StepsManagerImpl.getInstance();
+		stepManager = DrarchApplication.INSTANCE.getDrarchEngine().getStepsManager();
 		if (stepManager.hasNext()) {
 			try {
 				stepManager.startStep();
@@ -199,7 +202,7 @@ public class SuggestsViewer {
 		        buttons, 0);
 		message.open();
 		
-		workingSetManager = Application.getInstance().getWorkingSetManager();
+		workingSetManager = DrarchPlugin.getDefault().getWorkbench().getWorkingSetManager();
 		SelectWorkingSetAction action = new SelectWorkingSetAction(workingSetManager);
 		action.run();
 		if (action.getWorkingSet() != null) {
