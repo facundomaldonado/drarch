@@ -251,8 +251,7 @@ public class DiagramManager implements IDiagramManager {
         Boolean.TRUE);
     resourceSet.setURIConverter(new WorkaroundURIConverter());
 
-    URI uri = URI.createFileURI(Util.getInstance().getPath() + "/Drarch/"
-        + fileName);
+    URI uri = URI.createFileURI(Util.getInstance().getPath() + "/Drarch/" + fileName);
     Resource resource = resourceSet.createResource(uri);
     resource.getContents().add(flabotFileModel);
     try {
