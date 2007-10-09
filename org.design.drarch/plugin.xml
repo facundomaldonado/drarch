@@ -14,5 +14,42 @@
             id="org.design.drarch.view.category"
             name="Drarch"/>
    </extension>
-
+	<extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="Rules4Java"
+            class="org.design.drarch.ui.wizards.NewRecoverySessionWizard"
+            icon="icons/sample.gif"
+            id="org.design.rules4Java.ui.view.wizards.NewRecoverySessionWizard"
+            name="New Recovery Session Wizard"
+            project="true">
+         <description>
+         	Creates a new recovery session project
+         </description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+ <extension
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          id="org.design.drarch.contribution1"
+          nameFilter="drarch.properties"
+          objectClass="org.eclipse.core.resources.IFile">
+       <menu
+             id="org.design.drarch.drarchMenu"
+             label="Drarch"
+             path="additions">
+          <separator name="drarchSeparator"/>
+       </menu>
+       <action
+             class="org.design.drarch.ui.popup.action.RestoreRecoverySession"
+             enablesFor="1"
+             id="org.design.drarch.newAction"
+             label="Restore recovery session"
+             menubarPath="org.design.drarch.drarchMenu/drarchSeparator"/>
+    </objectContribution>
+ </extension>
+ <extension
+       point="org.eclipse.ui.viewActions">
+ </extension>
 </plugin>
