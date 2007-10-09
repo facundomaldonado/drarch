@@ -1,14 +1,15 @@
 package org.design.rules4Java.engine.coreEngine;
 
-import org.design.rules4Java.engine.coreEngine.engineModel.Suggest;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
-import org.design.rules4Java.engine.ruleModel.FactSet;
-import org.design.rules4Java.engine.ruleModel.Rule;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+
+import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
+import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
+import org.design.rules4Java.engine.coreEngine.engineModel.Suggest;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.ruleModel.FactSet;
+import org.design.rules4Java.engine.ruleModel.Rule;
 
 /**
  * 
@@ -17,75 +18,98 @@ import java.util.List;
  */
 public abstract class StepsManager {
 
-  private List<StepAction> steps;
-  private int currentIndexStep;
-  private StepAction currentStep;
-  protected static StepsManager INSTANCE;
+	private List<StepAction>	  	steps;
+	private int	                  	currentIndexStep;
+	private StepAction	          	currentStep;
+	protected static StepsManager	INSTANCE;
+	private KnowledgeBase 			knowledgeBase;
+	private QueryEngine 			queryEngine;
+	
+	private List<Rule> currentRules;
 
-  /**
-   * getRuleList method delegate to the subclasses of StepsManager 
-   * the responsibilito of obtain the list of rules selected by the user
-   * @return List<Rule> list of Rules
-   */
-  protected abstract List<Rule> getRuleList();
+	/**
+	 * antes de la creacion del StepsManager ya se deben tener las reglas parseadas
+	 * @param rules
+	 */
+	public StepsManager(List<Rule> rules) {
+		currentIndexStep = 0;
+		currentRules = rules;
+	}
 
-  protected abstract StepAction createStepAction(Rule rule);
+	public void nextStep() {
+		if (steps.size() > currentIndexStep) {
+			currentIndexStep++;
+		}
+	}
 
-  protected StepsManager() {
-    currentIndexStep = 0;
-    steps = new ArrayList<StepAction>();
-    loadStepsfromFile();
-  }
+	public boolean hasNext() {
+		return (steps.size() > currentIndexStep);
+	}
 
-  public void nextStep() {
-    if (steps.size() > currentIndexStep) {
-      currentIndexStep++;
+	public void startStep() throws DrarchEngineModelException {
+		//TODO: REVISAR 
+		if (steps.size() > currentIndexStep) {
+			currentStep = steps.get(currentIndexStep);
+		} else {
+			currentStep = steps.get(currentIndexStep - 1);
+		}
+		if (hasBackStep()) {
+			StepAction backStep = steps.get(currentIndexStep - 1);
+			currentStep.loadFacts(backStep.getPublishedFacts());
+		} else {
+			currentStep.loadFacts(new LinkedList<FactSet>());
+		}
+		currentStep.run();
+	}
+
+	private boolean hasBackStep() {
+		return (currentIndexStep > 0);
+	}
+
+	public List<Suggest> getStepSuggests() {
+		return (steps.get(currentIndexStep)).getSuggests();
+	}
+
+	protected abstract StepAction createStepAction();
+	
+	/**
+	 * agarra la lista de reglas y crea un step por cada una de ellas
+	 *
+	 */
+	public void createStepsFromRules() {
+		steps = new ArrayList<StepAction>();
+		if (null != currentRules) {
+			for (Rule rule: currentRules) {
+				StepAction step = createStepAction();
+				step.setKnowledgeBase(getKnowledgeBase());
+				step.setQueryEngine(queryEngine);
+				step.setRule(rule);
+				steps.add(step);
+			}
+		}
+	}
+
+	public int getNumberStep() {
+		return this.currentIndexStep;
+	}
+
+	public void restart() {
+		INSTANCE = null;
+	}
+
+	protected KnowledgeBase getKnowledgeBase() {
+    	return this.knowledgeBase;
     }
-  }
 
-  public boolean hasNext() {
-//    return (steps.size() >= currentIndexStep);
-	  return (steps.size() > currentIndexStep);
-  }
-
-  public void startStep() throws DrarchEngineModelException {
-	  //TODO: REVISAR 
-    if (steps.size() > currentIndexStep) {
-      currentStep = steps.get(currentIndexStep);
-    } else {
-      currentStep = steps.get(currentIndexStep - 1);
+	public void setKnowledgeBase(KnowledgeBase knowledgeBase) {
+    	this.knowledgeBase = knowledgeBase;
     }
-    if (hasBackStep()) {
-      StepAction backStep = steps.get(currentIndexStep - 1);
-      currentStep.loadFacts(backStep.getPublishedFacts());
-    } else {
-      currentStep.loadFacts(new LinkedList<FactSet>());
+
+	public QueryEngine getQueryEngine() {
+    	return this.queryEngine;
     }
-    currentStep.run();
-  }
 
-  private boolean hasBackStep() {
-    return (currentIndexStep > 0);
-  }
-
-  public List<Suggest> getStepSuggests() {
-    return (steps.get(currentIndexStep)).getSuggests();
-  }
-
-  public void loadStepsfromFile() {
-    List<Rule> rules = getRuleList();
-    for (Iterator<Rule> iter = rules.iterator(); iter.hasNext();) {
-      Rule rule = iter.next();
-      StepAction step = createStepAction(rule);
-      steps.add(step);
+	public void setQueryEngine(QueryEngine queryEngine) {
+    	this.queryEngine = queryEngine;
     }
-  }
-
-  public int getNumberStep() {
-    return this.currentIndexStep;
-  }
-
-  public void restart() {
-    INSTANCE = null;
-  }
 }

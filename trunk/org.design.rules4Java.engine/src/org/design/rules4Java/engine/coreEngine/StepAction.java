@@ -1,9 +1,10 @@
 package org.design.rules4Java.engine.coreEngine;
 
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
+import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.coreEngine.engineModel.ResultSet;
 import org.design.rules4Java.engine.coreEngine.engineModel.Suggest;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.engine.ruleModel.Fact;
 import org.design.rules4Java.engine.ruleModel.FactSet;
 import org.design.rules4Java.engine.ruleModel.Rule;
@@ -23,14 +24,29 @@ public abstract class StepAction {
 	protected RuleManager	ruleManager;
 	protected List<FactSet>	lastRuleFacts;
 	protected List<Suggest>	currentRuleSuggests;
+	
+	protected QueryEngine queryEngine;
+	protected KnowledgeBase knowledgeBase;
 
-	public abstract KnowledgeBase getKnowledgeBase();
-
-	public StepAction(Rule r) {
-		currentRule = r;
+	public StepAction() {
 		//TODO: change this
 		ruleManager = RuleManager.getInstance();
 	}
+
+	/**
+     * @param rule
+     */
+    public void setRule(Rule rule) {
+    	currentRule = rule;
+    }
+	
+	public void setKnowledgeBase(KnowledgeBase knowledgeBase) {
+    	this.knowledgeBase = knowledgeBase;
+    }
+
+	public void setQueryEngine(QueryEngine queryEngine) {
+    	this.queryEngine = queryEngine;
+    }
 
 	/**
 	 * @param facts
@@ -42,13 +58,12 @@ public abstract class StepAction {
 	@SuppressWarnings("unchecked")
 	public void applyFacts() throws DrarchEngineModelException {
 		if (listFacts.size() > 0) {
-			KnowledgeBase base = getKnowledgeBase();
 			for (Iterator<FactSet> iFacts = listFacts.iterator(); iFacts
 			        .hasNext();) {
 				FactSet set = iFacts.next();
 				for (Iterator<Fact> ifacts = set.getFactTemplates().iterator(); 
 						ifacts.hasNext();) {
-					base.addFact(ifacts.next().getFactText());
+					knowledgeBase.addFact(ifacts.next().getFactText());
 				}
 			}
 		}
@@ -64,8 +79,17 @@ public abstract class StepAction {
 	}
 
 	public void run() throws DrarchEngineModelException {
+		runBeforeApplyFacts();
 		applyFacts();
+		runBeforeEvaluatingCurrentRule();
 		ResultSet queryResult = ruleManager.evaluateRule(currentRule);
+		runBeforeGettingSuggests();
 		currentRuleSuggests = ruleManager.getSuggests(currentRule, queryResult);
 	}
+	
+	protected abstract void runBeforeApplyFacts();
+	protected abstract void runBeforeEvaluatingCurrentRule();
+	protected abstract void runBeforeGettingSuggests();
+	
+
 }

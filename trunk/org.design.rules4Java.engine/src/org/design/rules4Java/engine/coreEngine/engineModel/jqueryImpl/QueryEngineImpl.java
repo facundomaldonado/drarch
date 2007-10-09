@@ -5,7 +5,7 @@ import org.design.rules4Java.engine.EnginePlugin;
 import org.design.rules4Java.engine.coreEngine.engineModel.EngineModelFactory;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.coreEngine.engineModel.ResultSet;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.engine.ruleModel.Query;
 import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.IWorkingSetManager;
