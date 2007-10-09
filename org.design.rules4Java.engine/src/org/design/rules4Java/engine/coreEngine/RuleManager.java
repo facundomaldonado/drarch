@@ -5,7 +5,7 @@ import java.util.List;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.coreEngine.engineModel.ResultSet;
 import org.design.rules4Java.engine.coreEngine.engineModel.Suggest;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.engine.ruleModel.FactSet;
 import org.design.rules4Java.engine.ruleModel.Rule;
 import org.design.rules4Java.engine.ruleModel.Var;

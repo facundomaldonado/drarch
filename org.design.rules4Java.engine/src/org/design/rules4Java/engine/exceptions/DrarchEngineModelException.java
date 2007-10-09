@@ -1,4 +1,4 @@
-package org.design.rules4Java.engine.coreEngine.engineModel.exceptions;
+package org.design.rules4Java.engine.exceptions;
 
 public class DrarchEngineModelException extends Exception {
 

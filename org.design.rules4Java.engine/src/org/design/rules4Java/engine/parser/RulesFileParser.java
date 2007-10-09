@@ -41,6 +41,9 @@ public class RulesFileParser {
 		                new XMIResourceFactoryImpl());
 
 		URI uri = URI.createFileURI(new File(path.toString()).getAbsolutePath());
+		
+		
+		
 		if (resource == null) {
 			resource = resourceSet.getResource(uri, true);
 		}

@@ -1,8 +1,6 @@
 package org.design.rules4Java.engine.coreEngine.engineModel;
 
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
-
-import ca.ubc.jquery.gui.results.WorkingSetNode;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 
 /**
  * @model
@@ -30,5 +28,5 @@ public interface KnowledgeBase {
 	 */
 	void removeFact(String predicate) throws DrarchEngineModelException;
 
-	void generateFile();
+	void loadFiles();
 }

@@ -6,13 +6,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import javax.imageio.stream.FileImageOutputStream;
 
 import org.apache.log4j.Logger;
 import org.design.rules4Java.engine.EnginePlugin;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 
 import ca.ubc.jquery.gui.results.WorkingSetNode;
 
@@ -25,6 +26,7 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 	private static Logger logger = Logger.getLogger(EnginePlugin.class.getName());
 	
 	protected File file;
+	protected List<File> knoledgeBaseFiles;
 	private WorkingSetNode workingSetNode;
 
 	public KnowledgeBaseAbstractImpl(WorkingSetNode workingSetNode) {
@@ -111,9 +113,14 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new FileWriter(userIncludeFile));
-			String aux = file.getAbsolutePath();
-			String include = aux.replace("\\", "\\\\");
-			writer.println("#include \"file:///" + include + "\"");
+			for(File currentFile : knoledgeBaseFiles) {
+				String currentFilePath = currentFile.getAbsolutePath();
+				
+				logger.debug(currentFile.getAbsolutePath());
+				
+				String include = currentFilePath.replace("\\", "\\\\");
+				writer.println("#include \"file:///" + include + "\"");
+			}
 			writer.println();
 			writer.close();
 		} catch (IOException e) {

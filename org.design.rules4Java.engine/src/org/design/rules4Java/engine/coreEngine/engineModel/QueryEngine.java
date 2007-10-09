@@ -1,7 +1,9 @@
 package org.design.rules4Java.engine.coreEngine.engineModel;
 
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.engine.ruleModel.Query;
+import org.eclipse.ui.IWorkingSet;
+import org.eclipse.ui.IWorkingSetManager;
 
 /**
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
@@ -14,11 +16,13 @@ public interface QueryEngine {
 //   */
 //  IWorkingSetManager getWorkingSetManager();
 //
-//  void setWorkingSetManager(IWorkingSetManager value);
+  void setWorkingSetManager(IWorkingSetManager value);
 //
 //  IWorkingSet getWorkingSet();
 //
-//  void setWorkingSet(IWorkingSet value);
+  void setWorkingSet(IWorkingSet value);
 
   ResultSet evaluateQuery(Query q) throws DrarchEngineModelException;
+  
+  void init();
 } 
