@@ -5,36 +5,39 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IWorkingSet;
 
 public class Util {
-	
-  private static Util INSTANCE;
-  private String externalFilePath;
-  private IWorkingSet currentWorkingSet;
 
-  private Util() {
-  }
+	private static Util	INSTANCE;
+	private IWorkingSet	currentWorkingSet;
 
-  public static Util getInstance() {
-    if (INSTANCE == null) {
-    	INSTANCE = new Util();
-    }
-    return INSTANCE;
-  }
+	private Util() {
+	}
 
-  public String getPath() {
-    IAdaptable[] elements = getCurrentWorkingSet().getElements();
-    IAdaptable adaptable = elements[0];
-    IResource resources;
-    if (adaptable instanceof IResource) {
-      resources = (IResource) adaptable;
-    } else {
-      resources = (IResource) adaptable.getAdapter(IResource.class);
-    }
-    String path = resources.getProject().getLocation().toString();
-    return path;
-  }
+	public static Util getInstance() {
+		if (INSTANCE == null) {
+			INSTANCE = new Util();
+		}
+		return INSTANCE;
+	}
 
-  private IWorkingSet getCurrentWorkingSet() {
-    return ResourceLocator.INSTANCE.getCurrentWorkingSet();
-  }
+	public String getPath() {
+		IAdaptable[] elements = getCurrentWorkingSet().getElements();
+		IAdaptable adaptable = elements[0];
+		IResource resources;
+		if (adaptable instanceof IResource) {
+			resources = (IResource) adaptable;
+		} else {
+			resources = (IResource) adaptable.getAdapter(IResource.class);
+		}
+		String path = resources.getProject().getLocation().toString();
+		return path;
+	}
+
+	private IWorkingSet getCurrentWorkingSet() {
+		return currentWorkingSet;
+	}
+
+	public void setCurrentWorkingSet(IWorkingSet currentWorkingSet) {
+		this.currentWorkingSet = currentWorkingSet;
+	}
 
 }
