@@ -27,7 +27,7 @@ import org.design.rules4Java.engine.coreEngine.engineModel.EngineModelFactory;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryResult;
 import org.design.rules4Java.engine.coreEngine.engineModel.ResultSet;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.engine.ruleModel.Query;
 import org.design.rules4Java.engine.ruleModel.RuleModelFactory;
 import org.design.rules4Java.engine.ruleModel.Var;

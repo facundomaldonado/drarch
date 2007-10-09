@@ -12,8 +12,8 @@ import org.design.drarch.diagram.trace.logModel.Responsibility;
 import org.design.drarch.diagram.trace.logModel.TagLogNode;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
-import org.design.rules4Java.engine.coreEngine.engineModel.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.engine.coreEngine.engineModel.jqueryImpl.QueryEngineImpl;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.isistan.flabot.engine.executionstate.TraceLogManager;
 import org.isistan.flabot.trace.log.TraceLog;
 
@@ -36,8 +36,8 @@ public class LoadLogFactsAction /*extends Action*/{
 		searcher = new LogSearcher(log);
 		factsList = new LinkedList();
 
-		this.knowledgeBase = base;//Util.getInstance().getBase();
-		this.queryEngine = queryEngine;//Util.getInstance().getQueryEngine();
+		this.knowledgeBase = base;
+		this.queryEngine = queryEngine;
 	}
 
 	@SuppressWarnings("unchecked")
