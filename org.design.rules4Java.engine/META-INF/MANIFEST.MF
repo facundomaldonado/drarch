@@ -14,11 +14,7 @@ Eclipse-AutoStart: true
 Export-Package: org.design.rules4Java.engine,
  org.design.rules4Java.engine.coreEngine,
  org.design.rules4Java.engine.coreEngine.engineModel,
- org.design.rules4Java.engine.coreEngine.engineModel.defaultImpl,
- org.design.rules4Java.engine.coreEngine.engineModel.exceptions,
  org.design.rules4Java.engine.coreEngine.engineModel.jqueryImpl,
- org.design.rules4Java.engine.parser,
- org.design.rules4Java.engine.ruleModel,
- org.design.rules4Java.engine.ruleModel.impl,
- org.design.rules4Java.engine.ruleModel.util
+ org.design.rules4Java.engine.exceptions,
+ org.design.rules4Java.engine.ruleModel
 Bundle-ClassPath: rules4Java.engine.jar
