@@ -1,4 +1,4 @@
-component :: Object
+component :: String
 MODES
 (F) IS NONDET
 END
@@ -33,9 +33,14 @@ MODES
 (F, F) IS NONDET
 END
 
-mapping :: Object, Object, Object
+mapping :: String, String, String
 MODES
 (F, F, F) IS NONDET
+END
+
+mapping :: String, String
+MODES
+(F, F) IS NONDET
 END
 
 relationship :: String, String, String
@@ -43,39 +48,37 @@ MODES
 (F, F, F) IS NONDET
 END
 
-responsibility :: Object
+responsibility :: String
 MODES
 (F) IS NONDET
 END
 
-hasResponsibility :: Object, Object
+hasResponsibility :: String, String
 MODES
 (F, F) IS NONDET
 END
 
-association :: Object, Object, Object
+association :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+logResponsibility:: String
+MODES
+(F) IS NONDET
+END
+
+responsibilityExecution :: String, Integer, String
 MODES
 (F, F, F) IS NONDET
 END
 
-logResponsibility:: Object
-MODES
-(F) IS NONDET
-END
-
-responsibilityExecution :: Object, Object
+executionMethod :: Integer, String
 MODES
 (F, F) IS NONDET
 END
 
-executionMethod :: Object, Object
+executionDeclaredClass:: Integer, String
 MODES
 (F, F) IS NONDET
 END
-
-executionDeclaredClass:: Object, Object
-MODES
-(F, F) IS NONDET
-END
-
-
