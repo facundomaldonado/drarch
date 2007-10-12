@@ -1,5 +1,6 @@
 package org.design.drarch.diagram.DiagramModel.ucmModel;
 
+import org.design.drarch.diagram.DiagramModel.componentModel.Component;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -73,4 +74,8 @@ public interface PathNode extends EObject {
   void addComment(String string);
 
   String getComment();
+  
+  Component getAsociatedComponent();
+  
+  void setAsociatedComponent(Component component);
 }

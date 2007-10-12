@@ -1,8 +1,10 @@
 package org.design.drarch.diagram.flabot.ucm;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
+import org.design.drarch.diagram.DiagramModel.ucmModel.PathNode;
 import org.design.drarch.diagram.flabot.DiagramManager;
 import org.isistan.flabot.coremodel.ComponentModel;
 import org.isistan.flabot.coremodel.ComponentRole;
@@ -102,8 +104,42 @@ public class UCMDiagrams {
     }
   }
 
-  @SuppressWarnings("unchecked")
-  public void createPath(List<List<String>> pathResponsibility) {
+//  @SuppressWarnings("unchecked")
+//  public void createPath(List<List<String>> pathResponsibility) {
+//    // Modelo
+//    Path path = CoremodelFactory.eINSTANCE.createPath();
+//    SimplePathNode startNode = CoremodelFactory.eINSTANCE
+//        .createSimplePathNode();
+//    startNode.setName("StartNode");
+//
+//    SimplePathNode endNode = CoremodelFactory.eINSTANCE.createSimplePathNode();
+//    endNode.setName("EndNode");
+//
+//    path.getStartNodes().add(startNode);
+//    path.getNodes().add(startNode);
+//
+//    path.getEndNodes().add(endNode);
+//    path.getNodes().add(endNode);
+//
+//    SimplePathNode previusNode = startNode;
+//    for (int i = 0; i < pathResponsibility.size(); i++) {
+//      List<String> peer = (List<String>) pathResponsibility.get(i);
+//
+//      //TODO para que le paso un peer si tomo siempre el primer par!!!
+//      previusNode = addResponsibilityNode(path, peer.get(0),
+//          peer.get(1), previusNode);
+//
+//      if (i == (pathResponsibility.size() - 1))
+//        endNode.addPrevious(previusNode);
+//    }
+//
+//    diagram.getMap().getPaths().add(path);
+//    drawNodes(path);
+//    drawConnections(path);
+////    createNote(path);
+//  }
+  
+  public void createPath(org.design.drarch.diagram.DiagramModel.ucmModel.Path modelPath) {
     // Modelo
     Path path = CoremodelFactory.eINSTANCE.createPath();
     SimplePathNode startNode = CoremodelFactory.eINSTANCE
@@ -120,36 +156,30 @@ public class UCMDiagrams {
     path.getNodes().add(endNode);
 
     SimplePathNode previusNode = startNode;
-    for (int i = 0; i < pathResponsibility.size(); i++) {
-      List<String> peer = (List<String>) pathResponsibility.get(i);
+    for (int i = 0; i < modelPath.getNodes().size(); i++) {
+    	PathNode pathNode = (PathNode) modelPath.getNodes().get(i);
+      PathNode pathNodePrevius = ((PathNode) pathNode.getPrevious().get(0));
+      previusNode = addResponsibilityNode(path, (String) pathNode.getResponsibilityName(),
+          pathNode.getAsociatedComponent().getName(), previusNode);
 
-      previusNode = addResponsibilityNode(path, (String) peer.get(0),
-          previusNode);
-
-      if (i == (pathResponsibility.size() - 1))
+      if (i == (modelPath.getNodes().size() - 1))
         endNode.addPrevious(previusNode);
     }
 
     diagram.getMap().getPaths().add(path);
     drawNodes(path);
     drawConnections(path);
-    createNote(path);
   }
 
   @SuppressWarnings("unchecked")
   private SimplePathNode addResponsibilityNode(Path path,
-      String responsibilityName, SimplePathNode previusNode) {
-    // esto es provisorio
-    String roleName = responsibilityName;
-
-    ResponsibilityNode middleNode = CoremodelFactory.eINSTANCE
-        .createResponsibilityNode();
-
+      String responsibilityName, String componentRoleName, SimplePathNode previusNode) {
+    ResponsibilityNode middleNode = CoremodelFactory.eINSTANCE.createResponsibilityNode();
     middleNode.setName(responsibilityName);
     middleNode.addPrevious(previusNode);
     middleNode.setMap(diagram.getMap());
-    middleNode.setResponsibility(getResponsibility(roleName));
-    middleNode.setRole(getRole(roleName));
+    middleNode.setResponsibility(getResponsibility(responsibilityName));
+    middleNode.setRole(getRole(componentRoleName));
     path.getNodes().add(middleNode);
     return middleNode;
   }
@@ -329,9 +359,9 @@ public class UCMDiagrams {
     }
   }
 
-  public void addNote(String responsibilityName, String comment) {
-    notes.put(responsibilityName, comment);
-  }
+//  public void addNote(String responsibilityName, String comment) {
+//    notes.put(responsibilityName, comment);
+//  }
 
   /**
    * Algoritmo simple para organizar los componentes en el editor

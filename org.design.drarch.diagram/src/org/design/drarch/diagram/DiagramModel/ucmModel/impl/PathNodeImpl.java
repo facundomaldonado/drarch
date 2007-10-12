@@ -7,6 +7,7 @@ package org.design.drarch.diagram.DiagramModel.ucmModel.impl;
 
 import java.util.Collection;
 
+import org.design.drarch.diagram.DiagramModel.componentModel.Component;
 import org.design.drarch.diagram.DiagramModel.ucmModel.Path;
 import org.design.drarch.diagram.DiagramModel.ucmModel.PathNode;
 import org.design.drarch.diagram.DiagramModel.ucmModel.UcmModelPackage;
@@ -412,5 +413,14 @@ public class PathNodeImpl extends EObjectImpl implements PathNode {
 
   public String getComment() {
     return this.comment;
+  }
+
+  private Component component;
+  public Component getAsociatedComponent() {
+	  return this.component;
+  }
+
+  public void setAsociatedComponent(Component component) {
+ 	this.component = component;
   }
 } // PathNodeImpl

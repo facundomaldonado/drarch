@@ -127,10 +127,9 @@ public class LoadModelAction/* extends Action */{
 				QueryResult ResultAssociation = resultSetAssociation.next();
 				DObject dObject = new DObject();
 				dObject.setBehavior(null);
+				
 				dObject.setClassName(ResultAssociation.getValueOfVar(
-				        "?ClassName").toString());
-				dObject.setJavaFileDescriptor(ResultAssociation.getValueOfVar(
-				        "?FileName").toString());
+				        "?ClazzName").toString());
 				dObject.setPackageName(ResultAssociation.getValueOfVar(
 				        "?PackageName").toString());
 				association.add(dObject);
@@ -166,11 +165,12 @@ public class LoadModelAction/* extends Action */{
 		while (responsibilitiesReg.hasMoreElements()) {
 			QueryResult responsibilityReg = responsibilitiesReg.next();
 
-			cModel.RegisterResponsability(responsibilityReg
-			        .getValueOfVar("?Comp"), responsibilityReg
-			        .getValueOfVar("?Res"));
+			cModel.RegisterResponsability(responsibilityReg.getValueOfVar("?Comp"), 
+					responsibilityReg.getValueOfVar("?Res"));
 
 			// Se mapean las clases y metodos a cada responsabilidad.
+			
+			// TODO: esto es para mapear clases completas!!! Se deben mapear metodos.
 			List<DObject> mapping = new ArrayList<DObject>();
 			ResultSet resultSetMappingClass = getMappingClass(responsibilityReg
 			        .getValueOfVar("?Res"));
@@ -178,16 +178,14 @@ public class LoadModelAction/* extends Action */{
 				QueryResult ResultMappingClass = resultSetMappingClass.next();
 				DObject dObject = new DObject();
 				dObject.setClassName(ResultMappingClass.getValueOfVar(
-				        "?ClassName").toString());
-				dObject.setJavaFileDescriptor(ResultMappingClass.getValueOfVar(
-				        "?FileName").toString());
+				        "?ClazzName").toString());
 				dObject.setPackageName(ResultMappingClass.getValueOfVar(
 				        "?PackageName").toString());
 
 				ResultSet resultSetMappingMethod = getMappingMethod(
-				        ResultMappingClass.getValueOfVar("?PackageName")
-				                .toString(), ResultMappingClass.getValueOfVar(
-				                "?ClassName").toString());
+						responsibilityReg.getValueOfVar("?Res").toString(),
+				        ResultMappingClass.getValueOfVar("?PackageName").toString(), 
+				        ResultMappingClass.getValueOfVar("?ClazzName").toString());
 				Vector behaviors = new Vector();
 				while (resultSetMappingMethod.hasMoreElements()) {
 					QueryResult resultMappingMethod = resultSetMappingMethod
@@ -200,7 +198,7 @@ public class LoadModelAction/* extends Action */{
 					ResultSet resultSetMappingArguments = getMappingArguments(
 					        ResultMappingClass.getValueOfVar("?PackageName")
 					                .toString(), ResultMappingClass
-					                .getValueOfVar("?ClassName").toString(),
+					                .getValueOfVar("?ClazzName").toString(),
 					        resultMappingMethod.getValueOfVar("?MethodName")
 					                .toString());
 					while (resultSetMappingArguments.hasMoreElements()) {
@@ -249,28 +247,50 @@ public class LoadModelAction/* extends Action */{
 																				// +
 		        , varList);
 	}
+	
+	@SuppressWarnings("unchecked")
+	private ResultSet getMappingMethod(String responsName, String packageName, String className){
+		LinkedList varList = new LinkedList();
+		varList.add("?MethodName");
+		varList.add("?Type");
+		return getResultQuery("mapping(" + responsName + ", ?QualifiedMethodName), " +   //"." + packageName + "." + className + ".?MethodName), " +
+        		"string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName), " +
+        		"string_append('.', ?MethodName, ?DotMethodName), " +
+        		"string_append(?PackageName, ?DotClazzName, ?QualifiedName), " + 
+        		"string_append('.', ?ClazzName, ?DotClazzName), " +
+		        "package(?Package), name(?Package, " + packageName + "), package(?Clazz, ?Package), " +
+		        "class(?Clazz), name(?Clazz, " + className + "), method(?Clazz, ?Method)," +
+		        "returns(?Method, ?Type), name(?Method, ?MethodName)"
+		        , varList);
+	}
 
 	@SuppressWarnings("unchecked")
 	private ResultSet getMappingClass(String responsibility){
 		LinkedList varList = new LinkedList();
-		varList.add("?ClassName");
+		varList.add("?ClazzName");
 		varList.add("?PackageName");
-		varList.add("?FileName");
+		
+		
+		// mapping(TaskImpl2.body, experimental.modeladmin.component2.task.TaskImpl2.body).
 
-		return getResultQuery("mapping(" + responsibility + ", ?PackageName, "
-		        + "?FileName), name(?File, ?FileName), javaFile(?File), "
-		        + "child(?File, ?Class), name(?Class, ?ClassName)", varList);
+		return getResultQuery("mapping(" + responsibility + ", ?QualifiedMethodName), " +
+				"name(?Clazz, ?ClazzName), package(?Clazz, ?Package), name(?Package, ?PackageName)," +
+        		"string_append(?PackageName, ?DotClazzName, ?QualifiedName), " + 
+        		"string_append('.', ?ClazzName, ?DotClazzName), " +
+        		"method(?Clazz, ?Method), name(?Method, ?MethodName), " +
+        		"string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName), " +
+        		"string_append('.', ?MethodName, ?DotMethodName)", varList); 
 	}
 
 	@SuppressWarnings("unchecked")
 	private ResultSet getAssociation(String component){
 		LinkedList varList = new LinkedList();
-		varList.add("?ClassName");
 		varList.add("?PackageName");
-		varList.add("?FileName");
-		return getResultQuery("association(" + component + ", ?PackageName, "
-		        + "?FileName), name(?File, ?FileName), child(?File, ?Class), "
-		        + "javaFile(?File), name(?Class, ?ClassName)", varList);
+		varList.add("?ClazzName");
+		return getResultQuery("association(" + component + ", ?QualifiedName), " +
+				"name(?Clazz, ?ClazzName), package(?Clazz, ?Package), name(?Package, ?PackageName)," +
+        		"string_append(?PackageName, ?DotClazzName, ?QualifiedName), " + 
+        		"string_append('.', ?ClazzName, ?DotClazzName)", varList);
 	}
 
 	@SuppressWarnings("unchecked")

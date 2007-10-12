@@ -15,7 +15,6 @@ import org.design.drarch.diagram.DiagramModel.componentModel.Relationship;
 import org.design.drarch.diagram.DiagramModel.componentModel.Responsibility;
 import org.design.drarch.diagram.DiagramModel.ucmModel.ComponentRole;
 import org.design.drarch.diagram.DiagramModel.ucmModel.Path;
-import org.design.drarch.diagram.DiagramModel.ucmModel.PathNode;
 import org.design.drarch.diagram.DiagramModel.ucmModel.UCMModel;
 import org.design.drarch.diagram.flabot.component.ComponentsDiagram;
 import org.design.drarch.diagram.flabot.ucm.UCMDiagrams;
@@ -76,34 +75,15 @@ public class DiagramManager implements IDiagramManager {
   @SuppressWarnings("unchecked")
   public void createUCMDiagram(UCMModel model) {
     UCMDiagrams ucmDiagrams = new UCMDiagrams(model.getName());
-
     for (int i = 0; i < model.getComponentRoles().size(); i++) {
       ComponentRole componentRole = (ComponentRole) model.getComponentRoles().get(i);
       ucmDiagrams.createComponentRole(componentRole.getName());
     }
-
-    List<List<String>> pathResponsibility = new ArrayList<List<String>>();
     for (int i = 0; i < model.getPaths().size(); i++) {
       Path path = (Path) model.getPaths().get(i);
-      for (int j = 0; j < path.getNodes().size(); j++) {
-
-
-        PathNode pathNode = (PathNode) path.getNodes().get(j);
-        // agraga las notas para sugerir el nombre de la responsabilidad
-        ucmDiagrams.addNote(pathNode.getResponsibilityName(), pathNode
-            .getComment());
-        PathNode pathNodePrevius = ((PathNode) pathNode.getPrevious().get(0));
-        List<String> peerNodes = new ArrayList<String>();
-        peerNodes.add(0, pathNode.getResponsibilityName());
-        peerNodes.add(1, pathNodePrevius.getResponsibilityName());
-
-        pathResponsibility.add(peerNodes);
-      }
-      ucmDiagrams.createPath(pathResponsibility);
+    	ucmDiagrams.createPath(path);
     }
-
     ucmDiagrams.organizeLayout();
-
     ucms.add(ucmDiagrams);
     update(false);
   }

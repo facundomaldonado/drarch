@@ -1,7 +1,7 @@
 package org.design.drarch.diagram.trace.uiAction;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.design.drarch.diagram.trace.LogQueryFactory;
@@ -21,71 +21,74 @@ import org.isistan.flabot.trace.log.TraceLog;
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public class LoadLogFactsAction /*extends Action*/{
+public class LoadLogFactsAction {
 
-	private List	        responsibilities;
-	private LogSearcher	    searcher;
-	private List	        factsList;
-	private LogQueryFactory	predicateFactory	= LogQueryFactory.getInstance();
-	private TraceLog	    log;
-	private KnowledgeBase	knowledgeBase;
-	private QueryEngine	    queryEngine;
+	private List<Responsibility> responsibilities;
 
-	public LoadLogFactsAction(QueryEngine queryEngine, KnowledgeBase base) {
+	private LogSearcher searcher;
+
+	private List<String> factsList;
+
+	private LogQueryFactory predicateFactory = LogQueryFactory.getInstance();
+
+	private TraceLog log;
+
+	private KnowledgeBase knowledgeBase;
+
+	private QueryEngine queryEngine;
+
+	public LoadLogFactsAction(QueryEngine theQueryEngine, KnowledgeBase base) {
 		log = TraceLogManager.getDefault().loadLog();
 		searcher = new LogSearcher(log);
-		factsList = new LinkedList();
-
-		this.knowledgeBase = base;
-		this.queryEngine = queryEngine;
+		factsList = new ArrayList<String>();
+		knowledgeBase = base;
+		queryEngine = theQueryEngine;
 	}
 
 	@SuppressWarnings("unchecked")
-	//TODO rename -> loadLogFacts
+	// TODO rename -> loadLogFacts
 	public void run() throws DrarchEngineModelException {
 		responsibilities = searcher.getResponsibilities();
-		for (Iterator ir = responsibilities.iterator(); ir.hasNext();) {
-			Responsibility res = (Responsibility) ir.next();
-
-			String s = predicateFactory.createResponsibilityPredicate(res
-			        .getName());
-			factsList.add(s);
-			List materializations = (res).getExecutions();
-			for (Iterator im = materializations.iterator(); im.hasNext();) {
-
-				InnerTag mat = (InnerTag) im.next();
-				String execId = ((PropertyLogNode) mat.getTags().get(
-				        LogSearcher.EXEC_ID_PROPERTY)).getValue();
-				s = predicateFactory.createExecutionPredicate(res.getName(),
-				        execId);
-				factsList.add(s);
-				{
-					TagLogNode behTag = (TagLogNode) mat.getTags().get(
-					        LogSearcher.BEHAVIOR_TAG);
-					InnerTag behavior = searcher.getTagLogNodeInfo(behTag);
-					String behavior_name = ((PropertyLogNode) behavior
-					        .getTags().get(LogSearcher.ALL_NAME_PROPERTY))
-					        .getValue();
-					s = predicateFactory.createExecutionMethodPredicate(execId,
-					        behavior_name);
-					factsList.add(s);
-					{
-						TagLogNode decClassTag = (TagLogNode) behavior
-						        .getTags().get(LogSearcher.BEHAVIOR_DECLARING_CLASS_TAG);
-						InnerTag declaringClass = searcher.getTagLogNodeInfo(decClassTag);
-						{
-							String className = ((PropertyLogNode) declaringClass
-							        .getTags().get(LogSearcher.ALL_NAME_PROPERTY)).getValue();
-							s = predicateFactory.createExecutionDeclaredClass(execId, className);
-							factsList.add(s);
-						}
-					}
+		for (Responsibility responsibility : responsibilities) {
+//			String s = predicateFactory
+//					.createResponsibilityPredicate(responsibility.getName());
+//			factsList.add(s);
+			
+			/* Get all materializations (clases, methods) mepped 
+			 * to the executed responsibility.
+			 */
+			List<InnerTag> materializations = responsibility.getExecutions();
+			for (InnerTag materialization : materializations) {
+				String execId = ((PropertyLogNode) materialization.getTags().get(
+						LogSearcher.EXEC_ID_PROPERTY)).getValue();
+				
+				TagLogNode valueTag = (TagLogNode) materialization.getTags().get(
+						LogSearcher.VALUE_TAG);
+				InnerTag valueInnerTag = searcher.getTagLogNodeInfo(valueTag);
+				String exitValue = ((PropertyLogNode) valueInnerTag.getTags()
+						.get("string")).getValue();				
+				if (exitValue != null) {
+					exitValue = "emptyValue";
 				}
+				factsList.add(predicateFactory.createExecutionPredicate(
+						responsibility.getName(), execId, exitValue));
+				
+				TagLogNode behaviorTag = (TagLogNode) materialization.getTags().get(
+						LogSearcher.BEHAVIOR_TAG);
+				InnerTag behavior = searcher.getTagLogNodeInfo(behaviorTag);
+				String methodName = ((PropertyLogNode) behavior.getTags()
+						.get(LogSearcher.ALL_NAME_PROPERTY)).getValue();
+				TagLogNode declaringClassTag = (TagLogNode) behavior.getTags().get(
+						LogSearcher.BEHAVIOR_DECLARING_CLASS_TAG);
+				InnerTag declaringClass = searcher.getTagLogNodeInfo(declaringClassTag);
+				String className = ((PropertyLogNode) declaringClass.getTags()
+						.get(LogSearcher.ALL_NAME_PROPERTY)).getValue();
+				factsList.add(predicateFactory.createExecutedMethodValue(className + "." + 
+						methodName, execId, exitValue));
 			}
 		}
-		for (Iterator i = factsList.iterator(); i.hasNext();) {
-			String fact = (String) i.next();
-//			System.out.println(fact);
+		
+		for (String fact : factsList) {
 			knowledgeBase.addFact(fact);
 		}
 		((QueryEngineImpl) queryEngine).getWorkingSetNode().reloadRules();

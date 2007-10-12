@@ -10,10 +10,10 @@ public class LogQueryFactory {
 
   private static LogQueryFactory instance = null;
   public static final String DEFAULT_RESPONSIBILITY_QUERY = "logResponsibility(?R)";
-  public static final String DEFAULT_EXECUTION_QUERY = "responsibilityExecution(?R,?I)";
+  public static final String DEFAULT_EXECUTION_QUERY = "responsibilityExecution(?Responsibility, ?Id, ?Value)";
   public static final String DEFAULT_METHOD_QUERY = "executionMethod(?I,?M)";
   public static final String DEFAULT_CLASS_QUERY = "executionDeclaredClass(?I,?C)";
-  public static final String DEFAULT_COMPONENT_CLASS_ASSOCIATION_QUERY = "association(?C,?P,?CU),component(?C)";
+  public static final String DEFAULT_COMPONENT_CLASS_ASSOCIATION_QUERY = "association(?C,?QualifiedName),component(?C)";
   public static final String DEFAULT_COMPONENT_RESPONSIBILITY_ASSOCIATION_QUERY = "hasResponsibility(?C,?R)";
 
   public LogQueryFactory() {
@@ -31,9 +31,9 @@ public class LogQueryFactory {
   }
 
   public String createExecutionPredicate(String responsibilityName,
-      String exectutionId) {
-    return ("responsibilityExecution(" + responsibilityName + ","
-        + exectutionId + ").");
+      String exectutionId, String value) {
+    return "responsibilityExecution(" + responsibilityName + " ,"
+        + exectutionId + ", '" + value + "').";
   }
 
   public String createExecutionMethodPredicate(String executionId,
@@ -48,12 +48,16 @@ public class LogQueryFactory {
 
   public String createComponentClassAssociationQuery(String className,
       String packageName) {
-    return "association(?C," + packageName + "," + className
+    return "association(?C," + packageName + "." + className
         + "),component(?C)";
   }
 
-  public String createComponentResponsibilityAssociationQuery(
-      String responsibility) {
-    return "hasResponsibility(?C," + responsibility + ")";
+  public String createComponentResponsibilityAssociationQuery(String responsibility) {
+    return "hasResponsibility(?Component," + responsibility + ")";
   }
+
+public String createExecutedMethodValue(String qualifiedMethodName, String execId, String exitValue) {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
