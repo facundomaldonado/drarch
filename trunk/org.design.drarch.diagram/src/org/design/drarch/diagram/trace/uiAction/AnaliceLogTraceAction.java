@@ -34,12 +34,6 @@ public class AnaliceLogTraceAction /*extends Action*/ {
 
     //TODO: try to obtain the modelGenerator by a factory
     UCMModelGenerator ucmGenerator = new UCMModelGenerator(queryEngine);
-    ucmGenerator.make();
-
-    // alternativeModel
-    UCMModel alternativeModel = ucmGenerator.getAlternativeModel();
-    DiagramManager.getInstance().createUCMDiagram(alternativeModel);
-
     UCMModel model = ucmGenerator.getModel();
     DiagramManager.getInstance().createUCMDiagram(model);
   }
