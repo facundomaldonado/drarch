@@ -36,6 +36,11 @@ public class DrarchApplication {
 		DiagramManager.getInstance().restart();
 	}
 	
+	public void resetEngine() {
+		engine = null;
+		session = null;
+	}
+	
 	public RecoverySession createSession() {
 		return new RecoverySession();
 	}

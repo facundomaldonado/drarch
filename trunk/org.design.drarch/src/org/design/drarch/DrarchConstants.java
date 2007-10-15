@@ -14,6 +14,7 @@ public interface DrarchConstants {
 	static String PROPERTIES_PROJECT_NAME = "project.name";
 	static String PROPERTY_WORKINGSET_NAME = "project.workingset";
 	static String PROPERTY_DEFAULT_RULES = "default.rules";
+	static String PROPERTIES_INITIAL_RULE_FILENAME = "initial.rules";
 	static String PROPERTY_KNOWLEDGEBASE = "default.facts";
 	
 	static String NEW_PROJECT_LOCATION = "project.location";
