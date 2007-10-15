@@ -85,11 +85,12 @@ public abstract class StepAction {
 		ResultSet queryResult = ruleManager.evaluateRule(currentRule);
 		runBeforeGettingSuggests();
 		currentRuleSuggests = ruleManager.getSuggests(currentRule, queryResult);
+		runAfterGettingSuggests();
 	}
 	
 	protected abstract void runBeforeApplyFacts();
 	protected abstract void runBeforeEvaluatingCurrentRule();
 	protected abstract void runBeforeGettingSuggests();
+	protected abstract void runAfterGettingSuggests();
 	
-
 }

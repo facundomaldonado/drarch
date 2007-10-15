@@ -57,12 +57,14 @@ public class QueryEngineImpl implements QueryEngine {
 		query.setQuery(q.getQueryString());
 		try {
 			ResultSet result = EngineModelFactory.INSTANCE.createResultSet();
+			logger.debug(query.getQueryString());
 			((ResultSetImpl) result).setQueryResult(query.execute());
 			return result;
 		} catch (ParseException e) {
 			logger.debug("ParseException evaluating query: "+ query.getQueryString());
 			throw new DrarchEngineModelException("ParseException in method evaluateQuery in class QueryEngineImpl", e);
 		} catch (TypeModeError e) {
+			logger.debug("TypeModeErrorException evaluating query: "+ query.getQueryString());
 			throw new DrarchEngineModelException("TypeModeError in method evaluateQuery in class QueryEngineImpl", e);
 		}
 	}

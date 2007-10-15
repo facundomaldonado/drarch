@@ -83,13 +83,15 @@ public abstract class DrarchEngine {
 	 */
 	private StepsManager initializeStepsManager(KnowledgeBase knowledgeBase, QueryEngine queryEngine) {
 		logger.info("Initializing steps manager");
-		// crear el stepas manager y setearle las reglas
+		// crear el steps manager y setearle las reglas
 		String pathToRulesFile = getPathToRulesFile();
 		RulesFileParser parser = new RulesFileParser(pathToRulesFile);
 		List<Rule> listOfRules = parser.getParsedRules();
+		
 		stepsManager = createStepsManager(listOfRules);
 		stepsManager.setKnowledgeBase(knowledgeBase);
 		stepsManager.setQueryEngine(queryEngine);
+		
 		stepsManager.createStepsFromRules();
 		return stepsManager;
 	}
