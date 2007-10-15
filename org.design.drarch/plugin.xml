@@ -49,7 +49,22 @@
              menubarPath="org.design.drarch.drarchMenu/drarchSeparator"/>
     </objectContribution>
  </extension>
- <extension
-       point="org.eclipse.ui.viewActions">
- </extension>
+ <extension point="org.eclipse.ui.popupMenus">
+    <viewerContribution
+       id="org.design.drarch.viewerContribution1"
+	   targetID="org.isistan.flabot.edit.multipage.FlabotMultiPageEditor">
+       <menu
+             id="org.design.drarch.drarchMenu"
+             label="Drarch"
+             path="additions">
+          	 <separator name="drarchSeparator"/>
+       </menu>
+       <action
+             class="org.design.drarch.ui.popup.action.SincronizeWithKnoledgeBaseActionizeWithKnoledgeBaseAction"
+             id="org.design.drarch.action1"
+             label="Sincronize with Drarch Knoledgebase"
+             style="push"
+             menubarPath="org.design.drarch.drarchMenu/drarchSeparator"/>
+    </viewerContribution>
+ </extension> 
 </plugin>
