@@ -18,7 +18,6 @@ import org.design.drarch.diagram.DiagramModel.ucmModel.Path;
 import org.design.drarch.diagram.DiagramModel.ucmModel.UCMModel;
 import org.design.drarch.diagram.flabot.component.ComponentsDiagram;
 import org.design.drarch.diagram.flabot.ucm.UCMDiagrams;
-import org.design.rules4Java.util.Util;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -41,6 +40,7 @@ import org.isistan.flabot.util.emf.WorkaroundURIConverter;
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
 public class DiagramManager implements IDiagramManager {
+	
   private List<ComponentsDiagram> components;
   private List<UCMDiagrams> ucms;
   private FlabotFileModel flabotFileModel;
@@ -51,7 +51,6 @@ public class DiagramManager implements IDiagramManager {
   private ComponentModel currentModel;
 
   public DiagramManager() {
-    //fileName = "ComponentDiagram.flabot";
     components = new ArrayList<ComponentsDiagram>();
     ucms = new ArrayList<UCMDiagrams>();
     coreModel = CoremodelFactory.eINSTANCE.createCoreModel();
@@ -231,8 +230,10 @@ public class DiagramManager implements IDiagramManager {
         Boolean.TRUE);
     resourceSet.setURIConverter(new WorkaroundURIConverter());
 
-    URI uri = URI.createFileURI(Util.getInstance().getPath() + "/Drarch/" + fileName);
-    Resource resource = resourceSet.createResource(uri);
+    //URI uri = URI.createFileURI(Util.getInstance().getPath() + "/Drarch/" + fileName);
+    URI flabotFileURI = URI.createFileURI(fileName);
+    
+    Resource resource = resourceSet.createResource(flabotFileURI);
     resource.getContents().add(flabotFileModel);
     try {
       resource.save(Collections.singletonMap(XMLResource.OPTION_ENCODING,
@@ -292,7 +293,8 @@ public class DiagramManager implements IDiagramManager {
   public void setFileName(String name) {
     fileName = name;
     FlabotMultiPageEditor f = getFlabotEditorPart();
-    if (f != null) f.closeEditor(true);
+    if (f != null) 
+    	f.closeEditor(true);
     flabotFileModel = EditormodelFactory.eINSTANCE.createFlabotFileModel();
   }
 
