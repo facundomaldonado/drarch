@@ -57,13 +57,12 @@ public class NewRecoverySessionWizard extends Wizard implements INewWizard {
 	@Override
 	public boolean performFinish() {
 		String newProjectName = page.getProjectName();
+		
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		IProject myRecoverySessionProject = myWorkspaceRoot.getProject(newProjectName);
 		try {
             myRecoverySessionProject.create(null);
             myRecoverySessionProject.open(null);
-            
-            logger.debug("project name " + newProjectName + " seted in ResourceLocator");
             
             copyDefaultRulesFileToNewProject(myRecoverySessionProject);
             copyKnowledgeBaseFileToNewProject(myRecoverySessionProject);
@@ -119,6 +118,8 @@ public class NewRecoverySessionWizard extends Wizard implements INewWizard {
 	    config.setProperty(DrarchConstants.PROPERTY_KNOWLEDGEBASE, 
 	    				   DrarchConstants.VALUE_KNOWLEDGEBASE);
 	    config.setProperty(DrarchConstants.PROPERTY_WORKINGSET_NAME, page.getWorkingSetName());
+	    config.setProperty(DrarchConstants.PROPERTIES_INITIAL_RULE_FILENAME, page.getInitialRuleFilePath());
+	    
 	    String projectLocation = newProject.getLocation().toString();
 	    config.setProperty(DrarchConstants.NEW_PROJECT_LOCATION, projectLocation);
 	    config.save();
