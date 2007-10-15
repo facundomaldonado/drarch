@@ -14,6 +14,7 @@ public class RecoverySession {
 
 	private String selectedRuleSource = "";
 	private String defaultRulesSource = "";
+	private String initialRulesFile = "";
 	private String projectName = "";
 	private String projectLocation = "";
 	private String knowledgeBaseSource = "";
@@ -94,4 +95,14 @@ public class RecoverySession {
     	this.projectLocation = projectLocation;
     }
 
+	/**
+     * @param initialRulesFile
+     */
+    public void setPathToInitialsRules(String initialRulesFile) {
+	    this.initialRulesFile = initialRulesFile;
+    }
+
+    public String getPathToInitialsRules() {
+    	return initialRulesFile;
+    }
 }

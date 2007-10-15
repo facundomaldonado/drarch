@@ -43,7 +43,6 @@ public class DrarchEngineImpl extends DrarchEngine {
      */
     @Override
     protected KnowledgeBase createAndInitializeKnowledgeBase(WorkingSetNode workingSetNode) {
-	    // TODO pelado: not yet implemented - createAndInitializeKnowledgeBase
     	KnowledgeBase knowledgeBase = new KnowledgeBaseImpl(workingSetNode);
 		knowledgeBase.loadFiles();
 		try {
@@ -53,7 +52,6 @@ public class DrarchEngineImpl extends DrarchEngine {
 	        e.printStackTrace();
         }
 	    return knowledgeBase;
-	    
     }
 
 	/* (non-Javadoc)
