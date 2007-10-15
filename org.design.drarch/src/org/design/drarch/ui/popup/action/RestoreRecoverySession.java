@@ -23,9 +23,6 @@ public class RestoreRecoverySession implements IObjectActionDelegate {
 
 	Logger	logger	= Logger.getLogger(RestoreRecoverySession.class.getName());
 
-	/**
-	 * Constructor for Action1.
-	 */
 	public RestoreRecoverySession() {
 		super();
 	}
@@ -48,25 +45,27 @@ public class RestoreRecoverySession implements IObjectActionDelegate {
 	 */
 	private void doRestoreSession() {
 		try {
+			//select .properties file
 			StructuredSelection selection = (StructuredSelection)cachedSelection;
-			
 			IFile file = (IFile)selection.getFirstElement();
 			PropertiesConfiguration config = new PropertiesConfiguration(file.getLocation().toFile());
-
+			
+			//get properties from config file
 			String workingSetName = (String) config
 			        .getProperty(DrarchConstants.PROPERTY_WORKINGSET_NAME);
 			String projectName = (String) config
 			        .getProperty(DrarchConstants.PROPERTIES_PROJECT_NAME);
-			//TODO seria bueno que se guarden tambien en el properties asi el usuario puede cambiar
-			String projectLocation = (String)config.getProperty(DrarchConstants.NEW_PROJECT_LOCATION); 
+			String projectLocation = (String)config.getProperty(DrarchConstants.NEW_PROJECT_LOCATION);
+			String initialRulesFile = (String)config.getProperty(DrarchConstants.PROPERTIES_INITIAL_RULE_FILENAME);
+			
+			//getting constant for the initialization of the new project
 			String path2DefaultRules = DrarchConstants.NEW_PROJECT_PATH_TO_RULES_FILES;
 			String path2KnowledgeBase = DrarchConstants.NEW_PROJECT_PATH_TO_KNOWLEDGEBASE_FILES;
 
+			//getting selected workingset from workbench
 			IWorkingSet workingSet = DrarchPlugin.getDefault().getWorkbench()
 			        .getWorkingSetManager().getWorkingSet(workingSetName);
-			logger.debug("Recovery session action, recover workspace: "
-			        + workingSet.getName());
-
+			//creating recovering sessions
 			RecoverySession session = DrarchApplication.INSTANCE.createSession();
 
 			session.setProjectName(projectName);
@@ -77,7 +76,9 @@ public class RestoreRecoverySession implements IObjectActionDelegate {
 			session.setProjectLocation(projectLocation);
 			session.setPathToDefaultRules(projectLocation + path2DefaultRules);
 			session.setPathToKnowledgeBase(projectLocation + path2KnowledgeBase);
+			session.setPathToInitialsRules(initialRulesFile);
 
+			//registering session in the engine
 			DrarchApplication.INSTANCE.getDrarchEngine();
 			DrarchApplication.INSTANCE.registerRecoverySession(session);
 			

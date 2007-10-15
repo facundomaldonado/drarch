@@ -8,11 +8,11 @@ import org.design.drarch.DrarchPlugin;
 import org.design.drarch.diagram.trace.uiAction.AnaliceLogTraceAction;
 import org.design.drarch.views.action.ExecuteStepAction;
 import org.design.drarch.views.action.LoadRuleFileAction;
-import org.design.drarch.views.action.SelectWorkingSetAction;
-import org.design.rules4Java.engine.DrarchEngine;
+import org.design.drarch.views.action.SelectFlabotFileAction;
 import org.design.rules4Java.engine.coreEngine.StepsManager;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
+import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.design.rules4Java.ui.view.modelProviders.SuggestTreeContentProvider;
 import org.design.rules4Java.ui.view.modelProviders.SuggestTreeLabelProvider;
 import org.design.rules4Java.ui.view.modelProviders.model.TreeObject;
@@ -22,6 +22,7 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CheckboxCellEditor;
@@ -34,10 +35,10 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.ui.IViewPart;
-import org.eclipse.ui.IWorkingSetManager;
 import org.eclipse.ui.PlatformUI;
 
 /**
@@ -47,20 +48,21 @@ import org.eclipse.ui.PlatformUI;
 public class SuggestsViewer {
 
 	static Logger	     logger	= Logger.getLogger(DrarchPlugin.class.getName());
+	private Shell 		 shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 	
 	private TreeViewer   treeViewer;
 	private Tree	     tree;
 	private Composite	 baseComposite;
 	private TreeParent	 root	  = new TreeParent("");
 	
-	private Action	     selectWorkingSetAction;
+	private Action	     selectFlabotFileAction;
 	private Action	     nextStepAction;
 	private Action	     importRuleAction;
 	private Action	     chooseDefaultRulesFile;
 	private Action	     analiceLog;
+	private Action 		 resetEngine;
 	
 	private StepsManager	stepManager;
-	private IWorkingSetManager	workingSetManager;
 
 	public SuggestsViewer(Composite parent, IViewPart view) {
 		logger.debug("SuggestViewer: creator");
@@ -88,7 +90,8 @@ public class SuggestsViewer {
 
 		// add actions to menu
 		menuMgr.add(new Separator());
-		rulesMenu.add(selectWorkingSetAction);
+		rulesMenu.add(resetEngine);
+		rulesMenu.add(selectFlabotFileAction);
 		rulesMenu.add(new Separator());
 		rulesMenu.add(nextStepAction);
 		rulesMenu.add(analiceLog);
@@ -105,22 +108,29 @@ public class SuggestsViewer {
 		IToolBarManager toolMgr = view.getViewSite().getActionBars().getToolBarManager();
 		toolMgr.add(importRuleAction);
 		toolMgr.add(new Separator());
-		toolMgr.add(selectWorkingSetAction);
+		toolMgr.add(selectFlabotFileAction);
 		toolMgr.add(nextStepAction);
 
 		logger.debug("SuggestsViewer: Actions added to the view menu");
 	}
 
 	private void createActions() {
-		logger.debug("SuggestViewer: createActions()");
-		selectWorkingSetAction = new Action("Select WorkingSet") {
+		
+		resetEngine = new Action("Reset Engine") {
 			public void run() {
-				doSelectWorkingSetAction();
+				logger.debug("Reset engine Action running");
+				doResetEngine();
 			}
 		};
-		selectWorkingSetAction.setImageDescriptor(DrarchPlugin
+		
+		selectFlabotFileAction = new Action("Select WorkingSet") {
+			public void run() {
+				doSelectFlabotFileAction();
+			}
+		};
+		selectFlabotFileAction.setImageDescriptor(DrarchPlugin
 		        .getImageDescriptor("projects.gif"));
-		selectWorkingSetAction.setToolTipText("Select Working Set");
+		selectFlabotFileAction.setToolTipText("Select Working Set");
 		nextStepAction = new Action("Next Steps") {
 			public void run() {
 				doNextStepAction();
@@ -139,23 +149,28 @@ public class SuggestsViewer {
 
 		chooseDefaultRulesFile = new Action("Use default rules") {
 			public void run() {
-				//TODO sacar
+				//TODO: sacar
 				DrarchApplication.INSTANCE.getCurrentSession().setPathtoSelectedRulesSource("");
 			}
 		};
 
 		analiceLog = new Action(" analize LogTrace ") {
 			public void run() {
-				// TODO: DESCOMENTAR Y VER CUANDO ARRACA NO CARGAR COSAS QUE NO
-				// ESTAN DSIPONIBLES
 				KnowledgeBase knowledgeBase = DrarchApplication.INSTANCE.getDrarchEngine().getKnowledgeBase();
 				QueryEngine queryEngine = DrarchApplication.INSTANCE.getDrarchEngine().getQueryEngine();
 				
-				 AnaliceLogTraceAction analiceLog = new AnaliceLogTraceAction(queryEngine, knowledgeBase);
-				 analiceLog.run();
+				AnaliceLogTraceAction analiceLog = new AnaliceLogTraceAction(queryEngine, knowledgeBase);
+				analiceLog.run();
 			}
 		};
 	}
+
+    protected void doResetEngine() {
+    	DrarchApplication.INSTANCE.resetEngine();
+    	root = new TreeParent("");
+    	treeViewer.setInput(root);
+    	treeViewer.refresh();
+    }
 
 	protected void doimportRuleAction() {
 		LoadRuleFileAction load = new LoadRuleFileAction();
@@ -177,39 +192,18 @@ public class SuggestsViewer {
 				execStep.run();
 				setInput(execStep.getInPut());
 				stepManager.nextStep();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (DrarchEngineModelException e) {
+				logger.error("DrarchEngine Exception when executing startStep method of stepsManager", e);
+				ErrorDialog.openError(shell, "ERROR", "DrarchEngine Exception when executing startStep method of stepsManager", null);
 			}
 		} else {
-			String[] buttons = {"OK"};
-			MessageDialog noMoreStepsDialog = 
-					new MessageDialog(
-						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
-						"Information Message",
-						null,
-						"Warning! \n\nNo more iterations.", 0,
-						buttons, 0);
-			noMoreStepsDialog.open();
+			MessageDialog.openWarning(shell, "No more Steps", "Warning! \n\nNo more iterations.");
 			logger.debug("SuggestsViewer: no more iterations");
 		}
 	}
-	protected void doSelectWorkingSetAction() {
-		String[] buttons = {"OK"};
-		MessageDialog message = new MessageDialog(PlatformUI.getWorkbench()
-		        .getActiveWorkbenchWindow().getShell(), "Information Message",
-		        null, "Important! \n\nOnly select the .java files.", 0,
-		        buttons, 0);
-		message.open();
-		
-		workingSetManager = DrarchPlugin.getDefault().getWorkbench().getWorkingSetManager();
-		SelectWorkingSetAction action = new SelectWorkingSetAction(workingSetManager);
+	protected void doSelectFlabotFileAction() {
+		SelectFlabotFileAction action = new SelectFlabotFileAction();
 		action.run();
-		if (action.getWorkingSet() != null) {
-			root = new TreeParent("");
-			treeViewer.setInput(root);
-			treeViewer.refresh();
-		}
 	}
 
 	private void addChildControl(Composite parent) {
@@ -252,10 +246,6 @@ public class SuggestsViewer {
 				        .getSelection();
 				TreeObject node = (TreeObject) selection.getFirstElement();
 				if (node != null) {
-					if (node instanceof TreeParent) {
-						// TODO: y esto????????
-						node = (TreeParent) node;
-					}
 					node.setSelected(!node.isSelected());
 					treeViewer.update(node, null);
 					treeViewer.refresh();

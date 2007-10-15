@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.design.drarch.ui.wizards;
 
 import org.design.drarch.DrarchPlugin;
@@ -17,6 +14,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkingSet;
@@ -32,6 +30,7 @@ public class NewRecoverySessionWizardPage extends WizardPage {
 
 	private Text	text;
 	private String workingSetName = null;
+	private String initialRuleFilePath;
 	/**
 	 * @param pageName
 	 */
@@ -49,42 +48,78 @@ public class NewRecoverySessionWizardPage extends WizardPage {
 		container.setLayout(layout);
 		layout.numColumns = 3;
 		layout.verticalSpacing = 9;
-		Label label = new Label(container, SWT.NULL);
-		label.setText("New recovery project name:");
-		text = new Text(container, SWT.BORDER);
-		text.addModifyListener(new ModifyListener() {
-			public void modifyText(ModifyEvent e) {
-				dialogChanged();
-			}
-		});
-		gd.horizontalSpan = 2;
-		text.setLayoutData(gd);
-		label = new Label(container, SWT.NULL);
-		label.setText("Workingset selection: ");
-		Button button = new Button(container, SWT.NULL);
-		button.setText("select");
-		button.addSelectionListener(new SelectionListener() {
-		
-			public void widgetSelected(SelectionEvent e) {
-				try {
-	                doSelectWorkingSet();
-                } catch (Exception e1) {
-                	MessageDialog.openError(getShell(), getProjectName(), e1.getMessage());
-                }
-			}
-
-			public void widgetDefaultSelected(SelectionEvent e) {
-			}
-		
-		});
-		
-		gd = new GridData(GridData.CENTER);
-		button.setLayoutData(gd);
-
+		Label label;
+		{
+			label = new Label(container, SWT.NULL);
+			label.setText("New recovery project name:");
+			text = new Text(container, SWT.BORDER);
+			text.addModifyListener(new ModifyListener() {
+				public void modifyText(ModifyEvent e) {
+					dialogChanged();
+				}
+			});
+			gd.horizontalSpan = 2;
+			text.setLayoutData(gd);
+		}
+		{
+			label = new Label(container, SWT.NULL);
+			label.setText("Workingset selection: ");
+			final Text workingSetText = new Text(container, SWT.BORDER);
+			Button button = new Button(container, SWT.NULL);
+			button.setText("select");
+			button.addSelectionListener(new SelectionListener() {
+				public void widgetSelected(SelectionEvent e) {
+					try {
+		                doSelectWorkingSet();
+		                workingSetText.setText(workingSetName);
+	                } catch (Exception e1) {
+	                	MessageDialog.openError(getShell(), getProjectName(), e1.getMessage());
+	                }
+				}
+				public void widgetDefaultSelected(SelectionEvent e) {
+				}
+			});
+			
+			gd = new GridData(GridData.CENTER);
+			button.setLayoutData(gd);
+		}
+		{
+			label = new Label(container, SWT.NULL);
+			label.setText("Select Initial rules file");
+			label.setToolTipText("The initials rules will be executed before the analisis, without user interaction");
+			final Text initialRulesText = new Text(container, SWT.BORDER);
+			initialRulesText.setText("");
+			Button initialRulesButton = new Button(container, SWT.PUSH);
+			initialRulesButton.setText("select");
+			initialRulesButton.addSelectionListener(new SelectionListener() {
+				public void widgetSelected(SelectionEvent e) {
+					try {
+		                doSelectInitialRulesFile();
+		                initialRulesText.setText(initialRuleFilePath);
+	                } catch (Exception e1) {
+	                	MessageDialog.openError(getShell(), getProjectName(), e1.getMessage());
+	                }
+				}
+				public void widgetDefaultSelected(SelectionEvent e) {
+				}
+			});
+			gd = new GridData(GridData.CENTER);
+			initialRulesButton.setLayoutData(gd);
+		}
 		setControl(container);
 	}
 	
 	 /**
+     * 
+     */
+    protected void doSelectInitialRulesFile() {
+    	FileDialog fileDialog = new FileDialog(getShell());
+    	String filePath = fileDialog.open();
+    	if( null != filePath) 
+    		initialRuleFilePath = filePath;
+    }
+
+	/**
 	 * @throws Exception  
      */
     private void doSelectWorkingSet() throws Exception {
@@ -134,4 +169,8 @@ public class NewRecoverySessionWizardPage extends WizardPage {
 		setErrorMessage(message);
 		setPageComplete(message == null);
 	}
+
+	protected String getInitialRuleFilePath() {
+    	return this.initialRuleFilePath;
+    }
 }
