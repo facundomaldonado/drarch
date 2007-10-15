@@ -12,43 +12,49 @@ import org.design.rules4Java.engine.coreEngine.StepAction;
  */
 public class StepActionImpl extends StepAction {
 
-	private static Logger logger = Logger.getLogger(DrarchPlugin.class.getName());
+	private static Logger	logger	= Logger.getLogger(DrarchPlugin.class.getName());
 
 	protected void loadModel() {
 		LoadModelAction action = new LoadModelAction(queryEngine);
-		logger.info("StepActionImpl.loadModel() loadModelAction created, param: queryEngine -> "
-						+ queryEngine.toString());
+		logger.info("StepActionImpl.loadModel() loadModelAction created, param: queryEngine -> " + queryEngine.toString());
 		action.run();
 	}
 
 	/* (non-Javadoc)
-     * @see org.design.rules4Java.engine.coreEngine.StepAction#runBeforeApplyFacts()
-     */
-    @Override
-    protected void runBeforeApplyFacts() {
-	    // NOOP
-    }
+	 * @see org.design.rules4Java.engine.coreEngine.StepAction#runBeforeApplyFacts()
+	 */
+	@Override
+	protected void runBeforeApplyFacts() {
+		// NO-OP
+	}
 
 	/* (non-Javadoc)
-     * @see org.design.rules4Java.engine.coreEngine.StepAction#runBeforeEvaluatingCurrentRule()
-     */
-    @Override
-    protected void runBeforeEvaluatingCurrentRule() {
-    	logger.debug("StepActionImpl method: runBeforeEvaluatingCurrentRule() " +
-    			"executed after applying facts ");
-    	if (listFacts.size() > 0) {
+	 * @see org.design.rules4Java.engine.coreEngine.StepAction#runBeforeEvaluatingCurrentRule()
+	 */
+	@Override
+	protected void runBeforeEvaluatingCurrentRule() {
+		logger.debug("StepActionImpl method: runBeforeEvaluatingCurrentRule() " + "executed after applying facts ");
+		if (listFacts.size() > 0) {
 			logger.debug("StepActionImpl.applyFacts() list of facts from previous iteration greater than 0. ");
 			logger.debug("StepActionImpl.applyFacts() calling to loadModel()");
 			loadModel();
 		}
-    }
+	}
 
 	/* (non-Javadoc)
-     * @see org.design.rules4Java.engine.coreEngine.StepAction#runBeforeGettingSuggests()
-     */
-    @Override
-    protected void runBeforeGettingSuggests() {
-	    // NOOP
-    }
+	 * @see org.design.rules4Java.engine.coreEngine.StepAction#runBeforeGettingSuggests()
+	 */
+	@Override
+	protected void runBeforeGettingSuggests() {
+		// NO-OP
+	}
+
+	/* (non-Javadoc)
+	 * @see org.design.rules4Java.engine.coreEngine.StepAction#runAfterGettingSuggests()
+	 */
+	@Override
+	protected void runAfterGettingSuggests() {
+		//NO-OP
+	}
 
 }
