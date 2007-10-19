@@ -79,7 +79,8 @@ public class NewRecoverySessionWizardPage extends WizardPage {
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			});
-			
+			gd = new GridData(GridData.FILL_HORIZONTAL);
+			workingSetText.setLayoutData(gd);
 			gd = new GridData(GridData.CENTER);
 			button.setLayoutData(gd);
 		}
@@ -103,6 +104,8 @@ public class NewRecoverySessionWizardPage extends WizardPage {
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			});
+			gd = new GridData(GridData.FILL_HORIZONTAL);
+			initialRulesText.setLayoutData(gd);
 			gd = new GridData(GridData.CENTER);
 			initialRulesButton.setLayoutData(gd);
 		}

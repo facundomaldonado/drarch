@@ -18,6 +18,7 @@ public class RecoverySession {
 	private String projectName = "";
 	private String projectLocation = "";
 	private String knowledgeBaseSource = "";
+	private String knowledgeTemporalBaseSource = "";
 	private IWorkingSet workingSet = null;	
 	
 	public boolean isSetupComplete() {
@@ -104,5 +105,30 @@ public class RecoverySession {
 
     public String getPathToInitialsRules() {
     	return initialRulesFile;
+    }
+
+	public String getPathToTemporalKnowledgeBase() {
+    	return this.knowledgeTemporalBaseSource;
+    }
+
+	public void setPathToTemporalKnowledgeBase(String knowledgeTemporalBaseSource) {
+    	this.knowledgeTemporalBaseSource = knowledgeTemporalBaseSource;
+    }
+
+	/**
+     * 
+     */
+	boolean temporalBase = false;
+    public boolean toogleTemporalBase() {
+    	temporalBase = !temporalBase;
+    	return temporalBase;
+    }
+
+	/**
+     * @return
+     */
+    public boolean isTemporalBaseActive() {
+	    return temporalBase;
+	    
     }
 }

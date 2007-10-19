@@ -9,6 +9,7 @@ import org.design.drarch.diagram.trace.uiAction.AnaliceLogTraceAction;
 import org.design.drarch.views.action.ExecuteStepAction;
 import org.design.drarch.views.action.LoadRuleFileAction;
 import org.design.drarch.views.action.SelectFlabotFileAction;
+import org.design.rules4Java.engine.DrarchEngine;
 import org.design.rules4Java.engine.coreEngine.StepsManager;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
@@ -61,6 +62,7 @@ public class SuggestsViewer {
 	private Action	     chooseDefaultRulesFile;
 	private Action	     analiceLog;
 	private Action 		 resetEngine;
+	private Action		 activeTemporalBase;
 	
 	private StepsManager	stepManager;
 
@@ -91,6 +93,7 @@ public class SuggestsViewer {
 		// add actions to menu
 		menuMgr.add(new Separator());
 		rulesMenu.add(resetEngine);
+		rulesMenu.add(activeTemporalBase);
 		rulesMenu.add(selectFlabotFileAction);
 		rulesMenu.add(new Separator());
 		rulesMenu.add(nextStepAction);
@@ -116,6 +119,13 @@ public class SuggestsViewer {
 
 	private void createActions() {
 		
+		activeTemporalBase = new Action("Active temporal base") {
+			public void run() {
+				logger.debug("Active temporal base");
+				boolean active = DrarchApplication.INSTANCE.getCurrentSession().toogleTemporalBase();
+				logger.debug("Temporal file set to: " + active);
+			}
+		};
 		resetEngine = new Action("Reset Engine") {
 			public void run() {
 				logger.debug("Reset engine Action running");
