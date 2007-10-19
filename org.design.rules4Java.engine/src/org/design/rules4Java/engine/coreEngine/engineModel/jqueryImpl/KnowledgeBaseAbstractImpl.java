@@ -25,7 +25,7 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 
 	private static Logger logger = Logger.getLogger(EnginePlugin.class.getName());
 	
-	protected File file;
+	protected File factBaseFile;
 	protected List<File> knoledgeBaseFiles;
 	private WorkingSetNode workingSetNode;
 
@@ -36,8 +36,8 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 	public void addFact(String predicate) throws DrarchEngineModelException {
         try {
 	        if (!exist(predicate)) {
-	        	FileImageOutputStream fios = new FileImageOutputStream(file);
-	        	fios.seek(file.length());
+	        	FileImageOutputStream fios = new FileImageOutputStream(factBaseFile);
+	        	fios.seek(factBaseFile.length());
 	        	predicate = predicate + "\n";
 	        	byte[] utf8Bytes = predicate.getBytes("UTF-8");
 	        	fios.write(utf8Bytes);
@@ -63,7 +63,7 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 		
 		FileImageOutputStream fios = null;
 		try {
-			fios = new FileImageOutputStream(file);
+			fios = new FileImageOutputStream(factBaseFile);
 			String index = "";
 			while (index != null) {
 				if (index.equals(predicate)) {
@@ -84,7 +84,7 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 
 	public void removeFact(String predicate) throws DrarchEngineModelException {
 		try {
-			FileImageOutputStream fios = new FileImageOutputStream(file);
+			FileImageOutputStream fios = new FileImageOutputStream(factBaseFile);
 			String index = "";
 			while (index != null) {
 				if (index.equals(predicate)) {
