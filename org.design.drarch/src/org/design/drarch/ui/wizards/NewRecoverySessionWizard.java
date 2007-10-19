@@ -151,6 +151,11 @@ public class NewRecoverySessionWizard extends Wizard implements INewWizard {
  	    String myKnowledgeBaseFileName = destiniFolderURI.getPath() + "/" + DrarchConstants.NEW_PROJECT_MyKNOWLEDGEBASE_FILE;
  	    File newMyPredicates = new File(myKnowledgeBaseFileName);
  	    FileUtils.touch(newMyPredicates);
+ 	    
+ 	   // Creo un archivo que me sirva de base de datos temporal
+ 	    String myTemporalKnowledgeBaseFileName = destiniFolderURI.getPath() + "/" + DrarchConstants.NEW_PROJECT_TEMPORAL_KNOWLEDGEBASE_FILE;
+ 	    File tempPredicates = new File(myTemporalKnowledgeBaseFileName);
+ 	    FileUtils.touch(tempPredicates);
     }
 
 	/**

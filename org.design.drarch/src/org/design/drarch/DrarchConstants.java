@@ -30,8 +30,10 @@ public interface DrarchConstants {
 	static String NEW_PROJECT_RULES_FOLDER = "rules";
 	static String NEW_PROJECT_FLABOT_FOLDER = "flabot";
 	static String NEW_PROJECT_MyKNOWLEDGEBASE_FILE = "myKnowledgeBase.rub";
+	static String NEW_PROJECT_TEMPORAL_KNOWLEDGEBASE_FILE = "tempKnowledgeBase.rub";
 	static String NEW_PROJECT_PATH_TO_FLABOT_FILES = "/flabot/";
 	static String NEW_PROJECT_PATH_TO_KNOWLEDGEBASE_FILES = "/facts/myKnowledgeBase.rub";
+	static String NEW_PROJECT_PATH_TO_TEMPORAL_KNOWLEDGEBASE_FILES = "/facts/tempKnowledgeBase.rub";
 	static String NEW_PROJECT_PATH_TO_KNOWLEDGEBASE_FOLDER = "/facts/";
 	static String NEW_PROJECT_PATH_TO_RULES_FILES = "/rules/DefaultRules.drarch";
 

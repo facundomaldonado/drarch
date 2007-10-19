@@ -61,7 +61,9 @@ public class RestoreRecoverySession implements IObjectActionDelegate {
 			//getting constant for the initialization of the new project
 			String path2DefaultRules = DrarchConstants.NEW_PROJECT_PATH_TO_RULES_FILES;
 			String path2KnowledgeBase = DrarchConstants.NEW_PROJECT_PATH_TO_KNOWLEDGEBASE_FILES;
+			String path2TemporalKnowledgeBase = DrarchConstants.NEW_PROJECT_PATH_TO_TEMPORAL_KNOWLEDGEBASE_FILES;
 
+			
 			//getting selected workingset from workbench
 			IWorkingSet workingSet = DrarchPlugin.getDefault().getWorkbench()
 			        .getWorkingSetManager().getWorkingSet(workingSetName);
@@ -76,6 +78,7 @@ public class RestoreRecoverySession implements IObjectActionDelegate {
 			session.setProjectLocation(projectLocation);
 			session.setPathToDefaultRules(projectLocation + path2DefaultRules);
 			session.setPathToKnowledgeBase(projectLocation + path2KnowledgeBase);
+			session.setPathToTemporalKnowledgeBase(projectLocation + path2TemporalKnowledgeBase);
 			session.setPathToInitialsRules(initialRulesFile);
 
 			//registering session in the engine
