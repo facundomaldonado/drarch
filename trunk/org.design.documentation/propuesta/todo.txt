@@ -1,0 +1,7 @@
+-Mapear un archivo .flabot a hechos logicos.
+-Seleccionar el .flabot en el que se va a reconstruir la arquitectura.
+  * Desde el flabto, agregar en el menu la opcion "Mapear al drarch".
+-Definir el modelo de fases.
+-Achicar el scope del log.
+-Agregar informacion del log para identificar paths por eventos.
+-Casos de uso (Drarch y G2)
