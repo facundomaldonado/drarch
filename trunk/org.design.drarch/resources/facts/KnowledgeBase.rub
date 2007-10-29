@@ -82,3 +82,23 @@ executionDeclaredClass:: Integer, String
 MODES
 (F, F) IS NONDET
 END
+
+executedMethod :: String, Integer, String, String
+MODES
+(F, F, F, F) IS NONDET
+END
+
+invocationMethod :: String, String, String
+MODES
+(F, F, F) IS NONDET
+END
+
+invocationMethod :: String, String
+MODES
+(F, F) IS NONDET
+END
+
+componentRole :: String, String
+MODES
+(F, F) IS NONDET
+END
