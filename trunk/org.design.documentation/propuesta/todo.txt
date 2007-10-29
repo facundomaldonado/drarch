@@ -1,21 +1,23 @@
--Mapear un archivo .flabot a hechos logicos.
-
--Seleccionar el .flabot en el que se va a reconstruir la arquitectura.
-  * Desde el flabto, agregar en el menu la opcion "Mapear al drarch".
+-Mapear un archivo .flabot a hechos logicos.[nico]
 
 -DepotRules folder (todos los .rub mas la declaracion de los facts)
 
--Definir el modelo de fases.
+-Definir el modelo de fases.[pela]
   * Agregar fases. (seleccionar el working set) click en el proyecto en "add fase".
   * Cunado se ejecuta una fase (click en .properties) se seleccionan las reglas de los .rub propios de la fase.
   * Crear una carpeta por fase (fase#).
   * Mensaje inidicando el # de fase que se esta ejecutando.
  
 - Filtro para decidir en que .rub se deben colocar los nuevos hechos. 
- 
+
 -Achicar el scope del log.
 
 -Agregar informacion del log para identificar paths por eventos.
-
+  * Crear los siguientes hechos:
+    'propertyValue(ref, propertyName, value).'
+    'responsibilityExecution(responsibilityName, id, ref).'
+  * Cuando recupero la info del log, tengo que crear los hechos mencionados.
+  
+-No generar el UCM cuando se analiza el log. Esto se debe realizar por medio de queries a base.
 -Casos de uso (Drarch y G2)
 
