@@ -38,12 +38,12 @@ public class LogQueryFactory {
 
   public String createExecutionMethodPredicate(String executionId,
       String methodName) {
-    return ("executionMethod(" + executionId + "," + methodName + ").");
+    return ("executionMethod(" + executionId + ", " + methodName + ").");
   }
 
   public String createExecutionDeclaredClass(String executionId,
       String className) {
-    return ("executionDeclaredClass(" + executionId + "," + className + ").");
+    return ("executionDeclaredClass(" + executionId + ", " + className + ").");
   }
 
   public String createComponentClassAssociationQuery(String className,
@@ -53,11 +53,10 @@ public class LogQueryFactory {
   }
 
   public String createComponentResponsibilityAssociationQuery(String responsibility) {
-    return "hasResponsibility(?Component," + responsibility + ")";
+    return "hasResponsibility(?Component, " + responsibility + ")";
   }
 
-public String createExecutedMethodValue(String qualifiedMethodName, String execId, String exitValue) {
-	// TODO Auto-generated method stub
-	return null;
-}
+  public String createExecutedMethodValue(String qualifiedMethodName, String execId, String exitValue, String argument) {
+	return "executedMethod(" + qualifiedMethodName + ", " + execId + ", '" + exitValue + "', '" + argument + "')." ;
+  }
 }
