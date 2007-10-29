@@ -1,7 +1,6 @@
 package org.design.drarch.diagram.trace.uiAction;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.design.drarch.diagram.trace.LogQueryFactory;
@@ -10,6 +9,7 @@ import org.design.drarch.diagram.trace.logModel.InnerTag;
 import org.design.drarch.diagram.trace.logModel.PropertyLogNode;
 import org.design.drarch.diagram.trace.logModel.Responsibility;
 import org.design.drarch.diagram.trace.logModel.TagLogNode;
+import org.design.drarch.diagram.trace.logModel.impl.TagLogNodeImpl;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.coreEngine.engineModel.jqueryImpl.QueryEngineImpl;
@@ -50,10 +50,7 @@ public class LoadLogFactsAction {
 	public void run() throws DrarchEngineModelException {
 		responsibilities = searcher.getResponsibilities();
 		for (Responsibility responsibility : responsibilities) {
-//			String s = predicateFactory
-//					.createResponsibilityPredicate(responsibility.getName());
-//			factsList.add(s);
-			
+
 			/* Get all materializations (clases, methods) mepped 
 			 * to the executed responsibility.
 			 */
@@ -67,8 +64,8 @@ public class LoadLogFactsAction {
 				InnerTag valueInnerTag = searcher.getTagLogNodeInfo(valueTag);
 				String exitValue = ((PropertyLogNode) valueInnerTag.getTags()
 						.get("string")).getValue();				
-				if (exitValue != null) {
-					exitValue = "emptyValue";
+				if (exitValue == null) {
+					exitValue = "void";
 				}
 				factsList.add(predicateFactory.createExecutionPredicate(
 						responsibility.getName(), execId, exitValue));
@@ -83,8 +80,19 @@ public class LoadLogFactsAction {
 				InnerTag declaringClass = searcher.getTagLogNodeInfo(declaringClassTag);
 				String className = ((PropertyLogNode) declaringClass.getTags()
 						.get(LogSearcher.ALL_NAME_PROPERTY)).getValue();
+				
+				TagLogNode argumentsTag = (TagLogNode) materialization.getTags().get(
+						LogSearcher.ARGUMENTS_TAG);
+				String argumentName = "null";
+				if (!argumentsTag.getTag().getTags().isEmpty()) {
+					
+					// TODO: Recuperar el resto de los argumentos!!!
+					TagLogNode argumentTag = (TagLogNode) argumentsTag.getChildrens()[1];
+					InnerTag argument = searcher.getTagLogNodeInfo(argumentTag);
+					argumentName = ((PropertyLogNode) argument.getTags().get("string")).getValue();
+				}
 				factsList.add(predicateFactory.createExecutedMethodValue(className + "." + 
-						methodName, execId, exitValue));
+						methodName, execId, exitValue, argumentName));
 			}
 		}
 		
