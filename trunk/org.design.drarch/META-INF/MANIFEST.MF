@@ -20,7 +20,11 @@ Require-Bundle: org.design.rules4Java.engine,
  org.eclipse.jdt.core.manipulation,
  org.eclipse.gef,
  org.isistan.flabot,
- org.isistan.flabot.mapping
+ org.isistan.flabot.mapping,
+ org.isistan.flabot.engine,
+ org.isistan.flabot.util,
+ org.isistan.flabot.trace,
+ org.eclipse.emf.ecore.xmi
 Eclipse-LazyStart: true
 Export-Package: org.design.drarch.engine,
  org.design.drarch.views,
