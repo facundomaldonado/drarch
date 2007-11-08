@@ -6,10 +6,10 @@ import org.apache.log4j.Logger;
 import org.design.drarch.DrarchApplication;
 import org.design.drarch.DrarchPlugin;
 import org.design.drarch.diagram.trace.uiAction.AnaliceLogTraceAction;
+import org.design.drarch.jdt.JdtInformation;
 import org.design.drarch.views.action.ExecuteStepAction;
 import org.design.drarch.views.action.LoadRuleFileAction;
 import org.design.drarch.views.action.SelectFlabotFileAction;
-import org.design.rules4Java.engine.DrarchEngine;
 import org.design.rules4Java.engine.coreEngine.StepsManager;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
@@ -63,6 +63,7 @@ public class SuggestsViewer {
 	private Action	     analiceLog;
 	private Action 		 resetEngine;
 	private Action		 activeTemporalBase;
+	private Action		 jdtSearch;
 	
 	private StepsManager	stepManager;
 
@@ -118,6 +119,15 @@ public class SuggestsViewer {
 	}
 
 	private void createActions() {
+		
+		jdtSearch = new Action("JDT Search") {
+			public void run() {
+				logger.debug("Execute the JDT search");
+		        JdtInformation.generateFacts(
+		        		DrarchApplication.INSTANCE.getCurrentSession().getWorkingSet());
+
+			}
+		};
 		
 		activeTemporalBase = new Action("Active temporal base") {
 			public void run() {
