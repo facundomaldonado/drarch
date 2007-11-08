@@ -41,21 +41,21 @@ import org.isistan.flabot.util.emf.WorkaroundURIConverter;
  */
 public class DiagramManager implements IDiagramManager {
 	
-  private List<ComponentsDiagram> components;
-  private List<UCMDiagrams> ucms;
-  private FlabotFileModel flabotFileModel;
-  private String fileName = "";
-  private static DiagramManager instance;
+	private static DiagramManager instance;
+	private List<ComponentsDiagram> components;
+	private List<UCMDiagrams> ucms;
+	private FlabotFileModel flabotFileModel;
+	private String fileName = "";
+  
   private CoreModel coreModel;
 
-  private ComponentModel currentModel;
+  private ComponentModel currentComponentModel;
 
   public DiagramManager() {
     components = new ArrayList<ComponentsDiagram>();
     ucms = new ArrayList<UCMDiagrams>();
     coreModel = CoremodelFactory.eINSTANCE.createCoreModel();
     flabotFileModel = EditormodelFactory.eINSTANCE.createFlabotFileModel();
-
   }
 
   public static DiagramManager getInstance() {
@@ -65,15 +65,8 @@ public class DiagramManager implements IDiagramManager {
     return instance;
   }
 
-  @SuppressWarnings("unchecked")
-  public void createComponentDiagram(String name) {
-    ComponentsDiagram componentsDiagra = new ComponentsDiagram(name);
-    components.add(componentsDiagra);
-  }
-
-  @SuppressWarnings("unchecked")
   public void createUCMDiagram(UCMModel model) {
-    UCMDiagrams ucmDiagrams = new UCMDiagrams(model.getName());
+    UCMDiagrams ucmDiagrams = new UCMDiagrams("ucm #" + ucms.size() + 1);
     for (int i = 0; i < model.getComponentRoles().size(); i++) {
       ComponentRole componentRole = (ComponentRole) model.getComponentRoles().get(i);
       ucmDiagrams.createComponentRole(componentRole.getName());
@@ -87,13 +80,10 @@ public class DiagramManager implements IDiagramManager {
     update(false);
   }
 
-  @SuppressWarnings("unchecked")
   public void createComponentDiagram(ComponentModel model) {
-    currentModel = model;
+	  currentComponentModel = model;
     coreModel = getCoreModel();
-
-    int numComponent = components.size() + 1;
-    model.setName("# " + numComponent);
+    model.setName("component #" + components.size() + 1);
     ComponentsDiagram componentsDiagram = new ComponentsDiagram(model.getName());
 
     // Crea todos los componentes, los puertos y las interfaces
@@ -298,7 +288,7 @@ public class DiagramManager implements IDiagramManager {
     flabotFileModel = EditormodelFactory.eINSTANCE.createFlabotFileModel();
   }
 
-  public ComponentModel getCurrentModel() {
-    return currentModel;
+  public ComponentModel getCurrentComponentModel() {
+    return currentComponentModel;
   }
 }

@@ -28,13 +28,29 @@ import org.design.rules4Java.engine.ruleModel.Var;
  * @author nfrontini
  */
 public class UCMModelGenerator {
+	
 	private static Logger logger = Logger.getLogger(DiagramPlugin.class.getName());
+	
 	private UCMModel ucmModel;
+	
 	private QueryEngine queryEngine;
 
-	public UCMModelGenerator(QueryEngine queryEngine) {
+	public UCMModelGenerator(QueryEngine theQueryEngine) {
 		ucmModel = UcmModelFactory.eINSTANCE.createUCMModel();
-		this.queryEngine = queryEngine;
+		queryEngine = theQueryEngine;
+	}
+	
+	/**
+	 * Build the model from the knowledge base.
+	 * 
+	 * @return Returns the <code>UCMModel</code> from the knowledge base.
+	 */
+	public UCMModel getModel() {
+		ucmModel = UcmModelFactory.eINSTANCE.createUCMModel();
+		ucmModel.getComponentRoles().addAll(getComponentsRole());
+		ucmModel.getPaths().addAll(getExecutionPaths());
+		ucmModel.setName("ucm");
+		return ucmModel;
 	}
 	
 	/**
@@ -96,7 +112,7 @@ public class UCMModelGenerator {
 			QueryResult components = componentsResultSet.next();
 			componentName = components.getValueOfVar("?Component");
 		}
-		return DiagramManager.getInstance().getCurrentModel().getComponent(componentName);
+		return DiagramManager.getInstance().getCurrentComponentModel().getComponent(componentName);
 	}
 	
 	/**
@@ -165,18 +181,5 @@ public class UCMModelGenerator {
 					"queryEngine.evaluateQuery in method getResultQuery of LoadModelAction class.", e);
 			return EngineModelFactory.INSTANCE.createEmptyResultSet();
 		}
-	}
-	
-	/**
-	 * Build the model from the knowledge base.
-	 * 
-	 * @return Returns the <code>UCMModel</code> from the knowledge base.
-	 */
-	public UCMModel getModel() {
-		ucmModel = UcmModelFactory.eINSTANCE.createUCMModel();
-		ucmModel.getComponentRoles().addAll(getComponentsRole());
-		ucmModel.getPaths().addAll(getExecutionPaths());
-		ucmModel.setName("UCM - 2");
-		return ucmModel;
 	}
 }

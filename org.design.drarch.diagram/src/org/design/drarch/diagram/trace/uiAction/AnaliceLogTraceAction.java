@@ -1,40 +1,53 @@
 package org.design.drarch.diagram.trace.uiAction;
 
-import org.design.drarch.diagram.DiagramModel.ucmModel.UCMModel;
-import org.design.drarch.diagram.DiagramModel.ucmModel.generator.UCMModelGenerator;
 import org.design.drarch.diagram.flabot.DiagramManager;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
-import org.eclipse.jface.action.Action;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.ui.PlatformUI;
+import org.isistan.flabot.trace.log.TraceLog;
 
 /**
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public class AnaliceLogTraceAction /*extends Action*/ {
+public class AnaliceLogTraceAction {
 
-	private KnowledgeBase	knowledgeBase;
-	private QueryEngine	    queryEngine;
+	private KnowledgeBase knowledgeBase;
+	private QueryEngine queryEngine;
+	private TraceLog traceLog;
 	
-  public AnaliceLogTraceAction(QueryEngine queryEngine, KnowledgeBase base) {
+  public AnaliceLogTraceAction(QueryEngine theQueryEngine, KnowledgeBase theBase) {
 	  super();
-	  this.knowledgeBase = base;
-	  this.queryEngine = queryEngine;
+	  knowledgeBase = theBase;
+	  queryEngine = theQueryEngine;
+	  traceLog = null;
+  }
+  
+  public AnaliceLogTraceAction(QueryEngine theQueryEngine, KnowledgeBase theBase, TraceLog theTraceLog) {
+	  super();
+	  knowledgeBase = theBase;
+	  queryEngine = theQueryEngine;
+	  traceLog = theTraceLog;
   }
 
   public void run() {
-    LoadLogFactsAction loadLogFacts = new LoadLogFactsAction(queryEngine, knowledgeBase);
+	  LogFacts loadLogFacts;
+    if (traceLog == null) {
+    	loadLogFacts = new LogFacts(queryEngine, knowledgeBase);
+    } else {
+    	loadLogFacts = new LogFacts(queryEngine, knowledgeBase, traceLog);
+    }
     try {
-	    loadLogFacts.run();
+    	DiagramManager.getInstance().getCore() ;
+	    loadLogFacts.load();
     } catch (DrarchEngineModelException e) {
     	//TODO add exception handler
 	    e.printStackTrace();
+    } catch (RuntimeException e1) {
+    	MessageDialog.openError(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
+    			"Drarch", "You have to be executed a phase.");
     }
-
-    //TODO: try to obtain the modelGenerator by a factory
-    UCMModelGenerator ucmGenerator = new UCMModelGenerator(queryEngine);
-    UCMModel model = ucmGenerator.getModel();
-    DiagramManager.getInstance().createUCMDiagram(model);
   }
 }
