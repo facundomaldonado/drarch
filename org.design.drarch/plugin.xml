@@ -48,6 +48,24 @@
              label="Restore recovery session"
              menubarPath="org.design.drarch.drarchMenu/drarchSeparator"/>
     </objectContribution>
+    <objectContribution
+          adaptable="false"
+          id="org.design.drarch.objectContribution1"
+          nameFilter="*.tracelog"
+          objectClass="org.eclipse.core.resources.IFile">
+       <menu
+             id="org.design.drarch.drarchMenu1"
+             label="Drarch"
+             path="additions">
+          <separator name="generateLogFactsSeparator"/>
+       </menu>
+       <action
+             class="org.design.drarch.ui.popup.action.GenerateLogFacts"
+             enablesFor="1"
+             id="org.design.drarch.GenerateLogFacts"
+             label="Generate Log Facts"
+             menubarPath="org.design.drarch.drarchMenu1/generateLogFactsSeparator"/>
+    </objectContribution>
  </extension>
  <extension
        name="sincronize"

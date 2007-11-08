@@ -102,3 +102,8 @@ componentRole :: String, String
 MODES
 (F, F) IS NONDET
 END
+
+snapshot :: Integer, String, String
+MODES
+(F, F, F) IS NONDET
+END
