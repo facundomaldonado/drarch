@@ -32,7 +32,7 @@ public class LogQueryFactory {
 
   public String createExecutionPredicate(String responsibilityName,
       String exectutionId, String value) {
-    return "responsibilityExecution(" + responsibilityName + " ,"
+    return "responsibilityExecution(" + responsibilityName + ", "
         + exectutionId + ", '" + value + "').";
   }
 

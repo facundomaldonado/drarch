@@ -6,10 +6,10 @@ import java.util.List;
 import org.design.drarch.diagram.trace.LogQueryFactory;
 import org.design.drarch.diagram.trace.LogSearcher;
 import org.design.drarch.diagram.trace.logModel.InnerTag;
+import org.design.drarch.diagram.trace.logModel.LogNode;
 import org.design.drarch.diagram.trace.logModel.PropertyLogNode;
 import org.design.drarch.diagram.trace.logModel.Responsibility;
 import org.design.drarch.diagram.trace.logModel.TagLogNode;
-import org.design.drarch.diagram.trace.logModel.impl.TagLogNodeImpl;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.coreEngine.engineModel.jqueryImpl.QueryEngineImpl;
@@ -17,11 +17,12 @@ import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
 import org.isistan.flabot.engine.executionstate.TraceLogManager;
 import org.isistan.flabot.trace.log.TraceLog;
 
-/**
+/** Crea los hechos correspondientes del log en la knwoledgebase.
+ * 
  * @author nicolasfrontini@gmail.com (Nicolas Frontini)
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
-public class LoadLogFactsAction {
+public class LogFacts {
 
 	private List<Responsibility> responsibilities;
 
@@ -37,17 +38,23 @@ public class LoadLogFactsAction {
 
 	private QueryEngine queryEngine;
 
-	public LoadLogFactsAction(QueryEngine theQueryEngine, KnowledgeBase base) {
+	public LogFacts(QueryEngine theQueryEngine, KnowledgeBase theKnowledgeBase) {
 		log = TraceLogManager.getDefault().loadLog();
 		searcher = new LogSearcher(log);
 		factsList = new ArrayList<String>();
-		knowledgeBase = base;
+		knowledgeBase = theKnowledgeBase;
+		queryEngine = theQueryEngine;
+	}
+	
+	public LogFacts(QueryEngine theQueryEngine, KnowledgeBase theKnowledgeBase, TraceLog theLog) {
+		log = theLog;
+		searcher = new LogSearcher(log);
+		factsList = new ArrayList<String>();
+		knowledgeBase = theKnowledgeBase;
 		queryEngine = theQueryEngine;
 	}
 
-	@SuppressWarnings("unchecked")
-	// TODO rename -> loadLogFacts
-	public void run() throws DrarchEngineModelException {
+	public void load() throws DrarchEngineModelException {
 		responsibilities = searcher.getResponsibilities();
 		for (Responsibility responsibility : responsibilities) {
 
@@ -61,6 +68,10 @@ public class LoadLogFactsAction {
 				
 				TagLogNode valueTag = (TagLogNode) materialization.getTags().get(
 						LogSearcher.VALUE_TAG);
+				
+				// Get the snapshot object.
+				snapshotFacts(valueTag, execId);
+				
 				InnerTag valueInnerTag = searcher.getTagLogNodeInfo(valueTag);
 				String exitValue = ((PropertyLogNode) valueInnerTag.getTags()
 						.get("string")).getValue();				
@@ -100,5 +111,21 @@ public class LoadLogFactsAction {
 			knowledgeBase.addFact(fact);
 		}
 		((QueryEngineImpl) queryEngine).getWorkingSetNode().reloadRules();
+	}
+
+	private void snapshotFacts(TagLogNode valueTag, String id) {
+		for (LogNode logNode : valueTag.getChildrens()) {
+			if (logNode instanceof PropertyLogNode) {
+				PropertyLogNode propertyLogNode = (PropertyLogNode) logNode;
+				String dirtyField = propertyLogNode.getName();
+				if (dirtyField.contains("#")) {
+					String field = dirtyField.substring(0, dirtyField.indexOf(":")).replace("#", ".");
+					factsList.add("snapshot(" + id + ", '" + field + "', '" +  propertyLogNode.getValue() + "').");
+				}
+			}
+			if (logNode instanceof TagLogNode) {
+				snapshotFacts((TagLogNode)logNode, id);
+			}
+		}
 	}
 }
