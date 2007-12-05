@@ -3,6 +3,7 @@
  */
 package org.design.drarch;
 
+import org.apache.commons.lang.Validate;
 import org.eclipse.ui.IWorkingSet;
 
 /**
@@ -22,6 +23,7 @@ public class RecoverySession {
 	private IWorkingSet workingSet = null;	
 	
 	public boolean isSetupComplete() {
+		Validate.notNull(workingSet, "The workingSet cannot be null.");
 		if (!"".equals(projectName) && !"".equals(knowledgeBaseSource) && null!= workingSet)
 			return true; //TODO reever
 		return false;

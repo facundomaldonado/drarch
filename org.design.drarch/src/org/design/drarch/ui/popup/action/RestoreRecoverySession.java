@@ -84,6 +84,7 @@ public class RestoreRecoverySession implements IObjectActionDelegate {
 			//registering session in the engine
 			DrarchApplication.INSTANCE.getDrarchEngine();
 			DrarchApplication.INSTANCE.registerRecoverySession(session);
+			DrarchApplication.INSTANCE.getDrarchEngine().startEngine();
 			
 		} catch (ConfigurationException e) {
 			logger.error("ConfigurationException while trying to get properties file", e);

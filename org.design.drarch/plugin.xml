@@ -32,11 +32,12 @@
  <extension
        point="org.eclipse.ui.popupMenus">
     <objectContribution
+          adaptable="false"
           id="org.design.drarch.contribution1"
           nameFilter="drarch.properties"
           objectClass="org.eclipse.core.resources.IFile">
        <menu
-             id="org.design.drarch.drarchMenu"
+             id="org.design.drarch.drarchMenu0"
              label="Drarch"
              path="additions">
           <separator name="drarchSeparator"/>
@@ -45,8 +46,8 @@
              class="org.design.drarch.ui.popup.action.RestoreRecoverySession"
              enablesFor="1"
              id="org.design.drarch.newAction"
-             label="Restore recovery session"
-             menubarPath="org.design.drarch.drarchMenu/drarchSeparator"/>
+             label="Load recovery session"
+             menubarPath="org.design.drarch.drarchMenu0/drarchSeparator"/>
     </objectContribution>
     <objectContribution
           adaptable="false"
@@ -65,6 +66,23 @@
              id="org.design.drarch.GenerateLogFacts"
              label="Generate Log Facts"
              menubarPath="org.design.drarch.drarchMenu1/generateLogFactsSeparator"/>
+    </objectContribution>
+    <objectContribution
+          adaptable="false"
+          id="org.design.drarch.objectContributionFlabot"
+          nameFilter="*.flabot"
+          objectClass="org.eclipse.core.resources.IFile">
+       <menu
+             id="org.design.drarch.drarchMenu2"
+             label="Drarch"
+             path="additions">
+          <separator name="loadCoreModelSeparator"/>
+       </menu>
+       <action
+             class="org.design.drarch.ui.popup.action.LoadCoreModel"
+             id="org.design.drarch.LoadCoreModel"
+             label="Load Core Model"
+             menubarPath="org.design.drarch.drarchMenu2/loadCoreModelSeparator"/>
     </objectContribution>
  </extension>
  <extension
