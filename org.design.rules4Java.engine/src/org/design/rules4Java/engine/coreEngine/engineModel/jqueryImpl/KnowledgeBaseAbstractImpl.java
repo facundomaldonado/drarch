@@ -23,7 +23,7 @@ import ca.ubc.jquery.gui.results.WorkingSetNode;
  */
 public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 
-	private static Logger logger = Logger.getLogger(EnginePlugin.class.getName());
+	private static Logger logger = Logger.getLogger(KnowledgeBaseAbstractImpl.class.getName());
 	
 	protected File factBaseFile;
 	protected List<File> knoledgeBaseFiles;
@@ -35,16 +35,16 @@ public abstract class KnowledgeBaseAbstractImpl implements KnowledgeBase {
 
 	public void addFact(String predicate) throws DrarchEngineModelException {
         try {
-	        if (!exist(predicate)) {
+//	        if (!exist(predicate)) {
 	        	FileImageOutputStream fios = new FileImageOutputStream(factBaseFile);
 	        	fios.seek(factBaseFile.length());
 	        	predicate = predicate + "\n";
 	        	byte[] utf8Bytes = predicate.getBytes("UTF-8");
 	        	fios.write(utf8Bytes);
 	        	fios.close();
-	        }
-        } catch (DrarchEngineModelException e) {
-        	throw e;
+//	        }
+//        } catch (DrarchEngineModelException e) {
+//        	throw e;
         } catch (FileNotFoundException e) {
         	logger.info("Wrap FileNotFoundException in addFact method in QueryEngineImpl class. Throw DrarchEngineModelException");
 			throw new DrarchEngineModelException("FileNotFoundException in method addFact in class " +

@@ -16,7 +16,7 @@ import ca.ubc.jquery.gui.results.WorkingSetNode;
 
 public class QueryEngineImpl implements QueryEngine {
 
-	private static Logger logger = Logger.getLogger(EnginePlugin.class.getName());
+	private static Logger logger = Logger.getLogger(QueryEngineImpl.class.getName());
 
 	private IWorkingSetManager workingSetManager;
 	private IWorkingSet workingSet;
