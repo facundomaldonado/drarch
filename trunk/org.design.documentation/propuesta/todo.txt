@@ -1,4 +1,11 @@
+-Cuando se mapea el .tracelog, hay que inicializar el coreModel inicando cual es el .flabot correspondiente al .logtrace.
+OK
+
+-Dibujar el ucm!!!
+OK (sin testear)
+
 -Mapear un archivo .flabot a hechos logicos.[nico]
+ok (sin testear)
 
 -DepotRules folder (todos los .rub mas la declaracion de los facts)
 
@@ -10,14 +17,16 @@
  
 - Filtro para decidir en que .rub se deben colocar los nuevos hechos. 
 
--Achicar el scope del log.
+-Achicar el scope del log!!!
 
 -Agregar informacion del log para identificar paths por eventos.
   * Crear los siguientes hechos:
     'propertyValue(ref, propertyName, value).'
     'responsibilityExecution(responsibilityName, id, ref).'
   * Cuando recupero la info del log, tengo que crear los hechos mencionados.
+OK (sin testear)
   
 -No generar el UCM cuando se analiza el log. Esto se debe realizar por medio de queries a base.
+
 -Casos de uso (Drarch y G2)
 
