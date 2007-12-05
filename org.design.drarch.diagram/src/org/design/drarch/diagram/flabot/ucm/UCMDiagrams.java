@@ -40,7 +40,7 @@ public class UCMDiagrams {
   public UCMDiagrams(String name) {
 
     this.diagramName = name;
-    coreModel = DiagramManager.getInstance().getCore();
+    coreModel = DiagramManager.getInstance().getCoreModel();
 
     diagram = UcmmodelFactory.eINSTANCE.createUCMDiagram();
     diagram.setName(name);

@@ -57,7 +57,7 @@ public class ComponentsDiagram {
    */
   public ComponentsDiagram(String name) {
     this.diagramName = name;
-    coreModel = DiagramManager.getInstance().getCore();
+    coreModel = DiagramManager.getInstance().getCoreModel();
     ComponentDiagram componentDiagram = ComponentmodelFactory.eINSTANCE
         .createComponentDiagram();
     componentDiagram.setName(diagramName);

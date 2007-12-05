@@ -44,7 +44,7 @@ public class DiagramManager implements IDiagramManager {
 	private static DiagramManager instance;
 	private List<ComponentsDiagram> components;
 	private List<UCMDiagrams> ucms;
-	private FlabotFileModel flabotFileModel;
+	private FlabotFileModel flabotFileModel = null;
 	private String fileName = "";
   
   private CoreModel coreModel;
@@ -81,8 +81,7 @@ public class DiagramManager implements IDiagramManager {
   }
 
   public void createComponentDiagram(ComponentModel model) {
-	  currentComponentModel = model;
-    coreModel = getCoreModel();
+	currentComponentModel = model;
     model.setName("component #" + components.size() + 1);
     ComponentsDiagram componentsDiagram = new ComponentsDiagram(model.getName());
 
@@ -157,7 +156,6 @@ public class DiagramManager implements IDiagramManager {
     return null;
   }
 
-  @SuppressWarnings("unchecked")
   public void update(boolean componentDiagram) {
 
     FlabotMultiPageEditor editorPart = getFlabotEditorPart();
@@ -200,18 +198,22 @@ public class DiagramManager implements IDiagramManager {
     }
   }
 
-  private CoreModel getCoreModel() {
-    FlabotMultiPageEditor editorPart = getFlabotEditorPart();
-    if (editorPart != null) {
-      flabotFileModel = editorPart.getModel();
-      return flabotFileModel.getCoreModel();
-    }
+  public CoreModel getCoreModel() {
+//    FlabotMultiPageEditor editorPart = getFlabotEditorPart();
+//    if (flabotFileModel != null) {
+//    	return flabotFileModel.getCoreModel();
+//    } else {
+//	    if (editorPart != null) {
+//	      flabotFileModel = editorPart.getModel();
+//	      return flabotFileModel.getCoreModel();
+//	    }
+//    }
     return coreModel;
   }
 
-  public CoreModel getCore() {
-    return getCoreModel();
-  }
+//  public CoreModel getCore() {
+//    return getCoreModel();
+//  }
 
   @SuppressWarnings("unchecked")
   private void save() {
@@ -243,8 +245,6 @@ public class DiagramManager implements IDiagramManager {
       for (int j = 0; j < editorPartList.length; j++) {
         IEditorPart editorPart = editorPartList[j];
         if (editorPart instanceof FlabotMultiPageEditor) {
-          // if (((FlabotMultiPageEditor)
-          // editorPart).getPartName().equals(fileName)){//bug
           if (((FlabotMultiPageEditor) editorPart).getPartName().endsWith(
               ".flabot")) {
             return (FlabotMultiPageEditor) editorPart;
@@ -269,7 +269,6 @@ public class DiagramManager implements IDiagramManager {
 
   public void restart() {
     instance = null;
-
   }
 
   public void addNote(String description) {
@@ -283,12 +282,18 @@ public class DiagramManager implements IDiagramManager {
   public void setFileName(String name) {
     fileName = name;
     FlabotMultiPageEditor f = getFlabotEditorPart();
-    if (f != null) 
+    if (f != null) {
     	f.closeEditor(true);
+    }
     flabotFileModel = EditormodelFactory.eINSTANCE.createFlabotFileModel();
   }
 
   public ComponentModel getCurrentComponentModel() {
     return currentComponentModel;
+  }
+  
+  public void setFlabotFileModel(FlabotFileModel theFlabotFileModel) {
+	  flabotFileModel = theFlabotFileModel;
+	  coreModel = flabotFileModel.getCoreModel();
   }
 }
