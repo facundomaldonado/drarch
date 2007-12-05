@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<rules4Java.engine.ruleModel:DrarchFileModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rules4Java.engine.ruleModel="http:///rules4Java/engine/ruleModel.ecore" fileName="rules4bubble.drarch">
+  <rules suggestTemplate="Crear un componente ?ClazzName." description="1 - Task components">
+    <query queryString="
+		class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, Task), name(?Clazz, ?ClazzName),
+		package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),
+		name(?Method, run), name(?Method, ?MethodName), method(?Clazz, ?Method),
+		string_append(?PackageName, ?DotClazzName, ?QualifiedName),
+		string_append('.', ?ClazzName, ?DotClazzName),
+		string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),
+		string_append('.', ?MethodName, ?DotMethodName)   
+	">
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?ClazzName)."/>
+      <factTemplates factText="association(?ClazzName, ?QualifiedName)."/>
+      <factTemplates factText="responsibility(?ClazzName)."/>
+      <factTemplates factText="hasResponsibility(?ClazzName, ?ClazzName)."/>
+      <factTemplates factText="mapping(?ClazzName, ?QualifiedMethodName)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Crear un componente ?ClazzName." description="2.a - DbView components">
+    <query queryString="
+		class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, DbView), name(?Clazz, ?ClazzName),
+		package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),
+		name(?Method, ?MethodName), method(?Clazz, ?Method),
+		string_append(?PackageName, ?DotClazzName, ?QualifiedName),
+		string_append('.', ?ClazzName, ?DotClazzName),
+		string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),
+		string_append('.', ?MethodName, ?DotMethodName)
+	">
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?ClazzName)."/>
+      <factTemplates factText="association(?ClazzName, ?QualifiedName)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Crear la responsabilidad ?MethodName en el componente ?ClazzName." description="2.b - DbView responsibilities">
+    <query queryString="     component(?ClazzName),     class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, DbView), name(?Clazz, ?ClazzName),      package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),     name(?Method, ?MethodName), method(?Clazz, ?Method),     string_append(?PackageName, ?DotClazzName, ?QualifiedName),      string_append('.', ?ClazzName, ?DotClazzName),     string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),      string_append('.', ?MethodName, ?DotMethodName)          ">
+      <chosenVars varText="?MethodName"/>
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="responsibility(?ClazzName.?MethodName)."/>
+      <factTemplates factText="hasResponsibility(?ClazzName, ?ClazzName.?MethodName)."/>
+      <factTemplates factText="mapping(?ClazzName.?MethodName, ?QualifiedMethodName)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Crear el componente ?ComponentName" description="3.a - Subpackage (DbView and Task)">
+    <query queryString="     package(?DBPackage), name(?DBPackage, ?DBPackageName),      string_append(?PackageNameDot, db , ?DBPackageName),      package(?TaskPackage), name(?TaskPackage, ?TaskPackageName),      string_append(?PackageNameDot, task , ?TaskPackageName),      string_append(?ComponentName, '.', ?PackageNameDot)          ">
+      <chosenVars varText="?ComponentName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?ComponentName)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Crear el componente ?ClazzName." description="3.b - Task components">
+    <query queryString="     package(?DBPackage), name(?DBPackage, ?DBPackageName),      string_append(?PackageNameDot, db , ?DBPackageName),      package(?TaskPackage), name(?TaskPackage, ?TaskPackageName),      string_append(?PackageNameDot, task , ?TaskPackageName),      string_append(?ComponentName, '.', ?PackageNameDot),          class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, Task),      package(?Clazz, ?TaskPackage), name(?Clazz, ?ClazzName),          name(?Method, run), name(?Method, ?MethodName), method(?Clazz, ?Method),     string_append(?TaskPackageName, ?DotClazzName, ?QualifiedName),      string_append('.', ?ClazzName, ?DotClazzName),     string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),      string_append('.', ?MethodName, ?DotMethodName)          ">
+      <chosenVars varText="?QualifiedName"/>
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?ClazzName)."/>
+      <factTemplates factText="association(?ClazzName, ?QualifiedName)."/>
+      <factTemplates factText="responsibility(?ClazzName)."/>
+      <factTemplates factText="hasResponsibility(?ClazzName, ?ClazzName)."/>
+      <factTemplates factText="mapping(?ClazzName, ?QualifiedMethodName)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Asociar el componente ?ComponentName con el componente ?TaskComponentName." description="3.c - Asociar componentes">
+    <query queryString="     package(?DBPackage), name(?DBPackage, ?DBPackageName),      string_append(?PackageNameDot, db , ?DBPackageName),      package(?TaskPackage), name(?TaskPackage, ?TaskPackageName),      string_append(?PackageNameDot, task , ?TaskPackageName),      string_append(?ComponentName, '.', ?PackageNameDot),     component(?ComponentName),     class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, Task),      package(?Clazz, ?TaskPackage), name(?Clazz, ?TaskComponentName),          name(?Method, run), name(?Method, ?MethodName), method(?Clazz, ?Method),     string_append(?TaskPackageName, ?DotClazzName, ?QualifiedName),      string_append('.', ?TaskComponentName, ?DotClazzName),     string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),      string_append('.', ?MethodName, ?DotMethodName),      component(?TaskComponentName)               ">
+      <chosenVars varText="?TaskComponentName"/>
+      <chosenVars varText="?ComponentName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="relationship(?TaskComponentName, ?ComponentName, prop1)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Crear la responsabilidad ?ClazzName.?MethodName en el componente ?ComponentName." description="3.d - Responsabilidades DbView">
+    <query queryString="     package(?DBPackage), name(?DBPackage, ?DBPackageName),      string_append(?PackageNameDot, db , ?DBPackageName),      package(?TaskPackage), name(?TaskPackage, ?TaskPackageName),      string_append(?PackageNameDot, task , ?TaskPackageName),      string_append(?ComponentName, '.', ?PackageNameDot),     component(?ComponentName),          class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, DbView), name(?Clazz, ?ClazzName),      package(?Clazz, ?DBPackage),      name(?Method, ?MethodName), method(?Clazz, ?Method),     string_append(?DBPackageName, ?DotClazzName, ?QualifiedName),      string_append('.', ?ClazzName, ?DotClazzName),     string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),      string_append('.', ?MethodName, ?DotMethodName)          ">
+      <chosenVars varText="?ComponentName"/>
+      <chosenVars varText="?MethodName"/>
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="association(?ComponentName, ?QualifiedName)."/>
+      <factTemplates factText="responsibility(?ClazzName.?MethodName)."/>
+      <factTemplates factText="hasResponsibility(?ComponentName, ?ClazzName.?MethodName)."/>
+      <factTemplates factText="mapping(?ClazzName.?MethodName, ?QualifiedMethodName)."/>
+    </factSet>
+  </rules>
+ <rules suggestTemplate="Crear el componente ?Value." description="4.a - Dynamic component name">
+    <query queryString="        class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, GenericModelAdminCategoryEvent), name(?Clazz, ?ClazzName),       executedMethod(?QualifiedMethodName, ?ExecutionID, ?Value, ?Arg),       package(?Package), name(?Package, ?PackageName), package(?Clazz, ?Package),           name(?Method, staticGetEventName), method(?Clazz, ?Method),       string_append(?PackageName, ?DotClazzName, ?QualifiedName),          string_append('.', ?ClazzName, ?DotClazzName),         string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),          string_append('.', staticGetEventName, ?DotMethodName)         ">
+      <chosenVars varText="?Value"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?Value)."/>
+    </factSet>
+  </rules>
+  
+   <rules suggestTemplate="Crear el componente ?Param." description="5.a - Method Invocation from a task (getEventId).">
+    <query queryString="
+		invocationMethod(?FullNameLocation, ?FullNameInvocation, ?Param),           
+	    string_append(?PackageName, ?DotClazzName, ?QualifiedName),          
+	    string_append('.', EventHierarchyManager, ?DotClazzName),         
+	    string_append(?QualifiedName, ?DotMethodName, ?FullNameInvocation),          
+	    string_append('.', getEventId, ?DotMethodName),        
+	    string_append(?LocationPackageName, ?LocationDotClazzName, ?LocationQualifiedName),          
+	    string_append('.', ?LocationClassName, ?LocationDotClazzName),         
+	    string_append(?LocationQualifiedName, ?LocationDotMethodName, ?FullNameLocation),          
+	    string_append('.', run, ?LocationDotMethodName),              
+	    class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, Task), name(?Clazz, ?LocationClassName)
+		">
+      <chosenVars varText="?LocationClassName"/>
+      <chosenVars varText="?Param"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?LocationClassName)."/>
+      <factTemplates factText="component(?Param)."/>
+      <factTemplates factText="association(?LocationClassName, ?Param)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Crear el componente ?Param." description="6.a - Method Invocation from a task (publishEvent).">
+    <query queryString="
+		invocationMethod(?FullNameLocation, ?FullNameInvocation, ?Param),           
+	    string_append(?PackageName, ?DotClazzName, ?QualifiedName),          
+	    string_append('.', EventManager, ?DotClazzName),         
+	    string_append(?QualifiedName, ?DotMethodName, ?FullNameInvocation),          
+	    string_append('.', publishEvent, ?DotMethodName),        
+	    string_append(?LocationPackageName, ?LocationDotClazzName, ?LocationQualifiedName),          
+	    string_append('.', ?LocationClassName, ?LocationDotClazzName),         
+	    string_append(?LocationQualifiedName, ?LocationDotMethodName, ?FullNameLocation),          
+	    string_append('.', run, ?LocationDotMethodName),              
+	    class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, Task), name(?Clazz, ?LocationClassName)
+		">
+      <chosenVars varText="?LocationClassName"/>
+      <chosenVars varText="?Param"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?LocationClassName)."/>
+      <factTemplates factText="component(?Param)."/>
+      <factTemplates factText="association(?LocationClassName, ?Param)."/>
+    </factSet>
+  </rules>
+  
+  <rules suggestTemplate="Create the component role ?Component" description="7.a Create Component Roles">
+    <query queryString="component(?Component)">
+      <chosenVars varText="?Component"/>
+    </query>
+    <factSet>
+      <factTemplates factText="componentRole(?Component)."/>
+    </factSet>
+  </rules>
+  
+  <rules suggestTemplate="" description="Empty Rule (the last one)">
+    <query queryString="package(?Package), name(?Package, ?PackageName)">
+      <chosenVars varText="?PackageName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?PackageName)."/>
+    </factSet>
+  </rules>
+</rules4Java.engine.ruleModel:DrarchFileModel>
