@@ -26,17 +26,22 @@ import ca.ubc.jquery.gui.results.WorkingSetNode;
  */
 public abstract class DrarchEngine {
 
-	private static final Logger	logger	= Logger.getLogger(DrarchEngine.class
-	                                           .getName());
-	private EnginePlugin	    plugin	= EnginePlugin.getDefault();
-	private QueryEngine	        queryEngine;
-	private RuleManager	        ruleManager;
-	private KnowledgeBase	    knowledgeBase;
-	private StepsManager	    stepsManager;
+	private static final Logger logger = Logger.getLogger(DrarchEngine.class
+			.getName());
 
-	public void startEngine(){
+	private EnginePlugin plugin = EnginePlugin.getDefault();
+
+	private QueryEngine queryEngine;
+
+	private RuleManager ruleManager;
+
+	private KnowledgeBase knowledgeBase;
+
+	private StepsManager stepsManager;
+
+	public void startEngine() {
 		logger.info("Starting engine");
-		if(isSetupComplete()) {
+		if (isSetupComplete()) {
 			logger.info("Starting engine  -->  setup complete");
 			queryEngine = initializeQueryEngine();
 			ruleManager = initializeRuleManager();
@@ -49,11 +54,11 @@ public abstract class DrarchEngine {
 		logger.info("Initializing query engine");
 		queryEngine = EngineModelFactory.INSTANCE.createQueryEngine();
 		IWorkingSetManager workingSetManager = plugin.getWorkbench()
-		        .getWorkingSetManager();
+				.getWorkingSetManager();
 		queryEngine.setWorkingSetManager(workingSetManager);
 		/**
 		 * se delega a la implementacion del engine la seleccion del workingset
-		 * cuando 
+		 * cuando
 		 */
 		queryEngine.setWorkingSet(getCurrentWorkingSet());
 		queryEngine.init();
@@ -71,27 +76,33 @@ public abstract class DrarchEngine {
 	}
 
 	protected abstract boolean isSetupComplete();
+
 	protected abstract IWorkingSet getCurrentWorkingSet();
+
 	protected abstract String getPathToRulesFile();
+
 	protected abstract StepsManager createStepsManager(List<Rule> listOfRules);
-    protected abstract KnowledgeBase createAndInitializeKnowledgeBase(WorkingSetNode workingSetNode);
-	
+
+	protected abstract KnowledgeBase createAndInitializeKnowledgeBase(
+			WorkingSetNode workingSetNode);
+
 	/**
 	 * la lista de reglas debe pasarse al stepsmanager
 	 * 
 	 * @return
 	 */
-	private StepsManager initializeStepsManager(KnowledgeBase knowledgeBase, QueryEngine queryEngine) {
+	private StepsManager initializeStepsManager(KnowledgeBase knowledgeBase,
+			QueryEngine queryEngine) {
 		logger.info("Initializing steps manager");
 		// crear el steps manager y setearle las reglas
 		String pathToRulesFile = getPathToRulesFile();
 		RulesFileParser parser = new RulesFileParser(pathToRulesFile);
 		List<Rule> listOfRules = parser.getParsedRules();
-		
+
 		stepsManager = createStepsManager(listOfRules);
 		stepsManager.setKnowledgeBase(knowledgeBase);
 		stepsManager.setQueryEngine(queryEngine);
-		
+
 		stepsManager.createStepsFromRules();
 		return stepsManager;
 	}
@@ -99,21 +110,21 @@ public abstract class DrarchEngine {
 	private KnowledgeBase initializeKnowledgeBase() {
 		logger.info("Initializing KnowledgeBase");
 		WorkingSetNode workingSetNode = ((QueryEngineImpl) queryEngine)
-		        .getWorkingSetNode();
+				.getWorkingSetNode();
 		knowledgeBase = createAndInitializeKnowledgeBase(workingSetNode);
 		return knowledgeBase;
 	}
 
 	public StepsManager getStepsManager() {
-    	return this.stepsManager;
-    }
+		return this.stepsManager;
+	}
 
 	public KnowledgeBase getKnowledgeBase() {
-    	return this.knowledgeBase;
-    }
+		return this.knowledgeBase;
+	}
 
 	public QueryEngine getQueryEngine() {
-    	return this.queryEngine;
-    } 
+		return this.queryEngine;
+	}
 
 }
