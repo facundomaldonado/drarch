@@ -1,6 +1,6 @@
 package org.design.drarch.diagram.trace.uiAction;
 
-import org.design.drarch.diagram.flabot.DiagramManager;
+import org.apache.log4j.Logger;
 import org.design.rules4Java.engine.coreEngine.engineModel.KnowledgeBase;
 import org.design.rules4Java.engine.coreEngine.engineModel.QueryEngine;
 import org.design.rules4Java.engine.exceptions.DrarchEngineModelException;
@@ -13,6 +13,8 @@ import org.isistan.flabot.trace.log.TraceLog;
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
 public class AnaliceLogTraceAction {
+
+	Logger log = Logger.getLogger(AnaliceLogTraceAction.class.getName());
 
 	private KnowledgeBase knowledgeBase;
 	private QueryEngine queryEngine;
@@ -33,21 +35,22 @@ public class AnaliceLogTraceAction {
   }
 
   public void run() {
+	  log.debug("Start analize trace log.");
 	  LogFacts loadLogFacts;
-    if (traceLog == null) {
-    	loadLogFacts = new LogFacts(queryEngine, knowledgeBase);
-    } else {
-    	loadLogFacts = new LogFacts(queryEngine, knowledgeBase, traceLog);
-    }
-    try {
-    	DiagramManager.getInstance().getCore() ;
-	    loadLogFacts.load();
-    } catch (DrarchEngineModelException e) {
-    	//TODO add exception handler
-	    e.printStackTrace();
-    } catch (RuntimeException e1) {
-    	MessageDialog.openError(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
-    			"Drarch", "You have to be executed a phase.");
+	    if (traceLog == null) {
+	    	loadLogFacts = new LogFacts(queryEngine, knowledgeBase);
+	    } else {
+	    	loadLogFacts = new LogFacts(queryEngine, knowledgeBase, traceLog);
+	    }
+	    try {
+		    loadLogFacts.load();
+			log.debug("End analize trace log.");
+	    } catch (DrarchEngineModelException e) {
+	    	log.error(e);
+	    } catch (RuntimeException e1) {
+	    	log.error(e1);
+	    	MessageDialog.openError(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
+	    			"Drarch", "You have to be executed a phase.");
     }
   }
 }

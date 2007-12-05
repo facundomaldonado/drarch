@@ -57,7 +57,7 @@ public class LogSearcher {
 
 	public LogSearcher(TraceLog log) {
 		this.log = log;
-		coreModel = DiagramManager.getInstance().getCore();
+		coreModel = DiagramManager.getInstance().getCoreModel();
 		responsibilities = new LinkedList<Responsibility>();
 	}
 
@@ -129,12 +129,17 @@ public class LogSearcher {
 
 	public InnerTag getTagLogNodeInfo(TagLogNode logNode) {
 		InnerTag infoInnerTag = LogModelFactory.eINSTANCE.createInnerTag();
+		if (logNode != null) {
 		LogNode[] childs = logNode.getChildrens();
-		for (int j = 0; j < childs.length; j++) {
-			LogNode info = (LogNode) childs[j];
-			infoInnerTag.getTags().put(info.getName(), info);
+		if (childs != null) {
+			for (int j = 0; j < childs.length; j++) {
+				LogNode info = (LogNode) childs[j];
+				infoInnerTag.getTags().put(info.getName(), info);
+			}
+		}
 		}
 		return infoInnerTag;
+		
 	}
 
 	public static class NumberKeyComparator implements Comparator {

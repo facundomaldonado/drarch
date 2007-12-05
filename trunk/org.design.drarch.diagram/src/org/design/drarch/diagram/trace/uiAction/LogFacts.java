@@ -1,3 +1,4 @@
+
 package org.design.drarch.diagram.trace.uiAction;
 
 import java.util.ArrayList;
@@ -23,6 +24,10 @@ import org.isistan.flabot.trace.log.TraceLog;
  * @author maldonadofacundo@gmail.com (Facundo Maldonado)
  */
 public class LogFacts {
+
+	/** Define la profundidad del analisis de la informaciotn del log.
+	 */
+	private static final int MAX_DEPTH_LOG = 5;
 
 	private List<Responsibility> responsibilities;
 
@@ -70,16 +75,16 @@ public class LogFacts {
 						LogSearcher.VALUE_TAG);
 				
 				// Get the snapshot object.
-				snapshotFacts(valueTag, execId);
+				snapshotFacts(valueTag, execId, 0);
 				
 				InnerTag valueInnerTag = searcher.getTagLogNodeInfo(valueTag);
-				String exitValue = ((PropertyLogNode) valueInnerTag.getTags()
-						.get("string")).getValue();				
-				if (exitValue == null) {
-					exitValue = "void";
+				String exitValue = "void";
+				PropertyLogNode propertyLogNode = (PropertyLogNode) valueInnerTag.getTags().get("string");
+				if (propertyLogNode != null) {
+					exitValue = propertyLogNode.getValue();	
 				}
-				factsList.add(predicateFactory.createExecutionPredicate(
-						responsibility.getName(), execId, exitValue));
+//				factsList.add(predicateFactory.createExecutionPredicate(
+//						responsibility.getName(), execId, exitValue));
 				
 				TagLogNode behaviorTag = (TagLogNode) materialization.getTags().get(
 						LogSearcher.BEHAVIOR_TAG);
@@ -100,7 +105,10 @@ public class LogFacts {
 					// TODO: Recuperar el resto de los argumentos!!!
 					TagLogNode argumentTag = (TagLogNode) argumentsTag.getChildrens()[1];
 					InnerTag argument = searcher.getTagLogNodeInfo(argumentTag);
-					argumentName = ((PropertyLogNode) argument.getTags().get("string")).getValue();
+					PropertyLogNode argumentPropertyLogNode = (PropertyLogNode) argument.getTags().get("string");
+					if (argumentPropertyLogNode != null) {
+					  argumentName = argumentPropertyLogNode.getValue();
+					}  
 				}
 				factsList.add(predicateFactory.createExecutedMethodValue(className + "." + 
 						methodName, execId, exitValue, argumentName));
@@ -113,18 +121,24 @@ public class LogFacts {
 		((QueryEngineImpl) queryEngine).getWorkingSetNode().reloadRules();
 	}
 
-	private void snapshotFacts(TagLogNode valueTag, String id) {
-		for (LogNode logNode : valueTag.getChildrens()) {
-			if (logNode instanceof PropertyLogNode) {
-				PropertyLogNode propertyLogNode = (PropertyLogNode) logNode;
-				String dirtyField = propertyLogNode.getName();
-				if (dirtyField.contains("#")) {
-					String field = dirtyField.substring(0, dirtyField.indexOf(":")).replace("#", ".");
-					factsList.add("snapshot(" + id + ", '" + field + "', '" +  propertyLogNode.getValue() + "').");
+	private void snapshotFacts(TagLogNode valueTag, String id, int depth) {
+		if (valueTag != null) {
+			for (LogNode logNode : valueTag.getChildrens()) {
+				if (logNode instanceof PropertyLogNode) {
+					PropertyLogNode propertyLogNode = (PropertyLogNode) logNode;
+					String dirtyField = propertyLogNode.getName();
+					if (dirtyField.contains("#")) {
+						String field = dirtyField.substring(0, dirtyField.indexOf(":")).replace("#", ".");
+						String fact = "snapshot(" + id + ", '" + field + "', '" +  propertyLogNode.getValue() + "').";
+						factsList.add(fact);
+					}
 				}
-			}
-			if (logNode instanceof TagLogNode) {
-				snapshotFacts((TagLogNode)logNode, id);
+  				if (logNode instanceof TagLogNode) {
+					TagLogNode tagLogNode = (TagLogNode) logNode;
+					if (depth < MAX_DEPTH_LOG) {
+						snapshotFacts(tagLogNode, id, depth + 1);
+					}
+				}
 			}
 		}
 	}
