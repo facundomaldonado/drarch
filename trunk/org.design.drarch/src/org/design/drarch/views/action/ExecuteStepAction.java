@@ -4,7 +4,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.design.drarch.DrarchPlugin;
 import org.design.rules4Java.engine.coreEngine.engineModel.Suggest;
 import org.design.rules4Java.ui.view.modelProviders.model.TreeObject;
 import org.design.rules4Java.ui.view.modelProviders.model.TreeParent;
@@ -17,17 +16,17 @@ import org.eclipse.jface.action.Action;
  */
 public class ExecuteStepAction extends Action {
 
-	private static Logger logger = Logger.getLogger(DrarchPlugin.class.getName());
+	private static Logger logger = Logger.getLogger(ExecuteStepAction.class.getName());
 
 	private TreeParent root;
 	private List suggests;
 	private int step;
 
-	public ExecuteStepAction(List suggests, int step) {
+	public ExecuteStepAction(List theSuggests, int theStep) {
+		suggests = theSuggests;
+		step = theStep;
 		logger.debug("ExecuteStepAction:  constructor. Suggests count: " +
 				suggests.size() + ", Step no: " + step);
-		this.suggests = suggests;
-		this.step = step;
 	}
 
 	public TreeParent getInPut() {
