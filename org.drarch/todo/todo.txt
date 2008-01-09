@@ -1,0 +1,11 @@
+Todo list:
+
+- Archivo de reglas (*.drarch):
+  * El numero de regla es incorrecto.
+  
+- Drarch Suggest View:
+  * Se saltea la primer regla.
+  * Modificar el mensaje: "Plase select a Phase".
+  
+- New Drarch Phase Wizard:
+  * Reacomodoar el boton "Select" del workingset.
