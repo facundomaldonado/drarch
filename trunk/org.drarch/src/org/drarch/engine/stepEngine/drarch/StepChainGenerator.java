@@ -21,8 +21,11 @@ public class StepChainGenerator {
      * @return
      */
     public IStep generateChain(final List<Rule> rulesList, RuleManager ruleManager) {
+    	if (rulesList.size() == 0) {
+    		return null;
+    	}
     	Rule firstRule = rulesList.remove(0);
-    	IStep headStep = new Step(new	DrarchRuleStepImplementation(firstRule, ruleManager));
+    	IStep headStep = new Step(new DrarchRuleStepImplementation(firstRule, ruleManager));
     	IStep cursor = null;
     	IStep before = headStep;
     	for (Rule rule : rulesList) {

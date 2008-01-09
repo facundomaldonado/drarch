@@ -2,10 +2,13 @@ Todo list:
 
 - Archivo de reglas (*.drarch):
   * El numero de regla es incorrecto.
+  * Separar las reglas que nos paso Alvaro (una regla por a archivo).
+  * Actualizar el archivo initial.drarch para que genere los nuevos hechos.
   
 - Drarch Suggest View:
   * Se saltea la primer regla.
   * Agregar detalles de la fase (interacivo, archivo flabot, etc.).
+  * Agregar la opcion para limpiar la vista.
   
 - New Drarch Phase Wizard:
   * Reacomodoar el boton "Select" del workingset.
