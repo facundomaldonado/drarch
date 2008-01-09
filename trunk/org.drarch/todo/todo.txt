@@ -5,7 +5,10 @@ Todo list:
   
 - Drarch Suggest View:
   * Se saltea la primer regla.
-  * Modificar el mensaje: "Plase select a Phase".
+  * Agregar detalles de la fase (interacivo, archivo flabot, etc.).
   
 - New Drarch Phase Wizard:
   * Reacomodoar el boton "Select" del workingset.
+  
+- Archivo flabot:
+  * No crea el archivo flabot.
