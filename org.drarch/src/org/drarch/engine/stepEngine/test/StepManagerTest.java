@@ -62,7 +62,8 @@ public class StepManagerTest extends TestCase {
     	nonInteractiveStep2.addPhase(interactiveStep1);
     	
     	PhaseManager newStepManager = new PhaseManager();
-    	newStepManager.addNewPhase(nonInteractiveStep1);
+//    	newStepManager.addNewPhase(nonInteractiveStep1);
+    	newStepManager.addNewPhase(interactiveStep1);
     	return newStepManager;
     }
 
@@ -79,10 +80,10 @@ public class StepManagerTest extends TestCase {
 		assertTrue(true);
 		stepManager.executeNextPhase();
 		assertTrue(true);
-		stepManager.executeNextPhase();
-		assertTrue(true);
-		stepManager.executeNextPhase();
-		assertTrue(true);
+//		stepManager.executeNextPhase();
+//		assertTrue(true);
+//		stepManager.executeNextPhase();
+//		assertTrue(true);
 
 	}
 	

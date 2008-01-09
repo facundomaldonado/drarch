@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<rules4Java.engine.ruleModel:DrarchFileModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rules4Java.engine.ruleModel="http:///rules4Java/engine/ruleModel.ecore" fileName="rules4bubble.drarch">
+  <rules suggestTemplate="Crear un componente ?ClazzName." description="2.a - DbView components">
+    <query queryString="
+		class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, DbView), name(?Clazz, ?ClazzName),
+		package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),
+		name(?Method, ?MethodName), method(?Clazz, ?Method),
+		string_append(?PackageName, ?DotClazzName, ?QualifiedName),
+		string_append('.', ?ClazzName, ?DotClazzName),
+		string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),
+		string_append('.', ?MethodName, ?DotMethodName)
+	">
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?ClazzName)."/>
+      <factTemplates factText="association(?ClazzName, ?QualifiedName)."/>
+    </factSet>
+  </rules>
+  <rules suggestTemplate="Crear la responsabilidad ?MethodName en el componente ?ClazzName." description="2.b - DbView responsibilities">
+    <query queryString="     component(?ClazzName),     class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, DbView), name(?Clazz, ?ClazzName),      package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),     name(?Method, ?MethodName), method(?Clazz, ?Method),     string_append(?PackageName, ?DotClazzName, ?QualifiedName),      string_append('.', ?ClazzName, ?DotClazzName),     string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),      string_append('.', ?MethodName, ?DotMethodName)          ">
+      <chosenVars varText="?MethodName"/>
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="responsibility(?ClazzName.?MethodName)."/>
+      <factTemplates factText="hasResponsibility(?ClazzName, ?ClazzName.?MethodName)."/>
+      <factTemplates factText="mapping(?ClazzName.?MethodName, ?QualifiedMethodName)."/>
+    </factSet>
+  </rules>
+
+</rules4Java.engine.ruleModel:DrarchFileModel>

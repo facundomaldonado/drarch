@@ -8,12 +8,12 @@ package org.drarch.engine.stepEngine;
  */
 public class StepIterationController {
 	
-	IStep STEP_CHAIN_HEAD;
-	IStep STEP_CHAIN_CURSOR = null;
+	private IStep STEP_CHAIN_HEAD;
+	private IStep STEP_CHAIN_CURSOR;
 	
     public StepIterationController(IStep chain_head) {
-	    this.STEP_CHAIN_HEAD = chain_head;
-	    this.STEP_CHAIN_CURSOR = STEP_CHAIN_HEAD;
+	    STEP_CHAIN_HEAD = chain_head;
+	    STEP_CHAIN_CURSOR = STEP_CHAIN_HEAD;
     }
     
 	public IStep getNextStep() {

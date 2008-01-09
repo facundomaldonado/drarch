@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<rules4Java.engine.ruleModel:DrarchFileModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rules4Java.engine.ruleModel="http:///rules4Java/engine/ruleModel.ecore" fileName="rules4bubble.drarch">
+  <rules suggestTemplate="Crear un componente ?ClazzName." description="1 - Task components">
+    <query queryString="   class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, Task), name(?Clazz, ?ClazzName),   package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),   name(?Method, run), name(?Method, ?MethodName), method(?Clazz, ?Method),   string_append(?PackageName, ?DotClazzName, ?QualifiedName),   string_append('.', ?ClazzName, ?DotClazzName),   string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),   string_append('.', ?MethodName, ?DotMethodName)     ">
+      <chosenVars varText="?ClazzName"/>
+      <chosenVars varText="?QualifiedName"/>
+      <chosenVars varText="?QualifiedMethodName"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?ClazzName)."/>
+      <factTemplates factText="association(?ClazzName, ?QualifiedName)."/>
+      <factTemplates factText="responsibility(?ClazzName)."/>
+      <factTemplates factText="hasResponsibility(?ClazzName, ?ClazzName)."/>
+      <factTemplates factText="mapping(?ClazzName, ?QualifiedMethodName)."/>
+    </factSet>
+  </rules>
+</rules4Java.engine.ruleModel:DrarchFileModel>

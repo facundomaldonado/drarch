@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<rules4Java.engine.ruleModel:DrarchFileModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rules4Java.engine.ruleModel="http:///rules4Java/engine/ruleModel.ecore" fileName="rules4bubble.drarch">
+  <rules suggestTemplate="Create the component role ?Component" description="7.a Create Component Roles">
+    <query queryString="component(?Component)">
+      <chosenVars varText="?Component"/>
+    </query>
+    <factSet>
+      <factTemplates factText="componentRole(?Component)."/>
+    </factSet>
+  </rules>
+  
+</rules4Java.engine.ruleModel:DrarchFileModel>

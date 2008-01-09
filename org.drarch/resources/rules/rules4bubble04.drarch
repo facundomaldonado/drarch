@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<rules4Java.engine.ruleModel:DrarchFileModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rules4Java.engine.ruleModel="http:///rules4Java/engine/ruleModel.ecore" fileName="rules4bubble.drarch">
+ <rules suggestTemplate="Crear el componente ?Value." description="4.a - Dynamic component name">
+    <query queryString="        class(?Clazz), subtype+(?SuperClazz, ?Clazz), name(?SuperClazz, GenericModelAdminCategoryEvent), name(?Clazz, ?ClazzName),       executedMethod(?QualifiedMethodName, ?ExecutionID, ?Value, ?Arg),       package(?Package), name(?Package, ?PackageName), package(?Clazz, ?Package),           name(?Method, staticGetEventName), method(?Clazz, ?Method),       string_append(?PackageName, ?DotClazzName, ?QualifiedName),          string_append('.', ?ClazzName, ?DotClazzName),         string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),          string_append('.', staticGetEventName, ?DotMethodName)         ">
+      <chosenVars varText="?Value"/>
+    </query>
+    <factSet>
+      <factTemplates factText="component(?Value)."/>
+    </factSet>
+  </rules>
+
+</rules4Java.engine.ruleModel:DrarchFileModel>
