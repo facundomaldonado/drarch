@@ -16,7 +16,7 @@ import org.drarch.engine.ruleEngine.Suggest;
 public class InteractivePhase extends Phase {
 
 	Set<Suggest> lastStepSuggests = Collections.EMPTY_SET;
-	
+
 	/**
      * @param chain_head
      */
@@ -30,7 +30,7 @@ public class InteractivePhase extends Phase {
     public void executePhase() {
     	if (hasNextStep()) {
     		IStep step = getNextStep();
-    		step.setLastPhaseSuggests(lastStepSuggests);
+       		step.setLastPhaseSuggests(lastStepSuggests);
     		lastStepSuggests =	step.execute();
     		return;
     	}
@@ -51,6 +51,6 @@ public class InteractivePhase extends Phase {
     }
 	
 	public String getName() {
-		return null;
+		return "";
 	}
 }

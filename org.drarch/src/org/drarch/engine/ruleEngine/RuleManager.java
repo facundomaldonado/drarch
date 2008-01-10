@@ -1,5 +1,6 @@
 package org.drarch.engine.ruleEngine;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -59,10 +60,11 @@ public class RuleManager {
 	 */
 	@SuppressWarnings("unchecked")
 	public Set<FactSet> getFacts(Rule rule, Set<Suggest> suggests) {
-
+		if (rule != null) {
 		List<Var> vars = rule.getQuery().getChosenVars();
 		Set<FactSet> facts = factsGenerator.getFacts(suggests, rule.getFactSet(), vars);
 		return facts;
+		} return Collections.<FactSet>emptySet();
 	}
 
 	@SuppressWarnings("unchecked")

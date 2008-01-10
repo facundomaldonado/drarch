@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.drarch.engine.ruleEngine.Suggest;
 import org.drarch.engine.ruleModel.FactSet;
+import org.drarch.engine.ruleModel.Rule;
 
 /**
  * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
@@ -43,7 +44,14 @@ public class Step implements IStep {
 	 * @see org.design.rules4Java.engine.coreEngine.IStepAction#run()
 	 */
 	public Set<Suggest> execute() {
-		return stepImpl.execute();
+		Rule rule = null;
+		if (before()!= null) 
+			rule = ((Step)before()).getStepRule();
+		return stepImpl.execute(rule);
+	}
+	
+	private Rule getStepRule(){
+		return stepImpl.getStepRule();
 	}
 
 	public void addNext(IStep nextStep) {

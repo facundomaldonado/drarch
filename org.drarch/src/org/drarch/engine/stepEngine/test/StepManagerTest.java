@@ -8,6 +8,7 @@ import java.util.Set;
 import junit.framework.TestCase;
 
 import org.drarch.engine.ruleEngine.Suggest;
+import org.drarch.engine.ruleModel.Rule;
 import org.drarch.engine.stepEngine.IPhaseManager;
 import org.drarch.engine.stepEngine.IStepImplementation;
 import org.drarch.engine.stepEngine.InteractivePhase;
@@ -98,7 +99,7 @@ public class StepManagerTest extends TestCase {
 		/* (non-Javadoc)
          * @see org.design.rules4Java.engine.newEngine.IStepActionImplementation#run()
          */
-        public Set<Suggest> execute() {
+        public Set<Suggest> execute(Rule rule) {
         	System.out.println(name);
         	return null;
         }
@@ -119,6 +120,11 @@ public class StepManagerTest extends TestCase {
 	        return null;
 	        
         }
+
+		public Rule getStepRule() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		
 	}
 
