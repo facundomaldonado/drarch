@@ -55,7 +55,7 @@
             category="org.drarch.ui.view.category"
             class="org.drarch.ui.view.DrarchSuggestsView"
             icon="icons/sample.gif"
-            id="org.drarch.ui.view.DrarchSuggestView"
+            id="org.drarch.ui.view.DrarchSuggestsView"
             name="Drarch Suggest View"/>
    </extension>
 	<extension
