@@ -11,12 +11,14 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.drarch.Activator;
+import org.drarch.diagram.flabot.DiagramManager;
 import org.drarch.engine.DrarchEngine;
 import org.drarch.engine.parser.RulesFileParser;
 import org.drarch.engine.ruleModel.Rule;
 import org.drarch.engine.stepEngine.Phase;
 import org.drarch.engine.stepEngine.drarch.DrarchInteractivePhase;
 import org.drarch.engine.stepEngine.drarch.DrarchPhaseHelper;
+import org.drarch.ui.view.DrarchSuggestsView;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -31,8 +33,12 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkingSet;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 
 public class StartPhaseAction implements IObjectActionDelegate{
 
@@ -81,6 +87,7 @@ public class StartPhaseAction implements IObjectActionDelegate{
 			if (isInteractive) {
 				phase = new DrarchInteractivePhase(phaseHelper);
 				DrarchEngine.INSTANCE.addNewPhase(phase);
+				DiagramManager.getInstance().setFlabotFileName(flabotFileName);
 			}
 			else {
 //				phase =  new NonInteractivePhase();
@@ -102,7 +109,19 @@ public class StartPhaseAction implements IObjectActionDelegate{
      */
     private void openOrUpdateView(Phase phase) {
     	assert(null!=phase);
+    	try {
+			getWindow().getActivePage().showView(DrarchSuggestsView.ID_VIEW);
+			DrarchSuggestsView drarchView = (DrarchSuggestsView)getWindow().getActivePage().findView(DrarchSuggestsView.ID_VIEW);
+    		drarchView.setActivePhase(phase);
+		} catch (PartInitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
+
+	private IWorkbenchWindow getWindow() {
+		return PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+	}
 
 	/**
      * @param phaseName

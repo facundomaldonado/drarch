@@ -4,6 +4,7 @@
 package org.drarch.ui.view;
 
 import org.apache.log4j.Logger;
+import org.drarch.engine.stepEngine.Phase;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
 
@@ -13,7 +14,7 @@ import org.eclipse.ui.part.ViewPart;
  */
 public class DrarchSuggestsView extends ViewPart  {
 
-	public static final String ID_VIEW = "org.design.drarch.ui.views.DrarchSuggestsView";
+	public static final String ID_VIEW = "org.drarch.ui.view.DrarchSuggestsView";
 
 	private DrarchSuggestViewer viewer;
 	private static Logger logger = Logger.getLogger(DrarchSuggestsView.class.getName());
@@ -32,6 +33,10 @@ public class DrarchSuggestsView extends ViewPart  {
 	public void dispose() {
 		super.dispose();
 		logger.info("DrarchSuggestView dispose");
+	}
+
+	public void setActivePhase(Phase phase) {
+		viewer.setActivePhase(phase);
 	}
 
 }

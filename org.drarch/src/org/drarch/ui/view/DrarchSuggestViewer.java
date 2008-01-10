@@ -48,6 +48,9 @@ public class DrarchSuggestViewer {
 	private TreeParent   currentParentNode = root;
 	private Phase		currentPhase = null;
 	Action executeStepAction;
+
+	private Text phaseNameText;
+	private Label phaseNameLabel;
 	/**
      * 
      */
@@ -101,15 +104,15 @@ public class DrarchSuggestViewer {
 			phaseCompositeLayout.makeColumnsEqualWidth = true;
 			phaseComposite.setLayout(phaseCompositeLayout);
 			
-			Label phaseNameLabel = new Label(phaseComposite, SWT.NONE);
-			phaseNameLabel.setText("Current phase: ");
-			phaseNameLabel.setVisible(false);
-			Text phaseNameText = new Text(phaseComposite, SWT.None);
-			phaseNameText.setText("");
-			phaseNameText.setVisible(false);
-			
-			Label selectAPhaseLabel = new Label(phaseComposite, SWT.NONE);
-			selectAPhaseLabel.setText("Please select a phase");
+			phaseNameLabel = new Label(phaseComposite, SWT.NONE);
+			phaseNameText = new Text(phaseComposite, SWT.None);
+			if (null != currentPhase) {
+				updatePhaseFields(currentPhase);
+			} 
+			else {
+				phaseNameText.setVisible(false);
+				phaseNameLabel.setText("Please Select a Phase");
+			}
 		}
 		{
 			GridData treeViewerLData = new GridData();
@@ -182,4 +185,19 @@ public class DrarchSuggestViewer {
     public void setCurrentParentNode(TreeParent currentParentNode) {
 	    this.currentParentNode = currentParentNode;
     }
+
+	public void setActivePhase(Phase phase) {
+		currentPhase = phase;
+		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				updatePhaseFields(currentPhase);
+			}
+		});
+	}
+	
+	private void updatePhaseFields(Phase phase) {
+		phaseNameLabel.setText("Current phase: ");
+		phaseNameText.setText(phase.getName());
+		phaseNameText.setVisible(true);
+	}
 }
