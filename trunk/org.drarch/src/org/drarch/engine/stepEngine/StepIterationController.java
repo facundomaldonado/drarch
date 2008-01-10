@@ -8,25 +8,28 @@ package org.drarch.engine.stepEngine;
  */
 public class StepIterationController {
 	
-	private IStep STEP_CHAIN_HEAD;
-	private IStep STEP_CHAIN_CURSOR;
+	IStep STEP_CHAIN_HEAD;
+	IStep STEP_CHAIN_CURSOR = null;
+	IStep STEP_CHAIN_CURRENT = null;
 	
-    public StepIterationController(IStep chain_head) {
-	    STEP_CHAIN_HEAD = chain_head;
-	    STEP_CHAIN_CURSOR = STEP_CHAIN_HEAD;
+	public StepIterationController(IStep chain_head) {
+	    this.STEP_CHAIN_HEAD = chain_head;
+	    this.STEP_CHAIN_CURSOR = STEP_CHAIN_HEAD;
     }
-    
-	public IStep getNextStep() {
-		IStep current = STEP_CHAIN_CURSOR;
-		STEP_CHAIN_CURSOR = STEP_CHAIN_CURSOR.next();
-		return current;
-	}
 	
 	public boolean hasNextStep() {
 		return STEP_CHAIN_CURSOR.next() != null;
 	}
 	
 	public IStep getCurrentStep() {
-		return STEP_CHAIN_CURSOR;
+		return STEP_CHAIN_CURRENT;
 	}
+	
+	public IStep getNextStep() {
+	IStep current = STEP_CHAIN_CURSOR;
+	STEP_CHAIN_CURSOR = STEP_CHAIN_CURSOR.next();
+	STEP_CHAIN_CURRENT = current;
+	return current;
+}
+	
 }

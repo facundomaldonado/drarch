@@ -61,7 +61,7 @@ public class DrarchPhaseHelper {
     	return stepChainGenerator.generateChain(rulesList, ruleManager);
     }
 	
-	protected String getFlabotFileName() {
+	public String getFlabotFileName() {
     	return this.flabotFileName;
     }
 	
