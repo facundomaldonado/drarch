@@ -17,47 +17,57 @@ import org.apache.log4j.Logger;
 import ca.ubc.jquery.gui.results.WorkingSetNode;
 
 /**
- * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
- *
+ * @author
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ * 
  */
 public class KnowledgeBase {
 
-	private static final Logger logger = Logger.getLogger(KnowledgeBase.class.getName());
-	
+	private static final Logger logger = Logger.getLogger(KnowledgeBase.class
+			.getName());
+
 	private WorkingSetNode workingSetNode;
-	private Map<String , File> factFiles;
-	
-    public KnowledgeBase(Map<String , File> factFiles, WorkingSetNode workingSetNode) {
-    	this.factFiles = factFiles;
-    	this.workingSetNode = workingSetNode;
-    	includeFilesInFactBase();
-    }
-	
-	/* (non-Javadoc)
+
+	private Map<String, File> factFiles;
+
+	public KnowledgeBase(Map<String, File> factFiles,
+			WorkingSetNode workingSetNode) {
+		this.factFiles = factFiles;
+		this.workingSetNode = workingSetNode;
+		includeFilesInFactBase();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.design.rules4Java.engine.ruleEngine.IKnowledgeBase#addFact(java.lang.String)
 	 */
 	public void addFact(String predicate, String factBase) {
 		File factBaseFile = factFiles.get(factBase + ".rub");
 		if (null != factBaseFile && !exist(predicate, factBaseFile)) {
-        	FileImageOutputStream fios;
-            try {
-                fios = new FileImageOutputStream(factBaseFile);
-	        	fios.seek(factBaseFile.length());
-	        	predicate = predicate + "\n";
-	        	byte[] utf8Bytes = predicate.getBytes("UTF-8");
-	        	fios.write(utf8Bytes);
-	        	fios.close();
-            } catch (FileNotFoundException e) {
-    			logger.info(" FileNotFoundException in exist method in KnowledgeBase class");
-    			throw new RuntimeException();
-    		} catch (IOException e) {
-    			logger.info(" IOException in addFact method in KnowledgeBase class");
-    			throw new RuntimeException();
-    		}
-        }
+			FileImageOutputStream fios;
+			try {
+				fios = new FileImageOutputStream(factBaseFile);
+				fios.seek(factBaseFile.length());
+				predicate = predicate + "\n";
+				byte[] utf8Bytes = predicate.getBytes("UTF-8");
+				fios.write(utf8Bytes);
+				fios.close();
+			} catch (FileNotFoundException e) {
+				logger
+						.info(" FileNotFoundException in exist method in KnowledgeBase class");
+				throw new RuntimeException();
+			} catch (IOException e) {
+				logger
+						.info(" IOException in addFact method in KnowledgeBase class");
+				throw new RuntimeException();
+			}
+		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.design.rules4Java.engine.ruleEngine.IKnowledgeBase#exist(java.lang.String)
 	 */
 	private boolean exist(String predicate, File factFile) {
@@ -74,15 +84,19 @@ public class KnowledgeBase {
 			fios.close();
 			return false;
 		} catch (FileNotFoundException e) {
-			logger.info(" FileNotFoundException in exist method in KnowledgeBase class");
+			logger
+					.info(" FileNotFoundException in exist method in KnowledgeBase class");
 			throw new RuntimeException();
 		} catch (IOException e) {
-			logger.info(" IOException in addFact method in KnowledgeBase class");
+			logger
+					.info(" IOException in addFact method in KnowledgeBase class");
 			throw new RuntimeException();
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.design.rules4Java.engine.ruleEngine.IKnowledgeBase#removeFact(java.lang.String)
 	 */
 	public void removeFact(String predicate, String factBase) {
@@ -93,7 +107,9 @@ public class KnowledgeBase {
 			while (index != null) {
 				if (index.equals(predicate)) {
 					String erase = new String();
-					fios.seek(fios.getStreamPosition() - predicate.length()- 1);
+					fios
+							.seek(fios.getStreamPosition() - predicate.length()
+									- 1);
 					for (int i = 0; i < predicate.length(); i++)
 						erase = erase + " ";
 					byte[] utf8Bytes = erase.getBytes("UTF-8");
@@ -103,32 +119,52 @@ public class KnowledgeBase {
 			}
 			fios.close();
 		} catch (FileNotFoundException e) {
-			logger.info(" FileNotFoundException in exist method in KnowledgeBase class");
+			logger
+					.info(" FileNotFoundException in exist method in KnowledgeBase class");
 			throw new RuntimeException();
 		} catch (IOException e) {
-			logger.info(" IOException in addFact method in KnowledgeBase class");
+			logger
+					.info(" IOException in addFact method in KnowledgeBase class");
 			throw new RuntimeException();
 		}
 	}
-	
-	private void includeFilesInFactBase(){
+
+	private void includeFilesInFactBase() {
 		String userIncludeFileName = workingSetNode.getUserIncludeFile();
 		File userIncludeFile = new File(userIncludeFileName);
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new FileWriter(userIncludeFile));
-			for(File currentFile : factFiles.values()) {
-				String currentFilePath = currentFile.getAbsolutePath();
-				logger.debug(currentFile.getAbsolutePath());
-				
-				String include = currentFilePath.replace("\\", "\\\\");
-				writer.println("#include \"file:///" + include + "\"");
+			File knowledgeBaseFile = factFiles.get("KnowledgeBase.rub");
+			String knowledgeBasePath = knowledgeBaseFile.getAbsolutePath();
+			logger.debug("incluyendo archivo a la knowledgebase "
+					+ knowledgeBaseFile.getAbsolutePath());
+			String include = knowledgeBasePath.replace("\\", "\\\\");
+			writer.println("#include \"file:///" + include + "\"");
+			// for(File currentFile : factFiles.values()) {
+			for (String fileName : factFiles.keySet()) {
+				if (!"KnowledgeBase.rub".equals(fileName)) {
+					File currentFile = factFiles.get(fileName);
+
+					String currentFilePath = currentFile.getAbsolutePath();
+					logger.debug("incluyendo archivo a la knowledgebase "
+							+ currentFile.getAbsolutePath());
+
+					include = currentFilePath.replace("\\", "\\\\");
+					writer.println("#include \"file:///" + include + "\"");
+				}
 			}
 			writer.println();
 			writer.close();
 		} catch (IOException e) {
-			throw new RuntimeException("IOException in method includeFilesInFactBase in class KnowledgeBase", e);
+			throw new RuntimeException(
+					"IOException in method includeFilesInFactBase in class KnowledgeBase",
+					e);
 		}
+		reloadFactBase();
+	}
+
+	public void reloadFactBase() {
 		workingSetNode.reloadRules();
 	}
 }

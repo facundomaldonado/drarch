@@ -76,6 +76,7 @@ public class RuleManager {
 				knowledgeBase.addFact(fact.getFactText(), phaseName);
 			}
 		}
+		knowledgeBase.reloadFactBase();
 	}
 	
 	public void loadGraphicModel() {
