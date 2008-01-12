@@ -6,7 +6,6 @@ package org.drarch.engine.stepEngine;
 import java.util.Set;
 
 import org.drarch.engine.ruleEngine.Suggest;
-import org.drarch.engine.ruleModel.FactSet;
 
 /**
  * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)

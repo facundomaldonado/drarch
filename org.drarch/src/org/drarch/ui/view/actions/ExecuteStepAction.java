@@ -17,10 +17,6 @@ import org.drarch.ui.modelProviders.model.TreeParent;
 import org.drarch.ui.view.DrarchSuggestViewer;
 import org.eclipse.jface.action.Action;
 
-/**
- * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
- *
- */
 public class ExecuteStepAction extends Action {
 
 	DrarchSuggestViewer viewer;

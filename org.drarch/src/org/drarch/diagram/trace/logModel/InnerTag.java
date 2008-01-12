@@ -1,7 +1,6 @@
 package org.drarch.diagram.trace.logModel;
 
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

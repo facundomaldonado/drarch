@@ -2,7 +2,6 @@ package org.drarch.engine.jdt;
 
 import org.apache.log4j.Logger;
 import org.drarch.engine.DrarchEngine;
-import org.drarch.engine.stepEngine.Phase;
 import org.drarch.engine.stepEngine.drarch.DrarchInteractivePhase;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
