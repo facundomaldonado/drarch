@@ -89,8 +89,15 @@ public class NewDrarchPhaseWizardPage extends WizardPage {
 		{
 			label = new Label(container, SWT.NULL);
 			label.setText("Workingset selection: ");
-			final Text workingSetText = new Text(container, SWT.BORDER);
-			Button button = new Button(container, SWT.NULL);
+			Composite select = new Composite(container, SWT.NULL);
+			GridLayout layout1 = new GridLayout();
+			select.setLayout(layout1);
+			layout1.numColumns = 2;
+			layout1.verticalSpacing = 9;
+			
+			
+			final Text workingSetText = new Text(select, SWT.BORDER);
+			Button button = new Button(select, SWT.NULL);
 			button.setText("select");
 			button.addSelectionListener(new SelectionListener() {
 				public void widgetSelected(SelectionEvent e) {
@@ -111,7 +118,7 @@ public class NewDrarchPhaseWizardPage extends WizardPage {
 		}
 		{
 			label = new Label(container, SWT.NULL);
-			label.setText("Interactive Phase");
+			label.setText("Interactive Phase:");
 			final Combo combo = new Combo(container, SWT.NULL);
 			combo.add("true");
 			combo.add("false");

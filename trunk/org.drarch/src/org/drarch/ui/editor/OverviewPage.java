@@ -550,8 +550,8 @@ public class OverviewPage extends DrarchFormPage {
   private TreeParent getRoot() {
     TreeParent root = new TreeParent("");
     if (getModel() != null) {
+      int index = 1;
       for (Iterator<Rule> i = getModel().getRules().iterator(); i.hasNext();) {
-        int index = 0;
         Rule r = i.next();
         TreeParent node = new TreeParent("Rule : " + index++);
         node.setValue(r);

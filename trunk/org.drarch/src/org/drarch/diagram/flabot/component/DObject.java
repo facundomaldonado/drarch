@@ -1,7 +1,6 @@
 package org.drarch.diagram.flabot.component;
 
 import java.util.List;
-import java.util.Vector;
 
 /**
  * 

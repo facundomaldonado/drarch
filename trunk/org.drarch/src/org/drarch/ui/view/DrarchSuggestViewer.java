@@ -9,6 +9,7 @@ import org.drarch.engine.stepEngine.Phase;
 import org.drarch.engine.stepEngine.Step;
 import org.drarch.ui.modelProviders.model.TreeObject;
 import org.drarch.ui.modelProviders.model.TreeParent;
+import org.drarch.ui.view.actions.CleanSuggestViewAction;
 import org.drarch.ui.view.actions.ExecuteStepAction;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
@@ -48,6 +49,7 @@ public class DrarchSuggestViewer {
 	private TreeParent   currentParentNode = root;
 	private Phase		currentPhase = null;
 	Action executeStepAction;
+	Action cleanSuggestViewAction;
 
 	private Text phaseNameText;
 	private Label phaseNameLabel;
@@ -81,15 +83,19 @@ public class DrarchSuggestViewer {
 		// add actions to menu
 		menuMgr.add(new Separator());
 		rulesMenu.add(executeStepAction);
+		menuMgr.add(new Separator());
+		rulesMenu.add(cleanSuggestViewAction);
 		menuMgr.add(rulesMenu);
 
 		// add actions to toolbar
 		IToolBarManager toolMgr = view.getViewSite().getActionBars().getToolBarManager();
 		toolMgr.add(executeStepAction);
+		toolMgr.add(cleanSuggestViewAction);
 	}
 	
 	private void createActions() {
 		executeStepAction = new ExecuteStepAction("Execute Step", this);
+		cleanSuggestViewAction = new CleanSuggestViewAction("Clean Suggest View", this);
 	}
 	
 	private void addChildControl(Composite parent) {
