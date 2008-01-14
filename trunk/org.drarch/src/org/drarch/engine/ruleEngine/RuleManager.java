@@ -5,6 +5,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.drarch.diagram.DiagramModel.componentModel.ComponentModel;
+import org.drarch.diagram.DiagramModel.componentModel.generator.ComponentModelGenerator;
+import org.drarch.diagram.DiagramModel.ucmModel.UCMModel;
+import org.drarch.diagram.DiagramModel.ucmModel.generator.UCMModelGenerator;
+import org.drarch.diagram.flabot.DiagramManager;
 import org.drarch.engine.ruleModel.Fact;
 import org.drarch.engine.ruleModel.FactSet;
 import org.drarch.engine.ruleModel.Rule;
@@ -80,6 +85,19 @@ public class RuleManager {
 	}
 	
 	public void loadGraphicModel() {
+		DiagramManager diagramManager = DiagramManager.getInstance();
 		
+		// Generate the component model.
+		ComponentModelGenerator componentGenerator = new ComponentModelGenerator(queryEngine);
+		ComponentModel componentModel = componentGenerator.getModel();
+		diagramManager.createComponentDiagram(componentModel);
+		
+		// Generate the ucm model.
+	    UCMModelGenerator ucmGenerator = new UCMModelGenerator(queryEngine);
+	    UCMModel ucmModel = ucmGenerator.getModel();
+	    diagramManager.createUCMDiagram(ucmModel);
+	    
+	    diagramManager.update(true);
+	   
 	}
 }

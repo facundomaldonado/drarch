@@ -10,4 +10,8 @@ Todo list:
   * Agregar un mensaje cuando se terminen las reglas.
   
 - Archivo flabot:
-  * No crea el archivo flabot.
+  * No crea el archivo flabot. llamar al DiagramManager dibuja y carga el modelo en el ruleMan
+  * Corregir los numeros de los diagramas
+
+- Archivo .rub
+  * Copiar el archivo KnowledgeBase.rub en cada fase!

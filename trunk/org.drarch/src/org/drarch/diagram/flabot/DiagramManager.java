@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.drarch.Activator;
 import org.drarch.diagram.IDiagramManager;
 import org.drarch.diagram.DiagramModel.componentModel.Component;
@@ -17,16 +18,17 @@ import org.drarch.diagram.DiagramModel.ucmModel.ComponentRole;
 import org.drarch.diagram.DiagramModel.ucmModel.UCMModel;
 import org.drarch.diagram.flabot.component.ComponentsDiagram;
 import org.drarch.diagram.flabot.ucm.UCMDiagrams;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.isistan.flabot.coremodel.CoreModel;
 import org.isistan.flabot.coremodel.CoremodelFactory;
-import org.isistan.flabot.coremodel.Path;
 import org.isistan.flabot.edit.editormodel.Diagram;
 import org.isistan.flabot.edit.editormodel.EditormodelFactory;
 import org.isistan.flabot.edit.editormodel.FlabotFileModel;
@@ -76,10 +78,10 @@ public class DiagramManager implements IDiagramManager {
 					.getComponentRoles().get(i);
 			ucmDiagrams.createComponentRole(componentRole.getName());
 		}
-		for (int i = 0; i < model.getPaths().size(); i++) {
-			Path path = (Path) model.getPaths().get(i);
-			ucmDiagrams.createPath(path);
-		}
+//		for (int i = 0; i < model.getPaths().size(); i++) {
+//			Path path = (Path) model.getPaths().get(i);
+//			ucmDiagrams.createPath(path);
+//		}
 		ucmDiagrams.organizeLayout();
 		ucms.add(ucmDiagrams);
 		update(false);
@@ -239,6 +241,7 @@ public class DiagramManager implements IDiagramManager {
 			// URI uri = URI.createFileURI(Util.getInstance().getPath() +
 			// "/Drarch/"
 			// + fileName);
+
 			URI flabotFileURI = URI.createFileURI(fileName);
 
 			Resource resource = resourceSet.createResource(flabotFileURI);
