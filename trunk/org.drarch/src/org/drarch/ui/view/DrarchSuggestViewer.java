@@ -35,49 +35,61 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.PlatformUI;
 
 /**
- * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
- *
+ * @author
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ * 
  */
 public class DrarchSuggestViewer {
 
-	private static Logger	     logger	= Logger.getLogger(DrarchSuggestViewer.class.getName());
-	
-	private TreeViewer   treeViewer;
-	private Tree	     tree;
-	private Composite	 baseComposite;
-	private TreeParent	 root	  = new TreeParent("");
-	private TreeParent   currentParentNode = root;
-	private Phase		currentPhase = null;
+	private static Logger logger = Logger.getLogger(DrarchSuggestViewer.class
+			.getName());
+
+	private TreeViewer treeViewer;
+
+	private Tree tree;
+
+	private Composite baseComposite;
+
+	private TreeParent root = new TreeParent("");
+
+	private TreeParent currentParentNode = root;
+
+	private Phase currentPhase = null;
+
 	Action executeStepAction;
+
 	Action cleanSuggestViewAction;
 
 	private Text phaseNameText;
+
 	private Label phaseNameLabel;
+
 	/**
-     * 
-     */
-    public DrarchSuggestViewer(Composite parent, IViewPart view) {
+	 * 
+	 */
+	public DrarchSuggestViewer(Composite parent, IViewPart view) {
 		logger.debug("SuggestViewer: creator");
 		this.addChildControl(parent);
 		this.createActions();
 		this.createMenus(parent, view);
 		currentParentNode.setValue(null);
-    }
-    
-    /**
+	}
+
+	/**
 	 * Return the parent composite
 	 */
 	public Control getControl() {
 		return baseComposite.getParent();
 	}
-	
+
 	private void createMenus(Composite parent, IViewPart view) {
-		IMenuManager menuMgr = view.getViewSite().getActionBars().getMenuManager();
+		IMenuManager menuMgr = view.getViewSite().getActionBars()
+				.getMenuManager();
 
 		MenuManager ucmMenu = new MenuManager("UCM");
 		menuMgr.add(ucmMenu);
 
-		//TODO: leer textos de un .properties
+		// TODO: leer textos de un .properties
 		MenuManager rulesMenu = new MenuManager("Drarch Actions");
 
 		// add actions to menu
@@ -88,16 +100,18 @@ public class DrarchSuggestViewer {
 		menuMgr.add(rulesMenu);
 
 		// add actions to toolbar
-		IToolBarManager toolMgr = view.getViewSite().getActionBars().getToolBarManager();
+		IToolBarManager toolMgr = view.getViewSite().getActionBars()
+				.getToolBarManager();
 		toolMgr.add(executeStepAction);
 		toolMgr.add(cleanSuggestViewAction);
 	}
-	
+
 	private void createActions() {
 		executeStepAction = new ExecuteStepAction("Execute Step", this);
-		cleanSuggestViewAction = new CleanSuggestViewAction("Clean Suggest View", this);
+		cleanSuggestViewAction = new CleanSuggestViewAction(
+				"Clean Suggest View", this);
 	}
-	
+
 	private void addChildControl(Composite parent) {
 		baseComposite = new Composite(parent, SWT.NONE);
 		GridLayout baseCompositeLayout = new GridLayout();
@@ -109,13 +123,12 @@ public class DrarchSuggestViewer {
 			GridLayout phaseCompositeLayout = new GridLayout();
 			phaseCompositeLayout.makeColumnsEqualWidth = true;
 			phaseComposite.setLayout(phaseCompositeLayout);
-			
+
 			phaseNameLabel = new Label(phaseComposite, SWT.NONE);
 			phaseNameText = new Text(phaseComposite, SWT.None);
 			if (null != currentPhase) {
 				updatePhaseFields(currentPhase);
-			} 
-			else {
+			} else {
 				phaseNameText.setVisible(false);
 				phaseNameLabel.setText("Please Select a Phase");
 			}
@@ -127,7 +140,7 @@ public class DrarchSuggestViewer {
 			treeViewerLData.horizontalSpan = 2;
 			treeViewerLData.horizontalAlignment = GridData.FILL;
 			treeViewerLData.verticalAlignment = GridData.FILL;
-			
+
 			tree = new Tree(baseComposite, SWT.BORDER | SWT.V_SCROLL);
 			tree.setLayoutData(treeViewerLData);
 			tree.setLayoutDeferred(true);
@@ -151,7 +164,7 @@ public class DrarchSuggestViewer {
 
 			public void selectionChanged(SelectionChangedEvent event) {
 				IStructuredSelection selection = (IStructuredSelection) event
-				        .getSelection();
+						.getSelection();
 				TreeObject node = (TreeObject) selection.getFirstElement();
 				if (node != null) {
 					node.setSelected(!node.isSelected());
@@ -161,18 +174,18 @@ public class DrarchSuggestViewer {
 			}
 		});
 	}
-	
+
 	/**
 	 * parent node must be currentParentNode
 	 */
 	public void addChild(TreeObject child, TreeParent parent) {
 		parent.addChild(child);
-		if(child.getValue() instanceof IPhase) {
-			currentParentNode = (TreeParent)child;
-			currentPhase = (Phase)child.getValue();
+		if (child.getValue() instanceof IPhase) {
+			currentParentNode = (TreeParent) child;
+			currentPhase = (Phase) child.getValue();
 		}
-		if(child.getValue() instanceof Step) {
-			currentParentNode = (TreeParent)child;
+		if (child.getValue() instanceof Step) {
+			currentParentNode = (TreeParent) child;
 		}
 		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
 			public void run() {
@@ -180,27 +193,40 @@ public class DrarchSuggestViewer {
 			}
 		});
 	}
-	
+
 	public TreeParent getCurrentParent() {
 		return currentParentNode;
 	}
-	
+
 	/**
-     * @param currentParentNode the currentParentNode to set
-     */
-    public void setCurrentParentNode(TreeParent currentParentNode) {
-	    this.currentParentNode = currentParentNode;
-    }
+	 * @param currentParentNode
+	 *            the currentParentNode to set
+	 */
+	public void setCurrentParentNode(TreeParent currentParentNode) {
+		this.currentParentNode = currentParentNode;
+	}
 
 	public void setActivePhase(Phase phase) {
-		currentPhase = phase;
-		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
-			public void run() {
-				updatePhaseFields(currentPhase);
-			}
-		});
+		if (null != phase) {
+			currentPhase = phase;
+			PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+				public void run() {
+					updatePhaseFields(currentPhase);
+				}
+			});
+		} else {
+			PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+				public void run() {
+					phaseNameText.setVisible(false);
+					phaseNameLabel.setText("Please Select a Phase");
+					root = new TreeParent("");
+			    	treeViewer.setInput(root);
+			    	treeViewer.refresh();
+				}
+			});
+		}
 	}
-	
+
 	private void updatePhaseFields(Phase phase) {
 		phaseNameLabel.setText("Current phase: ");
 		phaseNameText.setText(phase.getName());
