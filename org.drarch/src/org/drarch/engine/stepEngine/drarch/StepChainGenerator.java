@@ -8,7 +8,6 @@ import java.util.List;
 import org.drarch.engine.ruleEngine.RuleManager;
 import org.drarch.engine.ruleModel.Rule;
 import org.drarch.engine.stepEngine.IStep;
-import org.drarch.engine.stepEngine.Step;
 
 /**
  * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
@@ -24,19 +23,26 @@ public class StepChainGenerator {
     	if (rulesList.size() == 0) {
     		return null;
     	}
-    	Rule firstRule = rulesList.remove(0);
-    	IStep headStep = new Step(new DrarchRuleStepImplementation(firstRule, ruleManager));
+    	Rule firstRule = rulesList.get(0);
+    	IStep headStep = new DrarchRuleStep(firstRule, ruleManager);
     	IStep cursor = null;
     	IStep before = headStep;
-    	for (Rule rule : rulesList) {
-    		DrarchRuleStepImplementation ruleStep = 
-    			new	DrarchRuleStepImplementation(rule, ruleManager);
-    		cursor = new Step(ruleStep);
+    	for (int i = 1; i < rulesList.size(); i++) {
+			Rule rule = rulesList.get(i);
+    		DrarchRuleStep ruleStep = 
+    			new	DrarchRuleStep(rule, ruleManager);
+    		cursor = ruleStep;
     		before.addNext(cursor);
     		cursor.addBefore(before);
     		
     		before = cursor;
         }
+    	IStep lastStep = new DrarchRuleEmptyStep();
+    	
+    	cursor = lastStep;
+		before.addNext(cursor);
+		cursor.addBefore(before);
+    	
 	    return headStep;
     }
 

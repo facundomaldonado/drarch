@@ -34,5 +34,5 @@ public class DrarchInteractivePhase extends InteractivePhase {
 	public DrarchPhaseHelper getPhaseHelper() {
 		return phaseHelper;
 	}
-    
+	
 }

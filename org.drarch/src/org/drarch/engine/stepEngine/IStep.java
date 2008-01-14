@@ -15,7 +15,6 @@ public interface IStep {
 
 	public void addNext(IStep nextStep);
 	public void addBefore(IStep beforeStep);
-	public void setLastPhaseSuggests(Set<Suggest> lastPhaseSuggests);
 	public Set<Suggest> execute();
 	public IStep next();
 	public IStep before();

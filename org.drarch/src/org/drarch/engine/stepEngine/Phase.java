@@ -3,47 +3,53 @@
  */
 package org.drarch.engine.stepEngine;
 
-
 /**
- * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
- *
+ * @author
+ * @author maldonadofacundo@gmail.com (Facundo Maldonado)
+ * 
  */
 public abstract class Phase implements IPhase {
-	
-	protected StepIterationController stepController;
-	IPhase NEXT_PHASE = null;
-	IFactBase factBase;
-	
-	/**
-     * @param step_action_chain_head
-     */
-    public Phase(IStep chain_head) {
-    	stepController = new StepIterationController(chain_head);
-    }
 
-    public abstract void executePhase();
-    
-    public void addPhase(IPhase nextStep) {
-    	this.NEXT_PHASE = nextStep;
-    }
-    
-	/* (non-Javadoc)
-	 * @see org.design.rules4Java.engine.coreEngine.IStep#getNextStepAction()
-	 */
-	public IStep getNextStep() {
-		return stepController.getNextStep();
+	protected StepIterationController stepController;
+
+	private IPhase NEXT_PHASE = null;
+
+	private IPhase BEFORE_PHASE = null;
+
+	private IFactBase factBase;
+
+	public Phase(IStep chain_head) {
+		stepController = new StepIterationController(chain_head);
 	}
-	
-	public boolean hasNextStep() {
-		return stepController.hasNextStep();
+
+	public abstract void executePhase();
+
+	public void addPhase(IPhase nextPhase) {
+		this.NEXT_PHASE = nextPhase;
 	}
-	
+
 	public IPhase nextPhase() {
 		return NEXT_PHASE;
 	}
+
+	public IPhase beforePhase() {
+		return BEFORE_PHASE;
+	}
+
+	protected IStep getNextStep() {
+		return stepController.getNextStep();
+	}
 	
-	protected void setFactBase(IFactBase factBase) {
-    	this.factBase = factBase;
-    }
+	protected IStep getBeforeStep() {
+		return stepController.getNextStep();
+	}
+
+	protected boolean hasNextStep() {
+		return stepController.hasNextStep();
+	}
+	
+	public void setFactBase(IFactBase factBase) {
+		this.factBase = factBase;		
+	}
 
 }

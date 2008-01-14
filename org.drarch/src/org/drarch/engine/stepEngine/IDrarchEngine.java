@@ -11,5 +11,6 @@ public interface IDrarchEngine {
 
 	public void addNewPhase(IPhase newPhase);
 	public IPhase executePhase();
+	public void resetEngine();
 	
 }

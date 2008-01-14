@@ -12,11 +12,9 @@ public interface IPhase {
 	
 	String getName();
 	
-	IStep getNextStep();
-	boolean hasNextStep();
-	
 	public IPhase nextPhase();
+	public IPhase beforePhase();
 	public void executePhase();
-	public void addPhase(IPhase nextStep);
+	public void addPhase(IPhase nextPhase);
 	
 }
