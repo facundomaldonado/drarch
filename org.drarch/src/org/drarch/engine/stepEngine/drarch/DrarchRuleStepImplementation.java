@@ -41,9 +41,11 @@ public class DrarchRuleStepImplementation implements IStepImplementation {
      * @see org.design.rules4Java.engine.stepEngine.IStepImplementation#execute()
      */
     public Set<Suggest> execute(Rule lastRule) {
-    	ruleManager.loadGraphicModel();
     	Set<FactSet> facts = ruleManager.getFacts(lastRule, lastSuggests);
     	ruleManager.applyFacts(facts);
+    	
+    	ruleManager.loadGraphicModel();
+    	
 		//	runBeforeEvaluatingCurrentRule();-->loadModel
 		Set<Suggest> currentSuggests = ruleManager.evaluateRule(stepRule);
 		return currentSuggests;

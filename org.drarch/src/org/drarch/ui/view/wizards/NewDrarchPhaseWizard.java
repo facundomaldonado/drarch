@@ -24,7 +24,7 @@ import org.eclipse.ui.PlatformUI;
 
 public class NewDrarchPhaseWizard extends Wizard implements INewWizard {
 
-	Logger	                         logger	= Logger.getLogger(NewDrarchPhaseWizard.class.getName());
+	Logger logger = Logger.getLogger(NewDrarchPhaseWizard.class.getName());
 	private NewDrarchPhaseWizardPage	page;
 	private ISelection	             selection;
 	private String phaseName;
@@ -63,8 +63,29 @@ public class NewDrarchPhaseWizard extends Wizard implements INewWizard {
 			selectedProject = (IProject)configFile.getProject();
 		}
 		phase = selectedProject.getFolder(phaseName);
-		createConfigFileForPhase(phase);
+		try {
+			phase.create(true, true, null);
+			String path = phase.getLocation().toString() + "/" + phaseName
+					+ ".drarchPhase";
+			File newFile = new File(path);
+			FileUtils.touch(newFile);
+			phase.refreshLocal(IResource.DEPTH_ONE, null);
+
+			config = new PropertiesConfiguration(newFile);
+		} catch (CoreException e) {
+			logger.error("CoreException while trying to create resources in createPropertiesConfiguration method "
+				+ "in NewDrarchPhaseWizard.java", e);
+			MessageDialog.openError(PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow().getShell(), getWindowTitle(), e.getMessage());
+		} catch (IOException e) {
+			logger.error("IOException while trying to create resources in createPropertiesConfiguration method "
+				+ "in NewDrarchPhaseWizard.java", e);
+		} catch (ConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		createDirectoryStructure(phase);
+		createConfigFileForPhase(phase);
 		return true;
 	}
 
@@ -73,19 +94,12 @@ public class NewDrarchPhaseWizard extends Wizard implements INewWizard {
      */
     private void createConfigFileForPhase(IFolder phase) {
     	try {
-	    	phase.create(true, true, null);
 	    	
-	    	String flabotFileName = page.getFlabotFileName();
+	    	String flabotFilePath = phase.getLocation().toString();
+	    	String flabotFileName = flabotFilePath + "/flabot/" + page.getFlabotFileName();
 	    	String workingSetName = page.getWorkingSetName();
 	    	boolean isInteractive = page.isInteractive();
 	    	
-	    	String path = phase.getLocation().toString() + "/" + phaseName + ".drarchPhase";
-	    	File newFile = new File(path);
-	    	FileUtils.touch(newFile);
-	    	phase.refreshLocal(IResource.DEPTH_ONE, null);
-	    	
-	        config = new PropertiesConfiguration(newFile);
-
 	        config.setProperty("newPhase.projectName", phase.getProject().getName());
 		    config.setProperty("newPhase.name", phaseName);
 		    config.setProperty("newPhase.flabotFileName", flabotFileName);
@@ -96,14 +110,7 @@ public class NewDrarchPhaseWizard extends Wizard implements INewWizard {
         } catch (ConfigurationException e) {
 			logger.error("ConfigurationException while trying to create resources in createPropertiesConfiguration method " + 
 					"in NewDrarchPhaseWizard.java", e);
-		} catch (IOException e) {
-			logger.error("IOException while trying to create resources in createPropertiesConfiguration method " + 
-					"in NewDrarchPhaseWizard.java", e);
-        } catch (CoreException e) {
-        	logger.error("CoreException while trying to create resources in createPropertiesConfiguration method " + 
-					"in NewDrarchPhaseWizard.java", e);
-        	MessageDialog.openError(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), getWindowTitle(),e.getMessage());
-        }	    
+		} 
     }
 
 	/**
@@ -196,6 +203,7 @@ public class NewDrarchPhaseWizard extends Wizard implements INewWizard {
 
 			IFolder flabotFolder = phase.getFolder("flabot");
 			flabotFolder.create(true, false, null);
+			
 
 		} catch (CoreException e) {
 			logger.error("CoreException while trying to create resources in createDirectoryStructure method " + "in NewDrarchPhaseWizard.java", e);
