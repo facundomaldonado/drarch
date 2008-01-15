@@ -1,15 +1,27 @@
 Todo list:
 
+- g2server: [nico]
+  * Dejar corriendo la aplicacion!
+  * Generar el archivo .tracelog
+  * Generar los hechos a partir del tracelog
+
+- JDT Search [pela]
+  * Agregarla como fase
+  
+- BUGs
+  * DiagramManager (hay un TODO: verificar si funciona lo que esta comentado)
+
+- Wizard de creacion de phase:
+  * mostrar cartel al momento de elegir el working set para que solo se puedan elegir archivos .java.
+
 - Archivo de reglas (*.drarch):
   * Verificar las reglas que nos paso Alvaro (una regla por a archivo).
 
 - Drarch Suggest View:
   * Agregar detalles de la fase (interacivo, archivo flabot, etc.).
   * Agregar un mensaje cuando se terminen las reglas.
+  * Mostrar un mensaje si no se selecciono una fase y se intenta ejecutar.
+  * Mostrar un mensaje si no hay reglas en una fase y se intenta ejecutar.
   
 - Archivo flabot:
   * No crear diagramas si no hay cambios
-  * Agragar la opcion de convertir un .flabot a facts (eso ya estaba: SinchronizeWithDrarchAction).
-
-- Wizard de creacion de phase:
-  * mostrar cartel al momento de elegir el working set para que solo se puedan elegir archivos .java.
