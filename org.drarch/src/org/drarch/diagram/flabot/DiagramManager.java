@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.drarch.Activator;
 import org.drarch.diagram.IDiagramManager;
 import org.drarch.diagram.DiagramModel.componentModel.Component;
@@ -18,13 +17,11 @@ import org.drarch.diagram.DiagramModel.ucmModel.ComponentRole;
 import org.drarch.diagram.DiagramModel.ucmModel.UCMModel;
 import org.drarch.diagram.flabot.component.ComponentsDiagram;
 import org.drarch.diagram.flabot.ucm.UCMDiagrams;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.isistan.flabot.coremodel.CoreModel;
@@ -72,24 +69,28 @@ public class DiagramManager implements IDiagramManager {
 	}
 
 	public void createUCMDiagram(UCMModel model) {
-		UCMDiagrams ucmDiagrams = new UCMDiagrams("ucm #" + ucms.size() + 1);
+		int numberOfUCM = ucms.size() + 1;
+		UCMDiagrams ucmDiagrams = new UCMDiagrams("ucm #" + numberOfUCM);
 		for (int i = 0; i < model.getComponentRoles().size(); i++) {
 			ComponentRole componentRole = (ComponentRole) model
 					.getComponentRoles().get(i);
 			ucmDiagrams.createComponentRole(componentRole.getName());
 		}
+		
+		//TODO!!!!!!!
 //		for (int i = 0; i < model.getPaths().size(); i++) {
 //			Path path = (Path) model.getPaths().get(i);
 //			ucmDiagrams.createPath(path);
 //		}
 		ucmDiagrams.organizeLayout();
 		ucms.add(ucmDiagrams);
-		update(false);
+//		update(false);
 	}
 
 	public void createComponentDiagram(ComponentModel model) {
 		currentComponentModel = model;
-		model.setName("component #" + components.size() + 1);
+		int componentNumbers = components.size() + 1;
+		model.setName("component #" + componentNumbers);
 		ComponentsDiagram componentsDiagram = new ComponentsDiagram(model
 				.getName());
 
@@ -209,38 +210,61 @@ public class DiagramManager implements IDiagramManager {
 				flabotFileModel.getOpenDiagrams().add(ucm.getDiagram());
 			}
 			flabotFileModel.setCoreModel(coreModel);
-			save();
+//			save();
+		}
+	}
+	
+	public void update() {
+
+		FlabotMultiPageEditor editorPart = getFlabotEditorPart();
+
+		if (editorPart != null) {
+			flabotFileModel = editorPart.getModel();
+			int currentComponent = components.size();
+			int currentUCM = ucms.size();
+				ComponentsDiagram c = (ComponentsDiagram) components
+						.get(currentComponent - 1);
+				flabotFileModel.getDiagrams().add(c.getDiagram());
+				flabotFileModel.getOpenDiagrams().add(c.getDiagram());
+				editorPart.openDiagram((Diagram) flabotFileModel.getDiagrams()
+						.get(currentComponent - 1));
+
+				UCMDiagrams ucm = (UCMDiagrams) ucms.get(currentUCM - 1);
+				flabotFileModel.getDiagrams().add(ucm.getDiagram());
+				flabotFileModel.getOpenDiagrams().add(ucm.getDiagram());
+				editorPart.openDiagram((Diagram) flabotFileModel.getDiagrams()
+						.get(currentComponent + currentUCM - 1));
+
+		} else {
+			flabotFileModel = EditormodelFactory.eINSTANCE
+					.createFlabotFileModel();
+			for (int i = 0; i < components.size(); i++) {
+				ComponentsDiagram c = (ComponentsDiagram) components.get(i);
+				flabotFileModel.getDiagrams().add(c.getDiagram());
+				flabotFileModel.getOpenDiagrams().add(c.getDiagram());
+			}
+
+			for (int i = 0; i < ucms.size(); i++) {
+				UCMDiagrams ucm = (UCMDiagrams) ucms.get(i);
+				flabotFileModel.getDiagrams().add(ucm.getDiagram());
+				flabotFileModel.getOpenDiagrams().add(ucm.getDiagram());
+			}
+			flabotFileModel.setCoreModel(coreModel);
 		}
 	}
 
 	public CoreModel getCoreModel() {
-		// FlabotMultiPageEditor editorPart = getFlabotEditorPart();
-		// if (flabotFileModel != null) {
-		// return flabotFileModel.getCoreModel();
-		// } else {
-		// if (editorPart != null) {
-		// flabotFileModel = editorPart.getModel();
-		// return flabotFileModel.getCoreModel();
-		// }
-		// }
 		return coreModel;
 	}
 
-	// public CoreModel getCore() {
-	// return getCoreModel();
-	// }
-
 	@SuppressWarnings("unchecked")
-	private void save() {
+	public void save() {
+		update();
 		if (!"".equals(fileName)) {
 			ResourceSet resourceSet = new ResourceSetImpl();
 			resourceSet.getLoadOptions().put(
 					XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 			resourceSet.setURIConverter(new WorkaroundURIConverter());
-
-			// URI uri = URI.createFileURI(Util.getInstance().getPath() +
-			// "/Drarch/"
-			// + fileName);
 
 			URI flabotFileURI = URI.createFileURI(fileName);
 
@@ -251,8 +275,7 @@ public class DiagramManager implements IDiagramManager {
 						XMLResource.OPTION_ENCODING, "ISO-8859-15"));
 			} catch (IOException e) {
 				throw new RuntimeException(
-						"IOException when trying to save model to flabot file",
-						e);
+						"IOException when trying to save model to flabot file",	e);
 			}
 		} else
 			throw new RuntimeException("flabot file name is not setted");

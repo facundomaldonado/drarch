@@ -24,8 +24,12 @@ public class DrarchRuleStep extends Step {
 	public Set<Suggest> execute() {
 		if (null != before()) {
 			((DrarchRuleStep) before()).applyFacts();
+			ruleManager.loadGraphicModel();
 		}
+		
 		stepSuggests = ruleManager.evaluateRule(stepRule);
+		
+		
 
 		return stepSuggests;
 	}
