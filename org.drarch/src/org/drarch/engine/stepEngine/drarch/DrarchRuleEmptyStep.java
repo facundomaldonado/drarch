@@ -16,8 +16,9 @@ public class DrarchRuleEmptyStep extends Step {
 	public Set<Suggest> execute() {
 		if (null != before()) {
 			((DrarchRuleStep) before()).applyFacts();
+			ruleManager.loadGraphicModel();
 		}
-//		ruleManager.loadGraphicModel();
+
 		return null;
 	}
 

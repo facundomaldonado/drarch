@@ -44,7 +44,7 @@ public class KnowledgeBase {
 	 */
 	public void addFact(String predicate, String factBase) {
 		File factBaseFile = factFiles.get(factBase + ".rub");
-		if (null != factBaseFile && !exist(predicate, factBaseFile)) {
+		if (null != factBaseFile) { // && !exist(predicate, factBaseFile)) {
 			FileImageOutputStream fios;
 			try {
 				fios = new FileImageOutputStream(factBaseFile);

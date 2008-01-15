@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 <rules4Java.engine.ruleModel:DrarchFileModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rules4Java.engine.ruleModel="http:///rules4Java/engine/ruleModel.ecore" fileName="rules4bubble.drarch">
   <rules suggestTemplate="Crear un componente ?ClazzName." description="Componentes y clases">
-    <query queryString="
-        class(?Clazz), name(?Clazz, ?ClazzName), 
-        package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),
-        string_append(?PackageName, ?DotClazzName, ?QualifiedName),
-        string_append('.', ?ClazzName, ?DotClazzName)
- 	">
+    <query queryString="         class(?Clazz), name(?Clazz, ?ClazzName),          package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),         string_append(?PackageName, ?DotClazzName, ?QualifiedName),         string_append('.', ?ClazzName, ?DotClazzName)   ">
       <chosenVars varText="?ClazzName"/>
       <chosenVars varText="?QualifiedName"/>
-   </query>
+    </query>
     <factSet>
       <factTemplates factText="component(?ClazzName)."/>
       <factTemplates factText="association(?ClazzName, ?QualifiedName)."/>
     </factSet>
   </rules>
   <rules suggestTemplate="Mapear el metodo ?QualifiedMethodName al componente ?ClazzName." description="Mapeo de metodos">
-    <query queryString="
-    	component(?ClazzName),
-		class(?Clazz), name(?Clazz, ?ClazzName), 
-		package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),
-        name(?Method, ?MethodName), method(?Clazz, ?Method),
-        string_append(?PackageName, ?DotClazzName, ?QualifiedName),
-        string_append('.', ?ClazzName, ?DotClazzName),
-        string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),
-		string_append('.', ?MethodName, ?DotMethodName)
-	">
+    <query queryString="      component(?ClazzName),   class(?Clazz), name(?Clazz, ?ClazzName),    package(?Clazz, ?Package), package(?Package), name(?Package, ?PackageName),         name(?Method, ?MethodName), method(?Clazz, ?Method),         string_append(?PackageName, ?DotClazzName, ?QualifiedName),         string_append('.', ?ClazzName, ?DotClazzName),         string_append(?QualifiedName, ?DotMethodName, ?QualifiedMethodName),   string_append('.', ?MethodName, ?DotMethodName)  ">
       <chosenVars varText="?ClazzName"/>
       <chosenVars varText="?QualifiedName"/>
       <chosenVars varText="?QualifiedMethodName"/>
@@ -36,12 +22,5 @@
       <factTemplates factText="mapping(?QualifiedMethodName, ?QualifiedMethodName)."/>
     </factSet>
   </rules>
-  <rules suggestTemplate="Crear un componente ?PackageName." description="Empty Rule">
-    <query queryString="package(?Package), name(?Package, ?PackageName)">
-      <chosenVars varText="?PackageName"/>
-    </query>
-    <factSet>
-      <factTemplates factText="component(?PackageName)."/>
-    </factSet>
-  </rules>
+  <rules description="null" />
 </rules4Java.engine.ruleModel:DrarchFileModel>
