@@ -4,14 +4,11 @@ Todo list:
   * Verificar las reglas que nos paso Alvaro (una regla por a archivo).
 
 - Drarch Suggest View:
-  * No se ejecuta la ultima regla y la anteultima no crea los hechos seleccionados en el archivo .rub
   * Agregar detalles de la fase (interacivo, archivo flabot, etc.).
-  * Agregar la opcion para limpiar la vista. (Hay un todo en la accion CleanSuggestViewAction)
   * Agregar un mensaje cuando se terminen las reglas.
   
 - Archivo flabot:
-  * No crea el archivo flabot. llamar al DiagramManager dibuja y carga el modelo en el ruleMan
   * Corregir los numeros de los diagramas
 
-- Archivo .rub
-  * Copiar el archivo KnowledgeBase.rub en cada fase!
+- Wizard de creacion de phase:
+  * mostrar cartel al momento de elegir el working set para que solo se puedan elegir archivos .java.
