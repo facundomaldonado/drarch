@@ -37,7 +37,7 @@ public class StepChainGenerator {
     		
     		before = cursor;
         }
-    	IStep lastStep = new DrarchRuleEmptyStep();
+    	IStep lastStep = new DrarchRuleEmptyStep(ruleManager);
     	
     	cursor = lastStep;
 		before.addNext(cursor);

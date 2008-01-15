@@ -36,6 +36,6 @@ public class LoadModelAction {
 	    UCMModel ucmModel = ucmGenerator.getModel();
 	    diagramManager.createUCMDiagram(ucmModel);
 	    
-	    diagramManager.update(true);
+	    diagramManager.save();
 	}
 }

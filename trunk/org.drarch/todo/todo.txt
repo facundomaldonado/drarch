@@ -8,7 +8,8 @@ Todo list:
   * Agregar un mensaje cuando se terminen las reglas.
   
 - Archivo flabot:
-  * Corregir los numeros de los diagramas
+  * No crear diagramas si no hay cambios
+  * Agragar la opcion de convertir un .flabot a facts (eso ya estaba: SinchronizeWithDrarchAction).
 
 - Wizard de creacion de phase:
   * mostrar cartel al momento de elegir el working set para que solo se puedan elegir archivos .java.
