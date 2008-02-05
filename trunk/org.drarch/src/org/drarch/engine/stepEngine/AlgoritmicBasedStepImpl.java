@@ -10,7 +10,7 @@ import org.drarch.engine.ruleEngine.Suggest;
 
 /**
  * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
- *
+ * @deprecated
  */
 public abstract class AlgoritmicBasedStepImpl implements IStepImplementation {
 

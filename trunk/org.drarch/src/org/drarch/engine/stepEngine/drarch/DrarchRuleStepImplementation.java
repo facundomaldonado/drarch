@@ -13,7 +13,7 @@ import org.drarch.engine.stepEngine.IStepImplementation;
 
 /**
  * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
- *
+ * @deprecated
  */
 public class DrarchRuleStepImplementation implements IStepImplementation {
 

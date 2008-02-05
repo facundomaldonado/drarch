@@ -108,15 +108,20 @@ public class NewDrarchPhaseWizard extends Wizard implements INewWizard {
 			String flabotFileName = flabotFilePath + "/flabot/"
 					+ page.getFlabotFileName();
 			String workingSetName = page.getWorkingSetName();
-			boolean isInteractive = page.isInteractive();
 
 			config.setProperty("newPhase.projectName", phase.getProject()
 					.getName());
 			config.setProperty("newPhase.name", phaseName);
 			config.setProperty("newPhase.flabotFileName", flabotFileName);
 			config.setProperty("newPhase.workingSetName", workingSetName);
-			config.setProperty("newPhase.isInteractive", String
-					.valueOf(isInteractive));
+
+			String type = page.type;
+			config.setProperty("newPhase.phaseType", type);
+			if (NewDrarchPhaseWizardPage.JDT.equals(page.algorithmicType)) {
+				config.setProperty("newPhase.phaseAlgorithmicType",
+						page.algorithmicType);
+			}
+
 			config.save();
 
 		} catch (ConfigurationException e) {
