@@ -54,7 +54,7 @@ public class DrarchSuggestViewer {
 
 	private TreeParent currentParentNode = root;
 
-	private Phase currentPhase = null;
+	private IPhase currentPhase = null;
 
 	Action executeStepAction;
 
@@ -206,7 +206,7 @@ public class DrarchSuggestViewer {
 		this.currentParentNode = currentParentNode;
 	}
 
-	public void setActivePhase(Phase phase) {
+	public void setActivePhase(IPhase phase) {
 		if (null != phase) {
 			currentPhase = phase;
 			PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
@@ -227,7 +227,7 @@ public class DrarchSuggestViewer {
 		}
 	}
 
-	private void updatePhaseFields(Phase phase) {
+	private void updatePhaseFields(IPhase phase) {
 		phaseNameLabel.setText("Current phase: ");
 		phaseNameText.setText(phase.getName());
 		phaseNameText.setVisible(true);

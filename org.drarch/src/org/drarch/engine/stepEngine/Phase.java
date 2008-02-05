@@ -16,8 +16,6 @@ public abstract class Phase implements IPhase {
 
 	private IPhase BEFORE_PHASE = null;
 
-	private IFactBase factBase;
-
 	public Phase(IStep chain_head) {
 		stepController = new StepIterationController(chain_head);
 	}
@@ -48,8 +46,4 @@ public abstract class Phase implements IPhase {
 		return stepController.hasNextStep();
 	}
 	
-	public void setFactBase(IFactBase factBase) {
-		this.factBase = factBase;		
-	}
-
 }

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.drarch.engine.stepEngine;
 
 /**
@@ -16,9 +13,6 @@ public class NonInteractivePhase extends Phase {
 	    super(chain_head);
     }
 
-	/* (non-Javadoc)
-     * @see org.design.rules4Java.engine.coreEngine.IStep#executeStep()
-     */
     public void executePhase() {
     	while (hasNextStep())
     		getNextStep().execute();

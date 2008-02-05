@@ -30,13 +30,25 @@ import org.eclipse.ui.dialogs.IWorkingSetSelectionDialog;
 
 public class NewDrarchPhaseWizardPage extends WizardPage {
 
+	public static final String JDT = "JDT";
+
 	private Text phaseName;
+
 	private Text flabotFileName;
+
 	protected String workingSetName = null;
-	protected boolean interactive = true;
-	
-	private final int TRUE = 0;
-	private final int FALSE = 1;
+
+	// protected boolean interactive = true;
+
+	String type;
+
+	String algorithmicType;
+
+	public static String INTERACTIVE = "Interactive";
+
+	public static String NON_INTERACTIVE = "Non interactive";
+
+	public static String ALGORITHMIC = "Algorithmic";
 
 	/**
 	 * Constructor for SampleNewWizardPage.
@@ -94,20 +106,21 @@ public class NewDrarchPhaseWizardPage extends WizardPage {
 			select.setLayout(layout1);
 			layout1.numColumns = 2;
 			layout1.verticalSpacing = 9;
-			
-			
+
 			final Text workingSetText = new Text(select, SWT.BORDER);
 			Button button = new Button(select, SWT.NULL);
 			button.setText("select");
 			button.addSelectionListener(new SelectionListener() {
 				public void widgetSelected(SelectionEvent e) {
 					try {
-		                doSelectWorkingSet();
-		                workingSetText.setText(workingSetName);
-	                } catch (Exception e1) {
-	                	MessageDialog.openError(getShell(), "Drarch New Phase Wizard", e1.getMessage());
-	                }
+						doSelectWorkingSet();
+						workingSetText.setText(workingSetName);
+					} catch (Exception e1) {
+						MessageDialog.openError(getShell(),
+								"Drarch New Phase Wizard", e1.getMessage());
+					}
 				}
+
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			});
@@ -118,41 +131,87 @@ public class NewDrarchPhaseWizardPage extends WizardPage {
 		}
 		{
 			label = new Label(container, SWT.NULL);
-			label.setText("Interactive Phase:");
+			label.setText("Phase Type: ");
 			final Combo combo = new Combo(container, SWT.NULL);
-			combo.add("true");
-			combo.add("false");
-			combo.select(TRUE);
+			combo.add("Interactive");
+			combo.add("Non Interactive");
+			combo.add("Algorithmic");
+			combo.select(2);
+			final Composite algorithmicPanel = new Composite(container,
+					SWT.NULL);
 			combo.addSelectionListener(new SelectionListener() {
-			
 				public void widgetSelected(SelectionEvent e) {
 					int i = combo.getSelectionIndex();
-					interactive = (i == TRUE) ? true : false;
+					switch (i) {
+					case 0:
+						type = INTERACTIVE;
+						break;
+					case 1:
+						type = NON_INTERACTIVE;
+						break;
+					case 2:
+						type = ALGORITHMIC;
+						 algorithmicPanel.setVisible(true);
+						break;
+					default:
+						type = INTERACTIVE;
+						break;
+					}
 				}
-			
+
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
-			
+			});
+			algorithmicPanel.setVisible(false);
+			GridLayout layout2 = new GridLayout();
+			algorithmicPanel.setLayout(layout2);
+			layout2.numColumns = 2;
+			label = new Label(algorithmicPanel, SWT.NULL);
+			label.setText("Algorithm: ");
+			final Combo algorithmicCombo = new Combo(algorithmicPanel, SWT.NULL);
+			algorithmicCombo.add(JDT);
+			algorithmicCombo.select(0);
+			algorithmicCombo.addSelectionListener(new SelectionListener() {
+
+				public void widgetSelected(SelectionEvent e) {
+					int i = algorithmicCombo.getSelectionIndex();
+					switch (i) {
+					case 0:
+						algorithmicType = JDT;
+						break;
+					default:
+						algorithmicType = JDT;
+						break;
+					}
+				}
+
+				public void widgetDefaultSelected(SelectionEvent e) {
+					algorithmicType = JDT;
+				}
 			});
 		}
 		dialogChanged();
 		setControl(container);
 	}
-	
+
 	private void doSelectWorkingSet() throws Exception {
-        IWorkingSetManager workingSetManager = Activator.getDefault().
-							getWorkbench().getWorkingSetManager();
-		IWorkingSetSelectionDialog iws = workingSetManager.createWorkingSetSelectionDialog(
-					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), false);
+		IWorkingSetManager workingSetManager = Activator.getDefault()
+				.getWorkbench().getWorkingSetManager();
+		IWorkingSetSelectionDialog iws = workingSetManager
+				.createWorkingSetSelectionDialog(PlatformUI.getWorkbench()
+						.getActiveWorkbenchWindow().getShell(), false);
 		IWorkingSet workingSet;
-	    if (iws.open() == org.eclipse.jface.window.Window.OK && iws.getSelection() != null)
-	    	workingSet = iws.getSelection()[0];
-	    else throw new Exception("No workingset was selected.");
-	    //TODO reveer esta linea si se registra o no dependiendo de si crea la instancia del
-	    //engine ahora o despues
-	    workingSetName = workingSet.getName();
-	    updateStatus(null);
-    }
+		if (iws.open() == org.eclipse.jface.window.Window.OK
+				&& iws.getSelection() != null)
+			workingSet = iws.getSelection()[0];
+		else
+			throw new Exception("No workingset was selected.");
+		// TODO reveer esta linea si se registra o no dependiendo de si crea la
+		// instancia del
+		// engine ahora o despues
+		workingSetName = workingSet.getName();
+		updateStatus(null);
+	}
 
 	/**
 	 * Ensures that both text fields are set.
@@ -192,16 +251,13 @@ public class NewDrarchPhaseWizardPage extends WizardPage {
 	public String getPhaseName() {
 		return phaseName.getText();
 	}
-	
+
 	public String getFlabotFileName() {
 		return flabotFileName.getText();
 	}
-	
+
 	public String getWorkingSetName() {
 		return workingSetName;
 	}
-	
-	public boolean isInteractive() {
-		return interactive;
-	}
+
 }

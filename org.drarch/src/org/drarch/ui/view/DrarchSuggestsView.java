@@ -4,6 +4,7 @@
 package org.drarch.ui.view;
 
 import org.apache.log4j.Logger;
+import org.drarch.engine.stepEngine.IPhase;
 import org.drarch.engine.stepEngine.Phase;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
@@ -35,7 +36,7 @@ public class DrarchSuggestsView extends ViewPart  {
 		logger.info("DrarchSuggestView dispose");
 	}
 
-	public void setActivePhase(Phase phase) {
+	public void setActivePhase(IPhase phase) {
 		viewer.setActivePhase(phase);
 	}
 

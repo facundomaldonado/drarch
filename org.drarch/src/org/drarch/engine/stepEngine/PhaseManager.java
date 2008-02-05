@@ -12,10 +12,13 @@ public class PhaseManager implements IPhaseManager {
 	IPhase PHASE_CHAIN_CURSOR;
 
 	IPhase PHASE_CHAIN_HEAD;
+	
+	IPhase PHASE_CHAIN_LAST;
 
 	public PhaseManager() {
-		this.PHASE_CHAIN_HEAD = null;
-		this.PHASE_CHAIN_CURSOR = PHASE_CHAIN_HEAD;
+		PHASE_CHAIN_HEAD = null;
+		PHASE_CHAIN_CURSOR = null;
+		PHASE_CHAIN_LAST = null; 
 	}
 
 	/*
@@ -42,9 +45,10 @@ public class PhaseManager implements IPhaseManager {
 		if (null == PHASE_CHAIN_HEAD) {
 			PHASE_CHAIN_HEAD = newPhase;
 			PHASE_CHAIN_CURSOR = PHASE_CHAIN_HEAD;
+			PHASE_CHAIN_LAST = PHASE_CHAIN_CURSOR;
 		} else {
-			PHASE_CHAIN_CURSOR.addPhase(newPhase);
-			PHASE_CHAIN_CURSOR = PHASE_CHAIN_CURSOR.nextPhase();
+			PHASE_CHAIN_LAST.addPhase(newPhase);
+			PHASE_CHAIN_LAST = PHASE_CHAIN_LAST.nextPhase();
 		}
 
 	}
