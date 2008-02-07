@@ -49,6 +49,7 @@ public class PhaseManager implements IPhaseManager {
 		} else {
 			PHASE_CHAIN_LAST.addPhase(newPhase);
 			PHASE_CHAIN_LAST = PHASE_CHAIN_LAST.nextPhase();
+			PHASE_CHAIN_CURSOR = PHASE_CHAIN_LAST;
 		}
 
 	}
