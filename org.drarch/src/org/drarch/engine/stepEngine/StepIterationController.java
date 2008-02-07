@@ -22,6 +22,9 @@ public class StepIterationController {
 	}
 
 	public boolean hasNextStep() {
+		if(STEP_CHAIN_CURSOR == null) {
+			return false;
+		}
 		return STEP_CHAIN_CURSOR.next() != null;
 	}
 
