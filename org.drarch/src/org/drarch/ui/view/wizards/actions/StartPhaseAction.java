@@ -15,16 +15,15 @@ import org.drarch.diagram.flabot.DiagramManager;
 import org.drarch.engine.DrarchEngine;
 import org.drarch.engine.parser.RulesFileParser;
 import org.drarch.engine.ruleModel.Rule;
-import org.drarch.engine.stepEngine.AlgorithmicPhase;
 import org.drarch.engine.stepEngine.IPhase;
-import org.drarch.engine.stepEngine.Phase;
+import org.drarch.engine.stepEngine.NonInteractivePhase;
 import org.drarch.engine.stepEngine.drarch.DrarchAlgorithmicPhase;
 import org.drarch.engine.stepEngine.drarch.DrarchAlgorithmicPhaseHelper;
 import org.drarch.engine.stepEngine.drarch.DrarchInteractivePhase;
+import org.drarch.engine.stepEngine.drarch.DrarchNonInteractivePhase;
 import org.drarch.engine.stepEngine.drarch.DrarchPhaseHelper;
 import org.drarch.engine.stepEngine.drarch.JdtSearchAlgorithm;
 import org.drarch.ui.view.DrarchSuggestsView;
-import org.drarch.ui.view.wizards.NewDrarchPhaseWizard;
 import org.drarch.ui.view.wizards.NewDrarchPhaseWizardPage;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -105,7 +104,10 @@ public class StartPhaseAction implements IObjectActionDelegate {
 				phase = new DrarchInteractivePhase(phaseHelper);
 			} else if (phaseType
 					.equals(NewDrarchPhaseWizardPage.NON_INTERACTIVE)) {
-				// phase = new NonInteractivePhase();
+				DrarchPhaseHelper phaseHelper = new DrarchPhaseHelper(
+						phaseName, flabotFileName, listOfRules, factFiles,
+						workingSet);
+				 phase = new DrarchNonInteractivePhase(phaseHelper);
 			} else {// es algoritmica
 				DrarchAlgorithmicPhaseHelper phaseHelper = new DrarchAlgorithmicPhaseHelper(
 						phaseName, flabotFileName, new JdtSearchAlgorithm(
