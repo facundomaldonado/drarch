@@ -118,6 +118,7 @@ public class LogFacts {
 			}
 		}
 		
+		
 		for (String fact : factsList) {
 			knowledgeBase.addFact(fact, phase.getName());
 		}

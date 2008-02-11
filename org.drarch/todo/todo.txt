@@ -1,16 +1,5 @@
 Todo list:
 
-- g2server: [nico]
-  * Dejar corriendo la aplicacion!
-  * Generar el archivo .tracelog
-  * Generar los hechos a partir del tracelog
-
-- JDT Search [pela]
-  * Agregarla como fase
-  
-- BUGs
-  * DiagramManager (hay un TODO: verificar si funciona lo que esta comentado)
-
 - Wizard de creacion de phase:
   * mostrar cartel al momento de elegir el working set para que solo se puedan elegir archivos .java.
 

@@ -29,12 +29,14 @@ public class DrarchEngine implements IDrarchEngine {
 	}
 
 	public IPhase executePhase() {
-		currentPhase = phaseManager.executeNextPhase();
+		currentPhase = phaseManager.getCurrentPhase();
+		phaseManager.executePhase();
+		phaseManager.nextPhase();
 		return currentPhase;
 	}
 
 	public IPhase getCurrentPhase() {
-		return currentPhase;
+		return phaseManager.getCurrentPhase();
 	}
 
 	public void resetEngine() {
