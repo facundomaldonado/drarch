@@ -1,24 +1,18 @@
-/**
- * 
- */
 package org.drarch.engine.stepEngine.drarch;
 
-import org.drarch.engine.stepEngine.InteractivePhase;
+import org.drarch.engine.stepEngine.NonInteractivePhase;
 import org.drarch.engine.stepEngine.Step;
 
-/**
- * @author @author maldonadofacundo@gmail.com (Facundo Maldonado)
- */
-public class DrarchInteractivePhase extends InteractivePhase {
-	
-    private DrarchPhaseHelper phaseHelper;
+public class DrarchNonInteractivePhase extends NonInteractivePhase {
+
+	private DrarchPhaseHelper phaseHelper;
 	
 	/**
      * @param chain_head
      */
-    public DrarchInteractivePhase(DrarchPhaseHelper newPhaseHelper) {
+    public DrarchNonInteractivePhase(DrarchPhaseHelper newPhaseHelper) {
 	    super(newPhaseHelper.generateStepChain());
-	    this.phaseHelper = newPhaseHelper;
+	    phaseHelper = newPhaseHelper;
     }
 
     @Override
