@@ -2,7 +2,7 @@ package org.drarch.engine.jdt;
 
 import org.apache.log4j.Logger;
 import org.drarch.engine.DrarchEngine;
-import org.drarch.engine.stepEngine.drarch.DrarchInteractivePhase;
+import org.drarch.engine.stepEngine.drarch.DrarchAlgorithmicPhase;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
@@ -49,9 +49,10 @@ public class MethodInvocationVisitor extends ASTVisitor {
 					+ fullClassName + "." + methodName.getFullyQualifiedName()
 					+ ").";
 			
-			DrarchInteractivePhase phase = (DrarchInteractivePhase) 
+			logger.debug("Adding: " + fact);
+			DrarchAlgorithmicPhase phase = (DrarchAlgorithmicPhase) 
 					DrarchEngine.INSTANCE.getCurrentPhase();
-			phase.getPhaseHelper().getKnowledgebase().addFact(fact, phase.getName());
+			phase.getHelper().getKnowledgebase().addFact(fact, phase.getHelper().getPhaseName());
 
 			// Add the parameters into a new fact.
 			addArguments(node, fact);
@@ -95,9 +96,10 @@ public class MethodInvocationVisitor extends ASTVisitor {
 			}
 			String newFact = fact.substring(0, fact.indexOf(").")) + ", "
 					+ argument + ").";
-			DrarchInteractivePhase phase = (DrarchInteractivePhase) 
+			logger.debug("Adding: " + newFact);
+			DrarchAlgorithmicPhase phase = (DrarchAlgorithmicPhase) 
 				DrarchEngine.INSTANCE.getCurrentPhase();
-			phase.getPhaseHelper().getKnowledgebase().addFact(newFact, phase.getName());
+			phase.getHelper().getKnowledgebase().addFact(fact, phase.getName());
 
 		}
 	}

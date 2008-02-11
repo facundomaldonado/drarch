@@ -54,12 +54,10 @@ public class KnowledgeBase {
 				fios.write(utf8Bytes);
 				fios.close();
 			} catch (FileNotFoundException e) {
-				logger
-						.info(" FileNotFoundException in exist method in KnowledgeBase class");
+				logger.info(" FileNotFoundException in exist method in KnowledgeBase class");
 				throw new RuntimeException();
 			} catch (IOException e) {
-				logger
-						.info(" IOException in addFact method in KnowledgeBase class");
+				logger.info(" IOException in addFact method in KnowledgeBase class");
 				throw new RuntimeException();
 			}
 		}

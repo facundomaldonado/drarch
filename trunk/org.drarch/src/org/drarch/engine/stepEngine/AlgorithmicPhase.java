@@ -10,7 +10,6 @@ public class AlgorithmicPhase implements IPhase {
 	
 	public AlgorithmicPhase(IAlgorithm anAlgorithm) {
 		algorithm = anAlgorithm;
-		
 	}
 
 	public void executePhase() {

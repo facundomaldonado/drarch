@@ -1,7 +1,5 @@
 package org.drarch.engine.jdt;
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -28,11 +26,11 @@ public class JdtInformation {
 	 * @param workingSet
 	 * @return
 	 */
-	public static List<String> generateFacts(IWorkingSet workingSet) {
+	public static void generateFacts(IWorkingSet workingSet) {
 		
 	    // Create search pattern.
 	    SearchPattern pattern = SearchPattern.createPattern(
-	    		"*vent*", IJavaSearchConstants.METHOD, IJavaSearchConstants.REFERENCES, 
+	    		"*event*", IJavaSearchConstants.METHOD, IJavaSearchConstants.REFERENCES, 
 	    		SearchPattern.R_PATTERN_MATCH);
 
 	    // Create search scope.
@@ -61,6 +59,5 @@ public class JdtInformation {
 		} catch (CoreException e) {
 			logger.error("Fail the JDT search", e);
 		}
-		return null;
 	}
 }

@@ -26,14 +26,30 @@ public class PhaseManager implements IPhaseManager {
 	 * 
 	 * @see org.design.rules4Java.engine.coreEngine.IStepManager#executeNextStep()
 	 */
-	public IPhase executeNextPhase() {
+//	public IPhase executeNextPhase() {
+//		if (null != PHASE_CHAIN_CURSOR) {
+//			IPhase current = PHASE_CHAIN_CURSOR;
+//			PHASE_CHAIN_CURSOR = PHASE_CHAIN_CURSOR.nextPhase();
+//			current.executePhase();
+//			return current;
+//		}
+//		return null;
+//	}
+	
+	public void nextPhase() {
 		if (null != PHASE_CHAIN_CURSOR) {
-			IPhase current = PHASE_CHAIN_CURSOR;
 			PHASE_CHAIN_CURSOR = PHASE_CHAIN_CURSOR.nextPhase();
-			current.executePhase();
-			return current;
 		}
-		return null;
+	}
+	
+	public void executePhase() {
+		if (PHASE_CHAIN_CURSOR != null) {
+			PHASE_CHAIN_CURSOR.executePhase();
+		}
+	}
+
+	public IPhase getCurrentPhase() {
+		return PHASE_CHAIN_CURSOR;
 	}
 
 	/*

@@ -8,6 +8,11 @@ public class DrarchAlgorithmicPhase extends AlgorithmicPhase {
 	
 	public DrarchAlgorithmicPhase(DrarchAlgorithmicPhaseHelper aHelper) {
 		super(aHelper.getAlgorithm());
+		helper = aHelper;
+	}
+	
+	public DrarchAlgorithmicPhaseHelper getHelper() {
+		return helper;
 	}
 
 }

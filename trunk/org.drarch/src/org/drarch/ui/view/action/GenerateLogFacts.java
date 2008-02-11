@@ -53,6 +53,7 @@ public class GenerateLogFacts implements IObjectActionDelegate {
 		}
         TraceLog loadedTracelog = (TraceLog) resource.getContents().get(0);
 
+        
 		DrarchInteractivePhase phase = (DrarchInteractivePhase) 
 			DrarchEngine.INSTANCE.getCurrentPhase();
 
