@@ -1,0 +1,905 @@
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Architecture Recovery Method
+\end_layout
+
+\begin_layout Author
+Facundo Maldonado, Nicolas Frontini, Alvaro Soria*
+\newline
+
+\family typewriter
+{frontini, maldonado, asoria}@exa.unicen.edu.ar
+\end_layout
+
+\begin_layout Standard
+ISISTAN Research Institute, Faculty of Sciences, UNICEN University 
+\newline
+Campus
+ Universitario, (B7001BBO) Tandil, Bs.
+ As., Argentina 
+\newline
+*Also CONICET
+\end_layout
+
+\begin_layout Abstract
+Architecture reconstruction is the process where the “as-built” architecture
+ of an implemented system is obtained from the existing legacy system.
+ This is done through a detailed analysis of the system using tool support.
+ The tools extract information about the system and aid in building and
+ aggregating successive levels of abstraction.
+ If the reconstruction is successful, the end result is an architectural
+ representation of the system that aids in reasoning about the system.
+ In some cases, it may not be possible to generate a useful representation
+ due to the system.
+\end_layout
+
+\begin_layout Abstract
+Architecture reconstruction generates an architectural representation that
+ can be used in several ways.
+ One of the main uses is for documenting the existing architecture.
+ If no documentation exists or it is out of date, the recovered architectural
+ representation can be used as a basis for redocumenting the architecture.
+ The recovered “as-built” architecture of the system can be used to check
+ conformance against an “as-designed” architecture.
+ The architectural representation can also be used as a starting point for
+ reengineering the system to a new desired architecture.
+ Finally, the representation can be used to help identify components for
+ reuse, or to help establish a software product line.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Rick2003]...tiene problemas!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+This paper presents a semi-automatic method, called 
+\emph on
+DRArch
+\emph default
+ (Discover and Recover Architecture), that guides a user in the reconstruction
+ of software architectures based on an iterative and interactive process.
+ The output of the approach are Components and Use Case Maps diagrams.
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+One of main advantage of 
+\emph on
+DRArch
+\emph default
+ is that the representation of the architecture model is based on a prolog
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The software architecture of a program or computing system is the structure
+ or structures of the system, which comprise software elements, the externally
+ visible properties of those elements, and the relationships among them.
+ 
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Architecture reconstruction is the process where the “as-built” architecture
+ of an implemented system is obtained from the existing legacy system.
+ This is done through a detailed analysis of the system using tool support.
+ The tools extract information about the system and aid in building and
+ aggregating successive levels of abstraction.
+ If the reconstruction is successful, the end result is an architectural
+ representation of the system that aids in reasoning about the system.
+ In some cases, it may not be possible to generate a useful representation
+ due to the system.
+\end_layout
+
+\begin_layout Standard
+Architecture reconstruction generates an architectural representation that
+ can be used in several ways.
+ One of the main uses is for documenting the existing architecture.
+ If no documentation exists or it is out of date, the recovered architectural
+ representation can be used as a basis for redocumenting the architecture.
+ The recovered “as-built” architecture of the system can be used to check
+ conformance against an “as-designed” architecture.
+ The architectural representation can also be used as a starting point for
+ reengineering the system to a new desired architecture.
+ Finally, the representation can be used to help identify components for
+ reuse, or to help establish a software product line.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Rick2003]...tiene problemas!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Along this line, developers usually depart from an architectural description
+ of the system and progressively refine this description until deriving
+ a concrete implementation.
+ During this activity, they also specify the relationships between the architect
+ural model 
+\emph on
+as documented
+\emph default
+ and the architectural model 
+\emph on
+as implemented
+\emph default
+ 
+\begin_inset LatexCommand cite
+key "SAIP,CLEMENTS02"
+
+\end_inset
+
+, in order to ensure some degree of consistency between the models.
+ Several notations and profiles are nowadays available for this purpose
+ 
+\begin_inset LatexCommand cite
+key "CLEMENTS02"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The rest of the article is organized into 4 sections.
+ Section 2 provides some core concepts regarding architectural documentation
+ and use-case maps, and also explains the goals of the 
+\emph on
+FLABot
+\emph default
+ project.
+ Section 3 presents the details of the 
+\emph on
+DRArch
+\emph default
+ approach through a motivating example, and describes the implementation
+ of the tool.
+ Section 4 discusses some related work.
+ Finally, section 5 summarizes the conclusions of this work and comments
+ on future lines of research.
+\end_layout
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Standard
+The architecture of a software system defines that system in terms of computatio
+nal components and interactions among those components.
+ Components are such things as clients and servers, databases, filters and
+ layers in a hierarchical system.
+ Interactions among components at this level of design can be simple and
+ familiar, such as procedure call and shared variable access.
+ But they can also be complex and semantically rich, such as client-server
+ protocols, database-accessing protocols, asynchronous event multicast,
+ and piped stream.
+ [Software Architecture, Garlan..]
+\end_layout
+
+\begin_layout Standard
+A software architecture can be seen as a model of software organization,
+ which serves to capture the most relevant design decisions regarding quality-at
+tribute issues.
+ Examples of architectural decisions include: the selection of a publisher-subsc
+riber style, the allocation of responsibilities to a virtual-machine style,
+ the choice of security checkpoints in a three-tier style, or the refactoring
+ of some services accessed by many modules into a single module with an
+ abstract interface, among others.
+ Given the importance of these decisions for both stakeholders and developers,
+ the documentation of software architectures is a central concern
+\begin_inset LatexCommand cite
+key "CLEMENTS02"
+
+\end_inset
+
+.
+ An architectural description gives basically a high-level decomposition
+ of the system in terms of: design elements, coarse-grained pieces of functional
+ity, plus interactions and constraints among them.
+ 
+\end_layout
+
+\begin_layout Standard
+In practice, architectural models are described with box-and-line notations
+ through a number of different views 
+\begin_inset LatexCommand cite
+key "CLEMENTS02"
+
+\end_inset
+
+, such as modules, logic, processes, deployment, etc.
+ In order to understand how the system works, these views should cover two
+ aspects of the architecture: structure and behavior.
+ On one side, the structure tells us from which components and connectors
+ the systems are built, which patterns guide their composition in larger
+ fragments, and what kind of constraints they should follow.
+ On the other side, the behavior serves us to establish the correspondence
+ between the system requirements and the responsibilities assigned to the
+ different design elements.
+ In particular, a useful view for specifying structure and behavior are
+ 
+\emph on
+Use-case Maps (UCMs)
+\emph default
+ 
+\begin_inset LatexCommand cite
+key "BUHR95"
+
+\end_inset
+
+, which is the main architectural notation used by our approach.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Poner algo de los diagramas de componentes y aclarar que los diagramas son
+ los que se reconstruyen.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Aca deberia ir algo de Programacion Logica y no tanto de UCM!!!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The basic concept behind 
+\emph on
+UCMs
+\emph default
+ is to model functional scenarios by means of causal paths that cut across
+ organizational structures.
+ The core of UCMs has four elements, namely: responsibilities, paths, components
+, and couplings among paths.
+ The 
+\emph on
+responsibilities
+\emph default
+ express the functions each component is responsible for.
+ The 
+\emph on
+paths
+\emph default
+ trace the progression of causes and effects among responsibilities.
+ The 
+\emph on
+components
+\emph default
+ act as containers for responsibilities.
+ The 
+\emph on
+couplings
+\emph default
+ serve to connect paths together and form larger patterns (e.g., fork and
+ join nodes, preconditions, stubs, etc.).
+ 
+\end_layout
+
+\begin_layout Standard
+Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-UCM-View-DRArch"
+
+\end_inset
+
+ shows an example of 
+\emph on
+UCMs
+\emph default
+, where we have a simple 
+\emph on
+Pipe And Filter scenario
+\emph default
+ for a traductor language system.
+\end_layout
+
+\begin_layout Subsection
+The FLABot project
+\end_layout
+
+\begin_layout Standard
+Our interest in UCMs comes actually from a joint research project with Intel
+ Corp., called 
+\emph on
+FLABot
+\emph default
+
+\begin_inset LatexCommand cite
+key "SORIA04"
+
+\end_inset
+
+, about tool support for fault-localization and debugging.
+ As part of this project, we have developed a tool approach that is able
+ to recovery the architectural model of an application and....
+ Here, we decided to use Components and UCMs for the specification of architectu
+ral models, because the notation fits well with the idea of recovery any
+ architecture.
+\end_layout
+
+\begin_layout Standard
+Besides, the issue of architectural drift is also relevant to the project.
+ In order to do an effective fault localization, 
+\emph on
+FLABot
+\emph default
+ requires the input application to be implemented according to its architectural
+ design.
+ This is accomplished by linking each responsibility of the architectural
+ UCMs with a collection of Java classes and methods.
+ Although we can initially ensure that the UCMs are somehow in agreement
+ with the implementation, maintaining traceability between the architecture
+ and the code is not straightforward.
+ In fact, when testing the fault-localization tool with different applications,
+ we faced various architectural documentation situations.
+ Specifically, as the faults detected by the tool were repaired by the programme
+rs, they hardly updated the architecture to reflect their modifications.
+ Many times, these programmers had little knowledge of the global design,
+ so they could not rearrange the UCMs and their mappings to fixed code.
+\end_layout
+
+\begin_layout Standard
+Motivated by these experiences, we started to develop a complementary tool
+ able to help developers to recover architectural UCMs and Java code in-sync
+ while using 
+\emph on
+FLABot
+\emph default
+.
+ A more general view of this issue led to the 
+\emph on
+DRArch
+\emph default
+ approach, which is the topic of the following section.
+\end_layout
+
+\begin_layout Subsection
+The JQuery project
+\end_layout
+
+\begin_layout Section
+DRArch Approach
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+The objective of 
+\emph on
+DRArch
+\emph default
+ is to find.....
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The article follows a repetitive and interactive process of the continuous
+ architectural model specialization.
+ This model is represented by a knowledge base, in the shape of prolog facts,
+ representing an architectural model snapshot.
+\end_layout
+
+\begin_layout Standard
+In logic programming, the conditions that best satisfy the solutions are
+ specified, the solutions are deducted based on the conditions and the main
+ concern is which problem should be solved first.
+ The problem is described by specifying the features of it's possible solutions.
+\end_layout
+
+\begin_layout Standard
+The phases represent the repetitive processes, and they are in charge of
+ the architectural model update.
+ Each phase receives as an input a recovered model snapshot already done
+ by previous phases and delivers an output based on the transformations
+ applied on the input during the phase execution.
+ Thus the phase appears as a reusable as well as adjustable component, independe
+nt of the architectural input model.
+\end_layout
+
+\begin_layout Standard
+Each phase execution is also an interactive process.
+ Every one of them contains a group of rules set to determine the transformation
+s suffered by the model.
+ These transformations will allow the architect to relate architectural
+ elements(such as components, the interaction between them, etc.) to different
+ coding structures (eg.:types, methods, etc.).
+ Each rule has three parts: a "query" (prolog), which consults the knowledge
+ base; a "suggestion", built on each one of the results of the query; and
+ a series of facts (based on the acceptance of the suggestion) that turn
+ into the knowledge base transformations.
+ Thus, the recovery process will be task that will suggest a set of architectura
+l transformations to the architect, who will analyze them and decide which
+ of them is the most suitable for the system whose architecture is being
+ rebuilt.
+ After each phase, a graphic representation of the architectural model is
+ done, showing two main aspects of the system architecture: structure and
+ behavior.
+\end_layout
+
+\begin_layout Standard
+The starting point in this process is the execution of the "information
+ collecting" phase.
+ Static information is recovered from the source code.
+ Dynamic one is obtained through the system analysis in execution, as a
+ complement to the static analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+Right after the information collecting phase come the specialization ones
+ which modify the architectural model in a repetitive and increasingly way
+ raising the level of abstraction and detail in each phase.
+ 
+\end_layout
+
+\begin_layout Standard
+Once the static information as well as the dynamic one is extracted, the
+ tool displays a suggested set of modifications to be applied to the architectur
+al model description.
+ These modifications symbolize changes to different parts of the existing
+ system representation, involving structural modifications as well as scenario
+ behavior ones.
+ Using the suggestions as a starting point, the architect decides which
+ of these modifications is the best way to represent the architectural concepts
+ to be built and which suggestions are to be discarded for not adding relevant
+ information to the analysis.
+ In addition, the architect is able to refine the specification (represented
+ by the different diagrams) by increasing the detail level, incorporating
+ modifications or elements capable of bringing a higher level of detail
+ in several phases that use the transformed model for the actual phase.
+\end_layout
+
+\begin_layout Standard
+This view based on phases (bottom up? or button up?) allows the partition
+ of the analysis space (the system to be rebuilt) in smaller units to increase
+ the size of the mentioned space in several posterior phases, as well as
+ to build the results of the previous executed phases.
+\end_layout
+
+\begin_layout Standard
+The "definition of a phase by aspect of the system" is one way to increase
+ the analysis specialization.
+ The phases could be reused for every tested aspect.
+ In each new scenario the level of detail brought by the phase increases,
+ uncovering relations that maybe, in previous tests (different scenarios)
+ were not discovered.
+ 
+\end_layout
+
+\begin_layout Subsection
+A Example
+\end_layout
+
+\begin_layout Standard
+In one of our case studies, the Pipe and Filter style is implemented with
+ an observer observable pattern.
+ Assuming that documentation not exist, the source code is written in Java
+ and the architect has knowledge about logic programing, the 
+\emph on
+DRArch
+\emph default
+ tool works as follows.
+ First, the architect must execute the 
+\emph on
+gather information
+\emph default
+ phase.
+ In this phase, the static (source code) and the dynamic (generated log)
+ information are translated [into prolog facts witch are added to the knowledge
+ base] to add new facts to the knowledge base.
+ 
+\end_layout
+
+\begin_layout Standard
+Ones completed, the specialization phases are ready to been executed.
+ Those phases execute rules that suggests transformations to the current
+ architectural model that by accepted or refused each suggestion.
+ In one of the executed phase, we use a set of rules provided by 
+\emph on
+DRArch
+\emph default
+ to detect several pipe and filter implementations.
+ (The most relevant rules used to recover the architecture of the system
+ are:
+\end_layout
+
+\begin_layout Itemize
+Filter detection: Identify filters as a components.
+ A description of this rule is shown in Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Filter-Detection-Rule-DRArch"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Pipe detection: Identify pipes as a components.
+\end_layout
+
+\begin_layout Itemize
+Mapping of Filter responsibilities: Materialize methods to responsibilities
+ in the filter components.
+\end_layout
+
+\begin_layout Itemize
+Mapping of Pipe responsibilities: Materialize methods to responsibilities
+ in the pipe components.
+\end_layout
+
+\begin_layout Itemize
+Relationship between pipes and filters: Define a relationship between pipes
+ and filters.
+\end_layout
+
+\begin_layout Itemize
+Filter executed paths: Creates paths using the dynamic information.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/fiterDetectionRule.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Filter-Detection-Rule-DRArch"
+
+\end_inset
+
+Filter Detection Rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-Component-View-DRArch"
+
+\end_inset
+
+ show the component diagram and the Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-UCM-View-DRArch"
+
+\end_inset
+
+ show the UCMs diagram generated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/pipeAndFilterComponent.jpg
+	lyxscale 70
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Pipe-And-Filter-Component-View-DRArch"
+
+\end_inset
+
+Component Diagram of Pipe and Filter architectural style
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/pipeAndFilterUCM.jpg
+	lyxscale 70
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Pipe-And-Filter-UCM-View-DRArch"
+
+\end_inset
+
+UCM Diagram of Pipe and Filter architectural style
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At this point, we should remark that the solutions proposed by 
+\emph on
+DRArch
+\emph default
+ match correctly with the expected architecture views.
+ In general, the variations in the solutions depends on the use cases used
+ to generate the dynamic information (log trace) and the rule set used to
+ generates the diagrams.
+ Also, the architect is responsible for choosing the solution that is most
+ appropriate for the actual design context.
+\end_layout
+
+\begin_layout Standard
+UCMs are a quite abstract notation, and thus, it gives a palette of options
+ for solution to the same conceptual use-case.
+ Likewise, as causal paths do not imply a strict flow of execution, a single
+ execution trace might correspond to many different paths.
+ This is why the solutions generated by 
+\emph on
+DRArch
+\emph default
+ are considered correct.
+\end_layout
+
+\begin_layout Subsection
+Implementation Issues
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+DRArch
+\emph default
+ prototype has been implemented as an Eclipse plug-in, allowing the tool
+ to be integrated within the development process.
+ 
+\end_layout
+
+\begin_layout Section
+Related Work
+\begin_inset LatexCommand label
+name "sub:Related-Work"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The problem of 
+\emph on
+no-architecture ...
+ 
+\end_layout
+
+\begin_layout Section
+Conclusions and Future Work
+\end_layout
+
+\begin_layout Standard
+In this paper, we have introduced a tool approach to deal with the ....
+ The contributions of 
+\emph on
+DRArch
+\emph default
+ to...
+\end_layout
+
+\begin_layout Standard
+Currently, the 
+\emph on
+DRArch
+\emph default
+ tool is still at the level of prototype, which has been mainly used within
+ the 
+\emph on
+FLABot
+\emph default
+ project.
+ Thus, there are some assumptions and limitations.
+ First, ....
+ Second, we rely on that the ...
+\end_layout
+
+\begin_layout Standard
+The main drawback of the approach is the gap between a given UCM and the
+ many possible implementations for the paths of responsibilities.
+ So far, the tool tries to reconstruct the paths of responsibilities using
+ a bi-directional analysis, which combines reverse information coming from
+ the execution logs with forward information coming from the existent UCM
+ mappings.
+ Even though, this processing is far from being automatic, because it requires
+ considerable semantic knowledge that is actually supplied by the architect.
+ The architect interacts with the tool at two points: to provide the right
+ execution logs and to select the update scripts if necessary.
+ Besides, we cannot identify yet new responsibilities introduced from the
+ code or changes in the grouping of components.
+ We are planning to incorporate here more intelligent strategies, based
+ for example on machine learning and case-based reasoning techniques.
+\end_layout
+
+\begin_layout Standard
+There are other interesting lines of work that can improve the performance
+ of 
+\emph on
+DRArch
+\emph default
+.
+ It is possible to integrate 
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand bibtex
+options "plain"
+bibfiles "bibliography"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
