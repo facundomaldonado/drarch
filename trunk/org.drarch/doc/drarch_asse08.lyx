@@ -39,7 +39,7 @@
 \begin_body
 
 \begin_layout Title
-Architecture Recovery Method
+The Arto of Software Architecture Reconstruction
 \end_layout
 
 \begin_layout Author
@@ -183,6 +183,19 @@ status open
 status open
 
 \begin_layout Standard
+Poner mas sobre el enfoque
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
 Along this line, developers usually depart from an architectural description
  of the system and progressively refine this description until deriving
  a concrete implementation.
@@ -250,7 +263,16 @@ nal components and interactions among those components.
  But they can also be complex and semantically rich, such as client-server
  protocols, database-accessing protocols, asynchronous event multicast,
  and piped stream.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
  [Software Architecture, Garlan..]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -450,6 +472,44 @@ DRArch
 The JQuery project
 \end_layout
 
+\begin_layout Standard
+JQuery is a flexible, query-based source code browser, developed as an Eclipse
+ plug-in.
+ After selecting a java working set of interest, a JQuery user can define
+ his or her own top-level queries (or "browsers") on-the-fly by formulating
+ logic queries and running them against his/her source code.
+ Alternatively, the user can choose from a variety of pre-written browsers,
+ and use as-is or modify to suit their specific needs.
+ Individual elements in the tree can then be queried individually in the
+ same fasion.
+ The user can specify how query results are organized in the hierarchical
+ tree viewer using a simple variables editor interface.
+\end_layout
+
+\begin_layout Standard
+The JQuery query language is a logic (Prolog-like) query language based
+ on TyRuBa.
+ TyRuBa is a logic programming language implemented in Java.
+ The JQuery query language is defined as a set of TyRuBa predicates which
+ operate on facts generated from the Eclipse JDT's abstract syntax tree.
+ 
+\end_layout
+
+\begin_layout Standard
+TyRuBa is a logic-meta-programming system which was designed to be used
+ for generating Java code.
+ It was implemented as part of my Ph.D.
+ work as a system to experiment with the idea of type-oriented logic meta
+ programming.
+ TyRuBa's name derives from this origin, it is an acronym for 'Type Rule
+ Base'.
+ However, the system has no specific built-in features which make it focus
+ on types.
+ Rather it is a general, simple logic programming language with a few peculiarit
+ies to facilitate the manipulation of Java code for the purpose of code
+ generation.
+\end_layout
+
 \begin_layout Section
 DRArch Approach
 \end_layout
@@ -566,7 +626,7 @@ The "definition of a phase by aspect of the system" is one way to increase
 \end_layout
 
 \begin_layout Subsection
-A Example
+The Example
 \end_layout
 
 \begin_layout Standard
@@ -829,10 +889,90 @@ name "sub:Related-Work"
 \end_layout
 
 \begin_layout Standard
-The problem of 
-\emph on
-no-architecture ...
- 
+In this section, we summarize those approachs that deal with software architectu
+re reconstruction and discuss the process elements covered by them.
+\end_layout
+
+\begin_layout Standard
+Exising architecture recontruction techniques can be categorized as manual,
+ automatic or semi automatic.
+ Manual approaches typically use simple, general-purpose tools and manual
+ inspection of the system.
+ While they use recosntruction specific tools such as SHRiMp, Rigi, PBS
+ and Bauhaus to help visualize intermediate results [pela_0], there is no
+ automated support for the process (for example [pela_1]).
+\end_layout
+
+\begin_layout Standard
+Semi-automatic approaches help the reconstructor create architectural views
+ in an interactive or formal way.
+ Differences among the approaches concern the expressiveness of the language
+ used for defining the transformations, support for calculating transitive
+ closures of relations, degree of repeatability of the process, amount of
+ interaction required by the user, and the types of architectural views
+ that can be generated.
+\end_layout
+
+\begin_layout Standard
+Relational algebra approaches allow the reconstructor to define a repeatable
+ set of the transformations for creating a particular architectural view.
+ In the work of Holt [pela_2] relational algebra is used for creating a
+ hierarchical module view of the source code (by grouping source files into
+ modules and calculating the module dependencies).
+ The reconstructor must manually prepare the containment relations, but
+ new relationships can also be inferred using algebra propositions.
+ Postma [pela_3] uses relational partition algebra (RPA) [pela_4] to calculate
+ module dependencies from dependencies extracted from code.
+ RPA is also used to check the conformance of an extracted target view with
+ a hypothetical view (established in the design phase).
+ The process is repeatable and is part of the build process.
+ Riva has proposed a method for inferring the architectural information
+ based on relational algebra and Prolog [pela_5].
+ Mens [pela_6] use logic meta programming (Prolog) for mapping implementation
+ artifacts to high level design and for checking conformance of architectural
+ rules.
+ More light-weight examples are the Reflexion Model [pela_7], Tcl scripts
+ for defining graph transformations in Rigi, SQL queries for defining grouping
+ rules (Dali).
+\end_layout
+
+\begin_layout Standard
+Many reverse engineering approaches are based on an extract–abstract–present
+ cycle, in which sources are analyzed in order to populate a repository,
+ which is queried in order to yield abstract system representations, which
+ are then presented in a suitable interactive form to the software engineer.
+ Tilley [pela_8] describe the extract–abstract–present approach in more
+ detail, referring to the steps as data gathering, knowledge inference,
+ and information presentation.
+ A number of reverse engineering activities focus on software architecture
+ reconstruction.
+ Kazman [pela_9] propose an iterative reconstruction process where the historica
+l design decisions are discovered by empirically formulating/validating
+ architectural hypotheses.
+ They also point out the importance of modeling not only system information
+ but also a description of the underlying semantics [pela_9].
+ Their approach is currently extended to include the reorganization of recovered
+ assets into software product lines [pela_10].
+ Finnigan [pela_11] propose the Software Bookshelf: a toolkit to generate
+ architecture diagrams from source text.
+ Ding and Medvidovic describe the Focus approach, which contrasts a logical
+ (idealized, high-level) architecture with a physical (as implemented, as
+ recovered) one [pela_12].
+ By applying refinement to the logical and abstraction to the physical architect
+ure, the two are brought together incrementally.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+All the previous works differs from DRArch in that they ....NI IDEA
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
