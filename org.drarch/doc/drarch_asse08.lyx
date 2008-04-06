@@ -40,7 +40,7 @@
 \begin_body
 
 \begin_layout Title
-The Arto of Software Architecture Reconstruction
+The Art of Software Architecture Reconstruction
 \end_layout
 
 \begin_layout Author
@@ -453,15 +453,8 @@ ref!!!
  TyRuBa is a logic programming language implemented in Java.
  The JQuery query language is defined as a set of TyRuBa predicates which
  operate on facts generated from the Eclipse JDT's abstract syntax tree.
- 
-\end_layout
-
-\begin_layout Standard
-TyRuBa is a logic-meta-programming system which was designed to be used
+ TyRuBa is a logic-meta-programming system which was designed to be used
  for generating Java code.
- It was implemented as part of my Ph.D.
- work as a system to experiment with the idea of type-oriented logic meta
- programming.
  Rather it is a general, simple logic programming language with a few peculiarit
 ies to facilitate the manipulation of Java code for the purpose of code
  generation.
@@ -866,6 +859,23 @@ UCMs are a quite abstract notation, and thus, it gives a palette of options
 DRArch
 \emph default
  are considered correct.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Disponer de informacion del sistema que se quiere reconstruir puede ser
+ util en el proceso de reconstruccion.
+ Por ejemplo, si el arquitecto sabe que un componente Filtro es todo aquel
+ que implemente la interface MyFilterInterface, es muy simple agragar una
+ regla que nos permita detectar todos los Filtros que posee el sistema.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
