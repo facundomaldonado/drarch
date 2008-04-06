@@ -2,7 +2,7 @@
 \lyxformat 276
 \begin_document
 \begin_header
-\textclass article
+\textclass llncs
 \language english
 \inputencoding auto
 \font_roman default
@@ -15,6 +15,7 @@
 \font_tt_scale 100
 \graphics default
 \paperfontsize default
+\spacing single
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -50,7 +51,7 @@ Facundo Maldonado, Nicolas Frontini, Alvaro Soria*
 {frontini, maldonado, asoria}@exa.unicen.edu.ar
 \end_layout
 
-\begin_layout Standard
+\begin_layout Institute
 ISISTAN Research Institute, Faculty of Sciences, UNICEN University 
 \newline
 Campus
@@ -192,6 +193,10 @@ Poner mas sobre el enfoque
 \end_layout
 
 \begin_layout Standard
+...
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -315,10 +320,13 @@ key "CLEMENTS02"
  On the other side, the behavior serves us to establish the correspondence
  between the system requirements and the responsibilities assigned to the
  different design elements.
- In particular, a useful view for specifying structure and behavior are
- 
+ In particular, useful views for specifying structure and behavior are 
 \emph on
-Use-case Maps (UCMs)
+Components 
+\emph default
+and
+\emph on
+ Use-case Maps (UCMs)
 \emph default
  
 \begin_inset LatexCommand cite
@@ -326,34 +334,7 @@ key "BUHR95"
 
 \end_inset
 
-, which is the main architectural notation used by our approach.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Poner algo de los diagramas de componentes y aclarar que los diagramas son
- los que se reconstruyen.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Aca deberia ir algo de Programacion Logica y no tanto de UCM!!!
-\end_layout
-
-\end_inset
-
-
+, which are the main architectural notation used by our approach.
 \end_layout
 
 \begin_layout Standard
@@ -386,11 +367,7 @@ couplings
 \emph default
  serve to connect paths together and form larger patterns (e.g., fork and
  join nodes, preconditions, stubs, etc.).
- 
-\end_layout
-
-\begin_layout Standard
-Figure\InsetSpace ~
+ Figure\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "cap:Pipe-And-Filter-UCM-View-DRArch"
@@ -401,11 +378,24 @@ reference "cap:Pipe-And-Filter-UCM-View-DRArch"
 \emph on
 UCMs
 \emph default
+ and the Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-Component-View-DRArch"
+
+\end_inset
+
+ show an example of 
+\emph on
+Components
+\emph default
 , where we have a simple 
 \emph on
 Pipe And Filter scenario
 \emph default
  for a traductor language system.
+ This diagrams are the views that our approach recontruct to describe the
+ software architecture.
 \end_layout
 
 \begin_layout Subsection
@@ -413,8 +403,7 @@ The FLABot project
 \end_layout
 
 \begin_layout Standard
-Our interest in UCMs comes actually from a joint research project with Intel
- Corp., called 
+
 \emph on
 FLABot
 \emph default
@@ -424,48 +413,15 @@ key "SORIA04"
 
 \end_inset
 
-, about tool support for fault-localization and debugging.
- As part of this project, we have developed a tool approach that is able
- to recovery the architectural model of an application and....
- Here, we decided to use Components and UCMs for the specification of architectu
-ral models, because the notation fits well with the idea of recovery any
- architecture.
-\end_layout
-
-\begin_layout Standard
-Besides, the issue of architectural drift is also relevant to the project.
- In order to do an effective fault localization, 
-\emph on
-FLABot
-\emph default
- requires the input application to be implemented according to its architectural
- design.
- This is accomplished by linking each responsibility of the architectural
- UCMs with a collection of Java classes and methods.
- Although we can initially ensure that the UCMs are somehow in agreement
- with the implementation, maintaining traceability between the architecture
- and the code is not straightforward.
- In fact, when testing the fault-localization tool with different applications,
- we faced various architectural documentation situations.
- Specifically, as the faults detected by the tool were repaired by the programme
-rs, they hardly updated the architecture to reflect their modifications.
- Many times, these programmers had little knowledge of the global design,
- so they could not rearrange the UCMs and their mappings to fixed code.
-\end_layout
-
-\begin_layout Standard
-Motivated by these experiences, we started to develop a complementary tool
- able to help developers to recover architectural UCMs and Java code in-sync
- while using 
-\emph on
-FLABot
-\emph default
-.
- A more general view of this issue led to the 
-\emph on
-DRArch
-\emph default
- approach, which is the topic of the following section.
+ is a research project with Intel Corp., about tool support for fault-localizatio
+n and debugging.
+ As a complenetary part of this project, we have developed a tool approach
+ that is able to recovery the architectural model of an application.
+ Here, we decided to use Components and UCMs diagrams for the specification
+ of architectural models, because the notation fits well with the idea of
+ recovery any architecture and have the flexibility to modify those diagrams.
+ Alos, we decided to use the instrumentation (logger) tool for gather the
+ dynamic information from the implemented system.
 \end_layout
 
 \begin_layout Subsection
@@ -473,21 +429,26 @@ The JQuery project
 \end_layout
 
 \begin_layout Standard
-JQuery is a flexible, query-based source code browser, developed as an Eclipse
- plug-in.
- After selecting a java working set of interest, a JQuery user can define
- his or her own top-level queries (or "browsers") on-the-fly by formulating
- logic queries and running them against his/her source code.
- Alternatively, the user can choose from a variety of pre-written browsers,
- and use as-is or modify to suit their specific needs.
- Individual elements in the tree can then be queried individually in the
- same fasion.
- The user can specify how query results are organized in the hierarchical
- tree viewer using a simple variables editor interface.
+Logic programming describe relations, defined by means of clauses.
+ In logic programming you supply a database of facts and rules; you can
+ then perform queries on the database.
+ 
 \end_layout
 
 \begin_layout Standard
-The JQuery query language is a logic (Prolog-like) query language based
+JQuery
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ref!!!
+\end_layout
+
+\end_inset
+
+ is a flexible, query-based source code browser, developed as an Eclipse
+ plug-in.
+ The JQuery query language is a logic (Prolog-like) query language based
  on TyRuBa.
  TyRuBa is a logic programming language implemented in Java.
  The JQuery query language is defined as a set of TyRuBa predicates which
@@ -501,10 +462,6 @@ TyRuBa is a logic-meta-programming system which was designed to be used
  It was implemented as part of my Ph.D.
  work as a system to experiment with the idea of type-oriented logic meta
  programming.
- TyRuBa's name derives from this origin, it is an acronym for 'Type Rule
- Base'.
- However, the system has no specific built-in features which make it focus
- on types.
  Rather it is a general, simple logic programming language with a few peculiarit
 ies to facilitate the manipulation of Java code for the purpose of code
  generation.
@@ -532,7 +489,7 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-The article follows a repetitive and interactive process of the continuous
+The approach follows an iterative and interactive process of the continuous
  architectural model specialization.
  This model is represented by a knowledge base, in the shape of prolog facts,
  representing an architectural model snapshot.
@@ -546,13 +503,60 @@ In logic programming, the conditions that best satisfy the solutions are
 \end_layout
 
 \begin_layout Standard
-The phases represent the repetitive processes, and they are in charge of
+The phases represent the iterative processes, and they are in charge of
  the architectural model update.
  Each phase receives as an input a recovered model snapshot already done
  by previous phases and delivers an output based on the transformations
  applied on the input during the phase execution.
  Thus the phase appears as a reusable as well as adjustable component, independe
 nt of the architectural input model.
+ The Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Drarch-process"
+
+\end_inset
+
+ show how the process works.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/drarch.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Drarch-process"
+
+\end_inset
+
+Drarch Process
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -560,7 +564,7 @@ Each phase execution is also an interactive process.
  Every one of them contains a group of rules set to determine the transformation
 s suffered by the model.
  These transformations will allow the architect to relate architectural
- elements(such as components, the interaction between them, etc.) to different
+ elements (such as components, the interaction between them, etc.) to different
  coding structures (eg.:types, methods, etc.).
  Each rule has three parts: a "query" (prolog), which consults the knowledge
  base; a "suggestion", built on each one of the results of the query; and
@@ -609,10 +613,10 @@ al model description.
 \end_layout
 
 \begin_layout Standard
-This view based on phases (bottom up? or button up?) allows the partition
- of the analysis space (the system to be rebuilt) in smaller units to increase
- the size of the mentioned space in several posterior phases, as well as
- to build the results of the previous executed phases.
+This view based on phases allows the partition of the analysis space (the
+ system to be discovered) in smaller units to increase the size of the mentioned
+ space in several posterior phases, as well as to build the results of the
+ previous executed phases.
 \end_layout
 
 \begin_layout Standard
@@ -810,7 +814,7 @@ status open
 \begin_inset Graphics
 	filename img/pipeAndFilterUCM.jpg
 	lyxscale 70
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -874,8 +878,7 @@ The
 DRArch
 \emph default
  prototype has been implemented as an Eclipse plug-in, allowing the tool
- to be integrated within the development process.
- 
+ to be integrated within the development process....
 \end_layout
 
 \begin_layout Section
@@ -889,8 +892,8 @@ name "sub:Related-Work"
 \end_layout
 
 \begin_layout Standard
-In this section, we summarize those approachs that deal with software architectu
-re reconstruction and discuss the process elements covered by them.
+In this section, we summarize those approaches that deal with software architect
+ure reconstruction and discuss the process elements covered by them.
 \end_layout
 
 \begin_layout Standard
@@ -980,13 +983,18 @@ Conclusions and Future Work
 \end_layout
 
 \begin_layout Standard
-In this paper, we have introduced a tool approach to deal with the ....
+In this paper, we have introduced a tool approach to deal with implemented
+ systems that no documentation exists or it is out of date.
  The contributions of 
 \emph on
 DRArch
 \emph default
  to...
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
 Currently, the 
@@ -1029,6 +1037,11 @@ DRArch
 \emph default
 .
  It is possible to integrate 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
