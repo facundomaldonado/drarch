@@ -5,7 +5,7 @@
 \textclass llncs
 \language english
 \inputencoding auto
-\font_roman ae
+\font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
@@ -18,8 +18,8 @@
 \spacing single
 \papersize default
 \use_geometry false
-\use_amsmath 2
-\use_esint 0
+\use_amsmath 1
+\use_esint 1
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -34,12 +34,13 @@
 \tracking_changes false
 \output_changes false
 \author "" 
+\author "" 
 \end_header
 
 \begin_body
 
 \begin_layout Title
-Recovery of Architecture Method
+The Art of Software Architecture Reconstruction
 \end_layout
 
 \begin_layout Author
@@ -61,25 +62,67 @@ Campus
 \end_layout
 
 \begin_layout Abstract
-A key aspect for the success of architecture-centric development is the
- traceability of design documentation.
- This means that the developers should always be aware of the relationships
- between the architectural model as documented and the derived implementation.
- However, these two artifacts are likely to diverge from each other, due
- to new requirements or maintenance tasks.
- In the case of complex systems, the provision of tool support to deal with
- these matters becomes really necessary.
- Along this line, we present a tool approach called 
+Architecture reconstruction is the process where the “as-built” architecture
+ of an implemented system is obtained from the existing legacy system.
+ This is done through a detailed analysis of the system using tool support.
+ The tools extract information about the system and aid in building and
+ aggregating successive levels of abstraction.
+ If the reconstruction is successful, the end result is an architectural
+ representation of the system that aids in reasoning about the system.
+ In some cases, it may not be possible to generate a useful representation
+ due to the system.
+\end_layout
+
+\begin_layout Abstract
+Architecture reconstruction generates an architectural representation that
+ can be used in several ways.
+ One of the main uses is for documenting the existing architecture.
+ If no documentation exists or it is out of date, the recovered architectural
+ representation can be used as a basis for redocumenting the architecture.
+ The recovered “as-built” architecture of the system can be used to check
+ conformance against an “as-designed” architecture.
+ The architectural representation can also be used as a starting point for
+ reengineering the system to a new desired architecture.
+ Finally, the representation can be used to help identify components for
+ reuse, or to help establish a software product line.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Rick2003]...tiene problemas!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+This paper presents a semi-automatic method, called 
 \emph on
 DRArch
 \emph default
- that can assist the developers to recovery the architecture of a system.
- The output of the approach are Components and Use Case Maps diagramas.
- The main advantage of 
+ (Discover and Recover Architecture), that guides a user in the reconstruction
+ of software architectures based on an iterative and interactive process.
+ The output of the approach are Components and Use Case Maps diagrams.
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+One of main advantage of 
 \emph on
 DRArch
 \emph default
- is that ...
+ is that the representation of the architecture model is based on a prolog
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -87,22 +130,132 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Architecture-centric development is being widely adopted as a software engineeri
-ng practice.
- More and more, researchers and practitioners recognize that software architectu
-res are very convenient models to do software design 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Suppose we have a system that already exists, but we do not know its architectur
+e.
+ Perhaps the architecture was never recorded by the original developers.
+ Perhaps it was recorded but the documentation has been lost.
+ Or perhaps it was recorded but the documentation is no longer synchronized
+ with the system after a series of changes.
+ How do we maintain such a system? How do we manage its evolution to maintain
+ the quality attributes that its architecture (whatever it may be) has provided
+ for us? This paper is about a way to answer these questions using architecture
+ reconstruction, in which the "as-built" architecture of an implemented
+ system is obtained from an existing system.
+ This is done through a detailed analysis of the system using tool support.
+ The tools extract information about the system and aid in building and
+ aggregating successive levels of abstraction.
+ If the tool are successful, the end result is an architectural representation
+ that aids in reasoning about the system.
+ In some cases, it may not be possible to generate a useful representation.
+ This is sometimes the case with legacy systems that have no coherent architectu
+ral design to recover (although that in itself is useful to know).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+La arquitectura de software cada dia juega un papel principal ya que permite
+ a los diferentes stakeholders mostrar como los objetivos planteados son
+ alcanzados durante todo el proceso de desarrollo.
+ alvaro says: Esto produce que la documentacion arquitectónica sea una artefacto
+ critico alvaro says: Sin embargo, esta situation no es comun en la mayoria
+ de los proyecto de desarrollo.
+ Ni siquiera en aquellos desarrollos centrados en la arquitectura mantienen
+ una descripcion arquitectónica actualizada alvaro says: recibiste? Fronti
+ says: si alvaro says: ese deberia ser el enfoque..
+ Fronti says: bien alvaro says: Por lo tanto es importante proveer mecanismos
+ que permitan obtener un snapshot actualizado entre la documentacion arquitectón
+ica y su correspondiente implementacion alvaro says: Despues de eso pueden
+ poner que la mayoria de los enfoques encaran el problema desde el análisis
+ estático de código alvaro says: y que hay partes del sistema que no pueden
+ ser descubiertas..
+ alvaro says: eso en la intro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The software architecture of a program or computing system is the structure
+ or structures of the system, which comprise software elements, the externally
+ visible properties of those elements, and the relationships among them.
+ 
 \begin_inset LatexCommand cite
 key "SAIP"
 
 \end_inset
 
-, because these models allow developers manage the bridge between requirements
- and implementation at a high level of abstraction.
- The value of having an architecture model resides on that it documents
- the principal design concerns early in the development process, embodies
- the overall structure of the system being built, and therefore, impacts
- the final quality of the products.
+
+\end_layout
+
+\begin_layout Standard
+Architecture reconstruction is the process where the “as-built” architecture
+ of an implemented system is obtained from the existing legacy system.
+ This is done through a detailed analysis of the system using tool support.
+ The tools extract information about the system and aid in building and
+ aggregating successive levels of abstraction.
+ If the reconstruction is successful, the end result is an architectural
+ representation of the system that aids in reasoning about the system.
+ In some cases, it may not be possible to generate a useful representation
+ due to the system.
+\end_layout
+
+\begin_layout Standard
+Architecture reconstruction generates an architectural representation that
+ can be used in several ways.
+ One of the main uses is for documenting the existing architecture.
+ If no documentation exists or it is out of date, the recovered architectural
+ representation can be used as a basis for redocumenting the architecture.
+ The recovered “as-built” architecture of the system can be used to check
+ conformance against an “as-designed” architecture.
+ The architectural representation can also be used as a starting point for
+ reengineering the system to a new desired architecture.
+ Finally, the representation can be used to help identify components for
+ reuse, or to help establish a software product line.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Rick2003]...tiene problemas!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Poner mas sobre el enfoque
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -142,126 +295,6 @@ key "CLEMENTS02"
 \end_layout
 
 \begin_layout Standard
-Unfortunately, due to the natural evolution of the system, the architecture
- and implementation are likely to lose consistency.
- Once the architectural design is ready, all the efforts typically focus
- on the implementation, and this progressively makes design documentation
- to get out-of-date.
- For instance, new requirements may cause a re-design of the architecture,
- with consequent changes in some parts of the implementation; and conversely,
- maintenance tasks may produce changes in the code that should be accommodated
- by the architecture.
- In these cases, the relationships of components (at the architectural level)
- with classes and methods (at the implementation level) no longer hold,
- and the developers have to manually restore consistency.
- This phenomenon is known as 
-\emph on
-architecture-implementation drift
-\emph default
- 
-\begin_inset LatexCommand cite
-key "PERRY92"
-
-\end_inset
-
-, and if not properly managed, it may actually spoils the benefits of architectu
-re-centric development.
- So far, the topic has been tackled through some approaches based on reverse
- engineering, with uneven results.
- The lack of more suitable tool support to relate architectural specifications
- with code is still a problem for many software projects.
-\end_layout
-
-\begin_layout Standard
-In this work, we propose a tool approach called 
-\emph on
-DRArch
-\emph default
- to aid developers to recovery the architecture....This documentation only covers
- the behavior of components and some system structure.
- The 
-\emph on
-DRArch
-\emph default
- approach has been developed in the context of the 
-\emph on
-FLABot
-\emph default
- project
-\begin_inset Foot
-status open
-
-\begin_layout Standard
-\begin_inset LatexCommand htmlurl
-name "FLABot Homepage"
-target "http://www.exa.unicen.edu.ar/isistan/flabot/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- In particular, we assume that architectural documentation doesn't exists....The
- architectural models are represented with Use-case Maps (UCMs), a practical
- notation to specify both components and flows of responsibilities.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-These responsibilities are materialized by specific classes and methods
- in the code.
- When something changes in the code and breaks what is prescribed by the
- architecture, 
-\emph on
-ArchSynch
-\emph default
- is able to trace these changes back to the architectural specification.
- To do so, we have to instrument the application code and log information
- about its execution.
- For its analysis, 
-\emph on
-ArchSynch
-\emph default
- compares these logs with the architectural specification, using number
- of 
-\begin_inset Quotes eld
-\end_inset
-
-re-construction filters
-\begin_inset Quotes erd
-\end_inset
-
-, and then detects which UCMs are inconsistent with the code.
- Moreover, 
-\emph on
-ArchSynch
-\emph default
- can provide a list of possible repairs for the UCMs, so that the developer
- can execute them to update the architecture if necessary.
- This way, the developer is always aware of the 
-\begin_inset Quotes eld
-\end_inset
-
-state of the traceability
-\begin_inset Quotes erd
-\end_inset
-
- between the architectural specification and the code.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The rest of the article is organized into 4 sections.
  Section 2 provides some core concepts regarding architectural documentation
  and use-case maps, and also explains the goals of the 
@@ -281,7 +314,32 @@ DRArch
 \end_layout
 
 \begin_layout Section
-Background
+The DRArch Approach
+\end_layout
+
+\begin_layout Standard
+Given the importance of architectural design decisions for both stakeholders
+ and developers, the documentation of software architectures is a central
+ concern.
+ An architectural description gives basically a high-level decomposition
+ of the system in terms of: design elements, coarse-grained pieces of functional
+ity, plus interactions and constraints among them.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+The software architecture defines the components and interactions among
+ them.
+ Components are such things as clients and servers, databases, filters and
+ layers in a hierarchical system.
+ Interactions among components at this level of design can be simple and
+ familiar, such as procedure call and shared variable access.
+ But they can also be complex and semantically rich, such as client-server
+ protocols, database-accessing protocols, asynchronous event multicast,
+ and piped stream.
 \end_layout
 
 \begin_layout Standard
@@ -324,10 +382,13 @@ key "CLEMENTS02"
  On the other side, the behavior serves us to establish the correspondence
  between the system requirements and the responsibilities assigned to the
  different design elements.
- In particular, a useful view for specifying structure and behavior are
- 
+ In particular, useful views for specifying structure and behavior are 
 \emph on
-Use-case Maps (UCMs)
+Components 
+\emph default
+and
+\emph on
+ Use-case Maps (UCMs)
 \emph default
  
 \begin_inset LatexCommand cite
@@ -335,41 +396,18 @@ key "BUHR95"
 
 \end_inset
 
-, which is the main architectural notation used by our approach.
+, which are the main architectural notation used by our approach.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Poner algo de los diagramas de componentes y aclarar que los diagramas son
- los que se reconstruyen.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Aca deberia ir algo de Programacion Logica y no tanto de UCM!!!
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The basic concept behind UCMs is to model functional scenarios by means
- of causal paths that cut across organizational structures.
- The core of UCMs has four elements, namely: responsibilities, paths, components
-, and couplings among paths.
+The basic concept behind 
+\emph on
+UCMs
+\emph default
+ is to model functional scenarios by means of causal paths that cut across
+ organizational structures.
+ The core of UCMs has four elements: responsibilities, paths, components,
+ and couplings among paths.
  The 
 \emph on
 responsibilities
@@ -391,7 +429,97 @@ couplings
 \emph default
  serve to connect paths together and form larger patterns (e.g., fork and
  join nodes, preconditions, stubs, etc.).
+ Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-UCM-View-DRArch"
+
+\end_inset
+
+ shows an example of 
+\emph on
+UCMs
+\emph default
+ and the Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-Component-View-DRArch"
+
+\end_inset
+
+ shows an example of 
+\emph on
+Components
+\emph default
+, where we have a simple 
+\emph on
+Pipe And Filter scenario
+\emph default
+ for a translating language system.
+ This diagrams are the views that our approach reconstructs to describe
+ the software architecture.
+\end_layout
+
+\begin_layout Subsection
+The FLABot project
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+FLABot
+\emph default
+
+\begin_inset LatexCommand cite
+key "SORIA04"
+
+\end_inset
+
+ is a research project with Intel Corp., about tool support for fault-localizatio
+n and debugging.
+ As a complementary part of this project, we have developed a tool approach
+ that is able to recover the architectural model of an application.
+ Here, we decided to use Components and UCMs diagrams for the specification
+ of architectural models, because the notation fits well with the idea of
+ recovering any architecture and have the flexibility to modify those diagrams.
+ Also, we decided to use the Instrumentation tool for gathering the dynamic
+ information from the implemented system.
+\end_layout
+
+\begin_layout Subsection
+The JQuery project
+\end_layout
+
+\begin_layout Standard
+Logic programming describe relations, defined by means of clauses.
+ In logic programming you supply a database of facts and rules; you can
+ then perform queries on the database.
  
+\end_layout
+
+\begin_layout Standard
+JQuery
+\begin_inset LatexCommand cite
+key "Volder2006,Janzen2003"
+
+\end_inset
+
+ is a flexible, query-based source code browser, developed as an Eclipse
+ plug-in.
+ The JQuery query language is a logic (Prolog-like) query language based
+ on TyRuBa.
+ TyRuBa is a logic programming language implemented in Java.
+ The JQuery query language is defined as a set of TyRuBa predicates which
+ operate on facts generated from the Eclipse JDT's abstract syntax tree.
+ TyRuBa is a logic-meta-programming system which was designed to be used
+ for generating Java code.
+ It is a general, simple logic programming language with a few peculiarities
+ to facilitate the manipulation of Java code for the purpose of code generation.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -399,105 +527,61 @@ couplings
 status open
 
 \begin_layout Standard
-Figure\InsetSpace ~
+The objective of 
+\emph on
+DRArch
+\emph default
+ is to find.....
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The approach follows an iterative and interactive process of the continuous
+ architectural model specialization.
+ This model is represented by a knowledge base, in the shape of prolog facts,
+ representing an architectural model snapshot.
+\end_layout
+
+\begin_layout Standard
+In logic programming, the conditions that best satisfy the solutions are
+ specified, the solutions are deducted based on the conditions and the main
+ concern is which problem should be solved first.
+ The problem is described by specifying the features of it's possible solutions.
+\end_layout
+
+\begin_layout Standard
+The phases represent the iterative processes, and they are in charge of
+ the architectural model update.
+ Each phase receives, as an input, a recovered model snapshot already done
+ by previous phases and delivers an output based on the transformations
+ applied on the input during the phase execution.
+ Thus the phase appears as a reusable as well as adjustable component, independe
+nt of the architectural input model.
+ The Figure\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "cap:A-Use-Case-Map"
+reference "cap:Drarch-process"
 
 \end_inset
 
- shows an example of UCMs, where we have a simple 
-\emph on
+ shows how the process works.
+\end_layout
 
-\begin_inset Quotes eld
-\end_inset
-
-set user name
-\begin_inset Quotes erd
-\end_inset
-
- scenario
-\emph default
- for a user account management system.
- The system is organized around a Model-View-Controller style 
-\begin_inset LatexCommand cite
-key "BUSCHMANN96"
-
-\end_inset
-
-, in which the 
-\emph on
-Model
-\emph default
- component and its 
-\emph on
-View
-\emph default
- components are decoupled by means of a 
-\emph on
-Controller
-\emph default
- component.
- The responsibility 
-\emph on
-receiveWidgetEvent
-\emph default
- in 
-\emph on
-Controller
-\emph default
- translates the event produced by a 
-\emph on
-View
-\emph default
- to the responsibility 
-\emph on
-setUserName
-\emph default
- in 
-\emph on
-Model
-\emph default
-, which then activates the responsibility 
-\emph on
-notifyModelObservers
-\emph default
- also in 
-\emph on
-Model
-\emph default
-.
- When a change notification is sent from 
-\emph on
-Model
-\emph default
- to 
-\emph on
-Controller
-\emph default
-, this causes the activation of the responsibility 
-\emph on
-handleModelChangeEvent
-\emph default
-, which finally triggers the update of 
-\emph on
-View
-\emph default
- by executing the responsibility 
-\emph on
-updateView
-\emph default
-.
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/ucm-mvc.eps
-	scale 65
+	filename img/drarch.png
+	scale 40
 
 \end_inset
 
@@ -509,11 +593,11 @@ status open
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "cap:A-Use-Case-Map"
+name "cap:Drarch-process"
 
 \end_inset
 
-A Use Case Map that shows a typical MVC application's control flow
+Drarch Process
 \end_layout
 
 \end_inset
@@ -526,157 +610,247 @@ A Use Case Map that shows a typical MVC application's control flow
 
 \end_layout
 
-\end_inset
+\begin_layout Standard
+Each phase execution is also an interactive process.
+ Every one of them contains a group of rules set to determine the transformation
+s suffered by the model.
+ These transformations will allow the architect to relate architectural
+ elements (such as components, the interaction between them, etc.) to different
+ coding structures (eg.:classes, methods, etc.).
+ Each rule has three parts: a "query" (prolog), which consults the knowledge
+ base; a "suggestion", built on each one of the results of the query; and
+ a series of facts (based on the acceptance of the suggestion) that turn
+ into the knowledge base transformations.
+ Thus, the recovery process will be task that will suggest a set of architectura
+l transformations to the architect, who will analyze them and decide which
+ of them is the most suitable for the system whose architecture is being
+ rebuilt.
+ After each phase, a graphic representation of the architectural model is
+ done, showing two main aspects of the system architecture: structure and
+ behavior.
+\end_layout
 
+\begin_layout Standard
+The starting point in this process is the execution of the "information
+ collecting" phase.
+ Static information is recovered from the source code.
+ Dynamic one is obtained through the system analysis in execution, as a
+ complement to the static analysis.
+ 
+\end_layout
 
+\begin_layout Standard
+Right after the information collecting phase come the specialization ones
+ which modify the architectural model in a repetitive and increasingly way
+ raising the level of abstraction and detail in each phase.
+ 
+\end_layout
+
+\begin_layout Standard
+Once the static information as well as the dynamic one is extracted, the
+ tool displays a suggested set of modifications to be applied to the architectur
+al model description.
+ These modifications symbolize changes to different parts of the existing
+ system representation, involving structural modifications as well as scenario
+ behavior ones.
+ Using the suggestions as a starting point, the architect decides which
+ of these modifications is the best way to represent the architectural concepts
+ to be built and which suggestions are to be discarded for not adding relevant
+ information to the analysis.
+ In addition, the architect is able to refine the specification (represented
+ by the different diagrams) by increasing the detail level, incorporating
+ modifications or elements capable of bringing a higher level of detail
+ in several phases that use the transformed model for the actual phase.
+ Visualization and interaction provides a mechanism by which the architect
+ may interactively visualize, explore, and manipulate views.
+\end_layout
+
+\begin_layout Standard
+This approach based on phases allows the partition of the analysis space
+ (the system to be discovered) in smaller units to increase the size of
+ the mentioned space in several posterior phases, as well as to build the
+ results of the previous executed phases.
+\end_layout
+
+\begin_layout Standard
+The "definition of a phase by aspect of the system" is one way to increase
+ the analysis specialization.
+ The phases could be reused for every considered aspect.
+ In each new scenario the level of detail brought by the phase increases,
+ uncovering relations that maybe, in previous tests (different scenarios)
+ were not discovered.
+ 
 \end_layout
 
 \begin_layout Subsection
-The FLABot project
+The Example
 \end_layout
 
 \begin_layout Standard
-Our interest in UCMs comes actually from a joint research project with Intel
- Corp., called 
+In one of our case studies, the Pipe and Filter style is implemented with
+ an 
 \emph on
-FLABot
+Observer-Observable
 \emph default
-
-\begin_inset LatexCommand cite
-key "SORIA04"
-
-\end_inset
-
-, about tool support for fault-localization and debugging.
- As part of this project, we have developed a tool approach that is able
- to recovery the architectural model of an application and....
- Here, we decided to use Components and UCMs for the specification of architectu
-ral models, because the notation fits well with the idea of recovery any
- architecture.
-\end_layout
-
-\begin_layout Standard
-Besides, the issue of architectural drift is also relevant to the project.
- In order to do an effective fault localization, 
-\emph on
-FLABot
-\emph default
- requires the input application to be implemented according to its architectural
- design.
- This is accomplished by linking each responsibility of the architectural
- UCMs with a collection of Java classes and methods.
- Although we can initially ensure that the UCMs are somehow in agreement
- with the implementation, maintaining traceability between the architecture
- and the code is not straightforward.
- In fact, when testing the fault-localization tool with different applications,
- we faced various architectural documentation situations.
- Specifically, as the faults detected by the tool were repaired by the programme
-rs, they hardly updated the architecture to reflect their modifications.
- Many times, these programmers had little knowledge of the global design,
- so they could not rearrange the UCMs and their mappings to fixed code.
-\end_layout
-
-\begin_layout Standard
-Motivated by these experiences, we started to develop a complementary tool
- able to help developers to recover architectural UCMs and Java code in-sync
- while using 
-\emph on
-FLABot
-\emph default
-.
- A more general view of this issue led to the 
+ pattern.
+ Assuming that the documentation doesn't exist, that source code is written
+ in Java and also that the architect has knowledge about logic programing,
+ the 
 \emph on
 DRArch
 \emph default
- approach, which is the topic of the following section.
-\end_layout
-
-\begin_layout Section
-DRArch Approach
+ tool works as follows:
 \end_layout
 
 \begin_layout Standard
-The objective of 
+First, the architect must execute the 
 \emph on
-ArchSync
+gather information
 \emph default
- is to find differences between a UCM description and a piece of source
- code given as input, trying to generate a new version of the UCM where
- these differences are resolved as output.
- To achieve this functionality, we take advantage of a version control system
- and some execution logs of the application.
- The version control system provides information about those regions of
- the code that have been changed since the last update of the UCM.
- A general view of 
+ phase.
+ In this phase, the static (source code) and the dynamic (generated log)
+ information are translated into prolog facts which will be added to the
+ knowledge base.
+ 
+\end_layout
+
+\begin_layout Standard
+Once completed, the specialization phases are ready to be executed.
+ Those phases execute rules that suggest transformations to the current
+ architectural model by accepting or refusing each suggestion.
+ We used sets of rules provided by 
 \emph on
-ArchSync
+DRArch
 \emph default
- is presented in Figure\InsetSpace ~
+ to detect several pipe and filter implementations.
+ The next phase to be executed is the 
+\emph on
+Pipe and Filter detection 
+\emph default
+phase and the most relevant rules used are:
+\end_layout
+
+\begin_layout Itemize
+Filter detection: Identify filters as components.
+ A description of this rule is shown in Figure\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "cap:Internal-view-of-ArchSync"
+reference "cap:Filter-Detection-Rule-DRArch"
 
 \end_inset
 
 .
- Here, the 
-\emph on
+ 
+\end_layout
 
-\begin_inset Quotes eld
-\end_inset
+\begin_layout Itemize
+Pipe detection: Identify pipes as components.
+\end_layout
 
-source code 
-\begin_inset Formula $\Delta$
-\end_inset
+\begin_layout Itemize
+Mapping of Filter responsibilities: Materialize methods to responsibilities
+ in the filter components.
+\end_layout
 
+\begin_layout Itemize
+Mapping of Pipe responsibilities: Materialize methods to responsibilities
+ in the pipe components.
+\end_layout
 
-\begin_inset Quotes erd
-\end_inset
+\begin_layout Itemize
+Relationship between pipes and filters: Define a relationship between pipes
+ and filters.
+\end_layout
 
-
-\emph default
- refers to the changes in the code, the 
-\emph on
-
-\begin_inset Quotes eld
-\end_inset
-
-UCM 
-\begin_inset Formula $\Phi$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\emph default
- is the original architectural description, and the 
-\emph on
-
-\begin_inset Quotes eld
-\end_inset
-
-UCM 
-\begin_inset Formula $\Phi+\Delta$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\emph default
- is the architectural description generated after synchronization.
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status collapsed
 
 \begin_layout Standard
-\align right
+\align center
 \begin_inset Graphics
-	filename img/synchronizationUCMDetailed.eps
+	filename img/fiterDetectionRule.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Filter-Detection-Rule-DRArch"
+
+\end_inset
+
+Filter Detection Rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the execution of the 
+\emph on
+Pipe and Filter detection 
+\emph default
+phase, the 
+\emph on
+Sequence of Filters 
+\emph default
+phase is executed.
+ The input is the information generated by the previous phases and the most
+ relevant rules used are:
+\end_layout
+
+\begin_layout Itemize
+Components roles: Instantiation of each filter component.
+\end_layout
+
+\begin_layout Itemize
+Filter executed paths: Creates paths using the dynamic information.
+\end_layout
+
+\begin_layout Standard
+The Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-Component-View-DRArch"
+
+\end_inset
+
+ shows the component diagram and the Figure\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Pipe-And-Filter-UCM-View-DRArch"
+
+\end_inset
+
+ shows the UCMs diagram generated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/pipeAndFilterComponent.jpg
 	lyxscale 70
 	scale 60
 
@@ -690,11 +864,11 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "cap:Internal-view-of-ArchSync"
+name "cap:Pipe-And-Filter-Component-View-DRArch"
 
 \end_inset
 
-Internal view of ArchSync
+Component Diagram of Pipe and Filter architectural style
 \end_layout
 
 \end_inset
@@ -708,1180 +882,17 @@ Internal view of ArchSync
 \end_layout
 
 \begin_layout Standard
-Internally, 
-\emph on
-ArchSynch
-\emph default
- is equipped with a network of filters that implement different types of
- processing.
- The operation of some of these filters requires user intervention.
- As mentioned in the previous section, the 
-\emph on
-UCM 
-\begin_inset Formula $\Phi$
-\end_inset
-
-
-\emph default
- comes already with a set of mappings to code, but many of mappings might
- be out-of-date in the 
-\emph on
-source code
-\emph default
- 
-\emph on
-
-\begin_inset Formula $\Delta$
-\end_inset
-
-
-\emph default
-.
- Based on this information, the filter 
-\emph on
-DiffMapper
-\emph default
- is in charge of detecting all the potential UCM paths that might have been
- affected by changes in the source code.
- Once these paths are identified, the developer is responsible of exercising
- the system on the modified portions of code, to gather data about its execution.
- Assuming that the code is somehow instrumented, the filter 
-\emph on
-ExecutionLogger
-\emph default
- constructs a number of execution logs, which give traces of the actual
- system behavior with respect to the potentially-changed paths.
- The instrumentation involves capturing a variety of low-level events such
- as: method calls, object creation, threads and exceptions, etc.
-\end_layout
-
-\begin_layout Standard
-The mappings of 
-\emph on
-UCM 
-\begin_inset Formula $\Phi$
-\end_inset
-
-
-\emph default
- are taken by the filter 
-\emph on
-LogAnalyzer
-\emph default
-, so as to translate the low-level events of the logs into a sequence of
- responsibility activations.
- Each sequence of responsibilities is matched against the corresponding
- outdated path by the filter 
-\emph on
-PathLogMatcher
-\emph default
-, which then exposes the mismatches between the 
-\emph on
-UCM 
-\begin_inset Formula $\Phi$
-\end_inset
-
-
-\emph default
- and the 
-\emph on
-source code 
-\begin_inset Formula $\Delta$
-\end_inset
-
-
-\emph default
- by creating a collection of 
-\emph on
-update scripts
-\emph default
-.
- At this point, the filter 
-\emph on
-Synchronizer
-\emph default
- may apply the user-selected 
-\emph on
-update script
-\emph default
- on the 
-\emph on
-UCM 
-\begin_inset Formula $\Phi$
-\end_inset
-
-
-\emph default
- to produce finally the 
-\emph on
-UCM 
-\begin_inset Formula $\Phi+\Delta$
-\end_inset
-
-
-\emph default
-.
- This way, UCMs can be put in agreement with the changes in the source code.
-\end_layout
-
-\begin_layout Standard
-The 
-\emph on
-PathLogMatcher
-\emph default
- filter takes as input a potentially changed path and a responsibility activatio
-n log (i.e., architectural-level execution trace).
- The algorithm in Figure\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Path-Log-Matcher-Algorithm"
-
-\end_inset
-
- correlates both inputs, performing the necessary changes over the out-of-date
- path to conciliate it with the log.
- The algorithm works around a set of 
-\emph on
-cursors
-\emph default
-, which keep the last points in the analyzed path that were successfully
- correlated and corrected.
- Every cursor points to some responsibility in the path, which is not yet
- correlated with some input in the log; this implies that all previous responsib
-ilities in the causal sequence were correlated or corrected.
-\end_layout
-
-\begin_layout Standard
-The set of update scripts begins empty, while the set of cursors starts
- with only a single element that points to the first responsibility of the
- path.
- After initialization, log entries are taken one by one.
- On each step, the algorithm selects a cursor to match against the current
- log entry.
- If the matching fails, that is, some unanticipated responsibility was activated
-, the path is changed to match the log correctly at that point.
- After that, the cursor is advanced to the next responsibility in the path
- and the algorithm processes the next log entry, until the entire log is
- consumed.
-\end_layout
-
-\begin_layout Standard
-In principle, note that there are many ways to represent the same system
- behavior with UCMs.
- Because of that, the 
-\emph on
-PathLogMatcher
-\emph default
- produces a set of alternative scripts rather than a single one.
- An update script is a sequence of atomic actions, such as the ones listed
- in Table\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:TableOfUCMScriptOperations"
-
-\end_inset
-
-, that allow us to transform UCMs.
- These scripts are ranked by the amount of changes on the old UCM that each
- script carries on, as the smallest scripts will more likely resemble the
- architect's style of specification.
- Then, the developer is free to select the script that (s)he finds most
- appropriate for the specific case of architectural design, and ask the
- 
-\emph on
-Synchronizer
-\emph default
- to apply the script automatically.
-\begin_inset Float table
+\begin_inset Float figure
 wide false
 sideways false
 status collapsed
 
 \begin_layout Standard
 \align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
-<features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="2in">
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\series bold
-Script action
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\series bold
-Description
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-remove(targetNode)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-It removes 
-\emph on
-targetNode
-\emph default
- from the path
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-insertBetween(node1, node2, newNode)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-It inserts 
-\emph on
-newNode
-\emph default
- between 
-\emph on
-node1
-\emph default
- and 
-\emph on
-node2
-\emph default
- 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-insertAfter(targetNode, newNode)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-It inserts 
-\emph on
-newNode
-\emph default
- after 
-\emph on
-targetNode
-\emph default
- in the path
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-transform(targetNode, newType)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-It transforms 
-\emph on
-targetNode
-\emph default
-'s type to 
-\emph on
-newType
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "cap:TableOfUCMScriptOperations"
-
-\end_inset
-
-UCM script operations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-
-\series bold
-path-log-match
-\series default
-(path: Path, log: Log)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-cursors := { path.initialNode }
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-script := 
-\begin_inset Formula $\textrm{Ø}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-while
-\series default
- log 
-\begin_inset Formula $\neq$
-\end_inset
-
- 
-\begin_inset Formula $\textrm{Ø}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-cursor := 
-\series bold
-\emph on
-selectCursor
-\series default
-\emph default
-(cursors)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-logEntry := log.first
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-if
-\series default
- cursor.responsibility 
-\begin_inset Formula $\notin$
-\end_inset
-
- logEntry.responsibilities
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-correctiveAction := 
-\series bold
-\emph on
-selectAction
-\series default
-\emph default
-(path, cursor, logEntry)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-script := script + correctiveAction
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-path := 
-\series bold
-correctPath
-\series default
-(path, correctiveAction)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-cursors := 
-\series bold
-correctCursors
-\series default
-(path, cursors, correctiveAction)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-else
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-cursors := 
-\series bold
-\emph on
-advanceCursor
-\series default
-\emph default
-(cursor, cursors)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-log := 
-\series bold
-removeFirst
-\series default
-(log)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-end if
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-end while
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-if
-\series default
- cursors 
-\begin_inset Formula $\neq$
-\end_inset
-
- 
-\begin_inset Formula $\textrm{Ø}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-script := script + 
-\series bold
-removeAllFrom
-\series default
-(cursors)
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-end if
-\end_layout
-
-\begin_layout Standard
-\InsetSpace ~
-\InsetSpace ~
-
-\series bold
-return
-\series default
- script
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-end path-log-match
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Path-Log-Matcher-Algorithm"
-
-\end_inset
-
-Path-Log Matcher Algorithm (non-deterministic points in 
-\series bold
-\emph on
-italic
-\series default
-\emph default
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-A Sample Example
-\end_layout
-
-\begin_layout Standard
-Let's go back to the UCM of Figure\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:A-Use-Case-Map"
-
-\end_inset
-
-, assuming that it has been correctly designed and implemented.
- In a later development stage (e.g.
- during maintenance), a new requirement arrives, and now all the operations
- performed by the users must be shown in a log view.
- Let's consider that a developer that is not aware of the architectural
- design is assigned to the requirement, and (s)he inadvertently implements
- a call to the log view inside the user model.
- Figure\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:Souce-code-level-MVC-violation"
-
-\end_inset
-
- gives a possible Java implementation of the requirement.
- This clearly breaks the rules of the MVC style, but unless there is a strict
- code review, the change (and similar ones) would remain unnoticed to the
- rest of the developers.
- 
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-
-\family typewriter
-public class User {
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-...
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-public void setName(String newName) {
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-this.name = newName;
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-// begin change
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-logView.appendLogEntry(`User name modified');
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-// end change
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-\InsetSpace ~
-notifyModelObservers(...);
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-}
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\InsetSpace ~
-\InsetSpace ~
-...
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-}
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "cap:Souce-code-level-MVC-violation"
-
-\end_inset
-
-Souce code-level MVC violation
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-For dealing with this case of design documentation out-of-date, the 
-\emph on
-ArchSync
-\emph default
- tool works as follows.
- First, the tool is notified of a change in the file 
-\emph on
-User.java
-\emph default
-, which is further analyzed to detect that the method 
-\emph on
-setName()
-\emph default
- was actually modified by some programmer.
- Since this method had a mapping to the responsibility 
-\emph on
-setUserName
-\emph default
-, 
-\emph on
-DiffMapper
-\emph default
- marks the path presented in Figure\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:A-Use-Case-Map"
-
-\end_inset
-
- as potentially changed.
- The developer runs the test-case on the current implementation of the system,
- which produces an execution log.
- This execution log is, in turn, processed by 
-\emph on
-LogAnalyzer
-\emph default
- to generate a sequence of responsibility activations like the one shown
- in Figure\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:Responsibility-execution-sequence"
-
-\end_inset
-
-.
- As a result of the comparison of this sequence with the original UCM, the
- 
-\emph on
-PathLogMatcher
-\emph default
- suggests a list of update scripts.
- Some update scripts applicable to the outdated UCM are shown in Figure\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:UCM-update-alternatives"
-
-\end_inset
-
-.
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-\paragraph_spacing single
-
-\family typewriter
-1.
- UserView.receiveWidgetEvent
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-
-\family typewriter
-2.
- UserController.handleWidgetEvent
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-
-\family typewriter
-3.
- UserModel.setUserName
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-
-\family typewriter
-4.
- LogView.addLogEntry
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-
-\family typewriter
-5.
- UserModel.notifyModelObservers
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-
-\family typewriter
-6.
- UserController.handleModelChangedEvent
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-
-\family typewriter
-7.
- UserView.updateView
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "cap:Responsibility-execution-sequence"
-
-\end_inset
-
-Responsibility execution sequence
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="1">
-<features>
-<column alignment="center" valignment="top" width="0">
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Update script A:
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\series bold
-insertBetween
-\series default
-(setUserName, 
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
- notifyModelObserver, addLogEntry)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-\begin_inset Formula $\downarrow$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 \begin_inset Graphics
-	filename img/mvc-alt1.png
-	scale 35
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Update script B:
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\series bold
-transform
-\series default
-(setUserName, andFork)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\series bold
-insertAfter
-\series default
-(setUserName, addLogEntry)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-\begin_inset Formula $\downarrow$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename img/mvc-alt2.png
-	scale 35
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+	filename img/pipeAndFilterUCM.jpg
+	lyxscale 70
+	scale 50
 
 \end_inset
 
@@ -1893,11 +904,11 @@ insertAfter
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "cap:UCM-update-alternatives"
+name "cap:Pipe-And-Filter-UCM-View-DRArch"
 
 \end_inset
 
-UCM update alternatives
+UCM Diagram of Pipe and Filter architectural style
 \end_layout
 
 \end_inset
@@ -1911,35 +922,47 @@ UCM update alternatives
 \end_layout
 
 \begin_layout Standard
-At this point, we should remark that the two UCM solutions proposed by 
+At this point, we should remark that the solutions proposed by 
 \emph on
-ArchSynch
+DRArch
 \emph default
- match correctly with the implementation.
- In general, the variations in the solutions are due to the fact that UCMs
- are a quite abstract notation, and thus, it gives a palette of options
- for implementing the same conceptual use-case.
+ match correctly with the expected architecture views.
+ In general, the variations in the solutions depends on the use-cases used
+ to generate the dynamic information (log trace) and the rule set used to
+ generate the diagrams.
+ Also, the architect is responsible for choosing the solution that is most
+ appropriate for the actual design context.
+\end_layout
+
+\begin_layout Standard
+UCMs are a quite abstract notation, and thus, it gives a palette of options
+ for solution to the same conceptual use-case.
  Likewise, as causal paths do not imply a strict flow of execution, a single
  execution trace might correspond to many different paths.
- This is why, even when all the solutions generated by 
+ This is why the solutions generated by 
 \emph on
-ArchSync
+DRArch
 \emph default
- are considered correct, the architect is responsible for choosing the solution
- that is most appropriate for the actual design context.
- A related remark is that the solutions often suggest changes on the UCMs
- that compromise the integrity of the architectural model.
- For instance, the update scripts shown in Figure 
-\begin_inset LatexCommand ref
-reference "cap:UCM-update-alternatives"
+ are considered as correct ones.
+\end_layout
 
-\end_inset
-
- reveal a style of implementation that violates the MVC architectural pattern.
- In these cases, the architect's criterion plays again a fundamental role.
- The architect can either proceed to apply the solution on his/her own,
- or decide that the requirement that originated the inconsistency must be
- re-implemented so as to conform the architecture.
+\begin_layout Standard
+Knowledge of some kind about the system to be discovered can be very useful
+ to the reconstruction process.
+ For example, if the architect knows that a 
+\emph on
+Filter
+\emph default
+ component is the one that implements the 
+\emph on
+MyFilter
+\emph default
+ interface, then it is simple to add a rule that allows us to detect all
+ the 
+\emph on
+Filter
+\emph default
+ components existing in the system.
 \end_layout
 
 \begin_layout Subsection
@@ -1949,56 +972,10 @@ Implementation Issues
 \begin_layout Standard
 The 
 \emph on
-ArchSync
+DRArch
 \emph default
- prototype has been implemented as an Eclipse plugin, allowing the tool
- to be integrated within the development process.
- At its current state, the 
-\emph on
-source code 
-\begin_inset Formula $\Delta$
-\end_inset
-
-
-\emph default
- is built by using the Eclipse platform's local history infrastructure,
- but integration with Concurrent Versioning System (CVS) and other configuration
- management technologies is underway.
- Additionally, the UCM editor and the instrumentation mechanisms have been
- actually borrowed from some of the FLABot project's subsystems.
- The 
-\emph on
-PathLogMatcher
-\emph default
- component was implemented in Prolog using JavaLog 
-\begin_inset LatexCommand cite
-key "JAVALOG"
-
-\end_inset
-
- to take advantage of its Java-Prolog integration features.
-\end_layout
-
-\begin_layout Standard
-The tool has been exercised with examples containing small source code changes
- between synchronizations, and also with examples with broader changes between
- synchronizations.
- As a result of evaluating the first group of examples, we found that the
- update scripts proposed by the tool were correct and generated new UCMs
- consistent with both the actual example implementation and the architect's
- specification style.
- Nonetheless, the update scripts proposed by tool for the second group of
- examples were considerably complex.
- That is, the amount of different alternatives for updating the UCMs made
- the problem impractical for being handled by the architect.
- Such a complexity was somehow expected and understandable for us, and it
- is because of this kind of situations that we imposed some restrictions
- for the approach.
- These restrictions are the following: (a) the initial UCM must be correct
- and (b) the updates must be performed regularly.
- This way, the gap that the tool must conciliate is likely to be of a manageable
- size.
- 
+ prototype has been implemented as an Eclipse plug-in, allowing the tool
+ to be integrated within the development process....
 \end_layout
 
 \begin_layout Section
@@ -2012,223 +989,91 @@ name "sub:Related-Work"
 \end_layout
 
 \begin_layout Standard
-The problem of 
-\emph on
-architecture-implementation drift
-\emph default
- has been tackled in different ways.
- Basically, we can recognize two groups of approaches: one focused on the
- recovery of the architecture through reverse engineering techniques 
-\begin_inset LatexCommand cite
-key "RICHNER99,SANGAL05,SEFIKA96,BOWMAN99,GALL95"
-
-\end_inset
-
- 
-\begin_inset LatexCommand cite
-key "MEDVIDOVIC03,DISCOTECT"
-
-\end_inset
-
-, and another one using architectural description languages (ADLs) as support
- 
-\begin_inset LatexCommand cite
-key "ALDRICH05,MEDVIDOVIC99"
-
-\end_inset
-
-.
+In this section, we summarize those approaches that deal with software architect
+ure reconstruction and discuss the process elements covered by them.
 \end_layout
 
 \begin_layout Standard
-In the approaches presented in 
-\begin_inset LatexCommand cite
-key "RICHNER99,SANGAL05,SEFIKA96"
-
-\end_inset
-
-, there are rules that specify the architect's intent, defining the permitted
- and forbidden relationships among the software components.
- These rules can then be used at any time to perform static and/or dynamic
- analysis over the source code to detect places where the architectural
- prescriptions are not followed.
- For example, Sangal et.al.
- 
-\begin_inset LatexCommand cite
-key "SANGAL05"
-
-\end_inset
-
- use a fixed matrix of components and relationships based on Java packages
- and their dependencies.
- Richner 
-\begin_inset LatexCommand cite
-key "RICHNER99"
-
-\end_inset
-
- and Sefika et.al.
- 
-\begin_inset LatexCommand cite
-key "SEFIKA96"
-
-\end_inset
-
- provide more flexibility in that respect, by letting the user define both
- the clustering policy for components and the analysis strategies for different
- kinds of relationships via Prolog rules.
- As the main drawback, we see that these rules are not always intuitive
- to write or understand for common developers.
+Existing architecture Reconstruction techniques can be categorized as manual,
+ automatic or semi automatic.
+ Manual approaches typically use simple, general-purpose tools and manual
+ inspection of the system.
+ While they use reconstruction specific tools such as SHRiMp, Rigi, PBS
+ and Bauhaus to help visualize intermediate results [pela_0], there is no
+ automated support for the process (for example [pela_1]).
 \end_layout
 
 \begin_layout Standard
-Other approaches to architectural recovery such as 
-\begin_inset LatexCommand cite
-key "BOWMAN99,GALL95,MEDVIDOVIC03"
-
-\end_inset
-
- attempt to extract the system architecture directly from its source code.
- Perhaps the most complete approach is the one discussed by Medvidovic et.al.
- 
-\begin_inset LatexCommand cite
-key "MEDVIDOVIC03"
-
-\end_inset
-
-, where the extraction activities are not only based on source code but
- rather complemented with requirements and architectural styles.
- More recently, Yan et.al.
- 
-\begin_inset LatexCommand cite
-key "DISCOTECT"
-
-\end_inset
-
- have developed a tool called DiscoTect that maps low-level system events
- to abstract architectural operations, which are interpreted by a special
- engine to build the runtime structure of the analyzed system.
- This idea of monitoring a running application is close to the analysis
- of execution logs performed by 
-\emph on
-ArchSync
-\emph default
-.
- The authors of 
-\emph on
-DiscoTect
-\emph default
- have reported two successful case-studies for legacy systems, recovering
- a pipe-and-filter and a client-server style.
- The tool still needs to be evaluated with more complex architectural styles,
- where the mappings to code are not necessarily direct.
- Besides, none of these approaches have considered the extraction of paths
- of functionality, such as UCMs.
- Finally, Egyed 
-\begin_inset LatexCommand cite
-key "EGYED03"
-
-\end_inset
-
- presents an automated approach to generate and validate trace dependencies
- between diverse software development artifacts.
- Such artifacts must be mapped to the source code of the implemented system.
- This approach also requires the designer to supply a set of test scenarios
- for the software system described, and a few hypothesized traces that link
- development artifacts.
- Test scenarios are executed on the running system to observe the lines
- of code they use.
- Execution traces are then combined to identify overlaps between them and
- interpreted to detect and analyze trace dependencies.
- This approach can generate new traces between model elements and scenarios,
- but the tool does not define the semantic meaning of those traces.
- This is not the case of ArchSync, where traces must be interpreted in the
- context UCMs that express causal order between significative responsibilities.
- The approach also depends on the systematic manual updating of the test
- cases to detect new dependencies on software changes.
+Semi-automatic approaches help the reconstructor create architectural views
+ in an interactive or formal way.
+ Differences among the approaches concern the expressiveness of the language
+ used for defining the transformations, support for calculating transitive
+ closures of relations, degree of repeatability of the process, amount of
+ interaction required by the user, and the types of architectural views
+ that can be generated.
 \end_layout
 
 \begin_layout Standard
-On the other hand, Abi-Antoun et.al.
- 
-\begin_inset LatexCommand cite
-key "ALDRICH05"
-
-\end_inset
-
- proposes an approach where an architectural specification in the Acme ADL
- 
-\begin_inset LatexCommand cite
-key "ACME"
-
-\end_inset
-
- is kept in-sync with an implementation counterpart in ArchJava
-\begin_inset LatexCommand cite
-key "ALDRICH02"
-
-\end_inset
-
-, by taking advantage of the fact that both Acme and ArchJava are languages
- where components and connectors are first-class entities.
- Both views, i.e.
- the architectural specification and the implementation, are transformed
- into instances of a common tree structure, which is then compared to detect
- changes such as node insertions, deletions and renames.
- Unfortunately, this synchronization does not address neither architecture
- dynamism nor behavioral conformance between architecture and implementation.
- Besides, it should be noted that although ArchJava is very similar to Java,
- it is not strictly an object-oriented programming language.
+Relational algebra approaches allow the architect to define a repeatable
+ set of the transformations for creating a particular architectural view.
+ In the work of Holt [pela_2] relational algebra is used for creating a
+ hierarchical module view of the source code (by grouping source files into
+ modules and calculating the module dependencies).
+ The architect must manually prepare the containment relations, but new
+ relationships can also be inferred using algebra propositions.
+ Postma [pela_3] uses relational partition algebra (RPA) [pela_4] to calculate
+ module dependencies from dependencies extracted from the code.
+ RPA is also used to check the conformance of an extracted target view with
+ a hypothetical view (established in the design phase).
+ The process is repeatable and is part of the build process.
+ Riva has proposed a method for inferring the architectural information
+ based on relational algebra and Prolog [pela_5].
+ Mens [pela_6] uses logic meta programming (Prolog) for mapping implementation
+ artifacts to high level design and for checking conformance of architectural
+ rules.
+ More light-weight examples are the Reflexion Model [pela_7], Tcl scripts
+ for defining graph transformations in Rigi, SQL queries for defining grouping
+ rules (Dali).
 \end_layout
 
 \begin_layout Standard
-An early work of Medvidovic et.
- al.
- 
-\begin_inset LatexCommand cite
-key "MEDVIDOVIC99"
-
-\end_inset
-
- describes a component-based environment targeted to the C2 style that enables
- architecture modeling, analysis and evolution based on an ADL that was
- specifically designed for these tasks.
- The environment assists the developer in the generation of an implementation
- for an evolutionary change that was performed on the architectural model.
- This is basically a top-down approach, well-suited for the ideal case where
- all changes are first applied to the architecture.
- Unfortunately, the common scenario is usually the opposite: the focus gears
- towards the implementation, and documentation is left out-of-date.
+Many reverse engineering approaches are based on an extract–abstract–present
+ cycle, in which sources are analyzed in order to populate a repository,
+ which is queried in order to yield abstract system representations, which
+ are then presented in a suitable interactive form to the software engineer.
+ Tilley [pela_8] describes the extract–abstract–present approach in more
+ detail, referring to the steps as data gathering, knowledge inference,
+ and information presentation.
+ A number of reverse engineering activities focus on software architecture
+ reconstruction.
+ Kazman [pela_9] proposes an iterative reconstruction process where the
+ historical design decisions are discovered by empirically formulating/validatin
+g architectural hypotheses.
+ They also point out the importance of modeling not only system information
+ but also a description of the underlying semantics [pela_9].
+ Their approach is currently extended to include the reorganization of recovered
+ assets into software product lines [pela_10].
+ Finnigan [pela_11] proposes the Software Bookshelf: a toolkit to generate
+ architecture diagrams from source text.
+ Ding and Medvidovic describe the Focus approach, which contrasts a logical
+ (idealized, high-level) architecture with a physical (as implemented, as
+ recovered) one [pela_12].
+ By applying refinement to the logical and abstraction to the physical architect
+ure, the two are brought together incrementally.
 \end_layout
 
 \begin_layout Standard
-Regarding software configuration management (SCM) oriented approaches, we
- can find some approaches like 
-\begin_inset LatexCommand cite
-key "SCM05,TOSEM04"
+...
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+All the previous works differs from DRArch in that they ....NI IDEA
+\end_layout
 
 \end_inset
 
- that provide tool support for versioning the architecture-implementation
- relationships throughout design, implementation and deployment.
- For example, the tool presented by Nistor et.al.
- 
-\begin_inset LatexCommand cite
-key "SCM05"
 
-\end_inset
-
- imposes a systematic editing process for source code and architecture in
- order to guarantee that both models are kept in-sync.
- However, the propagation of changes from one model to the other is always
- performed manually by the developer.
- On the contrary, 
-\emph on
-ArchSynch
-\emph default
- implements a more flexible model of edition, which allows the developer
- to have the control of when and how to synchronize the UCMs with the implementa
-tion.
 \end_layout
 
 \begin_layout Section
@@ -2236,25 +1081,23 @@ Conclusions and Future Work
 \end_layout
 
 \begin_layout Standard
-In this paper, we have introduced a tool approach to deal with the inconsistenci
-es between architectural documentation and implementation.
+In this paper, we have introduced a tool approach to deal with implemented
+ systems that no documentation exists or it is out of date.
  The contributions of 
 \emph on
-ArchSync
+DRArch
 \emph default
- to prevent the architecture-implementation drift are two-fold.
- It can reveal violations to behavioral rules imposed by the architectural
- model.
- Moreover, this analysis can be used by the architect either to update the
- architectural UCMs with respect to the implementation, or to re-codify
- some parts of the implementation according to the base architectural model.
- 
+ to...
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
 Currently, the 
 \emph on
-ArchSync
+DRArch
 \emph default
  tool is still at the level of prototype, which has been mainly used within
  the 
@@ -2263,18 +1106,8 @@ FLABot
 \emph default
  project.
  Thus, there are some assumptions and limitations.
- First, when a change in the source code occurs, we assume that it is possible
- to know the previous mappings between the UCMs and implementation.
- This means that the old implementation is consistent with the scenarios
- of the UCMs.
- These mappings should be specified when the architect designs the UCMs
- for the first time and then proceeds to implement them.
- Second, we rely on that the synchronization between UCMs and implementation
- is carried out frequently on small increments (e.g., daily), so that the
- delta among source code versions presents only small variations.
- If not, the recognition of activation of responsibilities based on the
- events of the execution logs may become computationally unmanageable.
- 
+ First, ....
+ Second, we rely on that the ...
 \end_layout
 
 \begin_layout Standard
@@ -2298,27 +1131,15 @@ The main drawback of the approach is the gap between a given UCM and the
 There are other interesting lines of work that can improve the performance
  of 
 \emph on
-ArchSync
+DRArch
 \emph default
 .
  It is possible to integrate 
-\emph on
-ArchSync
-\emph default
- with techniques for the synchronization of structural aspects to support
- more drastic evolutionary changes, such as refactorings.
- It is also possible to provide a suite of test-cases as a complement of
- the execution logs.
- Besides, the low-level information contained in the traces could be further
- analyzed to prune some operations in the generation of all the possible
- update scripts, and moreover, to detect source code changes that have been
- missed by the test cases.
- Finally, we believe the practical perspective taken in the design of 
-\emph on
-ArchSync
-\emph default
- enables us to apply this tool as support for traceability in architectural
- design methods.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
