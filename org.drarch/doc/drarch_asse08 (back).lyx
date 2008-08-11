@@ -85,6 +85,16 @@ Architecture reconstruction generates an architectural representation that
  reengineering the system to a new desired architecture.
  Finally, the representation can be used to help identify components for
  reuse, or to help establish a software product line.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Rick2003]...tiene problemas!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Abstract
@@ -121,7 +131,7 @@ Introduction
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 Suppose we have a system that already exists, but we do not know its architectur
@@ -151,61 +161,16 @@ ral design to recover (although that in itself is useful to know).
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-La arquitectura de software cada dia juega un papel principal ya que permite
- a los diferentes stakeholders mostrar como los objetivos planteados son
- alcanzados durante todo el proceso de desarrollo.
- Esto produce que la documentacion arquitectónica sea una artefacto critico.
- Sin embargo, esta situation no es comun en la mayoria de los proyecto de
- desarrollo.
- Ni siquiera en aquellos desarrollos centrados en la arquitectura mantienen
- una descripcion arquitectónica actualizada.
-\end_layout
-
-\begin_layout Standard
-Por lo tanto es importante proveer mecanismos que permitan obtener un snapshot
- actualizado entre la documentacion arquitectónica y su correspondiente
- implementacion.
-\end_layout
-
-\begin_layout Standard
-La mayoria de los enfoques encaran el problema desde el análisis estático
- de código donde partes del sistema no pueden ser descubiertas ya que no
- cuentan con iformacion dinamica.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The software architecture of a program or computing system is the structure
  or structures of the system, which comprise software elements, the externally
  visible properties of those elements, and the relationships among them.
- According to this principle, architecture-centric development is being
- widely adopted as a software engineering practice 
+ 
 \begin_inset LatexCommand cite
 key "SAIP"
 
 \end_inset
 
-.
- More and more, researchers and practitioners recognize that software architectu
-res are very convenient models to the software development process, because
- these models allows different stakeholders to show how objectives are accomplis
-hed during the development process.
- This makes the architectural documentation critical.
- Nevertheless, this situation is not common in the majority of the development
- projects.
- Not at least, those architecture-centric developments maintain an updated
- architectural description.
- Therefore it is important to provide mechanisms that allow to obtain an
- updated snapshot between architectural documentation and it's correspondent
- implementation.
+
 \end_layout
 
 \begin_layout Standard
@@ -216,17 +181,33 @@ Architecture reconstruction is the process where the “as-built” architecture
  aggregating successive levels of abstraction.
  If the reconstruction is successful, the end result is an architectural
  representation of the system that aids in reasoning about the system.
- The architectural representation can be used in several ways.
- One of the main uses is for documenting the architecture.
- Several notations and profiles are nowadays available for this purpose,
- among them Use-Case Maps are one of the most practical one 
-\begin_inset LatexCommand cite
-key "CLEMENTS02,BUHR95"
+ In some cases, it may not be possible to generate a useful representation
+ due to the system.
+\end_layout
+
+\begin_layout Standard
+Architecture reconstruction generates an architectural representation that
+ can be used in several ways.
+ One of the main uses is for documenting the existing architecture.
+ If no documentation exists or it is out of date, the recovered architectural
+ representation can be used as a basis for redocumenting the architecture.
+ The recovered “as-built” architecture of the system can be used to check
+ conformance against an “as-designed” architecture.
+ The architectural representation can also be used as a starting point for
+ reengineering the system to a new desired architecture.
+ Finally, the representation can be used to help identify components for
+ reuse, or to help establish a software product line.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Rick2003]...tiene problemas!
+\end_layout
 
 \end_inset
 
- to specify both components and flows of responsibilities.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -234,9 +215,7 @@ key "CLEMENTS02,BUHR95"
 status open
 
 \begin_layout Standard
-La mayoria de los enfoques encaran el problema desde el análisis estático
- de código donde partes del sistema no pueden ser descubiertas ya que no
- cuentan con iformacion dinamica.
+Poner mas sobre el enfoque
 \end_layout
 
 \end_inset
@@ -245,37 +224,12 @@ La mayoria de los enfoques encaran el problema desde el análisis estático
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-if not properly managed, it may actually spoil the benefits of architecture-cent
-ric development.
- So far, the topic has been tackled through some approaches based on reverse
- engineering, with uneven results.
- Meanwhile, structural mismatches can be effectively discovered through
- static code analysis; the most problematic aspect is the violation of behaviora
-l patterns prescribed by the architecture.
- This kind of violations can lead to faults, difficult to understand in
- terms of the documented architecture, as well as make the maintenance of
- the system harder.
- So, the lack of more suitable tool support to relate architectural specificatio
-ns with code is still a problem for many software projects.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
+...
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 Along this line, developers usually depart from an architectural description
@@ -313,58 +267,27 @@ key "CLEMENTS02"
 \end_layout
 
 \begin_layout Standard
-In this paper, we present DRArch a tool designed to help architects to obtain
- architectural documentation expressed through UCMs with implementation,
- based on an iterative and interactive process.
- Static information is recovered from the source code and dynamic one is
- obtained through the system analysis in execution.
- This information is represented by a knowledge base, in the shape of prolog
- facts, representing an architectural model snapshot.
- Then, DRArch is able to suggest several changes to the architectural model.
- These suggestions are represented in terms of rules (logic programing queries)
- that's makes completely flexible the manipulation of the data obtained
- from the model.
-\end_layout
-
-\begin_layout Standard
-The rest of the article is organized into 5 sections.
- Section 2 provides some core concepts regarding architectural Reconstruction
- and use-case maps, and also explains DRArch behavior through an illustrative
- example.
- Section 3 presents the details of the DRArch architectural design describing
- some implementation details.
- Section 4 presents experimental results and section 5 discusses some related
- work.
- Finally, section 6 summarizes the conclusions of this work and comments
+The rest of the article is organized into 4 sections.
+ Section 2 provides some core concepts regarding architectural documentation
+ and use-case maps, and also explains the goals of the 
+\emph on
+FLABot
+\emph default
+ project.
+ Section 3 presents the details of the 
+\emph on
+DRArch
+\emph default
+ approach through a motivating example, and describes the implementation
+ of the tool.
+ Section 4 discusses some related work.
+ Finally, section 5 summarizes the conclusions of this work and comments
  on future lines of research.
- 
 \end_layout
 
 \begin_layout Section
-The DRArch Approach
+Background
 \end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Given the importance of architectural design decisions for both stakeholders
- and developers, the documentation of software architectures is a central
- concern.
- An architectural description gives basically a high-level decomposition
- of the system in terms of: design elements, coarse-grained pieces of functional
-ity, plus interactions and constraints among them.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
 
 \begin_layout Standard
 The software architecture defines the components and interactions among
@@ -376,6 +299,16 @@ The software architecture defines the components and interactions among
  But they can also be complex and semantically rich, such as client-server
  protocols, database-accessing protocols, asynchronous event multicast,
  and piped stream.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ [Software Architecture, Garlan..]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -553,14 +486,13 @@ key "Volder2006,Janzen2003"
  to facilitate the manipulation of Java code for the purpose of code generation.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Section
+DRArch Approach
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 The objective of 
@@ -576,61 +508,11 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Lifting the information of a system to higher level of abstraction is a
- central concern.
- An architectural description gives basically a high-level decomposition
- of the system in terms of: design elements, coarse-grained pieces of functional
-ity, plus interactions and constraints among them.
- When the architecture of a developed system is recovered, the main problem
- usually arises when the information is extracted and procesed to generate
- several views.
- Different kinds of information extracted from a system and a flexible analisis
- of that information are key aspect to take into account.
- Gather static information from a source code without a tool is very 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-tedioso
-\end_layout
-
-\end_inset
-
- even when the architect have knowledge about the hole system.
-\end_layout
-
-\begin_layout Standard
-DRArch is intended to help in this stage in the context of Eclipse projects
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-ref!
-\end_layout
-
-\end_inset
-
-.
- Assuming that there exists a conceptual integrity in the implemented system,
- DRArch is capable to gather any kind of information, analise that information
- and generates UCMs diagrams describing the arhitecture of the system.
- The approach follows an iterative and interactive process of the continuous
+The approach follows an iterative and interactive process of the continuous
  architectural model specialization.
- Before we give a detailed description of the steps, we will give some definitio
-n and assumptions on which this process is based.
+ This model is represented by a knowledge base, in the shape of prolog facts,
+ representing an architectural model snapshot.
 \end_layout
-
-\begin_layout Standard
-The relevant information of the system is represented in the shape of prolog
- facts, stored in a 
-\emph on
-Knowledge Base
-\emph default
-.
- 
-\begin_inset Note Note
-status collapsed
 
 \begin_layout Standard
 In logic programming, the conditions that best satisfy the solutions are
@@ -639,31 +521,14 @@ In logic programming, the conditions that best satisfy the solutions are
  The problem is described by specifying the features of it's possible solutions.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-
-\emph on
-Phases
-\emph default
- represent iterative processes, and they are in charge of the architectural
- model update.
- Each 
-\emph on
-Phase
-\emph default
- receives, as an input, a recovered model snapshot already done by previous
- phases and delivers an output based on the transformations applied on the
- input during the phase execution.
- Thus the 
-\emph on
-Phase
-\emph default
- appears as a reusable as well as adjustable component, independent of the
- architectural input model.
+The phases represent the iterative processes, and they are in charge of
+ the architectural model update.
+ Each phase receives, as an input, a recovered model snapshot already done
+ by previous phases and delivers an output based on the transformations
+ applied on the input during the phase execution.
+ Thus the phase appears as a reusable as well as adjustable component, independe
+nt of the architectural input model.
  The Figure\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -672,10 +537,6 @@ reference "cap:Drarch-process"
 \end_inset
 
  shows how the process works.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
@@ -735,10 +596,6 @@ l transformations to the architect, who will analyze them and decide which
  After each phase, a graphic representation of the architectural model is
  done, showing two main aspects of the system architecture: structure and
  behavior.
-\end_layout
-
-\begin_layout Subsection
-Phase 1
 \end_layout
 
 \begin_layout Standard
@@ -1077,38 +934,6 @@ Filter
 \end_layout
 
 \begin_layout Subsection
-Efective Rules
-\end_layout
-
-\begin_layout Standard
-A key aspect of the approach is the definition of the rules.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-hay que buscar como justificar que la integridad conceptual hace que las
- reglas sean efectivas.
-\end_layout
-
-\begin_layout Standard
-La idea principal para mi es: las reglas identifican patrones comunes que
- determinan el framework de la aplicación.
-\end_layout
-
-\begin_layout Standard
-y luego la parte dinámica me permite identificar los escenarios funcionales
- de la aplicacion..
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
 Implementation Issues
 \end_layout
 
@@ -1142,19 +967,13 @@ Existing architecture Reconstruction techniques can be categorized as manual,
  Manual approaches typically use simple, general-purpose tools and manual
  inspection of the system.
  While they use reconstruction specific tools such as SHRiMp, Rigi, PBS
- and Bauhaus to help visualize intermediate resultAn architectural description
- gives basically a high-level decomposition of the system in terms of: design
- elements, coarse-grained pieces of functionality, plus interactions and
- constraints among them.s [pela_0], there is no automated support for the
- process (for example [pela_1]).
+ and Bauhaus to help visualize intermediate results [pela_0], there is no
+ automated support for the process (for example [pela_1]).
 \end_layout
 
 \begin_layout Standard
-Semi-automatic approaches help the reconstructor create architAn architectural
- description gives basically a high-level decomposition of the system in
- terms of: design elements, coarse-grained pieces of functionality, plus
- interactions and constraints among them.ectural views in an interactive
- or formal way.
+Semi-automatic approaches help the reconstructor create architectural views
+ in an interactive or formal way.
  Differences among the approaches concern the expressiveness of the language
  used for defining the transformations, support for calculating transitive
  closures of relations, degree of repeatability of the process, amount of
