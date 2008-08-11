@@ -5,7 +5,7 @@
 \textclass book
 \language spanish
 \inputencoding auto
-\font_roman ae
+\font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
@@ -14,7 +14,7 @@
 \font_sf_scale 100
 \font_tt_scale 100
 \graphics default
-\paperfontsize 11
+\paperfontsize default
 \spacing single
 \papersize a4paper
 \use_geometry true
@@ -33,7 +33,7 @@
 \defskip medskip
 \quotes_language swedish
 \papercolumns 1
-\papersides 1
+\papersides 2
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
@@ -2831,8 +2831,98 @@ s relacionando distintos tipos de información.
  se relaciona para detectar estructuras arquitectónicas:
 \end_layout
 
-\begin_layout Itemize
-jkl;
+\begin_layout Description
+Estructura\InsetSpace ~
+De\InsetSpace ~
+Paquetes Cualquier sistema grande se debe dividir en unidades
+ más pequeñas, de modo que las personas puedan trabajar con una cantidad
+ de información limitada, a la vez y de modo que los equipos de trabajo
+ no intereran con el trabajo de los otros.
+ Un paquete es una parte de un modelo.
+ Cada parte del modelo debe pertenecer a un paquete.
+ Pero para ser funcional, la asignación debe seguir un cierto principio
+ racional, tal como funcionalidad común, implementación relacionada y punto
+ de vista común.
+ UML no impone una regla para componer los paquetes.
+ Los paquetes ofrecen un mecanismo general para la organización de los modelos/s
+ubsistemas agrupando elementos de modelado.
+ Cada paquete corresponde a un submodelo (subsistema) del modelo (sistema).
+ Los paquetes son unidades de organización jerárquica de uso general de
+ los modelos de UML.
+ Pueden ser utilizados para el almacenamiento, el control de acceso, la
+ gestión de la configuración y la construcción de bibliotecas que contengan
+ fragmentos reutilizables del modelo.
+ Un paquete puede contener otros paquetes, sin límite de anidamiento pero
+ cada elemento pertenece a (está definido en) sólo un paquete.
+ Los paquetes contienen elementos del modelo al más alto nivel tales como
+ clases y sus relaciones, máquinas de estado, diagramas de casos de uso,
+ interacciones y colaboraciones; atributos, operaciones, estados, líneas
+ de vida y mensajes están contenidos en otros elementos y no aparecen como
+ contenido directo de los paquetes.
+ Una clase de un paquete puede aparecer en otro paquete por la importación
+ a través de una relación de dependencia entre paquetes.
+ Todas las clases no son necesariamente visibles desde el exterior del paquete,
+ es decir, un paquete encapsula a la vez que agrupa.
+ En general, un paquete no puede tener acceso al contenido de otro paquete.
+ Los paquetes son opacos, a menos que sean abiertos por una dependencia
+ de acceso o de importación.
+ La dependencia de acceso indica que el contenido del paquete del proveedor
+ puede aparecer en referencias efectuadas por los elementos del paquete
+ cliente.
+ En general, un paquete puede ver solamente los elementos de otros paquetes
+ que tienen visibilidad pública.
+ Los elementos con visibilidad protegida pueden ser vistos únicamente por
+ los paquetes que son descendientes del paquete contenedor de dichos elementos.
+ Los elementos con visibilidad privada sólo son vistos por su paquete contenedor
+ y anidados.
+ La visibilidad también se aplica a las clases.
+ El permiso de acceso y visibilidad son necesarios para hacer referencia
+ a un elemento.
+ La dependencia de acceso no modica el espacio de nombres del cliente no
+ crea las referencias automáticamente, simplemente concede permiso para
+ establecer referencias.
+ La dependencia de importación se utiliza para agregar nombres al espacio
+ de nombres del paquete del cliente como sinónimos de los caminos completos.
+\end_layout
+
+\begin_layout Description
+Hot\InsetSpace ~
+Spot\InsetSpace ~
+y\InsetSpace ~
+Frameworks El concepto principal del diseño de framworks es el de
+ separar aquellos aspectos que son invariantes a lo largo de varias aplicaciones
+ en el dominio (frozen spots) de aquellos otros que varían a los largo de
+ las aplicaciones y que deben mantenerse exibles y customizables (hot spots).
+ Los conceptos de herencia y binding dinámico son las claves para llevar
+ a cabo esto.
+ Los frameworks proveen su exibilidad en los hot spots usando dos conceptos
+ esenciales, templates y hooks.
+ Los métodos template son implementados basados sobre los hook methods.
+ Un método hook en un método elemental en el contexto en el que el hook
+ particular es usado (este puede ser tanto un método abstracto, un método
+ regular u otro template methods).
+ Ver gura 14 Generalmente, los métodos template son usados para implementar
+ los frozen spots en un framework, y los métodos hook, los hot spots.
+ Los frozen spots son aspectos que son invariantes a lo largo de las aplicacione
+s en el dominio, posiblemente representando comportamiento abstracto, ujos
+ de control genéricos y relaciones comunes entre objetos.
+ La gura siguiente es un ejemplo, en el que la clase B tiene 3 métodos:
+ M1, es el método template que invoca a M2 y M3; M2 es declarado abstracto,
+ y M3 ofrece una implementación por defecto.
+ En base a esto en esto, decidimos utilizar esta estrategia para identicar
+ componentes arquitectónicos.
+ En primer lugar identicamos los métodos hook, y a partir de esto se abren
+ dos posibilidades.
+ La primera, si el método hook es invocado desde otra jerarquía, es decir,
+ la clase que contiene el método hook, no es subclase de la clase que declara
+ el método template que lo invoca, se seleccionan dichas clases como posibles
+ componentes, y se recupera también la relación, en la que la clase hook
+ provee un servicio y la clase template lo consume.(Figura B de la gura 15)
+ La segunda, es si la clase hook, es subclase de la clase template, de esta
+ forma se busca quien invoca al método template.
+ Y se procede a lo mismo que la anterior, se seleccionan como posibles component
+es y se recupera la relación.
+ (Figura A de la gura 15).
 \end_layout
 
 \begin_layout Subsection
@@ -3831,6 +3921,2486 @@ name "sec:JQuery"
 \end_inset
 
 JQuery
+\end_layout
+
+\begin_layout Standard
+JQuery es un buscador flexible de código fuente basado en consultas y desarrolla
+do como un plug-in de Eclipse.
+ Esta implementado sobre un lenguaje lógico de consultas.
+ El mismo soporta búsquedas directas de subconjuntos de elementos especícos
+ de código fuente de acuerdo a algún criterio especicado por una consulta.
+ JQuery esta construido sobre las bases de un lenguaje similar a prolog:
+ TyRuBa.
+ El poder de un lenguaje de programación lógico provee la flexibilidad para
+ expresar consultas complejas y usar reglas para denir relaciones de alto
+ nivel.
+ El lenguaje de consultas de JQuery es básicamente TyRuBa, complementado
+ con una librería de predicados que permite consultar sobre unidades de
+ código y las relaciones entre ellas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="middle" leftline="true" rightline="true" width="8cm">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Nombre del Predicado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Tipo de argumento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+cu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+CU
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+cu(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es una unidad de compilación (archivo .class o .java)."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+package
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Package
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+package(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un paquete."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+class
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+class(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es una clase."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+interface
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+interface(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es una interface."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+method
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Method
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+method(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un método."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+constructor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Constructor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+constructor(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un constructor."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+initializer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Initializer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+initializer(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un inicializador."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+field(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un campo."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+bookmark
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Bookmark
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+bookmark(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un 
+\emph on
+bookmark.
+\emph default
+"
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+warning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Warning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+warning(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un 
+\emph on
+warning
+\emph default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+error
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Error
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+error(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es un error."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+task
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Task
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+task(?X)
+\family default
+\size default
+ significa: ”
+\family typewriter
+\size small
+\noun on
+?X
+\family default
+\size default
+\noun default
+ es una tarea."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "tab:Predicados-unarios"
+
+\end_inset
+
+Predicados unarios
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Nombre del Predicado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Tipo de argumento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+priority
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Task, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+priority(?T, ?P)
+\family default
+\size default
+ significa: 
+\begin_inset Quotes sld
+\end_inset
+
+La tarea
+\family typewriter
+\size small
+\noun on
+ ?T
+\family default
+\size default
+\noun default
+ tiene prioridad 
+\family typewriter
+\size small
+\noun on
+?P
+\family default
+\size default
+\noun default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Element, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+name(?E, ?S)
+\family default
+\size default
+ significa: ”El elemento
+\family typewriter
+\size small
+\noun on
+ ?E
+\family default
+\size default
+\noun default
+ tiene el nombre 
+\family typewriter
+\size small
+?S
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+child
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Element, Element
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+child(?Sup, ?Sub)
+\family default
+\size default
+ significa: ”El elemento
+\family typewriter
+\size small
+\noun on
+ ?Sup
+\family default
+\size default
+\noun default
+ tiene el hijo 
+\family typewriter
+\size small
+?Sub
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+extends
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+RefType, RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+extends(?C1, ?C2)
+\family default
+\size default
+ significa: ”La clase (o interface)
+\family typewriter
+\size small
+\noun on
+ ?C1
+\family default
+\size default
+\noun default
+ extiende la clase (o interface) 
+\family typewriter
+\size small
+?C2
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+implements
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+RefType, RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+implements(?C, ?I)
+\family default
+\size default
+ significa: ”La clase 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ implementa la interface 
+\family typewriter
+\size small
+?I
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+throws
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+throws(?C, ?T)
+\family default
+\size default
+ significa: ”El llamador 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ lanza 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Field, Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+type(?F, ?T)
+\family default
+\size default
+ significa: ”El campo 
+\family typewriter
+\size small
+\noun on
+?F
+\family default
+\size default
+\noun default
+ es del tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+modifier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Element, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+modifier(?E, ?S)
+\family default
+\size default
+ significa: ”El elemento
+\family typewriter
+\size small
+\noun on
+ ?E
+\family default
+\size default
+\noun default
+ tiene un modificador (ej.: public, private, static, etc.) 
+\family typewriter
+\size small
+?S
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+arg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+arg(?C, ?T)
+\family default
+\size default
+ significa: ”El llamador 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ tiene un argumento dle tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+returns
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+returns(?C, ?T)
+\family default
+\size default
+ significa: ”El llamador 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ retorna el tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+signature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+signature(?C, ?S)
+\family default
+\size default
+ significa: ”El llamador
+\family typewriter
+\size small
+\noun on
+ ?C
+\family default
+\size default
+\noun default
+ tiene una signatura 
+\family typewriter
+\size small
+?S
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "tab:Predicados-binarios"
+
+\end_inset
+
+Predicados binarios
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Nombre del Predicado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Tipo de argumento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+methodCall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Block, Method, SourceLocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+methodCall(?B, ?M, ?L)
+\family default
+\size default
+ significa: 
+\begin_inset Quotes sld
+\end_inset
+
+El bloque 
+\family typewriter
+\size small
+?B
+\family default
+\size default
+ llama al método 
+\family typewriter
+\size small
+?M
+\family default
+\size default
+ en la ubicación 
+\family typewriter
+\size small
+?L
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+thisCall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Constructor, Constructor, SourceLocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+thisCall(?C1, ?C2, ?L)
+\family default
+\size default
+ significa: ”El constructor 
+\family typewriter
+\size small
+?C1
+\family default
+\size default
+, realiza un llamado this al constructor 
+\family typewriter
+\size small
+?C2
+\family default
+\size default
+ en la ubicación 
+\family typewriter
+\size small
+?L
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+construcorCall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Block, Constructor, SourceLocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+construcorCall(?B, ?C, ?L)
+\family default
+\size default
+ significa: ”El bloque 
+\family typewriter
+\size small
+?B
+\family default
+\size default
+ llama al constructor 
+\family typewriter
+\size small
+?C
+\family default
+\size default
+ en la ubicación 
+\family typewriter
+\size small
+?L
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+instanceOf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Block, RefType, SourceLocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+instanceOf(?B, ?T, ?L)
+\family default
+\size default
+ significa: ”El bloque 
+\family typewriter
+\size small
+?B
+\family default
+\size default
+ es una instancia del tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+ en la ubicación 
+\family typewriter
+\size small
+?L
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+reads
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Block, Field, SourceLocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+reads(?B, ?F, ?L)
+\family default
+\size default
+ significa: ”El bloque 
+\family typewriter
+\size small
+?B
+\family default
+\size default
+ lee el campo 
+\family typewriter
+\size small
+?F
+\family default
+\size default
+ en la ubicación 
+\family typewriter
+\size small
+?L
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+writes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Block, Field, SourceLocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+writes(?B, ?F, ?L)
+\family default
+\size default
+ significa: ”El bloque 
+\family typewriter
+\size small
+?B
+\family default
+\size default
+ escribe el campo 
+\family typewriter
+\size small
+?F
+\family default
+\size default
+ en la ubicación 
+\family typewriter
+\size small
+?L
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+param
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, Type, Integer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+param(?C, ?T, ?N)
+\family default
+\size default
+ significa: ”El llamador 
+\family typewriter
+\size small
+?C
+\family default
+\size default
+ tiene un argumento del tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+ como su argumento numero 
+\family typewriter
+\size small
+?N
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+tag
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Element, String, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+tag(?E, ?N, ?V)
+\family default
+\size default
+ significa: ”El elemento 
+\family typewriter
+\size small
+?E
+\family default
+\size default
+ tiene un javadoc tag 
+\family typewriter
+\size small
+?N
+\family default
+\size default
+ con el valor 
+\family typewriter
+\size small
+?V
+\family default
+\size default
+"
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "tab:Predicados-ternarios"
+
+\end_inset
+
+Predicados ternarios
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Nombre del Predicado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Tipo de argumento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+priority
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Task, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+priority(?T, ?P)
+\family default
+\size default
+ significa: 
+\begin_inset Quotes sld
+\end_inset
+
+La tarea
+\family typewriter
+\size small
+\noun on
+ ?T
+\family default
+\size default
+\noun default
+ tiene prioridad 
+\family typewriter
+\size small
+\noun on
+?P
+\family default
+\size default
+\noun default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Element, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+name(?E, ?S)
+\family default
+\size default
+ significa: ”El elemento
+\family typewriter
+\size small
+\noun on
+ ?E
+\family default
+\size default
+\noun default
+ tiene el nombre 
+\family typewriter
+\size small
+?S
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+child
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Element, Element
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+child(?Sup, ?Sub)
+\family default
+\size default
+ significa: ”El elemento
+\family typewriter
+\size small
+\noun on
+ ?Sup
+\family default
+\size default
+\noun default
+ tiene el hijo 
+\family typewriter
+\size small
+?Sub
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+extends
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+RefType, RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+extends(?C1, ?C2)
+\family default
+\size default
+ significa: ”La clase (o interface)
+\family typewriter
+\size small
+\noun on
+ ?C1
+\family default
+\size default
+\noun default
+ extiende la clase (o interface) 
+\family typewriter
+\size small
+?C2
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+implements
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+RefType, RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+implements(?C, ?I)
+\family default
+\size default
+ significa: ”La clase 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ implementa la interface 
+\family typewriter
+\size small
+?I
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+throws
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, RefType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+throws(?C, ?T)
+\family default
+\size default
+ significa: ”El llamador 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ lanza 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Field, Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+type(?F, ?T)
+\family default
+\size default
+ significa: ”El campo 
+\family typewriter
+\size small
+\noun on
+?F
+\family default
+\size default
+\noun default
+ es del tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+modifier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Element, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+modifier(?E, ?S)
+\family default
+\size default
+ significa: ”El elemento
+\family typewriter
+\size small
+\noun on
+ ?E
+\family default
+\size default
+\noun default
+ tiene un modificador (ej.: public, private, static, etc.) 
+\family typewriter
+\size small
+?S
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+arg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+arg(?C, ?T)
+\family default
+\size default
+ significa: ”El llamador 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ tiene un argumento dle tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+returns
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+returns(?C, ?T)
+\family default
+\size default
+ significa: ”El llamador 
+\family typewriter
+\size small
+\noun on
+?C
+\family default
+\size default
+\noun default
+ retorna el tipo 
+\family typewriter
+\size small
+?T
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+signature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Callable, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+signature(?C, ?S)
+\family default
+\size default
+ significa: ”El llamador
+\family typewriter
+\size small
+\noun on
+ ?C
+\family default
+\size default
+\noun default
+ tiene una signatura 
+\family typewriter
+\size small
+?S
+\family default
+\size default
+."
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "tab:Predicados-DRArch"
+
+\end_inset
+
+Predicados DRArch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
