@@ -442,7 +442,7 @@ Encoding: Cp1252
 }
 
 @TECHREPORT{Rick2003,
-  author = {Rick Kazman, Liam O'Brien, Chris Verhoef},
+  author = {Rick Kazman, Liam O’Brien, Chris Verhoef},
   title = {Architecture Reconstruction Guidelines},
   institution = {CMU-SEI},
   year = {2003}

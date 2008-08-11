@@ -1,5 +1,5 @@
-#LyX 1.4.3-4 created this file. For more info see http://www.lyx.org/
-\lyxformat 245
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
 \begin_document
 \begin_header
 \textclass book
@@ -8,13 +8,21 @@
 \end_preamble
 \language spanish
 \inputencoding latin1
-\fontscheme pslatex
+\font_roman times
+\font_sans helvet
+\font_typewriter courier
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \paperfontsize default
 \spacing single
 \papersize default
 \use_geometry false
 \use_amsmath 2
+\use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -27,7 +35,8 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
-\output_changes true
+\output_changes false
+\author "" 
 \end_header
 
 \begin_body
@@ -98,7 +107,7 @@ Drarch
 \align center
 
 \size largest
-RecuperaciÛn y ReconstrucciÛn
+Recuperaci√≥n y Reconstrucci√≥n
 \newline
  de Arquitecturas
 \end_layout
@@ -122,7 +131,7 @@ por
 
 \series bold
 \size larger
-Nicol·s Frontini y Facundo Maldonado
+Nicol√°s Frontini y Facundo Maldonado
 \end_layout
 
 \begin_layout Standard
@@ -213,12 +222,12 @@ status open
 Director: Dr.
  J.
  Ing.
- ¡lvaro Soria
+ √Ålvaro Soria
 \end_layout
 
 \begin_layout Standard
 \align center
-Co-Director: AndrÈs Diaz Pace
+Co-Director: Andr√©s Diaz Pace
 \end_layout
 
 \begin_layout Standard
@@ -233,7 +242,7 @@ Co-Director: AndrÈs Diaz Pace
 
 \size larger
 Tandil, Argentina.
- Mayo de 2007
+ Noviembre de 2008
 \end_layout
 
 \begin_layout Standard

@@ -1,17 +1,25 @@
-#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 245
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
 \begin_document
 \begin_header
 \textclass book
 \language spanish
 \inputencoding auto
-\fontscheme ae
+\font_roman ae
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \paperfontsize 11
 \spacing single
 \papersize a4paper
 \use_geometry true
 \use_amsmath 2
+\use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -23,17 +31,3815 @@
 \tocdepth 2
 \paragraph_separation indent
 \defskip medskip
-\quotes_language english
+\quotes_language swedish
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "" 
+\author "" 
 \end_header
 
 \begin_body
 
 \begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Include \include{cover.lyx}
+preview false
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Resumen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+addcontentsline{toc}{chapter}{Resumen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+..
+ [un resumen de todo el trabajo]
+\end_layout
+
+\begin_layout Chapter*
+Agradecimientos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+addcontentsline{toc}{chapter}{Agradecimientos}
+\end_layout
+
+\end_inset
+
+...¡Gracias!
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introducción
+\end_layout
+
+\begin_layout Standard
+La Arquitectura de Software de un sistema sirve para capturar las principales
+ decisiones de diseño del sistema.
+ Estas primeras decisiones son las más difíciles de tomar correctamente,
+ las más difíciles de cambiar más adelante en el proceso de desarrollo y
+ sus efectos son los que más perduran en el ciclo de vida de un sistema.
+ En particular, una arquitectura abarca aspectos estructurales y de comportamien
+to: los aspectos estructurales se refieren a vistas estáticas del sistema,
+ mientras que los aspectos de comportamiento se refieren a vistas dinámicas
+ del sistema.
+ Por ejemplo, los diagramas de componentes sirven para representar aspectos
+ estructurales, mientras que los Use Case Maps 
+\begin_inset LatexCommand cite
+key "UCMBOOK"
+
+\end_inset
+
+ proveen un modelo para aspectos de comportamiento.
+ Así y todo, aún con la ayuda de las arquitecturas, entender cómo funciona
+ un sistema complejo y comunicárselo a los demás continua siendo un problema
+ para muchas organizaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+En general, todo sistema que involucra software posee una arquitectura de
+ software.
+ Sin embargo, no necesariamente existe en la práctica una documentación
+ acertada de esta arquitectura.
+ Suele suceder que la gente que diseñó el sistema se ha ido de la organización,
+ que la documentación es escasa y está des\SpecialChar \-
+actua\SpecialChar \-
+li\SpecialChar \-
+za\SpecialChar \-
+da, que el código fuente
+ se ha perdido, y lo único con que se cuenta es con el código ejecutable
+ binario.
+ En estas situaciones, dado que una arquitectura puede existir independientement
+e de su especificación, es que cobran importancia las enfoques de documentación
+ y reconstrucción de arquitecturas
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Motivación"
+
+\end_inset
+
+Motivación
+\end_layout
+
+\begin_layout Standard
+La Reconstrucción de Arquitecturas es una técnica para generar representaciones
+ arquitectónicas de un sistema que puede ser utilizada de diversas formas.
+ El principal uso de esta representación es el de documentar la arquitectura
+ existente de un sistema.
+ Si no existe la documentación o la documentación disponible esta desactualizada
+, la representación obtenida mediante la reconstrucción puede ser usada
+ como una base para la re-documentación de la arquitectura.
+ Esta representación también puede ser usada como un punto de comienzo para
+ realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
+ Finalmente, la re\SpecialChar \-
+pre\SpecialChar \-
+sen\SpecialChar \-
+ta\SpecialChar \-
+ción puede ser usada como una forma de identificar
+ componentes reusables ó para establecer una arquitectura base dentro de
+ una línea de productos de software 
+\begin_inset LatexCommand cite
+key "Rick2003"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Algunas soluciones a la Reconstrucción de Arquitecturas han sido propuestas
+ en 
+\begin_inset LatexCommand cite
+key "BOWMAN99,GALL95,TZERPOS96,Harris1995,Rick2003,GUO99"
+
+\end_inset
+
+.
+ En la mayoría, la arquitectura del sistema se extrae principalmente por
+ medio del análisis del código fuente.
+ En otras, la información se obtiene tanto del código fuente como del sistema
+ en ejecución ó sólo re\SpecialChar \-
+cons\SpecialChar \-
+tru\SpecialChar \-
+ye arquitecturas de sistemas implementados
+ utilizando patrones de diseño.
+ Muchos de los enfoques mencionados sólo muestran aspectos estructurales
+ (diagramas de clases) y muy pocos muestran resultados que permitan visualizar
+ el comportamiento del sistema (ej: diagramas de UCMs ó de secuencia).
+ 
+\end_layout
+
+\begin_layout Standard
+Estos enfoques presentan el resultado de la reconstrucción en un solo paso
+ y el arquitecto no ve el progreso del proceso de reconstrucción.
+ Esto hace que el proceso no se pueda 
+\begin_inset Quotes eld
+\end_inset
+
+guiar
+\begin_inset Quotes erd
+\end_inset
+
+ a medida que se reconstruye la arquitectura.
+ Es decir, no se tiene control sobre qué y cómo se recupera la información,
+ ni puede intervenir si lo considera necesario.
+ Además, no es posible manipular la información de forma interactiva, perdiendo
+ así la posibilidad de contar con la experiencia del arquitecto y su conocimient
+o en el dominio.
+ Por otro lado, ninguno de estos enfoques mantiene la información recuperada
+ de tal forma que sea flexible su manipulación
+\end_layout
+
+\begin_layout Section
+Objetivos y restricciones
+\end_layout
+
+\begin_layout Standard
+Como objetivo principal del trabajo se propuso reconstruir la arquitectura
+ de un sistema de software.
+ Para cumplir con este objetivo, el proceso de reconstrucción genera diagramas
+ (vistas arquitectónicas) que representan aspectos estructurales y comportamenta
+les del sistema.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el análisis de algunos trabajos similares puso a la luz ciertas
+ ca\SpecialChar \-
+rac\SpecialChar \-
+te\SpecialChar \-
+rís\SpecialChar \-
+ti\SpecialChar \-
+cas que pueden dificultar la aplicación de un enfoque de esta
+ naturaleza.
+ Por esta razón se impusieron las siguientes restricciones:
+\end_layout
+
+\begin_layout Itemize
+Se debe tener en cuenta en el análisis la información que aporten las personas
+ que peseen conocimiento del sistema del cual se quiere obtener una representaci
+ón arquitectónica.
+ Así como también aquella información que este basada en la experiencia.
+\end_layout
+
+\begin_layout Section
+Organización del trabajo
+\end_layout
+
+\begin_layout Standard
+[Describir como esta organizado el trabajo]
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+El resto de este trabajo se encuentra organizado de la siguiente manera.
+ En el capítulo...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\begin_inset LatexCommand label
+name "cha:Contexto"
+
+\end_inset
+
+Contexto
+\end_layout
+
+\begin_layout Standard
+En este capítulo se ofrecerá una introducción a los conceptos centrales
+ sobre los que se ha realizado este trabajo.
+ En primer lugar se define la noción de 
+\emph on
+Arquitectura de Software
+\emph default
+ en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Arquitectura-de-Software"
+
+\end_inset
+
+, enfatizando la importancia de su documentación dentro de la organización
+ y en particular para el equipo de desarrollo.
+ En la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Use-Case-Maps"
+
+\end_inset
+
+ se presentan los 
+\emph on
+Use-Case Maps
+\emph default
+, una notación simple y efectiva para la documentación de comportamiento
+ a nivel arquitectónico.
+ Luego, en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Necesidad-de-la-ReconstruccionEscaza-documentación-arquitectónica"
+
+\end_inset
+
+ se introduce un problema relacionado con las 
+\emph on
+arquitecturas de software
+\emph default
+ conocido como 
+\emph on
+erosión arquitectónica
+\emph default
+, explicando las condiciones donde ocurre y las graves consecuencias que
+ presenta para el desarrollo de software.
+ Por último, en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Conclusión"
+
+\end_inset
+
+ y a modo de resumen, se resaltan los conceptos clave detallados en este
+ capítulo.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Arquitectura-de-Software"
+
+\end_inset
+
+Arquitecturas de software
+\end_layout
+
+\begin_layout Standard
+Si bien no existe una única definición de arquitectura de software universalment
+e aceptada, generalmente todas lo hacen en función de conceptos comunes.
+ En todas se encuentra la noción de descomposición de un sistema en diferentes
+ partes, de relaciones existentes entre estas partes, de abstracción de
+ las propiedades que no sean externamente visibles ni relevantes para la
+ interacción de sus elementos.
+ Adicionalmente, se sabe que existen diferentes perspectivas desde las que
+ se puede observar un sistema según las propiedades de interés y que ninguna
+ de estas vistas conforma la arquitectura en si.
+ En su libro 
+\emph on
+Software Architecture in Practice
+\emph default
+\InsetSpace ~
+
+\emph on
+
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+
+\emph default
+, Bass et.al.
+ proponen una definición que abarca gran parte de las características antes
+ mencionadas:
+\end_layout
+
+\begin_layout Quote
+
+\emph on
+La arquitectura de software de un programa o sistema de computación es la
+ estructura o estructuras del sistema, las cuales abarcan los elementos
+ de software, las propiedades externamente visibles de esos elementos, y
+ las relaciones entre ellos.
+\end_layout
+
+\begin_layout Standard
+Como se desprende de esta definición, una arquitectura de software puede
+ abarcar 
+\emph on
+más de una estructura o vista
+\emph default
+.
+ Un ejemplo que puede ilustrar esta propiedad es observar la estructura
+ que presentan normalmente los proyectos de desarrollo.
+ Generalmente éstos son particionados en módulos con una cierta cantidad
+ de responsabilidades fundamentales, que luego son asignadas a diferentes
+ equipos para su de\SpecialChar \-
+sa\SpecialChar \-
+rro\SpecialChar \-
+llo.
+ Cada uno de estos módulos contiene programas y datos accesibles desde otros
+ elementos, además de otros atributos que son privados.
+ Éste tipo de estructura se emplea a menudo para describir un sistema y
+ define principalmente cómo se divide y asigna su funcionalidad, por esta
+ razón, representa una perspectiva estática.
+ Por otro lado, existen estructuras que centran su atención en cómo los
+ elementos interactúan en tiempo de ejecución para alcanzar la funcionalidad
+ propuesta.
+ Aquí el foco se pone sobre la manera en que los diferentes módulos interactúan
+ para ejecutarse en diferentes procesos y como se comunican y sincronizan
+ entre ellos.
+ A pesar de que ambas vistas aportan información sobre la arquitectura,
+ ninguna de ellas la describe en su totalidad.
+ 
+\end_layout
+
+\begin_layout Standard
+La definición precedente también caracteriza a las vistas del sistema por
+ estar compuestas de elementos de software, de propiedades externamente
+ visibles y de relaciones entre ellos.
+ Esto implica que no es relevante en este nivel, y por lo tanto se omite,
+ la información de los elementos que no es pertinente a su interacción.
+ Justamente por ser una abstracción de un sistema complejo, la arquitectura
+ de software oculta los detalles que no afectan la manera en que los diferentes
+ elementos usan, son usados por, se relacionan con o interactúan con otros
+ elementos.
+\end_layout
+
+\begin_layout Standard
+Una de las implicancias de la definición de arquitectura, es su omnipresencia
+ en cualquier sistema de software, aunque ésta no se encuentre documentada.
+ Cualquier sistema posee elementos distinguibles con propiedades y relaciones
+ asociadas, sin embargo no siempre existe alguien que conozca esta arquitectura,
+ de aquí que resulte muy importante su documentación.
+\end_layout
+
+\begin_layout Standard
+Finalmente, de la definición se deduce que el comportamiento de los elementos
+ de software también forma parte de la arquitectura.
+ Tal como ocurre con las propiedades meramente internas de los elementos
+ de software, el comportamiento relevante en este nivel (y por lo tanto,
+ integrante de la arquitectura) es aquel que afecte cómo los demás elementos
+ tienen que ser escritos y de qué manera deben comunicarse con él, como
+ así también aquellos que determinen el cumplimiento o no de alguna característi
+ca deseable en el sistema completo.
+\end_layout
+
+\begin_layout Subsection
+Modelos Arquitectónicos
+\end_layout
+
+\begin_layout Standard
+Los estilos arquitectónicos son descripciones de los distintos tipos de
+ componentes y su tipología.
+ También incluye una descripción del patrón de datos y la interacción de
+ control.
+ Los estilos arquitectónicos son artefactos de ingeniería muy importantes
+ porque definen soluciones de diseños que pueden ser aplicados a problemas
+ recurrentes.
+ Éstos ofrecen modelos que se basan en la experiencia y en cómo fueron utilizado
+s anteriormente.
+ 
+\end_layout
+
+\begin_layout Standard
+Garlan and Shaw [1993], Garlan et al.
+ [1994], y Shaw and Clements [1997] proponen la siguiente definición de
+ estilos arquitectónicos en términos de patrones de interacciones entre
+ tipos de componentes:
+\end_layout
+
+\begin_layout Quote
+
+\emph on
+Un estilo arquitectónico determina el vocabulario de componentes y conectores
+ que pueden ser usados en instancias de ese estilo, junto con un conjunto
+ de restricciones de cómo pueden ser combinadas.
+ De esta forma, se definen familias de estilos que comparten propiedades
+ arquitectónicas comunes.
+\end_layout
+
+\begin_layout Standard
+Los estilos también pueden incluir una descripción formal en donde se detalla
+ la relación costo-beneficio de aplicar el estilo.
+ Por ejemplo, una descripción podría ser: "Utilizar el estilo arquitectónico
+ 
+\emph on
+Pipes and Filters
+\emph default
+ cuando se requiera el reuso de los componentes mientras que la 
+\emph on
+performance
+\emph default
+ no es de alta prioridad.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+A software architecture determines how system components are identified
+ and allocated, how the components interact to form a system, the amount
+ and granularity of communication needed for interaction, and the interface
+ protocols used for communication.
+ For a network-based application, system performance is dominated by network
+ communication.
+ Therefore, selection of the appropriate architectural style(s) for use
+ in designing the software architecture can make the difference between
+ success and failure in the deployment of a network-based application.
+ Software architectural styles have been characterized by their control-flow
+ and dataflow patterns, allocation of functionality across components, and
+ component types.
+ Unfortunately, none of these characterizations are useful for understanding
+ how a style influences the set of architectural properties, or qualities,
+ of a system.
+ These properties include, among others, user-perceived performance, network
+ efficiency, simplicity, modifiability, scalability, and portability.
+ We use these style-induced architectural properties to classify styles
+ for network-based applications with the goal of understanding why certain
+ styles are better than others for some applications, thus providing additional
+ guidance for software engineers faced with the task of architectural design.
+\end_layout
+
+\begin_layout Standard
+Architectural Styles Since an architecture embodies both functional and
+ non-functional properties, it can be difficult to directly compare architecture
+s for different types of systems, or for even the same type of system set
+ in different environments.
+ Styles are a mechanism for categorizing architectures and for defining
+ their common characteristics [Di Nitto and Rosenblum, 1999].
+ An architectural style characterizes a family of systems that are related
+ by shared structural and semantic properties [Monroe et al., 1997].
+ Architectural styles provide an abstraction for the interactions of the
+ components in an architecture [Shaw, 1990].
+ Each style captures the essence of a pattern of interaction by ignoring
+ the incidental details of the rest of the architecture.
+ Perry and Wolf [1992] define architectural style as an abstraction of element
+ types and formal aspects from various specific architectures, perhaps concentra
+ting on only certain aspects of an architecture.
+ An architectural style encapsulates important decisions about the architectural
+ elements and emphasizes important constraints on the elements and their
+ relationships.
+ This definition allows for styles that focus only on the connectors of
+ an architecture, or on specific aspects of the component interfaces.
+ In contrast, Garlan and Shaw [1993], Garlan et al.
+ [1994], and Shaw and Clements [1997] all define style in terms of a pattern
+ of interactions among typed components.
+ Specifically, an architectural style determines the vocabulary of components
+ and connectors that can be used in instances of that style, together with
+ a set of constraints on how they can be combined [Garlan and Shaw, 1993].
+ This restricted view of architectural styles is a direct result of their
+ definition of software architecture — thinking of architecture as a formal
+ description, rather than as a running system, leads to abstractions based
+ only in the shared patterns of box and line diagrams.
+ Abowd et al.
+ [1995] define this explicitly as viewing the collection of conventions
+ that are used to interpret a class of architectural descriptions as defining
+ an architectural style.
+ New architectures can be defined as instances of specific styles [Di Nitto
+ and Rosenblum, 1999].
+ Since architectural styles may address different aspects of software architectu
+re, a given architecture may be composed of multiple styles.
+ Likewise, a hybrid style can be formed by combining multiple basic styles
+ into a single coherent style.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+An Architecture Style is a family of software architectures that share common
+ architecture properties
+\end_layout
+
+\begin_layout Standard
+[2] D.
+ Garlan, R.
+ Allen, J.
+ Ockerbloom, "Exploiting Style in Architectural Design Environments", Proceeding
+s of SIGSOFT ’94 Symposium on the Foundations of Software Engineering, December
+ 1994.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+A specialization of element and relation types, together with a set of constrain
+ts on how they can be used.
+ See architectural pattern.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+An architectural style is a description of component types and their topology.
+ It also includes a description of the pattern of data and control interaction
+ among the components and an informal description of the benefits and drawbacks
+ of using that style.
+ Architectural styles are important engineering artifacts because they define
+ classes of designs along with their associated known properties.
+ They offer experience-based evidence of how each class has been used historical
+ly, along with qualitative reasoning to explain why each class has its specific
+ properties.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset LatexCommand label
+name "sub:Descriptiones_Arquitectónicas"
+
+\end_inset
+
+Descripciones arquitectónicas 
+\end_layout
+
+\begin_layout Standard
+La documentación de una arquitectura es una etapa crucial para el desarrollo
+ de software.
+ Incluso con una arquitectura excelente, si ésta no es bien entendida y
+ bien comunicada --en otras palabras, bien documentada-- es muy probable
+ que el proyecto falle
+\begin_inset LatexCommand cite
+key "CLEMENTS02"
+
+\end_inset
+
+.
+ Si uno se toma el trabajo de crear una arquitectura robusta, 
+\emph on
+debe
+\emph default
+ describirla con suficiente detalle, sin ambigüedad y organizada de manera
+ tal que los demás puedan encontrar la información que necesitan.
+ Si no se logra esto, todo el esfuerzo habrá sido en vano ya que la arquitectura
+ no podrá ser usada.
+\end_layout
+
+\begin_layout Standard
+La documentación de la arquitectura es tanto prescriptiva como descriptiva
+ 
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+.
+ Ésto es, para desarrolladores con determinados roles, ella impone restricciones
+ que deben cumplirse al momento de tomar decisiones de diseño más detallado.
+ Para otras audiencias, su documentación describe las decisiones tomadas
+ sobre el diseño y por lo tanto, que cosas son ciertas sobre la arquitectura.
+\end_layout
+
+\begin_layout Standard
+Quizás el concepto más importante asociado con la documentación de arquitecturas
+ de software es el de 
+\emph on
+vista
+\emph default
+.
+ Recordando la definición de la sección anterior, vemos a la arquitectura
+ como 
+\begin_inset Quotes eld
+\end_inset
+
+la estructura o estructuras del sistema, que abarcan los e\SpecialChar \-
+le\SpecialChar \-
+men\SpecialChar \-
+tos, sus
+ propiedades externamente visibles, y las relaciones entre ellos
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Una vista es una 
+\emph on
+representación
+\emph default
+ coherente de esos los elementos importantes que constituyen un sistema,
+ tal como lo son el software o el hardware, respecto a la forma en que los
+ involucrados la leen y escriben.
+ La vista provee el principio básico de la documentación de una arquitectura
+ de software:
+\end_layout
+
+\begin_layout Quote
+Documentar una arquitectura significa documentar las vistas relevantes y
+ luego agregar la documentación que se aplica a más de una vista.
+\end_layout
+
+\begin_layout Standard
+Éste principio es útil porque separa el problema de la documentación en
+ las siguientes partes 
+\begin_inset LatexCommand cite
+key "CLEMENTS02"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Description
+Elección\InsetSpace ~
+de\InsetSpace ~
+las\InsetSpace ~
+vistas\InsetSpace ~
+relevantes.
+ La elección depende de los usos que se le espera dar a la documentación.
+ A través de estas vistas se deben expresar al menos tres aspectos del sistema:
+ (a) cómo está estructurado el conjunto de unidades de implementación, (b)
+ cómo está estructurado el conjunto de elementos que tienen 
+\emph on
+comportamiento
+\emph default
+ e interacciones en tiempo de ejecución y (c) cómo se relaciona con elementos
+ de su ambiente que no son software.
+\end_layout
+
+\begin_layout Description
+Documentación\InsetSpace ~
+de\InsetSpace ~
+una\InsetSpace ~
+vista.
+ Si bien no existe un template estándar de documentación de vistas, es esperable
+ que contenga al menos la siguiente información:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Presentación primaria: por lo general es un gráfico; presenta los elementos
+ principales y sus relaciones.
+\end_layout
+
+\begin_layout Enumerate
+Catálogo de elementos: detalla los elementos y relaciones presentados en
+ la presentación primaria.
+\end_layout
+
+\begin_layout Enumerate
+Diagrama de contexto: muestra cómo lo reflejado en la vista se relaciona
+ con su ambiente usando el vocabulario de la misma.
+\end_layout
+
+\begin_layout Enumerate
+Guía de variabilidad: explica en detalle los puntos de variación que son
+ parte de la arquitectura y están explicados en esta vista.
+\end_layout
+
+\begin_layout Enumerate
+Razonamiento arquitectónico: explica cómo el diseño reflejado en esta vista
+ llegó a ser como es.
+\end_layout
+
+\begin_layout Enumerate
+Glosario de términos.
+\end_layout
+
+\begin_layout Enumerate
+Otra información.
+\end_layout
+
+\begin_layout Description
+Documentación\InsetSpace ~
+de\InsetSpace ~
+comportamiento.
+ Las vistas presentan 
+\emph on
+información estructural
+\emph default
+ del sistema.
+ Sin embargo, ésta información 
+\emph on
+no es suficiente
+\emph default
+ para razonar acerca de ciertas propiedades del mismo.
+ Exactamente qué aspectos del comportamiento modelar va a depender del tipo
+ de sistema que se está diseñando: en un sistema de tiempo real importan
+ las propiedades temporales de los eventos; mientras que en un sistema bancario
+ las secuencias de eventos, las transacciones atómicas y los procedimientos
+ de rollback son lo más importante.
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Documentación\InsetSpace ~
+de\InsetSpace ~
+la\InsetSpace ~
+información\InsetSpace ~
+que\InsetSpace ~
+se\InsetSpace ~
+aplica\InsetSpace ~
+a\InsetSpace ~
+más\InsetSpace ~
+de\InsetSpace ~
+una\InsetSpace ~
+vista.
+ Cons\SpecialChar \-
+ti\SpecialChar \-
+tu\SpecialChar \-
+ye el complemento de la documentación de las vistas, es decir la
+ información que se aplica a más de una vista o al paquete de documentación
+ en sí.
+ Consiste de tres aspectos principales, el cómo, el qué y el por qué:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Cómo está organizada la documentación, de manera que los interesados en
+ la arquitectura pueden encontrar la información que necesitan eficientemente.
+\end_layout
+
+\begin_layout Description
+Qué es la arquitectura: una descripción general del sistema para orientar
+ al lector acerca del propósito del sistema, la forma en que las vistas
+ se relacionan entre sí, una lista de elementos y dónde aparecen, y un glosario
+ que se aplica a toda la arquitectura.
+\end_layout
+
+\begin_layout Description
+Por\InsetSpace ~
+qué la arquitectura es como es: el contexto del sistema, restricciones
+ externas que han sido impuestas para darle forma a la arquitectura de cierta
+ manera, y el razonamiento para las decisiones de mayor granularidad y escala.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+La documentación de la arquitectura libera al arquitecto de tener que contestar
+ cientos de preguntas acerca de ella.
+ Para crear la documentación, se deben entender a todas las partes interesadas
+ y cómo esperan usarla.
+ Por lo tanto, todos los interesados deben ser tenidos en cuenta a la hora
+ de elegir las vistas relevantes.
+\end_layout
+
+\begin_layout Standard
+Una de las descripciones arquitectónicas elegidas para representar la arquitectu
+ra reconstruida de un sistema es la de UCMs.
+ A diferencia de otras descripciones arquitectónicas (basadas principalmente
+ en mostrar la estructura de sistemas), este tipo de notaciones ayuda a
+ las personas a razonar acerca del comportamiento del sistema.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Use-Case-Maps"
+
+\end_inset
+
+Use-Case Maps
+\end_layout
+
+\begin_layout Standard
+Los use case maps (UCM) son una notación para diseño de alto nivel que ayuda
+ a las personas tanto a expresar como a razonar acerca de los patrones de
+ comportamiento de alta granularidad de un sistema 
+\begin_inset LatexCommand cite
+key "BUHR95"
+
+\end_inset
+
+.
+ El nombre proviene del hecho de que son una notación visual para casos
+ de uso y una extensión de ellos hacia el diseño de alto nivel.
+ Sin embargo, el modelo no depende de la definición de casos de uso: provee
+ su propia definición en sus propios términos.
+\end_layout
+
+\begin_layout Standard
+Los UCMs no son un lenguaje apropiado para especificación formal de comportamien
+to, ya que deliberadamente dejan algunas decisiones abiertas para ser tomadas
+ durante el diseño detallado.
+ Los UCM son solamente una notación para razonar y explicar el comportamiento
+ de un sistema.
+ Es importante de tener esto presente ya que es fácil caer en la trampa
+ de buscar o colocar más información de la que corresponde encontrar en
+ ellos.
+\end_layout
+
+\begin_layout Subsection
+Notación básica e interpretación
+\end_layout
+
+\begin_layout Standard
+A continuación se da una breve descripción de los diferentes elementos visuales
+ que conforman la notación, junto con los conceptos asociados a cada uno
+ de ellos.
+ La idea principal detrás de los UCMs es la de modelar los casos de uso
+ mediante secuencias causales (en adelante, 
+\emph on
+paths
+\emph default
+) a través de estructuras organizacionales, de esta manera combinando vistas
+ estructurales y comportamentales de la arquitectura del sistema.
+ Los UCMs tienen cuatro elementos principales: responsabilidades, paths,
+ componentes y acoplamientos entre paths.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename img/responsibility.png
+	scale 50
+
+\end_inset
+
+\InsetSpace ~
+Responsabilidades.
+ Expresan las funciones de las que cada componente es responsable.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename img/path.png
+	scale 50
+
+\end_inset
+
+\InsetSpace ~
+Paths.
+ Trazan la progresión de causas y efectos entre responsabilidades.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename img/component.png
+	scale 50
+
+\end_inset
+
+\InsetSpace ~
+Componentes.
+ Actúan como contenedores de responsabilidades.
+\end_layout
+
+\begin_layout Description
+Acoplamientos.
+ Sirven para conectar paths y así lograr patrones de mayor granularidad.
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+\begin_inset Graphics
+	filename img/andFork.png
+	scale 50
+
+\end_inset
+
+\InsetSpace ~
+And\InsetSpace ~
+Forks.
+ Indican la bifurcación en dos paths concurrentes.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename img/andJoin.png
+	scale 50
+
+\end_inset
+
+\InsetSpace ~
+And\InsetSpace ~
+Joins.
+ Indican la unión de dos paths concurrentes.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename img/orFork.png
+	scale 50
+
+\end_inset
+
+\InsetSpace ~
+Or\InsetSpace ~
+Forks.
+ Indican el fin de un segmento causal común entre dos paths.
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename img/orJoin.png
+	scale 50
+
+\end_inset
+
+\InsetSpace ~
+Or\InsetSpace ~
+Joins.
+ Indican el comienzo de un segmento causal común entre dos paths.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+\begin_inset LatexCommand label
+name "sub:Ejemplo-UCM"
+
+\end_inset
+
+Ejemplo
+\end_layout
+
+\begin_layout Standard
+La Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Ejemplo-de-UCM"
+
+\end_inset
+
+ muestra un ejemplo de UCMs, donde hay un simple escenario donde una modificació
+n en el modelo requiere de la notificación a la interfase de usuario y a
+ un 
+\emph on
+logger
+\emph default
+.
+ El sistema está organizado alrededor de un patrón de diseño 
+\emph on
+Observer-Observable
+\emph default
+, en el cual el componente 
+\emph on
+Observable 
+\emph default
+y los componentes 
+\emph on
+Observers
+\emph default
+ están desacoplados.
+ La responsabilidad 
+\emph on
+notifyObservers
+\emph default
+ en 
+\emph on
+Observable
+\emph default
+ envía una notificación de cambio a todos los 
+\emph on
+Observers
+\emph default
+.
+ Ésto causa la activación de la responsabilidad 
+\emph on
+update
+\emph default
+ de cada 
+\emph on
+Observer
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableSample.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Ejemplo-de-UCM"
+
+\end_inset
+
+Ejemplo de UCM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Rol en la documentación de arquitecturas
+\end_layout
+
+\begin_layout Standard
+Documentar el comportamiento añade detalle semántico relacionado con el
+ tiempo a los elementos y sus interacciones.
+ Los modelos comportamentales agregan información que revela el orden de
+ las interacciones entre los elementos, las oportunidades para concurrencia,
+ y las dependencias que tienen las interacciones con el tiempo.
+\end_layout
+
+\begin_layout Standard
+Para atribuir comportamiento a elementos de una descripción arquitectónica,
+ es necesario agregar 
+\begin_inset Quotes eld
+\end_inset
+
+tejido conectivo
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset LatexCommand cite
+key "BUHR96,BUHR99"
+
+\end_inset
+
+.
+ Una forma de introducir este tipo de tejido es usar conexiones que soportan
+ interacciones (llamadas o mensajes) entre elementos a través de interfaces.
+ Dichas interfaces definen los nombres y parámetros de todas las posibles
+ interacciones, ocultando detalles de la lógica interna de los componentes.
+ A estas conexiones se les puede atribuir comportamiento al describir esce\SpecialChar \-
+na\SpecialChar \-
+rios
+ de interacción usando diagramas de interacción UML (también conocidos como
+ diagramas de secuencia de mensajes).
+ Sin embargo, la combinación de conexiones, documentación de interfaces
+ y diagramas de interacción muchas veces se excede en cantidad de detalles
+ -tales como 
+\emph on
+operaciones
+\emph default
+, 
+\emph on
+ensamblaje
+\emph default
+ y 
+\emph on
+estructura de herencia
+\emph default
+ en sistemas orientados a objetos- y hace difícil entender sistemas de cualquier
+ tamaño y complejidad.
+ Es necesario tomar distancia de estos detalles para entender un sistema
+ en términos arquitectónicos.
+\end_layout
+
+\begin_layout Standard
+Los UCMs suben el nivel de abstracción al simplificar los más importantes
+ factores de complejidad:
+\end_layout
+
+\begin_layout Description
+Operaciones.
+ Las secuencias de invocación de operaciones son reemplazadas por 
+\emph on
+paths
+\emph default
+ causa-efecto.
+ El comportamiento no se representa en términos de interacciones entre component
+es a través de mensajes, sino en términos de secuencias causa-efecto entre
+ 
+\emph on
+responsabilidades
+\emph default
+ de los componentes.
+ En otras palabras, las interfaces de los componentes, y las interacciones
+ entre interfaces, tales como llamadas y mensajes, son consideradas detalles.
+ Las responsabilidades pueden ser de mayor granularidad que las llamadas
+ y mensajes, y de esta manera se reduce el nivel de compromiso con los detalles.
+\end_layout
+
+\begin_layout Description
+Ensamblaje\InsetSpace ~
+y\InsetSpace ~
+Estructura\InsetSpace ~
+de\InsetSpace ~
+Herencia.
+ A nivel de UCMs, el único requerimiento para la 
+\begin_inset Quotes eld
+\end_inset
+
+conectabilidad
+\begin_inset Quotes erd
+\end_inset
+
+ de un componente es que sea capaz de realizar las responsabilidades requeridas.
+ Los detalles necesarios para realmente conectar (física o lógicamente)
+ un componente pueden ser diferidos hacia otro tipo de documentación.
+ A su vez, la dependencia de las descripciones de comportamiento sobre los
+ detalles como la estructura de herencia también es eliminada por el hecho
+ de que los UCMs son modelos independientes de las descripciones de clases.
+\end_layout
+
+\begin_layout Standard
+Los UCMs pueden ser derivados a partir de requerimientos informales o de
+ casos de uso, si están disponibles.
+ Las responsabilidades tienen que estar especificadas o ser inferidas de
+ estos requerimientos.
+ Se pueden crear casos de uso separados para funcionalidades individuales
+ del sistema o inclusive para escenarios individuales.
+ Muchas veces, la forma de modelar una interacción con UCMs depende de la
+ intención del arquitecto.
+ Sin embargo, el fuerte de esta notación reside principalmente en la integración
+ de escenarios relacionados.
+ En tales casos, los UCMs pueden usarse para ilustrar y razonar respecto
+ a concurrencia, como por ejemplo en problemas de contención de recursos
+ (múltiples paths usando un elemento, como se muestra en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:UCM-contencion-recursos"
+
+\end_inset
+
+) o posibles situaciones de deadlock (dos paths en direcciones opuestas
+ a través de al menos dos elementos en común, como se muestra en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:UCM-deadlock"
+
+\end_inset
+
+).
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "45col%"
+special "none"
+height "1pt"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/nfrontini/facultad/tesis/tesis tincho/img/ucmConcurrency.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:UCM-contencion-recursos"
+
+\end_inset
+
+UCM de un problema de contención de recursos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\hfill
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "45col%"
+special "none"
+height "1pt"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/nfrontini/facultad/tesis/tesis tincho/img/ucmDeadlock.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:UCM-deadlock"
+
+\end_inset
+
+UCM de una posible situación de deadlock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Necesidad-de-la-ReconstruccionEscaza-documentación-arquitectónica"
+
+\end_inset
+
+Necesidad de Documentación Arquitectónica
+\end_layout
+
+\begin_layout Standard
+En la sección 
+\begin_inset LatexCommand ref
+reference "sub:Descriptiones_Arquitectónicas"
+
+\end_inset
+
+ se explicaron las razones principales por las que la documentación de una
+ arquitectura es fundamental para el desarrollo de software.
+ La documentación es la vía de comunicación entre desarrolladores, y permite
+ que el sistema se diseñe, implemente, pruebe, instale y mantenga siguiendo
+ a la arquitectura que lo sostiene.
+\end_layout
+
+\begin_layout Subsection
+Inexistencia de documentación
+\end_layout
+
+\begin_layout Standard
+Todo sistema que tiene software tiene una arquitectura de software.
+ Sin embargo, no necesariamente existe en la práctica una documentación
+ acertada de esta arquitectura.
+ Quizás toda la gente que diseñó el sistema se ha ido, la documentación
+ es escaza o nunca se produjo, el código fuente se ha perdido o nunca se
+ entregó, y lo único con que se cuenta es con el código ejecutable binario.
+ No obstante, una arquitectura puede existir independientemente de su especifica
+ción, lo que demuestra la importancia de la documentación.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, el hecho de lidear con sistemas que no poseen documentación
+ es un escenario que ocurre con frecuencia dentro de las organizaciones.
+ Sistemas legados suelen no poseer documentación alguna y es muy común que
+ nuevos sistemas de software tengan que integrarse con estos.
+\end_layout
+
+\begin_layout Subsection
+Erosión arquitectónica
+\end_layout
+
+\begin_layout Standard
+Asegurarse de que un sistema sea construido en conformidad con su diseño
+ arquitectónico durante su desarrollo, evolución y mantenimiento es importante,
+ ya que divergencias significativas entre arquitectura e implementación
+ pueden comprometer la estructura, estilo y propiedades que han sido establecida
+s mediante cuidadoso análisis a nivel arquitectónico 
+\begin_inset LatexCommand cite
+key "ABIANTOUN05b"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Durante las diferentes etapas del desarrollo de software, pueden producirse
+ cambios en la documentación arquitectónica que luego no son reflejados
+ en el código, o cambios en el código que no son apropiadamente acomodados
+ en la documentación.
+ Siendo la arquitectura una guía fundamental durante todo el ciclo de vida
+ del sistema, el desfasaje entre documentación e implementación de una arquitect
+ura se hará cada vez más difícil de remediar por sus desarrolladores, finalmente
+ deteriorando la calidad del producto.
+\end_layout
+
+\begin_layout Standard
+Desafortunadamente, debido a la evolución natural del sistema, es probable
+ que la arquitectura y la implementación pierdan consistencia.
+ Una vez que el diseño arquitectónico está listo, típicamente todos los
+ esfuerzos se focalizan en la implementación, y esto hace que la documentación
+ se desactualice progresivamente.
+ Por ejemplo, nuevos requerimientos pueden causar un rediseño de la arquitectura
+, con cambios consecuentes en algunas partes de la implementación; y por
+ otro lado, algunas tareas de mantenimiento pueden producir cambios en el
+ código que deberían ser reflejados en modificaciones de la arquitectura.
+ Si bien es aceptable que exista temporalmente cierto desfasaje, normalmente
+ los desarrolladores trabajan en la implementación sin mantener el modelo
+ arquitectónico, el cual rápidamente queda desactualizado.
+\end_layout
+
+\begin_layout Standard
+En algunos casos, los desarrolladores pueden introducir sutiles diferencias
+ estructurales que invalidan intenciones claves de la arquitectura.
+ Por ejemplo, en un sistema estructurado en capas, es posible que un programador
+ inadvertido genere dependencias no deseadas al saltear la capa inmediatamente
+ inferior.
+ Análogamente, en el desarrollo de sistemas web multibanda es común el error
+ de invocar directamente a la base de datos desde la banda de presentación.
+ Como resultado, los arquitectos a menudo deben lidear en sus análisis con
+ conocimiento incompleto e incorrecto debido a defectos en la documentación
+ 
+\begin_inset LatexCommand cite
+key "ALDRICH05"
+
+\end_inset
+
+.
+ En estos casos, las relaciones de los componentes (en el nivel arquitectónico)
+ con clases y métodos (en el nivel de implementación) ya no se mantienen,
+ y los desarrolladores deben restablecer la consistencia manualmente.
+ Éste fenómeno se conoce como 
+\emph on
+corrimiento arquitectura-implementación
+\emph default
+ 
+\begin_inset LatexCommand cite
+key "PERRY92"
+
+\end_inset
+
+ o 
+\emph on
+erosión arquitectónica
+\emph default
+.
+ Si no se maneja correctamente, revierte los beneficios del desarrollo centrado
+ en la arquitectura, ya que se pierde la trazabilidad entre re\SpecialChar \-
+que\SpecialChar \-
+ri\SpecialChar \-
+mien\SpecialChar \-
+tos,
+ decisiones de diseño y artefactos de implementación.
+ 
+\end_layout
+
+\begin_layout Subsection
+Reconstrucción de arquitecturas
+\end_layout
+
+\begin_layout Standard
+La Reconstrucción de Arquitecturas de Software es una técnica para generar
+ representaciones arquitectónicas de un sistema que puede ser utilizada
+ de diversas formas.
+ El principal uso de esta representación es el de documentar la arquitectura
+ existente de un sistema.
+ Si no existe la documentación o la documentación disponible esta desactualizada
+, la representación obtenida mediante la reconstrucción puede ser usada
+ como una base para la re-documentación de la arquitectura.
+ Esta representación también puede ser usada como un punto de comienzo para
+ realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
+ Finalmente, la representación puede ser usada como una forma de identificar
+ componentes re-usables ó para establecer una arquitectura base dentro de
+ una línea de productos de software 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta ref tiene un caracter invalido! 
+\begin_inset LatexCommand cite
+key "Rick2003"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Existen diferentes técnicas y enfoques para recuperar representaciones de
+ la arquitectura de un sistema.
+ Esto hace que sea difícil describir las distintas etapas que un proceso
+ de reconstrucción de arquitecturas requiere.
+ Sin embargo, casi todos los enfoques estructuran un proceso en un ciclo
+ basado en extraer, abstraer y visualizar la información.
+ En todos los casos, este proceso es asistido por herramientas, las cuales
+ extraen información del sistema (ej.
+ código fuente) para ir agregando niveles de abstracción cada vez mas altos.
+ El resultado final son diagramas que representan la arquitectura del sistema.
+\end_layout
+
+\begin_layout Standard
+Una definición genérica de la Reconstrucción de Arquitecturas de Software
+ es la proponen Bass et.al.
+ en 
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+, definiendo ésta como como un proceso interpretativo, interactivo e iterativo
+ que involucra muchas actividades: no es un proceso totalmente automático.
+ Requiere de la capacidad y de la atención del experto en ingeniería reversa
+ y del arquitecto (o alguien con conocimientos sobre la arquitectura del
+ sistema).
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Conclusión"
+
+\end_inset
+
+Conclusión
+\end_layout
+
+\begin_layout Standard
+En este capítulo se introdujo el concepto de arquitectura de software, una
+ disciplina que cumple un rol central en la toma de decisiones de diseño
+ y en la comunicación entre todos los participantes del desarrollo de un
+ producto de software.
+ Como vehículo de comunicación, su documentación es fundamental, pues la
+ falta de ella, o peor aún, el descuido al producirla y mantenerla, anulan
+ o revierten todos los beneficios que el desarrollo centrado en la arquitectura
+ puede aportar.
+\end_layout
+
+\begin_layout Standard
+Posteriormente se presentó la notación de UCMs, un modelo para la descripción
+ de patrones de comportamiento y algunos aspectos estructurales en un alto
+ nivel de abs\SpecialChar \-
+trac\SpecialChar \-
+ción y granularidad.
+ Esta notación es especialmente útil para la documentación de comportamiento
+ a nivel arquitectónico, ya que permite expresar, analizar y comunicar las
+ trazas causa-efecto que proyectan los casos de uso sobre el sistema, dejando
+ de lado los detalles contextualmente irrelevantes.
+\end_layout
+
+\begin_layout Standard
+En último lugar se ofreció una breve descripción al problema de la escaza
+ documentación arquitectónica evidenciando su necesidad.
+ Muchos sistemas de software carecen de documentación arquitectónica.
+ En otros casos, debido a la evolución natural de un sistema de software,
+ es muy probable que la arquitectura documentada y su implementación pierdan
+ consistencia, lo que puede perjudicar todos los beneficios del desarrollo
+ centrado en la arquitectura.
+ Éste problema ha motivado la creación de herramientas que, mediante diversos
+ enfoques, intentan reconstruir representaciones arquitectónicas útiles
+ para documentar la arquitectura.
+ El capítulo siguiente se centra precisamente en estas herramientas.
+\end_layout
+
+\begin_layout Chapter
+\begin_inset LatexCommand label
+name "cha:Trabajos-relacionados"
+
+\end_inset
+
+Trabajos relacionados
+\end_layout
+
+\begin_layout Standard
+[h]
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Aportes-científicos-relacionados"
+
+\end_inset
+
+Aportes relacionados
+\end_layout
+
+\begin_layout Standard
+[agrupar los diferentes enfoques, categorizarlos y describir cada categoria]
+\end_layout
+
+\begin_layout Section
+Resumen de características principales
+\end_layout
+
+\begin_layout Standard
+[Resumen del analisis realizado]
+\end_layout
+
+\begin_layout Standard
+Identifación de problemas en enfoques actuales
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+En este capítulo se han presentado los trabajos relacionados mas importantes
+ que tratan ...
+\end_layout
+
+\begin_layout Chapter
+\begin_inset LatexCommand label
+name "cha:El-enfoque-DRArch"
+
+\end_inset
+
+Tesis
+\end_layout
+
+\begin_layout Standard
+En este capítulo se presenta el enfoque 
+\emph on
+DRArch
+\emph default
+, que propone la creación de una herramienta de soporte para la reconstrucción
+ de arquitecturas de software, usando para ello información estática (código
+ fuente) y dinámica (logs de ejecución) para lograr una representación arquitect
+ónica por medio de diagramas de componentes y de UCMs.
+\end_layout
+
+\begin_layout Standard
+El resto del capítulo se encuentra organizado de la siguiente forma.
+ En la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Análisis"
+
+\end_inset
+
+ se presenta un breve 
+\emph on
+análisis
+\emph default
+ del problema y de los trabajos relacionados que dieron origen al conjunto
+ de requerimientos para la creación de 
+\emph on
+DRArch
+\emph default
+.
+ Luego, la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Modelo-Conceptual"
+
+\end_inset
+
+ presenta el 
+\emph on
+modelo conceptual
+\emph default
+ de 
+\emph on
+DRArch
+\emph default
+, junto con una breve descripción de cada uno de los elementos que interactúan
+ para alcanzar la funcionalidad propuesta.
+ A continuación, en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Ejemplo"
+
+\end_inset
+
+ se muestra un ejemplo concreto de funcionamiento de 
+\emph on
+DRArch
+\emph default
+.
+ Finalmente, en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Conclusiones-Cap4"
+
+\end_inset
+
+ se presentan las conclusiones del capítulo.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Análisis"
+
+\end_inset
+
+Enfoque DrArch
+\end_layout
+
+\begin_layout Standard
+El objetivo principal de 
+\emph on
+DRArch
+\emph default
+ es realizar un análisis de toda la información relevante que se pueda recolecta
+r de un sistema, generando como salida una representación arquitectónica
+ por medio de diagramas de componentes y de UCMs.
+ Como bien se detalló en el capítulo anterior, existen actualmente varios
+ enfoques basados en reconstrucción de arquitecturas para tratar el problema
+ que causa erosión arquitectónica.
+ Si bien no se centran específicamente en la reconstrucción de comportamiento,
+ su análisis detallado de cada uno nos permitió detectar tanto características
+ no deseables, como también mecanismos y abstracciones aplicables al caso
+ específico de UCMs.
+\end_layout
+
+\begin_layout Standard
+Otro aspecto importante es que se tenga en cuenta la información que aporten
+ aquellas personas que tengan conocimientos sobre el sistema durante el
+ proceso de reconstrucción de la arquitectura.
+ Por lo general, esta información es la mas difícil de incorporar ya que
+ la semántica no es siempre la misma.
+ Por ejemplo, un desarrollador sabe que existe una convención en donde todas
+ las clases que tengan en su nombre el sufijo 
+\emph on
+Task
+\emph default
+, representan tareas del sistema, y se desea que ese conocimiento se incorpore
+ en el proceso de reconstrucción.
+\end_layout
+
+\begin_layout Standard
+Con el objetivo de poder comprender el enfoque pragmáticamente, en la siguiente
+ sub-sección se presenta un ejemplo simple de una pieza de un sistema, en
+ donde se utiliza el patrón de diseño Observer-Observable.
+ El resto de las sub-secciones describen el enfoque haciendo referencia
+ o agregando mas detalles al ejemplo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+El análisis del problema en sí y de los trabajos relacionados puso a la
+ luz algunas características que hacen difícil la incorporación de ciertos
+ mecanismos dentro de un proceso de desarrollo de software.
+ Para evitar estos inconvenientes, además de la reconstrucción de arquitecturas
+ de software de UCM se plantearon los siguientes objetivos secundarios:
+\end_layout
+
+\begin_layout Itemize
+Limitar la información requerida del usuario a UCMs, código fuente y mapeo
+ responsabilidad-código.
+ Toda información adicional deberá ser derivable a partir del análisis automátic
+o de estos tres elementos dados como entrada.
+\end_layout
+
+\begin_layout Itemize
+El uso de la herramienta no deberá imponer el uso de un lenguaje de programación
+ de propósito específico, ni un estilo o un conjunto de convenciones de
+ implementación en particular.
+ De esta forma será posible la aplicación del enfoque a sistemas legados.
+\end_layout
+
+\begin_layout Itemize
+Tampoco se deberá imponer un proceso demasiado estricto para la modificación
+ tanto de la arquitectura como del código.
+ Así, el desarrollador tendrá el control de cuándo y cómo sincronizar los
+ UCMs con la implementación.
+\end_layout
+
+\begin_layout Standard
+Como principales influencias para la concepción de 
+\emph on
+DRArch
+\emph default
+ se deben mencionar los trabajos de...
+\end_layout
+
+\begin_layout Standard
+Si bien los objetivos del enfoque son distintos, el análisis de eventos
+ de bajo nivel mediante instrumentación de código presentado en 
+\begin_inset LatexCommand cite
+key "DISCOTECT"
+
+\end_inset
+
+ fue un importante ejemplo de (a) cuánta información útil se puede extraer
+ de la ejecución de una aplicación y (b) que la aplicación del enfoque no
+ necesariamente debe requerir el uso de un lenguaje de programación para
+ ese propósito específico.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, en 
+\begin_inset LatexCommand cite
+key "ALDRICH05"
+
+\end_inset
+
+ se plantea un modelo de actualización incremental en el que se supone un
+ diseño arquitectónico y una implementación inicial.
+ Éste enfoque, en contraste con la extracción completa de un nuevo modelo
+ arquitectónico a partir del código, posee la ventaja de mantener el estilo
+ de especificación del arquitecto, ya que modifica la especificación original
+ solamente en las partes donde se producen divergencias con la implementación.
+\end_layout
+
+\begin_layout Standard
+Finalmente, el trabajo presentado en 
+\begin_inset LatexCommand cite
+key "SCM05"
+
+\end_inset
+
+ ilustra las ventajas de integrar un enfoque para el tratamiento de erosión
+ arquitectónica con sistemas de software con\SpecialChar \-
+fi\SpecialChar \-
+gu\SpecialChar \-
+ra\SpecialChar \-
+tion management.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+sacar info del capitulo de trabajos relacionados!!!
+\end_layout
+
+\begin_layout Standard
+enfoque descripción general mostrando componentes del enfoque.
+ 1 2 3 4 5 partes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ejemplo: Observer-Observable
+\end_layout
+
+\begin_layout Standard
+Como se mencionó antes, una de las decisiones principales del enfoque 
+\emph on
+DRArch
+\emph default
+ ha sido centrarse en la reconstrucción de las vistas comportamentales de
+ una arquitectura, en particular, especificadas como UCMs.
+ Para ayudar a comprender el enfoque que se explica en este capítulo, volvemos
+ al ejemplo de la Sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sub:Ejemplo-UCM"
+
+\end_inset
+
+, basado en un patron Observer-Observable 
+\begin_inset LatexCommand cite
+key "gamma93design"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El patrón Observer-Observable se aplica en el contexto de aplicaciones interacti
+vas que demandan un alto grado de interacción con el usuario.
+ Estos sistemas normalmente requieren un alto grado de flexibilidad, en
+ especial sobre la interfaz de usuario, que debe adaptarse a las necesidades,
+ muchas veces conflictivas, de los diferentes usuarios.
+ En particular, Observer-Observable apunta a satisfacer las siguientes necesidad
+es:
+\end_layout
+
+\begin_layout Itemize
+La misma información debe ser presentada de manera diferente
+\end_layout
+
+\begin_layout Itemize
+La representación gráfica y el comportamiento de la aplicación debe reflejar
+ la manipulación de datos inmediatamente
+\end_layout
+
+\begin_layout Itemize
+Cambios en la interfaz de usuario deben ser fáciles de introducir, incluso,
+ en tiempo de ejecución
+\end_layout
+
+\begin_layout Itemize
+El núcleo de la aplicación (Observable) debe verse inalterado por el cambio
+ de estilos o interfaces gráficas
+\end_layout
+
+\begin_layout Standard
+En el estilo Observer-Observable puro, normalmente el Observable representa
+ los datos a ser mostrados, y el Observer (la vista) es responsable de reflejarl
+os visualmente al usuario.
+\end_layout
+
+\begin_layout Standard
+En la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Observer-Observable-Class"
+
+\end_inset
+
+ se presenta un diagrama de clases UML en donde se aplica el patron y en
+ Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Observer-Observable-Component"
+
+\end_inset
+
+ se presenta un diagrama con los dos componentes principales de este patrón
+ arquitectónico, detallando en cada uno de ellos las responsabilidades asociadas
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/observerObservableClassDiagram.JPG
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Observer-Observable-Class"
+
+\end_inset
+
+Diagrama de clases UML para el ejemplo Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableComponentDiagram.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Observer-Observable-Component"
+
+\end_inset
+
+Diagrama de componentes para el ejemplo Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observable Representa los datos y la funcionalidad principal de la aplicación.
+ Provee un mecanismo de registración para los observadores.
+ De este modo, permite la notificación de los cambios sufridos manteniendo
+ la independencia del modelo con sus diferentes vistas.
+\end_layout
+
+\begin_layout Description
+Observer Provee información al usuario de manera visual y obtiene información
+ del usuario mediante eventos (por ejemplo, clicks o movimientos de mouse,
+ teclas, etc.).
+ Obtiene sus datos del modelo.
+\end_layout
+
+\begin_layout Subsubsection
+Mapeo UCM - implementación
+\end_layout
+
+\begin_layout Standard
+Antes de proseguir con el ejemplo Observer-Observable es importante introducir
+ el concepto de mapeo entre la documentación arquitectónica y su correspondiente
+ implementación.
+\end_layout
+
+\begin_layout Standard
+Como se explicó en la sección 
+\begin_inset LatexCommand ref
+reference "sub:Ejemplo-UCM"
+
+\end_inset
+
+, el comportamiento especificado a nivel arquitectónico toma distancia de
+ los detalles de interacción como las llamadas o mensajes entre componentes.
+ En el lenguaje UCM, el comportamiento se representa en términos secuencias
+ causa-efecto entre 
+\emph on
+responsabilidades
+\emph default
+ de los componentes.
+ Las 
+\emph on
+responsabilidades
+\emph default
+ pueden ser de mayor granularidad que las llamadas y mensajes para reducir
+ el nivel de compromiso con los detalles, por este motivo, una 
+\emph on
+responsabilidad
+\emph default
+ (función de la que es responsable un componente) puede ser materializada
+ por varios métodos e incluso clases de objeto a nivel implementación.
+ Por otro lado, una misma clase o un método particular de ésta puede contribuir
+ con la materialización de diferentes 
+\emph on
+responsabilidades
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+En otras palabras, existe una correspondencia de aridad 
+\emph on
+n:m
+\emph default
+ entre una unidad de comportamiento a nivel arquitectónico, como lo es una
+ 
+\emph on
+responsabilidad
+\emph default
+ UCM, y una unidad de comportamiento a nivel implementación, como lo son
+ los métodos de una clase.
+ Tal relación se denomina mapeo 
+\emph on
+responsabilidad
+\emph default
+ - 
+\emph on
+código
+\emph default
+.
+ El mapeo permite la trazabilidad entre la 
+\emph on
+responsabilidad
+\emph default
+ UCM de un componente y su implementación.
+\end_layout
+
+\begin_layout Standard
+En la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:classComponentMapping"
+
+\end_inset
+
+ y la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:methodResponsibilityMapping"
+
+\end_inset
+
+ se muestra la correspondencia de la documentación arquitectónica del caso
+ de referencia y su implementación en Java mediante tales mapeos.
+ Si bien en este ejemplo las correspondencias clase-componente y método-responsa
+bilidad son directas, es posible especificar casos más complejos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableMappingClass.jpg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:classComponentMapping"
+
+\end_inset
+
+Mapeos clase - componente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableMappingMethod.jpg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:methodResponsibilityMapping"
+
+\end_inset
+
+Mapeos método - responsabilidad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Modelo-Conceptual"
+
+\end_inset
+
+Modelo conceptual
+\end_layout
+
+\begin_layout Standard
+Para lograr la funcionalidad propuesta, 
+\emph on
+DRArch 
+\emph default
+sigue un proceso iterativo en el cuál el arquitecto interactúa en pequeñas
+ decisiones para ir especificando incrementalmente el modelo arquitectónico
+ del sistema.
+ Dicho modelo esta representado por una base de datos de conocimiento lo
+ suficientemente flexible como para poder realizar consultas complejas de
+ forma simple.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+En la programación lógica, se especifican las condiciones que satisfacen
+ las soluciones, se deducen las soluciones a partir de las condiciones y
+ el énfasis de todo está en qué problema resolver.
+ El problema se describe especificando qué caracteriza a sus posibles soluciones.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Las iteraciones están representadas por las fases, las cuales realizan actualiza
+ciones al modelo arquitectónico.
+ De esta forma, el punto de comienzo de este proceso es la ejecución de
+ la fase de recolección de información.
+ A partir del código fuente recuperamos la información estática y mediante
+ el análisis del sistema en ejecución extraemos la información dinámica
+ que complementa el análisis estático.
+ 
+\end_layout
+
+\begin_layout Standard
+Luego de la fase de recolección de información empiezan las fases de especializa
+ción, las cuales van iterativa e incrementalmente modificando el modelo
+ arquitectónico elevando en cada fase el nivel de abstracción y detalle.
+ En estas fases, la herramienta sugiere un conjunto de modificaciones (reglas)
+ a la descripción del modelo arquitectónico.
+ Estas modificaciones representan cambios a diferentes partes de la representaci
+ón actual del sistema que pueden involucrar tanto modificaciones de estructura
+ como de escenario de comportamiento.
+ A partir de estas sugerencias, el arquitecto decide cual de estas modificacione
+s representan fielmente los conceptos arquitectónicos que se está intentando
+ reconstruir como así también descartar todas las sugerencias porque no
+ aportan información relevante al análisis.
+ Adicionalmente, el arquitecto puede refinar la especificación representada
+ por los diferentes diagramas aumentando el nivel de detalle, incorporando
+ modificaciones o elementos que pueden aportar mayor nivel de detalle en
+ sucesivas fases que utilizan el modelo transformado por la fase en curso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Este enfoque basado en fases (botton up) permite dividir el espacio de analisis
+ (el sistema a recuperar) en unidades mas pequeñas para, en fases posteriores,
+ ir incrementando el tamaño de este espacio como asi tambien componer los
+ resultados de las fases ejecutadas anteriormente.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una forma de aumentar la especialización del análisis es la definición de
+ una fase por aspecto del sistema.
+ Se podrían reutilizar las fase para cada aspecto evaluado.
+ En cada nuevo escenario se va incrementando el nivel de detalle aportado
+ por cada fase, descubriendo así relaciones que tal vez en análisis anteriores
+ (escenarios diferentes) no fueron descubiertos.
+ Al termino de cada fase, se generan representaciones gráficas del modelo
+ arquitectónico las cuales cubren dos aspectos fundamentales de la arquitectura
+ del sistema: estructura (diagramas de Componentes) y comportamiento (UCMs).
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Proceso-DRArch"
+
+\end_inset
+
+ muestra como funciona el proceso 
+\emph on
+DRArch
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/procesoDrarch.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Proceso-DRArch"
+
+\end_inset
+
+Proceso 
+\emph on
+DRArch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De esta manera, el proceso de recuperación será una tarea donde el enfoque
+ sugerirá un conjunto de transformaciones arquitectónicas y el arquitecto
+ del sistema analizará y decidirá cuales de estas transformaciones es la
+ más adecuada.
+\end_layout
+
+\begin_layout Subsection
+Análisis de información de artefactos de código fuente
+\end_layout
+
+\begin_layout Standard
+Se debe realizar un análisis de los artefactos relacionados con el código
+ fuente.
+ Con el objetivo de poder manipular la información estática de forma flexible,
+ el código fuente es representado por medio de un lenguaje de programación
+ lógico al estilo ProLog
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+reffff
+\end_layout
+
+\end_inset
+
+.
+ De esta forma, se representan artefactos del código fuente (clases, variables,
+ paquetes, etc.) sobre una base de conocimiento.
+ Para el código fuente correspondiente al ejemplo de la de la sección 
+\begin_inset LatexCommand ref
+reference "sec:Ejemplo"
+
+\end_inset
+
+, en la figura 
+\begin_inset LatexCommand ref
+reference "cap:Ejemplo-de-la-representación-del-código-fuente"
+
+\end_inset
+
+ se detalla la representación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/java2jquery.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Ejemplo-de-la-representación-del-código-fuente"
+
+\end_inset
+
+Ejemplo de la representación del código fuente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta transformación es realizada al comienzo del proceso de reconstrucción.
+ Una vez que el código fuente esta representado en forma de hechos, es posible
+ realizar consultas para obtener información de forma simple y flexible.
+ 
+\end_layout
+
+\begin_layout Subsection
+Análisis dinámico
+\end_layout
+
+\begin_layout Standard
+Al igual que la información estática, la información dinámica es representada
+ en forma de hechos al estilo prolog y sobre la misma base del conocmiento.
+ Para obtener dicha información, es necesario realizar un análisis de los
+ logs de ejecución del sistema.
+ Los logs de ejecución representan las trazas reales de ejecución de la
+ aplicación en su estado actual.
+ Contienen información de bajo nivel, como llamadas a métodos, threads,
+ creaciones de objetos, etc.
+\end_layout
+
+\begin_layout Standard
+Para generar de los logs de ejecución, es necesario instrumentar la aplicación
+ y realizar ejecuciones sobre casos de uso que reflejen el comportamiento
+ del sistema.
+ En este punto es imprescindible la intervención manual del arquitecto ya
+ que es necesario guiar la ejecución de la aplicación, interactuando con
+ ella de manera que se ejercite los casos de uso en donde los artefactos
+ que se quieren reconstruir tengan participación dentro de la ejecución.
+ El la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Observer-Observable-TraceLog"
+
+\end_inset
+
+ se muestran los hechos que se generan luego de analizar el log de ejecución.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableTraceLog.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Observer-Observable-TraceLog"
+
+\end_inset
+
+Transformación del log de ejecución del ejemplo Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+1 Analisis de informacion de artefactos de código fuente
+\end_layout
+
+\begin_layout Standard
+laosnds=asd
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+introducen el ejemplo subsección
+\end_layout
+
+\begin_layout Standard
+2 Analisis dinámico
+\end_layout
+
+\begin_layout Standard
+en base al ejemplo muestran un escenario con información de ejecución.
+\end_layout
+
+\begin_layout Standard
+3 Reglas para la identificacióin de componentes
+\backslash
+
+\end_layout
+
+\begin_layout Standard
+especificando reglas
+\end_layout
+
+\begin_layout Standard
+identificando estructuras arquitectónicas
+\end_layout
+
+\begin_layout Standard
+explican cómo se polula el repositorio 
+\end_layout
+
+\begin_layout Standard
+4 Manipulaci'pon de alternativas arquitectónicas
+\backslash
+
+\end_layout
+
+\begin_layout Standard
+selecciona y modifica
+\end_layout
+
+\begin_layout Standard
+5\InsetSpace \space{}
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los hechos generados por el 
+\emph on
+TraceLog Analizer
+\emph default
+ se almacenan en la base de conocimientos junto con el resto de la información
+ para que las consultas que se realicen puedan relacionar tanto información
+ estática como dinámica.
+ Adicionalmente, es posible relacionar información del modelo que incrementalmen
+te se está generando y la información aportada por experiencia y el conocimiento
+ de las personas involucradas en el proceso de reconstrucción.
+\end_layout
+
+\begin_layout Subsection
+Reglas para la identificación de artefactos arquitectónicos
+\end_layout
+
+\begin_layout Standard
+Las iteraciones estan represenadas por las fases las cuales ralizan actualizacon
+es al modelo arquitectónico.
+ Cada fase recibe como entrada un snapshot del modelo recuperado por fases
+ anteriores y produce como salida una evolución del modelo de entrada en
+ base a las transformaciones aplicadas durante la ejecucion de la fase.
+ De esta forma una fase se convierte en un componente customizable y reutilizabl
+e el cual es independiente del modelo arquitectonico de entrada.
+\end_layout
+
+\begin_layout Standard
+La ejecucion de cada fase es a su vez un proceso interactivo.
+ Cada fase contiene un conjunto de reglas las cuales determinan las transformaci
+ones al modelo.
+ Estas transformaciones permitirán al arquitecto relacionar elementos arquitectó
+nicos (ej.: componentes, relaciones entre componentes, etc.) a diferentes
+ estructuras de código (ej.: clases, métodos, etc).
+ Cada regla consta de tres partes: 
+\end_layout
+
+\begin_layout Enumerate
+una consulta sobre la base de conocimiento; 
+\end_layout
+
+\begin_layout Enumerate
+una sugerencia, construida a partir de cada uno de los resultados de la
+ consulta;
+\end_layout
+
+\begin_layout Enumerate
+una serie de hechos (facts), los cuales representan las transformaciones
+ a la base de conocimiento.
+\end_layout
+
+\begin_layout Subsection*
+Especificando reglas
+\end_layout
+
+\begin_layout Standard
+El enfoque provee un conjunto de reglas basadas en patrones de diseño y
+ en un análisis realizado sobre diversos sistemas.
+ De esta forma, se intentó detectar cuales son los requerimientos que debe
+ cumplir un sistema para que se justifique la presencia de un determinado
+ artefacto arquitectónico.
+ Adicionalmente, las reglas pueden ser especificadas por el arquitecto que
+ realiza el proeceso de reconstrucción.
+ En la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Especificando-Reglas"
+
+\end_inset
+
+ se muestra la interface de usuario que permite incorporar nuevas reglas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableRule.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Especificando-Reglas"
+
+\end_inset
+
+Especificación de una regla para el ejemplo Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las reglas incorporadas por el arquitecto pueden ser utilizadas en cualquiera
+ de las fase del proceso de reconstrucción.
+ En la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:JQuery"
+
+\end_inset
+
+ del apéndice se encuentra un catálogo completo de los hechos disponibles
+ junto con una descripción (en la herremienta es posible acceder a dicho
+ catálogo a traves de la ayuda).
+\end_layout
+
+\begin_layout Subsection*
+Identificación de estructuras arquitectónicas
+\end_layout
+
+\begin_layout Standard
+En el ejemplo Observer-Observable, las reglas que identifican estructuras
+ arquitectónicas son simples.
+ Por ejemplo, una clase que implementa la interface Observer se mapea a
+ un componente arquitectónico.
+ Si bien esto se define como una regla, durante el proceso de reconstrucción
+ esta regla se presenta como sugerencia y es responsabilidad del arquitecto
+ aceptar o refutar la generación un nuevo componente.
+\end_layout
+
+\begin_layout Standard
+Existen reglas mas complejas que ayudan a identificar estructuras arquitectónica
+s relacionando distintos tipos de información.
+ Las siguientes descripciones de reglas dan una idea la información que
+ se relaciona para detectar estructuras arquitectónicas:
+\end_layout
+
+\begin_layout Itemize
+jkl;
+\end_layout
+
+\begin_layout Subsection
+Manipulación de alternativas arquitectónicas
+\end_layout
+
+\begin_layout Subsection
+Generación de Vistas
+\end_layout
+
+\begin_layout Standard
+Al termino de cada fase, se cuenta cuenta con una representacion grafica
+ del modelo arquitectonico la cual cubre dos aspectos fundamentales de la
+ arquitectura del sistema: estructura y comportamiento.
+ Las sugerencias aceptadas de las reglas que fueron ejecutadas, agregaron
+ hechos a la base de conocimiento.
+ Los hechos agregados representas aspectos del sistema de alto nivel, y
+ son interpretados como tales para generar vistas que permitan mostrar la
+ arquitectura del sistema.
+ Cuando un conjunto de reglas finaliza su ejecución, se generan diagramas
+ de componentes y de UCMs con su correspondiente mapeo al código fuente.
+ Estos diagramas estan representados en Flabot.
+ Si las sugerencias de la regla especificada en el ejemplo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Especificando-Reglas"
+
+\end_inset
+
+ son aceptadas, el proceso de reconstrucción genera el digrama de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:ComponentsDiagramObsers"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserversComponentDiagram.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:ComponentsDiagramObsers"
+
+\end_inset
+
+Diagrama de componentes de los 
+\emph on
+Observers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+The architecture of Drarch is based on three major components: RuleModel,
+ RuleEngine, PhaseEngine.
+ The RuleModel as it name describe, defines a model of rules.
+ Each Rule is composed with a Prolog query, a list of Vars for which we
+ are interested in its values, a Suggest template in natural language which
+ is going to be filled with the values of the vars for each query result,
+ and a Fact set to be generated and added to the knowledge base if the suggest
+ is accepted.[ref a la figura]
+\end_layout
+
+\begin_layout Standard
+The RuleModel component is build on EMF framework.
+ EMF is a Java framework and code generation facility for building tools
+ and other applications based on a structured model.
+ Once you specify an EMF model, the EMF generator can create a corresponding
+ set of Java implementation classes.
+ You can edit these generated classes to add methods and instance variables
+ and still regenerate from the model as needed: your additions will be preserved
+ during the regeneration.
+ If the code you added depends on something that you changed in the model,
+ you will still need to update the code to reflect those changes; otherwise,
+ your code is completely unaffected by model changes and regeneration.
+ In addition to simply increasing your productivity, building your application
+ using EMF provides several other benefits like model change notification,
+ persistence support including default XMI and schema-based XML serialization,
+ a framework for model validation, and a very efficient reflective API for
+ manipulating EMF objects generically.
+ Most important of all, EMF provides the foundation for interoperability
+ with other EMF-based tools and applications.
+ It provides wizards and a visual editor for the creation and edition of
+ the rules.
+ RuleEngine
+\end_layout
+
+\begin_layout Standard
+The RuleEngine component is an abstraction of the underlay inference engine.
+ It's in charge of the execution of the query rules and the instantiation
+ of the suggest template with each result of the query execution.
+ After the user accepts the suggests it is the responsible for the generation
+ of the new facts and the addition of those to the knowledge base.
+ JQuery has been selected as the query language for Drarch.
+ The JQuery query language is a logic (Prolog-like) query language based
+ on TyRuBa.
+ TyRuBa is a logic programming language implemented in Java.
+ The JQuery query language is defined as a set of TyRuBa predicates which
+ operate on facts generated from the Eclipse JDT's abstract syntax tree.
+ These facts, derived from AST represent the static structure of the system.
+ To analyze the system in execution was used of the FLABot project, which
+ instruments the code of the system and selected events are logged.
+ The resulting log is then analyzed and new facts are generated and incorporated
+ into the knowledge base.
+ 
+\end_layout
+
+\begin_layout Standard
+StepEngine
+\end_layout
+
+\begin_layout Standard
+The Step Engine defines a phase model as a composition of steps, in which
+ the execution of one phase is determined by the performance of each of
+ the steps which it is composed.
+ In turn, each step corresponds to a rule defined by the RuleModel component.
+ The phases are divided into two groups according to how they interact with
+ the user.
+ The interactive phases, executes each step and at the end of this execution,
+ suggests resulting from the execution of the corresponding rule, are presented
+ to the user.
+ Here is responsibility of the user to choose those suggestions that best
+ represent the system being analyzed.
+ At this point you decide whether continuing with the following rule, or
+ stops the execution of phase.
+ The non-interactive phases on the other hand, do not have the user intermediate
+ outcomes, these are all accepted by default and the stage is executed in
+ its entirety.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Ejemplo"
+
+\end_inset
+
+Resolución del ejemplo Observer-Observable
+\end_layout
+
+\begin_layout Standard
+[Mostrar como funciona el enfoque a partir del ejemplo]
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Conclusiones-Cap4"
+
+\end_inset
+
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+En este capitulo se presentó el enfoque 
+\emph on
+DRArch
+\emph default
+, que permite...
+\end_layout
+
+\begin_layout Chapter
+\begin_inset LatexCommand label
+name "cha:Implementación"
+
+\end_inset
+
+Diseño e implementación
+\end_layout
+
+\begin_layout Standard
+PRESENTAN EL ESTILO ARQUITECTONICO
+\end_layout
+
+\begin_layout Standard
+Analizador de codigo estático
+\end_layout
+
+\begin_layout Standard
+recolección de trazas de ejecucion
+\end_layout
+
+\begin_layout Standard
+manager de reglas
+\end_layout
+
+\begin_layout Standard
+Generación y manipulación de Diagramas
+\end_layout
+
+\begin_layout Standard
+[Diagramas de componentes, de clase, etc.
+ Sacar info del trabajo de diseño]
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Arquitectura"
+
+\end_inset
+
+Arquitectura
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Rule-Engine"
+
+\end_inset
+
+Rule engine
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Rule-Model"
+
+\end_inset
+
+Rule model
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Step-Engine"
+
+\end_inset
+
+Step engine
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Log-Analyzer"
+
+\end_inset
+
+Log Analyzer
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Conclusiones"
+
+\end_inset
+
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+En éste capítulo se describieron los aspectos más importantes acerca de
+ la arquitectura, diseño detallado e implementación de 
+\emph on
+DRArch
+\emph default
+.
+ La herramienta requiere la colaboración de componentes pertenecientes a
+ otros sistemas, mas específicamente 
+\emph on
+Eclipse
+\emph default
+, 
+\emph on
+FLABot
+\emph default
+ y 
+\emph on
+JQuery
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+...
+\end_layout
+
+\begin_layout Chapter
+\begin_inset LatexCommand label
+name "cha:Casos-de-Estudio"
+
+\end_inset
+
+Casos de estudio
+\end_layout
+
+\begin_layout Standard
+Este capítulo describe una serie de casos de estudio que realizamos para
+ verificar si las suposiciones hechas a nivel conceptual pueden ser corroboradas
+ en la práctica.
+ Los casos de estudio presentados aquí apuntan primero a demostrar que el
+ enfoque 
+\emph on
+DRArch...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:G2"
+
+\end_inset
+
+G2
+\end_layout
+
+\begin_layout Subsection
+Caso 1
+\begin_inset LatexCommand label
+name "sub:G2-Caso-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Subsection
+Caso 2
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:DRArch-case-study"
+
+\end_inset
+
+DRArch
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Análisis-de-resultados"
+
+\end_inset
+
+Análisis de resultados
+\end_layout
+
+\begin_layout Standard
+Los casos de prueba desarrollados...
+\end_layout
+
+\begin_layout Chapter
+\begin_inset LatexCommand label
+name "cha:Conclusiones-y-Trabajos"
+
+\end_inset
+
+Conclusiones y trabajos futuros
+\end_layout
+
+\begin_layout Standard
+En los capítulos previos de este trabajo se presentó 
+\emph on
+DRArch
+\emph default
+, un enfoque para la reconstrucción de ...
+\end_layout
+
+\begin_layout Standard
+limitaciones actuales
+\end_layout
+
+\begin_layout Standard
+Trabajos Futuros
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+
+\end_layout
+
+\begin_layout Section
+Trabajos futuros
+\end_layout
+
+\begin_layout Standard
+La elaboración de este trabajo, junto con la implementación del prototipo,
+ puso en evidencia nuevas posibilidades para investigaciones futuras, como
+ así también algunas posibles mejoras a la implementación existente.
+ En esta sección se describen algunas de ellas.
+\end_layout
+
+\begin_layout Subsection
+...
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+\begin_inset LatexCommand label
+name "cha:Eclipse-FLABot-y-JQuery"
+
+\end_inset
+
+Eclipse, FLABot y JQuery
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Plataforma-Eclipse"
+
+\end_inset
+
+Plataforma Eclipse
+\end_layout
+
+\begin_layout Standard
+Eclipse es una comunidad open-source cuyos proyectos están orientados a
+ proveer una plataforma de desarrollo extensible y frameworks de aplicaciones
+ para construir software.
+ Eclipse provee herramientas y frameworks extensibles que abarcan el ciclo
+ de vida de desarrollo de software, incluyendo soporte para modelado, entornos
+ de desarrollo para Java, C/C++ y otros lenguajes, testing y performance,
+ business intelligence, aplicaciones de escritorio y desarrollo embebido.
+ Un gran ecosistema de importantes empresas de software, universidades,
+ institutos de investigación e individuos extienden, complementan y soportan
+ la plataforma Eclipse 
+\begin_inset LatexCommand cite
+key "ECLIPSE"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Uno de los beneficios claves de la plataforma Eclipse aparece a través de
+ su uso como un punto de integración.
+ Al construir las herramientas o aplicaciones sobre la plataforma Eclipse,
+ se les permite integrarse con otras herramientas también escritas usando
+ la plataforma.
+ De esta manera, la plataforma integra las herramientas individuales en
+ un único producto, proveyendo una experiencia rica y consistente para los
+ usuarios.
+\end_layout
+
+\begin_layout Standard
+El rol principal de la plataforma es brindar a los desarrolladores un conjunto
+ de mecanismos y reglas para conducir a la integración simple y sistemática
+ de herramientas.
+ Éstos mecanismos son expuestos por medio de APIs (Application Programming
+ Intefaces), clases y métodos bien definidos.
+ La plataforma además provee bloques de construcción y frameworks muy útiles
+ para facilitar el desarrollo de nuevas he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+tas.
+\end_layout
+
+\begin_layout Standard
+En la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Arquitectura-de-Plug-ins"
+
+\end_inset
+
+ se muestra un esquema de los componentes principales de la arquitectura
+ de plug-ins de Eclipse.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/eclipsePluginArch.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Arquitectura-de-Plug-ins"
+
+\end_inset
+
+Arquitectura de Plug-ins de Eclipse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquitectura de Plug-ins
+\end_layout
+
+\begin_layout Standard
+Un 
+\emph on
+plug-in
+\emph default
+ es la menor unidad de función de la plataforma Eclipse que puede ser desarrolla
+da y entregada por separado.
+ Por lo general, una herramienta pequeña se escribe como un solo plug-in,
+ mientras que una herramienta compleja tiene su funcionalidad repartida
+ entre varios plug-ins.
+ Excepto por un pequeño kernel llamado 
+\emph on
+Platform Runtime
+\emph default
+, toda la funcionalidad de la plataforma es provista en forma de plug-ins.
+\end_layout
+
+\begin_layout Standard
+La configuración de cada plug-in se describe a través de un par de archivos.
+ El manifiesto declara información esencial acerca del plug-in, incluyendo
+ nombre, versión y dependencias hacia otros plug-ins.
+ El segundo archivo, plugin.xml, declara las interconexiones del plug-in
+ con otros plug-ins.
+ El modelo de interconexión es simple: un plug-in declara cualquier número
+ de puntos de extensión, y cualquier número de extensiones a uno o más puntos
+ de extensión en otros plug-ins.
+ Los puntos de extensión pueden ser extendidos por otros plug-ins.
+\end_layout
+
+\begin_layout Standard
+Un punto de extensión puede tener una interfaz API correspondiente.
+ Otros plug-ins contribuyen implementaciones de esta interfaz por medio
+ de extensiones de este punto de extensión.
+ Cualquier plug-in es libre de definir nuevos puntos de extensión y de proveer
+ una nueva API para que usen otros plug-ins.
+ En la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Comunicación-entre-Plug-ins"
+
+\end_inset
+
+ se ilustran los roles principales para la comunicación entre plug-ins.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Comunicación-entre-Plug-ins"
+
+\end_inset
+
+Comunicación entre Plug-ins de Eclipse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al iniciar, la plataforma descubre el conjunto de plug-ins disponibles,
+ lee sus archivos de manifiesto, y construye un registro de plug-ins en
+ memoria.
+ Al determinar el conjunto de plug-ins al principio, y al soportar un significat
+ivo intercambio de información entre plug-ins sin tener que activar ninguno
+ de ellos, la plataforma puede proveer a cada plug-in de una rica fuente
+ de información pertinente acerca del contexto en el que está corriendo.
+ 
+\end_layout
+
+\begin_layout Standard
+La plataforma corre en una única invocación de una máquina virtual Java
+ estándar.
+ A cada plug-in se le es asignado su propio class loader Java, que es responsabl
+e de cargar sus clases y recursos.
+ Cada plug-in declara explícitamente su dependencia con otros plug-ins de
+ los que espera acceder directamente a sus clases, y controla la visibilidad
+ frente a los plug-ins dependientes de las clases e interfaces públicas
+ en sus librerías.
+ Ésta información se declara en el manifiesto, y las reglas de acceso son
+ aplicadas en tiempo de ejecución por los class loaders de los plug-ins.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:FLABot"
+
+\end_inset
+
+FLABot
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+FLABot
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+\begin_inset LatexCommand htmlurl
+name "FLABot homepage:"
+target "http://www.exa.unicen.edu.ar/isistan/flabot/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\emph default
+ es una herramienta de soporte para la localización de fallas y debugging
+ de plug-ins de Eclipse.
+ El tipo de soporte que provee la herramienta no se trata de encontrar puntos
+ de error específicos en el código, sino que se enfoca en el modelo arquitectóni
+co de un plug-in y usa esa información para aproximar las regiones de código
+ donde los errores se originan con mayor probabilidad.
+ El proyecto fue inspirado por el enfoque propuesto en 
+\begin_inset LatexCommand cite
+key "SORIA04"
+
+\end_inset
+
+.
+ Básicamente, éste enfoque se basa en la noción de que usar modelos arquitectóni
+cos permite al desarrollador razonar y resolver muchos problemas de debugging
+ en un nivel que es razonablemente manejable, inclusive para sistemas complejos
+ 
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/flabotFlow.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Esquema-de-funcionamiento-FLABot"
+
+\end_inset
+
+Esquema de funcionamiento de 
+\emph on
+FLABot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Esquema-de-funcionamiento-FLABot"
+
+\end_inset
+
+ se presenta un esquema del funcionamiento de 
+\emph on
+FLABot
+\emph default
+.
+ Para alcanzar la funcionalidad propuesta, la herramienta utiliza información
+ de mapeo responsabilidad-código para configurar un instrumentador de bytecode
+ Java, de esta manera generando registros de las trazas de ejecución problemátic
+as.
+ Éstos registros o logs son tomados por el 
+\emph on
+Asistente de Localización de Fallas
+\emph default
+ para realizar un análisis exploratorio de los paths de funcionalidad descriptos
+ en la especificación arquitectónica.
+ Éste análisis combina información de ejecución de bajo nivel contenida
+ en los logs con feedback del usuario, para así identificar la causa de
+ la falla en un conjunto de responsabilidades.
+ Una vez detectadas las causas del error, el conjunto de responsabilidades
+ problemáticas es traducido en un conjunto de breakpoints en sus correspondiente
+s regiones de código, una vez más utilizando la información de mapeo responsabil
+idad-código.
+ Finalmente, el usuario es libre de utilizar técnicas de debugging tradicionales
+ sobre este espacio de búsqueda reducido.
+\end_layout
+
+\begin_layout Standard
+La funcionalidad principal de 
+\emph on
+FLABot
+\emph default
+ se encuentra organizada básicamente en tres módulos:
+\end_layout
+
+\begin_layout Description
+Editores\InsetSpace ~
+de\InsetSpace ~
+Especificaciones\InsetSpace ~
+Arquitectónicas: Este módulo posee la fun\SpecialChar \-
+cio\SpecialChar \-
+na\SpecialChar \-
+li\SpecialChar \-
+dad
+ necesaria para la especificación y manipulación de modelos de componentes
+ UML y de UCMs de manera gráfica, como se muestra en las Figuras\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Editor-de-componentes"
+
+\end_inset
+
+ y 
+\begin_inset LatexCommand ref
+reference "cap:Editor-de-UCM"
+
+\end_inset
+
+.
+ Los editores permiten mapear cada componente UML a un conjunto de clases
+ Java, para luego mapear cada responsabilidad a un subconjunto de los métodos
+ de estas clases.
+ Estos modelos son los vehículos principales para construir la información
+ arquitectónica que los otros dos módulos necesitan para funcionar.
+ Ambos editores fueron implementados como plug-ins de Eclipse, por lo que
+ se integran completamente con la plataforma y tanto los editores mismos
+ como sus correspondientes modelos pueden ser reutilizados por cualquier
+ otro plug-in.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/screenshot-componentEditor.png
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Editor-de-componentes"
+
+\end_inset
+
+Editor de componentes UML de 
+\emph on
+FLABot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/screenshot-ucmEditor.png
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Editor-de-UCM"
+
+\end_inset
+
+Editor de UCM de 
+\emph on
+FLABot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Asistente\InsetSpace ~
+para\InsetSpace ~
+Localización\InsetSpace ~
+de\InsetSpace ~
+Fallas: Este módulo materializa las estrategias
+ para localización de fallas guiada por la arquitectura, de acuerdo al enfoque
+ descripto en 
+\begin_inset LatexCommand cite
+key "SORIA04"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Debugger\InsetSpace ~
+Especializado: Este módulo añada el soporte para debugging en sí.
+ El debugger especializado permite relacionar la salida del asistente con
+ estructuras de código, insertando breakpoints en las que resulten apropiadas,
+ para luego permitir al desarrollador aplicar técnicas tradicionales de
+ debugging sobre el código de la aplicación.
+\end_layout
+
+\begin_layout Standard
+Además de estos tres módulos principales, para generar los logs de ejecución
+ 
+\emph on
+FLABot
+\emph default
+ implementa un módulo de instrumentación de código estructurado en forma
+ de capas.
+ La capa superior recibe parámetros de configuración que indican el conjunto
+ de clases y métodos que deben ser inspeccionados, es encargada de iniciar
+ la ejecución de la aplicación instrumentada y produce como respuesta un
+ log con las trazas de ejecución.
+ En las capas inferiores se implementa la infraestructura de bajo nivel
+ para la instrumentación en sí, que hace uso de un 
+\emph on
+class loader
+\emph default
+ especializado para analizar y modificar el 
+\emph on
+bytecode
+\emph default
+ de las clases en los puntos que deben ser inspeccionados.
+ Cuando una clase está a punto de ser cargada dentro de la máquina virtual,
+ el bytecode se analiza para detectar si en ella se produce alguno de los
+ eventos indicados en los parámetros de configuración.
+ Si esto es así, se utiliza la librería 
+\emph on
+Javassist
+\emph default
+ 
+\begin_inset LatexCommand cite
+key "chiba98javassist"
+
+\end_inset
+
+ para insertar llamadas en los puntos inspeccionados a un mecanismo de publicaci
+ón y subscripción de eventos que se encarga de generar el log.
+\end_layout
+
+\begin_layout Standard
+Independientemente de sus detalles de implementación, para reutilizar el
+ instrumentador de FLABot solamente hace falta comunicarse con la capa superior.
+ Ésto se hace a través de un punto de extensión, definido en el instrumentador,
+ al que es posible contribuir los parámetros de configuración necesarios
+ para indicar tanto las clases y métodos a inspeccionar como la ubicación
+ donde se debe guardar el log de ejecución.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:JQuery"
+
+\end_inset
+
+JQuery
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand bibtex
+options "plain"
+bibfiles "bibliography"
+
+\end_inset
+
 
 \end_layout
 

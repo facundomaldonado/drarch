@@ -1,0 +1,250 @@
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Cursos de Grado: Formulación y Evaluación de proyectos
+\end_layout
+
+\begin_layout Author
+Frontini, Nicolas y Maldonado, Facundo
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Un proyecto puede ser viable tanto por tener unmercaado asegurado, como
+ por ser técnicamente factible.
+ Sin embargo, 
+\end_layout
+
+\begin_layout Standard
+Software Factory es una estructura organizacional que se especializa en
+ prducir aplicaciones de software utilizando los requerimientos definidos
+ por clientes que no pertenecen a la organización.
+\end_layout
+
+\begin_layout Section
+El estudio de proyectos
+\end_layout
+
+\begin_layout Standard
+El estudio de proyectos, cualquiera sea la profundidad con que se analice,
+ distigue dos grandes etapas: la de preparación y la de evaluación.
+ La etapa de preparación tiene por objeto definir todas las características
+ que tengan algún grado de efecto en el flujo de ingresos y egresos monetarios
+ del proyecto.
+ La etapa de evaluación, con metodologías muy definidas, busca determinar
+ la rentabilidad de la inversión en el proyecto.
+ 
+\end_layout
+
+\begin_layout Standard
+En la preparación del proyecto se reconocen, a su vez, dos subetapas: una
+ que se caracteriza por recopilar información através de estudios específicos,
+ de mercadeo, de ingeniería, de organización y financiero, y otra que se
+ encarga de sistematizar, en términos monetarios, la información proporcionada
+ por estos tres estudios, mediante el mismo estudio financiero.
+ Este último proporciona información financiera sobre aspectos no incluidos
+ en lo otros estudios, como los relativos al financiamiento e impuestos
+ entre otros.
+\end_layout
+
+\begin_layout Standard
+Una etapa previa a la del estudio del proyecto propiamente dicho, la constituye
+ la identificación de la idea, la cual surge como respuesta para satisfacer
+ una necesidad o llenar un vacío que, a grandes resagos, parezca atractivo
+ hacerlo desde un punto de vista económico.
+ La ide representa generalmente la realizacón de un diagnóstico, que detecta
+ la necesidad que llenaría el proyecto y que identifica las vías de solución.
+ Cada una de estas alternativas constituirá un proyecto que debrá estudiar
+ pero que, frente a un juicio preliminar, aparenta ser viable.
+\end_layout
+
+\begin_layout Standard
+El nivel de estudio inicial es el denominado 
+\begin_inset Quotes eld
+\end_inset
+
+perfil", el cual se elabora a partir de la información existente, el juicio
+ común y la opinón que da la experiencia.
+ En términos monetarios, sólo presenta estimaciónes muy globales de las
+ inversiones, costos o ingresos, sin entrar en investigaciones de terreno.
+\end_layout
+
+\begin_layout Standard
+En este análisis es fundamental efectuar algunas consideraciones previas
+ acerca de la situación 
+\begin_inset Quotes eld
+\end_inset
+
+sin proyecto"; es decir, intentar proyectar qué pasará en el futuro si no
+ se implementa el proyecto, atnes de decidir si conviene o no su implementación.
+ 
+\end_layout
+
+\begin_layout Standard
+La localización del proyecto tiene una importancia especial en la preparación
+ del mismo.
+ Su definición responde no sólo a consideraciones de los mercados de materias
+ primas y de productos finales o a las exigencias técnicas del estudio de
+ la ingeniería del proyecto, sino también a las condiciones legales.
+ Estos, como los estudios técnicos y del mercado, son procesos porpios de
+ cada proyecto.
+\end_layout
+
+\begin_layout Subsection
+El mercado
+\end_layout
+
+\begin_layout Standard
+Uno de los factores más críticos en el estudio de los proyectos es la determinac
+ión de su mercado, tanto por el hecho de que aquí se define la cuantía de
+ su demanda e ingresos de operación, como por los costos e inverciones implícito
+s.
+\end_layout
+
+\begin_layout Standard
+El estudio de mercado es más que el análisis y determinación de la oferta
+ y demanda o de los precios del proyecto.
+ Muchos costos de operación pueden preverse simulando la situación futura
+ y especificando las políticas y procedimientos que se utilizarán como estrategi
+a comercial.
+ Metodológicamente, tres son los aspectos que se deben estudiar:
+\end_layout
+
+\begin_layout Itemize
+El consumidor y las demandas del mercado y del proyecto, actuales y proyectadas.
+\end_layout
+
+\begin_layout Itemize
+La compentencia y las ofertas del mercado y del proyecto, actuales y proyectadas.
+\end_layout
+
+\begin_layout Itemize
+Comercialización del producto del proyecto.
+\end_layout
+
+\begin_layout Standard
+El análisis del consumidor tiene por objeto caracterizar a los consumidores
+ actualies y potenciales, identificando sus preferencias, hábitos de consumo,
+ motivaciones, etcétera, de manera tal de obtener un perfil sobre el cual
+ pueda basarse la estrategia comercial.
+ La competencia es fundamental por varias razones.
+ Por ejemplo, la estrategia comercial que se defina para el proyecto no
+ puede ser indiferenta a ella.
+ Es preciso conocer las estrategias que sigue la competencia, para aprovechar
+ sus ventajas y eviar sus desventajas.
+ El análisis de la comercialización del proyecto es quizás uno de los factores
+ más difíciles de precisar, por cuanto la simulación de sus estrategias
+ se enfrenta al problema de estimar reacciones y variaciones del medio durante
+ la operación del proyecto.
+\end_layout
+
+\begin_layout Subsection
+Factores de Localización
+\end_layout
+
+\begin_layout Standard
+Los factores que más comúnmente influyen en la decisión de la localización
+ de un proyecto se analizan en este apartado.
+\end_layout
+
+\begin_layout Standard
+Las alternativas de instalación deben compararse en función de las fuerzas
+ locacionales típicas de los proyectos.
+ Se han elaborado muchas listas de esta fuerza com oelementos de referencia
+ para su evaluación.
+ Una clasificación más concentrada debería incluir por lo menos los siguientes
+ factores globales:
+\end_layout
+
+\begin_layout Itemize
+Medios y costos del transporte
+\end_layout
+
+\begin_layout Itemize
+Disponibilidad y costo de mano de obra
+\end_layout
+
+\begin_layout Itemize
+Cercanía de las fuentes de abastecimiento
+\end_layout
+
+\begin_layout Itemize
+Factores ambientales
+\end_layout
+
+\begin_layout Itemize
+Cercanía del mercado
+\end_layout
+
+\begin_layout Itemize
+Costo y disponibilidad de terrenos
+\end_layout
+
+\begin_layout Itemize
+Topografía de sueldos
+\end_layout
+
+\begin_layout Itemize
+Estrucutra impositiva y legal
+\end_layout
+
+\begin_layout Itemize
+Disponibilidad de agua, energía y otros suministros
+\end_layout
+
+\begin_layout Itemize
+Comunicaciones
+\end_layout
+
+\begin_layout Section
+Análisis de los dos enfoques
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\end_body
+\end_document
