@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1676,7 +1676,34 @@ Trabajos relacionados
 \end_layout
 
 \begin_layout Standard
-[h]
+El problema de la falta de documentacion arquitectonica o incluso su desactualiz
+ación, como así también la re-ingenieria y la desicronización entre la arquitect
+ura y su implementación han sido reconocidos en el capítulo anterior como
+ los principales motivadores de este trabajo.
+\end_layout
+
+\begin_layout Standard
+En este capítulo intentaremos brindar una visión mas amplia sobre los distintos
+ aportes existentes relacionados con la reconstrucción de arquitecturas,
+ destacando los rasgos principales de cada enfoque.
+\end_layout
+
+\begin_layout Standard
+Muchos enfoques de reconstruccion de arquitecturas y herramientas para apoyar
+ dichos enfoques han sido cubiertos en la literatura.
+ La mayoria de estos enfoques estan basados en un ciclo extraer-abstraer-present
+ar, en el cual el sistema es analizado con el propósito de popular un repositori
+o, que luego es consultado para poder construir representaciones abstractas
+ del sistema que son presentadas en forma interactiva y adecuada al ingeniero
+ de software.
+ Tilley [REF] describe el enfoque extraer-abstraer-presentar con mayor detalle,
+ refiriendose a los pasos de recolección de información, inferencia de conocimie
+nto, y presentación de la información.
+\end_layout
+
+\begin_layout Standard
+En la siguiente sección resumimos aquellos trabajos que tratan la reconstrucción
+ de arquitecturas de software y discutiremos los enfoques tomados por ellos.
 \end_layout
 
 \begin_layout Section
@@ -1689,7 +1716,328 @@ Aportes relacionados
 \end_layout
 
 \begin_layout Standard
-[agrupar los diferentes enfoques, categorizarlos y describir cada categoria]
+Como dijimos en la sección anterior varios han sido los enfoques y herramientas
+ propuestos para la reconstrucción de arquitecturas.
+ Estos enfoques y herramientas tambien pueden ser categorizados de la siguiente
+ manera: 
+\end_layout
+
+\begin_layout Standard
+• Reconstrucción manual con el apoyo de herramientas (enfoques 100% manuales
+ no seran descriptos).
+ 
+\end_layout
+
+\begin_layout Standard
+• Lenguajes de consultas para escribir las pautas para construir agregaciones
+ o clusteres automáticamente .
+\end_layout
+
+\begin_layout Standard
+• Utilización de otras técnicas, incluida la agrupación, data mining, utilizando
+ architecture description languages (ADLs).
+\end_layout
+
+\begin_layout Standard
+Los siguientes son algunos de los enfoques principales en cada categoría.
+ No es una lista exhaustiva, pero enumera un conjunto representativo de
+ enfoques e instrumentos.
+\end_layout
+
+\begin_layout Subsection
+Metodos de reconstruccion manual con el apoyo de herramientas
+\end_layout
+
+\begin_layout Paragraph
+Portable Bookshelf (PBS)
+\end_layout
+
+\begin_layout Standard
+Portable Bookshelf (PBS) es una toolkit usada para generar una biblioteca
+ de software (software bookshelf) [PBS 02, Finnigan 97].
+ La información contenida en la biblioteca incluye código fuente como también
+ asi cualquier otra documentación sobre el sistema como pueden ser test
+ cases, análisis de performance, future plans, diagramas arquitecturales
+ e información sobre la historia del proyecto.
+ Bowman y otros han presentado un método para extraer documentación arquitectura
+l desde el código de un sistema ya implementado utilizando PBS [Bowman 99].
+ En un ejemplo ellos reconstruyeron la arquitectura de un sistema Linux.
+ Analizaron el código fuente utilizando el programa cfx (c-code fact extractor)
+ para obtener información del código y poder generar asi conjuntos de relaciones
+ entre los elementos identificados.
+ Luego, manualmente crearon una descomposición del sistema Linux en subsistemas
+ y asignaron los archivos fuentes a dichos subsistemas.
+ Luego utilizando grok, una herramienta de manipulación de hechos (facts),
+ determinaron las relaciones entre los subsistemas identificados y lsedit
+ (herramienta de visualizacion) para visualizar la estructura del sistema
+ extraida.
+ El refinamiento de la estructura resultante se lleva a cabo moviendo los
+ archivos de código fuente entre subsistemas.
+\end_layout
+
+\begin_layout Paragraph
+Rigi
+\end_layout
+
+\begin_layout Standard
+Rigi es una herramienta de visualización y manipulación de infromación de
+ software [Rigi 02].
+ Contiene un interprete para aplicar operaciones a la información visualizada,
+ y permite tambien la manipulación manual de la información presentada al
+ usuario.
+ El principal aporte de esta herramienta son los parsers para extraer la
+ informacion de varios lenguajes en un formato propio, Rigi Standard Format(RSF).
+\end_layout
+
+\begin_layout Paragraph
+SHriMP
+\end_layout
+
+\begin_layout Standard
+SHriMP es un sistema de visualización y navegación de la información [Shrimp
+ 02, Storey 01].
+ Cuando es usado para reconstrucción, la herramienta puede asistir al usuario
+ en generar vistas arquitectónicas de alto nivel agrupando manualmente elementos
+ en un grafo.
+ La herramienta toma como entrada archivos RSF (Rigi Standard Format).
+\end_layout
+
+\begin_layout Subsection
+Enfoques basados en lenguajes de consultas
+\end_layout
+
+\begin_layout Paragraph
+Mitre
+\end_layout
+
+\begin_layout Standard
+Mitre es un framework pensado para la reconstrucción de arquitecturas que
+ soporta tanto un enfoque bottom-up como top-down [Harris 95a, Harris 95b].
+ El framework consiste de tres componentes: una representación arquitectónica,
+ un motor de consultas sobre el código fuente y la capacidad de ofrecer
+ una vista del sistema de alto nivel.
+ (“bird’s-eye” program-overview capability).
+ El enfoque bottom-up usa la vista de alto nivel para mostrar la estructura
+ de archivos y componentes del sistema y a partir de ahi permite ir organizando
+ la información en clusters más significativos.
+ El análisis top-down comienza desde una estilo arquitectonico particular
+ definiendo los componentes que luego tendrán que ser reconocidos en el
+ software.
+ Consultas de reconocimentos son ejecutadas para determinar si los componentes
+ esperados existen en el código fuente.
+ Este enfoque esta basado en un motor de consultas que es independiente
+ del lenguaje de implementación del sistema.
+ Las consultas se realizan sobre un arbol de analisis sintactico (AST) el
+ cual es construido luego de parsear el código fuente.
+\end_layout
+
+\begin_layout Paragraph
+Dali 
+\end_layout
+
+\begin_layout Standard
+Dali es una coleccion de herramientas en la forma de workbench.
+ Entre estas herramientas se destacan Rigi y PostgreSQL como repositorio
+ de la aplicacion.
+ Rigi provee la manipulación y visualización de las vistas generadas y la
+ extensión que aporta Dali a Rigi provee la habilidad de definir y aplicar
+ patrones de consultas sobre los datos para generar vistas arquitectónicas
+ del sistema.
+ La información es extraida del código fuente utilizando una herramienta
+ de análisis y luego cargadas en Dali.
+ Esta información es almacenada en la base de datos PostgreSQL y visualizada
+ en Rigi.
+ Las consultas son escritas en combinacion de SQL y Perl con el proposito
+ de generar abstracciones de la informacion.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Architecture Reconstruction Method (ARM) 
+\end_layout
+
+\begin_layout Standard
+ARM es un metodo the reconstrucción de arquitecturas semi-automatico el
+ cual puede ser usado para asistir en la recuperación de arquitecturas para
+ sistemas que son disennados e implementados usando patrones [Guo 99].
+ ARM consite en cuatro fases principales: (1) desarrollar un plan para reconocer
+ patrones concretos, (2) extracción de un modelo a partir del código fuente,
+ (3) detección y evaluación de instancias de patrones y (4) reconstrucción
+ y análisis de la arquitectura.
+ El mecanismo es simple, reglas que definen patrones son transformadas en
+ consultas que seran aplicadas automáticamente para detectar instancias
+ de dichos patrones en el modelo.
+ Refinando dichas consultas de patrones se puede mejorar la precisión en
+ la detección de patrones.
+\end_layout
+
+\begin_layout Paragraph
+Riva 
+\end_layout
+
+\begin_layout Standard
+Riva provee un enfoque basado en extraer información del código fuente,
+ cargar dicha información en una base Prolog, y usar hechos Prolog para
+ construir abstracciones de esa informacion y visualizar esas abstracciones
+ usando Rigi [Riva 00].
+ El proceso que Riva describe consiste en seis fases: (1) desarrollar una
+ descripcion a alto nivel de la arquitectura; (2) extraer informacion del
+ codigo fuente; (3) abstraer para generar un modelo arquitectónico; (4)
+ redocumentacion del sistema; (5) analizar el sistema y crear un plan de
+ mejoras; y (6) reorganizar la arquitectura.
+\end_layout
+
+\begin_layout Subsection
+Otras técnicas, incluida la agrupación, data mining, utilizando architecture
+ description languages (ADLs).
+\end_layout
+
+\begin_layout Paragraph
+DiscoTect
+\end_layout
+
+\begin_layout Standard
+DiscoTect que mapea eventos de bajo nivel del sistema a operaciones arquitectóni
+cas abstractas; interpretadas luego por un motor especial que ﬁnalmente
+ construye la estructura arquitectónica del sistema en tiempo de ejecución
+ como una descripción ACME [21].
+ La idea principal de este trabajo es traducir estilos de implementación
+ a estilos arquitectónicos.
+ La traducción se deﬁne conceptualmente como una red de Petri coloreada
+ [22], empleada durante la ejecución para interpretar los eventos de bajo
+ nivel y traducirlos cuando corresponda a eventos arquitectónicos, como
+ por ejemplo: creación de componentes, establecimiento de conexiones entre
+ ellos, etc.
+ Los eventos de bajo nivel son instrucciones Java ejecutadas sobre una máquina
+ virtual y se obtienen instrumentando el programa mediante AspectJ [23].
+ La arquitectura de DiscoTect puede observarse en la Figura 3.2.
+\end_layout
+
+\begin_layout Standard
+figura
+\end_layout
+
+\begin_layout Standard
+La red de Petri coloreada se obtiene como resultado de la compilación de
+ una especiﬁcación escrita en un lenguaje especial llamado DiscoStep.
+ DiscoStep fue dise˜nado para permitir traducir la ejecución de instrucciones
+ Java a eventos arquitectónicamente signiﬁcativos, considerando que la aridad
+ de esta relación entre ambos tipos es n-m y que normalmente los eventos
+ de alto nivel pueden ocurrir simultáneamente cuando el sistema bajo análisis
+ posee varios procesos o hilos de ejecucián concurrentes.
+ Para que esta especiﬁcación DiscoStep sea efectiva, el programador debe
+ seguir estrictamente los estilos de implementación que permitirán construir
+ correctamente la red de Petri coloreada.
+ Por ejemplo, si el sistema respeta el estilo arquitectonico cliente-servidor
+ [13], el programador deberá codiﬁcar las clases Java signiﬁcativas para
+ este estilo como “cliente”, “servidor” y “conexión cliente-servidor” con
+ alguna convención que ayude a la red de Petri a detectar estos eventos.
+ Si la especiﬁcación DiscoStep espera que el servidor sea representado por
+ un socket TCP con el suﬁjo “ServerSocket”, el programador deberá seguir
+ este estándar para que el mecanismo sea efectivo.
+ Los autores de esta herramienta aseguran bajo la condición de que las implement
+aciones respeten siempre los mismos estilos, que DiscoTect puede monitorear
+ diferentes sistemas sin que sea necesario modiﬁcar la especiﬁcación del
+ mapeo entre eventos de bajo nivel y eventos de alto nivel, es decir,sin
+ cambiar el código DiscoStep.
+ Aunque este enfoque es interesante para visualizar la evolución de una
+ arquitectura durante la ejecución de su implementación, es importante hacer
+ notar que esta evolución se representa en términos estructurales de la
+ arquitectura, en otras palabras, como los componentes y sus conectores
+ se reconﬁguran entre si de acuerdo a las distintas situaciones que pueden
+ ocurrir en el sistema.
+ Los autores de DiscoTect han reportado dos casos de estudio de sistemas
+ legados, en los que recuperaron tanto un estilo pipe-and-ﬁlter como uno
+ cliente-servidor.
+ La herramienta todavía necesita ser evaluada con estilos arquitectónicos
+ más complejos, donde los mapeos a código no son necesariamente directos.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Focus
+\end_layout
+
+\begin_layout Standard
+Focus [26] propone un enfoque en el cual su objetivo es extraer una descripción
+ estructural de la arquitectura en función de la información provista por
+ su implementación y el desarrollador.
+ El código fuente de una aplicación es analizado estáticamente para obtener
+ un diagrama de clases UML y luego las clases interrelacionadas son agrupadas
+ en componentes.
+ Los mapeos deﬁnen a los componentes como un grupo de clases relacionadas.
+ El proceso de clustering para determinar los componentes utiliza diferentes
+ políticas, principalmente basadas en las relaciones de dependencia entre
+ clases Java.
+ Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
+ parcialmente en base a la inspección de código fuente.
+ Como contras, se puede mencionar la escasa automatización (las abstracciones
+ deben ser realizadas por el usuario, por ejemplo) y nuevamente, la falta
+ de soporte para aspectos comportamentales de la arquitectura como es el
+ caso de las representaciones UCM.
+\end_layout
+
+\begin_layout Paragraph
+KLOCwork’s Architecture Excavation method (KAE)
+\end_layout
+
+\begin_layout Standard
+KAE, un enfoque que aborda la especiﬁcación UCM y emplea mecanismos de ingenierí
+a reversa (Amyot et.
+ al.
+ [5]), extrae escenarios UCM a partir del análisis estático de código C++.
+ Su ﬁnalidad es ayudar al nuevo desarrollador a comprender la arquitectura
+ “escondida” detrás de una implementación preexistente.
+ KAE utiliza una técnica híbrida basada en entrevistas (
+\emph on
+interviews
+\emph default
+) y etiquetado (
+\emph on
+tagging
+\emph default
+).
+ Las entrevistas permiten obtener escenarios iniciales en base a charlas
+ con desarrolladores involucrados y también mediante la inspección del código,
+ por esta razón, esta técnica es completamente manual.
+ El etiquetado, también de carácter manual, es un proceso donde el desarrollador
+ asocia etiquetas semánticas a diferentes porciones del código fuente; más
+ tarde estas etiquetas representarán responsabilidades de distintos componentes
+ de la arquitectura.
+ KAE aproxima los casos de uso iniciales, en forma de trayectorias a través
+ de las diferentes etiquetas colocadas en el código fuente.
+ La herramienta ofrece un compilador para generar un modelo estructural
+ rudimentario de la arquitectura.
+ Este modelo será transformado iterativamente para incrementar el nivel
+ de abstracción y para eliminar cualquier dependencia intercomponente accidental.
+ La estructura estática de la arquitectura es representada por medio de
+ diagramas de paquete UML: los paquetes simbolizan componentes y las dependencia
+s entre ellos, sus conexiones.
+ Las conexiones entre componentes se detectan analizando las dependencias
+ entre clases C++ pertenecientes a diferentes paquetes.
+ La abstracción subsiguiente del modelo queda a cargo del usuario, quien
+ tiene a su disposición para este propósito, dos operaciones: agregación
+ y ajuste.
+ La agregación permite seleccionar distintos bloques y agruparlos creando
+ un nuevo nivel en la jerarquía.
+ El ajuste es otra operación visual donde se mueven bloques para eliminar
+ dependencias entre paquetes de niveles mas altos que fueron introducidos
+ por emplazamientos accidentales de funcionalidad a nivel de archivo.
+ Como las etiquetas se aplicaron antes al código fuente y éste ya ha sido
+ abstraído en componentes, la herramienta ahora es capaz de generar Use
+ Case Maps como trayectorias a través de las distintas etiquetas colocadas
+ en distintos puntos dentro de los paquetes (que ahora son vistos como component
+es).
+ Aunque éste es uno de los pocos enfoques que trabaja con las especiﬁcaciones
+ UCM, se realizan demasiadas tareas manuales y otras tantas aplicando simpliﬁcac
+iones gruesas, que introducen errores extra, como es el caso de suponer
+ que existe una división de componentes que coincide perfectamente con la
+ estructura jerárquica de paquetes del proyecto, o crear trayectorias UCM
+ en base al análisis estático del código, cuando en realidad la especiﬁcación
+ es inherentemente comportamental.
+ Además, es el usuario quien determina en todo momento cuáles son las responsabi
+lidades y las trayectorias de los distintos escenarios, limitando considerableme
+nte la extracción de información.
 \end_layout
 
 \begin_layout Section
@@ -1697,11 +2045,761 @@ Resumen de características principales
 \end_layout
 
 \begin_layout Standard
-[Resumen del analisis realizado]
+\begin_inset Float table
+wide true
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="5">
+<features rotate="true">
+<column alignment="center" valignment="middle" leftline="true" width="9text%">
+<column alignment="center" valignment="middle" leftline="true" width="11text%">
+<column alignment="center" valignment="middle" leftline="true" width="10text%">
+<column alignment="center" valignment="middle" leftline="true" width="10text%">
+<column alignment="center" valignment="middle" leftline="true" rightline="true" width="16text%">
+<row topline="true" bottomline="true" endhead="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Nombre
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Tipo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Análisis implementación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Leng.
+ arquitectónico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Estrategia análisis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+PBS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Manual con ayuda de herramientas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Rigi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Manual con ayuda de herramientas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Shrimp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Manual con ayuda de herramientas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estatico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Mitre
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Semi automatica.
+ Lenguaje de consultas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+UML
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Dali
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Semi automatica.
+ Lenguaje de consultas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+extraccion - abstraccion - visualizacion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+ARM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Semi automatica.
+ Lenguaje de consultas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+extraccion - abstraccion - visualizacion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Riva
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Semi automatica.
+ Lenguaje de consultas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+--
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+extraccion - abstraccion - visualizacion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+DiscoTect
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Semi automatica.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+dinámico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+ACME
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Traducción eventos implementación - eventos arquitectónicos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Focus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Semi automatica.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+UML
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Clustering clases, análisis incremental asistido por el usuario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+KAE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Semi automatica.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+UML-UCM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family sans
+\size tiny
+Etiquetado, agregación, ajuste
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Características-principales-de"
+
+\end_inset
+
+Características principales de los distintos enfoques
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Identifación de problemas en enfoques actuales
+Las propiedades de cada enfoque resumidas en esta sección son las siguientes:
+\end_layout
+
+\begin_layout Itemize
+Tipo: De acuerdo a la clasificación realizada en la sección anterior, agrupamos
+ los distintos enfoques según el grado de automatización de las tareas.
+\end_layout
+
+\begin_layout Itemize
+Tipo de Analisis: Determina el tipo de analisis en el que se basa el enfoque.
+ Análisis estático, aquel realizado sobre el código fuente, basado en la
+ relaciones entre clases o componentes.
+ Análisis dinámico, analiza las trazas de ejecucion, es decir se analiza
+ el comportamiento del sistema y no la estructura estática.
+\end_layout
+
+\begin_layout Itemize
+Lenguaje arquitectonico: Lenguaje en el que se representa la arquitectura
+ un vez recuperada.
+\end_layout
+
+\begin_layout Itemize
+Estrategia de analisis: Detalle sobre el método utilizado para interpretar
+ la información obtenida luego del análisis (estático o dinámico).
 \end_layout
 
 \begin_layout Section
@@ -1710,7 +2808,28 @@ Conclusiones
 
 \begin_layout Standard
 En este capítulo se han presentado los trabajos relacionados mas importantes
- que tratan ...
+ que tratan la reconstrucción de arquitecturas.
+\end_layout
+
+\begin_layout Standard
+Como vimos la mayoría de los enfoques actuales de reconstrucción de arquitectura
+s se encuentran basadas en el análisis del código fuente del sistema.
+ Este tipo de técnicas trabajan adecuadamente si la implementación del sistema
+ se encuentra organizada en patrones tanto de codificación como de modularizació
+n.
+ Sin embargo, estas técnicas se ven limitadas cuando las estructuras del
+ sistema son conocidas en tiempo de ejecución.
+ Es decir, cuando la determinación del componente responsable de un aspecto
+ en particular es realizada en tiempo de ejecución(ej: clases cargadas dinámicam
+ente en los sistemas orientados a objetos).
+ En efecto, determinar la configuración arquitectónica real de un sistema
+ usando análisis estático es, en general, indecidible [Garlan06].
+\end_layout
+
+\begin_layout Standard
+Además, ninguno de estos enfoques han considerado las extracciones de paths
+ de funcionalidad, tales como los UCMs.
+ .................................................
 \end_layout
 
 \begin_layout Chapter
@@ -3135,6 +4254,18 @@ Diseño e implementación
 \end_layout
 
 \begin_layout Standard
+El presente capítulo está dedicado a la descripción del dise˜no e implementación
+ de DRArch.
+ Para ello, su estructura y funcionamiento serán descriptos mediante diagramas
+ de paquetes y de descomposición de módulos a nivel arquitectónico y, a
+ nivel de dise˜no detallado, mediante diagramas de clases y de interacción
+ en notación UML (Uniﬁed Modeling Language) [ref], presentando los aspectos
+ más importantes de su implementación.
+ El resto del capítulo se encuentra organizado de la siguiente manera.
+ En la sección....
+\end_layout
+
+\begin_layout Standard
 PRESENTAN EL ESTILO ARQUITECTONICO
 \end_layout
 
@@ -3169,7 +4300,54 @@ Arquitectura
 \end_layout
 
 \begin_layout Standard
-...
+DRArch fue implementado como un plug-in de la plataforma Eclipse [ref],
+ aprovechando su arquitectura extensible, su modelo para análisis estático
+ de código fuente Java y su framework de interfaz de usuario.
+ Además, ésto permitió aprovechar el editor gráﬁco de UCMs y el instrumentador
+ de bytecode del proyecto FLABot, ya que ambos también fueron implementados
+ como plug-ins [31].
+ Si bien JQuery tambien ha sido desarrollado como plug-in, en este trabajo
+ se utilizo a modo de libreria.
+ El dise˜no de DRach está muy inﬂuenciado por la arquitectura ya deﬁnida
+ por Eclipse.
+ Esencialmente, Eclipse (ver Ap´endice A.1) es una plataforma dise˜nada para
+ construir herramientas de desarrollo.
+ Si bien la plataforma por sí misma no provee mucha funcionalidad al usuario
+ ﬁnal, facilita el rápido desarrollo de herramientas con características
+ integradas.
+ Así, la organización de estas herramientas alrededor de un espacio de trabajo
+ común es un principio de dise˜no central, tanto para Eclipse como para
+ DRArch.
+ En el caso particular de este trabajo, es necesario un cierto nivel de
+ integración para aprovechar los componentes existentes de FLABot y la infraestr
+uctura básica de Eclipse.
+ Por estas razones, la arquitectura de FLABot ha sido organizada mayormente
+ alrededor de un estilo data-centered (centrado en los datos) [6].
+ La imposición de este estilo ayuda a soportar los niveles de integración
+ antes mencionados y además permite una evolución casi independiente de
+ las herramientas.
+\end_layout
+
+\begin_layout Standard
+La funcionalidad propia de DRAch se encuentra organizada alrededor del modelo
+ arquitectonico BlackBoard, en el cual una base de conocimientos comun,
+ el "blackboard", es iterativamente actualizada por fuentes de conocimiento
+ especializadas, los especialistas, comenzando con la especificacion de
+ un problema y culminando con la solucion.
+ Cada fuente de conocimiento actualiza el blackboard con una solucion parcial
+ cuando sus requisitos coinciden con el estado del blackboard.
+ De esta forma los especialistas trabajan juntos en la resolucion del problema.
+ El modelo blackboard fue originalmente designado para manejar problemas
+ complejos y mal definidos.
+ Los sistemas basados en este modelo estan principalmente enfocados a la
+ inteligencia artificial.
+\end_layout
+
+\begin_layout Standard
+sin seguir rigurosamente su implementacion y como dijimos anteriormente
+ basada en un enfoque extraer-abstraer-presentar, refiriendonos con esto
+ a los pasos de recoleccion de informacion, inferencia de conocimiento,
+ y presentacion de la informacion.
 \end_layout
 
 \begin_layout Section
