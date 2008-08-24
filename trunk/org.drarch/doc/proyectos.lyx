@@ -246,5 +246,15 @@ Análisis de los dos enfoques
 Conclusiones
 \end_layout
 
+\begin_layout Standard
+\begin_inset LatexCommand bibtex
+options "plain"
+bibfiles "bibliography"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
