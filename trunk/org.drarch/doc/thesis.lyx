@@ -122,10 +122,6 @@ addcontentsline{toc}{chapter}{Agradecimientos}
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
@@ -1696,9 +1692,15 @@ ar, en el cual el sistema es analizado con el propósito de popular un repositor
 o, que luego es consultado para poder construir representaciones abstractas
  del sistema que son presentadas en forma interactiva y adecuada al ingeniero
  de software.
- Tilley [REF] describe el enfoque extraer-abstraer-presentar con mayor detalle,
- refiriendose a los pasos de recolección de información, inferencia de conocimie
-nto, y presentación de la información.
+ Tilley et al
+\begin_inset LatexCommand cite
+key "Tilley1996"
+
+\end_inset
+
+ describe el enfoque extraer-abstraer-presentar con mayor detalle, refiriendose
+ a los pasos de recolección de información, inferencia de conocimiento,
+ y presentación de la información.
 \end_layout
 
 \begin_layout Standard
@@ -1754,13 +1756,25 @@ Portable Bookshelf (PBS)
 
 \begin_layout Standard
 Portable Bookshelf (PBS) es una toolkit usada para generar una biblioteca
- de software (software bookshelf) [PBS 02, Finnigan 97].
+ de software (software bookshelf)
+\begin_inset LatexCommand cite
+key "Finnigan97"
+
+\end_inset
+
+.
  La información contenida en la biblioteca incluye código fuente como también
  asi cualquier otra documentación sobre el sistema como pueden ser test
  cases, análisis de performance, future plans, diagramas arquitecturales
  e información sobre la historia del proyecto.
  Bowman y otros han presentado un método para extraer documentación arquitectura
-l desde el código de un sistema ya implementado utilizando PBS [Bowman 99].
+l desde el código de un sistema ya implementado utilizando PBS
+\begin_inset LatexCommand cite
+key "BOWMAN99"
+
+\end_inset
+
+.
  En un ejemplo ellos reconstruyeron la arquitectura de un sistema Linux.
  Analizaron el código fuente utilizando el programa cfx (c-code fact extractor)
  para obtener información del código y poder generar asi conjuntos de relaciones
@@ -1781,7 +1795,13 @@ Rigi
 
 \begin_layout Standard
 Rigi es una herramienta de visualización y manipulación de infromación de
- software [Rigi 02].
+ software
+\begin_inset LatexCommand cite
+key "RIGI02"
+
+\end_inset
+
+.
  Contiene un interprete para aplicar operaciones a la información visualizada,
  y permite tambien la manipulación manual de la información presentada al
  usuario.
@@ -1794,8 +1814,13 @@ SHriMP
 \end_layout
 
 \begin_layout Standard
-SHriMP es un sistema de visualización y navegación de la información [Shrimp
- 02, Storey 01].
+SHriMP es un sistema de visualización y navegación de la información
+\begin_inset LatexCommand cite
+key "SHRIMP02,Storey2001"
+
+\end_inset
+
+.
  Cuando es usado para reconstrucción, la herramienta puede asistir al usuario
  en generar vistas arquitectónicas de alto nivel agrupando manualmente elementos
  en un grafo.
@@ -1812,7 +1837,13 @@ Mitre
 
 \begin_layout Standard
 Mitre es un framework pensado para la reconstrucción de arquitecturas que
- soporta tanto un enfoque bottom-up como top-down [Harris 95a, Harris 95b].
+ soporta tanto un enfoque bottom-up como top-down
+\begin_inset LatexCommand cite
+key "Harris1995"
+
+\end_inset
+
+.
  El framework consiste de tres componentes: una representación arquitectónica,
  un motor de consultas sobre el código fuente y la capacidad de ofrecer
  una vista del sistema de alto nivel.
@@ -1859,7 +1890,13 @@ Architecture Reconstruction Method (ARM)
 \begin_layout Standard
 ARM es un metodo the reconstrucción de arquitecturas semi-automatico el
  cual puede ser usado para asistir en la recuperación de arquitecturas para
- sistemas que son disennados e implementados usando patrones [Guo 99].
+ sistemas que son disennados e implementados usando patrones
+\begin_inset LatexCommand cite
+key "GUO99"
+
+\end_inset
+
+.
  ARM consite en cuatro fases principales: (1) desarrollar un plan para reconocer
  patrones concretos, (2) extracción de un modelo a partir del código fuente,
  (3) detección y evaluación de instancias de patrones y (4) reconstrucción
@@ -1879,7 +1916,13 @@ Riva
 Riva provee un enfoque basado en extraer información del código fuente,
  cargar dicha información en una base Prolog, y usar hechos Prolog para
  construir abstracciones de esa informacion y visualizar esas abstracciones
- usando Rigi [Riva 00].
+ usando Rigi
+\begin_inset LatexCommand cite
+key "Riva2000"
+
+\end_inset
+
+.
  El proceso que Riva describe consiste en seis fases: (1) desarrollar una
  descripcion a alto nivel de la arquitectura; (2) extraer informacion del
  codigo fuente; (3) abstraer para generar un modelo arquitectónico; (4)
@@ -1900,16 +1943,32 @@ DiscoTect
 DiscoTect que mapea eventos de bajo nivel del sistema a operaciones arquitectóni
 cas abstractas; interpretadas luego por un motor especial que ﬁnalmente
  construye la estructura arquitectónica del sistema en tiempo de ejecución
- como una descripción ACME [21].
+ como una descripción ACME 
+\begin_inset LatexCommand cite
+key "ACME"
+
+\end_inset
+
+.
  La idea principal de este trabajo es traducir estilos de implementación
  a estilos arquitectónicos.
  La traducción se deﬁne conceptualmente como una red de Petri coloreada
- [22], empleada durante la ejecución para interpretar los eventos de bajo
- nivel y traducirlos cuando corresponda a eventos arquitectónicos, como
- por ejemplo: creación de componentes, establecimiento de conexiones entre
- ellos, etc.
+\begin_inset LatexCommand cite
+key "JENSON94"
+
+\end_inset
+
+, empleada durante la ejecución para interpretar los eventos de bajo nivel
+ y traducirlos cuando corresponda a eventos arquitectónicos, como por ejemplo:
+ creación de componentes, establecimiento de conexiones entre ellos, etc.
  Los eventos de bajo nivel son instrucciones Java ejecutadas sobre una máquina
- virtual y se obtienen instrumentando el programa mediante AspectJ [23].
+ virtual y se obtienen instrumentando el programa mediante AspectJ
+\begin_inset LatexCommand cite
+key "AOP01"
+
+\end_inset
+
+.
  La arquitectura de DiscoTect puede observarse en la Figura 3.2.
 \end_layout
 
@@ -1929,9 +1988,14 @@ La red de Petri coloreada se obtiene como resultado de la compilación de
  seguir estrictamente los estilos de implementación que permitirán construir
  correctamente la red de Petri coloreada.
  Por ejemplo, si el sistema respeta el estilo arquitectonico cliente-servidor
- [13], el programador deberá codiﬁcar las clases Java signiﬁcativas para
- este estilo como “cliente”, “servidor” y “conexión cliente-servidor” con
- alguna convención que ayude a la red de Petri a detectar estos eventos.
+\begin_inset LatexCommand cite
+key "BUSCHMANN96"
+
+\end_inset
+
+, el programador deberá codiﬁcar las clases Java signiﬁcativas para este
+ estilo como “cliente”, “servidor” y “conexión cliente-servidor” con alguna
+ convención que ayude a la red de Petri a detectar estos eventos.
  Si la especiﬁcación DiscoStep espera que el servidor sea representado por
  un socket TCP con el suﬁjo “ServerSocket”, el programador deberá seguir
  este estándar para que el mecanismo sea efectivo.
@@ -1959,9 +2023,15 @@ Focus
 \end_layout
 
 \begin_layout Standard
-Focus [26] propone un enfoque en el cual su objetivo es extraer una descripción
- estructural de la arquitectura en función de la información provista por
- su implementación y el desarrollador.
+Focus 
+\begin_inset LatexCommand cite
+key "MEDVIDOVIC06"
+
+\end_inset
+
+propone un enfoque en el cual su objetivo es extraer una descripción estructural
+ de la arquitectura en función de la información provista por su implementación
+ y el desarrollador.
  El código fuente de una aplicación es analizado estáticamente para obtener
  un diagrama de clases UML y luego las clases interrelacionadas son agrupadas
  en componentes.
@@ -1985,7 +2055,13 @@ KLOCwork’s Architecture Excavation method (KAE)
 KAE, un enfoque que aborda la especiﬁcación UCM y emplea mecanismos de ingenierí
 a reversa (Amyot et.
  al.
- [5]), extrae escenarios UCM a partir del análisis estático de código C++.
+ 
+\begin_inset LatexCommand cite
+key "AMYOT-SAM02"
+
+\end_inset
+
+), extrae escenarios UCM a partir del análisis estático de código C++.
  Su ﬁnalidad es ayudar al nuevo desarrollador a comprender la arquitectura
  “escondida” detrás de una implementación preexistente.
  KAE utiliza una técnica híbrida basada en entrevistas (
@@ -2823,7 +2899,7 @@ n.
  en particular es realizada en tiempo de ejecución(ej: clases cargadas dinámicam
 ente en los sistemas orientados a objetos).
  En efecto, determinar la configuración arquitectónica real de un sistema
- usando análisis estático es, en general, indecidible [Garlan06].
+ usando análisis estático es, en general, indecidible.
 \end_layout
 
 \begin_layout Standard
