@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -152,7 +152,11 @@ to: los aspectos estructurales se refieren a vistas estáticas del sistema,
  mientras que los aspectos de comportamiento se refieren a vistas dinámicas
  del sistema.
  Por ejemplo, los diagramas de componentes sirven para representar aspectos
- estructurales, mientras que los Use Case Maps 
+ estructurales, mientras que los 
+\emph on
+Use Case Maps
+\emph default
+ 
 \begin_inset LatexCommand cite
 key "UCMBOOK"
 
@@ -293,7 +297,7 @@ cas que pueden dificultar la aplicación de un enfoque de esta
 
 \begin_layout Itemize
 Se debe tener en cuenta en el análisis la información que aporten las personas
- que peseen conocimiento del sistema del cual se quiere obtener una representaci
+ que poseen conocimiento del sistema del cual se quiere obtener una representaci
 ón arquitectónica.
  Así como también aquella información que este basada en la experiencia.
 \end_layout
@@ -433,11 +437,11 @@ La arquitectura de software de un programa o sistema de computación es la
 
 \begin_layout Standard
 Como se desprende de esta definición, una arquitectura de software puede
- abarcar 
+ abarcar
 \emph on
-más de una estructura o vista
+ 
 \emph default
-.
+más de una estructura o vista.
  Un ejemplo que puede ilustrar esta propiedad es observar la estructura
  que presentan normalmente los proyectos de desarrollo.
  Generalmente éstos son particionados en módulos con una cierta cantidad
@@ -797,8 +801,12 @@ Documentación\InsetSpace ~
 de\InsetSpace ~
 una\InsetSpace ~
 vista.
- Si bien no existe un template estándar de documentación de vistas, es esperable
- que contenga al menos la siguiente información:
+ Si bien no existe un 
+\emph on
+template
+\emph default
+ estándar de documentación de vistas, es esperable que contenga al menos
+ la siguiente información:
 \end_layout
 
 \begin_deeper
@@ -853,7 +861,11 @@ no es suficiente
  de sistema que se está diseñando: en un sistema de tiempo real importan
  las propiedades temporales de los eventos; mientras que en un sistema bancario
  las secuencias de eventos, las transacciones atómicas y los procedimientos
- de rollback son lo más importante.
+ de 
+\emph on
+rollback
+\emph default
+ son lo más importante.
 \end_layout
 
 \end_deeper
@@ -927,9 +939,13 @@ Use-Case Maps
 \end_layout
 
 \begin_layout Standard
-Los use case maps (UCM) son una notación para diseño de alto nivel que ayuda
- a las personas tanto a expresar como a razonar acerca de los patrones de
- comportamiento de alta granularidad de un sistema 
+Los 
+\emph on
+Use-Case Maps
+\emph default
+ (UCM) son una notación para diseño de alto nivel que ayuda a las personas
+ tanto a expresar como a razonar acerca de los patrones de comportamiento
+ de alta granularidad de un sistema 
 \begin_inset LatexCommand cite
 key "BUHR95"
 
@@ -1022,9 +1038,17 @@ Acoplamientos.
 \end_inset
 
 \InsetSpace ~
+
+\emph on
 And\InsetSpace ~
-Forks.
- Indican la bifurcación en dos paths concurrentes.
+Forks
+\emph default
+.
+ Indican la bifurcación en dos 
+\emph on
+paths
+\emph default
+ concurrentes.
 \end_layout
 
 \begin_layout Description
@@ -1035,9 +1059,17 @@ Forks.
 \end_inset
 
 \InsetSpace ~
+
+\emph on
 And\InsetSpace ~
-Joins.
- Indican la unión de dos paths concurrentes.
+Joins
+\emph default
+.
+ Indican la unión de dos 
+\emph on
+paths
+\emph default
+ concurrentes.
 \end_layout
 
 \begin_layout Description
@@ -1048,9 +1080,17 @@ Joins.
 \end_inset
 
 \InsetSpace ~
+
+\emph on
 Or\InsetSpace ~
-Forks.
- Indican el fin de un segmento causal común entre dos paths.
+Forks
+\emph default
+.
+ Indican el fin de un segmento causal común entre dos 
+\emph on
+paths
+\emph default
+.
 \end_layout
 
 \begin_layout Description
@@ -1061,9 +1101,17 @@ Forks.
 \end_inset
 
 \InsetSpace ~
+
+\emph on
 Or\InsetSpace ~
-Joins.
- Indican el comienzo de un segmento causal común entre dos paths.
+Joins
+\emph default
+.
+ Indican el comienzo de un segmento causal común entre dos 
+\emph on
+paths
+\emph default
+.
 \end_layout
 
 \end_deeper
@@ -1455,7 +1503,7 @@ ción, lo que demuestra la importancia de la documentación.
 \end_layout
 
 \begin_layout Standard
-Por lo tanto, el hecho de lidear con sistemas que no poseen documentación
+Por lo tanto, el hecho de lidiar con sistemas que no poseen documentación
  es un escenario que ocurre con frecuencia dentro de las organizaciones.
  Sistemas legados suelen no poseer documentación alguna y es muy común que
  nuevos sistemas de software tengan que integrarse con estos.
@@ -1512,9 +1560,13 @@ En algunos casos, los desarrolladores pueden introducir sutiles diferencias
  Por ejemplo, en un sistema estructurado en capas, es posible que un programador
  inadvertido genere dependencias no deseadas al saltear la capa inmediatamente
  inferior.
- Análogamente, en el desarrollo de sistemas web multibanda es común el error
- de invocar directamente a la base de datos desde la banda de presentación.
- Como resultado, los arquitectos a menudo deben lidear en sus análisis con
+ Análogamente, en el desarrollo de sistemas 
+\emph on
+web
+\emph default
+ multibanda es común el error de invocar directamente a la base de datos
+ desde la banda de presentación.
+ Como resultado, los arquitectos a menudo deben lidiar en sus análisis con
  conocimiento incompleto e incorrecto debido a defectos en la documentación
  
 \begin_inset LatexCommand cite
@@ -1672,8 +1724,8 @@ Trabajos relacionados
 \end_layout
 
 \begin_layout Standard
-El problema de la falta de documentacion arquitectonica o incluso su desactualiz
-ación, como así también la re-ingenieria y la desicronización entre la arquitect
+El problema de la falta de documentación arquitectónica o incluso su desactualiz
+ación, como así también la re-ingeniería y la desicronización entre la arquitect
 ura y su implementación han sido reconocidos en el capítulo anterior como
  los principales motivadores de este trabajo.
 \end_layout
@@ -1685,20 +1737,21 @@ En este capítulo intentaremos brindar una visión mas amplia sobre los distinto
 \end_layout
 
 \begin_layout Standard
-Muchos enfoques de reconstruccion de arquitecturas y herramientas para apoyar
+Muchos enfoques de reconstrucción de arquitecturas y herramientas para apoyar
  dichos enfoques han sido cubiertos en la literatura.
- La mayoria de estos enfoques estan basados en un ciclo extraer-abstraer-present
+ La mayoría de estos enfoques están basados en un ciclo extraer-abstraer-present
 ar, en el cual el sistema es analizado con el propósito de popular un repositori
 o, que luego es consultado para poder construir representaciones abstractas
  del sistema que son presentadas en forma interactiva y adecuada al ingeniero
  de software.
- Tilley et al
+ Tilley et.
+ al 
 \begin_inset LatexCommand cite
 key "Tilley1996"
 
 \end_inset
 
- describe el enfoque extraer-abstraer-presentar con mayor detalle, refiriendose
+ describe el enfoque extraer-abstraer-presentar con mayor detalle, refiriéndose
  a los pasos de recolección de información, inferencia de conocimiento,
  y presentación de la información.
 \end_layout
@@ -1720,24 +1773,35 @@ Aportes relacionados
 \begin_layout Standard
 Como dijimos en la sección anterior varios han sido los enfoques y herramientas
  propuestos para la reconstrucción de arquitecturas.
- Estos enfoques y herramientas tambien pueden ser categorizados de la siguiente
+ Estos enfoques y herramientas también pueden ser categorizados de la siguiente
  manera: 
 \end_layout
 
 \begin_layout Standard
 • Reconstrucción manual con el apoyo de herramientas (enfoques 100% manuales
- no seran descriptos).
+ no serán descriptos).
  
 \end_layout
 
 \begin_layout Standard
 • Lenguajes de consultas para escribir las pautas para construir agregaciones
- o clusteres automáticamente .
+ o 
+\emph on
+clusteres
+\emph default
+ automáticamente .
 \end_layout
 
 \begin_layout Standard
-• Utilización de otras técnicas, incluida la agrupación, data mining, utilizando
- architecture description languages (ADLs).
+• Utilización de otras técnicas, incluida la agrupación, 
+\emph on
+data
+\emph default
+ 
+\emph on
+mining
+\emph default
+, utilizando lenguajes de descripción de arquitecturas (ADLs).
 \end_layout
 
 \begin_layout Standard
@@ -1747,16 +1811,27 @@ Los siguientes son algunos de los enfoques principales en cada categoría.
 \end_layout
 
 \begin_layout Subsection
-Metodos de reconstruccion manual con el apoyo de herramientas
+Métodos de reconstrucción manual con el apoyo de herramientas
 \end_layout
 
 \begin_layout Paragraph
-Portable Bookshelf (PBS)
+
+\emph on
+Portable Bookshelf
+\emph default
+ (PBS)
 \end_layout
 
 \begin_layout Standard
-Portable Bookshelf (PBS) es una toolkit usada para generar una biblioteca
- de software (software bookshelf)
+
+\emph on
+Portable Bookshelf 
+\emph default
+(PBS) es una herramienta usada para generar una biblioteca de software (
+\emph on
+bookshelf
+\emph default
+) 
 \begin_inset LatexCommand cite
 key "Finnigan97"
 
@@ -1764,11 +1839,15 @@ key "Finnigan97"
 
 .
  La información contenida en la biblioteca incluye código fuente como también
- asi cualquier otra documentación sobre el sistema como pueden ser test
- cases, análisis de performance, future plans, diagramas arquitecturales
- e información sobre la historia del proyecto.
- Bowman y otros han presentado un método para extraer documentación arquitectura
-l desde el código de un sistema ya implementado utilizando PBS
+ así cualquier otra documentación sobre el sistema como pueden ser casos
+ de test, análisis de 
+\emph on
+performance
+\emph default
+, planes futuros, diagramas arquitectónicos e información sobre la historia
+ del proyecto.
+ Bowman y otros han presentado un método para extraer documentación arquitectóni
+ca desde el código de un sistema ya implementado utilizando PBS
 \begin_inset LatexCommand cite
 key "BOWMAN99"
 
@@ -1776,15 +1855,21 @@ key "BOWMAN99"
 
 .
  En un ejemplo ellos reconstruyeron la arquitectura de un sistema Linux.
- Analizaron el código fuente utilizando el programa cfx (c-code fact extractor)
- para obtener información del código y poder generar asi conjuntos de relaciones
+ Analizaron el código fuente utilizando el programa cfx (
+\emph on
+c-code fact extractor
+\emph default
+) para obtener información del código y poder generar conjuntos de relaciones
  entre los elementos identificados.
  Luego, manualmente crearon una descomposición del sistema Linux en subsistemas
  y asignaron los archivos fuentes a dichos subsistemas.
- Luego utilizando grok, una herramienta de manipulación de hechos (facts),
- determinaron las relaciones entre los subsistemas identificados y lsedit
- (herramienta de visualizacion) para visualizar la estructura del sistema
- extraida.
+ Por medio de una herramienta de manipulación de hechos (
+\emph on
+facts
+\emph default
+), determinaron las relaciones entre los subsistemas identificados.
+ Finalmente, utilizan una herramienta de visualización para visualizar la
+ estructura del sistema extraída.
  El refinamiento de la estructura resultante se lleva a cabo moviendo los
  archivos de código fuente entre subsistemas.
 \end_layout
@@ -1794,7 +1879,7 @@ Rigi
 \end_layout
 
 \begin_layout Standard
-Rigi es una herramienta de visualización y manipulación de infromación de
+Rigi es una herramienta de visualización y manipulación de información de
  software
 \begin_inset LatexCommand cite
 key "RIGI02"
@@ -1803,10 +1888,14 @@ key "RIGI02"
 
 .
  Contiene un interprete para aplicar operaciones a la información visualizada,
- y permite tambien la manipulación manual de la información presentada al
+ y permite también la manipulación manual de la información presentada al
  usuario.
- El principal aporte de esta herramienta son los parsers para extraer la
- informacion de varios lenguajes en un formato propio, Rigi Standard Format(RSF).
+ El principal aporte de esta herramienta son los 
+\emph on
+parsers
+\emph default
+ para extraer la información de varios lenguajes en un formato propio, Rigi
+ Standard Format (RSF).
 \end_layout
 
 \begin_layout Paragraph
@@ -1814,7 +1903,7 @@ SHriMP
 \end_layout
 
 \begin_layout Standard
-SHriMP es un sistema de visualización y navegación de la información
+SHriMP es un sistema de visualización y navegación de la información 
 \begin_inset LatexCommand cite
 key "SHRIMP02,Storey2001"
 
@@ -1836,29 +1925,55 @@ Mitre
 \end_layout
 
 \begin_layout Standard
-Mitre es un framework pensado para la reconstrucción de arquitecturas que
- soporta tanto un enfoque bottom-up como top-down
+Mitre es un 
+\emph on
+framework
+\emph default
+ pensado para la reconstrucción de arquitecturas que soporta tanto un enfoque
+ 
+\emph on
+bottom-up
+\emph default
+ como 
+\emph on
+top-down
+\emph default
+ 
 \begin_inset LatexCommand cite
 key "Harris1995"
 
 \end_inset
 
 .
- El framework consiste de tres componentes: una representación arquitectónica,
- un motor de consultas sobre el código fuente y la capacidad de ofrecer
- una vista del sistema de alto nivel.
- (“bird’s-eye” program-overview capability).
- El enfoque bottom-up usa la vista de alto nivel para mostrar la estructura
- de archivos y componentes del sistema y a partir de ahi permite ir organizando
- la información en clusters más significativos.
- El análisis top-down comienza desde una estilo arquitectonico particular
- definiendo los componentes que luego tendrán que ser reconocidos en el
- software.
- Consultas de reconocimentos son ejecutadas para determinar si los componentes
+ El 
+\emph on
+framework
+\emph default
+ consiste de tres componentes: una representación arquitectónica, un motor
+ de consultas sobre el código fuente y la capacidad de ofrecer una vista
+ del sistema de alto nivel.
+ El enfoque 
+\emph on
+bottom-up
+\emph default
+ usa la vista de alto nivel para mostrar la estructura de archivos y componentes
+ del sistema y a partir de ahí permite ir organizando la información en
+ 
+\emph on
+clusters
+\emph default
+ más significativos.
+ El análisis 
+\emph on
+top-down
+\emph default
+ comienza desde un estilo arquitectónico particular definiendo los componentes
+ que luego tendrán que ser reconocidos en el software.
+ Consultas de reconocimientos son ejecutadas para determinar si los componentes
  esperados existen en el código fuente.
  Este enfoque esta basado en un motor de consultas que es independiente
  del lenguaje de implementación del sistema.
- Las consultas se realizan sobre un arbol de analisis sintactico (AST) el
+ Las consultas se realizan sobre un árbol de análisis sintáctico (AST) el
  cual es construido luego de parsear el código fuente.
 \end_layout
 
@@ -1867,42 +1982,63 @@ Dali
 \end_layout
 
 \begin_layout Standard
-Dali es una coleccion de herramientas en la forma de workbench.
+Dali es una colección de herramientas en la forma de workbench.
  Entre estas herramientas se destacan Rigi y PostgreSQL como repositorio
- de la aplicacion.
+ de la aplicación.
  Rigi provee la manipulación y visualización de las vistas generadas y la
  extensión que aporta Dali a Rigi provee la habilidad de definir y aplicar
  patrones de consultas sobre los datos para generar vistas arquitectónicas
  del sistema.
- La información es extraida del código fuente utilizando una herramienta
+ La información es extraída del código fuente utilizando una herramienta
  de análisis y luego cargadas en Dali.
  Esta información es almacenada en la base de datos PostgreSQL y visualizada
  en Rigi.
- Las consultas son escritas en combinacion de SQL y Perl con el proposito
- de generar abstracciones de la informacion.
+ Las consultas son escritas en combinación de SQL y Perl con el propósito
+ de generar abstracciones de la información.
  
 \end_layout
 
 \begin_layout Paragraph
-Architecture Reconstruction Method (ARM) 
+AMR (
+\emph on
+Architecture Reconstruction Method
+\emph default
+) 
 \end_layout
 
 \begin_layout Standard
-ARM es un metodo the reconstrucción de arquitecturas semi-automatico el
- cual puede ser usado para asistir en la recuperación de arquitecturas para
- sistemas que son disennados e implementados usando patrones
+ARM es un método de reconstrucción de arquitecturas semi-automático el cual
+ puede ser usado para asistir en la recuperación de arquitecturas para sistemas
+ que son diseñados e implementados usando patrones 
 \begin_inset LatexCommand cite
 key "GUO99"
 
 \end_inset
 
 .
- ARM consite en cuatro fases principales: (1) desarrollar un plan para reconocer
- patrones concretos, (2) extracción de un modelo a partir del código fuente,
- (3) detección y evaluación de instancias de patrones y (4) reconstrucción
- y análisis de la arquitectura.
- El mecanismo es simple, reglas que definen patrones son transformadas en
- consultas que seran aplicadas automáticamente para detectar instancias
+ ARM consiste en cuatro fases principales: 
+\end_layout
+
+\begin_layout Enumerate
+Desarrollar un plan para reconocer patrones concretos, 
+\end_layout
+
+\begin_layout Enumerate
+extracción de un modelo a partir del código fuente, 
+\end_layout
+
+\begin_layout Enumerate
+detección y evaluación de instancias de patrones y 
+\end_layout
+
+\begin_layout Enumerate
+reconstrucción y análisis de la arquitectura.
+ 
+\end_layout
+
+\begin_layout Standard
+El mecanismo es simple, reglas que definen patrones son transformadas en
+ consultas que serán aplicadas automáticamente para detectar instancias
  de dichos patrones en el modelo.
  Refinando dichas consultas de patrones se puede mejorar la precisión en
  la detección de patrones.
@@ -1915,24 +2051,44 @@ Riva
 \begin_layout Standard
 Riva provee un enfoque basado en extraer información del código fuente,
  cargar dicha información en una base Prolog, y usar hechos Prolog para
- construir abstracciones de esa informacion y visualizar esas abstracciones
- usando Rigi
+ construir abstracciones de esa información y visualizar esas abstracciones
+ usando Rigi 
 \begin_inset LatexCommand cite
 key "Riva2000"
 
 \end_inset
 
 .
- El proceso que Riva describe consiste en seis fases: (1) desarrollar una
- descripcion a alto nivel de la arquitectura; (2) extraer informacion del
- codigo fuente; (3) abstraer para generar un modelo arquitectónico; (4)
- redocumentacion del sistema; (5) analizar el sistema y crear un plan de
- mejoras; y (6) reorganizar la arquitectura.
+ El proceso que Riva describe consiste en seis fases: 
+\end_layout
+
+\begin_layout Enumerate
+Desarrollar una descripción a alto nivel de la arquitectura; 
+\end_layout
+
+\begin_layout Enumerate
+Extraer información del código fuente; 
+\end_layout
+
+\begin_layout Enumerate
+Abstraer para generar un modelo arquitectónico; 
+\end_layout
+
+\begin_layout Enumerate
+Reglamentación del sistema; 
+\end_layout
+
+\begin_layout Enumerate
+Analizar el sistema y crear un plan de mejoras; y 
+\end_layout
+
+\begin_layout Enumerate
+Reorganizar la arquitectura.
 \end_layout
 
 \begin_layout Subsection
-Otras técnicas, incluida la agrupación, data mining, utilizando architecture
- description languages (ADLs).
+Otras técnicas, incluida la agrupación, utilizando descripción de lenguajes
+ arquitectónicos (ADLs).
 \end_layout
 
 \begin_layout Paragraph
@@ -1953,6 +2109,7 @@ key "ACME"
  La idea principal de este trabajo es traducir estilos de implementación
  a estilos arquitectónicos.
  La traducción se deﬁne conceptualmente como una red de Petri coloreada
+ 
 \begin_inset LatexCommand cite
 key "JENSON94"
 
@@ -1962,32 +2119,79 @@ key "JENSON94"
  y traducirlos cuando corresponda a eventos arquitectónicos, como por ejemplo:
  creación de componentes, establecimiento de conexiones entre ellos, etc.
  Los eventos de bajo nivel son instrucciones Java ejecutadas sobre una máquina
- virtual y se obtienen instrumentando el programa mediante AspectJ
+ virtual y se obtienen instrumentando el programa mediante AspectJ 
 \begin_inset LatexCommand cite
 key "AOP01"
 
 \end_inset
 
 .
- La arquitectura de DiscoTect puede observarse en la Figura 3.2.
+ La arquitectura de la herramienta DiscoTect puede observarse en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Arquitectura-DiscoTect"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-figura
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/discotectArch.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Arquitectura-DiscoTect"
+
+\end_inset
+
+Arquitectura de la herramienta DiscoTect
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 La red de Petri coloreada se obtiene como resultado de la compilación de
  una especiﬁcación escrita en un lenguaje especial llamado DiscoStep.
- DiscoStep fue dise˜nado para permitir traducir la ejecución de instrucciones
- Java a eventos arquitectónicamente signiﬁcativos, considerando que la aridad
+ DiscoStep fue diseñado para traducir la ejecución de instrucciones Java
+ a eventos arquitectónicamente signiﬁcativos, considerando que la aridad
  de esta relación entre ambos tipos es n-m y que normalmente los eventos
  de alto nivel pueden ocurrir simultáneamente cuando el sistema bajo análisis
- posee varios procesos o hilos de ejecucián concurrentes.
- Para que esta especiﬁcación DiscoStep sea efectiva, el programador debe
- seguir estrictamente los estilos de implementación que permitirán construir
- correctamente la red de Petri coloreada.
- Por ejemplo, si el sistema respeta el estilo arquitectonico cliente-servidor
+ posee varios procesos o hilos de ejecución concurrentes.
+ Para que esta especiﬁcación sea efectiva, el programador debe seguir estrictame
+nte los estilos de implementación que permitirán construir correctamente
+ la red de Petri coloreada.
+ Por ejemplo, si el sistema respeta el estilo arquitectónico cliente-servidor
+ 
 \begin_inset LatexCommand cite
 key "BUSCHMANN96"
 
@@ -1997,12 +2201,16 @@ key "BUSCHMANN96"
  estilo como “cliente”, “servidor” y “conexión cliente-servidor” con alguna
  convención que ayude a la red de Petri a detectar estos eventos.
  Si la especiﬁcación DiscoStep espera que el servidor sea representado por
- un socket TCP con el suﬁjo “ServerSocket”, el programador deberá seguir
- este estándar para que el mecanismo sea efectivo.
+ un 
+\emph on
+socket
+\emph default
+ TCP con el suﬁjo “ServerSocket”, el programador deberá seguir este estándar
+ para que el mecanismo sea efectivo.
  Los autores de esta herramienta aseguran bajo la condición de que las implement
 aciones respeten siempre los mismos estilos, que DiscoTect puede monitorear
  diferentes sistemas sin que sea necesario modiﬁcar la especiﬁcación del
- mapeo entre eventos de bajo nivel y eventos de alto nivel, es decir,sin
+ mapeo entre eventos de bajo nivel y eventos de alto nivel, es decir, sin
  cambiar el código DiscoStep.
  Aunque este enfoque es interesante para visualizar la evolución de una
  arquitectura durante la ejecución de su implementación, es importante hacer
@@ -2011,8 +2219,11 @@ aciones respeten siempre los mismos estilos, que DiscoTect puede monitorear
  se reconﬁguran entre si de acuerdo a las distintas situaciones que pueden
  ocurrir en el sistema.
  Los autores de DiscoTect han reportado dos casos de estudio de sistemas
- legados, en los que recuperaron tanto un estilo pipe-and-ﬁlter como uno
- cliente-servidor.
+ legados, en los que recuperaron tanto un estilo 
+\emph on
+pipe-and-ﬁlter
+\emph default
+ como uno cliente-servidor.
  La herramienta todavía necesita ser evaluada con estilos arquitectónicos
  más complejos, donde los mapeos a código no son necesariamente directos.
  
@@ -2029,22 +2240,25 @@ key "MEDVIDOVIC06"
 
 \end_inset
 
-propone un enfoque en el cual su objetivo es extraer una descripción estructural
- de la arquitectura en función de la información provista por su implementación
+ propone un enfoque en el cual su objetivo es extraer una descripción estructura
+l de la arquitectura en función de la información provista por su implementación
  y el desarrollador.
  El código fuente de una aplicación es analizado estáticamente para obtener
  un diagrama de clases UML y luego las clases interrelacionadas son agrupadas
  en componentes.
  Los mapeos deﬁnen a los componentes como un grupo de clases relacionadas.
- El proceso de clustering para determinar los componentes utiliza diferentes
- políticas, principalmente basadas en las relaciones de dependencia entre
- clases Java.
+ El proceso de 
+\emph on
+clustering
+\emph default
+ para determinar los componentes utiliza diferentes políticas, principalmente
+ basadas en las relaciones de dependencia entre clases Java.
  Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
  parcialmente en base a la inspección de código fuente.
- Como contras, se puede mencionar la escasa automatización (las abstracciones
- deben ser realizadas por el usuario, por ejemplo) y nuevamente, la falta
- de soporte para aspectos comportamentales de la arquitectura como es el
- caso de las representaciones UCM.
+ Como contras, se puede mencionar la escasa automatización (por ejemplo,
+ las abstracciones deben ser realizadas por el usuario) y nuevamente, la
+ falta de soporte para aspectos comportamentales de la arquitectura como
+ es el caso de las representaciones UCM.
 \end_layout
 
 \begin_layout Paragraph
@@ -2127,22 +2341,23 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="5">
-<features rotate="true">
-<column alignment="center" valignment="middle" leftline="true" width="9text%">
-<column alignment="center" valignment="middle" leftline="true" width="11text%">
-<column alignment="center" valignment="middle" leftline="true" width="10text%">
-<column alignment="center" valignment="middle" leftline="true" width="10text%">
-<column alignment="center" valignment="middle" leftline="true" rightline="true" width="16text%">
+<features>
+<column alignment="center" valignment="middle" leftline="true" width="15text%">
+<column alignment="center" valignment="middle" leftline="true" width="15text%">
+<column alignment="center" valignment="middle" leftline="true" width="15text%">
+<column alignment="center" valignment="middle" leftline="true" width="15text%">
+<column alignment="center" valignment="middle" leftline="true" rightline="true" width="15text%">
 <row topline="true" bottomline="true" endhead="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+\align center
 
-\family sans
-\size tiny
+\series bold
 Nombre
 \end_layout
 
@@ -2152,9 +2367,9 @@ Nombre
 \begin_inset Text
 
 \begin_layout Standard
+\align center
 
-\family sans
-\size tiny
+\series bold
 Tipo
 \end_layout
 
@@ -2164,9 +2379,9 @@ Tipo
 \begin_inset Text
 
 \begin_layout Standard
+\align center
 
-\family sans
-\size tiny
+\series bold
 Análisis implementación
 \end_layout
 
@@ -2177,8 +2392,7 @@ Análisis implementación
 
 \begin_layout Standard
 
-\family sans
-\size tiny
+\series bold
 Leng.
  arquitectónico
 \end_layout
@@ -2189,9 +2403,9 @@ Leng.
 \begin_inset Text
 
 \begin_layout Standard
+\align center
 
-\family sans
-\size tiny
+\series bold
 Estrategia análisis
 \end_layout
 
@@ -2203,9 +2417,6 @@ Estrategia análisis
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 PBS
 \end_layout
 
@@ -2215,9 +2426,6 @@ PBS
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Manual con ayuda de herramientas.
 \end_layout
 
@@ -2227,9 +2435,6 @@ Manual con ayuda de herramientas.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2239,9 +2444,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2251,9 +2453,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2265,9 +2464,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Rigi
 \end_layout
 
@@ -2277,9 +2473,6 @@ Rigi
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Manual con ayuda de herramientas.
 \end_layout
 
@@ -2289,9 +2482,6 @@ Manual con ayuda de herramientas.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2301,9 +2491,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2313,9 +2500,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2327,9 +2511,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Shrimp
 \end_layout
 
@@ -2339,9 +2520,6 @@ Shrimp
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Manual con ayuda de herramientas.
 \end_layout
 
@@ -2351,9 +2529,6 @@ Manual con ayuda de herramientas.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estatico
 \end_layout
 
@@ -2363,9 +2538,6 @@ estatico
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2375,9 +2547,6 @@ estatico
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2389,9 +2558,6 @@ estatico
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Mitre
 \end_layout
 
@@ -2401,10 +2567,7 @@ Mitre
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Semi automatica.
+Semi automática.
  Lenguaje de consultas.
 \end_layout
 
@@ -2414,9 +2577,6 @@ Semi automatica.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2426,9 +2586,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 UML
 \end_layout
 
@@ -2438,9 +2595,6 @@ UML
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2452,9 +2606,6 @@ UML
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Dali
 \end_layout
 
@@ -2464,10 +2615,7 @@ Dali
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Semi automatica.
+Semi automática.
  Lenguaje de consultas.
 \end_layout
 
@@ -2477,9 +2625,6 @@ Semi automatica.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2489,9 +2634,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2501,10 +2643,7 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-extraccion - abstraccion - visualizacion
+extracción, abstracción, visualizacion
 \end_layout
 
 \end_inset
@@ -2515,9 +2654,6 @@ extraccion - abstraccion - visualizacion
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 ARM
 \end_layout
 
@@ -2527,10 +2663,7 @@ ARM
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Semi automatica.
+Semi automática.
  Lenguaje de consultas.
 \end_layout
 
@@ -2540,9 +2673,6 @@ Semi automatica.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2552,9 +2682,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2564,10 +2691,7 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-extraccion - abstraccion - visualizacion
+extracción, abstracción, visualizacion
 \end_layout
 
 \end_inset
@@ -2578,9 +2702,6 @@ extraccion - abstraccion - visualizacion
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Riva
 \end_layout
 
@@ -2590,10 +2711,7 @@ Riva
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Semi automatica.
+Semi automática.
  Lenguaje de consultas.
 \end_layout
 
@@ -2603,9 +2721,6 @@ Semi automatica.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2615,9 +2730,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 --
 \end_layout
 
@@ -2627,10 +2739,7 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-extraccion - abstraccion - visualizacion
+extracción, abstracción, visualizacion
 \end_layout
 
 \end_inset
@@ -2641,9 +2750,6 @@ extraccion - abstraccion - visualizacion
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 DiscoTect
 \end_layout
 
@@ -2653,10 +2759,7 @@ DiscoTect
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Semi automatica.
+Semi automática.
  
 \end_layout
 
@@ -2666,9 +2769,6 @@ Semi automatica.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 dinámico
 \end_layout
 
@@ -2678,9 +2778,6 @@ dinámico
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 ACME
 \end_layout
 
@@ -2690,10 +2787,7 @@ ACME
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Traducción eventos implementación - eventos arquitectónicos
+Traducción eventos implementación, eventos arquitectónicos
 \end_layout
 
 \end_inset
@@ -2704,9 +2798,6 @@ Traducción eventos implementación - eventos arquitectónicos
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Focus
 \end_layout
 
@@ -2716,10 +2807,7 @@ Focus
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Semi automatica.
+Semi automática.
  
 \end_layout
 
@@ -2729,9 +2817,6 @@ Semi automatica.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2741,9 +2826,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 UML
 \end_layout
 
@@ -2753,9 +2835,6 @@ UML
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Clustering clases, análisis incremental asistido por el usuario
 \end_layout
 
@@ -2767,9 +2846,6 @@ Clustering clases, análisis incremental asistido por el usuario
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 KAE
 \end_layout
 
@@ -2779,10 +2855,7 @@ KAE
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
-Semi automatica.
+Semi automática.
  
 \end_layout
 
@@ -2792,9 +2865,6 @@ Semi automatica.
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 estático
 \end_layout
 
@@ -2804,9 +2874,6 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 UML-UCM
 \end_layout
 
@@ -2816,9 +2883,6 @@ UML-UCM
 \begin_inset Text
 
 \begin_layout Standard
-
-\family sans
-\size tiny
 Etiquetado, agregación, ajuste
 \end_layout
 
@@ -2861,20 +2925,20 @@ Tipo: De acuerdo a la clasificación realizada en la sección anterior, agrupamo
 \end_layout
 
 \begin_layout Itemize
-Tipo de Analisis: Determina el tipo de analisis en el que se basa el enfoque.
+Tipo de Análisis: Determina el tipo de análisis en el que se basa el enfoque.
  Análisis estático, aquel realizado sobre el código fuente, basado en la
  relaciones entre clases o componentes.
- Análisis dinámico, analiza las trazas de ejecucion, es decir se analiza
+ Análisis dinámico, analiza las trazas de ejecución, es decir se analiza
  el comportamiento del sistema y no la estructura estática.
 \end_layout
 
 \begin_layout Itemize
-Lenguaje arquitectonico: Lenguaje en el que se representa la arquitectura
+Lenguaje arquitectónico: Lenguaje en el que se representa la arquitectura
  un vez recuperada.
 \end_layout
 
 \begin_layout Itemize
-Estrategia de analisis: Detalle sobre el método utilizado para interpretar
+Estrategia de análisis: Detalle sobre el método utilizado para interpretar
  la información obtenida luego del análisis (estático o dinámico).
 \end_layout
 
@@ -2883,7 +2947,7 @@ Conclusiones
 \end_layout
 
 \begin_layout Standard
-En este capítulo se han presentado los trabajos relacionados mas importantes
+En este capítulo se han presentado los trabajos relacionados más importantes
  que tratan la reconstrucción de arquitecturas.
 \end_layout
 
@@ -2896,16 +2960,18 @@ n.
  Sin embargo, estas técnicas se ven limitadas cuando las estructuras del
  sistema son conocidas en tiempo de ejecución.
  Es decir, cuando la determinación del componente responsable de un aspecto
- en particular es realizada en tiempo de ejecución(ej: clases cargadas dinámicam
-ente en los sistemas orientados a objetos).
+ en particular es realizada en tiempo de ejecución (por ejemplo, clases
+ cargadas dinámicamente en los sistemas orientados a objetos).
  En efecto, determinar la configuración arquitectónica real de un sistema
- usando análisis estático es, en general, indecidible.
+ usando análisis estático es, en general, es indecidible.
 \end_layout
 
 \begin_layout Standard
-Además, ninguno de estos enfoques han considerado las extracciones de paths
- de funcionalidad, tales como los UCMs.
- .................................................
+Además, ninguno de estos enfoques ha considerado las extracciones de 
+\emph on
+paths
+\emph default
+ de ejecución para generar diagramas tales como los UCMs.
 \end_layout
 
 \begin_layout Chapter
@@ -2922,10 +2988,17 @@ En este capítulo se presenta el enfoque
 \emph on
 DRArch
 \emph default
-, que propone la creación de una herramienta de soporte para la reconstrucción
+, que propone la creación de una he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+ta de soporte para la reconstrucción
  de arquitecturas de software, usando para ello información estática (código
- fuente) y dinámica (logs de ejecución) para lograr una representación arquitect
-ónica por medio de diagramas de componentes y de UCMs.
+ fuente) y dinámica (
+\emph on
+logs
+\emph default
+ de ejecución) para lograr una representación arquitectónica por medio de
+ diagramas de componentes y de UCMs.
 \end_layout
 
 \begin_layout Standard
@@ -2947,7 +3020,20 @@ análisis
 DRArch
 \emph default
 .
- Luego, la sección\InsetSpace ~
+ Luego, en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Ejemplo:-Observer-Observable"
+
+\end_inset
+
+ se muestra un ejemplo concreto para poder comprender el funcionamiento
+ de 
+\emph on
+DRArch
+\emph default
+.
+ La sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "sec:Modelo-Conceptual"
@@ -2964,18 +3050,6 @@ DRArch
 \emph default
 , junto con una breve descripción de cada uno de los elementos que interactúan
  para alcanzar la funcionalidad propuesta.
- A continuación, en la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Ejemplo"
-
-\end_inset
-
- se muestra un ejemplo concreto de funcionamiento de 
-\emph on
-DRArch
-\emph default
-.
  Finalmente, en la sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -3030,9 +3104,17 @@ Task
 \begin_layout Standard
 Con el objetivo de poder comprender el enfoque pragmáticamente, en la siguiente
  sub-sección se presenta un ejemplo simple de una pieza de un sistema, en
- donde se utiliza el patrón de diseño Observer-Observable.
- El resto de las sub-secciones describen el enfoque haciendo referencia
- o agregando mas detalles al ejemplo.
+ donde se utiliza el patrón de diseño 
+\emph on
+Observer-Observable
+\emph default
+.
+ El resto de las 
+\emph on
+sub
+\emph default
+-secciones describen el enfoque haciendo referencia o agregando mas detalles
+ al ejemplo.
 \end_layout
 
 \begin_layout Standard
@@ -3141,6 +3223,11 @@ enfoque descripción general mostrando componentes del enfoque.
 \end_layout
 
 \begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Ejemplo:-Observer-Observable"
+
+\end_inset
+
 Ejemplo: Observer-Observable
 \end_layout
 
@@ -3159,7 +3246,11 @@ reference "sub:Ejemplo-UCM"
 
 \end_inset
 
-, basado en un patron Observer-Observable 
+, basado en un patrón 
+\emph on
+Observer-Observable
+\emph default
+ 
 \begin_inset LatexCommand cite
 key "gamma93design"
 
@@ -3169,13 +3260,20 @@ key "gamma93design"
 \end_layout
 
 \begin_layout Standard
-El patrón Observer-Observable se aplica en el contexto de aplicaciones interacti
-vas que demandan un alto grado de interacción con el usuario.
+El patrón 
+\emph on
+Observer-Observable
+\emph default
+ se aplica en el contexto de aplicaciones interactivas que demandan un alto
+ grado de interacción con el usuario.
  Estos sistemas normalmente requieren un alto grado de flexibilidad, en
  especial sobre la interfaz de usuario, que debe adaptarse a las necesidades,
  muchas veces conflictivas, de los diferentes usuarios.
- En particular, Observer-Observable apunta a satisfacer las siguientes necesidad
-es:
+ En particular, 
+\emph on
+Observer-Observable
+\emph default
+ apunta a satisfacer las siguientes necesidades:
 \end_layout
 
 \begin_layout Itemize
@@ -3193,25 +3291,38 @@ Cambios en la interfaz de usuario deben ser fáciles de introducir, incluso,
 \end_layout
 
 \begin_layout Itemize
-El núcleo de la aplicación (Observable) debe verse inalterado por el cambio
- de estilos o interfaces gráficas
+El núcleo de la aplicación (
+\emph on
+Observable
+\emph default
+) debe verse inalterado por el cambio de estilos o interfaces gráficas
 \end_layout
 
 \begin_layout Standard
-En el estilo Observer-Observable puro, normalmente el Observable representa
- los datos a ser mostrados, y el Observer (la vista) es responsable de reflejarl
-os visualmente al usuario.
+En el estilo 
+\emph on
+Observer-Observable
+\emph default
+ puro, normalmente el 
+\emph on
+Observable
+\emph default
+ representa los datos a ser mostrados, y el 
+\emph on
+Observer
+\emph default
+ (la vista) es responsable de reflejarlos visualmente al usuario.
 \end_layout
 
 \begin_layout Standard
 En la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "cap:Observer-Observable-Class"
+reference "fig:Diagrama-de-clases-UML-para-el-ejemplo-Observer-Observable"
 
 \end_inset
 
- se presenta un diagrama de clases UML en donde se aplica el patron y en
+ se presenta un diagrama de clases UML en donde se aplica el patrón y en
  Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -3246,11 +3357,13 @@ status open
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "cap:Observer-Observable-Class"
+name "fig:Diagrama-de-clases-UML-para-el-ejemplo-Observer-Observable"
 
 \end_inset
 
-Diagrama de clases UML para el ejemplo Observer-Observable
+Diagrama de clases UML para el ejemplo 
+\emph on
+Observer-Observable
 \end_layout
 
 \end_inset
@@ -3277,7 +3390,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/ObserverObservableComponentDiagram.jpg
-	scale 80
+	scale 70
 
 \end_inset
 
@@ -3293,7 +3406,9 @@ name "cap:Observer-Observable-Component"
 
 \end_inset
 
-Diagrama de componentes para el ejemplo Observer-Observable
+Diagrama de componentes para el ejemplo 
+\emph on
+Observer-Observable
 \end_layout
 
 \end_inset
@@ -3307,16 +3422,31 @@ Diagrama de componentes para el ejemplo Observer-Observable
 \end_layout
 
 \begin_layout Description
-Observable Representa los datos y la funcionalidad principal de la aplicación.
- Provee un mecanismo de registración para los observadores.
+
+\emph on
+Observable
+\emph default
+ Representa los datos y la funcionalidad principal de la aplicación.
+ Provee un mecanismo para registrar los observadores.
  De este modo, permite la notificación de los cambios sufridos manteniendo
  la independencia del modelo con sus diferentes vistas.
 \end_layout
 
 \begin_layout Description
-Observer Provee información al usuario de manera visual y obtiene información
- del usuario mediante eventos (por ejemplo, clicks o movimientos de mouse,
- teclas, etc.).
+
+\emph on
+Observer
+\emph default
+ Provee información al usuario de manera visual y obtiene información del
+ usuario mediante eventos (por ejemplo, 
+\emph on
+clicks
+\emph default
+ o movimientos de 
+\emph on
+mouse
+\emph default
+, teclas, etc.).
  Obtiene sus datos del modelo.
 \end_layout
 
@@ -3325,9 +3455,12 @@ Mapeo UCM - implementación
 \end_layout
 
 \begin_layout Standard
-Antes de proseguir con el ejemplo Observer-Observable es importante introducir
- el concepto de mapeo entre la documentación arquitectónica y su correspondiente
- implementación.
+Antes de proseguir con el ejemplo 
+\emph on
+Observer-Observable
+\emph default
+ es importante introducir el concepto de mapeo entre la documentación arquitectó
+nica y su correspondiente implementación.
 \end_layout
 
 \begin_layout Standard
@@ -3366,9 +3499,9 @@ responsabilidades
 
 \begin_layout Standard
 En otras palabras, existe una correspondencia de aridad 
-\emph on
+\family typewriter
 n:m
-\emph default
+\family default
  entre una unidad de comportamiento a nivel arquitectónico, como lo es una
  
 \emph on
@@ -3603,13 +3736,13 @@ DRArch
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename img/procesoDrarch.jpg
-	scale 40
+	scale 30
 
 \end_inset
 
@@ -3656,16 +3789,10 @@ Se debe realizar un análisis de los artefactos relacionados con el código
  fuente.
  Con el objetivo de poder manipular la información estática de forma flexible,
  el código fuente es representado por medio de un lenguaje de programación
- lógico al estilo ProLog
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-reffff
-\end_layout
-
-\end_inset
-
+ lógico al estilo 
+\emph on
+ProLog
+\emph default
 .
  De esta forma, se representan artefactos del código fuente (clases, variables,
  paquetes, etc.) sobre una base de conocimiento.
@@ -3740,19 +3867,34 @@ Análisis dinámico
 
 \begin_layout Standard
 Al igual que la información estática, la información dinámica es representada
- en forma de hechos al estilo prolog y sobre la misma base del conocmiento.
+ en forma de hechos al estilo 
+\emph on
+ProLog
+\emph default
+ y sobre la misma base del conocimiento.
  Para obtener dicha información, es necesario realizar un análisis de los
- logs de ejecución del sistema.
- Los logs de ejecución representan las trazas reales de ejecución de la
- aplicación en su estado actual.
+ 
+\emph on
+logs
+\emph default
+ de ejecución del sistema.
+ Los 
+\emph on
+logs
+\emph default
+ de ejecución representan las trazas reales de ejecución de la aplicación
+ en su estado actual.
  Contienen información de bajo nivel, como llamadas a métodos, threads,
  creaciones de objetos, etc.
 \end_layout
 
 \begin_layout Standard
-Para generar de los logs de ejecución, es necesario instrumentar la aplicación
- y realizar ejecuciones sobre casos de uso que reflejen el comportamiento
- del sistema.
+Para generar de los 
+\emph on
+logs
+\emph default
+ de ejecución, es necesario instrumentar la aplicación y realizar ejecuciones
+ sobre casos de uso que reflejen el comportamiento del sistema.
  En este punto es imprescindible la intervención manual del arquitecto ya
  que es necesario guiar la ejecución de la aplicación, interactuando con
  ella de manera que se ejercite los casos de uso en donde los artefactos
@@ -3764,7 +3906,11 @@ reference "cap:Observer-Observable-TraceLog"
 
 \end_inset
 
- se muestran los hechos que se generan luego de analizar el log de ejecución.
+ se muestran los hechos que se generan luego de analizar el 
+\emph on
+log
+\emph default
+ de ejecución.
 \end_layout
 
 \begin_layout Standard
@@ -3793,7 +3939,13 @@ name "cap:Observer-Observable-TraceLog"
 
 \end_inset
 
-Transformación del log de ejecución del ejemplo Observer-Observable
+Transformación del 
+\emph on
+log
+\emph default
+ de ejecución del ejemplo 
+\emph on
+Observer-Observable
 \end_layout
 
 \end_inset
@@ -3892,17 +4044,21 @@ Reglas para la identificación de artefactos arquitectónicos
 \end_layout
 
 \begin_layout Standard
-Las iteraciones estan represenadas por las fases las cuales ralizan actualizacon
-es al modelo arquitectónico.
- Cada fase recibe como entrada un snapshot del modelo recuperado por fases
- anteriores y produce como salida una evolución del modelo de entrada en
- base a las transformaciones aplicadas durante la ejecucion de la fase.
+Las iteraciones están representadas por las fases las cuales realizan actualizac
+iones al modelo arquitectónico.
+ Cada fase recibe como entrada un 
+\emph on
+snapshot
+\emph default
+ del modelo recuperado por fases anteriores y produce como salida una evolución
+ del modelo de entrada en base a las transformaciones aplicadas durante
+ la ejecución de la fase.
  De esta forma una fase se convierte en un componente customizable y reutilizabl
-e el cual es independiente del modelo arquitectonico de entrada.
+e el cual es independiente del modelo arquitectónico de entrada.
 \end_layout
 
 \begin_layout Standard
-La ejecucion de cada fase es a su vez un proceso interactivo.
+La ejecución de cada fase es a su vez un proceso interactivo.
  Cada fase contiene un conjunto de reglas las cuales determinan las transformaci
 ones al modelo.
  Estas transformaciones permitirán al arquitecto relacionar elementos arquitectó
@@ -3921,8 +4077,11 @@ una sugerencia, construida a partir de cada uno de los resultados de la
 \end_layout
 
 \begin_layout Enumerate
-una serie de hechos (facts), los cuales representan las transformaciones
- a la base de conocimiento.
+una serie de hechos (
+\emph on
+facts
+\emph default
+), los cuales representan las transformaciones a la base de conocimiento.
 \end_layout
 
 \begin_layout Subsection*
@@ -3936,7 +4095,7 @@ El enfoque provee un conjunto de reglas basadas en patrones de diseño y
  cumplir un sistema para que se justifique la presencia de un determinado
  artefacto arquitectónico.
  Adicionalmente, las reglas pueden ser especificadas por el arquitecto que
- realiza el proeceso de reconstrucción.
+ realiza el proceso de reconstrucción.
  En la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -3973,7 +4132,9 @@ name "cap:Especificando-Reglas"
 
 \end_inset
 
-Especificación de una regla para el ejemplo Observer-Observable
+Especificación de una regla para el ejemplo 
+\emph on
+Observer-Observable
 \end_layout
 
 \end_inset
@@ -4001,19 +4162,25 @@ reference "sec:JQuery"
 \end_inset
 
  del apéndice se encuentra un catálogo completo de los hechos disponibles
- junto con una descripción (en la herremienta es posible acceder a dicho
- catálogo a traves de la ayuda).
+ junto con una descripción (en la herramienta es posible acceder a dicho
+ catálogo a través de la ayuda).
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 Identificación de estructuras arquitectónicas
 \end_layout
 
 \begin_layout Standard
-En el ejemplo Observer-Observable, las reglas que identifican estructuras
- arquitectónicas son simples.
- Por ejemplo, una clase que implementa la interface Observer se mapea a
- un componente arquitectónico.
+En el ejemplo 
+\emph on
+Observer-Observable
+\emph default
+, las reglas que identifican estructuras arquitectónicas son simples.
+ Por ejemplo, una clase que implementa la interface 
+\emph on
+Observer
+\emph default
+ se mapea a un componente arquitectónico.
  Si bien esto se define como una regla, durante el proceso de reconstrucción
  esta regla se presenta como sugerencia y es responsabilidad del arquitecto
  aceptar o refutar la generación un nuevo componente.
@@ -4026,13 +4193,15 @@ s relacionando distintos tipos de información.
  se relaciona para detectar estructuras arquitectónicas:
 \end_layout
 
-\begin_layout Description
-Estructura\InsetSpace ~
-De\InsetSpace ~
-Paquetes Cualquier sistema grande se debe dividir en unidades
- más pequeñas, de modo que las personas puedan trabajar con una cantidad
- de información limitada, a la vez y de modo que los equipos de trabajo
- no intereran con el trabajo de los otros.
+\begin_layout Subsubsection
+Estructura De Paquetes 
+\end_layout
+
+\begin_layout Standard
+Cualquier sistema grande se debe dividir en unidades más pequeñas, de modo
+ que las personas puedan trabajar con una cantidad de información limitada,
+ a la vez y de modo que los equipos de trabajo no interfieran con el trabajo
+ de los otros.
  Un paquete es una parte de un modelo.
  Cada parte del modelo debe pertenecer a un paquete.
  Pero para ser funcional, la asignación debe seguir un cierto principio
@@ -4073,55 +4242,386 @@ ubsistemas agrupando elementos de modelado.
  La visibilidad también se aplica a las clases.
  El permiso de acceso y visibilidad son necesarios para hacer referencia
  a un elemento.
- La dependencia de acceso no modica el espacio de nombres del cliente no
- crea las referencias automáticamente, simplemente concede permiso para
+ La dependencia de acceso no modifica el espacio de nombres del cliente
+ no crea las referencias automáticamente, simplemente concede permiso para
  establecer referencias.
  La dependencia de importación se utiliza para agregar nombres al espacio
  de nombres del paquete del cliente como sinónimos de los caminos completos.
 \end_layout
 
-\begin_layout Description
-Hot\InsetSpace ~
-Spot\InsetSpace ~
-y\InsetSpace ~
-Frameworks El concepto principal del diseño de framworks es el de
- separar aquellos aspectos que son invariantes a lo largo de varias aplicaciones
- en el dominio (frozen spots) de aquellos otros que varían a los largo de
- las aplicaciones y que deben mantenerse exibles y customizables (hot spots).
- Los conceptos de herencia y binding dinámico son las claves para llevar
- a cabo esto.
- Los frameworks proveen su exibilidad en los hot spots usando dos conceptos
- esenciales, templates y hooks.
- Los métodos template son implementados basados sobre los hook methods.
- Un método hook en un método elemental en el contexto en el que el hook
+\begin_layout Subsubsection
+
+\emph on
+Hot Spot
+\emph default
+ y 
+\emph on
+Frameworks
+\end_layout
+
+\begin_layout Standard
+El concepto principal del diseño de 
+\emph on
+framworks
+\emph default
+ es el de separar aquellos aspectos que son invariantes a lo largo de varias
+ aplicaciones en el dominio (
+\emph on
+frozen spots
+\emph default
+) de aquellos otros que varían a los largo de las aplicaciones y que deben
+ mantenerse flexibles y customizables (
+\emph on
+hot spots
+\emph default
+).
+ Los conceptos de herencia y 
+\emph on
+binding
+\emph default
+ dinámico son las claves para llevar a cabo esto.
+ Los 
+\emph on
+frameworks
+\emph default
+ proveen su flexibilidad en los 
+\emph on
+hot spots
+\emph default
+ usando dos conceptos esenciales: 
+\emph on
+templates
+\emph default
+ y 
+\emph on
+hooks
+\emph default
+.
+ Los métodos 
+\emph on
+template
+\emph default
+ son implementados basados sobre los métodos 
+\emph on
+hook
+\emph default
+.
+ Un método 
+\emph on
+hook
+\emph default
+ en un método elemental en el contexto en el que el 
+\emph on
+hook
+\emph default
  particular es usado (este puede ser tanto un método abstracto, un método
- regular u otro template methods).
- Ver gura 14 Generalmente, los métodos template son usados para implementar
- los frozen spots en un framework, y los métodos hook, los hot spots.
- Los frozen spots son aspectos que son invariantes a lo largo de las aplicacione
-s en el dominio, posiblemente representando comportamiento abstracto, ujos
- de control genéricos y relaciones comunes entre objetos.
- La gura siguiente es un ejemplo, en el que la clase B tiene 3 métodos:
- M1, es el método template que invoca a M2 y M3; M2 es declarado abstracto,
- y M3 ofrece una implementación por defecto.
- En base a esto en esto, decidimos utilizar esta estrategia para identicar
- componentes arquitectónicos.
- En primer lugar identicamos los métodos hook, y a partir de esto se abren
- dos posibilidades.
- La primera, si el método hook es invocado desde otra jerarquía, es decir,
- la clase que contiene el método hook, no es subclase de la clase que declara
- el método template que lo invoca, se seleccionan dichas clases como posibles
- componentes, y se recupera también la relación, en la que la clase hook
- provee un servicio y la clase template lo consume.(Figura B de la gura 15)
- La segunda, es si la clase hook, es subclase de la clase template, de esta
- forma se busca quien invoca al método template.
- Y se procede a lo mismo que la anterior, se seleccionan como posibles component
-es y se recupera la relación.
- (Figura A de la gura 15).
+ regular u otro método 
+\emph on
+template
+\emph default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Generalmente, los métodos 
+\emph on
+template
+\emph default
+ son usados para implementar los 
+\emph on
+frozen spots
+\emph default
+ en un 
+\emph on
+framework
+\emph default
+, y los métodos 
+\emph on
+hook
+\emph default
+, los 
+\emph on
+hot spots
+\emph default
+.
+ Los 
+\emph on
+frozen spots
+\emph default
+ son aspectos que son invariantes a lo largo de las aplicaciones en el dominio,
+ posiblemente representando comportamiento abstracto, flujos de control
+ genéricos y relaciones comunes entre objetos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/Hooks-Templates.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Hooks-y-Templates"
+
+\end_inset
+
+
+\emph on
+Hooks
+\emph default
+ y 
+\emph on
+Templates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Hooks-y-Templates"
+
+\end_inset
+
+ es un ejemplo en el que la clase 
+\family typewriter
+B
+\family default
+ tiene 3 métodos: 
+\family typewriter
+M1
+\family default
+, es el método template que invoca a 
+\family typewriter
+M2
+\family default
+ y 
+\family typewriter
+M3
+\family default
+; 
+\family typewriter
+M2
+\family default
+ es declarado abstracto, y 
+\family typewriter
+M3
+\family default
+ ofrece una implementación por defecto.
+ 
+\end_layout
+
+\begin_layout Standard
+En base a esto, decidimos utilizar esta estrategia para identificar componentes
+ arquitectónicos.
+ En primer lugar identificamos los métodos 
+\emph on
+hook
+\emph default
+, y a partir de esto se abren dos posibilidades.
+ 
+\end_layout
+
+\begin_layout Itemize
+La primera, si el método 
+\emph on
+hook
+\emph default
+ es invocado desde otra jerarquía, es decir, la clase que contiene el método
+ 
+\emph on
+hook
+\emph default
+, no es subclase de la clase que declara el método template que lo invoca,
+ se seleccionan dichas clases como posibles componentes, y se recupera también
+ la relación, en la que la clase 
+\emph on
+hook
+\emph default
+ provee un servicio y la clase 
+\emph on
+template
+\emph default
+ lo consume (Sección B de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Hot-Spot-y-Frameworks"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+La segunda, si la clase 
+\emph on
+hook
+\emph default
+, es subclase de la clase 
+\emph on
+template
+\emph default
+, de esta forma se busca quién invoca al método 
+\emph on
+template
+\emph default
+.
+ Y se procede a lo mismo que la anterior: se seleccionan como posibles component
+es y se recupera la relación (Sección A de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Hot-Spot-y-Frameworks"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/HotSpot-Frameworks.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+
+\emph on
+\begin_inset LatexCommand label
+name "fig:Hot-Spot-y-Frameworks"
+
+\end_inset
+
+Hot Spot
+\emph default
+ y 
+\emph on
+Frameworks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Manipulación de alternativas arquitectónicas
+\end_layout
+
+\begin_layout Standard
+La ejecución de una regla tiene como resultado una lista de sugerencias.
+ Estas sugerencias proponen cambios al modelo arquitectónico y deben ser
+ aceptadas o rechazadas por el arquitecto.
+ Esto permite que las actualizaciones arquitectónicas sean controladas.
+ En la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Vista-de-sugerencias"
+
+\end_inset
+
+ se muestra la vista de sugerencias para la regla que detecta componentes
+ 
+\emph on
+Observer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/DrarchSuggestView.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Vista-de-sugerencias"
+
+\end_inset
+
+Vista de sugerencias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una sugerencia es el resultado de evaluar de una reglas sobre la base del
+ conocimiento.
+ La importancia de estas decisiones de diseño varía para cada sistema de
+ software y está en función de los interesados en el sistema, sus preocupaciones
+, y sus necesidades específicas.
 \end_layout
 
 \begin_layout Subsection
@@ -4129,8 +4629,8 @@ Generación de Vistas
 \end_layout
 
 \begin_layout Standard
-Al termino de cada fase, se cuenta cuenta con una representacion grafica
- del modelo arquitectonico la cual cubre dos aspectos fundamentales de la
+Al termino de cada fase, se cuenta cuenta con una representación gráfica
+ del modelo arquitectónico la cual cubre dos aspectos fundamentales de la
  arquitectura del sistema: estructura y comportamiento.
  Las sugerencias aceptadas de las reglas que fueron ejecutadas, agregaron
  hechos a la base de conocimiento.
@@ -4139,7 +4639,11 @@ Al termino de cada fase, se cuenta cuenta con una representacion grafica
  arquitectura del sistema.
  Cuando un conjunto de reglas finaliza su ejecución, se generan diagramas
  de componentes y de UCMs con su correspondiente mapeo al código fuente.
- Estos diagramas estan representados en Flabot.
+ Estos diagramas están representados en 
+\emph on
+Flabot
+\emph default
+.
  Si las sugerencias de la regla especificada en el ejemplo\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -4147,10 +4651,10 @@ reference "cap:Especificando-Reglas"
 
 \end_inset
 
- son aceptadas, el proceso de reconstrucción genera el digrama de la figura\InsetSpace ~
+ son aceptadas, el proceso de reconstrucción genera el diagrama de la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "cap:ComponentsDiagramObsers"
+reference "fig:Diagrama-de-componentes-de-los-Observers"
 
 \end_inset
 
@@ -4179,7 +4683,7 @@ status open
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "cap:ComponentsDiagramObsers"
+name "fig:Diagrama-de-componentes-de-los-Observers"
 
 \end_inset
 
@@ -4290,17 +4794,46 @@ The Step Engine defines a phase model as a composition of steps, in which
 
 \end_layout
 
-\begin_layout Section
-\begin_inset LatexCommand label
-name "sec:Ejemplo"
-
-\end_inset
-
-Resolución del ejemplo Observer-Observable
+\begin_layout Standard
+Modelar o capturar las decisiones de diseño arquitectónico está estrechamente
+ ligado con la visualización arquitectónica y con la foma en que las decisiones
+ de diseño son representadas y manipuladas por los interesados.
+ Cada visualización tiene diferentes ventajas y desventajas que un arquitecto
+ debe considerar.
 \end_layout
 
 \begin_layout Standard
-[Mostrar como funciona el enfoque a partir del ejemplo]
+Una vez que la vista es generada, el arquitecto pude realizar modificaciones
+ sobre los diagramas.
+ Las modificaciones realizadas son sincronizadas con la base de conocmiento
+ para reflejar los cambios.
+\end_layout
+
+\begin_layout Standard
+Es importante destacar que los componentes pueden estar mapeados al código
+ fuente de forma explícita.
+ Es decir, existe una relación que vincula a la clase 
+\family typewriter
+UserInterface
+\family default
+ con el componente 
+\family typewriter
+UserInterfaceObserver
+\family default
+ de la figuras 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-clases-UML-para-el-ejemplo-Observer-Observable"
+
+\end_inset
+
+ y 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-componentes-de-los-Observers"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Section
@@ -4317,7 +4850,65 @@ En este capitulo se presentó el enfoque
 \emph on
 DRArch
 \emph default
-, que permite...
+, que permite obtener vistas arquitectónicas de un sistema a partir de un
+ proceso guiado por el arquitecto.
+ Este proceso intenta utilizar la mayor cantidad de información que sea
+ posible y sus principales fuentes son: el código, la trazas de ejecución
+ y la experiencia de las personas involucradas en el sistema.
+\end_layout
+
+\begin_layout Standard
+El proceso de reconstrucción es controlado por el arquitecto en todo momento.
+ Su modelo flexible de generación de reglas permite al arquitecto tener
+ el control de cuándo y cómo actualizar el modelo arquitectónico.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, Drarch no impone restricciones de un lenguaje específico
+ en el que este implementado el sistema a analizar.
+ El hecho de transformar la información del sistema a una base de conocimientos
+ permite la aplicación del enfoque en muchos sistemas existentes.
+\end_layout
+
+\begin_layout Standard
+Debemos admitir que no existe la magia, es decir, es imposible, desde nuestro
+ punto de vista, que una herramienta pueda recuperar, sin ayuda alguna,
+ el diseño arquitectónico de un sistema.
+ Se necesita del conocimiento del dominio de la aplicación y fundamentalmente
+ de la experiencia del usuario.
+ Utilizando el enfoque 
+\emph on
+DRArch
+\emph default
+, es posible alcanzar una aproximación de la arquitectura.
+ Uno de los aspectos más fuerte del enfoque es que permite especificar cualquier
+ tipo de información del sistema para luego ser procesada (consultas a través
+ de reglas) y relacionar cualquier tipo de información.
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, es posible extender la funcionalidad para que la enfoque
+ brinde soporte para algunos de los siguientes ítems: 
+\end_layout
+
+\begin_layout Itemize
+Identificar patrones de diseño.
+ 
+\end_layout
+
+\begin_layout Itemize
+Definir un conjunto de reglas que verifiquen si el diseño propuesto se correspon
+de con la implementación.
+ 
+\end_layout
+
+\begin_layout Itemize
+Detectar anti-patrones.
+\end_layout
+
+\begin_layout Standard
+En el siguiente capítulo se muestran en detalle algunos aspectos de la implement
+ación.
 \end_layout
 
 \begin_layout Chapter
@@ -4330,13 +4921,20 @@ Diseño e implementación
 \end_layout
 
 \begin_layout Standard
-El presente capítulo está dedicado a la descripción del dise˜no e implementación
- de DRArch.
+El presente capítulo está dedicado a la descripción del diseño e implementación
+ de 
+\emph on
+DRArch
+\emph default
+.
  Para ello, su estructura y funcionamiento serán descriptos mediante diagramas
  de paquetes y de descomposición de módulos a nivel arquitectónico y, a
- nivel de dise˜no detallado, mediante diagramas de clases y de interacción
- en notación UML (Uniﬁed Modeling Language) [ref], presentando los aspectos
- más importantes de su implementación.
+ nivel de diseño detallado, mediante diagramas de clases y de interacción
+ en notación UML (
+\emph on
+Uniﬁed Modeling Language
+\emph default
+) [ref], presentando los aspectos más importantes de su implementación.
  El resto del capítulo se encuentra organizado de la siguiente manera.
  En la sección....
 \end_layout
@@ -4346,7 +4944,7 @@ PRESENTAN EL ESTILO ARQUITECTONICO
 \end_layout
 
 \begin_layout Standard
-Analizador de codigo estático
+Analizador de código estático
 \end_layout
 
 \begin_layout Standard
@@ -4376,54 +4974,113 @@ Arquitectura
 \end_layout
 
 \begin_layout Standard
-DRArch fue implementado como un plug-in de la plataforma Eclipse [ref],
- aprovechando su arquitectura extensible, su modelo para análisis estático
- de código fuente Java y su framework de interfaz de usuario.
+
+\emph on
+DRArch
+\emph default
+ fue implementado como un 
+\emph on
+plug-in
+\emph default
+ de la plataforma Eclipse [ref], aprovechando su arquitectura extensible,
+ su modelo para análisis estático de código fuente Java y su framework de
+ interfaz de usuario.
  Además, ésto permitió aprovechar el editor gráﬁco de UCMs y el instrumentador
- de bytecode del proyecto FLABot, ya que ambos también fueron implementados
- como plug-ins [31].
- Si bien JQuery tambien ha sido desarrollado como plug-in, en este trabajo
- se utilizo a modo de libreria.
- El dise˜no de DRach está muy inﬂuenciado por la arquitectura ya deﬁnida
- por Eclipse.
- Esencialmente, Eclipse (ver Ap´endice A.1) es una plataforma dise˜nada para
+ de 
+\emph on
+bytecode
+\emph default
+ del proyecto 
+\emph on
+FLABot
+\emph default
+, ya que ambos también fueron implementados como 
+\emph on
+plug-ins
+\emph default
+ [31].
+ Si bien 
+\emph on
+JQuery
+\emph default
+ también ha sido desarrollado como 
+\emph on
+plug-in
+\emph default
+, en este trabajo se utilizo a modo de librería.
+ El diseño de 
+\emph on
+DRAch
+\emph default
+ está muy inﬂuenciado por la arquitectura ya deﬁnida por Eclipse.
+ Esencialmente, Eclipse (ver Apéndice A.1) es una plataforma diseñada para
  construir herramientas de desarrollo.
  Si bien la plataforma por sí misma no provee mucha funcionalidad al usuario
  ﬁnal, facilita el rápido desarrollo de herramientas con características
  integradas.
  Así, la organización de estas herramientas alrededor de un espacio de trabajo
- común es un principio de dise˜no central, tanto para Eclipse como para
- DRArch.
+ común es un principio de diseño central, tanto para Eclipse como para DRArch.
  En el caso particular de este trabajo, es necesario un cierto nivel de
- integración para aprovechar los componentes existentes de FLABot y la infraestr
-uctura básica de Eclipse.
- Por estas razones, la arquitectura de FLABot ha sido organizada mayormente
- alrededor de un estilo data-centered (centrado en los datos) [6].
+ integración para aprovechar los componentes existentes de 
+\emph on
+FLABot
+\emph default
+ y la infraestructura básica de Eclipse.
+ Por estas razones, la arquitectura de 
+\emph on
+FLABot
+\emph default
+ ha sido organizada mayormente alrededor de un estilo 
+\emph on
+data-centered
+\emph default
+ (centrado en los datos) [6].
  La imposición de este estilo ayuda a soportar los niveles de integración
  antes mencionados y además permite una evolución casi independiente de
  las herramientas.
 \end_layout
 
 \begin_layout Standard
-La funcionalidad propia de DRAch se encuentra organizada alrededor del modelo
- arquitectonico BlackBoard, en el cual una base de conocimientos comun,
- el "blackboard", es iterativamente actualizada por fuentes de conocimiento
- especializadas, los especialistas, comenzando con la especificacion de
- un problema y culminando con la solucion.
- Cada fuente de conocimiento actualiza el blackboard con una solucion parcial
- cuando sus requisitos coinciden con el estado del blackboard.
- De esta forma los especialistas trabajan juntos en la resolucion del problema.
- El modelo blackboard fue originalmente designado para manejar problemas
- complejos y mal definidos.
- Los sistemas basados en este modelo estan principalmente enfocados a la
+La funcionalidad propia de 
+\emph on
+DRArch
+\emph default
+ se encuentra organizada alrededor del modelo arquitectónico 
+\emph on
+BlackBoard
+\emph default
+, en el cual una base de conocimientos común, el 
+\emph on
+BlackBoard
+\emph default
+, es iterativamente actualizada por fuentes de conocimiento especializadas,
+ los especialistas, comenzando con la especificación de un problema y culminando
+ con la solución.
+ Cada fuente de conocimiento actualiza el 
+\emph on
+BlackBoard
+\emph default
+ con una solución parcial cuando sus requisitos coinciden con el estado
+ del 
+\emph on
+BlackBoard
+\emph default
+.
+ De esta forma los especialistas trabajan juntos en la resolución del problema.
+ El modelo 
+\emph on
+BlackBoard
+\emph default
+ fue originalmente designado para manejar problemas complejos y mal definidos.
+ Los sistemas basados en este modelo están principalmente enfocados a la
  inteligencia artificial.
 \end_layout
 
 \begin_layout Standard
-sin seguir rigurosamente su implementacion y como dijimos anteriormente
+sin seguir rigurosamente su implementación y como dijimos anteriormente
  basada en un enfoque extraer-abstraer-presentar, refiriendonos con esto
- a los pasos de recoleccion de informacion, inferencia de conocimiento,
- y presentacion de la informacion.
+ a los pasos de recolección de información, inferencia de conocimiento,
+ y presentación de la información.
 \end_layout
 
 \begin_layout Section
@@ -5197,16 +5854,16 @@ do como un plug-in de Eclipse.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="middle" leftline="true" rightline="true" width="8cm">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="middle" leftline="true" rightline="true" width="3in">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -5268,7 +5925,7 @@ CU
 cu(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5276,7 +5933,7 @@ cu(?X)
 \family default
 \size default
 \noun default
- es una unidad de compilación (archivo .class o .java)."
+ es una unidad de compilación (archivo .class o .java).
 \end_layout
 
 \end_inset
@@ -5314,7 +5971,7 @@ Package
 package(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5322,7 +5979,7 @@ package(?X)
 \family default
 \size default
 \noun default
- es un paquete."
+ es un paquete.
 \end_layout
 
 \end_inset
@@ -5360,7 +6017,7 @@ RefType
 class(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5368,7 +6025,7 @@ class(?X)
 \family default
 \size default
 \noun default
- es una clase."
+ es una clase.
 \end_layout
 
 \end_inset
@@ -5406,7 +6063,7 @@ RefType
 interface(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5414,7 +6071,7 @@ interface(?X)
 \family default
 \size default
 \noun default
- es una interface."
+ es una interface.
 \end_layout
 
 \end_inset
@@ -5452,7 +6109,7 @@ Method
 method(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5460,7 +6117,7 @@ method(?X)
 \family default
 \size default
 \noun default
- es un método."
+ es un método.
 \end_layout
 
 \end_inset
@@ -5498,7 +6155,7 @@ Constructor
 constructor(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5506,7 +6163,7 @@ constructor(?X)
 \family default
 \size default
 \noun default
- es un constructor."
+ es un constructor.
 \end_layout
 
 \end_inset
@@ -5544,7 +6201,7 @@ Initializer
 initializer(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5552,7 +6209,7 @@ initializer(?X)
 \family default
 \size default
 \noun default
- es un inicializador."
+ es un inicializador.
 \end_layout
 
 \end_inset
@@ -5590,7 +6247,7 @@ Field
 field(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5598,7 +6255,7 @@ field(?X)
 \family default
 \size default
 \noun default
- es un campo."
+ es un campo.
 \end_layout
 
 \end_inset
@@ -5636,7 +6293,7 @@ Bookmark
 bookmark(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5647,8 +6304,6 @@ bookmark(?X)
  es un 
 \emph on
 bookmark.
-\emph default
-"
 \end_layout
 
 \end_inset
@@ -5686,7 +6341,7 @@ Warning
 warning(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5698,7 +6353,7 @@ warning(?X)
 \emph on
 warning
 \emph default
-."
+.
 \end_layout
 
 \end_inset
@@ -5736,7 +6391,7 @@ Error
 error(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5744,7 +6399,7 @@ error(?X)
 \family default
 \size default
 \noun default
- es un error."
+ es un error.
 \end_layout
 
 \end_inset
@@ -5782,7 +6437,7 @@ Task
 task(?X)
 \family default
 \size default
- significa: ”
+ significa: 
 \family typewriter
 \size small
 \noun on
@@ -5790,7 +6445,7 @@ task(?X)
 \family default
 \size default
 \noun default
- es una tarea."
+ es una tarea.
 \end_layout
 
 \end_inset
@@ -5840,9 +6495,9 @@ status collapsed
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="3in">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -5904,11 +6559,7 @@ Task, String
 priority(?T, ?P)
 \family default
 \size default
- significa: 
-\begin_inset Quotes sld
-\end_inset
-
-La tarea
+ significa: La tarea
 \family typewriter
 \size small
 \noun on
@@ -5924,7 +6575,7 @@ La tarea
 \family default
 \size default
 \noun default
-."
+.
 \end_layout
 
 \end_inset
@@ -5962,7 +6613,7 @@ Element, String
 name(?E, ?S)
 \family default
 \size default
- significa: ”El elemento
+ significa: El elemento
 \family typewriter
 \size small
 \noun on
@@ -5976,7 +6627,7 @@ name(?E, ?S)
 ?S
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6014,7 +6665,7 @@ Element, Element
 child(?Sup, ?Sub)
 \family default
 \size default
- significa: ”El elemento
+ significa: El elemento
 \family typewriter
 \size small
 \noun on
@@ -6028,7 +6679,7 @@ child(?Sup, ?Sub)
 ?Sub
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6066,7 +6717,7 @@ RefType, RefType
 extends(?C1, ?C2)
 \family default
 \size default
- significa: ”La clase (o interface)
+ significa: La clase (o interface)
 \family typewriter
 \size small
 \noun on
@@ -6080,7 +6731,7 @@ extends(?C1, ?C2)
 ?C2
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6118,7 +6769,7 @@ RefType, RefType
 implements(?C, ?I)
 \family default
 \size default
- significa: ”La clase 
+ significa: La clase 
 \family typewriter
 \size small
 \noun on
@@ -6132,7 +6783,7 @@ implements(?C, ?I)
 ?I
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6170,7 +6821,7 @@ Callable, RefType
 throws(?C, ?T)
 \family default
 \size default
- significa: ”El llamador 
+ significa: El llamador 
 \family typewriter
 \size small
 \noun on
@@ -6184,7 +6835,7 @@ throws(?C, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6222,7 +6873,7 @@ Field, Type
 type(?F, ?T)
 \family default
 \size default
- significa: ”El campo 
+ significa: El campo 
 \family typewriter
 \size small
 \noun on
@@ -6236,7 +6887,7 @@ type(?F, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6274,7 +6925,7 @@ Element, String
 modifier(?E, ?S)
 \family default
 \size default
- significa: ”El elemento
+ significa: El elemento
 \family typewriter
 \size small
 \noun on
@@ -6288,7 +6939,7 @@ modifier(?E, ?S)
 ?S
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6326,7 +6977,7 @@ Callable, Type
 arg(?C, ?T)
 \family default
 \size default
- significa: ”El llamador 
+ significa: El llamador 
 \family typewriter
 \size small
 \noun on
@@ -6340,7 +6991,7 @@ arg(?C, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6378,7 +7029,7 @@ Callable, Type
 returns(?C, ?T)
 \family default
 \size default
- significa: ”El llamador 
+ significa: El llamador 
 \family typewriter
 \size small
 \noun on
@@ -6392,7 +7043,7 @@ returns(?C, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6430,7 +7081,7 @@ Callable, String
 signature(?C, ?S)
 \family default
 \size default
- significa: ”El llamador
+ significa: El llamador
 \family typewriter
 \size small
 \noun on
@@ -6444,7 +7095,7 @@ signature(?C, ?S)
 ?S
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6487,16 +7138,16 @@ Predicados binarios
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="9" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="3in">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -6520,6 +7171,7 @@ Tipo de argumento
 \begin_inset Text
 
 \begin_layout Standard
+\align center
 Descripción
 \end_layout
 
@@ -6558,11 +7210,7 @@ Block, Method, SourceLocation
 methodCall(?B, ?M, ?L)
 \family default
 \size default
- significa: 
-\begin_inset Quotes sld
-\end_inset
-
-El bloque 
+ significa: El bloque 
 \family typewriter
 \size small
 ?B
@@ -6580,7 +7228,7 @@ El bloque
 ?L
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6618,7 +7266,7 @@ Constructor, Constructor, SourceLocation
 thisCall(?C1, ?C2, ?L)
 \family default
 \size default
- significa: ”El constructor 
+ significa: El constructor 
 \family typewriter
 \size small
 ?C1
@@ -6636,7 +7284,7 @@ thisCall(?C1, ?C2, ?L)
 ?L
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6674,7 +7322,7 @@ Block, Constructor, SourceLocation
 construcorCall(?B, ?C, ?L)
 \family default
 \size default
- significa: ”El bloque 
+ significa: El bloque 
 \family typewriter
 \size small
 ?B
@@ -6692,7 +7340,7 @@ construcorCall(?B, ?C, ?L)
 ?L
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6730,7 +7378,7 @@ Block, RefType, SourceLocation
 instanceOf(?B, ?T, ?L)
 \family default
 \size default
- significa: ”El bloque 
+ significa: El bloque 
 \family typewriter
 \size small
 ?B
@@ -6748,7 +7396,7 @@ instanceOf(?B, ?T, ?L)
 ?L
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6786,7 +7434,7 @@ Block, Field, SourceLocation
 reads(?B, ?F, ?L)
 \family default
 \size default
- significa: ”El bloque 
+ significa: El bloque 
 \family typewriter
 \size small
 ?B
@@ -6804,7 +7452,7 @@ reads(?B, ?F, ?L)
 ?L
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6842,7 +7490,7 @@ Block, Field, SourceLocation
 writes(?B, ?F, ?L)
 \family default
 \size default
- significa: ”El bloque 
+ significa: El bloque 
 \family typewriter
 \size small
 ?B
@@ -6860,7 +7508,7 @@ writes(?B, ?F, ?L)
 ?L
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6898,7 +7546,7 @@ Callable, Type, Integer
 param(?C, ?T, ?N)
 \family default
 \size default
- significa: ”El llamador 
+ significa: El llamador 
 \family typewriter
 \size small
 ?C
@@ -6916,7 +7564,7 @@ param(?C, ?T, ?N)
 ?N
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -6954,7 +7602,7 @@ Element, String, String
 tag(?E, ?N, ?V)
 \family default
 \size default
- significa: ”El elemento 
+ significa: El elemento 
 \family typewriter
 \size small
 ?E
@@ -6970,9 +7618,6 @@ tag(?E, ?N, ?V)
 \family typewriter
 \size small
 ?V
-\family default
-\size default
-"
 \end_layout
 
 \end_inset
@@ -7008,6 +7653,19 @@ Predicados ternarios
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+poner los predicados del drarch!!!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -7018,9 +7676,9 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="3in">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -7082,11 +7740,7 @@ Task, String
 priority(?T, ?P)
 \family default
 \size default
- significa: 
-\begin_inset Quotes sld
-\end_inset
-
-La tarea
+ significa: La tarea
 \family typewriter
 \size small
 \noun on
@@ -7102,7 +7756,7 @@ La tarea
 \family default
 \size default
 \noun default
-."
+.
 \end_layout
 
 \end_inset
@@ -7140,7 +7794,7 @@ Element, String
 name(?E, ?S)
 \family default
 \size default
- significa: ”El elemento
+ significa: El elemento
 \family typewriter
 \size small
 \noun on
@@ -7154,7 +7808,7 @@ name(?E, ?S)
 ?S
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7192,7 +7846,7 @@ Element, Element
 child(?Sup, ?Sub)
 \family default
 \size default
- significa: ”El elemento
+ significa: El elemento
 \family typewriter
 \size small
 \noun on
@@ -7206,7 +7860,7 @@ child(?Sup, ?Sub)
 ?Sub
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7244,7 +7898,7 @@ RefType, RefType
 extends(?C1, ?C2)
 \family default
 \size default
- significa: ”La clase (o interface)
+ significa: La clase (o interface)
 \family typewriter
 \size small
 \noun on
@@ -7258,7 +7912,7 @@ extends(?C1, ?C2)
 ?C2
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7296,7 +7950,7 @@ RefType, RefType
 implements(?C, ?I)
 \family default
 \size default
- significa: ”La clase 
+ significa: La clase 
 \family typewriter
 \size small
 \noun on
@@ -7310,7 +7964,7 @@ implements(?C, ?I)
 ?I
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7348,7 +8002,7 @@ Callable, RefType
 throws(?C, ?T)
 \family default
 \size default
- significa: ”El llamador 
+ significa: El llamador 
 \family typewriter
 \size small
 \noun on
@@ -7362,7 +8016,7 @@ throws(?C, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7400,7 +8054,7 @@ Field, Type
 type(?F, ?T)
 \family default
 \size default
- significa: ”El campo 
+ significa: El campo 
 \family typewriter
 \size small
 \noun on
@@ -7414,7 +8068,7 @@ type(?F, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7452,7 +8106,7 @@ Element, String
 modifier(?E, ?S)
 \family default
 \size default
- significa: ”El elemento
+ significa: El elemento
 \family typewriter
 \size small
 \noun on
@@ -7466,7 +8120,7 @@ modifier(?E, ?S)
 ?S
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7504,7 +8158,7 @@ Callable, Type
 arg(?C, ?T)
 \family default
 \size default
- significa: ”El llamador 
+ significa: El llamador 
 \family typewriter
 \size small
 \noun on
@@ -7518,7 +8172,7 @@ arg(?C, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7556,7 +8210,7 @@ Callable, Type
 returns(?C, ?T)
 \family default
 \size default
- significa: ”El llamador 
+ significa: El llamador 
 \family typewriter
 \size small
 \noun on
@@ -7570,7 +8224,7 @@ returns(?C, ?T)
 ?T
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
@@ -7608,7 +8262,7 @@ Callable, String
 signature(?C, ?S)
 \family default
 \size default
- significa: ”El llamador
+ significa: El llamador
 \family typewriter
 \size small
 \noun on
@@ -7622,7 +8276,7 @@ signature(?C, ?S)
 ?S
 \family default
 \size default
-."
+.
 \end_layout
 
 \end_inset
