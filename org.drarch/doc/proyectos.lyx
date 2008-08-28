@@ -39,12 +39,261 @@
 
 \begin_body
 
-\begin_layout Title
-Cursos de Grado: Formulación y Evaluación de proyectos
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{titlepage}
 \end_layout
 
-\begin_layout Author
-Frontini, Nicolas y Maldonado, Facundo
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+linespread
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+{
+\end_layout
+
+\end_inset
+
+1.3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size largest
+Dos Categorías de Proyectos para un Mercado Emergente
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+por 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Nicolás Frontini y Facundo Maldonado
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Trabajo final del curso de grado de
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Formulación y Evaluación de proyectos
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+de la
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Universidad Nacional del Centro de la Provincia de Buenos Aires  
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size larger
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename C:/Users/nfrontini/facultad/tesis/repository/org.drarch/doc/img/Escudo.png
+	lyxscale 30
+	scale 30
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Docentes: Mg.
+ Héctor Oscar Nigro
+\end_layout
+
+\begin_layout Standard
+\align center
+Ing.
+ Sandra González Císaro
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Tandil, Argentina.
+ Septiembre de 2008
+\end_layout
+
+\begin_layout Standard
+
+\size larger
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+linespread
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -52,19 +301,163 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-Un proyecto puede ser viable tanto por tener unmercaado asegurado, como
- por ser técnicamente factible.
- Sin embargo, 
+El objetivo del informe es poder comparar los distintos tipos de poryectos
+ de software que existen hoy en día.
+ Ubicandonos en el mercado emergente de América Latina y sus nuevas oportunidade
+s, se realizó un análisis de los dos tipos de enfoques detectados.
 \end_layout
 
 \begin_layout Standard
-Software Factory es una estructura organizacional que se especializa en
- prducir aplicaciones de software utilizando los requerimientos definidos
- por clientes que no pertenecen a la organización.
+El informe se encuentra organizado de la siguiente forma.
+ La sección 
+\begin_inset LatexCommand ref
+reference "sec:Contexto"
+
+\end_inset
+
+ comienza con una descripción que se desprende de la definición de un poryecto.
+ Luego, se muestra en detalle dos de los factores relacionados con el estudio
+ de proyectos: el mercado y la localización.
+ En la sección 
+\begin_inset LatexCommand ref
+reference "sec:Análisis-de-los"
+
+\end_inset
+
+ se analizan dos enfoques distintos de proyectos: uno orientado a la investigaci
+ón y otro orientado a la ejecución.
+ Finalmente, se presentan conclusiones del informe.
 \end_layout
 
 \begin_layout Section
-El estudio de proyectos
+\begin_inset LatexCommand label
+name "sec:Contexto"
+
+\end_inset
+
+Contexto
+\end_layout
+
+\begin_layout Standard
+A modo de marco teórico, en esta sección se presenta una de las definiciones
+ que creemos que mas se ajusta a un proyecto.
+\end_layout
+
+\begin_layout Subsection
+¿Qué\InsetSpace ~
+es\InsetSpace ~
+un\InsetSpace ~
+proyecto?
+\end_layout
+
+\begin_layout Standard
+En el libro 
+\begin_inset LatexCommand cite
+key "Project2000"
+
+\end_inset
+
+ el instituto 
+\emph on
+Project Management Institute, Inc.
+
+\emph default
+ da la siguiente definición de projecto:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+"Un proyecto es un esfuerzo temporal que se lleva a cabo para crear un producto,
+ servicio o resultado único."
+\end_layout
+
+\begin_layout Standard
+De esta definición, se desprenden los siguientes conceptos:
+\end_layout
+
+\begin_layout Description
+Temporal Temporal significa que cada proyecto tiene un comienzo definido
+ y un final definido.
+ El final se alcanza cuando se han logrado los objetivos del proyecto o
+ cuando queda claro que los objetivos del proyecto no serán o no podrán
+ ser alcanzados, o cuando la necesidad del proyecto ya no exista y el proyecto
+ sea cancelado.
+ Temporal no necesariamente significa de corta duración; muchos proyectos
+ duran varios años.
+ En cada caso, sin embargo, la duración de un proyecto es limitada.
+ Los proyectos no son esfuerzos continuos.
+ Además, temporal no es aplicable generalmente al producto, servicio o resultado
+ creado por el proyecto.
+ La mayoría de los proyectos se emprenden para obtener un resultado duradero.
+ La naturaleza temporal de los proyectos puede aplicarse también a otros
+ aspectos de la empresa: 
+\newline
+• La oportunidad o ventana de negocio normalmente
+ es temporal: algunos de los proyectos tienen un período limitado para producir
+ sus productos o servicios.
+ 
+\newline
+• El equipo del proyecto, como unidad de trabajo, pocas veces perdura después
+ del proyecto: un equipo creado con el único fin de llevar a cabo el proyecto
+ lo desarrollará y luego se disolverá, y los miembros del equipo serán reasignad
+os una vez que concluya el proyecto.
+ 
+\end_layout
+
+\begin_layout Description
+Productos,\InsetSpace ~
+servicios\InsetSpace ~
+o\InsetSpace ~
+resultados\InsetSpace ~
+únicos Un proyecto crea productos entregables
+ únicos.
+ Productos entregables son productos, servicios o resultados.
+ Los proyectos pueden crear:
+\newline
+• Un producto o artículo producido, que es cuantific
+able, y que puede ser un elemento terminado o un componente 
+\newline
+• La capacidad
+ de prestar un servicio como, por ejemplo, las funciones del negocio que
+ respaldan la producción o la distribución 
+\newline
+• Un resultado como, por ejemplo,
+ salidas o documentos.
+ 
+\newline
+Por ejemplo, de un proyecto de investigación se obtienen conocimientos
+ que pueden usarse para determinar si existe o no una tendencia o si un
+ nuevo proceso beneficiará a la sociedad.
+ La singularidad es una característica importante de los productos entregables
+ de un proyecto.
+ Por ejemplo, se han construido muchos miles de sistemas de gestión, pero
+ cada sistema individual es único.
+ La presencia de elementos repetitivos no cambia la condición fundamental
+ de único del trabajo de un proyecto.
+\end_layout
+
+\begin_layout Description
+Elaboración\InsetSpace ~
+gradual La elaboración gradual es una característica de los proyectos
+ que acompaña a los conceptos de temporal y único.
+ “Elaboración gradual” significa desarrollar en pasos e ir aumentando mediante
+ incrementos.
+ Por ejemplo, el alcance de un proyecto se define de forma general al comienzo
+ del proyecto, y se hace más explícito y detallado a medida que el equipo
+ del proyecto desarrolla un mejor y más completo entendimiento de los objetivos
+ y de los productos entregables.
+ La elaboración gradual no debe confundirse con la corrupción del alcance.
+ La elaboración gradual de las especificaciones de un proyecto debe ser
+ coordinada cuidadosamente con la definición adecuada del alcance del proyecto,
+ particularmente si el proyecto se ejecuta en virtud de un contrato.
+ Una vez definido correctamente, el alcance del proyecto deberá controlarse
+ a medida que se elaboran gradualmente las especificaciones del proyecto
+ y del producto.
+\end_layout
+
+\begin_layout Section
+Estudio de proyectos
 \end_layout
 
 \begin_layout Standard
@@ -129,7 +522,13 @@ La localización del proyecto tiene una importancia especial en la preparación
  primas y de productos finales o a las exigencias técnicas del estudio de
  la ingeniería del proyecto, sino también a las condiciones legales.
  Estos, como los estudios técnicos y del mercado, son procesos porpios de
- cada proyecto.
+ cada proyecto 
+\begin_inset LatexCommand cite
+key "R.2008"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -181,6 +580,11 @@ El análisis del consumidor tiene por objeto caracterizar a los consumidores
 \end_layout
 
 \begin_layout Subsection
+\begin_inset LatexCommand label
+name "sub:Factores-de-Localización"
+
+\end_inset
+
 Factores de Localización
 \end_layout
 
@@ -239,7 +643,152 @@ Comunicaciones
 \end_layout
 
 \begin_layout Section
-Análisis de los dos enfoques
+\begin_inset LatexCommand label
+name "sec:Análisis-de-los"
+
+\end_inset
+
+Categorías de los proyectos
+\end_layout
+
+\begin_layout Standard
+América Latina es hoy un mercado muy activo y que está creciendo rápidamente.
+ Existen factores que podrían colocar a América Latina como punta de lanza
+ en adopción tecnológica y fuente de servicios IT innovadores.
+ Para ello, no obstante, deberán demostrar un retorno de la inversión (ROI)
+ significativo y lograr incrementos sustanciales en su presupuesto IT.
+ De esta forma, las empresas deben elegir cuidadosamente los proyectos ya
+ que estos son la clave del éxito.
+ 
+\end_layout
+
+\begin_layout Standard
+Los tipos de proyecto que pueden ser seleccionados son varios, sin embargo,
+ es posible distinguir dos categorías ya que dependen del enfoque: los proyectos
+ orientados a la investigación y los proyectos orientados a la ejecución.
+\end_layout
+
+\begin_layout Subsection
+Proyectos orientados a la investigación
+\end_layout
+
+\begin_layout Standard
+Las empresas que optan por los proyectos orientados a la investigación no
+ solo dedican esferzo en la ejecución de proyectos, sino también a la creación
+ de los mismos.
+ Esto hace que los proyectos adquieran un importante valor agregado que
+ hace que puedan distinguirse en el mercado mundial.
+ De esta forma, un cambio en la estructura economica regional del mercado
+ no debería ser un factor alarmante que pueda afectar la estabilidad de
+ las empresas.
+ Es decir, si los factores de localización descriptos en la sección 
+\begin_inset LatexCommand ref
+reference "sub:Factores-de-Localización"
+
+\end_inset
+
+ dejan de ser un beneficio, las empresas aún tienen otros factores que hacen
+ que puedan competir con el mercado mundial.
+\end_layout
+
+\begin_layout Standard
+Generalmente, este tipo de empresas está involucrada en impulsar la creación
+ de un espacio que permita acrecentar, articular y catalizar esfuerzos de
+ diferentes actores del medio, con el objetivo final de facilitar la generación
+ de nuevos emprendimientos de negocio sustentables, mediante la incubación
+ de proyectos e ideas innovadoras en torno a éste.
+\end_layout
+
+\begin_layout Standard
+Debido a que algunos de los proyectos están orientados a un mercado que
+ aún no existe, estos proyectos tienen un alto riesgo de que sean cancelados
+ ó de que los productos generados no vayan a ser utilizados nunca.
+ Este riesgo es conocido y asumido por este tipo de empresas, y por mas
+ que para muchos, la cancelación de un proyecto signifique un fracaso, para
+ este tipo de empresas no lo es.
+ Esto quiere decir que un porcentaje de los poryectos no llegan a terminarse
+ ó cambian sus objetivos durante su ejecución.
+ Estos proyectos dejan mucha experiencia y van acotando el espectro de tendencia
+s en el mercado.
+\end_layout
+
+\begin_layout Subsection
+Proyectos orientados a la ejecución
+\end_layout
+
+\begin_layout Standard
+Generalmente, este tipo de proyectos son los que aparecen en las llamadas
+ 
+\emph on
+Software Factories
+\emph default
+.
+ Una empresa 
+\emph on
+Software Fatcory
+\emph default
+ es una estructura organizacional que se especializa en prducir aplicaciones
+ de software utilizando los requerimientos definidos por clientes que no
+ pertenecen a la organización.
+\end_layout
+
+\begin_layout Standard
+El conjunto de soluciones que proveen es el siguiente:
+\end_layout
+
+\begin_layout Itemize
+Un equipo de expertos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Rapidez y flexibilidad.
+\end_layout
+
+\begin_layout Itemize
+Avanzada tecnología.
+\end_layout
+
+\begin_layout Itemize
+Compromiso y responsabilidad.
+\end_layout
+
+\begin_layout Itemize
+Confiabilidad y calidad.
+\end_layout
+
+\begin_layout Itemize
+Precio competitivo y tarifa plana.
+\end_layout
+
+\begin_layout Standard
+Estas empresas dedicadas al desarrollo y mantenimiento de productos de software
+ generalmente estan limitados a la ejecución de proyectos.
+ Con una alta calidad en los entregables y un bajo costo de mano de obra.
+ Estan pendientes de la estructura económica del mercado ya que es una de
+ sus principales ventajas con respecto a la competencia, de esta forma,
+ el factor de localización descripto en la sección 
+\begin_inset LatexCommand ref
+reference "sub:Factores-de-Localización"
+
+\end_inset
+
+, es uno de los factores más importantes.
+ La mayoría de los clientes están ubicados en paises del primer mundo (Estados
+ Unidos, Inglaterra, España, etc.) mientras que el desarrollo (la ejecución
+ de los proyectos) se situa en América Latina.
+ Esto se debe principalemente a la cantidad de rescursos combinada con el
+ bajo costo de estos.
+\end_layout
+
+\begin_layout Standard
+Un proyecto cancelado significa un fracaso para este tipo de empresas.
+ Generalmente, se pagan grandes sumas de dinero si el proyecto no es entregado
+ en tiempo y forma.
+ Muchas veces, esto hace que por cuestiones de tiempo, se dejen de lado
+ actividades de proceso que si bien no afectan directamente al producto
+ final, aportan un alto valor agregado tanto a la organización como asi
+ también a los entregables.
 \end_layout
 
 \begin_layout Section
@@ -247,9 +796,16 @@ Conclusiones
 \end_layout
 
 \begin_layout Standard
+Como se mencionó anteriormente, partiendo del análisis de los ditintos tipos
+ de proyectos, surguiron dos categorías bien marcadas: proyectos orientados
+ a la investigación y proyectos orientados a la ejecución.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset LatexCommand bibtex
 options "plain"
-bibfiles "bibliography"
+bibfiles "bibliografia"
 
 \end_inset
 
