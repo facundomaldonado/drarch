@@ -301,9 +301,9 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-El objetivo del informe es poder comparar los distintos tipos de proyectos
+El objetivo del informe es poder comparar los distintos tipos de poryectos
  de software que existen hoy en día.
- Ubicándonos en el mercado emergente de América Latina y sus nuevas oportunidade
+ Ubicandonos en el mercado emergente de América Latina y sus nuevas oportunidade
 s, se realizó un análisis de los dos tipos de enfoques detectados.
 \end_layout
 
@@ -315,7 +315,7 @@ reference "sec:Contexto"
 
 \end_inset
 
- comienza con una descripción que se desprende de la definición de proyectos.
+ comienza con una descripción que se desprende de la definición de un poryecto.
  Luego, se muestra en detalle dos de los factores relacionados con el estudio
  de proyectos: el mercado y la localización.
  En la sección 
@@ -326,7 +326,7 @@ reference "sec:Análisis-de-los"
 
  se analizan dos enfoques distintos de proyectos: uno orientado a la investigaci
 ón y otro orientado a la ejecución.
- Finalmente, se presentan las conclusiones del informe.
+ Finalmente, se presentan conclusiones del informe.
 \end_layout
 
 \begin_layout Section
@@ -340,7 +340,7 @@ Contexto
 
 \begin_layout Standard
 A modo de marco teórico, en esta sección se presenta una de las definiciones
- que creemos que más se ajusta a un proyecto.
+ que creemos que mas se ajusta a un proyecto.
 \end_layout
 
 \begin_layout Subsection
@@ -362,7 +362,7 @@ key "Project2000"
 Project Management Institute, Inc.
 
 \emph default
- da la siguiente definición de proyecto:
+ da la siguiente definición de projecto:
 \end_layout
 
 \begin_layout Standard
@@ -377,9 +377,8 @@ De esta definición, se desprenden los siguientes conceptos:
 \end_layout
 
 \begin_layout Description
-Temporal.
- Temporal significa que cada proyecto tiene un comienzo definido y un final
- definido.
+Temporal Temporal significa que cada proyecto tiene un comienzo definido
+ y un final definido.
  El final se alcanza cuando se han logrado los objetivos del proyecto o
  cuando queda claro que los objetivos del proyecto no serán o no podrán
  ser alcanzados, o cuando la necesidad del proyecto ya no exista y el proyecto
@@ -411,8 +410,8 @@ Productos,\InsetSpace ~
 servicios\InsetSpace ~
 o\InsetSpace ~
 resultados\InsetSpace ~
-únicos.
- Un proyecto crea productos entregables únicos.
+únicos Un proyecto crea productos entregables
+ únicos.
  Productos entregables son productos, servicios o resultados.
  Los proyectos pueden crear:
 \newline
@@ -440,9 +439,8 @@ Por ejemplo, de un proyecto de investigación se obtienen conocimientos
 
 \begin_layout Description
 Elaboración\InsetSpace ~
-gradual.
- La elaboración gradual es una característica de los proyectos que acompaña
- a los conceptos de temporal y único.
+gradual La elaboración gradual es una característica de los proyectos
+ que acompaña a los conceptos de temporal y único.
  “Elaboración gradual” significa desarrollar en pasos e ir aumentando mediante
  incrementos.
  Por ejemplo, el alcance de un proyecto se define de forma general al comienzo
@@ -464,7 +462,7 @@ Estudio de proyectos
 
 \begin_layout Standard
 El estudio de proyectos, cualquiera sea la profundidad con que se analice,
- distingue dos grandes etapas: la de preparación y la de evaluación.
+ distigue dos grandes etapas: la de preparación y la de evaluación.
  La etapa de preparación tiene por objeto definir todas las características
  que tengan algún grado de efecto en el flujo de ingresos y egresos monetarios
  del proyecto.
@@ -475,7 +473,7 @@ El estudio de proyectos, cualquiera sea la profundidad con que se analice,
 
 \begin_layout Standard
 En la preparación del proyecto se reconocen, a su vez, dos subetapas: una
- que se caracteriza por recopilar información a través de estudios específicos,
+ que se caracteriza por recopilar información através de estudios específicos,
  de mercadeo, de ingeniería, de organización y financiero, y otra que se
  encarga de sistematizar, en términos monetarios, la información proporcionada
  por estos tres estudios, mediante el mismo estudio financiero.
@@ -487,11 +485,11 @@ En la preparación del proyecto se reconocen, a su vez, dos subetapas: una
 \begin_layout Standard
 Una etapa previa a la del estudio del proyecto propiamente dicho, la constituye
  la identificación de la idea, la cual surge como respuesta para satisfacer
- una necesidad o llenar un vacío que, a grandes rasgos, parezca atractivo
+ una necesidad o llenar un vacío que, a grandes resagos, parezca atractivo
  hacerlo desde un punto de vista económico.
- La idea representa generalmente la realización de un diagnóstico, que detecta
+ La ide representa generalmente la realizacón de un diagnóstico, que detecta
  la necesidad que llenaría el proyecto y que identifica las vías de solución.
- Cada una de estas alternativas constituirá un proyecto que deberá estudiar
+ Cada una de estas alternativas constituirá un proyecto que debrá estudiar
  pero que, frente a un juicio preliminar, aparenta ser viable.
 \end_layout
 
@@ -501,21 +499,19 @@ El nivel de estudio inicial es el denominado
 \end_inset
 
 perfil", el cual se elabora a partir de la información existente, el juicio
- común y la opinión que da la experiencia.
- En términos monetarios, sólo presenta estimaciones muy globales de las
+ común y la opinón que da la experiencia.
+ En términos monetarios, sólo presenta estimaciónes muy globales de las
  inversiones, costos o ingresos, sin entrar en investigaciones de terreno.
 \end_layout
 
 \begin_layout Standard
 En este análisis es fundamental efectuar algunas consideraciones previas
- a\SpecialChar \-
-cer\SpecialChar \-
-ca de la situación 
+ acerca de la situación 
 \begin_inset Quotes eld
 \end_inset
 
 sin proyecto"; es decir, intentar proyectar qué pasará en el futuro si no
- se implementa el proyecto, antes de decidir si conviene o no su implementación.
+ se implementa el proyecto, atnes de decidir si conviene o no su implementación.
  
 \end_layout
 
@@ -525,7 +521,7 @@ La localización del proyecto tiene una importancia especial en la preparación
  Su definición responde no sólo a consideraciones de los mercados de materias
  primas y de productos finales o a las exigencias técnicas del estudio de
  la ingeniería del proyecto, sino también a las condiciones legales.
- Estos, como los estudios técnicos y del mercado, son procesos propios de
+ Estos, como los estudios técnicos y del mercado, son procesos porpios de
  cada proyecto 
 \begin_inset LatexCommand cite
 key "R.2008"
@@ -542,7 +538,7 @@ El mercado
 \begin_layout Standard
 Uno de los factores más críticos en el estudio de los proyectos es la determinac
 ión de su mercado, tanto por el hecho de que aquí se define la cuantía de
- su demanda e ingresos de operación, como por los costos e inversiones implícito
+ su demanda e ingresos de operación, como por los costos e inverciones implícito
 s.
 \end_layout
 
@@ -550,11 +546,7 @@ s.
 El estudio de mercado es más que el análisis y determinación de la oferta
  y demanda o de los precios del proyecto.
  Muchos costos de operación pueden preverse simulando la situación futura
- y especificando las políticas y pro\SpecialChar \-
-ce\SpecialChar \-
-di\SpecialChar \-
-mien\SpecialChar \-
-tos que se utilizarán como estrategi
+ y especificando las políticas y procedimientos que se utilizarán como estrategi
 a comercial.
  Metodológicamente, tres son los aspectos que se deben estudiar:
 \end_layout
@@ -564,7 +556,7 @@ El consumidor y las demandas del mercado y del proyecto, actuales y proyectadas.
 \end_layout
 
 \begin_layout Itemize
-La competencia y las ofertas del mercado y del proyecto, actuales y proyectadas.
+La compentencia y las ofertas del mercado y del proyecto, actuales y proyectadas.
 \end_layout
 
 \begin_layout Itemize
@@ -573,14 +565,16 @@ Comercialización del producto del proyecto.
 
 \begin_layout Standard
 El análisis del consumidor tiene por objeto caracterizar a los consumidores
- actuales y potenciales, identificando sus preferencias, hábitos de consumo,
+ ac\SpecialChar \-
+tua\SpecialChar \-
+les y potenciales, identificando sus preferencias, hábitos de consumo,
  motivaciones, etcétera, de manera tal de obtener un perfil sobre el cual
  pueda basarse la estrategia comercial.
  La competencia es fundamental por varias razones.
  Por ejemplo, la estrategia comercial que se defina para el proyecto no
- puede ser indiferente a ella.
+ puede ser indiferenta a ella.
  Es preciso conocer las estrategias que sigue la competencia, para aprovechar
- sus ventajas y esquivar sus desventajas.
+ sus ventajas y eviar sus desventajas.
  El análisis de la comercialización del proyecto es quizás uno de los factores
  más difíciles de precisar, por cuanto la simulación de sus estrategias
  se enfrenta al problema de estimar reacciones y variaciones del medio durante
@@ -604,7 +598,7 @@ Los factores que más comúnmente influyen en la decisión de la localización
 \begin_layout Standard
 Las alternativas de instalación deben compararse en función de las fuerzas
  locacionales típicas de los proyectos.
- Se han elaborado muchas listas de esta fuerza como elementos de referencia
+ Se han elaborado muchas listas de esta fuerza com oelementos de referencia
  para su evaluación.
  Una clasificación más concentrada debería incluir por lo menos los siguientes
  factores globales:
@@ -639,7 +633,7 @@ Topografía de sueldos
 \end_layout
 
 \begin_layout Itemize
-Estructura impositiva y legal
+Estrucutra impositiva y legal
 \end_layout
 
 \begin_layout Itemize
@@ -682,13 +676,11 @@ Proyectos orientados a la investigación
 
 \begin_layout Standard
 Las empresas que optan por los proyectos orientados a la investigación no
- solo dedican esfuerzo en la ejecución de proyectos, sino también a la creación
+ solo dedican esferzo en la ejecución de proyectos, sino también a la creación
  de los mismos.
- Es decir, la identificación de la idea que se da origen a la creación del
- proyecto.
  Esto hace que los proyectos adquieran un importante valor agregado que
  hace que puedan distinguirse en el mercado mundial.
- De esta forma, un cambio en la estructura económica regional del mercado
+ De esta forma, un cambio en la estructura economica regional del mercado
  no debería ser un factor alarmante que pueda afectar la estabilidad de
  las empresas.
  Es decir, si los factores de localización descriptos en la sección 
@@ -716,10 +708,17 @@ Debido a que algunos de los proyectos están orientados a un mercado que
  Este riesgo es conocido y asumido por este tipo de empresas, y por mas
  que para muchos, la cancelación de un proyecto signifique un fracaso, para
  este tipo de empresas no lo es.
- Esto quiere decir que un porcentaje de los proyectos no llegan a terminarse
+ Esto quiere decir que un porcentaje de los poryectos no llegan a terminarse
  ó cambian sus objetivos durante su ejecución.
  Estos proyectos dejan mucha experiencia y van acotando el espectro de tendencia
 s en el mercado.
+\end_layout
+
+\begin_layout Standard
+Muchas veces, las organizaciónes que peseen este tipo de enfoques utilizan
+ una estrategia en la cual intentan estimular el mercado actual con el fin
+ generar un rumbo en el que en algunos años, estas organizaciones lideren
+ el mercado.
 \end_layout
 
 \begin_layout Subsection
@@ -737,7 +736,7 @@ Software Factories
 \emph on
 Software Fatcory
 \emph default
- es una estructura organizacional que se especializa en producir aplicaciones
+ es una estructura organizacional que se especializa en prducir aplicaciones
  de software utilizando los requerimientos definidos por clientes que no
  pertenecen a la organización.
 \end_layout
@@ -773,9 +772,9 @@ Precio competitivo y tarifa plana.
 
 \begin_layout Standard
 Estas empresas dedicadas al desarrollo y mantenimiento de productos de software
- generalmente están limitados a la ejecución de proyectos.
+ generalmente estan limitados a la ejecución de proyectos.
  Con una alta calidad en los entregables y un bajo costo de mano de obra.
- Están pendientes de la estructura económica del mercado ya que es una de
+ Estan pendientes de la estructura económica del mercado ya que es una de
  sus principales ventajas con respecto a la competencia, de esta forma,
  el factor de localización descripto en la sección 
 \begin_inset LatexCommand ref
@@ -784,21 +783,30 @@ reference "sub:Factores-de-Localización"
 \end_inset
 
 , es uno de los factores más importantes.
- La mayoría de los clientes están ubicados en países del primer mundo (Estados
+ La mayoría de los clientes están ubicados en paises del primer mundo (Estados
  Unidos, Inglaterra, España, etc.) mientras que el desarrollo (la ejecución
- de los proyectos) se sitúa en América Latina.
- Esto se debe pericialmente a la cantidad de recursos combinada con el bajo
- costo de estos.
+ de los proyectos) se situa en América Latina.
+ Esto se debe principalemente a la cantidad de rescursos combinada con el
+ bajo costo de estos.
 \end_layout
 
 \begin_layout Standard
 Un proyecto cancelado significa un fracaso para este tipo de empresas.
- Generalmente, se pagan grandes sumas de dinero si el proyecto no es entregado
+ Ge\SpecialChar \-
+ne\SpecialChar \-
+ral\SpecialChar \-
+men\SpecialChar \-
+te, se pagan grandes sumas de dinero si el proyecto no es entregado
  en tiempo y forma.
  Muchas veces, esto hace que por cuestiones de tiempo, se dejen de lado
  actividades de proceso que si bien no afectan directamente al producto
- final, aportan un alto valor agregado tanto a la organización como así
+ final, aportan un alto valor agregado tanto a la organización como asi
  también a los entregables.
+\end_layout
+
+\begin_layout Standard
+Los proyectos se adaptan a la exigencias del mercado actual y perdiendo
+ la visión de mercados futuros.
 \end_layout
 
 \begin_layout Section
@@ -806,10 +814,282 @@ Conclusiones
 \end_layout
 
 \begin_layout Standard
-Como se mencionó anteriormente, partiendo del análisis de los distintos
- tipos de proyectos, surgieron dos categorías bien marcadas: proyectos orientado
-s a la investigación y proyectos orientados a la ejecución.
- 
+Como se mencionó anteriormente, partiendo del análisis de los ditintos tipos
+ de proyectos, surguiron dos categorías bien marcadas: proyectos orientados
+ a la investigación y proyectos orientados a la ejecución.
+ Estos últimos se encuentran en empresas del estilo 
+\emph on
+Software Factories
+\emph default
+ ya que sus requerimientos provienen de clientes externos y en comparación
+ a los proyectos orientados a la investigación, estan limitados a realizar
+ productos que solamente los clientes requieran.
+\end_layout
+
+\begin_layout Standard
+Proyectos orientados a la investigación requieren de un estudio de mercado
+ mucho mas complejo.
+ El mercado que se quiere analizar, es dentro de algunos años, y el hecho
+ de basarse en supuestos de un mercado que aún no existe, trae aparejado
+ un riesgo mas alto.
+\end_layout
+
+\begin_layout Standard
+En la siguiente taba se comparan los dos tipos de enfoques y se marca con
+ una cruz (x) el enfoque que más se adapte a la característica descripta.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="2in">
+<column alignment="center" valignment="top" leftline="true" width="1in">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="1in">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\series bold
+Característica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\series bold
+Proyectos Orientados a la Investigación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\series bold
+Proyectos Orientados a la Ejecución
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Resultados a corto plazo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Inovación de productos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Alto Riesgo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Alto porcentaje de proyectos cancelados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Dependencia del factor de localización
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estimulación del mercado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Adaptación del mercado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
