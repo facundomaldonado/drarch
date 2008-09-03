@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -719,6 +719,7 @@ Muchas veces, las organizaciónes que peseen este tipo de enfoques utilizan
  una estrategia en la cual intentan estimular el mercado actual con el fin
  generar un rumbo en el que en algunos años, estas organizaciones lideren
  el mercado.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -815,7 +816,7 @@ Conclusiones
 
 \begin_layout Standard
 Como se mencionó anteriormente, partiendo del análisis de los ditintos tipos
- de proyectos, surguiron dos categorías bien marcadas: proyectos orientados
+ de proyectos, surgieron dos categorías bien marcadas: proyectos orientados
  a la investigación y proyectos orientados a la ejecución.
  Estos últimos se encuentran en empresas del estilo 
 \emph on
@@ -835,8 +836,9 @@ Proyectos orientados a la investigación requieren de un estudio de mercado
 \end_layout
 
 \begin_layout Standard
-En la siguiente taba se comparan los dos tipos de enfoques y se marca con
- una cruz (x) el enfoque que más se adapte a la característica descripta.
+En la siguiente tabla se comparan los dos tipos de enfoques y se marca con
+ una cruz (x) el enfoque que más esta representado por la característica
+ descripta.
 \end_layout
 
 \begin_layout Standard
@@ -1100,6 +1102,36 @@ bibfiles "bibliografia"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+************ le podemos agregar una columna mas que sea Diferenciador y
+ marcar las dos y explicar abajo: Globant: ventaja competitiva mano de obra
+ barata, clientes importantes o algo por el estilo.
+ OI: Por ejemplo lo de poseer la ventaja de tener control sobre el chip
+ y realizar soft para vender mas hard.
+ o algo asi.
+ QUe te parece? No se me ocurre como ponerlo.
+ Lo de abajo fijate si te va, me parecio bueno.
+ **************
+\end_layout
+
+\begin_layout Standard
+En resumen, para las organizaciones que utilizan una estrategia orientada
+ a la ejecucion su ambición es volverse o seguir siendo diferente, mejor
+ preferido y mas rentable centrándose solo en algunos clientes.
+ Por el contrario las que orientan a la Investigacion, responden a preguntas
+ como ¿en donde debería estar la empresa? ¿Qué inversiones deberá hacer?
+ ¿Cómo pueden crear valor de una manera que ninguna otra corporación pueda
+ hacerlo.
+\end_layout
+
+\begin_layout Standard
+Para ser exitosas, cada una de las organizaciones que implementan estas
+ estrategias deben pensar en cual es su diferenciación: raíz de toda estrategia
+ exitosa, todas deben ser diferentes de las de sus competidores.
+ Es más importante ser diferente que ser excelente, innovando y haciendo
+ las cosas cada vez mejor.
 \end_layout
 
 \end_body
