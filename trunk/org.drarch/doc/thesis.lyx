@@ -5796,15 +5796,381 @@ Step engine
 
 \begin_layout Section
 \begin_inset LatexCommand label
-name "sec:Log-Analyzer"
+name "sec:TraceLog-Analyzer"
 
 \end_inset
 
-Log Analyzer
+TraceLog Analyzer
 \end_layout
 
 \begin_layout Standard
-...
+Como se expuso brevemente en el capítulo anterior, es necesario registrar
+ los eventos de bajo nivel que ocurren en la aplicación mientras el usuario
+ la ejercita con los casos de uso correspondientes.
+ Para ello, se utilizó la infraestructura de instrumentación de código de
+ 
+\emph on
+FLABot
+\emph default
+ (apéndice\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Eclipse-FLABot-y-JQuery"
+
+\end_inset
+
+, sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:FLABot"
+
+\end_inset
+
+), ya que define un punto de extensión para la configuración de los eventos
+ que deben ser registrados en tiempo de ejecución.
+\end_layout
+
+\begin_layout Standard
+Básicamente, para la ejecución de una aplicación instrumentada es necesario
+ (a) crear una nueva configuración de ejecución en Eclipse (
+\emph on
+launch configuration
+\emph default
+, Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Launch-config"
+
+\end_inset
+
+) y (b) iniciar la ejecución de esta configuración.
+ 
+\emph on
+FLABot
+\emph default
+ permite la es\SpecialChar \-
+pe\SpecialChar \-
+cia\SpecialChar \-
+li\SpecialChar \-
+za\SpecialChar \-
+ción de la funcionalidad del módulo de instumentación
+ mediante el punto de extensión 
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+org.isistan.flabot.contextProvider
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+, que consiste en la definición de dos interfaces abstractas: 
+\emph on
+AbstractConfigurationTab
+\emph default
+ y 
+\emph on
+FlabotFileContextProvider
+\emph default
+, responsables de los puntos (a) y (b) respectivamente\SpecialChar \@.
+ Las implementaciones
+ de la primera interfaz se encargan de permitir al usuario configurar de
+ manera gráfica la información necesaria para la creación del log de ejecución
+ (ubicación del archivo de salida, tipos de eventos a registrar, profundidad
+ de la inspección, etc.), mientras que las de la segunda proveen esta información
+ al módulo de instrumentación.
+ La relación entre 
+\emph on
+DRArch
+\emph default
+ y 
+\emph on
+FLABot
+\emph default
+ por medio de puntos de extensión se resume en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Relación-entre-DRArch"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RunFlabotCollecting.png
+	lyxscale 80
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Configuración-de-ejecución"
+
+\end_inset
+
+Configuración de ejecución en Eclipse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/TraceLogConfigurationClassDiagram.PNG
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Relación-entre-DRArch"
+
+\end_inset
+
+Relación entre 
+\emph on
+DRArch
+\emph default
+ y 
+\emph on
+FLABot
+\emph default
+ mediante puntos de extensión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez definida la extensión, la interacción entre 
+\emph on
+FLABot
+\emph default
+ y 
+\emph on
+DRArch
+\emph default
+ es relativamente simple.
+ El arquitecto debe configurar la ejecución de la aplicación a instrumentar
+ desde una interfaze de usuario de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Configuración-de-ejecución"
+
+\end_inset
+
+.
+ Algunas de estas configuraciónes son:
+\end_layout
+
+\begin_layout Enumerate
+La aplicación a ser instrumentada.
+\end_layout
+
+\begin_layout Enumerate
+El archivo de salida (
+\emph on
+nombre_del_archivo.tracelog
+\emph default
+).
+\end_layout
+
+\begin_layout Enumerate
+El modelo 
+\emph on
+FLABot
+\emph default
+ que contiene la información de qué es lo que se va a instrumentar.
+ Este modelo es generado por 
+\emph on
+DRArch.
+\end_layout
+
+\begin_layout Enumerate
+El nivel de profundidad.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Cuando la aplicación a instrumentar está a punto de ser ejecutada, se crea
+ una instancia de 
+\emph on
+ArchSyncTraceConfigurationProvider
+\emph default
+ a la que se le interroga acerca de qué eventos deben ser registrados durante
+ la ejecución.
+ A su vez, el objeto utiliza los mapeos del UCM desactualizado y el resultado
+ del análisis realizado por 
+\emph on
+Diff Mapper
+\emph default
+, para indicar que debe ser registrada la ejecución de tanto los métodos
+ asociados directamente a alguna responsabilidad como los métodos agregados
+ o modificados que afectan indirectamente.
+ Esta interacción se detalla de manera gráfica en el diagrama de secuencia
+ de la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Interacción-launcher-Archsync"
+
+\end_inset
+
+.
+ Una vez provisto de la información necesaria, 
+\emph on
+FlabotInstumentationLaucher
+\emph default
+ se encarga de ejecutar la aplicación instrumentada y de registrar los eventos
+ necesarios en el archivo que fue indicado durante la configuración.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename C:/Users/nfrontini/facultad/tesis/tesis tincho/img/sequence-traceConfiguration.png
+	lyxscale 80
+	width 99line%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Interacción-launcher-Archsync"
+
+\end_inset
+
+Interacción entre 
+\emph on
+ArchSync
+\emph default
+ y 
+\emph on
+FLABot
+\emph default
+ previa a la instrumentación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez que fue creado un log de ejecución para un caso de uso en particular,
+ 
+\emph on
+Log Analyzer
+\emph default
+ se encarga de interpretar los eventos de bajo nivel contenidos en el log
+ para transformarlos en hechos al estilo 
+\emph on
+ProLog
+\emph default
+.
+ El proceso de transformación sigue un algorítmo simple: el componente utiliza
+ la información de mapeo entre responsabilidades y métodos recorriendo el
+ log de ejecución, tomando sus entradas (ejecuciones de métodos) una a una.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Dado que el mapeo responsabilidades-métodos es N:N, cada entrada puede correspon
+der a un conjunto de responsabilidades candidatas.
+ Una vez que obtuvo este conjunto, verifica si su intersección con la última
+ activación (entrada de log de alto nivel) no es vacía.
+ Si esto es así, actualiza la activación con la intersección.
+ Si la intersección es vacía, crea una nueva activación y pasa a la entrada
+ siguiente.
+\end_layout
+
+\begin_layout Standard
+A modo de ejemplo, supongamos el log de ejecución del Cuadro\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:Ejemplo-de-log"
+
+\end_inset
+
+.
+ En la primera iteración del algoritmo, se crea una nueva activación con
+ las responsabilidades {r1, r2, r3}.
+ Luego, esta misma activación se reduce al conjunto {r1, r3}.
+ En la tercera iteración, se crea una nueva activación con el conjunto {r2},
+ que en la iteración final no es modificada.
+ La secuencia de activaciones resultante es {{r1, r3}, {r2}}, y se interpreta
+ de la siguiente manera: primero se activó r1 o r3, luego se activó r2.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
