@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -6816,7 +6816,7 @@ Eclipse
 ón de código fuente.
  
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 Las estrategias definidas en el módulo 
@@ -6883,8 +6883,30 @@ ProLog
 \end_layout
 
 \begin_layout Standard
+A diferencia de algunos de los enfoques mencionados en el capítulo tres
+ que siguen el mismo patrón de extraer, abstraer y presentar y que utilizan
+ una base de datos relacional para almacenar las representaciones intermedias
+ del modelo arquitectonico, DRArch utiliza el motor de consultas y la base
+ de datos lógica provisto por JQuery.
+ Esta decision se basa en que al momento de realizar una consulta en un
+ lenguaje lógico, se consulta por el qué y no por el cómo como es el caso
+ de los los enfoques relacionales, lo que hace más sencillo y natural al
+ arquitecto formular sus propias reglas.
+ Para tal proposito se creó un editor utilizando las ventajas que ofrece
+ SWT, un toolkit de elementos graficos diseñados para ser portables y aprovechar
+ las capacidades de los sistemas operativos sobre los que se ejecuta.
+\end_layout
+
+\begin_layout Standard
+De esta forma, al estar todo lo necesario integrado en el ambiente de desarrollo
+, si el arquitecto pretende incorporar la tarea de reconstrucción a su rutina,
+ podrá hacerlo incluyendo únicamente el plug-in DRArch y sus dependencias,
+ es decir: FLABot y JQuery.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 El algoritmo 
