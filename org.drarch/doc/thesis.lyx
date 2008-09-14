@@ -143,7 +143,7 @@ DRArch
 \emph default
 , para asistir a los desarrolladores a generar la documentación arquitectónica
  utilizando un proceso de reconstrucción de arquitecturas.
- En particular, asumimos que existe el código fuente del sistema.
+ En particular, se asume que existe el código fuente del sistema.
  El objetivo principal de 
 \emph on
 DRArch
@@ -339,17 +339,8 @@ n arquitectónica en la mayoria de los proyectos de desarrollos actuales[Reffs],
 Si bien es comunmente aceptado que arquitectura de software puede ser utilizada
  como vehículo de comunicación entre personas con diferentes necesidades
  de un sistema, se puede ver la falta de documentación arquitectónica en
- la mayoría de los proyectos de desarrollos actuales
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
- [Reffs]
-\end_layout
-
-\end_inset
-
-, especialmente en empresas de software pequeñas.
+ la mayoría de los proyectos de desarrollos actuales, especialmente en empresas
+ de software pequeñas.
  Esta es una de las situaciones donde surge la necesidad de reconstruir
  la arquitectura de un sistema.
  La Reconstrucción de Arquitecturas es una técnica para generar representaciones
@@ -3476,18 +3467,6 @@ name "sec:Análisis"
 Enfoque 
 \emph on
 DRArch
-\emph default
-
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-XXX-A las subsecciones les falta agregar mayor detalle.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4375,7 +4354,7 @@ Esta transformación es realizada al comienzo del proceso de reconstrucción
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, si consideramos un esenario en donde un desarrollador quiere
+Por ejemplo, si se considera un esenario en donde un desarrollador quiere
  reutilizar una parte en particular del código de una aplicación porque
  contiene funcionalidad que necesita en otra aplicación que esta desarrollando,
  dicho desarrollador debería realizar una búsqueda por todo el código fuente
@@ -5750,7 +5729,11 @@ DRArch
  integración para aprovechar los componentes existentes de FLABot y la infraestr
 uctura básica de Eclipse.
  Por estas razones, la arquitectura de FLABot ha sido organizada mayormente
- alrededor de un estilo data-centered (centrado en los datos).
+ alrededor de un estilo 
+\emph on
+data-centered
+\emph default
+ (centrado en los datos).
  La imposición de este estilo ayuda a soportar los niveles de integración
  antes mencionados y además permite una evolución casi independiente de
  las herramientas.
@@ -5761,45 +5744,80 @@ La funcionalidad propia de
 \emph on
 DRArch
 \emph default
- se encuentra organizada alrededor del modelo arquitectónico BlackBoard,
- en el cual una base de conocimientos común, el BlackBoard, es iterativamente
- actualizada por fuentes de conocimiento especializadas, los especialistas,
- comenzando con la especificación de un problema y culminando con la solución.
- Cada fuente de conocimiento actualiza el BlackBoard con una solución parcial
- cuando sus requisitos coinciden con el estado del BlackBoard.
+ se encuentra organizada alrededor del modelo arquitectónico 
+\emph on
+BlackBoard
+\emph default
+, en el cual una base de conocimientos común, el 
+\emph on
+BlackBoard
+\emph default
+, es iterativamente actualizada por fuentes de conocimiento especializadas
+ (los especialistas), comenzando con la especificación de un problema y
+ culminando con la solución.
+ Cada fuente de conocimiento actualiza el 
+\emph on
+BlackBoard
+\emph default
+ con una solución parcial cuando sus requisitos coinciden con el estado
+ del 
+\emph on
+BlackBoard
+\emph default
+.
  De esta forma los especialistas trabajan juntos en la resolución del problema.
- El modelo BlackBoard fue originalmente designado para manejar problemas
- complejos y mal definidos.
- Los sistemas basados en este modelo están principalmente enfocados a la
+ El modelo 
+\emph on
+BlackBoard
+\emph default
+ fue originalmente designado para manejar problemas complejos y mal definidos.
+ Los sistemas basados en este modelo están principalmente enfocados en la
  inteligencia artificial.
 \end_layout
 
 \begin_layout Standard
-En el BlackBoard las fuentes de conocimiento son ejecutadas automáticamente
- cuando sus precondiciones coinciden con el estado del BlackBoard y el estado
- de este es actualizado con las transformaciones propias de cada fuente.
- Dado que proceso de recuperación arquitectónica descripto por DRArch es
- un proceso guiado, es el arquitecto, el responsable de seleccionar que
- fuente de conocimiento se va a ejecutar y de decidir cuales son las transformac
+En el 
+\emph on
+BlackBoard
+\emph default
+ las fuentes de conocimiento son ejecutadas automáticamente cuando sus precondic
+iones coinciden con el estado del 
+\emph on
+BlackBoard
+\emph default
+ y el estado de este es actualizado con las transformaciones propias de
+ cada fuente.
+ Dado que proceso de recuperación arquitectónica descripto por 
+\emph on
+DRArch
+\emph default
+ es un proceso guiado, es el arquitecto, el responsable de seleccionar qué
+ fuente de conocimiento se va a ejecutar y de decidir cuáles son las transformac
 iones que actualizaran el estado del modelo arquitectónico bajo análisis.
- Por esta razón, la implementación del modelo BlackBoard utilizada en esta
- herramienta sera el arquitecto el encargado de seleccionar el orden de
- ejecución de las transformaciones.
+ Por esta razón, en la implementación del modelo 
+\emph on
+BlackBoard
+\emph default
+ utilizada en esta herramienta, será el arquitecto el encargado de seleccionar
+ el orden de ejecución de las transformaciones.
  La base de conocimiento esta determinada por una base de hechos lógicos
- estilo Prolog la cual, como se dijo con anterioridad, es cargada en una
- fase inicial de recolección de información tanto estática (fuentes) y dinámica
+ estilo Prolog la cual, como se dijo con anteriormente, es cargada en una
+ fase inicial de recolección de información estática (código fuente) y dinámica
  (logs de ejecución).
- Los especialistas, las fuentes de conocimiento encargadas de evaluar el
- estado del BlackBoard y actualizarlo, están materializados mediante un
- modelo de reglas, las cuales están definidas a partir de una query, que
- evaluara el estado del repositorio en busca de algún patrón, una sugerencia,
- la que sera presentada al arquitecto para cada uno de los resultados de
- la query, y una serie de hechos que determinan la actualización del repositorio
- y por ende la transformación del modelo arquitectónico bajo reconstrucción.
+ Las fuentes de conocimiento encargadas de evaluar el estado del 
+\emph on
+BlackBoard
+\emph default
+ y actualizarlo, están materializados mediante un modelo de reglas.
+ Las reglas están definidas a partir de una consulta, que evalúa el estado
+ del repositorio en busca de algún patrón; una sugerencia, la que será presentad
+a al arquitecto para cada uno de los resultados de la consulta; y una serie
+ de hechos que determinan la actualización del repositorio y por ende la
+ transformación del modelo arquitectónico bajo reconstrucción.
 \end_layout
 
 \begin_layout Standard
-Por ultimo, el modelo de fases determina la operatibilidad de la herramienta.
+Por último, el modelo de fases determina la operatibilidad de la herramienta.
  Es el componente orquestador: responsable de guiar el proceso y coordinar
  la interoperabilidad entre los módulos.
 \end_layout
@@ -5820,7 +5838,7 @@ reference "fig:Diagrama de Paquetes"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -5850,10 +5868,6 @@ Diagrama de paquetes.
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -5875,7 +5889,7 @@ Este componente tiene como principal responsabilidad la ejecución de las
 
 \begin_layout Standard
 Forma parte de este componente el motor de consultas y la base de conocimiento.
- Ambas entidades están construidas sobre el plugin JQuery 
+ Ambas entidades están construidas sobre el plug-in JQuery 
 \begin_inset LatexCommand ref
 reference "sec:JQuery"
 
@@ -5892,7 +5906,7 @@ ado en Java.
 \emph on
 DRArch
 \emph default
- de tres componentes fundamentales el motor de inferencias, el lenguaje
+ de tres componentes fundamentales: el motor de inferencias, el lenguaje
  de consultas que se ulitizarán en las reglas y la implementación de la
  base de conocimiento sobre la que se realizarán dichas consultas.
  Cada uno de estos componentes han sido abstraidos desacoplándolos de su
@@ -5940,7 +5954,7 @@ Rule
 \family default
  es la entidad mas importante de este componente porque determina la unidad
  funcional de la herramienta.
- Una regla, esta determinada por una 
+ Una regla, esta determinada por un 
 \family typewriter
 Query
 \family default
@@ -5953,14 +5967,14 @@ SuggestTemplate
 FactTemplates
 \family default
 .
- Una 
+ Un 
 \family typewriter
 Query
 \family default
-, a su vez, esta compuesta por una sentencia en formato ProLog que sera
+, a su vez, esta compuesto por una sentencia en formato ProLog que será
  utilizada para realizar una consulta sobre la base de conocimiento y un
- conjunto de variables de interés que son variables de la consulta que queremos
- preservar el valor para su posterior utilización.
+ conjunto de variables de interés.
+ Estas variables son parte de la consulta.
 \end_layout
 
 \begin_layout Standard
@@ -5968,13 +5982,24 @@ Cada
 \family typewriter
 SuggestTemplate
 \family default
- es un string con wildcard que serán reemplazados por cada uno de los resultados
- de la consulta.
- Generalmente cada wildcard se corresponde con una variable de la consulta.
+ es un string con 
+\emph on
+wildcard
+\emph default
+ que serán reemplazados por cada uno de los resultados de la consulta.
+ Generalmente cada 
+\emph on
+wildcard
+\emph default
+ se corresponde con una variable de la consulta.
  Luego de la ejecución, el resultado de la consulta queda determinado por
  los valores de las variables de interés.
  Para cada uno de estos resultados se genera una sugerencia reemplazando
- cada wildcard con su correspondiente variable.
+ cada 
+\emph on
+wildcard
+\emph default
+ con su correspondiente variable.
 \end_layout
 
 \begin_layout Standard
@@ -5986,10 +6011,7 @@ FactTemplate
  Luego que las sugerencias hayan sido aceptadas se procede a instanciar
  un conjunto de hechos con los correspondientes valores para cada una de
  las sugerencias aceptadas.
-\end_layout
-
-\begin_layout Standard
-La figura 
+ La figura 
 \begin_inset LatexCommand ref
 reference "fig:Modelo-de-reglas"
 
@@ -6049,8 +6071,11 @@ Básicamente el modelo de reglas es una estructura de datos, la cual es necesari
 s basadas en un modelo de datos estructurado.
  A partir de la especificación de un modelo descrito en XMI, EMF provee
  las herramientas para producir un conjunto de clases Java para el modelo
- junto con un conjunto de clases adapters que permiten la visualización
- y edición del mismo.
+ junto con un conjunto de clases 
+\emph on
+adapters
+\emph default
+ que permiten la visualización y edición del mismo.
 \end_layout
 
 \begin_layout Standard
@@ -6061,7 +6086,11 @@ Como se mencionó anteriormente, es necesario que un conjunto de reglas pueda
  utilización y/o edición.
  Utilizando las capacidades del framework EMF, se logró la persistencia
  del modelo como así también la creación de un editor propio de la herramienta
- DRArch que hace realmente sencilla la edición y visualización de los datos.
+ 
+\emph on
+DRArch
+\emph default
+ que hace realmente sencilla la edición y visualización de los datos.
 \end_layout
 
 \begin_layout Section
@@ -6076,8 +6105,11 @@ Phase Engine
 \begin_layout Standard
 Este componente es el encargado de la coordinación y la mediación entre
  los componentes descriptos anteriormente.
- Como se menciono en capítulos anteriores, el enfoque DRArch posee las propiedad
-es de ser interactivo, iterativo e incremental.
+ Como se menciono en capítulos anteriores, el enfoque 
+\emph on
+DRArch
+\emph default
+ posee las propiedades de ser interactivo, iterativo e incremental.
  
 \end_layout
 
@@ -6100,10 +6132,10 @@ Una fase tiene como entrada un
 \emph on
 working set 
 \emph default
-(modulo de código que sera analizado), una serie de reglas que serán evaluadas
- sobre ese módulo y los archivos de hechos que vayan a componer base de
- conocimiento para la fase en cuestión.
- El producto de ejecutar una fase, son dos artefactos: un archivo de hechos
+(modulo de código que será analizado), una serie de reglas que serán evaluadas
+ sobre ese módulo y los archivos de hechos que vayan a componer la base
+ de conocimiento para la fase en cuestión.
+ El resultado de ejecutar una fase, son dos artefactos: un archivo de hechos
  que fueron producto de la ejecución de cada regla de la fase y un archivo
  FLABot con la representación gráfica del modelo arquitectónico recuperado.
 \end_layout
@@ -6115,18 +6147,36 @@ Alternativamente se puede enriquecer la base de conocimientos de la fase,
 \end_layout
 
 \begin_layout Standard
-El PhaseManager es el encargado de lanzar la ejecución de una fase.
+La entidad 
+\family typewriter
+PhaseManager
+\family default
+ es la encargada de lanzar la ejecución de una fase.
  En ese momento se comienzan a ejecutar una por una las reglas que forman
  parte de la fase.
  Al finalizar la ejecución de cada regla, desde la capa de presentación
- se le piden al manager de fases dichas sugerencias para ser presentadas
- al usuario.
+ se le piden al 
+\family typewriter
+PhaseManager
+\family default
+ dichas sugerencias para ser presentadas al usuario.
  Allí, se pasa el control al usuario, quien es responsable de decidir que
  sugerencias acepta y disparar la ejecución de la próxima regla.
- Antes de ejecutar la siguiente regla de la fase, el PhaseManager le pide
- al RuleManger que transforme las sugerencias en hechos concretos y luego
- agrega dichos hechos a la base de conocimientos.
- Luego, le da la orden al DiagramManager que genere los diagramas.
+ Antes de ejecutar la siguiente regla de la fase, la entidad 
+\family typewriter
+PhaseManager
+\family default
+ le pide a la entidad 
+\family typewriter
+RuleManger
+\family default
+ que transforme las sugerencias en hechos concretos y luego agrega dichos
+ hechos a la base de conocimientos.
+ Luego, le da la orden a la entidad 
+\family typewriter
+DiagramManager
+\family default
+ que genere los diagramas.
  Finalmente, con los nuevos hechos en la base de conocimiento y el diagrama
  generado se dispara la ejecución de la nueva regla.
 \end_layout
@@ -6167,7 +6217,7 @@ name "fig:Phase-model"
 
 \end_inset
 
-Phase model
+Modelo de fases
 \end_layout
 
 \end_inset
@@ -6188,12 +6238,12 @@ Phase model
 Existen dos tipos de fases: las interactivas y las no interactivas.
  Las fases interactivas son aquellas que al finalizar la ejecución de cada
  regla, se presentan las sugerencias al usuario para que este las acepte
- o no.
+ o las rechace.
  Las no interactivas en cambio, automáticamente aceptan todas las sugerencias
  y retorna el control al usuario una vez completada la fase.
- De esta forma se da la posibilidad de automatizar aquellas fases que se
- sabe se van a aceptar todas las sugerencias.
- Como ejemplo, podemos definir reglas que enriquezcan el análisis estático
+ De esta forma se da la posibilidad de automatizar aquellas fases que contengan
+ reglas con sugerencias que siempre serán aceptadas.
+ Por ejemplo, es posible definir reglas que enriquezcan el análisis estático
  de código fuente provisto por JQuery y utilizar dichas reglas en la fase
  inicial de recolección de información.
 \end_layout
@@ -6203,25 +6253,43 @@ RuleManager
 \end_layout
 
 \begin_layout Standard
-El RuleManager es el responsable de la ejecución de las reglas y de interpretar
- los resultados para armar las sugerencias, como así también de crear para
- cada sugerencia aceptada el conjunto de hechos correspondiente según lo
- define el modelo de reglas y por último de incorporar estos a la base de
- conocimiento.
- La ejecución de las consultas como se dijo anteriormente está a cargo del
- QueryEngine.
+La entidad 
+\family typewriter
+RuleManager
+\family default
+ es responsable de la ejecución de las reglas y de interpretar los resultados
+ para armar las sugerencias, así como también de crear para cada sugerencia
+ aceptada el conjunto de hechos correspondiente según lo define el modelo
+ de reglas.
+ También es responsable de incorporar estos a la base de conocimiento.
+ La ejecución de las consultas como se dijo anteriormente está a cargo de
+ la entidad 
+\family typewriter
+QueryEngine
+\family default
+.
 \end_layout
 
 \begin_layout Standard
-La figura muestra la estructura de este componente y su interacción con
- el QueryEngine.
+La Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Rule-Manager"
+
+\end_inset
+
+ muestra la estructura de este componente y su interacción con el 
+\family typewriter
+QueryEngine
+\family default
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset Graphics
@@ -6264,13 +6332,23 @@ DiagramManager
 \end_layout
 
 \begin_layout Standard
-El DiagramManager es el encargado de traducir la información contenida en
- la base de conocimiento a los modelos de diagramas de DRArch (componentes
- y UCMs).
- Ejecuta una serie de consultas a la base de conocimiento mediante QueryEngine
+La entidad 
+\family typewriter
+DiagramManager
+\family default
+ esta encargada de traducir la información contenida en la base de conocimiento
+ a los modelos de diagramas de 
+\emph on
+DRArch
+\emph default
+ (componentes y UCMs).
+ Ejecuta una serie de consultas a la base de conocimiento mediante 
+\family typewriter
+QueryEngine
+\family default
  para obtener la información arquitectónica con la que construirá el modelo.
- Este luego es llevado al modelo FLABot y se delega a esta herramienta el
- renderizado de los diagramas.
+ Luego es llevado al modelo FLABot y se delega a esta herramienta el renderizado
+ de los diagramas.
  
 \end_layout
 
@@ -6368,10 +6446,6 @@ DRArch
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
