@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -90,15 +90,17 @@ addcontentsline{toc}{chapter}{Resumen}
 
 \begin_layout Standard
 Las arquitecturas de software son modelos de sistemas que, al poseer un
- alto nivel de abstracción, permiten manejar correctamente la distancia
+ alto nivel de abs\SpecialChar \-
+trac\SpecialChar \-
+ción, permiten manejar correctamente la distancia
  entre re\SpecialChar \-
 que\SpecialChar \-
 ri\SpecialChar \-
 mien\SpecialChar \-
 tos e implementación.
  La adopción cada vez mayor del desarrollo centrado en la arquitectura se
- debe a que éstas exponen las principales decisiones de diseño y sus consecuenci
-as en una etapa temprana del desarrollo de software, y al hacerlo permiten
+ debe a que ésta expone las principales decisiones de diseño y sus consecuencias
+ en una etapa temprana del desarrollo de software, y al hacerlo permite
  un mejor entendimiento tanto del sistema como de sus requerimientos por
  parte de todas las personas involucradas.
  Por estas razones, un buen diseño arquitectónico tiene un impacto positivo
@@ -335,11 +337,20 @@ n arquitectónica en la mayoria de los proyectos de desarrollos actuales[Reffs],
 \end_inset
 
 Si bien es comunmente aceptado que arquitectura de software puede ser utilizada
- como vehiculo de comunicación entre personas con diferentes necesidades
+ como vehículo de comunicación entre personas con diferentes necesidades
  de un sistema, se puede ver la falta de documentación arquitectónica en
- la mayoria de los proyectos de desarrollos actuales [Reffs], especialmente
- en empresas de software pequeñas.
- Esta es una de las situaciones donde surgue la necesidad de reconstruír
+ la mayoría de los proyectos de desarrollos actuales
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ [Reffs]
+\end_layout
+
+\end_inset
+
+, especialmente en empresas de software pequeñas.
+ Esta es una de las situaciones donde surge la necesidad de reconstruir
  la arquitectura de un sistema.
  La Reconstrucción de Arquitecturas es una técnica para generar representaciones
  arquitectónicas del sistema que puede ser utilizada de diversas formas.
@@ -355,7 +366,7 @@ pre\SpecialChar \-
 sen\SpecialChar \-
 ta\SpecialChar \-
 ción puede ser usada como una forma de identificar
- componentes reusables ó para establecer una arquitectura base dentro de
+ componentes reusables o para establecer una arquitectura base dentro de
  una línea de productos de software 
 \begin_inset LatexCommand cite
 key "Rick2003"
@@ -366,16 +377,16 @@ key "Rick2003"
 \end_layout
 
 \begin_layout Standard
-Debido a la importancia de la arquitectura de software en la toma de desición
+Debido a la importancia de la arquitectura de software en la toma de decisión
  en diferentes etapas del proceso de desarrollo, es necesario contar con
  documentación actualizada que refleje arquitectónicamente relaciones en
  la implementación del sistema.
- Esta documentación puede ser extraida a partir de información provista
- por las sentencias del código fuente[ref1,ref2,etc].
+ Esta documentación puede ser extraída a partir de información provista
+ por las sentencias del código fuente.
  Sin embargo, el código fuente provee una vista parcial de los aspectos
  arquitectónicos que no incluye la dinámica de los diversos componentes
  de software.
- Evidencia de la dinámica del sistema puede ser obtenida del analisis de
+ Evidencia de la dinámica del sistema puede ser obtenida del análisis de
  la ejecución de las sentencias y los valores correspondientes en tiempo
  de ejecución.
 \end_layout
@@ -392,14 +403,14 @@ key "BOWMAN99,GALL95,TZERPOS96,Harris1995,Rick2003,GUO99"
  En la mayoría, la arquitectura del sistema se extrae principalmente por
  medio del análisis del código fuente.
  En otras, la información se obtiene tanto del código fuente como del sistema
- en ejecución ó sólo re\SpecialChar \-
+ en ejecución o sólo re\SpecialChar \-
 cons\SpecialChar \-
 tru\SpecialChar \-
 ye arquitecturas de sistemas implementados
  utilizando patrones de diseño.
  Muchos de los enfoques mencionados sólo muestran aspectos estructurales
  (diagramas de clases) y muy pocos muestran resultados que permitan visualizar
- el comportamiento del sistema (ej: diagramas de UCMs ó de secuencia).
+ el comportamiento del sistema (ej: diagramas de UCMs o de secuencia).
  
 \end_layout
 
@@ -416,7 +427,7 @@ guiar
 
  a medida que se reconstruye la arquitectura.
  Es decir, no se tiene control sobre qué y cómo se recupera la información,
- ni puede intervenir si lo considera necesario.
+ ni se puede intervenir si lo considera necesario.
  Además, no es posible manipular la información de forma interactiva, perdiendo
  así la posibilidad de contar con la experiencia del arquitecto y su conocimient
 o en el dominio.
@@ -468,9 +479,9 @@ reference "cha:Contexto"
 
 \end_inset
 
- se presentan los conceptos de Arquitecturas de Software, Decripciónes de
- Arquitecturas, Use Case Maps y la necesidad de la documentación Arquitectónica,
- que son las nociones principales en las que está basado nuestro enfoque.
+ se presentan los conceptos de Arquitecturas de Software, Descripciones
+ de Arquitecturas, Use Case Maps y la necesidad de la documentación Arquitectóni
+ca, que son las nociones principales en las que está basado nuestro enfoque.
  Una vez introducido el contexto, en el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -480,7 +491,7 @@ reference "cha:Trabajos-relacionados"
 
  se analizan y comparan algunos trabajos relacionados que, de diferentes
  maneras, apuntan a solucionar el problema de falta o inexistencia de documentac
-ión arquitectónica a travez de la reconstrucción arquitectónica.
+ión arquitectónica a través de la reconstrucción arquitectónica.
  Luego de este análisis, en el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -722,7 +733,7 @@ XXX-Les falta releer el doc.
 
 \begin_layout Standard
 A continuación, se presentan los estilos arquitectónicos que nos ayudan
- a describir los ditintos tipos de componentes y su tipología.
+ a describir los distintos tipos de componentes y su tipología.
 \end_layout
 
 \begin_layout Standard
@@ -1286,7 +1297,7 @@ key "BUHR95"
 \end_layout
 
 \begin_layout Standard
-Por sus cualidades, los UCMs son la notación elegída para representar las
+Por sus cualidades, los UCMs son la notación elegida para representar las
  vistas comportamentales de las arquitecturas reconstruidas.
  
 \begin_inset Note Note
@@ -1969,7 +1980,7 @@ La Reconstrucción de Arquitecturas de Software es una técnica para generar
  Esta representación también puede ser usada como un punto de comienzo para
  realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
  Finalmente, la representación puede ser usada como una forma de identificar
- componentes re-usables ó para establecer una arquitectura base dentro de
+ componentes re-usables o para establecer una arquitectura base dentro de
  una línea de productos de software 
 \begin_inset LatexCommand cite
 key "Rick2003"
@@ -5618,9 +5629,19 @@ DRArch
 \emph on
 Uniﬁed Modeling Language
 \emph default
-) [ref], presentando los aspectos más importantes de su implementación.
- El resto del capítulo se encuentra organizado de la siguiente manera.
- En la sección....
+) 
+\begin_inset LatexCommand cite
+key "BURKHARDT97"
+
+\end_inset
+
+, presentando los aspectos más importantes de su implementación.
+ 
+\end_layout
+
+\begin_layout Standard
+El resto del capítulo se encuentra organizado de la siguiente manera.
+ En la sección 
 \end_layout
 
 \begin_layout Standard
@@ -5658,23 +5679,40 @@ Arquitectura
 \end_layout
 
 \begin_layout Standard
-DRArch fue implementado como un plug-in de la plataforma Eclipse, aprovechando
+
+\emph on
+DRArch
+\emph default
+ fue implementado como un plug-in de la plataforma Eclipse, aprovechando
  su arquitectura extensible, su modelo para análisis estático de código
  fuente Java y su framework de interfaz de usuario.
- Además, ésto permitió aprovechar el editor gráﬁco de UCMs y el instrumentador
+ Además, esto permitió aprovechar el editor gráﬁco de UCMs y el instrumentador
  de bytecode del proyecto FLABot, ya que ambos también fueron implementados
  como plug-ins.
  Si bien JQuery también ha sido desarrollado como plug-in, en este trabajo
  se utilizo a modo de librería.
- El diseño de DRArch está muy inﬂuenciado por la arquitectura ya deﬁnida
- por Eclipse.
- Esencialmente, Eclipse (ver Apéndice A.1) es una plataforma diseñada para
- construir herramientas de desarrollo.
+ El diseño de 
+\emph on
+DRArch
+\emph default
+ está muy inﬂuenciado por la arquitectura ya deﬁnida por Eclipse.
+ Esencialmente, Eclipse (ver Apéndice\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Plataforma-Eclipse"
+
+\end_inset
+
+) es una plataforma diseñada para construir herramientas de desarrollo.
  Si bien la plataforma por sí misma no provee mucha funcionalidad al usuario
  ﬁnal, facilita el rápido desarrollo de herramientas con características
  integradas.
  Así, la organización de estas herramientas alrededor de un espacio de trabajo
- común es un principio de diseño central, tanto para Eclipse como para DRArch.
+ común es un principio de diseño central, tanto para Eclipse como para 
+\emph on
+DRArch
+\emph default
+.
  En el caso particular de este trabajo, es necesario un cierto nivel de
  integración para aprovechar los componentes existentes de FLABot y la infraestr
 uctura básica de Eclipse.
@@ -5686,11 +5724,14 @@ uctura básica de Eclipse.
 \end_layout
 
 \begin_layout Standard
-La funcionalidad propia de DRArch se encuentra organizada alrededor del
- modelo arquitectónico BlackBoard, en el cual una base de conocimientos
- común, el BlackBoard, es iterativamente actualizada por fuentes de conocimiento
- especializadas, los especialistas, comenzando con la especificación de
- un problema y culminando con la solución.
+La funcionalidad propia de 
+\emph on
+DRArch
+\emph default
+ se encuentra organizada alrededor del modelo arquitectónico BlackBoard,
+ en el cual una base de conocimientos común, el BlackBoard, es iterativamente
+ actualizada por fuentes de conocimiento especializadas, los especialistas,
+ comenzando con la especificación de un problema y culminando con la solución.
  Cada fuente de conocimiento actualiza el BlackBoard con una solución parcial
  cuando sus requisitos coinciden con el estado del BlackBoard.
  De esta forma los especialistas trabajan juntos en la resolución del problema.
@@ -5726,9 +5767,8 @@ iones que actualizaran el estado del modelo arquitectónico bajo análisis.
 
 \begin_layout Standard
 Por ultimo, el modelo de fases determina la operatibilidad de la herramienta.
- Es el componente orquestador.
- El es responsable de guiar el proceso y coordinar la interoperabilidad
- entre los módulos.
+ Es el componente orquestador: responsable de guiar el proceso y coordinar
+ la interoperabilidad entre los módulos.
 \end_layout
 
 \begin_layout Standard
@@ -5815,10 +5855,13 @@ reference "sec:JQuery"
 \begin_layout Standard
 JQuery esta basado en TyRuBa que es un lenguaje de programación lógica implement
 ado en Java.
- De esta forma JQuery provee a DRArch de tres componentes fundamentales
- el motor de inferencias, el lenguaje de consultas que se ulitizarán en
- las reglas y la implementación de la base de conocimiento sobre la que
- se realizarán dichas consultas.
+ De esta forma JQuery provee a 
+\emph on
+DRArch
+\emph default
+ de tres componentes fundamentales el motor de inferencias, el lenguaje
+ de consultas que se ulitizarán en las reglas y la implementación de la
+ base de conocimiento sobre la que se realizarán dichas consultas.
  Cada uno de estos componentes han sido abstraidos desacoplándolos de su
  implementación permitiendo que, con mínimo esfuerzo, dichas implementaciones
  puedan variar o evolucionar independientemente.
@@ -5832,8 +5875,11 @@ KnowledgeBase
 La base de conocimiento consta de dos partes.
  La primera esta basada en los hechos generados durante la fase de recolección
  de la información y la segunda consiste en todos lo hechos generados por
- las ejecuciones de las reglas DRArch los cuales se agrupan por fases de
- ejecución.
+ las ejecuciones de las reglas 
+\emph on
+DRArch
+\emph default
+ los cuales se agrupan por fases de ejecución.
  Estos últimos se han hecho persistentes en un archivo de texto con el propósito
  de reutilizar el resultado del análisis realizado en fases subsiguientes.
 \end_layout
@@ -5855,19 +5901,42 @@ Rule model
 
 \begin_layout Standard
 El modelo de reglas esta formado principalmente por cuatro entidades.
- Una regla Rule es la entidad mas importante de este componente porque determina
- la unidad funcional de la herramienta.
- Una Regla, esta determinada por una Query, un SuggestTemplate y un conjunto
- de FactTemplates.
- Una Query, a su vez, esta compuesta por una sentencia en formato Prolog
- que sera utilizada para realizar una consulta sobre la base de conocimiento
- y un conjunto de variables de interés que son variables de la consulta
- que queremos preservar el valor para su posterior utilización.
+ Una regla 
+\family typewriter
+Rule
+\family default
+ es la entidad mas importante de este componente porque determina la unidad
+ funcional de la herramienta.
+ Una regla, esta determinada por una 
+\family typewriter
+Query
+\family default
+, un 
+\family typewriter
+SuggestTemplate
+\family default
+ y un conjunto de 
+\family typewriter
+FactTemplates
+\family default
+.
+ Una 
+\family typewriter
+Query
+\family default
+, a su vez, esta compuesta por una sentencia en formato ProLog que sera
+ utilizada para realizar una consulta sobre la base de conocimiento y un
+ conjunto de variables de interés que son variables de la consulta que queremos
+ preservar el valor para su posterior utilización.
 \end_layout
 
 \begin_layout Standard
-Cada SuggestTemplate es un string con wildcard que serán reemplazados por
- cada uno de los resultados de la consulta.
+Cada 
+\family typewriter
+SuggestTemplate
+\family default
+ es un string con wildcard que serán reemplazados por cada uno de los resultados
+ de la consulta.
  Generalmente cada wildcard se corresponde con una variable de la consulta.
  Luego de la ejecución, el resultado de la consulta queda determinado por
  los valores de las variables de interés.
@@ -5876,8 +5945,11 @@ Cada SuggestTemplate es un string con wildcard que serán reemplazados por
 \end_layout
 
 \begin_layout Standard
-Por ultimo cada FactTemplate del conjunto esta construido de la misma forma
- que los templates de sugerencias.
+Por ultimo cada 
+\family typewriter
+FactTemplate
+\family default
+ del conjunto esta construido de la misma forma que los templates de sugerencias.
  Luego que las sugerencias hayan sido aceptadas se procede a instanciar
  un conjunto de hechos con los correspondientes valores para cada una de
  las sugerencias aceptadas.
@@ -6170,26 +6242,34 @@ El DiagramManager es el encargado de traducir la información contenida en
 \end_layout
 
 \begin_layout Standard
-La figura 
+La Figura\InsetSpace ~
+
 \begin_inset LatexCommand ref
 reference "fig:Phase-Management-Interaction"
 
 \end_inset
 
- muestra los distintos componentes y sus relaciones.
+ y la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-secuencias"
+
+\end_inset
+
+ muestran los distintos componentes y sus relaciones.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename img/Phase Interaction.png
-	width 60text%
+	width 70text%
 
 \end_inset
 
@@ -6205,7 +6285,52 @@ name "fig:Phase-Management-Interaction"
 
 \end_inset
 
-Phase Management Interaction
+Diagrama de interacciones entre los componentes 
+\emph on
+DRArch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/Sequence Diagram.png
+	width 100pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-secuencias"
+
+\end_inset
+
+Diagrama de secuencia entre los componentes 
+\emph on
+DRArch
+\emph default
+ 
 \end_layout
 
 \end_inset
@@ -6986,7 +7111,196 @@ name "sub:G2-Caso-1"
 \end_layout
 
 \begin_layout Standard
-...
+Con el objectivo de poder reconstruir uno de los aspectos más importantes
+ de la arquitectura del sistema G2, en este caso de estudio se utilizó la
+ herramienta 
+\emph on
+DRArch
+\emph default
+ teniendo en cuenta de que la funcionalidad del sistema esta organizada
+ en 
+\emph on
+tareas.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Fase de recolección de información
+\end_layout
+
+\begin_layout Standard
+Como primera fase, se debe seleccionar el código fuente que se va a incluir
+ en el análisis.
+ En este caso, utilizaremos todo el código fuente dispoinible del sistema
+ G2.
+ Luego, se debe incluir la información dinámica, y para esto, se debe ejecutar
+ un caso de uso que represente la funcionalidad principal del sistema.
+ Un escenario donde puede verse en acción el modelo típico del sistema G2
+ es el caso de uso 
+\emph on
+removeUser.
+ 
+\emph default
+Aquí un usuario administrador envía por medio de su browser la solicitud
+ de eliminar a otro usuario del sistema, siempre que sus permisos lo permitan.
+ El sistema retorna una página con el listado actualizado de usuarios.
+\end_layout
+
+\begin_layout Standard
+La Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Instrumentación-de-la"
+
+\end_inset
+
+ muestra la interfaz gráfica del sistema G2 durante su ejecución instrumentada,
+ lista para proceder con la eliminación de un usuario.
+ A su vez puede observarse un panel de control que el arquitecto emplea
+ para decidir el momento en que las acciones instrumentadas deben registrarse
+ en el log de ejecución.
+ Luego de reproducido el escenario sobre el sistema instrumentado, el log
+ de ejecución generádo es transformado por el componente 
+\emph on
+TraceLog Analizer, 
+\emph default
+para realizar la transformación correspondiente (representación del log
+ en hechos al estilo ProLog).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/listadoUsuariosFlabot.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Instrumentación-de-la"
+
+\end_inset
+
+Instrumentación de la aplicación G2 durante el caso de uso “eliminar usuario”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Un escenario donde puede verse en acción el modelo típico del sistema G2
+ es el caso de uso 
+\emph on
+removeUser
+\emph default
+ presentado en el 
+\emph on
+path
+\emph default
+ la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cap:UCM-removeUser"
+
+\end_inset
+
+.
+ Aquí un usuario administrador envía por medio de su browser la solicitud
+ de eliminar a otro usuario del sistema, siempre que sus permisos lo permitan.
+ Cuando esta solicitud llega al sistema por medio del GateKeeper, se activan
+ los agentes encargados de eliminar a un usuario del modelo.
+ Una vez que el agente asignado detecta esta señal, invoca a la tarea de
+ eliminación, representada por la responsabilidad UCM 
+\emph on
+removeUser
+\emph default
+.
+ Mas adelante, se eliminan los registros relacionados del repositorio de
+ datos, como lo indica la responsabilidad UCM 
+\emph on
+deleteUserFromDB
+\emph default
+ y finalmente se le retorna una página con el listado actualizado de usuarios;
+ representado por la secuencia de activación de responsabilidades 
+\emph on
+listUsers
+\emph default
+, 
+\emph on
+generateHTMLResponse
+\emph default
+ y 
+\emph on
+sendResponse
+\emph default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez finalizada la fase de recolección, se continúa con la ejecución
+ del resto de las fases.
+\end_layout
+
+\begin_layout Subsubsection
+Fase de invocación implícita (eliminar usuario)
+\end_layout
+
+\begin_layout Standard
+Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
+ y relaciones que estén materializados con invocaciónes implícitas: manejo
+ de eventos, tareas, etc.
+ De esta forma, se agruparon las reglas más importantes presentadas por
+ la herramienta 
+\emph on
+DRArch
+\emph default
+ en las siguientes categorías:
+\end_layout
+
+\begin_layout Standard
+Detección de tareas: Este conjunto de reglas
+\end_layout
+
+\begin_layout Standard
+Detección de intermediarios:
+\end_layout
+
+\begin_layout Standard
+Paths de ejecución:
 \end_layout
 
 \begin_layout Subsection
