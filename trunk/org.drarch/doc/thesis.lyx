@@ -5641,32 +5641,65 @@ key "BURKHARDT97"
 
 \begin_layout Standard
 El resto del capítulo se encuentra organizado de la siguiente manera.
- En la sección 
-\end_layout
+ En la sección\InsetSpace ~
 
-\begin_layout Standard
-PRESENTAN EL ESTILO ARQUITECTONICO
-\end_layout
+\begin_inset LatexCommand ref
+reference "sec:Arquitectura"
 
-\begin_layout Standard
-Analizador de código estático
-\end_layout
+\end_inset
 
-\begin_layout Standard
-recolección de trazas de ejecucion
-\end_layout
+ se presenta la arquitectura de 
+\emph on
+DRArch
+\emph default
+.
+ Luego, en las secciones\InsetSpace ~
 
-\begin_layout Standard
-manager de reglas
-\end_layout
+\begin_inset LatexCommand ref
+reference "sec:Query-Engine"
 
-\begin_layout Standard
-Generación y manipulación de Diagramas
-\end_layout
+\end_inset
 
-\begin_layout Standard
-[Diagramas de componentes, de clase, etc.
- Sacar info del trabajo de diseño]
+, 
+\begin_inset LatexCommand ref
+reference "sec:Rule-Model"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand ref
+reference "sec:Phase-Engine"
+
+\end_inset
+
+ y 
+\begin_inset LatexCommand ref
+reference "sec:TraceLog-Analyzer"
+
+\end_inset
+
+ se explican en detalle cómo fueron diseñados e implementados los componentes
+ 
+\emph on
+Query Engine
+\emph default
+, 
+\emph on
+Rule Model, Phase Engine, 
+\emph default
+y 
+\emph on
+TraceLog Analyzer
+\emph default
+, respectivamente.
+ Finalmente, en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Conclusiones"
+
+\end_inset
+
+ se presentan las conclusiones del capítulo.
 \end_layout
 
 \begin_layout Section
@@ -6263,7 +6296,7 @@ reference "fig:Diagrama-de-secuencias"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -6310,7 +6343,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Sequence Diagram.png
-	width 100pheight%
+	width 50pheight%
 
 \end_inset
 
