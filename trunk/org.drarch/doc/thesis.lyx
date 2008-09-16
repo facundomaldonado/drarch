@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -745,7 +745,7 @@ XXX-debe haber un parrafo que introduzca la sección siguiente...
 Estilos\InsetSpace ~
 Arquitectónicos
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 XXX-Poner mas info en esta seccion!!!
@@ -4360,7 +4360,7 @@ Por ejemplo, si se considera un esenario en donde un desarrollador quiere
  dicho desarrollador debería realizar una búsqueda por todo el código fuente
  para poder capturar las partes del código que necesita.
  Inspeccionar directamente en el código fuente sería muy tedioso y llevaría
- mucho tiempo, pero si el códig fuente esta representado en forma de hechos
+ mucho tiempo, pero si el código fuente esta representado en forma de hechos
  
 \emph on
 ProLog
@@ -4524,7 +4524,7 @@ El enfoque provee un conjunto de reglas basadas en patrones de diseño y
  De esta forma, se intentó detectar cuales son los requerimientos que debe
  cumplir un sistema para que se justifique la presencia de un determinado
  artefacto arquitectónico.
- Por ejemplo, una regla puede detectar la precencia de un componente del
+ Por ejemplo, una regla puede detectar la presencia de un componente del
  tipo 
 \emph on
 Observer
@@ -4640,7 +4640,7 @@ Frameworks
 \begin_layout Standard
 El concepto principal del diseño de 
 \emph on
-framworks
+frameworks
 \emph default
  es el de separar aquellos aspectos que son invariantes a lo largo de varias
  aplicaciones en el dominio (
@@ -4982,7 +4982,7 @@ Al termino de cada fase, se cuenta cuenta con una representación gráfica
  de componentes y de UCMs con su correspondiente mapeo al código fuente.
  Estos diagramas están representados en 
 \emph on
-Flabot
+FLAbot
 \emph default
 .
  
@@ -5078,7 +5078,7 @@ The Step Engine defines a phase model as a composition of steps, in which
 
 \begin_layout Standard
 Modelar o capturar las decisiones de diseño arquitectónico está estrechamente
- ligado con la visualización arquitectónica y con la foma en que las decisiones
+ ligado con la visualización arquitectónica y con la forma en que las decisiones
  de diseño son representadas y manipuladas por los interesados.
  Cada visualización tiene diferentes ventajas y desventajas que un arquitecto
  debe considerar.
@@ -5087,7 +5087,7 @@ Modelar o capturar las decisiones de diseño arquitectónico está estrechamente
 \begin_layout Standard
 Una vez que la vista es generada, el arquitecto pude realizar modificaciones
  sobre los diagramas.
- Las modificaciones realizadas son sincronizadas con la base de conocmiento
+ Las modificaciones realizadas son sincronizadas con la base de conocimiento
  para reflejar los cambios.
 \end_layout
 
@@ -5137,14 +5137,14 @@ reference "sec:Ejemplo"
 \end_inset
 
 .
- Como primer paso, el arquitecto debe definr qué reglas se van a incluir
+ Como primer paso, el arquitecto debe definir qué reglas se van a incluir
  en la fase que se quiere ejecutar.
- Cada fase deberia tener un objetivo claro, por ejemplo, una fase pordría
- enfocarse en descubrir si existen implementaciones del patron 
+ Cada fase debería tener un objetivo claro, por ejemplo, una fase podría
+ enfocarse en descubrir si existen implementaciones del patrón 
 \emph on
 Observer-Observable
 \emph default
- o de algún otro patron de diseño.
+ o de algún otro patrón de diseño.
 \end_layout
 
 \begin_layout Standard
@@ -5221,8 +5221,8 @@ DRArch
 \emph on
 FLAbot
 \emph default
-, es analizad por el componente TraceLog Analizar para generar los hechos
- prolog correspondientes al 
+, es analizad por el componente TraceLog Analizer para generar los hechos
+ ProLog correspondientes al 
 \emph on
 log
 \emph default
@@ -5314,9 +5314,9 @@ screenshot
 \emph default
  de la pantalla con las tres partes mas importantes de la especificación
  de una regla: la consulta, la sugerencia que genera la ejecución de la
- consulta, y los hehos que se deben agregar a la base de conocimientos en
- el caso de que el arquitecto decida aceptar la sugerencia durante el proceso
- de reconstrucción.
+ consulta, y los hechos que se deben agregar a la base de conocimientos
+ en el caso de que el arquitecto decida aceptar la sugerencia durante el
+ proceso de reconstrucción.
  En la sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -5371,7 +5371,7 @@ Observer-Observable
 \end_layout
 
 \begin_layout Standard
-Para reflejar la toma de deciciónes y poder
+Para reflejar la toma de decisiones y poder
 \series bold
  manipular las propuestas arquitectónicas
 \series default
@@ -5456,8 +5456,8 @@ reference "fig:Diagrama-de-componentes-de-los-Observers"
 \end_inset
 
 .
- Luego de que la herramieta actualice las vistas de la representación arquitectó
-nica, el arquitecto tiene la posibilidad de modificar los diagramas desde
+ Luego de que la herramienta actualice las vistas de la representación arquitect
+ónica, el arquitecto tiene la posibilidad de modificar los diagramas desde
  el editor gráfico.
 \end_layout
 
@@ -5538,8 +5538,12 @@ El proceso de reconstrucción es controlado por el arquitecto en todo momento.
 \end_layout
 
 \begin_layout Standard
-Por otro lado, Drarch no impone restricciones de un lenguaje específico
- en el que este implementado el sistema a analizar.
+Por otro lado, 
+\emph on
+DRArch
+\emph default
+ no impone restricciones de un lenguaje específico en el que este implementado
+ el sistema a analizar.
  El hecho de transformar la información del sistema a una base de conocimientos
  permite la aplicación del enfoque en muchos sistemas existentes.
 \end_layout
@@ -5699,10 +5703,21 @@ DRArch
  su arquitectura extensible, su modelo para análisis estático de código
  fuente Java y su framework de interfaz de usuario.
  Además, esto permitió aprovechar el editor gráﬁco de UCMs y el instrumentador
- de bytecode del proyecto FLABot, ya que ambos también fueron implementados
- como plug-ins.
- Si bien JQuery también ha sido desarrollado como plug-in, en este trabajo
- se utilizo a modo de librería.
+ de 
+\emph on
+bytecode
+\emph default
+ del proyecto 
+\emph on
+FLABot
+\emph default
+, ya que ambos también fueron implementados como plug-ins.
+ Si bien 
+\emph on
+JQuery
+\emph default
+ también ha sido desarrollado como plug-in, en este trabajo se utilizo a
+ modo de librería.
  El diseño de 
 \emph on
 DRArch
@@ -5726,10 +5741,16 @@ DRArch
 \emph default
 .
  En el caso particular de este trabajo, es necesario un cierto nivel de
- integración para aprovechar los componentes existentes de FLABot y la infraestr
-uctura básica de Eclipse.
- Por estas razones, la arquitectura de FLABot ha sido organizada mayormente
- alrededor de un estilo 
+ integración para aprovechar los componentes existentes de 
+\emph on
+FLABot
+\emph default
+ y la infraestructura básica de Eclipse.
+ Por estas razones, la arquitectura de 
+\emph on
+FLABot
+\emph default
+ ha sido organizada mayormente alrededor de un estilo 
 \emph on
 data-centered
 \emph default
@@ -5879,7 +5900,7 @@ name "sec:Query-Engine"
 
 \end_inset
 
-Query engine
+Query Engine
 \end_layout
 
 \begin_layout Standard
@@ -5889,7 +5910,11 @@ Este componente tiene como principal responsabilidad la ejecución de las
 
 \begin_layout Standard
 Forma parte de este componente el motor de consultas y la base de conocimiento.
- Ambas entidades están construidas sobre el plug-in JQuery 
+ Ambas entidades están construidas sobre el plug-in 
+\emph on
+JQuery
+\emph default
+ 
 \begin_inset LatexCommand ref
 reference "sec:JQuery"
 
@@ -5900,16 +5925,27 @@ reference "sec:JQuery"
 \end_layout
 
 \begin_layout Standard
-JQuery esta basado en TyRuBa que es un lenguaje de programación lógica implement
-ado en Java.
- De esta forma JQuery provee a 
+
+\emph on
+JQuery
+\emph default
+ esta basado en 
+\emph on
+TyRuBa
+\emph default
+ que es un lenguaje de programación lógica implementado en Java.
+ De esta forma 
+\emph on
+JQuery
+\emph default
+ provee a 
 \emph on
 DRArch
 \emph default
  de tres componentes fundamentales: el motor de inferencias, el lenguaje
  de consultas que se ulitizarán en las reglas y la implementación de la
  base de conocimiento sobre la que se realizarán dichas consultas.
- Cada uno de estos componentes han sido abstraidos desacoplándolos de su
+ Cada uno de estos componentes han sido abstraídos desacoplándolos de su
  implementación permitiendo que, con mínimo esfuerzo, dichas implementaciones
  puedan variar o evolucionar independientemente.
 \end_layout
@@ -5943,7 +5979,7 @@ name "sec:Rule-Model"
 
 \end_inset
 
-Rule model
+Rule Model
 \end_layout
 
 \begin_layout Standard
@@ -5982,7 +6018,7 @@ Cada
 \family typewriter
 SuggestTemplate
 \family default
- es un string con 
+ es una cadena de caracteres con 
 \emph on
 wildcard
 \emph default
@@ -6137,13 +6173,21 @@ working set
  de conocimiento para la fase en cuestión.
  El resultado de ejecutar una fase, son dos artefactos: un archivo de hechos
  que fueron producto de la ejecución de cada regla de la fase y un archivo
- FLABot con la representación gráfica del modelo arquitectónico recuperado.
+ 
+\emph on
+FLABot
+\emph default
+ con la representación gráfica del modelo arquitectónico recuperado.
 \end_layout
 
 \begin_layout Standard
 Alternativamente se puede enriquecer la base de conocimientos de la fase,
- incorporando un archivo FLABot con un modelo arquitectónico definido y
- volcar la información del modelo arquitectónico del archivo a hechos lógicos.
+ incorporando un archivo 
+\emph on
+FLABot
+\emph default
+ con un modelo arquitectónico definido y volcar la información del modelo
+ arquitectónico del archivo a hechos lógicos.
 \end_layout
 
 \begin_layout Standard
@@ -6244,8 +6288,11 @@ Existen dos tipos de fases: las interactivas y las no interactivas.
  De esta forma se da la posibilidad de automatizar aquellas fases que contengan
  reglas con sugerencias que siempre serán aceptadas.
  Por ejemplo, es posible definir reglas que enriquezcan el análisis estático
- de código fuente provisto por JQuery y utilizar dichas reglas en la fase
- inicial de recolección de información.
+ de código fuente provisto por 
+\emph on
+JQuery
+\emph default
+ y utilizar dichas reglas en la fase inicial de recolección de información.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -6347,8 +6394,11 @@ DRArch
 QueryEngine
 \family default
  para obtener la información arquitectónica con la que construirá el modelo.
- Luego es llevado al modelo FLABot y se delega a esta herramienta el renderizado
- de los diagramas.
+ Luego es llevado al modelo 
+\emph on
+FLABot
+\emph default
+ y se delega a esta herramienta el renderizado de los diagramas.
  
 \end_layout
 
@@ -6791,7 +6841,7 @@ Log Analyzer
 ProLog
 \emph default
 .
- El proceso de transformación sigue un algorítmo simple: el componente utiliza
+ El proceso de transformación sigue un algoritmo simple: el componente utiliza
  la información de mapeo entre responsabilidades y métodos recorriendo el
  log de ejecución, tomando sus entradas (ejecuciones de métodos) una a una.
 \end_layout
@@ -6801,44 +6851,6 @@ Los hechos generados por este componente son almacenados en la base de datos
  del conocimiento junto con el resto de la información.
  De esta forma, quedaría disponible la posibilidad de relacionar información
  tanto estática como dinámica.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Dado que el mapeo responsabilidades-métodos es N:N, cada entrada puede correspon
-der a un conjunto de responsabilidades candidatas.
- Una vez que obtuvo este conjunto, verifica si su intersección con la última
- activación (entrada de log de alto nivel) no es vacía.
- Si esto es así, actualiza la activación con la intersección.
- Si la intersección es vacía, crea una nueva activación y pasa a la entrada
- siguiente.
-\end_layout
-
-\begin_layout Standard
-A modo de ejemplo, supongamos el log de ejecución del Cuadro\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:Ejemplo-de-log"
-
-\end_inset
-
-.
- En la primera iteración del algoritmo, se crea una nueva activación con
- las responsabilidades {r1, r2, r3}.
- Luego, esta misma activación se reduce al conjunto {r1, r3}.
- En la tercera iteración, se crea una nueva activación con el conjunto {r2},
- que en la iteración final no es modificada.
- La secuencia de activaciones resultante es {{r1, r3}, {r2}}, y se interpreta
- de la siguiente manera: primero se activó r1 o r3, luego se activó r2.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -6889,32 +6901,6 @@ Eclipse
  ofrece un metamodelo del lenguaje Java idóneo para la manipulación de informaci
 ón de código fuente.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Las estrategias definidas en el módulo 
-\emph on
-Diff Mapper
-\emph default
- hacen uso de esta infraestructura para detectar clases eliminadas y modificadas
-, así como para la comparación de versiones diferentes de clases Java.
- Aunque la versión actual de 
-\emph on
-Diff Mapper
-\emph default
- emplea la historia local de 
-\emph on
-Eclipse
-\emph default
- como repositorio de clases modificadas y eliminadas, se tomaron las precaucione
-s necesarias para que pueda hacerlo utilizando otros recursos, como repositorios
- CVS, Subversion, etc.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -6960,69 +6946,44 @@ ProLog
 A diferencia de algunos de los enfoques mencionados en el capítulo tres
  que siguen el mismo patrón de extraer, abstraer y presentar y que utilizan
  una base de datos relacional para almacenar las representaciones intermedias
- del modelo arquitectonico, DRArch utiliza el motor de consultas y la base
- de datos lógica provisto por JQuery.
- Esta decision se basa en que al momento de realizar una consulta en un
+ del modelo arquitectónico, 
+\emph on
+DRArch
+\emph default
+ utiliza el motor de consultas y la base de datos lógica provisto por 
+\emph on
+JQuery
+\emph default
+.
+ Esta decisión se basa en que al momento de realizar una consulta en un
  lenguaje lógico, se consulta por el qué y no por el cómo como es el caso
  de los los enfoques relacionales, lo que hace más sencillo y natural al
  arquitecto formular sus propias reglas.
- Para tal proposito se creó un editor utilizando las ventajas que ofrece
- SWT, un toolkit de elementos graficos diseñados para ser portables y aprovechar
- las capacidades de los sistemas operativos sobre los que se ejecuta.
+ Para tal propósito se creó un editor utilizando las ventajas que ofrece
+ SWT, un 
+\emph on
+toolkit
+\emph default
+ de elementos gráficos diseñados para ser portables y aprovechar las capacidades
+ de los sistemas operativos sobre los que se ejecuta.
 \end_layout
 
 \begin_layout Standard
 De esta forma, al estar todo lo necesario integrado en el ambiente de desarrollo
 , si el arquitecto pretende incorporar la tarea de reconstrucción a su rutina,
- podrá hacerlo incluyendo únicamente el plug-in DRArch y sus dependencias,
- es decir: FLABot y JQuery.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-El algoritmo 
+ podrá hacerlo incluyendo únicamente el plug-in 
 \emph on
-Path-Log Matcher
+DRArch
 \emph default
- se materializó en Prolog, por resultar el paradigma de la programación
- lógica mucho mas natural a la hora de especificar la comparación entre
- el UCM desactualizado y la secuencia de activación de responsabilidades.
- Sin embargo, en vistas de que la mayor parte de 
+ y sus dependencias, es decir: 
 \emph on
-ArchSync
+FLABot
 \emph default
- se implementó en Java, fue necesario integrar este paradigma con el de
- la programación orientada a objetos.
- Para tal fin, 
+ y 
 \emph on
-JavaLog
+JQuery
 \emph default
- resultó ideal pues ha sido concebido con tales objetivos.
-\end_layout
-
-\begin_layout Standard
-De esta forma, si el equipo de desarrollo pretende incorporar la nueva tarea
- de sincronización entre implementación y especificación UCM a sus tareas
- rutinarias, podrá hacerlo incluyendo únicamente el plug-in 
-\emph on
-ArchSync
-\emph default
- para 
-\emph on
-Eclipse
-\emph default
- y sus dependencias, es decir: FLABot y JavaLog.
- En la mayoría de los casos, este requerimiento implica que los programadores
- no necesitarán nuevas herramientas de desarrollo, ni siquiera repositorios
- para el control formal de versiones.
-\end_layout
-
-\end_inset
-
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -7066,7 +7027,7 @@ DRArch
  ahorrado al arquitecto en el análisis en la documentación del sistema --como
  indicadores de utilidad--, (b) la cantidad de soluciones diferentes propuestas
  por la herramienta --como indicador inverso a la precisión-- y (c) si la
- solucion esperada por el arquitecto estaba entre las alternativas --como
+ solución esperada por el arquitecto estaba entre las alternativas --como
  indicador de validez.
 \end_layout
 
@@ -7135,7 +7096,15 @@ G2
 \end_layout
 
 \begin_layout Standard
-El sistema G2 se basa en la arquitectura client-server de tres bandas (
+El sistema G2 se basa en la arquitectura 
+\emph on
+client
+\emph default
+-
+\emph on
+server
+\emph default
+ de tres bandas (
 \emph on
 three-tier
 \emph default
@@ -7147,8 +7116,11 @@ reference "fig:Arquitectura-de-G2"
 \end_inset
 
 .
- El usuario interactúa por medio de un browser y envía solicitudes que son
- interceptadas por un servidor 
+ El usuario interactúa por medio de un 
+\emph on
+browser
+\emph default
+ y envía solicitudes que son interceptadas por un servidor 
 \emph on
 web
 \emph default
@@ -7225,8 +7197,16 @@ Arquitectura de G2
 
 \begin_layout Standard
 Los siguientes casos de estudio sobre el sistema G2 se efectuaron sobre
- el componente de la segunda banda del modelo three-tier, por ser éste el
- subsistema mas complejo y donde se concentró el trabajo de desarrollo.
+ el componente de la segunda banda del modelo 
+\emph on
+three
+\emph default
+-
+\emph on
+tier
+\emph default
+, por ser éste el subsistema mas complejo y donde se concentró el trabajo
+ de desarrollo.
 \end_layout
 
 \begin_layout Subsection
@@ -7240,7 +7220,7 @@ name "sub:G2-Caso-1"
 \end_layout
 
 \begin_layout Standard
-Con el objectivo de poder reconstruir uno de los aspectos más importantes
+Con el objetivo de poder reconstruir uno de los aspectos más importantes
  de la arquitectura del sistema G2, en este caso de estudio se utilizó la
  herramienta 
 \emph on
@@ -7250,7 +7230,6 @@ DRArch
  en 
 \emph on
 tareas.
- 
 \end_layout
 
 \begin_layout Subsubsection
@@ -7260,7 +7239,7 @@ Fase de recolección de información
 \begin_layout Standard
 Como primera fase, se debe seleccionar el código fuente que se va a incluir
  en el análisis.
- En este caso, utilizaremos todo el código fuente dispoinible del sistema
+ En este caso, utilizaremos todo el código fuente disponible del sistema
  G2.
  Luego, se debe incluir la información dinámica, y para esto, se debe ejecutar
  un caso de uso que represente la funcionalidad principal del sistema.
@@ -7270,8 +7249,12 @@ Como primera fase, se debe seleccionar el código fuente que se va a incluir
 removeUser.
  
 \emph default
-Aquí un usuario administrador envía por medio de su browser la solicitud
- de eliminar a otro usuario del sistema, siempre que sus permisos lo permitan.
+Aquí un usuario administrador envía por medio de su 
+\emph on
+browser
+\emph default
+ la solicitud de eliminar a otro usuario del sistema, siempre que sus permisos
+ lo permitan.
  El sistema retorna una página con el listado actualizado de usuarios.
 \end_layout
 
@@ -7289,7 +7272,7 @@ reference "fig:Instrumentación-de-la"
  para decidir el momento en que las acciones instrumentadas deben registrarse
  en el log de ejecución.
  Luego de reproducido el escenario sobre el sistema instrumentado, el log
- de ejecución generádo es transformado por el componente 
+ de ejecución generado es transformado por el componente 
 \emph on
 TraceLog Analizer, 
 \emph default
@@ -7329,10 +7312,6 @@ Instrumentación de la aplicación G2 durante el caso de uso “eliminar usuario
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -7405,12 +7384,12 @@ Una vez finalizada la fase de recolección, se continúa con la ejecución
 \end_layout
 
 \begin_layout Subsubsection
-Fase de invocación implícita (eliminar usuario)
+Fase de invocación implícita 
 \end_layout
 
 \begin_layout Standard
 Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
- y relaciones que estén materializados con invocaciónes implícitas: manejo
+ y relaciones que estén materializados con invocaciones implícitas: manejo
  de eventos, tareas, etc.
  De esta forma, se agruparon las reglas más importantes presentadas por
  la herramienta 
@@ -7421,15 +7400,114 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Detección de tareas: Este conjunto de reglas
+Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
+ artefactos del código fuente a componentes que representen una tarea.
 \end_layout
 
 \begin_layout Standard
-Detección de intermediarios:
+Detección de intermediarios: 
+\end_layout
+
+\begin_layout Subsubsection
+Fase de instanciación
+\end_layout
+
+\begin_layout Standard
+Luego de la fase de invocación implícita, se detectaron tareas ..
 \end_layout
 
 \begin_layout Standard
 Paths de ejecución:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RemoveUserComponentDRArch.png
+	width 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-componentes-DRArch-remove-user"
+
+\end_inset
+
+Diagrama de componentes generado por 
+\emph on
+DRArch
+\emph default
+ para el caso de uso "eliminar usuario" de la aplicación G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RemoveUserUCMDRArch.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-UCM-DRArch-remove-user"
+
+\end_inset
+
+Diagrama UCM generado por 
+\emph on
+DRArch
+\emph default
+ para el caso de uso "eliminar usuario" de la aplicación G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -7450,7 +7528,96 @@ Arquitectura Original G2
 \end_layout
 
 \begin_layout Standard
-...
+En esta sección se presentan algunos aspectos de la arquitectura original
+ la aplicación G2....
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RemoveUserComponent.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-componentes-g2-eliminar-usuario"
+
+\end_inset
+
+Diagrama de componentes original para el caso de uso "eliminar usuario"
+ de la aplicación G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RemoveUserUCM.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
+
+\end_inset
+
+Diagrama de UCMs original para el caso de uso "eliminar usuario" de la aplicació
+n G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
