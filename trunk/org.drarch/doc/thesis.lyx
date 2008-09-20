@@ -7010,6 +7010,62 @@ Casos de estudio
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Fronti says: Hola Alvaro, alvaro says: hola nico Fronti says: Como va? alvaro
+ says: todo bien..
+ Fronti says: te queria hacer una pregunta alvaro says: haga nomas Fronti
+ says: el lunes te mandamos lo que tenemos hasta ahora...
+ alvaro says: si lo recibi Fronti says: y para seguir trabajando con el
+ capitulo de los casos de estudio Fronti says: queria preguntarte si seguimos
+ con ese enfoque Fronti says: de mostrar un aspecto, reconstruirlo, y compararlo
+ con la arquitectura real alvaro says: la idea seria hacerlo incremental
+ alvaro says: ir descubriendo incrementalmente la arquitectura alvaro says:
+ mostrar el diseño objetos...
+ y ver que obtiene alvaro says: y despues ir aumentando el scope para ir
+ refinando la descripcion alvaro says: esa seria la idea del caso de estudio
+ alvaro says: hacerlo para un aspecto y despues armar una tabla con los
+ resultados de descubrimeinto del resto alvaro says: diciendo que componentes
+ encontro sobre que componentes debió encontrar alvaro says: y mostrando
+ tambien cuales reglas se tuvieron que agregar alvaro says: se entiende?
+ alvaro says: el primer caso deberia ser el market alvaro says: donde ustedes
+ refinan las reglas Fronti says: y despeus pasamos a G2 alvaro says: y despues
+ ver el G2 para ver si se mejoró la eficacia alvaro says: claro..
+ Fronti says: ok alvaro says: en el market introducen Bubble y despues el
+ caso g2 sale de ahi Fronti says: ok..se entiende alvaro says: y ven que reglas
+ tuvieron que agregar para descubrir la arquitectura G2..
+ alvaro says: es decir, que conocimiento del arquitectura tuvo que codificar
+ el arquitecto para recuperar con cierta eficacia el diseño.
+ Fronti says: ok Fronti says: vamos a intentar terminarlo para fin de mes
+ Fronti says: y despues nos damos una vuelta por Tandil asi charlamos de
+ lo que quede por hacer alvaro says: ok Fronti says: como va todo por ahi?
+ alvaro says: perfecto ..
+ yo hasta finde mes estoy super complicado alvaro says: y despues tambien
+ jjaja Fronti says: uuu alvaro says: avancen con las pruebas..
+ Fronti says: ok, entonces despues arreglamos bien en que momento podemos
+ pasar alvaro says: lo que tienen que definir son las métricas que van a
+ tomar del experimento Fronti says: algo como medir el tiempo, y la efectividad,
+ no? alvaro says: si.
+ el tiempo no creo que puedan salvo que lo hagan ustedes alvaro says: mas
+ que nada efectividad alvaro says: ahi te mande un paper de andres y luis
+ donde usan algunas metricas de comparar efectividad ..
+ alvaro says: para que tengas una idea de lo que hablo...
+ Fronti says: buenisimo alvaro says: no son especificamente esas pero pueden
+ usarlas para verificar..
+ alvaro says: y tambien pueden relacionar el error de precision del tool
+ con metricas del código fuente alvaro says: como complejidad ciclomática,
+ cantidad de sentencias, etc.
+ alvaro says: como para ver si sacan algoñ Fronti says: esta bien
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Este capítulo describe una serie de casos de estudio que realizamos para
  verificar si las suposiciones hechas a nivel conceptual pueden ser corroboradas
  en la práctica.
