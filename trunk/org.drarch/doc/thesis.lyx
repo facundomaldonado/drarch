@@ -7761,6 +7761,14 @@ ProLog
 \end_layout
 
 \begin_layout Standard
+Como aporte principal, 
+\emph on
+DRArch
+\emph default
+ permite ....Al mismo tiempo, el enfoque revela...
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -7813,6 +7821,23 @@ La desventaja principal del enfoque radica en la distancia entre un UCM
  deben ser especificados de manera manual.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Limitaciones Actuales
+\end_layout
+
+\begin_layout Standard
+El enfoque se basa en ciertas suposiciones y tiene algunas limitaciones...
+\end_layout
+
+\begin_layout Standard
+La desventaja principal del enfoque...
+\end_layout
+
 \begin_layout Standard
 La notación UCM da una noción de la estructura del sistema mediante componentes
  y responsabilidades, que es reforzada mediante los mapeos componente-clase
@@ -7837,11 +7862,8 @@ FLABot
 \emph default
  se encuentra estable y ha sido utilizado exitosamente en un gran número
  de aplicaciones.
- Sin embargo, justamente al modificar el código existente, es imposible
- garantizar que el comportamiento de la aplicación no se ve modificado respecto
- a su versión sin instrumentar.
- Por otro lado, la elección de los puntos a inspeccionar para generar un
- log de ejecución implica un 
+ Sin embargo, la elección de los puntos a inspeccionar para generar un log
+ de ejecución implica un 
 \emph on
 tradeoff
 \emph default
@@ -7854,26 +7876,9 @@ zar un análisis más preciso y exhaustivo,
  ya que se contaría con absolutamente toda la información posible acerca
  de la ejecución de la aplicación.
  Sin embargo, la cantidad de información almacenada se volvería inmanejable
- y la aplicación analizada.se vería extremadamente afectada en su rendimiento,
+ y la aplicación analizada se vería extremadamente afectada en su rendimiento,
  ya que por cada línea ejecutada se activaría el mecanismo de publicación
  y subscripción de eventos del instrumentador.
-\end_layout
-
-\begin_layout Standard
----------------
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Limitaciones Actuales
-\end_layout
-
-\begin_layout Standard
-...
 \end_layout
 
 \begin_layout Section
@@ -7885,6 +7890,43 @@ La elaboración de este trabajo, junto con la implementación del prototipo,
  puso en evidencia nuevas posibilidades para investigaciones futuras, como
  así también algunas posibles mejoras a la implementación existente.
  En esta sección se describen algunas de ellas.
+\end_layout
+
+\begin_layout Subsection
+Detección de Aspectos
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Subsection
+Validación de patrones de diseño
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Subsection
+Especialización del enfoque
+\end_layout
+
+\begin_layout Standard
+Durante la elaboración de este trabajo, se trató de mantener la generalidad
+ del enfoque al no limitarlo a ningún estilo arquitectónico en particular
+ o a algún conjunto de convenciones de implementación específico.
+ Como objetivo de diseño, ésto tuvo un efecto positivo en el trabajo ya
+ que permite el uso de la herramienta en cualquier sistema que haya sido
+ implementado en Java.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, creemos que los estilos arquitectónicos y las convenciones
+ de implementación pueden aportar información valiosa al enfoque.
+ Mediante la especificación de reglas, se puede mejorar su precisión incorporand
+o un catálogo de de reglas orientadas a los ditintos estilos arquitectónicos
+ así como también, reglas que cumplan con las convenciones de implementación.
 \end_layout
 
 \begin_layout Standard
