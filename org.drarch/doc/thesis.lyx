@@ -277,13 +277,13 @@ key "UCMBOOK"
 Todo sistema que involucra software posee una arquitectura de software.
  Sin embargo, no necesariamente existe en la práctica una documentación
  acertada de esta arquitectura.
- Es muy común que la gente que diseñó el sistema se ha ido de la organización,
- que la documentación es escasa y está des\SpecialChar \-
+ Es muy común que la gente que diseñó el sistema se haya ido de la organización,
+ que la documentación sea escasa y esté des\SpecialChar \-
 actua\SpecialChar \-
 li\SpecialChar \-
 za\SpecialChar \-
 da, que el código fuente
- se ha perdido, y lo único con que se cuenta es con el código ejecutable
+ se haya perdido, y lo único con lo que se cuenta es con el código ejecutable
  binario.
  En estas situaciones, dado que una arquitectura puede existir independientement
 e de su especificación, es que cobran importancia las enfoques de documentación
@@ -2016,7 +2016,7 @@ name "sec:Conclusión"
 
 \end_inset
 
-Resumen y discución 
+Resumen y discusión 
 \begin_inset Note Note
 status collapsed
 
@@ -5722,8 +5722,16 @@ JQuery
 \emph on
 DRArch
 \emph default
- está muy inﬂuenciado por la arquitectura ya deﬁnida por Eclipse.
- Esencialmente, Eclipse (ver Apéndice\InsetSpace ~
+ está muy inﬂuenciado por la arquitectura ya deﬁnida por 
+\emph on
+Eclipse
+\emph default
+.
+ Esencialmente, 
+\emph on
+Eclipse
+\emph default
+ (ver Apéndice\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "sec:Plataforma-Eclipse"
@@ -7703,21 +7711,169 @@ En los capítulos previos de este trabajo se presentó
 \emph on
 DRArch
 \emph default
-, un enfoque para la reconstrucción de ...
+, un enfoque para la reconstrucción de arquitecturas que define un proceso
+ interactivo, iterativo e incremental.
+ Mediante el uso de información estática (codigo fuente), dinámica (logs
+ de ejecución), experiencia de los distintos 
+\emph on
+stakeholders
+\emph default
+, etc., 
+\emph on
+DRArch
+\emph default
+ permite reconstruir la arquitectura de un sistema por medio de un proceso
+ en el cual el arquitecto acepta o rechaza sugerencias para generar diagramas
+ de UCMs.
 \end_layout
 
 \begin_layout Standard
-limitaciones actuales
+El prototipo de 
+\emph on
+DRArch
+\emph default
+ fue implementado como plug-in de 
+\emph on
+Eclipse
+\emph default
+, aprovechando su arquitectura extensible, su modelo para análisis estático
+ de código fuente Java y su framework de interfaz de usuario.
+ A su vez, ésto permitió aprovechar los editores de UCM y el módulo de instrumen
+tación de código de 
+\emph on
+FLABot
+\emph default
+ asi como tambíen la utilización del plug-in 
+\emph on
+JQuery
+\emph default
+, que es quien utiliza las ventajas de 
+\emph on
+Eclipse
+\emph default
+ sobre el metamodelo del lenguaje Java para realiza la transformación del
+ código fuente a una representación de hechos al estilo 
+\emph on
+ProLog
+\emph default
+.
+ 
 \end_layout
 
 \begin_layout Standard
-Trabajos Futuros
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Como aporte principal, 
+\emph on
+DRArch
+\emph default
+ permite actualizar los UCMs arquitectónicos con respecto a su implementación.
+ Al mismo tiempo, el enfoque revela violaciones a las reglas de comportamiento
+ impuestas por el estilo arquitectónico a un nivel de abstracción apropiado
+ para hacerlas evidentes.
+ Por lo tanto, el análisis realizado por la herramienta también puede ser
+ usado por el arquitecto para decidir la recodificación de algunas partes
+ de la implementación de acuerdo con las prescripciones arquitectónicas.
 \end_layout
 
 \begin_layout Standard
+Por otro lado, el enfoque se basa en ciertas suposiciones y tiene algunas
+ limitaciones.
+ Primero, cuando ocurre un cambio en el código fuente, suponemos que es
+ posible conocer los mapeos previos entre UCMs e implementación.
+ Esto significa que la implementación anterior a los cambios era consistente
+ con los escenarios descriptos en los UCMs.
+ Estos mapeos deberían ser especificados cuando el arquitecto crea los UCMs
+ por primera vez y luego procede a implementarlos.
+ En segundo lugar, el enfoque asume que las sincronizaciones entre UCMs
+ e implementación se realizan con una frecuencia acorde al ritmo de desarrollo
+ del sistema, para asegurar que los cambios entre las diferentes versiones
+ del código fuente presenten pocas variaciones.
+ Si esto no es así, el reconocimiento de las activaciones de responsabilidades
+ basado en los eventos de los logs de ejecución se puede volver computacionalmen
+te inmanejable.
+\end_layout
 
-\backslash
+\begin_layout Standard
+La desventaja principal del enfoque radica en la distancia entre un UCM
+ dado y las muchas implementaciones posibles para los paths de responsabilidades.
+ La herramienta trata de reconstruir los paths de responsabilidades usando
+ un análisis bidireccional, que combina ingeniería reversa de los logs de
+ ejecución con información semántica proveniente de los UCMs desactualizados.
+ Sin embargo, este procesamiento está lejos de ser automático, porque requiere
+ una cantidad considerable de conocimiento semántico que debe ser proporcionado
+ por el arquitecto.
+ El arquitecto interactúa con la herramienta en dos puntos: para proveer
+ los logs de ejecución correctos y para seleccionar entre las opciones de
+ conciliación.
+ Además, si bien la herramienta proporciona indicios de la aparición de
+ nuevas responsabilidades, tanto éstas como sus correspondientes mapeos
+ deben ser especificados de manera manual.
+\end_layout
 
+\begin_layout Standard
+La notación UCM da una noción de la estructura del sistema mediante componentes
+ y responsabilidades, que es reforzada mediante los mapeos componente-clase
+ y responsabilidad-método.
+ Sin embargo, esta información no puede considerarse una documentación completa
+ de la estructura de un sistema a nivel arquitectónico, ya que no define
+ de manera explícita las relaciones entre estos elementos (por ejemplo,
+ la estructura de herencia en una vista estática o los puertos y conectores
+ en tiempo de ejecución).
+ Otra debilidad que detectamos en nuestro enfoque es que su análisis es
+ puramente sintáctico: no considera la semántica de las prescripciones ni
+ los estilos arquitectónicos.
+\end_layout
+
+\begin_layout Standard
+Finalmente, es necesario mencionar algunas desventajas inherentes a las
+ técnicas de instrumentación de código y análisis de logs de ejecución,
+ que fueron acarreadas por este trabajo.
+ El módulo de instrumentación de 
+\emph on
+FLABot
+\emph default
+ se encuentra estable y ha sido utilizado exitosamente en un gran número
+ de aplicaciones.
+ Sin embargo, justamente al modificar el código existente, es imposible
+ garantizar que el comportamiento de la aplicación no se ve modificado respecto
+ a su versión sin instrumentar.
+ Por otro lado, la elección de los puntos a inspeccionar para generar un
+ log de ejecución implica un 
+\emph on
+tradeoff
+\emph default
+ importante.
+ En teoría, sería posible registrar la ejecución de cada línea de código
+ y el estado de todos los objetos en cada instante.
+ De esta manera, se podría rea\SpecialChar \-
+li\SpecialChar \-
+zar un análisis más preciso y exhaustivo,
+ ya que se contaría con absolutamente toda la información posible acerca
+ de la ejecución de la aplicación.
+ Sin embargo, la cantidad de información almacenada se volvería inmanejable
+ y la aplicación analizada.se vería extremadamente afectada en su rendimiento,
+ ya que por cada línea ejecutada se activaría el mecanismo de publicación
+ y subscripción de eventos del instrumentador.
+\end_layout
+
+\begin_layout Standard
+---------------
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Limitaciones Actuales
+\end_layout
+
+\begin_layout Standard
+...
 \end_layout
 
 \begin_layout Section
@@ -7731,8 +7887,155 @@ La elaboración de este trabajo, junto con la implementación del prototipo,
  En esta sección se describen algunas de ellas.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Subsection
-...
+Integración con aspectos estructurales
+\end_layout
+
+\begin_layout Standard
+Si bien 
+\emph on
+ArchSync
+\emph default
+ produjo buenos resultados en la sincronización de UCMs con implementación,
+ está claro que hay muchas partes de la documentación de una arquitectura
+ para las que esta notación no es apropiada.
+ Para abarcar una mayor proporción de la documentación, es necesario tener
+ en cuenta los aspectos estructurales de la arquitectura, generalmente especific
+ados mediante diagramas de 
+\emph on
+descomposición de módulos
+\emph default
+ para una vista estática, de 
+\emph on
+componentes y conectores
+\emph default
+ para vistas que representan la estructura en tiempo de ejecución y de 
+\emph on
+deployment
+\emph default
+ para mostrar cómo se relaciona el sistema con los elementos de su ambiente
+ que no son software.
+\end_layout
+
+\begin_layout Standard
+Creemos que la integración de algunos de los enfoques estructurales basados
+ en ingeniería reversa, presentados en la Sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sub:Estrategias-ingenieria-reversa"
+
+\end_inset
+
+, con el concepto de sincronización incremental presentado en este trabajo
+ puede ser beneficiosa por varias razones.
+ Principalmente, mejoraría el desempeño de 
+\emph on
+ArchSync
+\emph default
+ al permitir una sincronización más completa de la documentación de diseño.
+ Además, al aprovechar la documentación existente que no ha sido afectada
+ por los cambios en el código, se reduce la cantidad de información semántica
+ que se requiere y, por lo tanto, la necesidad de intervención del arquitecto
+ en el proceso.
+\end_layout
+
+\begin_layout Subsection
+Trazabilidad en métodos de diseño
+\end_layout
+
+\begin_layout Standard
+Los artefactos producidos durante el desarrollo de software --tales como
+ descripciones de modelos, diagramas, especificaciones formales abstractas
+ y código fuente-- están altamente interrelacionados, ya que los cambios
+ en algunos de ellos afectan a otros.
+ La falta de información acerca de estas relaciones o la incerteza acerca
+ de la información existente limita la utilidad de los modelos de software
+ durante el de\SpecialChar \-
+sa\SpecialChar \-
+rro\SpecialChar \-
+llo.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+ArchSync
+\emph default
+ ataca el problema particular de sincronización de relaciones entre código
+ fuente y UCMs.
+ Sin embargo, la perspectiva práctica tomada en el desarrollo de este trabajo
+ nos hace creer posible su extensión para soportar la sincronización de
+ otro tipo de relaciones entre elementos de los modelos.
+\end_layout
+
+\begin_layout Subsection
+Mapeo de paths con casos de test
+\end_layout
+
+\begin_layout Standard
+Una vez que la aplicación que está siendo analizada se ha puesto en ejecución,
+ el proceso de ejercitarla con los casos de uso correspondientes a los paths
+ de\SpecialChar \-
+sac\SpecialChar \-
+tua\SpecialChar \-
+li\SpecialChar \-
+za\SpecialChar \-
+dos se debe realizar de manera manual.
+ En caso de tener que verificar un número considerable de paths, la tarea
+ se puede volver muy tediosa, aumentando la probabilidad de introducir errores
+ en el análisis por distracciones del usuario.
+\end_layout
+
+\begin_layout Standard
+Un posible trabajo futuro para mitigar esta debilidad del enfoque puede
+ ser permitir el mapeo de UCMs con casos de test.
+ Al contar la herramienta con información acerca de qué caso de test corresponde
+ a cada path, sería posible la creación de los logs de ejecución necesarios
+ sin intervención del usuario.
+ Además, esto puede permitir un análisis de cobertura de los casos de test:
+ si se detecta que un log de ejecución no cubre cierta porción de código
+ que ha sido modificada, se puede advertir al usuario que es necesaria la
+ creación de un nuevo caso o la modificación del existente.
+\end_layout
+
+\begin_layout Subsection
+Especialización del enfoque
+\end_layout
+
+\begin_layout Standard
+Durante la elaboración de este trabajo, se trató de mantener la generalidad
+ del enfoque al no limitarlo a ningún estilo arquitectónico en particular
+ o a algún conjunto de convenciones de implementación específico.
+ Como objetivo de diseño, ésto tuvo un efecto positivo en el trabajo ya
+ que permite el uso de la herramienta en cualquier sistema que haya sido
+ implementado en Java.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, creemos que los estilos arquitectónicos y las convenciones
+ de implementación pueden aportar información valiosa al enfoque.
+ Mediante la especialización de las reglas de análisis de 
+\emph on
+Path-Log Matcher
+\emph default
+ para algún estilo particular, se puede mejorar su precisión al eliminar
+ algunas alternativas de conciliación que de antemano se sabe que no son
+ válidas.
+ Asimismo, se podrían introducir nuevas reglas en el componente 
+\emph on
+Diff Mapper
+\emph default
+ que, al aportar información acerca de las convenciones de implementación,
+ permitan una mayor precisión en la detección de nuevas responsabilidades.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
