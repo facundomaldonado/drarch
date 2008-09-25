@@ -7022,50 +7022,149 @@ Casos de estudio
 status open
 
 \begin_layout Standard
-Fronti says: Hola Alvaro, alvaro says: hola nico Fronti says: Como va? alvaro
- says: todo bien..
- Fronti says: te queria hacer una pregunta alvaro says: haga nomas Fronti
- says: el lunes te mandamos lo que tenemos hasta ahora...
- alvaro says: si lo recibi Fronti says: y para seguir trabajando con el
- capitulo de los casos de estudio Fronti says: queria preguntarte si seguimos
- con ese enfoque Fronti says: de mostrar un aspecto, reconstruirlo, y compararlo
- con la arquitectura real alvaro says: la idea seria hacerlo incremental
- alvaro says: ir descubriendo incrementalmente la arquitectura alvaro says:
- mostrar el diseño objetos...
- y ver que obtiene alvaro says: y despues ir aumentando el scope para ir
- refinando la descripcion alvaro says: esa seria la idea del caso de estudio
- alvaro says: hacerlo para un aspecto y despues armar una tabla con los
- resultados de descubrimeinto del resto alvaro says: diciendo que componentes
- encontro sobre que componentes debió encontrar alvaro says: y mostrando
- tambien cuales reglas se tuvieron que agregar alvaro says: se entiende?
- alvaro says: el primer caso deberia ser el market alvaro says: donde ustedes
- refinan las reglas Fronti says: y despeus pasamos a G2 alvaro says: y despues
- ver el G2 para ver si se mejoró la eficacia alvaro says: claro..
- Fronti says: ok alvaro says: en el market introducen Bubble y despues el
- caso g2 sale de ahi Fronti says: ok..se entiende alvaro says: y ven que reglas
- tuvieron que agregar para descubrir la arquitectura G2..
- alvaro says: es decir, que conocimiento del arquitectura tuvo que codificar
+alvaro says: la idea seria hacerlo incremental 
+\end_layout
+
+\begin_layout Standard
+alvaro says: ir descubriendo incrementalmente la arquitectura 
+\end_layout
+
+\begin_layout Standard
+alvaro says: mostrar el diseño objetos...
+ y ver que obtieneñ 
+\end_layout
+
+\begin_layout Standard
+alvaro says: y despues ir aumentando el scope para ir refinando la descripcion
+ 
+\end_layout
+
+\begin_layout Standard
+alvaro says: esa seria la idea del caso de estudio 
+\end_layout
+
+\begin_layout Standard
+alvaro says: hacerlo para un aspecto y despues armar una tabla con los resultado
+s de descubrimeinto del resto 
+\end_layout
+
+\begin_layout Standard
+alvaro says: diciendo que componentes encontro sobre que componentes debió
+ encontrar 
+\end_layout
+
+\begin_layout Standard
+alvaro says: y mostrando tambien cuales reglas se tuvieron que agregar 
+\end_layout
+
+\begin_layout Standard
+alvaro says: se entiende? 
+\end_layout
+
+\begin_layout Standard
+alvaro says: el primer caso deberia ser el market 
+\end_layout
+
+\begin_layout Standard
+alvaro says: donde ustedes refinan las reglas
+\end_layout
+
+\begin_layout Standard
+Fronti says: y despeus pasamos a G2 
+\end_layout
+
+\begin_layout Standard
+alvaro says: y despues ver el G2 para ver si se mejoró la eficacia 
+\end_layout
+
+\begin_layout Standard
+alvaro says: claro..
+ 
+\end_layout
+
+\begin_layout Standard
+Fronti says: ok 
+\end_layout
+
+\begin_layout Standard
+alvaro says: en el market introducen Bubble y despues el caso g2 sale de
+ ahi 
+\end_layout
+
+\begin_layout Standard
+Fronti says: ok..se entiende 
+\end_layout
+
+\begin_layout Standard
+alvaro says: y ven que reglas tuvieron que agregar para descubrir la arquitectur
+a G2..
+ 
+\end_layout
+
+\begin_layout Standard
+alvaro says: es decir, que conocimiento del arquitectura tuvo que codificar
  el arquitecto para recuperar con cierta eficacia el diseño.
- Fronti says: ok Fronti says: vamos a intentar terminarlo para fin de mes
- Fronti says: y despues nos damos una vuelta por Tandil asi charlamos de
- lo que quede por hacer alvaro says: ok Fronti says: como va todo por ahi?
- alvaro says: perfecto ..
- yo hasta finde mes estoy super complicado alvaro says: y despues tambien
- jjaja Fronti says: uuu alvaro says: avancen con las pruebas..
- Fronti says: ok, entonces despues arreglamos bien en que momento podemos
- pasar alvaro says: lo que tienen que definir son las métricas que van a
- tomar del experimento Fronti says: algo como medir el tiempo, y la efectividad,
- no? alvaro says: si.
- el tiempo no creo que puedan salvo que lo hagan ustedes alvaro says: mas
- que nada efectividad alvaro says: ahi te mande un paper de andres y luis
- donde usan algunas metricas de comparar efectividad ..
- alvaro says: para que tengas una idea de lo que hablo...
- Fronti says: buenisimo alvaro says: no son especificamente esas pero pueden
- usarlas para verificar..
- alvaro says: y tambien pueden relacionar el error de precision del tool
- con metricas del código fuente alvaro says: como complejidad ciclomática,
- cantidad de sentencias, etc.
- alvaro says: como para ver si sacan algoñ Fronti says: esta bien
+ 
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+alvaro says: lo que tienen que definir son las métricas que van a tomar
+ del experimento 
+\end_layout
+
+\begin_layout Standard
+Fronti says: algo como medir el tiempo, y la efectividad, no? 
+\end_layout
+
+\begin_layout Standard
+alvaro says: si.
+ el tiempo no creo que puedan salvo que lo hagan ustedes 
+\end_layout
+
+\begin_layout Standard
+alvaro says: mas que nada efectividad 
+\end_layout
+
+\begin_layout Standard
+alvaro says: ahi te mande un paper de andres y luis donde usan algunas metricas
+ de comparar efectividad ..
+ 
+\end_layout
+
+\begin_layout Standard
+alvaro says: para que tengas una idea de lo que hablo...
+ 
+\end_layout
+
+\begin_layout Standard
+Fronti says: buenisimo 
+\end_layout
+
+\begin_layout Standard
+alvaro says: no son especificamente esas pero pueden usarlas para verificar..
+ 
+\end_layout
+
+\begin_layout Standard
+alvaro says: y tambien pueden relacionar el error de precision del tool
+ con metricas del código fuente 
+\end_layout
+
+\begin_layout Standard
+alvaro says: como complejidad ciclomática, cantidad de sentencias, etc.
+ 
+\end_layout
+
+\begin_layout Standard
+alvaro says: como para ver si sacan algoñ 
+\end_layout
+
+\begin_layout Standard
+Fronti says: esta bien
 \end_layout
 
 \end_inset
@@ -7107,9 +7206,19 @@ la\SpecialChar \-
 ti\SpecialChar \-
 va\SpecialChar \-
 men\SpecialChar \-
-te estable del prototipo, se tomaron
- los artefactos relacionados con el código fuente de un proyecto comercial
- de tamaño mediano, llamado 
+te estable del prototipo, se realizó
+ la reconstrucción de un proyecto llamado Maket 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+comentar que tipo de proyecto es Market.
+\end_layout
+
+\end_inset
+
+y luego, se paso a reconstruir un proyecto comercial de tamaño mediano,
+ llamado 
 \emph on
 G2
 \emph default
@@ -7119,8 +7228,29 @@ G2
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agregar un comentario asi: ...descubriendo incrementalmente la arquitectura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 El capítulo se encuentra organizado de la siguiente manera.
- Primero se presentan los casos de 
+ Primero se presenta el caso de estudio Market en la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Market"
+
+\end_inset
+
+.
+ Luego se presenta un caso para el sistema 
 \emph on
 G2
 \emph default
@@ -7148,6 +7278,39 @@ reference "sec:Análisis-de-resultados"
 \end_inset
 
 , se comparan los resultados de ambos mediante un breve análisis.
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Market"
+
+\end_inset
+
+Market
+\end_layout
+
+\begin_layout Standard
+Market utiliza un framework basado en invocación implícita llamado Bubble
+ 
+\begin_inset LatexCommand cite
+key "CAMPO02"
+
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Mostrar el diseño de objetos
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -7190,12 +7353,7 @@ web
 \emph default
  para ser delegadas al servidor G2, en la segunda banda correspondiente
  a la lógica del negocio, por intermedio del componente GateKeeper.
- Esta banda fue implementada mediante la instanciación de un framework basado
- en 
-\emph on
-invocación implícita
-\emph default
- llamado 
+ Esta banda fue implementada mediante la instanciación del framework 
 \emph on
 Bubble
 \emph default
@@ -7294,6 +7452,20 @@ DRArch
  en 
 \emph on
 tareas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+mostrar como se fue aumentando el scope para ir refinando la descripcion
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -7470,6 +7642,19 @@ Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
 
 \begin_layout Standard
 Detección de intermediarios: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+qué reglas se tuvieron que agregar 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -7695,6 +7880,42 @@ Análisis de resultados
 
 \begin_layout Standard
 Los casos de prueba desarrollados...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+hacerlo para un aspecto y despues armar una tabla con los resultados de
+ descubrimeinto del resto 
+\end_layout
+
+\begin_layout Standard
+diciendo que componentes encontro sobre que componentes debió encontrar
+ 
+\end_layout
+
+\begin_layout Standard
+y mostrando tambien cuales reglas se tuvieron que agregar 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+y despues ver el G2 para ver si se mejoró la eficacia
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
