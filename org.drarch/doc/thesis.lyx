@@ -4630,6 +4630,25 @@ ubsistemas agrupando elementos de modelado.
 \begin_layout Subsubsection
 
 \emph on
+Fan-in / Fan-out
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agregar info y cambiar el titulo!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\emph on
 Hot Spot
 \emph default
  y 
@@ -7297,7 +7316,7 @@ key "CAMPO02"
 
 \end_inset
 
-...
+ ...
 \end_layout
 
 \begin_layout Standard
@@ -7311,6 +7330,130 @@ Mostrar el diseño de objetos
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Caso 1
+\end_layout
+
+\begin_layout Standard
+Con el objetivo de poder reconstruir uno de los aspectos más importantes
+ de la arquitectura del sistema Market, en este caso de estudio se utilizó
+ la herramienta 
+\emph on
+DRArch
+\emph default
+ teniendo en cuenta de que la funcionalidad del sistema esta organizada
+ en 
+\emph on
+tareas.
+\end_layout
+
+\begin_layout Subsubsection
+Fase de recolección de información
+\end_layout
+
+\begin_layout Standard
+Como primera fase, se debe seleccionar el código fuente que se va a incluir
+ en el análisis.
+ En este caso, utilizaremos todo el código fuente disponible del sistema
+ Market.
+ Luego, se debe incluir la información dinámica, y para esto, se debe ejecutar
+ un caso de uso que represente la funcionalidad principal del sistema.
+ Un caso de uso típico para este sistema es el de realizar una oferta (
+\emph on
+bidding
+\emph default
+).
+\end_layout
+
+\begin_layout Subsubsection
+Fase de estructura de paquetes
+\end_layout
+
+\begin_layout Standard
+Basado en el supuesto de que cualquier sistema se debe dividir en unidades
+ más pequeñas, esta fase intenta identificar esas unidades...
+\end_layout
+
+\begin_layout Standard
+Se identificaron tres unidades distintas: bubble, distribution y market.
+\end_layout
+
+\begin_layout Subsubsection
+Fase de invocación implícita 
+\end_layout
+
+\begin_layout Standard
+Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
+ y relaciones que puedan ser parte de un framework basado en invocaciones
+ implícitas: manejo de eventos, tareas, etc.
+ De esta forma, se agruparon las reglas más importantes presentadas por
+ la herramienta 
+\emph on
+DRArch
+\emph default
+ en las siguientes categorías:
+\end_layout
+
+\begin_layout Standard
+Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
+ artefactos del código fuente a componentes que representen una tarea.
+\end_layout
+
+\begin_layout Subsubsection
+Fase de materialización de invocación implícita 
+\end_layout
+
+\begin_layout Standard
+Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
+ y relaciones que estén materializados con invocaciones implícitas: 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+implementaciones de tareas, extender de eventos, etc.
+\end_layout
+
+\end_inset
+
+manejo de eventos, tareas, etc.
+ De esta forma, se agruparon las reglas más importantes presentadas por
+ la herramienta 
+\emph on
+DRArch
+\emph default
+ en las siguientes categorías:
+\end_layout
+
+\begin_layout Standard
+Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
+ artefactos del código fuente a componentes que representen una tarea.
+\end_layout
+
+\begin_layout Standard
+Detección de intermediarios: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+qué reglas se tuvieron que agregar 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Fase de instanciación
+\end_layout
+
+\begin_layout Standard
+Luego de las fases de invocación implícita, se detectaron tareas ..
 \end_layout
 
 \begin_layout Section
@@ -7620,7 +7763,7 @@ Una vez finalizada la fase de recolección, se continúa con la ejecución
 \end_layout
 
 \begin_layout Subsubsection
-Fase de invocación implícita 
+Fase de materialización de invocación implícita 
 \end_layout
 
 \begin_layout Standard
@@ -7673,7 +7816,7 @@ Paths de ejecución:
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -7720,7 +7863,7 @@ DRArch
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
