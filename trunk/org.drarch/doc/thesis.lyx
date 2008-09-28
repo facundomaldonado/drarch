@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -8135,21 +8135,72 @@ DRArch
  teniendo en cuenta de que la funcionalidad del sistema esta organizada
  en 
 \emph on
-tareas.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-mostrar como se fue aumentando el scope para ir refinando la descripcion
+tareas y eventos.
+ 
+\emph default
+Como se mencionó en la sección anterior, este sistema esta basado en el
+ framework 
+\emph on
+Bubble 
+\emph default
+de la misma forma que el sistema analizado anteriormente con lo cual se
+ reutilizarán las fases de analisis implementadas en el análisis anterior
+ para recuperar la instanciación del framework.
+ Posteriormente, aumentando el espacio de solución se iran descubriendo
+ todos aquellos componentes que interactuan con los componentes del framework.
  
 \end_layout
 
+\begin_layout Standard
+Un escenario donde pueden verse la implementación del framework Bubble en
+ el sistema G2 es el caso de uso RemoveUser (utilizado más tarde para ejercitar
+ la herramienta).
+ Aqui un usuario administrador envia por medio de su browser una solicitud
+ de eliminar a otro usuario del sistema, siempre que sus permisos lo permitan.
+ Cuando esta solicitud llega al sistema por medio del GateKeeper, se activan
+ los agentes encargados de eliminar a un usuario del modelo.
+ Una vez que el agente asignado detecta esta señal, invoca a la tarea de
+ eliminación, representada por la responsabilidad UCM 
+\emph on
+removeUser
+\emph default
+ 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
+
 \end_inset
 
+.
+ Mas adelante se eliminan los registros relacionados del repositorio de
+ datos, como lo indica la responsabilidad UCM 
+\emph on
+deleteUserFromDB
+\emph default
+ y finalmente se retorna a la pagina con un listado actualizado de los usuarios;
+ representado por la secuencia de activación de responsabilidades 
+\emph on
+listUsers
+\emph default
+, 
+\emph on
+generateHTMLResponse
+\emph default
+ y 
+\emph on
+sendResponse
+\emph default
+.
+\end_layout
 
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-componentes-g2-eliminar-usuario"
+
+\end_inset
+
+ presenta el diagrama de componentes documentado por G2.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -8163,19 +8214,7 @@ Como primera fase, se debe seleccionar el código fuente que se va a incluir
  G2.
  Luego, se debe incluir la información dinámica, y para esto, se debe ejecutar
  un caso de uso que represente la funcionalidad principal del sistema.
- Un escenario donde puede verse en acción el modelo típico del sistema G2
- es el caso de uso 
-\emph on
-removeUser.
- 
-\emph default
-Aquí un usuario administrador envía por medio de su 
-\emph on
-browser
-\emph default
- la solicitud de eliminar a otro usuario del sistema, siempre que sus permisos
- lo permitan.
- El sistema retorna una página con el listado actualizado de usuarios.
+ El escenario seleccionado fue removeUser descripto en la sección anterior.
 \end_layout
 
 \begin_layout Standard
@@ -8304,41 +8343,50 @@ Una vez finalizada la fase de recolección, se continúa con la ejecución
 \end_layout
 
 \begin_layout Subsubsection
-Fase de materialización de invocación implícita 
+Fase de invocación implícita 
 \end_layout
 
 \begin_layout Standard
-Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
- y relaciones que estén materializados con invocaciones implícitas: manejo
- de eventos, tareas, etc.
- De esta forma, se agruparon las reglas más importantes presentadas por
- la herramienta 
-\emph on
-DRArch
-\emph default
- en las siguientes categorías:
+Al igual que para el caso de analisis anterior, esta fase tiene como proposito
+ principal descubrir aquellos componentes y relaciones que pertenecen al
+ framework Bubble.
+ Las reglas DRArch que forman esta fase estan encargadas de materializar
+ artefactos de codigos fuentes que representen tareas, agentes y aquellos
+ encargados del manejo de eventos.
 \end_layout
 
 \begin_layout Standard
-Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
- artefactos del código fuente a componentes que representen una tarea.
+Al estar basados en el mismo framework que el caso de análisis anterior,
+ se reutilizaron las mismas reglas.
+ Más adelante se verá como de vuelve a ejecutar esta fase debido a información
+ extra que brindó la ejecución del caso de uso.
+\end_layout
+
+\begin_layout Subsubsection
+Fase de materialización
 \end_layout
 
 \begin_layout Standard
-Detección de intermediarios: 
+De nuevo, se reutilizaron las mismas reglas que en el caso anterior.
+ Una vez individualizados los puntos de extensión del framework de buscaron
+ los componentes específicos del dominio de G2.
+ Estos componentes responden a la instanciacion del framework para el caso
+ específico del sistema G2.
+ De esta forma, se detectaron los siguientes componentes basados en la ejercitac
+ion de DRArch con el caso de uso Remove User:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-qué reglas se tuvieron que agregar 
+RemoveUserTask, ListUserTask y StaticHTMLStaticTask y un monton mas .....
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Al termino de la ejecución de esta fase se cuenta con la base de conocimientos
+ cargada con la información específica del framework y su instanciación
+ en el dominio de G2.
+ Fases posteriores irán trabajando sobre esta base de conocimiento general
+ y la irán enriqueciendo con información que el arquitecto considere relevante
+ a las fases posteriores.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8346,11 +8394,68 @@ Fase de instanciación
 \end_layout
 
 \begin_layout Standard
-Luego de la fase de invocación implícita, se detectaron tareas ..
+Durante esta fase se trabajó sobre el caso de uso utilizado para ejercitar
+ la herramienta, RemoveUser.
+ Para elevar el nivel de detalle de la información recuperada se buscó seguir
+ el path de ejecución e ir individualizando a lo largo de este cuales eran
+ los componentes que tocaba.
+ Dado que es una aplicación multithread no se puede o mejor dicho no es
+ recomendable realizar un seguimiento de la ejecucíon a nivel de thread.
+ En lugar de esto se hizo a nivel de datos.
+ Es decir, un elemento es compartido y/o utilizado en la comunicacion de
+ cada uno de los distintos threads que componen la ejecución del sistema.
+ En el caso de G2 y mas específicamente de Bubble este elemento son los
+ Eventos.
+ Asi, siguiendo el rastro de un evento a lo largo de la ejecución del caso
+ de uso se encontró un nuevo tipo de componente que no habia sido descubierto
+ en fases anteriores y que pertenece al framework Bubble: los Sensores 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+(explicacion de que son los sensores?)
+\end_layout
+
+\end_inset
+
+.
+ Ya que la fase de invocación implícita se basó en el caso de análisis del
+ sistema Market y dada la simplicidad del caso de uso utilizado para ejercitar
+ DRArch en ese momento, han quedado fuera del analisis dinamico varios eventos
+ de bajo nivel que si fueron capturados gracias a la riqueza del caso de
+ uso utilizado para ejercitar DRArch con el sistema G2.
 \end_layout
 
 \begin_layout Standard
-Paths de ejecución:
+Con esta nueva información, se procedio a incorporar nuevas reglas a la
+ fase de invocación implícita que descubrieran estos eventos de bajo nivel
+ y se reejecutaron las fases anteriores.
+\end_layout
+
+\begin_layout Standard
+Al termino de la ejecucíon de esta fase se obtuvieron aquellos componentes
+ comprometidos con la ejecución del caso de uso que forman parte de la instancia
+ción del framework Bubble para el dominio de G2.
+\end_layout
+
+\begin_layout Subsubsection
+Fase de reconocimiento de intermediarios
+\end_layout
+
+\begin_layout Standard
+Una vez reconocidos los componentes que forman parte de la implementación
+ del framework, se pretendio encontrar todos aquellos componentes que interactua
+n con los elementos del framework.
+ De esta forma se descubrieron los componentes GateKeeper y UserDBView encargado
+s de activar los agentes que ejecutan las tareas y de abstraer el acceso
+ a la capa de persistencia de datos respectivamente.
+\end_layout
+
+\begin_layout Standard
+Las figuras ...
+ y ...
+ reflejan como ha resultado la reconstrucción de la arquitectura para el
+ sistema G2 basados en el caso de uso "elimina usuario".
 \end_layout
 
 \begin_layout Standard
@@ -8362,7 +8467,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/RemoveUserComponentDRArch.png
+	filename img/Recovered G2 Components.jpg
 	width 40theight%
 
 \end_inset
@@ -8405,7 +8510,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/RemoveUserUCMDRArch.png
+	filename img/Recovered G2 UCM.jpg
 	width 50theight%
 
 \end_inset
@@ -8437,14 +8542,6 @@ DRArch
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Caso 2
-\end_layout
-
-\begin_layout Standard
-...
 \end_layout
 
 \begin_layout Section
@@ -8493,10 +8590,6 @@ Diagrama de componentes original para el caso de uso "eliminar usuario"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
