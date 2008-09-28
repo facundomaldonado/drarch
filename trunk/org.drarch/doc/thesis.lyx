@@ -7557,6 +7557,65 @@ TimerSensor
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+La documentación de la arquitectura del Market provee un conjunto de UCMs
+ que nos permiten entender el comportamiento del sistema.
+ Con el objetivo de poder hacer comparaciónes con los resultados obtenidos
+ con el 
+\emph on
+DRArch
+\emph default
+, en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Market-UCMs"
+
+\end_inset
+
+ se muestran algunos de estos UCMs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/MarketDiagramasUCM.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Market-UCMs"
+
+\end_inset
+
+Diagramas UCMs para el proyecto Market
+\emph on
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Caso 1
 \end_layout
@@ -7781,7 +7840,7 @@ Fase de materialización de invocación implícita
 Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
  y relaciones que estén materializados con invocaciones implícitas: 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 implementaciones de tareas, extender de eventos, etc.
@@ -7836,7 +7895,7 @@ reference "fig:Resultado-de-la-fase-de-materializacion-i-e-market"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -7897,7 +7956,7 @@ reference "fig:Resultado-de-la-fase-de-instanciacion-market"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
