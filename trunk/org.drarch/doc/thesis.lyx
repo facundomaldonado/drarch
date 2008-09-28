@@ -7226,24 +7226,23 @@ ti\SpecialChar \-
 va\SpecialChar \-
 men\SpecialChar \-
 te estable del prototipo, se realizó
- la reconstrucción de un proyecto llamado Maket 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-comentar que tipo de proyecto es Market.
-\end_layout
-
-\end_inset
-
-y luego, se paso a reconstruir un proyecto comercial de tamaño mediano,
- llamado 
+ la reconstrucción de un proyecto prototipo llamado Maket, y luego, se paso
+ a reconstruir un proyecto comercial de tamaño mediano, llamado 
 \emph on
 G2
 \emph default
 .
  En esta etapa, se probó el desempeño de la herramienta frente a un sistema
  real.
+ Ambos proyectos utilizan un framework basado en invocaciones implícitas
+ llamado Bubble\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "CAMPO02"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7309,14 +7308,73 @@ Market
 \end_layout
 
 \begin_layout Standard
-Market utiliza un framework basado en invocación implícita llamado Bubble
- 
+Market es un sistema donde compradores (
+\emph on
+buyers
+\emph default
+) y vendedores (
+\emph on
+sellers
+\emph default
+) son libres de realizar transacciones.
+ De esta forma, el mercado es un contenedor de agentes en donde compradores
+ y vendedores son slimples agentes (
+\emph on
+agents
+\emph default
+).
+ Todos los agentes pueden realizar un conjunto de tareas (
+\emph on
+tasks
+\emph default
+).
+ Una tarea esta compuesta por uno o mas procedimientos.
+ Las tareas se disparan con condiciones predefinidas, y pueden estar relacionada
+s al estado interno del agente o a un evento 
+\begin_inset LatexCommand cite
+key "Drogoul92"
+
+\end_inset
+
+.
+ Para realizar este comportamiento, Market utiliza un framework basado en
+ invocación implícita llamado Bubble\InsetSpace ~
+
 \begin_inset LatexCommand cite
 key "CAMPO02"
 
 \end_inset
 
- ...
+, donde los componentes principales son: agentes, tareas, sensores y eventos.
+ Los agentes representan entidades del dominio y para separa el estado de
+ las acciones, se utiliza la nocion de tareas.
+ La interacción entre los agentes, llamados bubbles, es realizada a travez
+ de eventos que ellos mismos producen y reciven.
+ Los agentes estan asociados a sensores (como filtros) que son registrados
+ para activarse con determinados eventos ó grupos de eventos 
+\begin_inset LatexCommand cite
+key "Andres2001"
+
+\end_inset
+
+.
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-clases-Bubble"
+
+\end_inset
+
+ muestra un diagrama de clases del framework Bubble con las principales
+ clases pintadas con color azul y la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Modelo-arquitectónico-del-Bubble"
+
+\end_inset
+
+ muestra un diagrama del modelo arquitectónico del fremework.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7324,7 +7382,7 @@ key "CAMPO02"
 status open
 
 \begin_layout Standard
-Mostrar el diseño de objetos
+Traducir la fiugra!
 \end_layout
 
 \end_inset
@@ -7332,6 +7390,173 @@ Mostrar el diseño de objetos
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/BubbleCoreClassDiagram.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-clases-Bubble"
+
+\end_inset
+
+Diagrama de clases del framework Bubble.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/BubbleModeloConceptual.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Modelo-arquitectónico-del-Bubble"
+
+\end_inset
+
+Modelo arquitectónico del framework Bubble.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La instanciación del framework Bubble que realiza Market esta materializada
+ con las siguientes clases:
+\end_layout
+
+\begin_layout Itemize
+Tareas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+BidTask
+\end_layout
+
+\begin_layout Itemize
+BuyTask
+\end_layout
+
+\begin_layout Itemize
+InitializeTimerTask
+\end_layout
+
+\begin_layout Itemize
+ProcessOrderTask
+\end_layout
+
+\begin_layout Itemize
+RequestTask
+\end_layout
+
+\begin_layout Itemize
+SellTask
+\end_layout
+
+\begin_layout Itemize
+TimerTask
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Agentes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Customer
+\end_layout
+
+\begin_layout Itemize
+Dealer
+\end_layout
+
+\begin_layout Itemize
+Timer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Eventos
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MarketAgentEvent
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sensores
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CustomerSensor
+\end_layout
+
+\begin_layout Itemize
+DealerSensor
+\end_layout
+
+\begin_layout Itemize
+TimerSensor
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Caso 1
 \end_layout
@@ -7365,6 +7590,63 @@ Como primera fase, se debe seleccionar el código fuente que se va a incluir
 bidding
 \emph default
 ).
+ Debido a que la aplicación es un un ejemplo para utilizar el framework
+ Bubble, hay un único punto de entrada al sistema que ejecuta todos los
+ casos de uso sin interface de gráfica (modo consola) y sin necesidad de
+ utilizar datos de entrada.
+ En la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Configuración-del-log"
+
+\end_inset
+
+ se mustra la configuracion necesaria para generar el log de ejecución.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/EclipseRunFlabotConfiguration.png
+	width 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Configuración-del-log"
+
+\end_inset
+
+Configuración para la generación del log de ejecución en 
+\emph on
+Eclipse
+\emph default
+ utilizando 
+\emph on
+FLAbot.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -7373,27 +7655,56 @@ Fase de estructura de paquetes
 
 \begin_layout Standard
 Basado en el supuesto de que cualquier sistema se debe dividir en unidades
- más pequeñas, esta fase intenta identificar esas unidades...
-\end_layout
-
-\begin_layout Standard
-Se identificaron tres unidades distintas: bubble, distribution y market.
+ más pequeñas, esta fase intenta identificar esas unidades con el objetivo
+ de acotar el análisis y hacer foco en las unidades de mayor relevancia.
+ Las reglas que componen esta fase son simples (del estilo 
+\family typewriter
+package(?P)
+\family default
+) ya que proponen la divisón de unidades basandose en la estrutura de paquetes
+ que presenta el código fuente.
+ De esta forma, se identificaron tres unidades distintas: 
+\family typewriter
+bubble.core
+\family default
+, 
+\family typewriter
+distribution
+\family default
+ y 
+\family typewriter
+market
+\family default
+.
+ 
 \end_layout
 
 \begin_layout Subsubsection
+\begin_inset LatexCommand label
+name "sub:Fase-de-invocación-implicita"
+
+\end_inset
+
 Fase de invocación implícita 
 \end_layout
 
 \begin_layout Standard
 Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
  y relaciones que puedan ser parte de un framework basado en invocaciones
- implícitas: manejo de eventos, tareas, etc.
- De esta forma, se agruparon las reglas más importantes presentadas por
- la herramienta 
+ implícitas: manejo de eventos, tareas, agentes, etc.
+ Con la división de unidades realizada en la fase anterior, se decidió correr
+ esta fase únicamente a los artefáctos de código fuente ubicados dentro
+ del pauqete 
+\family typewriter
+bubble.core
+\family default
+, ya que por su nombre y por las clases que lo continen, se presenta como
+ candidato para alojar los componentes principales del framework.
+ Las reglas más importantes presentadas por la herramienta 
 \emph on
 DRArch
 \emph default
- en las siguientes categorías:
+ se agrupan en las siguientes categorías:
 \end_layout
 
 \begin_layout Standard
@@ -7401,8 +7712,69 @@ Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
  artefactos del código fuente a componentes que representen una tarea.
 \end_layout
 
+\begin_layout Standard
+Detección de eventos: 
+\end_layout
+
+\begin_layout Standard
+Detección de agentes: 
+\end_layout
+
+\begin_layout Standard
+El resultado obtenido luego de la ejecución de esta fase es un conjunto
+ de diagramas y los más importantes se muestran en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Resultado-de-la-fase-de-invocacion-implicita-market"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/BubbleDiagramasDrarch.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Resultado-de-la-fase-de-invocacion-implicita-market"
+
+\end_inset
+
+Resultado de la fase de Invocación Implícita
+\emph on
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
-Fase de materialización de invocación implícita 
+Fase de materialización de invocación implícita
 \end_layout
 
 \begin_layout Standard
@@ -7448,12 +7820,122 @@ qué reglas se tuvieron que agregar
 
 \end_layout
 
+\begin_layout Standard
+El resultado obtenido luego de la ejecución de esta fase se muestra en la
+ Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Resultado-de-la-fase-de-materializacion-i-e-market"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/MarketDiagramasDrarch.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Resultado-de-la-fase-de-materializacion-i-e-market"
+
+\end_inset
+
+Resultado de la fase de Materialización de Invocación Implícita
+\emph on
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Fase de instanciación
 \end_layout
 
 \begin_layout Standard
 Luego de las fases de invocación implícita, se detectaron tareas ..
+\end_layout
+
+\begin_layout Standard
+El resultado obtenido luego de la ejecución de esta fase se muestra en la
+ Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Resultado-de-la-fase-de-instanciacion-market"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/MarketDiagramasUCMDrarch.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Resultado-de-la-fase-de-instanciacion-market"
+
+\end_inset
+
+Resultado de la fase de Instanciación del Market
+\emph on
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados Obtenidos
 \end_layout
 
 \begin_layout Section
@@ -7850,10 +8332,6 @@ DRArch
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -7928,7 +8406,7 @@ En esta sección se presentan algunos aspectos de la arquitectura original
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -7972,7 +8450,7 @@ Diagrama de componentes original para el caso de uso "eliminar usuario"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
