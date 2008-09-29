@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -8658,7 +8658,412 @@ Análisis de resultados
 \end_layout
 
 \begin_layout Standard
-Los casos de prueba desarrollados...
+Los casos de prueba desarrollados en el presente capítulo ponen bajo análisis
+ dos sistemas de proporciones diferentes.
+ Por un lado, Market, un proyecto de ejemplo para probar el funcionamiento
+ de un framework, con unas 40 clases, especifiacado parcialmente a nivel
+ arquitectónico por 10 escenarios UCM.
+ Por otro lado, G2, un proyecto mediano de aproximadamente 900 clases, también
+ especificado parcialmente a nivel arquitectónico por 34 escenarios UCM.
+ Si bien es importante tener en cuenta la cantidad de clases como medida
+ de tamaño de un sistema, en nuestro caso es importante determinar cuáles
+ de estas clases juegan un papel importante en la materialización de la
+ arquitectura.
+\end_layout
+
+\begin_layout Standard
+En la fase de recolección de información de los casos de estudio, los casos
+ de uso que se selecionaron para generar el log de ejecución, se basaron
+ en los escenarios UCM disponibles en la documentación arquitectúra de cada
+ proyecto.
+ De esta forma, es posible medir la eficacia del 
+\emph on
+DRArch
+\emph default
+ comparando los componentes descubriertos sobre los que debería haber decubierto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+En el caso de 
+\emph on
+G2
+\emph default
+, 
+\emph on
+ArchSync
+\emph default
+ determinó que el 
+\emph on
+source code 
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\emph default
+ de prueba estaba conformado por 20 clases modificadas.
+ Sin embargo, solamente 2 de ellas tenían mapeos arquitectónicos.
+ En otras palabras, 
+\emph on
+ArchSync
+\emph default
+ redujo el espacio de búsqueda en un 90%.
+ Estas 2 clases representan el 2,04% del total de clases con importancia
+ arquitectónica, y los dos paths detectados por 
+\emph on
+ArchSync
+\emph default
+ como potencialmente modificados representan el 5,88% de todos los paths
+ de la especificación UCM.
+ Esto significó un ahorro significativo en el esfuerzo del arquitecto, ya
+ que evitó revisar un 97,96% de las clases relevantes y un 94,12% de los
+ paths.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, en el caso del proyecto 
+\emph on
+FLABot,
+\emph default
+ el 
+\emph on
+source code 
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\emph default
+ del caso de estudio estaba constituido por un total de 91 clases modificadas,
+ de las cuales solo 15 afectaban algún flujo de control en la especificación
+ UCM.
+ Al detectar esto, 
+\emph on
+ArchSync
+\emph default
+ redujo el espacio de búsqueda en un 83,52%.
+ Esas 15 clases representan el 5,56% del total de clases relevantes arquitectóni
+camente, y 
+\emph on
+ArchSync
+\emph default
+ detectó que 11,48% de los paths (14 de 122) habían sido cambiados.
+ Esto evitó revisar un 94,44% de las clases relevantes y un 88,52% de los
+ paths.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un resumen de estos índices puede verse en el Cuadro\InsetSpace ~
+.
+ 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features>
+<column alignment="left" valignment="top" rightline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Market
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+G2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+# total de clases
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+~40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+~900
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+# clases con mapeo arquitectónico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+98
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+# artefactos arquitectónicos que se debe reconstruir
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+# artefactos arquitectónicos reconstruidos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+% clases con mapeo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2,04%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+% artefactos arquitectónicos que se debe reconstruir
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+% artefactos arquitectónicos reconstruidos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+% eficiencia
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "cap:Estado-del-proyecto"
+
+\end_inset
+
+Estado del proyecto ante cambios en la implementación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8667,16 +9072,15 @@ status open
 
 \begin_layout Standard
 hacerlo para un aspecto y despues armar una tabla con los resultados de
- descubrimeinto del resto 
+ descubrimeinto del resto
 \end_layout
 
 \begin_layout Standard
 diciendo que componentes encontro sobre que componentes debió encontrar
- 
 \end_layout
 
 \begin_layout Standard
-y mostrando tambien cuales reglas se tuvieron que agregar 
+y mostrando tambien cuales reglas se tuvieron que agregar
 \end_layout
 
 \end_inset
