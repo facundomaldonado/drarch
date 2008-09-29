@@ -216,6 +216,14 @@ addcontentsline{toc}{chapter}{Agradecimientos}
 \end_layout
 
 \begin_layout Standard
+\begin_inset FloatList algorithm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
@@ -6871,6 +6879,265 @@ ProLog
  El proceso de transformación sigue un algoritmo simple: el componente utiliza
  la información de mapeo entre responsabilidades y métodos recorriendo el
  log de ejecución, tomando sus entradas (ejecuciones de métodos) una a una.
+ Este proceso se muestra en el Algoritmo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "alg:Algoritmo-Log-Analyzer"
+
+\end_inset
+
+.
+ Este algorítmo tambíen se encarga de generar los hachos del estilo 
+\family typewriter
+stapshot
+\family default
+, encargados de guardar la información relacionada con el estado del sistema
+ en el momento que se ejecuto una responsabilidad.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+relacionarlo con el parametro de configuracion "profundidad"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
+\series bold
+log-analyzer
+\series default
+(log: Log, mappings: Mappings)
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+factList = new List
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+for
+\series default
+ entradaLog 
+\series bold
+in
+\series default
+ log
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+responsabilidades = mappings.getResponsibilities(entradaLog)
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+materializaciones = responsabilidades.getExecutions()
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+for
+\series default
+ materialization 
+\series bold
+in
+\series default
+ materializaciones
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+execId = materialization.getTags().get("executionId")
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+exitValue = materialization.getTags().get("value")
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+arguments[] = materialization.getTags().get("arguments")
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+behavior = materialization.getTags().get("behavior")
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+methodName = behavior.getTags() .get("name")
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+className = behavior.getTags().get("declaringClass")
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+factsList.add(predicateFactory.createExecutedMethodValue(
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+className + "." + methodName, execId, exitValue, arguments[]))
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+snapshotFacts(materialization)
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+return
+\series default
+ factList
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+end log-analyzer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "alg:Algoritmo-Log-Analyzer"
+
+\end_inset
+
+Algoritmo Log Analyzer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7776,7 +8043,9 @@ Detección de eventos:
 \end_layout
 
 \begin_layout Standard
-Detección de agentes: 
+Detección del agente: Como dijimos anteriormente, los agentes representan
+ entidaded del sistema, y este conjunto de reglas intenta decubrir el conjunto
+ de clases que se materializan con un componente agente.
 \end_layout
 
 \begin_layout Standard
@@ -7864,19 +8133,6 @@ Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
 
 \begin_layout Standard
 Detección de intermediarios: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-qué reglas se tuvieron que agregar 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -8632,20 +8888,6 @@ DRArch
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-\begin_inset LatexCommand label
-name "sec:Arquitectura-Original-G2"
-
-\end_inset
-
-Arquitectura Original G2
-\end_layout
-
-\begin_layout Standard
-En esta3 sección se presentan algunos aspectos de la arquitectura original
- la aplicación G2....
 \end_layout
 
 \begin_layout Section
@@ -9737,6 +9979,12 @@ Detección de Aspectos
 
 \begin_layout Standard
 ...
+\begin_inset LatexCommand cite
+key "BCHRT05"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -9744,7 +9992,25 @@ Validación de patrones de diseño
 \end_layout
 
 \begin_layout Standard
-...
+Es muy común que los sistemas se desarrollen utilizando patrontes de diseño
+ ya que representan soluciones a problemas genéricos 
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+.
+ Muchas veces es necesario asegurarse de que los patrones estén implementados
+ correctamente, ya que las modificaciones en el código fuente durante el
+ desarrollo del sistema pueden afectar los patrones existentes.
+ Se pude utitilizar una parte de la funcionalidad del 
+\emph on
+DRArch
+\emph default
+ para generar reglas que validen si los patrones de diseño están implementados
+ correctamente.
+ El diseño flexible de la herramiente permite realizar esta modificación
+ realizando cambios menores en el código fuente.
 \end_layout
 
 \begin_layout Subsection
@@ -9766,6 +10032,14 @@ Sin embargo, creemos que los estilos arquitectónicos y las convenciones
  Mediante la especificación de reglas, se puede mejorar su precisión incorporand
 o un catálogo de de reglas orientadas a los ditintos estilos arquitectónicos
  así como también, reglas que cumplan con las convenciones de implementación.
+ Si mediante un conjunto de reglas se detecta cuál es el estilo arquitectónico
+ que predomina en el sistema, entonces es posible aplicar un segundo conjunto
+ de reglas que sean específicas para el estilo arquitectónico predominante,
+ y así mejorar la eficacia del 
+\emph on
+DRArch
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
