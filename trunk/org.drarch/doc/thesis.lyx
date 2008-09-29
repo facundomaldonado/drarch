@@ -8115,6 +8115,86 @@ tier
  de desarrollo.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RemoveUserComponent.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-componentes-g2-eliminar-usuario"
+
+\end_inset
+
+Diagrama de componentes original para el caso de uso "eliminar usuario"
+ de la aplicación G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RemoveUserUCM.png
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
+
+\end_inset
+
+Diagrama de UCMs original para el caso de uso "eliminar usuario" de la aplicació
+n G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Caso 1
 \begin_inset LatexCommand label
@@ -8452,8 +8532,18 @@ s de activar los agentes que ejecutan las tareas y de abstraer el acceso
 \end_layout
 
 \begin_layout Standard
-Las figuras ...
- y ...
+Las figuras 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-componentes-DRArch-remove-user"
+
+\end_inset
+
+ y 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-UCM-DRArch-remove-user"
+
+\end_inset
+
  reflejan como ha resultado la reconstrucción de la arquitectura para el
  sistema G2 basados en el caso de uso "elimina usuario".
 \end_layout
@@ -8467,7 +8557,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/Recovered G2 Components.jpg
+	filename img/Recovered G2 Components.png
 	width 40theight%
 
 \end_inset
@@ -8510,7 +8600,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/Recovered G2 UCM.jpg
+	filename img/Recovered G2 UCM.png
 	width 50theight%
 
 \end_inset
@@ -8556,90 +8646,6 @@ Arquitectura Original G2
 \begin_layout Standard
 En esta sección se presentan algunos aspectos de la arquitectura original
  la aplicación G2....
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/RemoveUserComponent.png
-	width 50theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-de-componentes-g2-eliminar-usuario"
-
-\end_inset
-
-Diagrama de componentes original para el caso de uso "eliminar usuario"
- de la aplicación G2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/RemoveUserUCM.png
-	width 50theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
-
-\end_inset
-
-Diagrama de UCMs original para el caso de uso "eliminar usuario" de la aplicació
-n G2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
