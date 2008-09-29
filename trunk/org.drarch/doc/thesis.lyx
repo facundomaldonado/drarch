@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -8040,6 +8040,16 @@ Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
 
 \begin_layout Standard
 Detección de eventos: 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+faltan aclaraciones
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8133,6 +8143,29 @@ Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
 
 \begin_layout Standard
 Detección de intermediarios: 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agragar como fase nueva???
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agragar mas descripcion
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8194,6 +8227,16 @@ Fase de instanciación
 
 \begin_layout Standard
 Luego de las fases de invocación implícita, se detectaron tareas ..
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+falta info
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8212,7 +8255,7 @@ reference "fig:Resultado-de-la-fase-de-instanciacion-market"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -8247,10 +8290,6 @@ Resultado de la fase de Instanciación del Market
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Resultados Obtenidos
 \end_layout
 
 \begin_layout Section
@@ -8805,6 +8844,19 @@ reference "fig:Diagrama-UCM-DRArch-remove-user"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ordenar los componentes de la figura y que no quede ninguno selecionado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -8927,6 +8979,19 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
+status open
+
+\begin_layout Standard
+comentar la tabla! ver la siguiente nota como ejemplo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
 status collapsed
 
 \begin_layout Standard
@@ -9005,7 +9070,7 @@ ArchSync
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -9427,6 +9492,106 @@ DRArch
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+comentar los graficos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/CasosDeEstudioEficacia.PNG
+	width 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Eficacia-entre-los-artefactos"
+
+\end_inset
+
+Eficacia entre los distintos artefatos arquitectónicos para los proyectos
+ Market y G2.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/CasosDeEstudioEficaciaMejorada.PNG
+	width 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Mejora-de-la-Eficacia"
+
+\end_inset
+
+Mejora de la Eficacia luego de la incorporación de nuevas reglas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 Un resumen de estos índices puede verse en el Cuadro\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -9439,7 +9604,7 @@ reference "tab:Eficacia-del-DRArch"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -9550,7 +9715,7 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-4
+
 \end_layout
 
 \end_inset
@@ -9579,7 +9744,7 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-3
+
 \end_layout
 
 \end_inset
@@ -9978,6 +10143,19 @@ Detección de Aspectos
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agregar info con Pau
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 ...
 \begin_inset LatexCommand cite
 key "BCHRT05"
@@ -10011,6 +10189,19 @@ DRArch
  correctamente.
  El diseño flexible de la herramiente permite realizar esta modificación
  realizando cambios menores en el código fuente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agragar algo mas de info
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -12512,6 +12703,19 @@ Predicados ternarios
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agragar el fact snapshot
 \end_layout
 
 \end_inset
