@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -4654,6 +4654,520 @@ agregar info y cambiar el titulo!
 
 \end_layout
 
+\begin_layout Standard
+Analisis basado en Fan-in / Fan-out
+\end_layout
+
+\begin_layout Subsubsection
+Reconocimiento de componentes de utilidad.
+\end_layout
+
+\begin_layout Standard
+\align block
+Cuando se busca reconocer componentes basado en eventos arquitectonicos
+ de bajo nivel, es interesante tambien filtrar o excluir del análisis aquellos
+ que no aportan valor agregado al análisis.
+ En la literatura, estos elementos son conocidos como componentes de utilidad.
+ Dichos componentes determinan detalles de implementación de bajo nivel.
+ 
+\begin_inset LatexCommand cite
+key "Abdelwahab"
+
+\end_inset
+
+ define un componente de utilidad como: Cualquier elemento de un programa
+ diseñado por conveniencia del diseñador o el programador con la intensión
+ de ser accedido desde múltiples lugares dentro de cierto ámbito (scope)
+ dentro del programa.
+ Con el propósito de detectar componentes de utilidad, 
+\begin_inset LatexCommand cite
+key "Abdelwahab"
+
+\end_inset
+
+ desarrollaron un algoritmo basado en un analisis fan-in.
+ La técnica de análisis de fan-in está basado en la exploración del grafo
+ de dependencias de clases construido a raíz del análisis estático del sistema
+ y se encarga de individualizar aquellas clases que tienen un gran número
+ de arcos entrantes (muchas clases dependientes).
+ El grafo de dependecias de clases es un grafo dirigido donde los nodos
+ son las clases del sistema y los arcos representan las relaciones entre
+ las clases como se muestra en la figura 
+\begin_inset LatexCommand ref
+reference "fig:Grafo-de-dependencias Utilidad"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/Utility Component Graph.png
+	width 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Grafo-de-dependencias Utilidad"
+
+\end_inset
+
+Grafo de dependencias que muestra un componente utilidad y clase de entrada
+ al módulo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Para determinar si una clase es considerada una utilidad, se propone la
+ siguiente medición:
+\end_layout
+
+\begin_layout Standard
+Dada una clase C y los siguientes conjuntos:
+\end_layout
+
+\begin_layout Standard
+* S: Conjunto de clases consideradas en el análisis.
+\end_layout
+
+\begin_layout Standard
+* IN: Un subconjunto de S que consiste en las clases que dependen de C (fan-in).
+\end_layout
+
+\begin_layout Standard
+Se define la medición de utilidad U de la clase C como:
+\end_layout
+
+\begin_layout Standard
+U = |IN| / (|S|-1)
+\end_layout
+
+\begin_layout Standard
+S es usado para representar el scope considerado en el análisis de U.
+ Por ejemplo, si se estan buscando utilidades a nivel de sistema, S contendrá
+ todas las clases del sistema.
+ Por el contrario, si la busqueda está restringida a un paquete en particular,
+ entonces S contendrá solo las clases de dicho paquete.
+\end_layout
+
+\begin_layout Standard
+Los valores de U varian de 0 a 1.
+ 0 indica que la clase no tiene arcos de entrada.
+ Este dato es de mucha utilidad dado que cuando por ejemplo se esté evaluando
+ un módulo específico, esta clase determina el punto de acceso a dicho módulo.
+ Si en cambio evaluamos el sistema entero, dicha clase es o bien el punto
+ de entrada al sistema o es una clase que nunca se invoca.
+ Notar que las dependencias sobre si misma no estan consideradas lo que
+ explica el valor |S| -1.
+\end_layout
+
+\begin_layout Standard
+Dada esta medición y el grafo de dependencias, el algoritmo de detección
+ de componentes de utilidad es sencillo:
+\end_layout
+
+\begin_layout Enumerate
+Crear un conjunto resultado (vacio).
+\end_layout
+
+\begin_layout Enumerate
+Para cada clase C del conjunto S, calcular U.
+\end_layout
+
+\begin_layout Enumerate
+Identificar las class que tienen un valor U mayor o igual a un valor umbral
+\begin_inset LatexCommand cite
+key "Abdelwahab"
+
+\end_inset
+
+ y agregarla al conjunto solución.
+\end_layout
+
+\begin_layout Enumerate
+Las clases contenidas en el conjunto solución son cadidatas a ser clases
+ de utilidad.
+\end_layout
+
+\begin_layout Subsubsection
+Identificación de componentes basado en acoplamiento
+\end_layout
+
+\begin_layout Standard
+Utilizando un enfoque similar al descripto anteriormente es posible llevar
+ un medida de acoplamiento entre clases.
+ Se define acoplamiento como el grado en que un componente esta conectado
+ a otros componentes del sistema, es decir, el grado de dependencia que
+ tiene.
+ Todo buen diseño de componentes tiene o deberia que estar pensado de tal
+ forma que sus componentes sean cohesivos y con bajo acoplamiento con los
+ demas componentes.
+ De esta forma es posible detectar componentes agrupando en clusteres aquellas
+ clases que tengan una fuerte interacción con sus clases vecinas.
+ La figura 
+\begin_inset LatexCommand ref
+reference "fig:Grafo-de-dependencias-acoplamiento"
+
+\end_inset
+
+ muestra un grafo de dependencias en el que se pueden distinguir estas propiedad
+es.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/Coupled components Component Graph.png
+	width 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Grafo-de-dependencias-acoplamiento"
+
+\end_inset
+
+Grafo de dependencias en el que se observan el grado de acoplamiento entre
+ los componentes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Varios son los tipos de dependencia entre clases que determinan el grado
+ de acoplamiento entre componentes.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Itemize
+Referencia entre componentes: el componente A invoca al componente B.
+\end_layout
+
+\begin_layout Itemize
+Cantidad de datos intercambiados entre componentes: El componente A pasa
+ como parametro a otro B un vector, una matriz, una variable...
+\end_layout
+
+\begin_layout Itemize
+Desiciones de control que un componente realiza sobre otro: El componente
+ A pasa un valor de control al componente B.
+ El valor de la variable determina el compotamiento del componente B.
+\end_layout
+
+\begin_layout Itemize
+El grado de la complejidad de la interfaz de los componentes.
+\end_layout
+
+\begin_layout Standard
+Como base fundamental para medir el acoplamiento dentro de un modulo se
+ tomaron no solamente las medidas de fan-in sino tambien las de fan-out
+ (valores altos determinan una alta dependencia con el exerior) conseguidas
+ a travez de la evaluación del grafo de dependencias.
+\end_layout
+
+\begin_layout Standard
+El algoritmo propuesto selecciona S como espacio de solución, el cual contiene
+ todas las clases bajo análisis.
+ Comienza el procesamiento eligiendo una clase de dicho espacio, posiblemente
+ la que mayor fan-in y/o fan-out tenga y se la agrega a un espacio de solución
+ (cluster) C1 y se agregan las clases vecinas a una lista de elementos a
+ evaluar dentro del espacio C1.
+ Se recorre dicha lista y se agregan estas clases al cluster siempre que
+ su incorporación no lleve el grado de acoplamiento del todo el cluster
+ por debajo de un valor umbral .
+ Si se acepta dicha clase, las clases vecinas son incorporadas a la lista
+ de elementos candidatos y se continua el análisis hasta que no haya elementos
+ en la lista.
+ En este momento se coloca a C1 como componente candidato y se continua
+ el análisis para todas aquellas clases del espacio S original.
+\end_layout
+
+\begin_layout Standard
+Al termino de la ejecución del algoritmo se dispone de un conjunto de clusteres
+ Ci, los cuales representan componentes cuyo valores de acoplamiento estan
+ por encima del valor umbral seleccionado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
+\series bold
+Component Recognizer
+\series default
+(S: conjunto de clases a analizar)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+List
+\series default
+ solution_clusters = new 
+\series bold
+List()
+\series default
+;
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+foreach 
+\series default
+class c in S {
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+Cluster
+\series default
+ Ci = new 
+\series bold
+Cluster()
+\series default
+;
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+Ci.add(c);
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+List
+\series default
+ neightboards = new 
+\series bold
+List
+\series default
+();
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+neightboards.add(c.neightboards());
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+foreach 
+\series default
+n in neightboards {
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+if ( agregar n a Ci no baja el acoplamiento) {
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+Ci.add(n);
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+neightboards.add(n.neightboards());
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+}
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+}
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+solution_clusters.add(Ci);
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+}
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Algoritmo para la deteccion de componentes basado en el grado de acoplamiento.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 
 \emph on
@@ -6125,10 +6639,6 @@ Modelo de reglas
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -6301,10 +6811,6 @@ Modelo de fases
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
