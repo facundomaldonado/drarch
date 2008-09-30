@@ -4573,10 +4573,22 @@ Observer
 \end_layout
 
 \begin_layout Standard
-Existen reglas mas complejas que ayudan a identificar estructuras arquitectónica
-s relacionando distintos tipos de información.
- Las siguientes descripciones de reglas dan una idea la información que
- se relaciona para detectar estructuras arquitectónicas:
+Es posible construir reglas mas complejas que ayudan a identificar estructuras
+ arquitectónicas relacionando distintos tipos de información.
+ Para ello es necesario conocer cuales son los aspectos a tener en cuenta
+ a la hora de reconocer dichas estructuras.
+ Durante el proceso de disenno se toman decisiones importantes que persistiran
+ a lo largo de todo el ciclo de vida del sistema.
+ Decisiones como por ejemplo de que manera agrupar los componentes en paquetes,
+ que patrones de disenno utilizar para realizar un modulo específico o más
+ simples como por ejemplo que visibilidad darle a determinadas clases dentro
+ de un paquete.
+ Todos estos elementos o practicas son comunes a todos los sistemas y las
+ mismas pueden ser aprovechadas para realizar ingenieria reversa sobre un
+ sistema.
+ Las siguientes secciones describirán algunas de los enfoques considerados
+ en DRArch a la hora de definir reglas que asistan en la detección de estructura
+s arquitectónicas:
 \end_layout
 
 \begin_layout Subsubsection
@@ -4636,30 +4648,7 @@ ubsistemas agrupando elementos de modelado.
 \end_layout
 
 \begin_layout Subsubsection
-
-\emph on
-Fan-in / Fan-out
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-agregar info y cambiar el titulo!
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Analisis basado en Fan-in / Fan-out
-\end_layout
-
-\begin_layout Subsubsection
-Reconocimiento de componentes de utilidad.
+Reconocimiento de componentes de utilidad 
 \end_layout
 
 \begin_layout Standard
@@ -4699,7 +4688,10 @@ reference "fig:Grafo-de-dependencias Utilidad"
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
+\align block
 \begin_inset Float figure
 wide false
 sideways false
@@ -4765,6 +4757,7 @@ Se define la medición de utilidad U de la clase C como:
 \end_layout
 
 \begin_layout Standard
+\align center
 U = |IN| / (|S|-1)
 \end_layout
 
@@ -4779,12 +4772,12 @@ S es usado para representar el scope considerado en el análisis de U.
 \begin_layout Standard
 Los valores de U varian de 0 a 1.
  0 indica que la clase no tiene arcos de entrada.
- Este dato es de mucha utilidad dado que cuando por ejemplo se esté evaluando
- un módulo específico, esta clase determina el punto de acceso a dicho módulo.
+ Este dato es de mucha utilidad, por ejemplo cuando se esta evaluando un
+ módulo específico, esta clase determina el punto de acceso a dicho módulo.
  Si en cambio evaluamos el sistema entero, dicha clase es o bien el punto
  de entrada al sistema o es una clase que nunca se invoca.
- Notar que las dependencias sobre si misma no estan consideradas lo que
- explica el valor |S| -1.
+ Notar que las dependencias de dicha clase sobre sí misma no estan consideradas
+ lo que explica el valor |S| -1.
 \end_layout
 
 \begin_layout Standard
@@ -4825,9 +4818,9 @@ Utilizando un enfoque similar al descripto anteriormente es posible llevar
  Se define acoplamiento como el grado en que un componente esta conectado
  a otros componentes del sistema, es decir, el grado de dependencia que
  tiene.
- Todo buen diseño de componentes tiene o deberia que estar pensado de tal
- forma que sus componentes sean cohesivos y con bajo acoplamiento con los
- demas componentes.
+ Todo buen diseño de componentes tiene o debería estar pensado de tal forma
+ que sus componentes sean cohesivos y con bajo acoplamiento con los demas
+ componentes.
  De esta forma es posible detectar componentes agrupando en clusteres aquellas
  clases que tengan una fuerte interacción con sus clases vecinas.
  La figura 
@@ -4900,7 +4893,7 @@ Cantidad de datos intercambiados entre componentes: El componente A pasa
 \end_layout
 
 \begin_layout Itemize
-Desiciones de control que un componente realiza sobre otro: El componente
+Decisiones de control que un componente realiza sobre otro: El componente
  A pasa un valor de control al componente B.
  El valor de la variable determina el compotamiento del componente B.
 \end_layout
@@ -4910,25 +4903,26 @@ El grado de la complejidad de la interfaz de los componentes.
 \end_layout
 
 \begin_layout Standard
-Como base fundamental para medir el acoplamiento dentro de un modulo se
+Como base fundamental para medir el acoplamiento dentro de un módulo se
  tomaron no solamente las medidas de fan-in sino tambien las de fan-out
  (valores altos determinan una alta dependencia con el exerior) conseguidas
- a travez de la evaluación del grafo de dependencias.
+ a travéz de la evaluación del grafo de dependencias.
 \end_layout
 
 \begin_layout Standard
-El algoritmo propuesto selecciona S como espacio de solución, el cual contiene
- todas las clases bajo análisis.
+El algoritmo propuesto selecciona a S como espacio de solución, el cual
+ contiene todas las clases bajo análisis.
  Comienza el procesamiento eligiendo una clase de dicho espacio, posiblemente
  la que mayor fan-in y/o fan-out tenga y se la agrega a un espacio de solución
- (cluster) C1 y se agregan las clases vecinas a una lista de elementos a
- evaluar dentro del espacio C1.
- Se recorre dicha lista y se agregan estas clases al cluster siempre que
- su incorporación no lleve el grado de acoplamiento del todo el cluster
- por debajo de un valor umbral .
+ (cluster) C1.
+ Se agregan luego las clases vecinas a esta a una lista de elementos a evaluar
+ dentro del espacio C1.
+ Se recorre dicha lista y se van agregando dichas estas clases al cluster
+ siempre que su incorporación no lleve el grado de acoplamiento del todo
+ el cluster por debajo de un valor umbral .
  Si se acepta dicha clase, las clases vecinas son incorporadas a la lista
  de elementos candidatos y se continua el análisis hasta que no haya elementos
- en la lista.
+ en esta lista.
  En este momento se coloca a C1 como componente candidato y se continua
  el análisis para todas aquellas clases del espacio S original.
 \end_layout
@@ -5010,6 +5004,16 @@ Ci.add(c);
 \InsetSpace ~
 \InsetSpace ~
 \InsetSpace ~
+remove c from S;
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
 
 \series bold
 List
@@ -5081,6 +5085,28 @@ if ( agregar n a Ci no baja el acoplamiento) {
 \InsetSpace ~
 \InsetSpace ~
 Ci.add(n);
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+remove n from S;
 \end_layout
 
 \begin_layout Standard
