@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -4701,7 +4701,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Utility Component Graph.png
-	width 40theight%
+	width 30theight%
 
 \end_inset
 
@@ -4709,6 +4709,7 @@ status open
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Caption
 
 \begin_layout Standard
@@ -4843,7 +4844,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Coupled components Component Graph.png
-	width 40theight%
+	width 30theight%
 
 \end_inset
 
@@ -4851,6 +4852,7 @@ status open
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Caption
 
 \begin_layout Standard
@@ -4931,6 +4933,20 @@ El algoritmo propuesto selecciona a S como espacio de solución, el cual
 Al termino de la ejecución del algoritmo se dispone de un conjunto de clusteres
  Ci, los cuales representan componentes cuyo valores de acoplamiento estan
  por encima del valor umbral seleccionado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+mantener la concistencia con los otros algoritmos (ej.
+ no usar llaves)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6038,7 +6054,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/ObserversComponentDiagram.jpg
-	scale 70
+	scale 60
 
 \end_inset
 
@@ -6862,6 +6878,196 @@ JQuery
  y utilizar dichas reglas en la fase inicial de recolección de información.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
+\series bold
+run-phase
+\series default
+(phase: Phase)
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+for
+\series default
+ rule 
+\series bold
+in
+\series default
+ phase
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+suggestions = rule.execute()
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+for
+\series default
+ suggestion 
+\series bold
+in
+\series default
+ suggestions
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+if
+\series default
+ suggestion.isAccepted()
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+knowledgeBase.add(suggestion.getFacts())
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+loadModel()
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+updateDiagram()
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+end if
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+end run-phase
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "alg:Algoritmo-ejecución-de-fases"
+
+\end_inset
+
+Algoritmo de ejecución del modelo Fases
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La ejecución de cada fase se decribe en el Algorítmo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "alg:Algoritmo-ejecución-de-fases"
+
+\end_inset
+
+, en donde cada fase obtiene la primer regla y la ejecuta: muestra las sugerenci
+as y si el arquitecto acepta la sugerencia, agrega los nuevos hechos a la
+ base de conocimiento, carga el nuevo modelo, actualiza los diagramas, y
+ vuelve a ejecutar la siguieten regla y así hasta que no queden más reglas.
+\end_layout
+
 \begin_layout Subsubsection*
 RuleManager
 \end_layout
@@ -7421,28 +7627,33 @@ reference "alg:Algoritmo-Log-Analyzer"
 .
  Este algorítmo tambíen se encarga de generar los hachos del estilo 
 \family typewriter
-stapshot
+snapshot
 \family default
 , encargados de guardar la información relacionada con el estado del sistema
  en el momento que se ejecuto una responsabilidad.
- 
-\begin_inset Note Note
-status open
+ Guardar toda la información del estado del sistema en el momento en el
+ que se ejecuta cada responsabilidad es costoso ya que la información aumenta
+ exponencialmente y puede traer problemas de referencia cíclica.
+ Debido a esto, se define la profundidad del análisis como parámetro de
+ configuración de la ejecución del log (parámetro 
+\emph on
+Level of Depth Log
+\emph default
+ de la Figura\InsetSpace ~
 
-\begin_layout Standard
-relacionarlo con el parametro de configuracion "profundidad"
-\end_layout
+\begin_inset LatexCommand ref
+reference "fig:Configuración-del-log"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float algorithm
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -7892,7 +8103,7 @@ Fronti says: y despeus pasamos a G2
 \end_layout
 
 \begin_layout Standard
-alvaro says: y despues ver el G2 para ver si se mejoró la eficacia 
+alvaro says: y despues ver el G2 para ver si se mejoró la Eficiencia 
 \end_layout
 
 \begin_layout Standard
@@ -7921,7 +8132,7 @@ a G2..
 
 \begin_layout Standard
 alvaro says: es decir, que conocimiento del arquitectura tuvo que codificar
- el arquitecto para recuperar con cierta eficacia el diseño.
+ el arquitecto para recuperar con cierta Eficiencia el diseño.
  
 \end_layout
 
@@ -8177,23 +8388,10 @@ reference "fig:Modelo-arquitectónico-del-Bubble"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Traducir la fiugra!
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -8232,7 +8430,7 @@ Diagrama de clases del framework Bubble.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -8466,7 +8664,7 @@ reference "fig:Configuración-del-log"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -8889,7 +9087,7 @@ status open
 \begin_inset Graphics
 	filename img/bubble.png
 	lyxscale 50
-	width 100text%
+	width 90text%
 
 \end_inset
 
@@ -8942,7 +9140,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/RemoveUserComponent.png
-	width 50theight%
+	width 40theight%
 
 \end_inset
 
@@ -8950,6 +9148,7 @@ status open
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Caption
 
 \begin_layout Standard
@@ -8982,7 +9181,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/RemoveUserUCM.png
-	width 50theight%
+	width 45theight%
 
 \end_inset
 
@@ -8990,6 +9189,7 @@ status open
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Caption
 
 \begin_layout Standard
@@ -9147,7 +9347,7 @@ status open
 \begin_inset Graphics
 	filename img/listadoUsuariosFlabot.png
 	lyxscale 50
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -9383,7 +9583,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Recovered G2 Components.png
-	width 40theight%
+	width 35theight%
 
 \end_inset
 
@@ -9426,7 +9626,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Recovered G2 UCM.png
-	width 50theight%
+	width 45theight%
 
 \end_inset
 
@@ -9483,18 +9683,93 @@ Los casos de prueba desarrollados en el presente capítulo ponen bajo análisis
 \end_layout
 
 \begin_layout Standard
-En el análisis se incluye el conepto de eficacia, ya que es de utilidad
+En el análisis se incluye el conepto de eficiencia, ya que es de utilidad
  medir la capacidad de lograr el efecto que se desea o se espera una vez
  que se han obtenido los resultados.
  Es por esto que en la fase de recolección de información de los casos de
  estudio, los casos de uso que se selecionaron para generar el log de ejecución,
  se basaron en los escenarios UCM disponibles en la documentación arquitectúra
  de cada proyecto.
- De esta forma, es posible medir la eficacia del 
+ De esta forma, es posible medir la eficiencia del 
 \emph on
 DRArch
 \emph default
  comparando los componentes descubriertos sobre los que debería haber decubierto.
+\end_layout
+
+\begin_layout Standard
+Otra de las métricas que se incluye en el análisis es la Complejidad Ciclomática
+ (
+\emph on
+Cyclomatic Complexity
+\emph default
+) ya que es una métrica del software que proporciona una medición cuantitativa
+ de la complejidad lógica de un programa.
+ Es una de las métricas de software mas ampliamente aceptada, ya que ha
+ sido concebida para ser independiente del lenguaje.
+ Se basa en el diagrama de flujo determinado por las estructuras de control
+ de un determinado código.
+ De dicho análisis se puede obtener una medida cuantitativa de la complejidad
+ del sistema.
+ En la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Complejidad-Ciclomática-de"
+
+\end_inset
+
+ se muestra el reporte generado por la herramienta Cobertura\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Cobertura"
+
+\end_inset
+
+ en donde se muestra la complejidad obtenida para el proyecto Market y el
+ G2.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ComplejidadCiclomatica.png
+	width 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Complejidad-Ciclomática-de"
+
+\end_inset
+
+Complejidad Ciclomática de los pryectos Market y G2.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9516,19 +9791,9 @@ En el caso de Market,
 DRArch 
 \emph default
 detectó un 78% de los artefactos arquitectónicos pertenecientes al fremework
- Bubble, mientras que en el G2, la eficacia fue del 92%.
+ Bubble, mientras que en el G2, la eficiencia fue del 92%.
  Esto quiere decir que la mejora realizada en el refinamiento de las reglas
- fue de un 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-XXX
-\end_layout
-
-\end_inset
-
-.
+ fue de un positivo.
  La Tabla\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -9536,16 +9801,18 @@ reference "tab:Eficacia-del-DRArch-parcial"
 
 \end_inset
 
- muestra la eficacia de los artefactos arquitectónicos del Market y del
- G2.
- Estos mismos resultados pueden observarse en al Figura\InsetSpace ~
+ muestra la eficiencia de los artefactos arquitectónicos (componentes, relacione
+s y responsabilidades) del Market y del G2.
+ Estos mismos resultados estan representados al Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Eficacia-entre-los-artefactos"
 
 \end_inset
 
-.
+ en donde claramente se observa que la diferencia entre las barras pares
+ de cada proyecto es menor para el pryecto G2.
+ Esto significa que el margen de error es mas grande en el proyecto Market.
 \end_layout
 
 \begin_layout Standard
@@ -9635,11 +9902,11 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="5">
 <features>
-<column alignment="left" valignment="top" rightline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="left" valignment="middle" rightline="true" width="2in">
+<column alignment="center" valignment="middle" leftline="true" width="0.9in">
+<column alignment="center" valignment="middle" leftline="true" width="0.8in">
+<column alignment="center" valignment="middle" leftline="true" width="0.8in">
+<column alignment="center" valignment="middle" leftline="true" width="0.8in">
 <row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -9969,12 +10236,12 @@ G2
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
-Eficacia
+Eficiencia
 \end_layout
 
 \end_inset
@@ -10032,7 +10299,7 @@ name "tab:Eficacia-del-DRArch-parcial"
 
 \end_inset
 
-Eficacia por artefactos arquitectónicos del 
+Eficiencia por artefactos arquitectónicos del 
 \emph on
 DRArch
 \emph default
@@ -10042,19 +10309,6 @@ DRArch
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-comentar los graficos
 \end_layout
 
 \end_inset
@@ -10088,7 +10342,7 @@ name "fig:Eficacia-entre-los-artefactos"
 
 \end_inset
 
-Eficacia entre los distintos artefatos arquitectónicos para los proyectos
+Eficiencia entre los distintos artefatos arquitectónicos para los proyectos
  Market y G2.
 \end_layout
 
@@ -10107,10 +10361,15 @@ Eficacia entre los distintos artefatos arquitectónicos para los proyectos
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Hace falta esta figura??? 
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -10132,7 +10391,12 @@ name "fig:Mejora-de-la-Eficacia"
 
 \end_inset
 
-Mejora de la Eficacia luego de la incorporación de nuevas reglas.
+Mejora de la eficiencia luego de la incorporación de nuevas reglas.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10146,13 +10410,31 @@ Mejora de la Eficacia luego de la incorporación de nuevas reglas.
 \end_layout
 
 \begin_layout Standard
-Un resumen de estos índices puede verse en el Cuadro\InsetSpace ~
+Para poder darnos cuentas del impácto que tiene la complajidad ciclomática
+ de los proyectos en la eficiencia del 
+\emph on
+DRArch
+\emph default
+, se realizó una nueva ejecución de las fases del sistema G2 con el mismo
+ conjunto de reglas que se usaron para el proyecto Market.
+ Es decir, no se utilizaron las reglas mejoradas que se detectaron durante
+ la reconstrucción del G2.
+ Un resumen de estos índices puede verse en la Tabla\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "tab:Eficacia-del-DRArch"
 
 \end_inset
 
+.
+ En gráfico de la Figura\InsetSpace ~
+ se pueden observar estos índices.
+ La primer conclusión que puede derivarse de estos valores es que cuanto
+ menos complejidad tenga el sistema, más eficiente es la reconstrucción
+ arquitectónica que realiza la herramienta 
+\emph on
+DRArch
+\emph default
 .
 \end_layout
 
@@ -10165,11 +10447,12 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="3">
+<lyxtabular version="3" rows="7" columns="4">
 <features>
 <column alignment="left" valignment="top" rightline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
 <row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -10189,11 +10472,20 @@ Market
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
 G2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+G2 (sin mejora)
 \end_layout
 
 \end_inset
@@ -10218,11 +10510,20 @@ G2
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+~1100
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
-~900
+~1100
 \end_layout
 
 \end_inset
@@ -10243,6 +10544,15 @@ G2
 
 \begin_layout Standard
 40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+98
 \end_layout
 
 \end_inset
@@ -10276,6 +10586,15 @@ G2
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+42
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -10305,11 +10624,20 @@ G2
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
 42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+39
 \end_layout
 
 \end_inset
@@ -10320,7 +10648,7 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-% clases con mapeo
+complejidad cilomática
 \end_layout
 
 \end_inset
@@ -10329,7 +10657,16 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-100%
+1,672
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1,45
 \end_layout
 
 \end_inset
@@ -10338,13 +10675,13 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-2,04%
+1,45
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -10363,11 +10700,20 @@ G2
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
 100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+92%
 \end_layout
 
 \end_inset
@@ -10389,7 +10735,7 @@ name "tab:Eficacia-del-DRArch"
 
 \end_inset
 
-Eficacia total del 
+Eficiencia total del 
 \emph on
 DRArch
 \emph default
@@ -10407,20 +10753,38 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Standard
-hacerlo para un aspecto y despues armar una tabla con los resultados de
- descubrimeinto del resto
+\align center
+\begin_inset Graphics
+	filename img/ComplejidadVsEficiencia.PNG
+	width 55theight%
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-diciendo que componentes encontro sobre que componentes debió encontrar
-\end_layout
+\begin_inset Caption
 
 \begin_layout Standard
-y mostrando tambien cuales reglas se tuvieron que agregar
+\begin_inset LatexCommand label
+name "fig:Eficiencia-vs.-Complejidad"
+
+\end_inset
+
+Eficiencia vs.
+ Complejidad
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10429,16 +10793,41 @@ y mostrando tambien cuales reglas se tuvieron que agregar
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-y despues ver el G2 para ver si se mejoró la eficacia
+El haber utilizado ProLog para la implementación de las 
+\emph on
+Rule Model
+\emph default
+, si bien brinda flexibilidad a la hora de agregar o modificar reglas, acarrea
+ los problemas típicos en los lenguajes interpretados.
+ Por otro lado, la ejecución de una aplicación instrumentada es cada vez
+ más lenta a medida que crece la cantidad de puntos que están siendo inspecciona
+dos.
+ Asimismo, la memoria y el procesamiento requeridos para el análisis de
+ los logs de bajo nivel crece según la naturaleza del caso de uso que esta
+ siendo analizado.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+En resumen, las pruebas realizadas sobre ambos proyectos revelaron la importante
+ asistencia que significa el uso de 
+\emph on
+DRArch
+\emph default
+ en proceso de reconstrucción.
+ El espacio de búsqueda, tal como debería ser analizado por un arquitecto
+ para descubrir artefáctos arquitectónicos, se reduce notablemente en comparació
+n con el total de clases del sistema.
+ Por otro lado, la precisión de la herramienta se ve comprometida por la
+ complejidad ciclomática de cada proyecto y por las reglas seleccionadas
+ para realizar la reconstrucción.
+ Éste último índice irá en aumento a medida que se refinen las reglas y
+ se agregue información a la base de conocimiento, confirmando la suposición
+ de que de 
+\emph on
+DRArch
+\emph default
+ debe utilizarse durante el proceso de reconstrucción de arquitecturas de
+ software.
 \end_layout
 
 \begin_layout Chapter
@@ -10703,7 +11092,29 @@ agragar algo mas de info
 \end_layout
 
 \begin_layout Subsection
-Utilizando algorítmos
+Incorporando algorítmos
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+DRArch
+\emph default
+ esta basado en un proceso donde interviene un modelo de reglas.
+ Gracias a este modelo de reglas se gana mucha flexibilidad a la hora definir
+ consultas sobre la información que se quiere obtener.
+ Sin embargo, también aporta cierto grado de ambigüedad, la cual es resuelta
+ por el arquitecto en el momento de aceptar o rechazar cada sugerencia.
+ Una forma de evitar esta ambigüedad es incorporando algorítmos que validen
+ los resultados de la ejecución de cada regla.
+ Esto también aumenta el grado de automatización del proceso propuesto por
+ 
+\emph on
+DRArch
+\emph default
+, ya que la interacción con el arquitecto disminuye al no tener que tomar
+ tantas decisiones.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -10711,7 +11122,7 @@ Utilizando algorítmos
 status open
 
 \begin_layout Standard
-agregar info
+agragar algo mas de info
 \end_layout
 
 \end_inset
@@ -10741,7 +11152,7 @@ o un catálogo de de reglas orientadas a los ditintos estilos arquitectónicos
  Si mediante un conjunto de reglas se detecta cuál es el estilo arquitectónico
  que predomina en el sistema, entonces es posible aplicar un segundo conjunto
  de reglas que sean específicas para el estilo arquitectónico predominante,
- y así mejorar la eficacia del 
+ y así mejorar la eficiencia del 
 \emph on
 DRArch
 \emph default
@@ -13226,28 +13637,15 @@ Predicados ternarios
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-agragar el fact snapshot
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="3">
+<lyxtabular version="3" rows="15" columns="3">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="1in">
 <column alignment="center" valignment="top" leftline="true" width="1in">
@@ -13914,7 +14312,7 @@ hasResponsibility(?C, ?R)
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13971,6 +14369,68 @@ es el tipo que retorna el método y
 \family default
 \size default
 es el valor de lo que retornó la ejecución del método.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+snapshot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+String, String, String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+snapshot(?I, ?F, ?V) 
+\family default
+\size default
+significa: 
+\family typewriter
+\size small
+?I 
+\family default
+\size default
+nel identificador de ejecución, 
+\family typewriter
+\size small
+?F
+\family default
+\size default
+ el campo (variable) y 
+\family typewriter
+\size small
+?V
+\family default
+\size default
+ el valor del campo 
+\family typewriter
+\size small
+?F
+\family default
+\size default
+.
 \end_layout
 
 \end_inset
