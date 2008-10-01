@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -6675,95 +6675,6 @@ El nivel de profundidad en el que se va a guardar la información.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Cuando la aplicación a instrumentar está a punto de ser ejecutada, se crea
- una instancia de 
-\emph on
-ArchSyncTraceConfigurationProvider
-\emph default
- a la que se le interroga acerca de qué eventos deben ser registrados durante
- la ejecución.
- A su vez, el objeto utiliza los mapeos del UCM desactualizado y el resultado
- del análisis realizado por 
-\emph on
-Diff Mapper
-\emph default
-, para indicar que debe ser registrada la ejecución de tanto los métodos
- asociados directamente a alguna responsabilidad como los métodos agregados
- o modificados que afectan indirectamente.
- Esta interacción se detalla de manera gráfica en el diagrama de secuencia
- de la Figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:Interacción-launcher-Archsync"
-
-\end_inset
-
-.
- Una vez provisto de la información necesaria, 
-\emph on
-FlabotInstumentationLaucher
-\emph default
- se encarga de ejecutar la aplicación instrumentada y de registrar los eventos
- necesarios en el archivo que fue indicado durante la configuración.
- 
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename C:/Users/nfrontini/facultad/tesis/tesis tincho/img/sequence-traceConfiguration.png
-	lyxscale 80
-	width 99line%
-	keepAspectRatio
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "cap:Interacción-launcher-Archsync"
-
-\end_inset
-
-Interacción entre 
-\emph on
-ArchSync
-\emph default
- y 
-\emph on
-FLABot
-\emph default
- previa a la instrumentación
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Una vez que fue creado un log de ejecución para un caso de uso en particular,
  
 \emph on
@@ -6786,7 +6697,7 @@ reference "alg:Algoritmo-Log-Analyzer"
 \end_inset
 
 .
- Este algorítmo tambíen se encarga de generar los hachos del estilo 
+ Este algoritmo también se encarga de generar los hachos del estilo 
 \family typewriter
 snapshot
 \family default
@@ -7222,7 +7133,7 @@ DRArch
  En particular, en este capítulo se pretende analizar la utilidad, efectividad
  de la herramienta frente a un sistema real ya implementado.
  En cada caso de estudio se presenta (a) un detalle de la arquitectura del
- sistema --necesaria para realizar comparaciónes--, (b) un resumen de las
+ sistema --necesaria para realizar comparaciones--, (b) un resumen de las
  fases ejecutadas --describiendo la naturaleza de las reglas-- y (c) las
  vistas mas relevantes que se obtuvieron durante la ejecución del proceso
  de reconstrucción --importante para realizar la comparación con la arquitectura
@@ -7314,7 +7225,7 @@ sellers
 \emph default
 ) son libres de realizar transacciones.
  De esta forma, el mercado es un contenedor de agentes en donde compradores
- y vendedores son slimples agentes (
+ y vendedores son simples agentes (
 \emph on
 agents
 \emph default
@@ -7343,10 +7254,13 @@ key "CAMPO02"
 
 , donde los componentes principales son: agentes, tareas, sensores y eventos.
  Los agentes representan entidades del dominio y para separa el estado de
- las acciones, se utiliza la nocion de tareas.
- La interacción entre los agentes, llamados bubbles, es realizada a travez
- de eventos que ellos mismos producen y reciven.
- Los agentes estan asociados a sensores (como filtros) que son registrados
+ las acciones, se utiliza la noción de tareas.
+ La interacción entre los agentes, llamados 
+\emph on
+bubbles
+\emph default
+, es realizada a través de eventos que ellos mismos producen y reciben.
+ Los agentes están asociados a sensores (como filtros) que son registrados
  para activarse con determinados eventos o grupos de eventos 
 \begin_inset LatexCommand cite
 key "Andres2001"
@@ -7369,7 +7283,11 @@ reference "fig:Modelo-arquitectónico-del-Bubble"
 
 \end_inset
 
- muestra un diagrama del modelo arquitectónico del fremework.
+ muestra un diagrama del modelo arquitectónico del 
+\emph on
+fremework
+\emph default
+.
  
 \end_layout
 
@@ -7543,7 +7461,7 @@ TimerSensor
 \begin_layout Standard
 La documentación de la arquitectura del Market provee un conjunto de UCMs
  que nos permiten entender el comportamiento del sistema.
- Con el objetivo de poder hacer comparaciónes con los resultados obtenidos
+ Con el objetivo de poder hacer comparaciones con los resultados obtenidos
  con el 
 \emph on
 DRArch
@@ -7643,7 +7561,7 @@ reference "fig:Configuración-del-log"
 
 \end_inset
 
- se mustra la configuracion necesaria para generar el log de ejecución.
+ se muestra la configuración necesaria para generar el log de ejecución.
 \end_layout
 
 \begin_layout Standard
@@ -7703,8 +7621,8 @@ Basado en el supuesto de que cualquier sistema se debe dividir en unidades
 \family typewriter
 package(?P)
 \family default
-) ya que proponen la divisón de unidades basandose en la estrutura de paquetes
- que presenta el código fuente.
+) ya que proponen la división de unidades basándose en la estructura de
+ paquetes que presenta el código fuente.
  De esta forma, se identificaron tres unidades distintas: 
 \family typewriter
 bubble.core
@@ -7735,12 +7653,12 @@ Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
  y relaciones que puedan ser parte de un framework basado en invocaciones
  implícitas: manejo de eventos, tareas, agentes, etc.
  Con la división de unidades realizada en la fase anterior, se decidió correr
- esta fase únicamente a los artefáctos de código fuente ubicados dentro
- del pauqete 
+ esta fase únicamente a los artefactos de código fuente ubicados dentro
+ del paquete 
 \family typewriter
 bubble.core
 \family default
-, ya que por su nombre y por las clases que lo continen, se presenta como
+, ya que por su nombre y por las clases que lo contienen, se presenta como
  candidato para alojar los componentes principales del framework.
  Las reglas más importantes presentadas por la herramienta 
 \emph on
@@ -7752,27 +7670,41 @@ DRArch
 \begin_layout Standard
 Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
  artefactos del código fuente a componentes que representen una tarea.
- Las consultas buscan clases que tengan un nombres clave ("Task", "Tarea",
- etc.), que contengan metodos 
+ Las consultas buscan clases que tengan un nombres clave (
+\family typewriter
+Task
+\family default
+, 
+\family typewriter
+Tarea
+\family default
+, etc.), que contengan métodos 
 \emph on
 hook
 \emph default
- o abstractos, que el de alguno de estos métodos sea "run", etc.
+ o abstractos, que el de alguno de estos métodos sea 
+\family typewriter
+run
+\family default
+, etc.
 \end_layout
 
 \begin_layout Standard
 Detección de manejadores de eventos: Es complicado reconstruir este tipo
  de componentes, generalmente, son clases que implementan alguna clase con
- el nombre "EventHandler", con algún método que tenga como argumento un
- evento, asi como también propiedades privadas del tipo listas que contengan
- eventos.
+ el nombre 
+\family typewriter
+EventHandler
+\family default
+, con algún método que tenga como argumento un evento, así como también
+ propiedades privadas del tipo listas que contengan eventos.
  Esto se presenta como sugerencias y es el arquitecto que debe corroborar
  este tipo de supuestos, aceptando o rechazando cada sugerencia.
 \end_layout
 
 \begin_layout Standard
 Detección del agente: Como dijimos anteriormente, los agentes representan
- entidades del sistema, y este conjunto de reglas intenta decubrir el conjunto
+ entidades del sistema, y este conjunto de reglas intenta descubrir el conjunto
  de clases que se materializan con un componente agente.
 \end_layout
 
@@ -7933,16 +7865,19 @@ Fase de instanciación
 \end_layout
 
 \begin_layout Standard
-Al termino de la ejecucíon de esta fase se obtuvieron aquellos componentes
+Al termino de la ejecución de esta fase se obtuvieron aquellos componentes
  comprometidos con la ejecución del caso de uso que forman parte de la instancia
 ción del framework Bubble para el dominio del Market.
- Las consultas relizadas en esta fase estan muy relacionadas al caso de
+ Las consultas realizadas en esta fase están muy relacionadas al caso de
  uso que se utilizó para generar el log de ejecución.
  Los métodos de cada clase representan una responsabilidad al momento de
- generar el log, y las responsabilidades de cada componente reconstruído
+ generar el log, y las responsabilidades de cada componente reconstruido
  están materializadas con los correspondientes métodos de las clases asociadas.
- Así, es facil realizar consultas que sugieran un path de ejecución que
- recorra las responsabilidades de cada componente reconstruído.
+ Así, es fácil realizar consultas que sugieran un 
+\emph on
+path
+\emph default
+ de ejecución que recorra las responsabilidades de cada componente reconstruido.
 \end_layout
 
 \begin_layout Standard
@@ -8227,10 +8162,10 @@ Como se mencionó en la sección anterior, este sistema esta basado en el
 Bubble 
 \emph default
 de la misma forma que el sistema analizado anteriormente con lo cual se
- reutilizarán las fases de analisis implementadas en el análisis anterior
+ reutilizarán las fases de análisis implementadas en el análisis anterior
  para recuperar la instanciación del framework.
- Posteriormente, aumentando el espacio de solución se iran descubriendo
- todos aquellos componentes que interactuan con los componentes del framework.
+ Posteriormente, aumentando el espacio de solución se irán descubriendo
+ todos aquellos componentes que interactúan con los componentes del framework.
  
 \end_layout
 
@@ -8238,8 +8173,12 @@ de la misma forma que el sistema analizado anteriormente con lo cual se
 Un escenario donde pueden verse la implementación del framework Bubble en
  el sistema G2 es el caso de uso RemoveUser (utilizado más tarde para ejercitar
  la herramienta).
- Aqui un usuario administrador envia por medio de su browser una solicitud
- de eliminar a otro usuario del sistema, siempre que sus permisos lo permitan.
+ Aquí un usuario administrador envía por medio de su 
+\emph on
+browser
+\emph default
+ una solicitud de eliminar a otro usuario del sistema, siempre que sus permisos
+ lo permitan.
  Cuando esta solicitud llega al sistema por medio del GateKeeper, se activan
  los agentes encargados de eliminar a un usuario del modelo.
  Una vez que el agente asignado detecta esta señal, invoca a la tarea de
@@ -8363,64 +8302,6 @@ Instrumentación de la aplicación G2 durante el caso de uso “eliminar usuario
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Un escenario donde puede verse en acción el modelo típico del sistema G2
- es el caso de uso 
-\emph on
-removeUser
-\emph default
- presentado en el 
-\emph on
-path
-\emph default
- la Figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:UCM-removeUser"
-
-\end_inset
-
-.
- Aquí un usuario administrador envía por medio de su browser la solicitud
- de eliminar a otro usuario del sistema, siempre que sus permisos lo permitan.
- Cuando esta solicitud llega al sistema por medio del GateKeeper, se activan
- los agentes encargados de eliminar a un usuario del modelo.
- Una vez que el agente asignado detecta esta señal, invoca a la tarea de
- eliminación, representada por la responsabilidad UCM 
-\emph on
-removeUser
-\emph default
-.
- Mas adelante, se eliminan los registros relacionados del repositorio de
- datos, como lo indica la responsabilidad UCM 
-\emph on
-deleteUserFromDB
-\emph default
- y finalmente se le retorna una página con el listado actualizado de usuarios;
- representado por la secuencia de activación de responsabilidades 
-\emph on
-listUsers
-\emph default
-, 
-\emph on
-generateHTMLResponse
-\emph default
- y 
-\emph on
-sendResponse
-\emph default
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Una vez finalizada la fase de recolección, se continúa con la ejecución
  del resto de las fases.
 \end_layout
@@ -8430,14 +8311,14 @@ Fase de invocación implícita
 \end_layout
 
 \begin_layout Standard
-Al igual que para el caso de analisis anterior, esta fase tiene como proposito
+Al igual que para el caso de análisis anterior, esta fase tiene como propósito
  principal descubrir aquellos componentes y relaciones que pertenecen al
  framework Bubble.
  Las reglas 
 \emph on
 DRArch
 \emph default
- que forman esta fase estan encargadas de materializar artefactos de codigos
+ que forman esta fase están encargadas de materializar artefactos de códigos
  fuentes que representen tareas, agentes y aquellos encargados del manejo
  de eventos.
 \end_layout
@@ -8457,14 +8338,30 @@ Fase de materialización
 De nuevo, se reutilizaron las mismas reglas que en el caso anterior.
  Una vez individualizados los puntos de extensión del framework de buscaron
  los componentes específicos del dominio de G2.
- Estos componentes responden a la instanciacion del framework para el caso
+ Estos componentes responden a la instanciación del framework para el caso
  específico del sistema G2.
- De esta forma, se detectaron los siguientes componentes basados en la ejercitac
-ion de DRArch con el caso de uso Remove User:
+ De esta forma, se detectaron los siguientes componentes basados en la ejecución
+ de 
+\emph on
+DRArch
+\emph default
+ con el caso de uso Remove User:
 \end_layout
 
 \begin_layout Standard
-RemoveUserTask, ListUserTask y StaticHTMLStaticTask y un monton mas .....
+
+\family typewriter
+RemoveUserTask
+\family default
+, 
+\family typewriter
+ListUserTask
+\family default
+ y 
+\family typewriter
+StaticHTMLStaticTask
+\family default
+ y un montón mas .....
 \end_layout
 
 \begin_layout Standard
@@ -8484,8 +8381,12 @@ Fase de instanciación
 Durante esta fase se trabajó sobre el caso de uso utilizado para ejercitar
  la herramienta, RemoveUser.
  Para elevar el nivel de detalle de la información recuperada se buscó seguir
- el path de ejecución e ir individualizando a lo largo de éste, cuáles son
- las responsabilidades que se ejecutaron.
+ el 
+\emph on
+path
+\emph default
+ de ejecución e ir individualizando a lo largo de éste, cuáles son las responsab
+ilidades que se ejecutaron.
  Dado que es una aplicación multithread no se puede o mejor dicho no es
  recomendable realizar un seguimiento de la ejecución a nivel de 
 \emph on
@@ -8502,9 +8403,9 @@ threads
  En el caso de G2 y mas específicamente de Bubble estos elementos son los
  Eventos.
  Así, siguiendo el rastro de un evento a lo largo de la ejecución del caso
- de uso, se encontro un nuevo tipo de componente que no había sido descubierto
+ de uso, se encontró un nuevo tipo de componente que no había sido descubierto
  en fases anteriores y que pertenece al framework Bubble: los Sensores.
- De esta forma, los agentes estan asociados a sensores (como filtros) que
+ De esta forma, los agentes están asociados a sensores (como filtros) que
  son registrados para activarse con determinados eventos o grupos de eventos.
  Ya que la fase de invocación implícita se basó en el caso de análisis del
  sistema Market y dada la simplicidad del caso de uso utilizado para ejercitar
@@ -8522,13 +8423,13 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Con esta nueva información, se procedio a incorporar nuevas reglas a la
+Con esta nueva información, se procedió a incorporar nuevas reglas a la
  fase de invocación implícita que descubrieran estos eventos de bajo nivel
  y se reejecutaron las fases anteriores.
 \end_layout
 
 \begin_layout Standard
-Al termino de la ejecucíon de esta fase se obtuvieron aquellos componentes
+Al termino de la ejecución de esta fase se obtuvieron aquellos componentes
  comprometidos con la ejecución del caso de uso que forman parte de la instancia
 ción del framework Bubble para el dominio de G2.
 \end_layout
@@ -8539,7 +8440,7 @@ Fase de reconocimiento de intermediarios
 
 \begin_layout Standard
 Una vez reconocidos los componentes que forman parte de la implementación
- del framework, se pretendio encontrar todos aquellos componentes que interactua
+ del framework, se pretendió encontrar todos aquellos componentes que interactúa
 n con los elementos del framework.
  De esta forma se descubrieron los componentes GateKeeper y UserDBView encargado
 s de activar los agentes que ejecutan las tareas y de abstraer el acceso
@@ -8662,7 +8563,7 @@ Análisis de resultados
 Los casos de prueba desarrollados en el presente capítulo ponen bajo análisis
  dos sistemas de proporciones diferentes.
  Por un lado, Market, un proyecto de ejemplo para probar el funcionamiento
- de un framework, con unas 40 clases, especifiacado parcialmente a nivel
+ de un framework, con unas 40 clases, especificado parcialmente a nivel
  arquitectónico por 10 escenarios UCM.
  Por otro lado, G2, un proyecto mediano de aproximadamente 900 clases, también
  especificado parcialmente a nivel arquitectónico por 34 escenarios UCM.
@@ -8673,18 +8574,18 @@ Los casos de prueba desarrollados en el presente capítulo ponen bajo análisis
 \end_layout
 
 \begin_layout Standard
-En el análisis se incluye el conepto de eficiencia, ya que es de utilidad
+En el análisis se incluye el concepto de eficiencia, ya que es de utilidad
  medir la capacidad de lograr el efecto que se desea o se espera una vez
  que se han obtenido los resultados.
  Es por esto que en la fase de recolección de información de los casos de
- estudio, los casos de uso que se selecionaron para generar el log de ejecución,
- se basaron en los escenarios UCM disponibles en la documentación arquitectúra
+ estudio, los casos de uso que se seleccionaron para generar el log de ejecución
+, se basaron en los escenarios UCM disponibles en la documentación arquitectura
  de cada proyecto.
  De esta forma, es posible medir la eficiencia del 
 \emph on
 DRArch
 \emph default
- comparando los componentes descubriertos sobre los que debería haber decubierto.
+ comparando los componentes descubiertos sobre los que debería haber descubierto.
 \end_layout
 
 \begin_layout Standard
@@ -8723,7 +8624,7 @@ key "Cobertura"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -8745,7 +8646,7 @@ name "fig:Complejidad-Ciclomática-de"
 
 \end_inset
 
-Complejidad Ciclomática de los pryectos Market y G2.
+Complejidad Ciclomática de los proyectos Market y G2.
 \end_layout
 
 \end_inset
@@ -8755,92 +8656,6 @@ Complejidad Ciclomática de los pryectos Market y G2.
 
 \begin_layout Standard
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-comentar la tabla! ver la siguiente nota como ejemplo
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-En el caso de 
-\emph on
-G2
-\emph default
-, 
-\emph on
-ArchSync
-\emph default
- determinó que el 
-\emph on
-source code 
-\begin_inset Formula $\Delta$
-\end_inset
-
-
-\emph default
- de prueba estaba conformado por 20 clases modificadas.
- Sin embargo, solamente 2 de ellas tenían mapeos arquitectónicos.
- En otras palabras, 
-\emph on
-ArchSync
-\emph default
- redujo el espacio de búsqueda en un 90%.
- Estas 2 clases representan el 2,04% del total de clases con importancia
- arquitectónica, y los dos paths detectados por 
-\emph on
-ArchSync
-\emph default
- como potencialmente modificados representan el 5,88% de todos los paths
- de la especificación UCM.
- Esto significó un ahorro significativo en el esfuerzo del arquitecto, ya
- que evitó revisar un 97,96% de las clases relevantes y un 94,12% de los
- paths.
-\end_layout
-
-\begin_layout Standard
-Por otro lado, en el caso del proyecto 
-\emph on
-FLABot,
-\emph default
- el 
-\emph on
-source code 
-\begin_inset Formula $\Delta$
-\end_inset
-
-
-\emph default
- del caso de estudio estaba constituido por un total de 91 clases modificadas,
- de las cuales solo 15 afectaban algún flujo de control en la especificación
- UCM.
- Al detectar esto, 
-\emph on
-ArchSync
-\emph default
- redujo el espacio de búsqueda en un 83,52%.
- Esas 15 clases representan el 5,56% del total de clases relevantes arquitectóni
-camente, y 
-\emph on
-ArchSync
-\emph default
- detectó que 11,48% de los paths (14 de 122) habían sido cambiados.
- Esto evitó revisar un 94,44% de las clases relevantes y un 88,52% de los
- paths.
 \end_layout
 
 \end_inset
@@ -8853,7 +8668,10 @@ En el caso de Market,
 \emph on
 DRArch 
 \emph default
-detectó un 78% de los artefactos arquitectónicos pertenecientes al fremework
+detectó un 78% de los artefactos arquitectónicos pertenecientes al 
+\emph on
+fremework
+\emph default
  Bubble, mientras que en el G2, la eficiencia fue del 92%.
  Esto quiere decir que la mejora realizada en el refinamiento de las reglas
  fue de un positivo.
@@ -8866,7 +8684,7 @@ reference "tab:Eficacia-del-DRArch-parcial"
 
  muestra la eficiencia de los artefactos arquitectónicos (componentes, relacione
 s y responsabilidades) del Market y del G2.
- Estos mismos resultados estan representados al Figura\InsetSpace ~
+ Estos mismos resultados están representados al Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Eficacia-entre-los-artefactos"
@@ -8874,7 +8692,7 @@ reference "fig:Eficacia-entre-los-artefactos"
 \end_inset
 
  en donde claramente se observa que la diferencia entre las barras pares
- de cada proyecto es menor para el pryecto G2.
+ de cada proyecto es menor para el proyecto G2.
  Esto significa que el margen de error es mas grande en el proyecto Market.
 \end_layout
 
@@ -9329,7 +9147,7 @@ name "fig:Eficacia-entre-los-artefactos"
 
 \end_inset
 
-Eficiencia entre los distintos artefatos arquitectónicos para los proyectos
+Eficiencia entre los distintos artefactos arquitectónicos para los proyectos
  Market y G2.
 \end_layout
 
@@ -9397,7 +9215,7 @@ Mejora de la eficiencia luego de la incorporación de nuevas reglas.
 \end_layout
 
 \begin_layout Standard
-Para poder darnos cuentas del impácto que tiene la complajidad ciclomática
+Para poder darnos cuentas del impacto que tiene la complejidad ciclomática
  de los proyectos en la eficiencia del 
 \emph on
 DRArch
@@ -9635,7 +9453,7 @@ G2 (sin mejora)
 \begin_inset Text
 
 \begin_layout Standard
-complejidad cilomática
+complejidad ciclomática
 \end_layout
 
 \end_inset
@@ -9802,7 +9620,7 @@ DRArch
 \emph default
  en proceso de reconstrucción.
  El espacio de búsqueda, tal como debería ser analizado por un arquitecto
- para descubrir artefáctos arquitectónicos, se reduce notablemente en comparació
+ para descubrir artefactos arquitectónicos, se reduce notablemente en comparació
 n con el total de clases del sistema.
  Por otro lado, la precisión de la herramienta se ve comprometida por la
  complejidad ciclomática de cada proyecto y por las reglas seleccionadas
@@ -9833,7 +9651,7 @@ DRArch
 \emph default
 , un enfoque para la reconstrucción de arquitecturas que define un proceso
  interactivo, iterativo e incremental.
- Mediante el uso de información estática (codigo fuente), dinámica (logs
+ Mediante el uso de información estática (código fuente), dinámica (logs
  de ejecución), experiencia de los distintos 
 \emph on
 stakeholders
@@ -9863,7 +9681,7 @@ tación de código de
 \emph on
 FLABot
 \emph default
- asi como tambíen la utilización del plug-in 
+ así como también la utilización del plug-in 
 \emph on
 JQuery
 \emph default
@@ -9887,7 +9705,7 @@ DRArch
 \emph default
  permite reconstruir la arquitectura de software de un sistema generando
  vistas que describan el comportamiento a un nivel de abstracción apropiado.
- Generalmente, esta información es utilizada para colaborar con la ducumentación
+ Generalmente, esta información es utilizada para colaborar con la documentación
  del sistema.
  Al mismo tiempo, el enfoque realiza un mapeo entre el código fuente y las
  vistas generadas.
@@ -9924,7 +9742,7 @@ Limitaciones Actuales
 
 \begin_layout Standard
 El enfoque se basa en ciertas suposiciones y tiene algunas limitaciones.
- Una de las supocisiones mas importanes es la de la selección de reglas.
+ Una de las suposiciones mas importantes es la de la selección de reglas.
  Las reglas ejecutadas para cada sistema son específicas para el estilo
  arquitectónico predominante.
 \end_layout
@@ -10028,7 +9846,7 @@ Validación de patrones de diseño
 \end_layout
 
 \begin_layout Standard
-Es muy común que los sistemas se desarrollen utilizando patrontes de diseño
+Es muy común que los sistemas se desarrollen utilizando patrones de diseño
  ya que representan soluciones a problemas genéricos 
 \begin_inset LatexCommand cite
 key "Gamma94"
@@ -10039,13 +9857,13 @@ key "Gamma94"
  Muchas veces es necesario asegurarse de que los patrones estén implementados
  correctamente, ya que las modificaciones en el código fuente durante el
  desarrollo del sistema pueden afectar los patrones existentes.
- Se pude utitilizar una parte de la funcionalidad del 
+ Se pude utilizar una parte de la funcionalidad del 
 \emph on
 DRArch
 \emph default
  para generar reglas que validen si los patrones de diseño están implementados
  correctamente.
- El diseño flexible de la herramiente permite realizar esta modificación
+ El diseño flexible de la herramienta permite realizar esta modificación
  realizando cambios menores en el código fuente.
 \end_layout
 
@@ -10063,7 +9881,7 @@ agragar algo mas de info
 \end_layout
 
 \begin_layout Subsection
-Incorporando algorítmos
+Incorporando algoritmos
 \end_layout
 
 \begin_layout Standard
@@ -10076,7 +9894,7 @@ DRArch
  consultas sobre la información que se quiere obtener.
  Sin embargo, también aporta cierto grado de ambigüedad, la cual es resuelta
  por el arquitecto en el momento de aceptar o rechazar cada sugerencia.
- Una forma de evitar esta ambigüedad es incorporando algorítmos que validen
+ Una forma de evitar esta ambigüedad es incorporando algoritmos que validen
  los resultados de la ejecución de cada regla.
  Esto también aumenta el grado de automatización del proceso propuesto por
  
@@ -10089,7 +9907,7 @@ DRArch
  la eficiencia cuando se tratan espacios de búsqueda muy grandes, al generar
  sugerencias invalidas cuya evaluación y eliminación disminuye el rendimiento
  (costo humano, no computacional).
- Mediante tecnicas probabilisticas o reglas de ámbito (por nombrar algunas)
+ Mediante técnicas probabilisticas o reglas de ámbito (por nombrar algunas)
  sería posible hacer este tipo de filtrado antes de presentar los resultados
  al arquitecto.
 \end_layout
@@ -10124,7 +9942,7 @@ Durante la elaboración de este trabajo, se trató de mantener la generalidad
 Sin embargo, creemos que los estilos arquitectónicos y las convenciones
  de implementación pueden aportar información valiosa al enfoque.
  Mediante la especificación de reglas, se puede mejorar su precisión incorporand
-o un catálogo de de reglas orientadas a los ditintos estilos arquitectónicos
+o un catálogo de de reglas orientadas a los distintos estilos arquitectónicos
  así como también, reglas que cumplan con las convenciones de implementación.
  Si mediante un conjunto de reglas se detecta cuál es el estilo arquitectónico
  que predomina en el sistema, entonces es posible aplicar un segundo conjunto
@@ -10155,16 +9973,22 @@ Dada la naturaleza del problema y de la solución propuesta, es natural pensar
 \end_layout
 
 \begin_layout Standard
-Tambien, es destacable notar que el proceso propuesto por DRArch Top-Down
- o Down-Top tiene una correspondencia directa con el proceso de razonamiento
- de los agentes.
+También, es destacable notar que el proceso propuesto por 
+\emph on
+DRArch
+\emph default
+ Top-Down o Down-Top tiene una correspondencia directa con el proceso de
+ razonamiento de los agentes.
  Este puede ser de encadenamiento progresivo (
 \emph on
 forward chainning
 \emph default
 ), considerando todos los datos conocidos y avanzar hasta encontrar la solución,
- como de razonamiento regresivo (backward chainning), que considera una
- posible solución y trata de probar su validez.
+ como de razonamiento regresivo (
+\emph on
+backward chainning
+\emph default
+), que considera una posible solución y trata de probar su validez.
  
 \end_layout
 
@@ -10190,159 +10014,12 @@ dos se debe realizar de manera manual.
 Un posible trabajo futuro para mitigar esta debilidad del enfoque puede
  ser permitir el mapeo de UCMs con casos de test.
  Al contar la herramienta con información acerca de qué caso de test corresponde
- a cada path, sería posible la creación de los logs de ejecución necesarios
- sin intervención del usuario.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Subsection
-Integración con aspectos estructurales
-\end_layout
-
-\begin_layout Standard
-Si bien 
+ a cada 
 \emph on
-ArchSync
+path
 \emph default
- produjo buenos resultados en la sincronización de UCMs con implementación,
- está claro que hay muchas partes de la documentación de una arquitectura
- para las que esta notación no es apropiada.
- Para abarcar una mayor proporción de la documentación, es necesario tener
- en cuenta los aspectos estructurales de la arquitectura, generalmente especific
-ados mediante diagramas de 
-\emph on
-descomposición de módulos
-\emph default
- para una vista estática, de 
-\emph on
-componentes y conectores
-\emph default
- para vistas que representan la estructura en tiempo de ejecución y de 
-\emph on
-deployment
-\emph default
- para mostrar cómo se relaciona el sistema con los elementos de su ambiente
- que no son software.
-\end_layout
-
-\begin_layout Standard
-Creemos que la integración de algunos de los enfoques estructurales basados
- en ingeniería reversa, presentados en la Sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sub:Estrategias-ingenieria-reversa"
-
-\end_inset
-
-, con el concepto de sincronización incremental presentado en este trabajo
- puede ser beneficiosa por varias razones.
- Principalmente, mejoraría el desempeño de 
-\emph on
-ArchSync
-\emph default
- al permitir una sincronización más completa de la documentación de diseño.
- Además, al aprovechar la documentación existente que no ha sido afectada
- por los cambios en el código, se reduce la cantidad de información semántica
- que se requiere y, por lo tanto, la necesidad de intervención del arquitecto
- en el proceso.
-\end_layout
-
-\begin_layout Subsection
-Trazabilidad en métodos de diseño
-\end_layout
-
-\begin_layout Standard
-Los artefactos producidos durante el desarrollo de software --tales como
- descripciones de modelos, diagramas, especificaciones formales abstractas
- y código fuente-- están altamente interrelacionados, ya que los cambios
- en algunos de ellos afectan a otros.
- La falta de información acerca de estas relaciones o la incerteza acerca
- de la información existente limita la utilidad de los modelos de software
- durante el de\SpecialChar \-
-sa\SpecialChar \-
-rro\SpecialChar \-
-llo.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-ArchSync
-\emph default
- ataca el problema particular de sincronización de relaciones entre código
- fuente y UCMs.
- Sin embargo, la perspectiva práctica tomada en el desarrollo de este trabajo
- nos hace creer posible su extensión para soportar la sincronización de
- otro tipo de relaciones entre elementos de los modelos.
-\end_layout
-
-\begin_layout Subsection
-Mapeo de paths con casos de test
-\end_layout
-
-\begin_layout Standard
-Una vez que la aplicación que está siendo analizada se ha puesto en ejecución,
- el proceso de ejercitarla con los casos de uso correspondientes a los paths
- de\SpecialChar \-
-sac\SpecialChar \-
-tua\SpecialChar \-
-li\SpecialChar \-
-za\SpecialChar \-
-dos se debe realizar de manera manual.
- En caso de tener que verificar un número considerable de paths, la tarea
- se puede volver muy tediosa, aumentando la probabilidad de introducir errores
- en el análisis por distracciones del usuario.
-\end_layout
-
-\begin_layout Standard
-Un posible trabajo futuro para mitigar esta debilidad del enfoque puede
- ser permitir el mapeo de UCMs con casos de test.
- Al contar la herramienta con información acerca de qué caso de test corresponde
- a cada path, sería posible la creación de los logs de ejecución necesarios
- sin intervención del usuario.
- Además, esto puede permitir un análisis de cobertura de los casos de test:
- si se detecta que un log de ejecución no cubre cierta porción de código
- que ha sido modificada, se puede advertir al usuario que es necesaria la
- creación de un nuevo caso o la modificación del existente.
-\end_layout
-
-\begin_layout Subsection
-Especialización del enfoque
-\end_layout
-
-\begin_layout Standard
-Durante la elaboración de este trabajo, se trató de mantener la generalidad
- del enfoque al no limitarlo a ningún estilo arquitectónico en particular
- o a algún conjunto de convenciones de implementación específico.
- Como objetivo de diseño, ésto tuvo un efecto positivo en el trabajo ya
- que permite el uso de la herramienta en cualquier sistema que haya sido
- implementado en Java.
-\end_layout
-
-\begin_layout Standard
-Sin embargo, creemos que los estilos arquitectónicos y las convenciones
- de implementación pueden aportar información valiosa al enfoque.
- Mediante la especialización de las reglas de análisis de 
-\emph on
-Path-Log Matcher
-\emph default
- para algún estilo particular, se puede mejorar su precisión al eliminar
- algunas alternativas de conciliación que de antemano se sabe que no son
- válidas.
- Asimismo, se podrían introducir nuevas reglas en el componente 
-\emph on
-Diff Mapper
-\emph default
- que, al aportar información acerca de las convenciones de implementación,
- permitan una mayor precisión en la detección de nuevas responsabilidades.
-\end_layout
-
-\end_inset
-
-
+, sería posible la creación de los logs de ejecución necesarios sin intervención
+ del usuario.
 \end_layout
 
 \begin_layout Chapter
