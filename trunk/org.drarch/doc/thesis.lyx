@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -10085,7 +10085,13 @@ DRArch
 \emph default
 , ya que la interacción con el arquitecto disminuye al no tener que tomar
  tantas decisiones.
- 
+ Por ejemplo, una desventaja de los sistemas basados en reglas es que baja
+ la eficiencia cuando se tratan espacios de búsqueda muy grandes, al generar
+ sugerencias invalidas cuya evaluación y eliminación disminuye el rendimiento
+ (costo humano, no computacional).
+ Mediante tecnicas probabilisticas o reglas de ámbito (por nombrar algunas)
+ sería posible hacer este tipo de filtrado antes de presentar los resultados
+ al arquitecto.
 \end_layout
 
 \begin_layout Standard
@@ -10128,6 +10134,64 @@ o un catálogo de de reglas orientadas a los ditintos estilos arquitectónicos
 DRArch
 \emph default
 .
+\end_layout
+
+\begin_layout Subsection
+Automatización de la herramienta con la utilización de agentes
+\end_layout
+
+\begin_layout Standard
+Dada la naturaleza del problema y de la solución propuesta, es natural pensar
+ en la incorporación de un agente inteligente que tome las decisiones sobre
+ que sugerencias aceptar y cuales no.
+ El mismo arquitecto mediante el uso de la herramienta en forma manual,
+ guiará el proceso de aprendizaje del agente.
+ Una alternativa viable es que el asistente no tome las decisiones pero
+ que informe o notifique al arquitecto que cierta sugerencia que no aceptó
+ es posible que sea de utilidad (falso negativo por parte del arquitecto).
+ Un segundo agente puede ser utilizado para construir el conjunto de reglas
+ que serán ejecutadas a continuación.
+ 
+\end_layout
+
+\begin_layout Standard
+Tambien, es destacable notar que el proceso propuesto por DRArch Top-Down
+ o Down-Top tiene una correspondencia directa con el proceso de razonamiento
+ de los agentes.
+ Este puede ser de encadenamiento progresivo (
+\emph on
+forward chainning
+\emph default
+), considerando todos los datos conocidos y avanzar hasta encontrar la solución,
+ como de razonamiento regresivo (backward chainning), que considera una
+ posible solución y trata de probar su validez.
+ 
+\end_layout
+
+\begin_layout Subsection
+Mapeo de paths con casos de test
+\end_layout
+
+\begin_layout Standard
+Una vez que la aplicación que está siendo analizada se ha puesto en ejecución,
+ el proceso de ejercitarla con los casos de uso correspondientes a los paths
+ de\SpecialChar \-
+sac\SpecialChar \-
+tua\SpecialChar \-
+li\SpecialChar \-
+za\SpecialChar \-
+dos se debe realizar de manera manual.
+ En caso de tener que verificar un número considerable de paths, la tarea
+ se puede volver muy tediosa, aumentando la probabilidad de introducir errores
+ en el análisis por distracciones del usuario.
+\end_layout
+
+\begin_layout Standard
+Un posible trabajo futuro para mitigar esta debilidad del enfoque puede
+ ser permitir el mapeo de UCMs con casos de test.
+ Al contar la herramienta con información acerca de qué caso de test corresponde
+ a cada path, sería posible la creación de los logs de ejecución necesarios
+ sin intervención del usuario.
 \end_layout
 
 \begin_layout Standard
