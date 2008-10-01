@@ -244,15 +244,6 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX - Se nota que estos párrafos fueron traducidos del ingles 
-\end_layout
-
-\end_inset
-
 La Arquitectura de Software sirve para capturar las principales decisiones
  de diseño del sistema.
  Es muy difícil que estas primeras decisiones puedan cambiarse más adelante,
@@ -314,36 +305,6 @@ Motivación
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Entra muy rapido esto concepto.
- Se podria poner algo como: (1- Si bien es comunmente aceptado que arquitectura
- de software puede ser utilizada como vehiculo comunicación entre personas
- con diferentes necesidades de un sistema, se puede ver la falta de documentació
-n arquitectónica en la mayoria de los proyectos de desarrollos actuales[Reffs],
- especialmente en empresas de software pequeñas.) (2-Debido a la importancia
- de la arquitectura de software en la toma de desición en diferentes etapas
- del proceso de desarrollo, es necesario contar con documentación actualizada
- que refleje arquitectónicamente relaciones en la implementación del sistema.
- Esta documentación puede ser extraida a partir de información provista
- por las sentencias del código fuente[ref1,ref2,etc].Sin embargo, el código
- fuente provee una vista parcial de los aspectos arquitectónicos que no
- incluye la dinámica de los diversos componentes de software.
- Evidencia de la dinámica del sistema puede ser obtenida del analisis de
- la ejecución de las sentencias y los valores correspondientes en tiempo
- de ejecución....
- ) 
-\end_layout
-
-\begin_layout Standard
-(cada uno de los parrafos habria que extenderlos usando el párrafo que les
- escribi como sentencia principal.)
-\end_layout
-
-\end_inset
-
 Si bien es comunmente aceptado que arquitectura de software puede ser utilizada
  como vehículo de comunicación entre personas con diferentes necesidades
  de un sistema, se puede ver la falta de documentación arquitectónica en
@@ -567,16 +528,6 @@ reference "sec:Arquitectura-de-Software"
  y en particular para el equipo de desarrollo.
  También se realiza un análisis de por qué se elijen los UCMs para representar
  arquitecturas.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Falta un análisis de por qué es UCMs.
-\end_layout
-
-\end_inset
-
  En la sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -716,7 +667,7 @@ Finalmente, de la definición se deduce que el comportamiento de los elementos
  Tal como ocurre con las propiedades internas de los elementos de software,
  
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 XXX-Les falta releer el doc.
@@ -736,16 +687,6 @@ A continuación, se presentan los estilos arquitectónicos que nos ayudan
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-debe haber un parrafo que introduzca la sección siguiente...
- 
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -753,23 +694,10 @@ XXX-debe haber un parrafo que introduzca la sección siguiente...
 Estilos\InsetSpace ~
 Arquitectónicos
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 XXX-Poner mas info en esta seccion!!!
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-El título de modelos arquitectónicos y despeus hablan de estilos :|
 \end_layout
 
 \end_inset
@@ -826,141 +754,6 @@ performance
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-A software architecture determines how system components are identified
- and allocated, how the components interact to form a system, the amount
- and granularity of communication needed for interaction, and the interface
- protocols used for communication.
- For a network-based application, system performance is dominated by network
- communication.
- Therefore, selection of the appropriate architectural style(s) for use
- in designing the software architecture can make the difference between
- success and failure in the deployment of a network-based application.
- Software architectural styles have been characterized by their control-flow
- and dataflow patterns, allocation of functionality across components, and
- component types.
- Unfortunately, none of these characterizations are useful for understanding
- how a style influences the set of architectural properties, or qualities,
- of a system.
- These properties include, among others, user-perceived performance, network
- efficiency, simplicity, modifiability, scalability, and portability.
- We use these style-induced architectural properties to classify styles
- for network-based applications with the goal of understanding why certain
- styles are better than others for some applications, thus providing additional
- guidance for software engineers faced with the task of architectural design.
-\end_layout
-
-\begin_layout Standard
-Architectural Styles Since an architecture embodies both functional and
- non-functional properties, it can be difficult to directly compare architecture
-s for different types of systems, or for even the same type of system set
- in different environments.
- Styles are a mechanism for categorizing architectures and for defining
- their common characteristics [Di Nitto and Rosenblum, 1999].
- An architectural style characterizes a family of systems that are related
- by shared structural and semantic properties [Monroe et al., 1997].
- Architectural styles provide an abstraction for the interactions of the
- components in an architecture [Shaw, 1990].
- Each style captures the essence of a pattern of interaction by ignoring
- the incidental details of the rest of the architecture.
- Perry and Wolf [1992] define architectural style as an abstraction of element
- types and formal aspects from various specific architectures, perhaps concentra
-ting on only certain aspects of an architecture.
- An architectural style encapsulates important decisions about the architectural
- elements and emphasizes important constraints on the elements and their
- relationships.
- This definition allows for styles that focus only on the connectors of
- an architecture, or on specific aspects of the component interfaces.
- In contrast, Garlan and Shaw [1993], Garlan et al.
- [1994], and Shaw and Clements [1997] all define style in terms of a pattern
- of interactions among typed components.
- Specifically, an architectural style determines the vocabulary of components
- and connectors that can be used in instances of that style, together with
- a set of constraints on how they can be combined [Garlan and Shaw, 1993].
- This restricted view of architectural styles is a direct result of their
- definition of software architecture — thinking of architecture as a formal
- description, rather than as a running system, leads to abstractions based
- only in the shared patterns of box and line diagrams.
- Abowd et al.
- [1995] define this explicitly as viewing the collection of conventions
- that are used to interpret a class of architectural descriptions as defining
- an architectural style.
- New architectures can be defined as instances of specific styles [Di Nitto
- and Rosenblum, 1999].
- Since architectural styles may address different aspects of software architectu
-re, a given architecture may be composed of multiple styles.
- Likewise, a hybrid style can be formed by combining multiple basic styles
- into a single coherent style.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-An Architecture Style is a family of software architectures that share common
- architecture properties
-\end_layout
-
-\begin_layout Standard
-[2] D.
- Garlan, R.
- Allen, J.
- Ockerbloom, "Exploiting Style in Architectural Design Environments", Proceeding
-s of SIGSOFT ’94 Symposium on the Foundations of Software Engineering, December
- 1994.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-A specialization of element and relation types, together with a set of constrain
-ts on how they can be used.
- See architectural pattern.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-An architectural style is a description of component types and their topology.
- It also includes a description of the pattern of data and control interaction
- among the components and an informal description of the benefits and drawbacks
- of using that style.
- Architectural styles are important engineering artifacts because they define
- classes of designs along with their associated known properties.
- They offer experience-based evidence of how each class has been used historical
-ly, along with qualitative reasoning to explain why each class has its specific
- properties.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 \begin_inset LatexCommand label
 name "sub:Descriptiones_Arquitectónicas"
@@ -968,21 +761,6 @@ name "sub:Descriptiones_Arquitectónicas"
 \end_inset
 
 Descripciones arquitectónicas
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-hay un desbalance en la cantidad de información en las secciones.
- Si no tienen mucho que decir en secciones unifiquen todo ya que una seccion
- los obliga a poner algo dentro que merezca estar separado.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1104,16 +882,6 @@ template
 \begin_layout Enumerate
 Presentación primaria: por lo general es un gráfico; presenta los elementos
  principales y sus relaciones.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Aca listan los items
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -1190,16 +958,6 @@ ye el complemento de la documentación de las vistas, es decir la
  información que se aplica a más de una vista o al paquete de documentación
  en sí.
  Consiste de tres aspectos principales, el cómo, el qué y el por qué:
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Aca los enumeran
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1246,15 +1004,6 @@ key "BUHR95"
  A diferencia de otras descripciones arquitectónicas (basadas principalmente
  en mostrar la estructura de sistemas), este tipo de notaciones ayuda a
  las personas a razonar acerca del comportamiento del sistema.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Falta introducir porque UCMs!!!
-\end_layout
-
-\end_inset
-
  Otra de las razones principales de la elección de esta notación se basa
  en que permite la especificación conjunta de los principales aspectos arquitect
 ónicos independientemente de la tecnología en la cual el sistema fue implementad
@@ -1298,18 +1047,8 @@ key "BUHR95"
 \begin_layout Standard
 Por sus cualidades, los UCMs son la notación elegida para representar las
  vistas comportamentales de las arquitecturas reconstruidas.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Cual es la relacion con su trabajo
-\end_layout
-
-\end_inset
-
-Los UCMs no son un lenguaje apropiado para especificación formal de comportamien
-to, ya que deliberadamente dejan algunas decisiones abiertas para ser tomadas
+ Los UCMs no son un lenguaje apropiado para especificación formal de comportamie
+nto, ya que deliberadamente dejan algunas decisiones abiertas para ser tomadas
  durante el diseño detallado.
  Los UCM son solamente una notación para razonar y explicar el comportamiento
  de un sistema.
@@ -1565,254 +1304,6 @@ Ejemplo de UCM
 
 \end_layout
 
-\begin_layout Standard
-\align center
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Rol en la documentación de arquitecturas
-\end_layout
-
-\begin_layout Standard
-Documentar el comportamiento añade detalle semántico relacionado con el
- tiempo a los elementos y sus interacciones.
- Los modelos comportamentales agregan información que revela el orden de
- las interacciones entre los elementos, las oportunidades para concurrencia,
- y las dependencias que tienen las interacciones con el tiempo.
-\end_layout
-
-\begin_layout Standard
-Para atribuir comportamiento a elementos de una descripción arquitectónica,
- es necesario agregar 
-\begin_inset Quotes eld
-\end_inset
-
-tejido conectivo
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset LatexCommand cite
-key "BUHR96,BUHR99"
-
-\end_inset
-
-.
- Una forma de introducir este tipo de tejido es usar conexiones que soportan
- interacciones (llamadas o mensajes) entre elementos a través de interfaces.
- Dichas interfaces definen los nombres y parámetros de todas las posibles
- interacciones, ocultando detalles de la lógica interna de los componentes.
- A estas conexiones se les puede atribuir comportamiento al describir esce\SpecialChar \-
-na\SpecialChar \-
-rios
- de interacción usando diagramas de interacción UML (también conocidos como
- diagramas de secuencia de mensajes).
- Sin embargo, la combinación de conexiones, documentación de interfaces
- y diagramas de interacción muchas veces se excede en cantidad de detalles
- -tales como 
-\emph on
-operaciones
-\emph default
-, 
-\emph on
-ensamblaje
-\emph default
- y 
-\emph on
-estructura de herencia
-\emph default
- en sistemas orientados a objetos- y hace difícil entender sistemas de cualquier
- tamaño y complejidad.
- Es necesario tomar distancia de estos detalles para entender un sistema
- en términos arquitectónicos.
-\end_layout
-
-\begin_layout Standard
-Los UCMs suben el nivel de abstracción al simplificar los más importantes
- factores de complejidad:
-\end_layout
-
-\begin_layout Description
-Operaciones.
- Las secuencias de invocación de operaciones son reemplazadas por 
-\emph on
-paths
-\emph default
- causa-efecto.
- El comportamiento no se representa en términos de interacciones entre component
-es a través de mensajes, sino en términos de secuencias causa-efecto entre
- 
-\emph on
-responsabilidades
-\emph default
- de los componentes.
- En otras palabras, las interfaces de los componentes, y las interacciones
- entre interfaces, tales como llamadas y mensajes, son consideradas detalles.
- Las responsabilidades pueden ser de mayor granularidad que las llamadas
- y mensajes, y de esta manera se reduce el nivel de compromiso con los detalles.
-\end_layout
-
-\begin_layout Description
-Ensamblaje\InsetSpace ~
-y\InsetSpace ~
-Estructura\InsetSpace ~
-de\InsetSpace ~
-Herencia.
- A nivel de UCMs, el único requerimiento para la 
-\begin_inset Quotes eld
-\end_inset
-
-conectabilidad
-\begin_inset Quotes erd
-\end_inset
-
- de un componente es que sea capaz de realizar las responsabilidades requeridas.
- Los detalles necesarios para realmente conectar (física o lógicamente)
- un componente pueden ser diferidos hacia otro tipo de documentación.
- A su vez, la dependencia de las descripciones de comportamiento sobre los
- detalles como la estructura de herencia también es eliminada por el hecho
- de que los UCMs son modelos independientes de las descripciones de clases.
-\end_layout
-
-\begin_layout Standard
-Los UCMs pueden ser derivados a partir de requerimientos informales o de
- casos de uso, si están disponibles.
- Las responsabilidades tienen que estar especificadas o ser inferidas de
- estos requerimientos.
- Se pueden crear casos de uso separados para funcionalidades individuales
- del sistema o inclusive para escenarios individuales.
- Muchas veces, la forma de modelar una interacción con UCMs depende de la
- intención del arquitecto.
- Sin embargo, el fuerte de esta notación reside principalmente en la integración
- de escenarios relacionados.
- En tales casos, los UCMs pueden usarse para ilustrar y razonar respecto
- a concurrencia, como por ejemplo en problemas de contención de recursos
- (múltiples paths usando un elemento, como se muestra en la Figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:UCM-contencion-recursos"
-
-\end_inset
-
-) o posibles situaciones de deadlock (dos paths en direcciones opuestas
- a través de al menos dos elementos en común, como se muestra en la Figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cap:UCM-deadlock"
-
-\end_inset
-
-).
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-\align center
-\begin_inset Box Frameless
-position "c"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "45col%"
-special "none"
-height "1pt"
-height_special "totalheight"
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename /home/nfrontini/facultad/tesis/tesis tincho/img/ucmConcurrency.png
-	lyxscale 50
-	scale 40
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "cap:UCM-contencion-recursos"
-
-\end_inset
-
-UCM de un problema de contención de recursos
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\hfill
-
-\begin_inset Box Frameless
-position "c"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "45col%"
-special "none"
-height "1pt"
-height_special "totalheight"
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename /home/nfrontini/facultad/tesis/tesis tincho/img/ucmDeadlock.png
-	lyxscale 50
-	scale 40
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "cap:UCM-deadlock"
-
-\end_inset
-
-UCM de una posible situación de deadlock
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 \begin_inset LatexCommand label
 name "sec:Necesidad-de-Documentación-Arquitectónica"
@@ -1835,16 +1326,6 @@ reference "sub:Descriptiones_Arquitectónicas"
  La documentación es la vía de comunicación entre desarrolladores, y permite
  que el sistema se diseñe, implemente, pruebe, instale y mantenga siguiendo
  a la arquitectura que lo sostiene.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Esto podria ponerse en una única sección...
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -2025,16 +1506,6 @@ name "sec:Conclusión"
 \end_inset
 
 Resumen y discusión 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-yo le pondria resumen y discusión si es que hace eso
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3359,34 +2830,6 @@ name "cha:El-enfoque-DRArch"
 \end_inset
 
 Tesis
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX - Hay una mezcla entre el enfoque y el tool.
- Yo diria que separen el enfoque y despues hablen de la forma en que el
- tool soporta el enfoque.
- Es decir, las ventanitas del tool no debieran ir durante la especificación
- del enfoque.
-\end_layout
-
-\begin_layout Standard
-Las subsecciones del enfoque debe mostrar aspectos conceptual.
- Si quieren puede poner una subsección que diga algo com o: 
-\begin_inset Quotes sld
-\end_inset
-
-Recorrido por la Herramienta DrArch
-\begin_inset Quotes srd
-\end_inset
-
- y ahi muestran las caracteristicas visuales de la herramienta y las relacionan
- con el enfoque.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3489,16 +2932,6 @@ r de un sistema, generando como salida una representación arquitectónica
  enfoques basados en reconstrucción de arquitecturas para tratar el problema
  que causa la falta de documentación arquitectónica.
  Si bien no se centran específicamente en la reconstrucción de comportamiento,
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-su análisis detallado de cada uno
-\end_layout
-
-\end_inset
-
  su análisis detallado de cada uno nos permitió detectar aspectos que colaboran
  en los mecanismos y abstracciones aplicables al caso de UCMs.
 \begin_inset Note Note
@@ -3528,125 +2961,9 @@ Task
  en el proceso de reconstrucción.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-El análisis del problema en sí y de los trabajos relacionados puso a la
- luz algunas características que hacen difícil la incorporación de ciertos
- mecanismos dentro de un proceso de desarrollo de software.
- Para evitar estos inconvenientes, además de la reconstrucción de arquitecturas
- de software de UCM se plantearon los siguientes objetivos secundarios:
-\end_layout
-
-\begin_layout Itemize
-Limitar la información requerida del usuario a UCMs, código fuente y mapeo
- responsabilidad-código.
- Toda información adicional deberá ser derivable a partir del análisis automátic
-o de estos tres elementos dados como entrada.
-\end_layout
-
-\begin_layout Itemize
-El uso de la herramienta no deberá imponer el uso de un lenguaje de programación
- de propósito específico, ni un estilo o un conjunto de convenciones de
- implementación en particular.
- De esta forma será posible la aplicación del enfoque a sistemas legados.
-\end_layout
-
-\begin_layout Itemize
-Tampoco se deberá imponer un proceso demasiado estricto para la modificación
- tanto de la arquitectura como del código.
- Así, el desarrollador tendrá el control de cuándo y cómo sincronizar los
- UCMs con la implementación.
-\end_layout
-
-\begin_layout Standard
-Como principales influencias para la concepción de 
-\emph on
-DRArch
-\emph default
- se deben mencionar los trabajos de...
-\end_layout
-
-\begin_layout Standard
-Si bien los objetivos del enfoque son distintos, el análisis de eventos
- de bajo nivel mediante instrumentación de código presentado en 
-\begin_inset LatexCommand cite
-key "DISCOTECT"
-
-\end_inset
-
- fue un importante ejemplo de (a) cuánta información útil se puede extraer
- de la ejecución de una aplicación y (b) que la aplicación del enfoque no
- necesariamente debe requerir el uso de un lenguaje de programación para
- ese propósito específico.
-\end_layout
-
-\begin_layout Standard
-Por otro lado, en 
-\begin_inset LatexCommand cite
-key "ALDRICH05"
-
-\end_inset
-
- se plantea un modelo de actualización incremental en el que se supone un
- diseño arquitectónico y una implementación inicial.
- Éste enfoque, en contraste con la extracción completa de un nuevo modelo
- arquitectónico a partir del código, posee la ventaja de mantener el estilo
- de especificación del arquitecto, ya que modifica la especificación original
- solamente en las partes donde se producen divergencias con la implementación.
-\end_layout
-
-\begin_layout Standard
-Finalmente, el trabajo presentado en 
-\begin_inset LatexCommand cite
-key "SCM05"
-
-\end_inset
-
- ilustra las ventajas de integrar un enfoque para el tratamiento de erosión
- arquitectónica con sistemas de software con\SpecialChar \-
-fi\SpecialChar \-
-gu\SpecialChar \-
-ra\SpecialChar \-
-tion management.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-sacar info del capitulo de trabajos relacionados!!!
-\end_layout
-
-\begin_layout Standard
-enfoque descripción general mostrando componentes del enfoque.
- 1 2 3 4 5 partes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Description
 Modelo\InsetSpace ~
 conceptual
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Este modelo conceptual deberia ir en la seccion enfoque DrArch y tambien
- el esquemático.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3660,18 +2977,6 @@ sigue un proceso iterativo en el cuál el arquitecto interactúa en pequeñas
  Dicho modelo esta representado por una base de datos de conocimiento lo
  suficientemente flexible como para poder realizar consultas complejas de
  forma simple.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-En la programación lógica, se especifican las condiciones que satisfacen
- las soluciones, se deducen las soluciones a partir de las condiciones y
- el énfasis de todo está en qué problema resolver.
- El problema se describe especificando qué caracteriza a sus posibles soluciones.
-\end_layout
-
-\end_inset
-
  
 \end_layout
 
@@ -3703,23 +3008,6 @@ s representan fielmente los conceptos arquitectónicos que se está intentando
  por los diferentes diagramas aumentando el nivel de detalle, incorporando
  modificaciones o elementos que pueden aportar mayor nivel de detalle en
  sucesivas fases que utilizan el modelo transformado por la fase en curso.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Este enfoque basado en fases (botton up) permite dividir el espacio de analisis
- (el sistema a recuperar) en unidades mas pequeñas para, en fases posteriores,
- ir incrementando el tamaño de este espacio como asi tambien componer los
- resultados de las fases ejecutadas anteriormente.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3889,16 +3177,6 @@ name "sec:Ejemplo:-Observer-Observable"
 \end_inset
 
 Ejemplo: Observer-Observable
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Este ejemplo debería ir como subseccion del Enfoque
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3927,20 +3205,6 @@ key "gamma93design"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Yo usaria una aplicación por ejemplo la misma que juan y martin y sobre
- la cual especificaria el patron...
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4097,21 +3361,6 @@ name "fig:Diagrama-de-componentes"
 Diagrama de componentes para el ejemplo 
 \emph on
 Observer-Observable
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-
-\emph on
-XXX-Indicar en el diagramas de componentes los puertos e interfaces y relaciones
- entre puerto e interfaces..
- en el diagrama se tiene que especificar tambien una nota para las responsabilda
-des.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -5467,7 +4716,7 @@ reference "fig:Hot-Spot-y-Frameworks"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -5569,94 +4818,6 @@ FLAbot
 \emph default
 .
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-The architecture of Drarch is based on three major components: RuleModel,
- RuleEngine, PhaseEngine.
- The RuleModel as it name describe, defines a model of rules.
- Each Rule is composed with a Prolog query, a list of Vars for which we
- are interested in its values, a Suggest template in natural language which
- is going to be filled with the values of the vars for each query result,
- and a Fact set to be generated and added to the knowledge base if the suggest
- is accepted.[ref a la figura]
-\end_layout
-
-\begin_layout Standard
-The RuleModel component is build on EMF framework.
- EMF is a Java framework and code generation facility for building tools
- and other applications based on a structured model.
- Once you specify an EMF model, the EMF generator can create a corresponding
- set of Java implementation classes.
- You can edit these generated classes to add methods and instance variables
- and still regenerate from the model as needed: your additions will be preserved
- during the regeneration.
- If the code you added depends on something that you changed in the model,
- you will still need to update the code to reflect those changes; otherwise,
- your code is completely unaffected by model changes and regeneration.
- In addition to simply increasing your productivity, building your application
- using EMF provides several other benefits like model change notification,
- persistence support including default XMI and schema-based XML serialization,
- a framework for model validation, and a very efficient reflective API for
- manipulating EMF objects generically.
- Most important of all, EMF provides the foundation for interoperability
- with other EMF-based tools and applications.
- It provides wizards and a visual editor for the creation and edition of
- the rules.
- RuleEngine
-\end_layout
-
-\begin_layout Standard
-The RuleEngine component is an abstraction of the underlay inference engine.
- It's in charge of the execution of the query rules and the instantiation
- of the suggest template with each result of the query execution.
- After the user accepts the suggests it is the responsible for the generation
- of the new facts and the addition of those to the knowledge base.
- JQuery has been selected as the query language for Drarch.
- The JQuery query language is a logic (Prolog-like) query language based
- on TyRuBa.
- TyRuBa is a logic programming language implemented in Java.
- The JQuery query language is defined as a set of TyRuBa predicates which
- operate on facts generated from the Eclipse JDT's abstract syntax tree.
- These facts, derived from AST represent the static structure of the system.
- To analyze the system in execution was used of the FLABot project, which
- instruments the code of the system and selected events are logged.
- The resulting log is then analyzed and new facts are generated and incorporated
- into the knowledge base.
- 
-\end_layout
-
-\begin_layout Standard
-StepEngine
-\end_layout
-
-\begin_layout Standard
-The Step Engine defines a phase model as a composition of steps, in which
- the execution of one phase is determined by the performance of each of
- the steps which it is composed.
- In turn, each step corresponds to a rule defined by the RuleModel component.
- The phases are divided into two groups according to how they interact with
- the user.
- The interactive phases, executes each step and at the end of this execution,
- suggests resulting from the execution of the corresponding rule, are presented
- to the user.
- Here is responsibility of the user to choose those suggestions that best
- represent the system being analyzed.
- At this point you decide whether continuing with the following rule, or
- stops the execution of phase.
- The non-interactive phases on the other hand, do not have the user intermediate
- outcomes, these are all accepted by default and the stage is executed in
- its entirety.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -6450,7 +5611,7 @@ reference "fig:Diagrama de Paquetes"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -7653,7 +6814,7 @@ reference "fig:Configuración-del-log"
 \begin_inset Float algorithm
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -8047,161 +7208,6 @@ Casos de estudio
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-alvaro says: la idea seria hacerlo incremental 
-\end_layout
-
-\begin_layout Standard
-alvaro says: ir descubriendo incrementalmente la arquitectura 
-\end_layout
-
-\begin_layout Standard
-alvaro says: mostrar el diseño objetos...
- y ver que obtieneñ 
-\end_layout
-
-\begin_layout Standard
-alvaro says: y despues ir aumentando el scope para ir refinando la descripcion
- 
-\end_layout
-
-\begin_layout Standard
-alvaro says: esa seria la idea del caso de estudio 
-\end_layout
-
-\begin_layout Standard
-alvaro says: hacerlo para un aspecto y despues armar una tabla con los resultado
-s de descubrimeinto del resto 
-\end_layout
-
-\begin_layout Standard
-alvaro says: diciendo que componentes encontro sobre que componentes debió
- encontrar 
-\end_layout
-
-\begin_layout Standard
-alvaro says: y mostrando tambien cuales reglas se tuvieron que agregar 
-\end_layout
-
-\begin_layout Standard
-alvaro says: se entiende? 
-\end_layout
-
-\begin_layout Standard
-alvaro says: el primer caso deberia ser el market 
-\end_layout
-
-\begin_layout Standard
-alvaro says: donde ustedes refinan las reglas
-\end_layout
-
-\begin_layout Standard
-Fronti says: y despeus pasamos a G2 
-\end_layout
-
-\begin_layout Standard
-alvaro says: y despues ver el G2 para ver si se mejoró la Eficiencia 
-\end_layout
-
-\begin_layout Standard
-alvaro says: claro..
- 
-\end_layout
-
-\begin_layout Standard
-Fronti says: ok 
-\end_layout
-
-\begin_layout Standard
-alvaro says: en el market introducen Bubble y despues el caso g2 sale de
- ahi 
-\end_layout
-
-\begin_layout Standard
-Fronti says: ok..se entiende 
-\end_layout
-
-\begin_layout Standard
-alvaro says: y ven que reglas tuvieron que agregar para descubrir la arquitectur
-a G2..
- 
-\end_layout
-
-\begin_layout Standard
-alvaro says: es decir, que conocimiento del arquitectura tuvo que codificar
- el arquitecto para recuperar con cierta Eficiencia el diseño.
- 
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-alvaro says: lo que tienen que definir son las métricas que van a tomar
- del experimento 
-\end_layout
-
-\begin_layout Standard
-Fronti says: algo como medir el tiempo, y la efectividad, no? 
-\end_layout
-
-\begin_layout Standard
-alvaro says: si.
- el tiempo no creo que puedan salvo que lo hagan ustedes 
-\end_layout
-
-\begin_layout Standard
-alvaro says: mas que nada efectividad 
-\end_layout
-
-\begin_layout Standard
-alvaro says: ahi te mande un paper de andres y luis donde usan algunas metricas
- de comparar efectividad ..
- 
-\end_layout
-
-\begin_layout Standard
-alvaro says: para que tengas una idea de lo que hablo...
- 
-\end_layout
-
-\begin_layout Standard
-Fronti says: buenisimo 
-\end_layout
-
-\begin_layout Standard
-alvaro says: no son especificamente esas pero pueden usarlas para verificar..
- 
-\end_layout
-
-\begin_layout Standard
-alvaro says: y tambien pueden relacionar el error de precision del tool
- con metricas del código fuente 
-\end_layout
-
-\begin_layout Standard
-alvaro says: como complejidad ciclomática, cantidad de sentencias, etc.
- 
-\end_layout
-
-\begin_layout Standard
-alvaro says: como para ver si sacan algoñ 
-\end_layout
-
-\begin_layout Standard
-Fronti says: esta bien
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Este capítulo describe una serie de casos de estudio que realizamos para
  verificar si las suposiciones hechas a nivel conceptual pueden ser corroboradas
  en la práctica.
@@ -8213,14 +7219,14 @@ DRArch
  puede ser aplicable a la reconstrucción arquitectónica de un sistema, y
  segundo, a ilustrar cómo se usó la herramienta en diferentes proyectos,
  para poder investigar los puntos fuertes y débiles del enfoque.
- En particular, en este capítulo se pretende analizar la utilidad, precisión
- y validez de la herramienta frente a un sistema real ya implementado.
- En cada caso de estudio se medirán (a) la cantidad de trabajo que le fue
- ahorrado al arquitecto en el análisis en la documentación del sistema --como
- indicadores de utilidad--, (b) la cantidad de soluciones diferentes propuestas
- por la herramienta --como indicador inverso a la precisión-- y (c) si la
- solución esperada por el arquitecto estaba entre las alternativas --como
- indicador de validez.
+ En particular, en este capítulo se pretende analizar la utilidad, efectividad
+ de la herramienta frente a un sistema real ya implementado.
+ En cada caso de estudio se presenta (a) un detalle de la arquitectura del
+ sistema --necesaria para realizar comparaciónes--, (b) un resumen de las
+ fases ejecutadas --describiendo la naturaleza de las reglas-- y (c) las
+ vistas mas relevantes que se obtuvieron durante la ejecución del proceso
+ de reconstrucción --importante para realizar la comparación con la arquitectura
+ presentada en el punto (a)--.
 \end_layout
 
 \begin_layout Standard
@@ -8256,19 +7262,6 @@ key "CAMPO02"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-agregar un comentario asi: ...descubriendo incrementalmente la arquitectura
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 El capítulo se encuentra organizado de la siguiente manera.
  Primero se presenta el caso de estudio Market en la sección\InsetSpace ~
 
@@ -8290,14 +7283,7 @@ reference "sec:G2"
 \end_inset
 
 .
- A continuación, en la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Arquitectura-Original-G2"
-
-\end_inset
-
- se muestra la arquitectura propuesta por G2.
+ Para ambos casos de estudio, se muestra la arquitectura originalmente propuesta.
  Finalmente, en la sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -9447,9 +8433,13 @@ Fase de invocación implícita
 Al igual que para el caso de analisis anterior, esta fase tiene como proposito
  principal descubrir aquellos componentes y relaciones que pertenecen al
  framework Bubble.
- Las reglas DRArch que forman esta fase estan encargadas de materializar
- artefactos de codigos fuentes que representen tareas, agentes y aquellos
- encargados del manejo de eventos.
+ Las reglas 
+\emph on
+DRArch
+\emph default
+ que forman esta fase estan encargadas de materializar artefactos de codigos
+ fuentes que representen tareas, agentes y aquellos encargados del manejo
+ de eventos.
 \end_layout
 
 \begin_layout Standard
@@ -9783,39 +8773,6 @@ comentar la tabla! ver la siguiente nota como ejemplo
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-En el caso de Market, 
-\emph on
-DRArch 
-\emph default
-detectó un 78% de los artefactos arquitectónicos pertenecientes al fremework
- Bubble, mientras que en el G2, la eficiencia fue del 92%.
- Esto quiere decir que la mejora realizada en el refinamiento de las reglas
- fue de un positivo.
- La Tabla\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "tab:Eficacia-del-DRArch-parcial"
-
-\end_inset
-
- muestra la eficiencia de los artefactos arquitectónicos (componentes, relacione
-s y responsabilidades) del Market y del G2.
- Estos mismos resultados estan representados al Figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Eficacia-entre-los-artefactos"
-
-\end_inset
-
- en donde claramente se observa que la diferencia entre las barras pares
- de cada proyecto es menor para el pryecto G2.
- Esto significa que el margen de error es mas grande en el proyecto Market.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -9889,6 +8846,36 @@ ArchSync
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+En el caso de Market, 
+\emph on
+DRArch 
+\emph default
+detectó un 78% de los artefactos arquitectónicos pertenecientes al fremework
+ Bubble, mientras que en el G2, la eficiencia fue del 92%.
+ Esto quiere decir que la mejora realizada en el refinamiento de las reglas
+ fue de un positivo.
+ La Tabla\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "tab:Eficacia-del-DRArch-parcial"
+
+\end_inset
+
+ muestra la eficiencia de los artefactos arquitectónicos (componentes, relacione
+s y responsabilidades) del Market y del G2.
+ Estos mismos resultados estan representados al Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Eficacia-entre-los-artefactos"
+
+\end_inset
+
+ en donde claramente se observa que la diferencia entre las barras pares
+ de cada proyecto es menor para el pryecto G2.
+ Esto significa que el margen de error es mas grande en el proyecto Market.
 \end_layout
 
 \begin_layout Standard
@@ -10898,60 +9885,32 @@ Como aporte principal,
 \emph on
 DRArch
 \emph default
- permite ....Al mismo tiempo, el enfoque revela...
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Como aporte principal, 
-\emph on
-DRArch
-\emph default
- permite actualizar los UCMs arquitectónicos con respecto a su implementación.
- Al mismo tiempo, el enfoque revela violaciones a las reglas de comportamiento
- impuestas por el estilo arquitectónico a un nivel de abstracción apropiado
- para hacerlas evidentes.
+ permite reconstruir la arquitectura de software de un sistema generando
+ vistas que describan el comportamiento a un nivel de abstracción apropiado.
+ Generalmente, esta información es utilizada para colaborar con la ducumentación
+ del sistema.
+ Al mismo tiempo, el enfoque realiza un mapeo entre el código fuente y las
+ vistas generadas.
  Por lo tanto, el análisis realizado por la herramienta también puede ser
  usado por el arquitecto para decidir la recodificación de algunas partes
- de la implementación de acuerdo con las prescripciones arquitectónicas.
+ de la implementación de acuerdo con las vistas arquitectónicas.
 \end_layout
 
 \begin_layout Standard
-Por otro lado, el enfoque se basa en ciertas suposiciones y tiene algunas
- limitaciones.
- Primero, cuando ocurre un cambio en el código fuente, suponemos que es
- posible conocer los mapeos previos entre UCMs e implementación.
- Esto significa que la implementación anterior a los cambios era consistente
- con los escenarios descriptos en los UCMs.
- Estos mapeos deberían ser especificados cuando el arquitecto crea los UCMs
- por primera vez y luego procede a implementarlos.
- En segundo lugar, el enfoque asume que las sincronizaciones entre UCMs
- e implementación se realizan con una frecuencia acorde al ritmo de desarrollo
- del sistema, para asegurar que los cambios entre las diferentes versiones
- del código fuente presenten pocas variaciones.
- Si esto no es así, el reconocimiento de las activaciones de responsabilidades
- basado en los eventos de los logs de ejecución se puede volver computacionalmen
-te inmanejable.
-\end_layout
+Una de las ventajas que posee el enfoque es que el proceso de reconstrucción
+ tiene en cuenta la información dinámica, es decir, la información que genera
+ el sistema cuando se está ejecutando.
+ Esto hace que se pueda describir el comportamiento del sistema y sea uno
+ de los diferenciales más importantes con respecto a otros enfoques.
+ 
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
-La desventaja principal del enfoque radica en la distancia entre un UCM
- dado y las muchas implementaciones posibles para los paths de responsabilidades.
- La herramienta trata de reconstruir los paths de responsabilidades usando
- un análisis bidireccional, que combina ingeniería reversa de los logs de
- ejecución con información semántica proveniente de los UCMs desactualizados.
- Sin embargo, este procesamiento está lejos de ser automático, porque requiere
- una cantidad considerable de conocimiento semántico que debe ser proporcionado
- por el arquitecto.
- El arquitecto interactúa con la herramienta en dos puntos: para proveer
- los logs de ejecución correctos y para seleccionar entre las opciones de
- conciliación.
- Además, si bien la herramienta proporciona indicios de la aparición de
- nuevas responsabilidades, tanto éstas como sus correspondientes mapeos
- deben ser especificados de manera manual.
+Adicionalmente, se puede incorporar al análisis información del contexto,
+ información aportada por la experiencia del arquitecto, información de
+ los stackeholders y cualquier otro tipo de información, ya que la representació
+n 
 \end_layout
 
 \end_inset
@@ -10964,17 +9923,29 @@ Limitaciones Actuales
 \end_layout
 
 \begin_layout Standard
-El enfoque se basa en ciertas suposiciones y tiene algunas limitaciones...
+El enfoque se basa en ciertas suposiciones y tiene algunas limitaciones.
+ Una de las supocisiones mas importanes es la de la selección de reglas.
+ Las reglas ejecutadas para cada sistema son específicas para el estilo
+ arquitectónico predominante.
 \end_layout
 
 \begin_layout Standard
-La desventaja principal del enfoque...
+El haber utilizado programación lógica para definir el modelo de reglas
+ brinda flexibilidad a la hora de realizar consultas, pero acarrea los problemas
+ típicos en los lenguajes interpretados.
+ Una de las principales desventajas del enfoque, es que el modelo de reglas
+ propone cierta ambigüedad que debe resolver el arquitecto en el momento
+ de tomar las decisiones, aceptando o rechazando sugerencias.
 \end_layout
 
 \begin_layout Standard
-La notación UCM da una noción de la estructura del sistema mediante componentes
- y responsabilidades, que es reforzada mediante los mapeos componente-clase
- y responsabilidad-método.
+La notación UCM generada por 
+\emph on
+DRArch
+\emph default
+ da una noción de la estructura del sistema mediante componentes y responsabilid
+ades, que es reforzada mediante los mapeos componente-clase y responsabilidad-mé
+todo.
  Sin embargo, esta información no puede considerarse una documentación completa
  de la estructura de un sistema a nivel arquitectónico, ya que no define
  de manera explícita las relaciones entre estos elementos (por ejemplo,
