@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -9816,6 +9816,69 @@ La elaboración de este trabajo, junto con la implementación del prototipo,
 
 \begin_layout Subsection
 Detección de Aspectos
+\end_layout
+
+\begin_layout Standard
+El Desarrollo de Software Orientado a Aspectos (DSOA) es el paradigma de
+ programación cuya idea principal es proporcionar un soporte avanzado para
+ la separación de 
+\emph on
+concerns 
+\emph default
+introduciendo una nueva unidad modular, llamada 
+\emph on
+aspecto.
+ 
+\emph default
+Existen técnicas de DSOA que proveen modios sitemáticos para identificación,
+ modularización representación y composición de 
+\emph on
+crosscutting concerns
+\emph default
+.
+ El término 
+\emph on
+crosscutting concern
+\emph default
+ se refiere a factores de calidad o funcionalidad del software que no pueden
+ ser efectivamente modularizados usando técnicas habituales de desarrollo
+ de software.
+ Generalmente estos concerns constituyen requerimientos no funcionales del
+ sistema y se dispersan a lo largo de todo el código fuente generando lo
+ que se denomina 
+\emph on
+código mezclado y diseminado
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Con el crecimiento y madurez de los lenguajes de programación orientada
+ a aspectos, como AspectJ
+\begin_inset LatexCommand cite
+key "AspectJ"
+
+\end_inset
+
+, ha surgido la necesidad de migrar los sistemas existentes a sistemas orientado
+s a aspectos.
+ Esta reingeniería se conoce como Reingeniería Orientada a Aspectos 
+\begin_inset LatexCommand cite
+key "GarciaMay2005"
+
+\end_inset
+
+ y se realiza en dos etapas.
+ La primera etapa conocida como Aspect Mining se encarga del reconocimiento
+ de aspectos.
+ Una vez reconocidos los aspectos, se aplican técnicas de "Aspect Refactoring"pa
+ra su migración a un sistema orientado a aspectos 
+\begin_inset LatexCommand cite
+key "Fowler"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
