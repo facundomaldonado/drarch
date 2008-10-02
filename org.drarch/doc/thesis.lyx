@@ -479,9 +479,10 @@ reference "cha:Implementación"
  transferencia con la empresa Delsat, S.A.
  – y de 
 \emph on
-FLABot
+Market
 \emph default
- – una herramienta realizada dentro de un proyecto de investigación.
+ – un proyecto de prueba contruido sobre un framework de invocación (nota:
+ el proyecto G2 se basa en el mismo framework).
  Más adelante, en el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -645,8 +646,6 @@ llo.
 La definición precedente también caracteriza a las vistas del sistema por
  estar compuestas de elementos de software, de propiedades externamente
  visibles y de relaciones entre ellos.
- Esto implica que no es relevante en este nivel, y por lo tanto se omite,
- la información de los elementos que no es pertinente a su interacción.
  Justamente por ser una abstracción de un sistema complejo, la arquitectura
  de software oculta los detalles que no afectan la manera en que los diferentes
  elementos usan, son usados por, se relacionan con o interactúan con otros
@@ -664,18 +663,7 @@ Una de las implicancias de la definición de arquitectura, es su omnipresencia
 \begin_layout Standard
 Finalmente, de la definición se deduce que el comportamiento de los elementos
  de software también forma parte de la arquitectura.
- Tal como ocurre con las propiedades internas de los elementos de software,
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-XXX-Les falta releer el doc.
- para detectar malfomación en los parrafos como aca...
-\end_layout
-
-\end_inset
-
+ Lo mismo ocurre con las propiedades internas de los elementos de software,
  en donde el comportamiento relevante en este nivel es aquel que afecte
  a la forma en cómo los demás elementos tienen que ser escritos y de qué
  manera deben comunicarse con él.
@@ -684,10 +672,6 @@ XXX-Les falta releer el doc.
 \begin_layout Standard
 A continuación, se presentan los estilos arquitectónicos que nos ayudan
  a describir los distintos tipos de componentes y su tipología.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Description
@@ -917,7 +901,7 @@ Otra información.
 Documentación\InsetSpace ~
 de\InsetSpace ~
 comportamiento.
- Las vistas presentan 
+ Las vistas convencionales de representacion arquitectónica presentan 
 \emph on
 información estructural
 \emph default
@@ -927,6 +911,7 @@ información estructural
 no es suficiente
 \emph default
  para razonar acerca de ciertas propiedades del mismo.
+ Es necesario describir aspectos comportamentales mediante vistas específicas.
  Exactamente qué aspectos del comportamiento modelar va a depender del tipo
  de sistema que se está diseñando: en un sistema de tiempo real importan
  las propiedades temporales de los eventos; mientras que en un sistema bancario
@@ -1326,6 +1311,11 @@ reference "sub:Descriptiones_Arquitectónicas"
  La documentación es la vía de comunicación entre desarrolladores, y permite
  que el sistema se diseñe, implemente, pruebe, instale y mantenga siguiendo
  a la arquitectura que lo sostiene.
+\end_layout
+
+\begin_layout Standard
+A continuación se listan los principales motivadores que hacen necesaria
+ una herramienta de reconstrucción de arquitecturas.
 \end_layout
 
 \begin_layout Subsection
