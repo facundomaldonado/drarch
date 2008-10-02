@@ -7128,9 +7128,9 @@ Este capítulo describe una serie de casos de estudio que realizamos para
 DRArch
 \emph default
  puede ser aplicable a la reconstrucción arquitectónica de un sistema, y
- segundo, a ilustrar cómo se usó la herramienta en diferentes proyectos,
+ segundo, a ilustrar cómo se usó la herramienta en diferentes proyectos
  para poder investigar los puntos fuertes y débiles del enfoque.
- En particular, en este capítulo se pretende analizar la utilidad, efectividad
+ En particular, en este capítulo se pretende analizar la utilidad y efectividad
  de la herramienta frente a un sistema real ya implementado.
  En cada caso de estudio se presenta (a) un detalle de la arquitectura del
  sistema --necesaria para realizar comparaciones--, (b) un resumen de las
@@ -7153,8 +7153,8 @@ ti\SpecialChar \-
 va\SpecialChar \-
 men\SpecialChar \-
 te estable del prototipo, se realizó
- la reconstrucción de un proyecto prototipo llamado Maket, y luego, se paso
- a reconstruir un proyecto comercial de tamaño mediano, llamado 
+ la reconstrucción de un proyecto de prueba llamado Market, y luego, se
+ paso a reconstruir un proyecto comercial de tamaño mediano, llamado 
 \emph on
 G2
 \emph default
@@ -7301,7 +7301,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/BubbleCoreClassDiagram.png
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -7340,7 +7340,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/BubbleModeloConceptual.png
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -7545,7 +7545,11 @@ Como primera fase, se debe seleccionar el código fuente que se va a incluir
  Market.
  Luego, se debe incluir la información dinámica, y para esto, se debe ejecutar
  un caso de uso que represente la funcionalidad principal del sistema.
- Un caso de uso típico para este sistema es el de realizar una oferta (
+ 
+\end_layout
+
+\begin_layout Standard
+Un caso de uso típico para este sistema es el de realizar una oferta (
 \emph on
 bidding
 \emph default
@@ -7574,7 +7578,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/EclipseRunFlabotConfiguration.png
-	width 40theight%
+	width 60theight%
 
 \end_inset
 
@@ -7607,6 +7611,15 @@ FLAbot.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Luego de generar el log, 
+\emph on
+DRArch
+\emph default
+ traduce automáticamente la información del log a la base de conocimientos
+ para que se pueda tener en cuenta en el análisis.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7651,7 +7664,8 @@ Fase de invocación implícita
 \begin_layout Standard
 Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
  y relaciones que puedan ser parte de un framework basado en invocaciones
- implícitas: manejo de eventos, tareas, agentes, etc.
+ implícitas, es decir, detectar los puntos de extención para el manejo de
+ eventos, tareas, agentes, etc.
  Con la división de unidades realizada en la fase anterior, se decidió correr
  esta fase únicamente a los artefactos de código fuente ubicados dentro
  del paquete 
@@ -7667,8 +7681,10 @@ DRArch
  se agrupan en las siguientes categorías:
 \end_layout
 
-\begin_layout Standard
-Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
+\begin_layout Itemize
+Detección\InsetSpace ~
+de\InsetSpace ~
+tareas: Este conjunto de reglas tiene como objetivo materializar
  artefactos del código fuente a componentes que representen una tarea.
  Las consultas buscan clases que tengan un nombres clave (
 \family typewriter
@@ -7682,19 +7698,24 @@ Tarea
 \emph on
 hook
 \emph default
- o abstractos, que el de alguno de estos métodos sea 
+ o abstractos, que alguno de estos métodos sea tenga el nombre 
 \family typewriter
 run
 \family default
 , etc.
 \end_layout
 
-\begin_layout Standard
-Detección de manejadores de eventos: Es complicado reconstruir este tipo
- de componentes, generalmente, son clases que implementan alguna clase con
+\begin_layout Itemize
+Detección\InsetSpace ~
+de\InsetSpace ~
+manejadores\InsetSpace ~
+de\InsetSpace ~
+eventos: Es complicado reconstruir este tipo de
+ componentes, generalmente, son clases que implementan alguna clase con
  el nombre 
 \family typewriter
-EventHandler
+Event\SpecialChar \-
+Handler
 \family default
 , con algún método que tenga como argumento un evento, así como también
  propiedades privadas del tipo listas que contengan eventos.
@@ -7702,8 +7723,10 @@ EventHandler
  este tipo de supuestos, aceptando o rechazando cada sugerencia.
 \end_layout
 
-\begin_layout Standard
-Detección del agente: Como dijimos anteriormente, los agentes representan
+\begin_layout Itemize
+Detección\InsetSpace ~
+del\InsetSpace ~
+agente: Como dijimos anteriormente, los agentes representan
  entidades del sistema, y este conjunto de reglas intenta descubrir el conjunto
  de clases que se materializan con un componente agente.
 \end_layout
@@ -7730,7 +7753,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/BubbleDiagramasDrarch.png
-	width 50theight%
+	width 55theight%
 
 \end_inset
 
@@ -7766,9 +7789,10 @@ Fase de materialización de invocación implícita
 \end_layout
 
 \begin_layout Standard
-Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
- y relaciones que estén materializados con invocaciones implícitas: manejo
- de eventos, tareas, etc.
+A diferencia de la fase anterior, esta fase esta compuesta por reglas cuyo
+ propósito es descubrir componentes y relaciones que estén materializados
+ con invocaciones implícitas, es decir, implementaciones de manejo de eventos,
+ tareas, etc.
  De esta forma, se agruparon las reglas más importantes presentadas por
  la herramienta 
 \emph on
@@ -7777,10 +7801,16 @@ DRArch
  en las siguientes categorías:
 \end_layout
 
-\begin_layout Standard
-Detección de tareas: Este conjunto de reglas tiene como objetivo materializar
+\begin_layout Itemize
+Detección\InsetSpace ~
+de\InsetSpace ~
+tareas: Este conjunto de reglas tiene como objetivo materializar
  artefactos del código fuente a componentes que representen una tarea.
- Algunas consultas sugieren materializar componentes con las clases que
+ Algunas consultas sugieren ma\SpecialChar \-
+te\SpecialChar \-
+ria\SpecialChar \-
+li\SpecialChar \-
+zar componentes con las clases que
  extienden de alguna clase 
 \family typewriter
 Task
@@ -7792,15 +7822,21 @@ run()
  implementado.
 \end_layout
 
-\begin_layout Standard
-Detección de manejadores de eventos: Este conjunto de reglas tiene como
- objetivo materializar artefactos del código fuente a componentes que represente
-n a contenedores de eventos.
+\begin_layout Itemize
+Detección\InsetSpace ~
+de\InsetSpace ~
+manejadores\InsetSpace ~
+de\InsetSpace ~
+eventos: Este conjunto de reglas tiene como objetivo
+ materializar artefactos del código fuente a componentes que representen
+ a contenedores de eventos.
 \end_layout
 
-\begin_layout Standard
-Detección de Agentes: Las consultas que pertenecen a las reglas de este
- conjunto sugieren que las clases que extienden de la clase 
+\begin_layout Itemize
+Detección\InsetSpace ~
+de\InsetSpace ~
+Agentes: Las consultas que pertenecen a las reglas de este conjunto
+ sugieren que las clases que extienden de la clase 
 \family typewriter
 Agent
 \family default
@@ -7808,8 +7844,8 @@ Agent
 \end_layout
 
 \begin_layout Standard
-El resultado obtenido luego de la ejecución de esta fase se muestra en la
- Figura\InsetSpace ~
+Uno de los diagramas generados luego de la ejecución de esta fase se muestra
+ en la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Resultado-de-la-fase-de-materializacion-i-e-market"
@@ -7829,7 +7865,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/MarketDiagramasDrarch.png
-	width 50theight%
+	width 55theight%
 
 \end_inset
 
@@ -7902,7 +7938,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/MarketDiagramasUCMDrarch.png
-	width 50theight%
+	width 55theight%
 
 \end_inset
 
@@ -7943,15 +7979,8 @@ G2
 \end_layout
 
 \begin_layout Standard
-El sistema G2 se basa en la arquitectura 
-\emph on
-client
-\emph default
--
-\emph on
-server
-\emph default
- de tres bandas (
+El sistema G2 se basa en la arquitectura cliente-servidor de tres bandas
+ (
 \emph on
 three-tier
 \emph default
@@ -7971,7 +8000,7 @@ browser
 \emph on
 web
 \emph default
- para ser delegadas al servidor G2, en la segunda banda correspondiente
+ para ser delegadas al servidor G2 en la segunda banda, correspondiente
  a la lógica del negocio, por intermedio del componente GateKeeper.
  Esta banda fue implementada mediante la instanciación del framework 
 \emph on
@@ -7997,7 +8026,18 @@ agentes reactivos
  Las tareas relacionadas con la administración del modelo del negocio normalment
 e interactúan con el componente de persistencia para consultar o alterar
  los datos relevantes del repositorio de datos, en la tercer banda.
- 
+ Esto puede observarse en la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Arquitectura-de-G2"
+
+\end_inset
+
+, donde se muestra un diagrama con la arquitectura principal del sistema
+ G2.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -8049,6 +8089,29 @@ tier
 \emph default
 , por ser éste el subsistema mas complejo y donde se concentró el trabajo
  de desarrollo.
+\end_layout
+
+\begin_layout Standard
+En la documentación de G2, se encontraron digramas de componentes (figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-componentes-g2-eliminar-usuario"
+
+\end_inset
+
+) y diagramas de UCM (figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
+
+\end_inset
+
+) los cuales resultan de mucha utilidad para poder comparar los resultado
+ obtenidos por 
+\emph on
+DRArch
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -8153,7 +8216,11 @@ DRArch
  teniendo en cuenta de que la funcionalidad del sistema esta organizada
  en 
 \emph on
-tareas y eventos.
+tareas 
+\emph default
+y
+\emph on
+ eventos.
  
 \emph default
 Como se mencionó en la sección anterior, este sistema esta basado en el
@@ -8163,16 +8230,33 @@ Bubble
 \emph default
 de la misma forma que el sistema analizado anteriormente con lo cual se
  reutilizarán las fases de análisis implementadas en el análisis anterior
- para recuperar la instanciación del framework.
- Posteriormente, aumentando el espacio de solución se irán descubriendo
- todos aquellos componentes que interactúan con los componentes del framework.
+ para recuperar la instanciación del 
+\emph on
+framework
+\emph default
+.
+ Pos\SpecialChar \-
+te\SpecialChar \-
+rior\SpecialChar \-
+mente, aumentando el espacio de solución, se irán descubriendo
+ todos aquellos componentes que interactúan con los componentes del 
+\emph on
+framework
+\emph default
+.
  
 \end_layout
 
 \begin_layout Standard
-Un escenario donde pueden verse la implementación del framework Bubble en
- el sistema G2 es el caso de uso RemoveUser (utilizado más tarde para ejercitar
- la herramienta).
+Un escenario donde pueden verse la implementación del 
+\emph on
+framework
+\emph default
+ Bubble en el sistema G2 es el caso de uso 
+\emph on
+removeUser
+\emph default
+ (utilizado más tarde para ejercitar la herramienta).
  Aquí un usuario administrador envía por medio de su 
 \emph on
 browser
@@ -8186,43 +8270,40 @@ browser
 \emph on
 removeUser
 \emph default
- 
+ (ver figura\InsetSpace ~
+
 \begin_inset LatexCommand ref
 reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
 
 \end_inset
 
-.
+).
  Mas adelante se eliminan los registros relacionados del repositorio de
  datos, como lo indica la responsabilidad UCM 
 \emph on
-deleteUserFromDB
+delete\SpecialChar \-
+User\SpecialChar \-
+From\SpecialChar \-
+DB
 \emph default
- y finalmente se retorna a la pagina con un listado actualizado de los usuarios;
+ y finalmente se retorna a la página con un listado actualizado de los usuarios;
  representado por la secuencia de activación de responsabilidades 
 \emph on
-listUsers
+list\SpecialChar \-
+Users
 \emph default
 , 
 \emph on
-generateHTMLResponse
+generate\SpecialChar \-
+HTML\SpecialChar \-
+Response
 \emph default
  y 
 \emph on
-sendResponse
+send\SpecialChar \-
+Response
 \emph default
 .
-\end_layout
-
-\begin_layout Standard
-La figura 
-\begin_inset LatexCommand ref
-reference "fig:Diagrama-de-componentes-g2-eliminar-usuario"
-
-\end_inset
-
- presenta el diagrama de componentes documentado por G2.
- 
 \end_layout
 
 \begin_layout Subsubsection
@@ -8232,15 +8313,19 @@ Fase de recolección de información
 \begin_layout Standard
 Como primera fase, se debe seleccionar el código fuente que se va a incluir
  en el análisis.
- En este caso, utilizaremos todo el código fuente disponible del sistema
- G2.
+ En este caso, también utilizaremos todo el código fuente disponible del
+ sistema G2.
  Luego, se debe incluir la información dinámica, y para esto, se debe ejecutar
  un caso de uso que represente la funcionalidad principal del sistema.
- El escenario seleccionado fue removeUser descripto en la sección anterior.
+ El escenario seleccionado fue 
+\emph on
+removeUser
+\emph default
+ descripto en la sección anterior.
 \end_layout
 
 \begin_layout Standard
-La Figura\InsetSpace ~
+La figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Instrumentación-de-la"
@@ -8252,7 +8337,11 @@ reference "fig:Instrumentación-de-la"
  A su vez puede observarse un panel de control que el arquitecto emplea
  para decidir el momento en que las acciones instrumentadas deben registrarse
  en el log de ejecución.
- Luego de reproducido el escenario sobre el sistema instrumentado, el log
+ 
+\end_layout
+
+\begin_layout Standard
+Luego de reproducido el escenario sobre el sistema instrumentado, el log
  de ejecución generado es transformado por el componente 
 \emph on
 TraceLog Analizer, 
@@ -8311,7 +8400,7 @@ Fase de invocación implícita
 \end_layout
 
 \begin_layout Standard
-Al igual que para el caso de análisis anterior, esta fase tiene como propósito
+Al igual que para el caso de estudio anterior, esta fase tiene como propósito
  principal descubrir aquellos componentes y relaciones que pertenecen al
  framework Bubble.
  Las reglas 
@@ -8319,15 +8408,26 @@ Al igual que para el caso de análisis anterior, esta fase tiene como propósito
 DRArch
 \emph default
  que forman esta fase están encargadas de materializar artefactos de códigos
- fuentes que representen tareas, agentes y aquellos encargados del manejo
- de eventos.
+ fuentes que representen punto de extensión a tareas, agentes y aquellos
+ encargados del manejo de eventos.
 \end_layout
 
 \begin_layout Standard
-Al estar basados en el mismo framework que el caso de análisis anterior,
- se reutilizaron las mismas reglas.
- Más adelante se verá como de vuelve a ejecutar esta fase debido a información
- extra que brindó la ejecución del caso de uso.
+Al estar basados en el mismo 
+\emph on
+framework
+\emph default
+ que el caso de estudio anterior, se reutilizaron las mismas reglas.
+ En fases posteriores se detectan artefactos arquitectónicos pertenecientes
+ al 
+\emph on
+framework
+\emph default
+ de invocación implícita.
+ De esta forma, se refinan el proceso incorporando nuevas reglas para esta
+ fase.
+ Es por eso que la fase de invocación implícita se ejecuta nuevamente con
+ un conjuto de reglas refinadas.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8335,17 +8435,30 @@ Fase de materialización
 \end_layout
 
 \begin_layout Standard
-De nuevo, se reutilizaron las mismas reglas que en el caso anterior.
- Una vez individualizados los puntos de extensión del framework de buscaron
- los componentes específicos del dominio de G2.
+De nuevo, se reutilizaron las mismas reglas que en el caso de estudio anterior.
+ Una vez in\SpecialChar \-
+di\SpecialChar \-
+vi\SpecialChar \-
+dua\SpecialChar \-
+li\SpecialChar \-
+za\SpecialChar \-
+dos los puntos de extensión del 
+\emph on
+framework
+\emph default
+ se buscaron los componentes específicos del dominio de G2.
  Estos componentes responden a la instanciación del framework para el caso
  específico del sistema G2.
- De esta forma, se detectaron los siguientes componentes basados en la ejecución
- de 
+ De esta forma, algunos de los componentes que se detectaron basados en
+ la ejecución de 
 \emph on
 DRArch
 \emph default
- con el caso de uso Remove User:
+ con el caso de uso 
+\emph on
+removeUser 
+\emph default
+son:
 \end_layout
 
 \begin_layout Standard
@@ -8361,7 +8474,7 @@ ListUserTask
 \family typewriter
 StaticHTMLStaticTask
 \family default
- y un montón mas .....
+, etc.
 \end_layout
 
 \begin_layout Standard
@@ -8371,6 +8484,8 @@ Al termino de la ejecución de esta fase se cuenta con la base de conocimientos
  Fases posteriores irán trabajando sobre esta base de conocimiento general
  y la irán enriqueciendo con información que el arquitecto considere relevante
  a las fases posteriores.
+ Tambén se cuenta con los diagramas generados que permiten observar parcialmente
+ la reconstrucción de la arquitectura del sistema.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8387,8 +8502,12 @@ path
 \emph default
  de ejecución e ir individualizando a lo largo de éste, cuáles son las responsab
 ilidades que se ejecutaron.
- Dado que es una aplicación multithread no se puede o mejor dicho no es
- recomendable realizar un seguimiento de la ejecución a nivel de 
+ Dado que es una aplicación 
+\emph on
+multithread
+\emph default
+ no se puede o mejor dicho no es recomendable realizar un seguimiento de
+ la ejecución a nivel de 
 \emph on
 thread
 \emph default
@@ -8401,15 +8520,19 @@ threads
 \emph default
  que componen la ejecución del sistema.
  En el caso de G2 y mas específicamente de Bubble estos elementos son los
- Eventos.
+ eventos.
  Así, siguiendo el rastro de un evento a lo largo de la ejecución del caso
  de uso, se encontró un nuevo tipo de componente que no había sido descubierto
  en fases anteriores y que pertenece al framework Bubble: los Sensores.
  De esta forma, los agentes están asociados a sensores (como filtros) que
  son registrados para activarse con determinados eventos o grupos de eventos.
- Ya que la fase de invocación implícita se basó en el caso de análisis del
- sistema Market y dada la simplicidad del caso de uso utilizado para ejercitar
  
+\end_layout
+
+\begin_layout Standard
+Debido a que la fase de invocación implícita se basó en el caso de análisis
+ del sistema Market y dada la simplicidad del caso de uso utilizado para
+ ejercitar 
 \emph on
 DRArch
 \emph default
@@ -8420,10 +8543,7 @@ DRArch
 DRArch
 \emph default
  con el sistema G2.
-\end_layout
-
-\begin_layout Standard
-Con esta nueva información, se procedió a incorporar nuevas reglas a la
+ Con esta nueva información, se procedió a incorporar nuevas reglas a la
  fase de invocación implícita que descubrieran estos eventos de bajo nivel
  y se reejecutaron las fases anteriores.
 \end_layout
@@ -8440,8 +8560,16 @@ Fase de reconocimiento de intermediarios
 
 \begin_layout Standard
 Una vez reconocidos los componentes que forman parte de la implementación
- del framework, se pretendió encontrar todos aquellos componentes que interactúa
-n con los elementos del framework.
+ del 
+\emph on
+framework
+\emph default
+, se pretendió encontrar todos aquellos componentes que interactúan con
+ los elementos del 
+\emph on
+framework
+\emph default
+.
  De esta forma se descubrieron los componentes GateKeeper y UserDBView encargado
 s de activar los agentes que ejecutan las tareas y de abstraer el acceso
  a la capa de persistencia de datos respectivamente.
@@ -8474,7 +8602,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Recovered G2 Components.png
-	width 35theight%
+	width 50theight%
 
 \end_inset
 
@@ -8517,7 +8645,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Recovered G2 UCM.png
-	width 45theight%
+	width 50theight%
 
 \end_inset
 
@@ -8592,11 +8720,19 @@ DRArch
 Otra de las métricas que se incluye en el análisis es la Complejidad Ciclomática
  (
 \emph on
-Cyclomatic Complexity
+Cy\SpecialChar \-
+clo\SpecialChar \-
+ma\SpecialChar \-
+tic Com\SpecialChar \-
+plexi\SpecialChar \-
+ty
 \emph default
 ) ya que es una métrica del software que proporciona una medición cuantitativa
  de la complejidad lógica de un programa.
- Es una de las métricas de software mas ampliamente aceptada, ya que ha
+ Es una de las métricas de software mas am\SpecialChar \-
+plia\SpecialChar \-
+men\SpecialChar \-
+te aceptada, ya que ha
  sido concebida para ser independiente del lenguaje.
  Se basa en el diagrama de flujo determinado por las estructuras de control
  de un determinado código.
@@ -8630,7 +8766,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/ComplejidadCiclomatica.png
-	width 40theight%
+	width 50theight%
 
 \end_inset
 
@@ -8674,7 +8810,7 @@ fremework
 \emph default
  Bubble, mientras que en el G2, la eficiencia fue del 92%.
  Esto quiere decir que la mejora realizada en el refinamiento de las reglas
- fue de un positivo.
+ fue positiva.
  La Tabla\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -8684,7 +8820,7 @@ reference "tab:Eficacia-del-DRArch-parcial"
 
  muestra la eficiencia de los artefactos arquitectónicos (componentes, relacione
 s y responsabilidades) del Market y del G2.
- Estos mismos resultados están representados al Figura\InsetSpace ~
+ Estos mismos resultados están representados al figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Eficacia-entre-los-artefactos"
@@ -8693,7 +8829,7 @@ reference "fig:Eficacia-entre-los-artefactos"
 
  en donde claramente se observa que la diferencia entre las barras pares
  de cada proyecto es menor para el proyecto G2.
- Esto significa que el margen de error es mas grande en el proyecto Market.
+ Esto significa que el margen de error es mayor en el proyecto Market.
 \end_layout
 
 \begin_layout Standard
@@ -9232,7 +9368,13 @@ reference "tab:Eficacia-del-DRArch"
 \end_inset
 
 .
- En gráfico de la Figura\InsetSpace ~
+ En gráfico de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Eficiencia-vs.-Complejidad"
+
+\end_inset
+
  se pueden observar estos índices.
  La primer conclusión que puede derivarse de estos valores es que cuanto
  menos complejidad tenga el sistema, más eficiente es la reconstrucción
@@ -9598,7 +9740,7 @@ Eficiencia vs.
 \end_layout
 
 \begin_layout Standard
-El haber utilizado ProLog para la implementación de las 
+El haber utilizado ProLog para la implementación del componente 
 \emph on
 Rule Model
 \emph default
@@ -9618,7 +9760,7 @@ En resumen, las pruebas realizadas sobre ambos proyectos revelaron la importante
 \emph on
 DRArch
 \emph default
- en proceso de reconstrucción.
+ en el proceso de reconstrucción.
  El espacio de búsqueda, tal como debería ser analizado por un arquitecto
  para descubrir artefactos arquitectónicos, se reduce notablemente en comparació
 n con el total de clases del sistema.
