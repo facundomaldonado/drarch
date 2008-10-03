@@ -37,6 +37,7 @@
 \tracking_changes false
 \output_changes false
 \author "" 
+\author "" 
 \end_header
 
 \begin_body
@@ -100,16 +101,20 @@ status collapsed
 
 \series bold
 \size huge
-Drarch
+DRArch
 \end_layout
 
 \begin_layout Standard
 \align center
 
 \size largest
-Recuperación y Reconstrucción
+Un Enfoque Basado en 
+\emph on
+queries
+\emph default
+
 \newline
- de Arquitecturas
+ para la reconstrucción de arquitecturas
 \end_layout
 
 \begin_layout Standard
@@ -227,7 +232,9 @@ Director: Dr.
 
 \begin_layout Standard
 \align center
-Co-Director: Andrés Diaz Pace
+Co-Director: Dr.
+ J.
+ Andrés Diaz Pace
 \end_layout
 
 \begin_layout Standard
@@ -242,7 +249,7 @@ Co-Director: Andrés Diaz Pace
 
 \size larger
 Tandil, Argentina.
- Noviembre de 2008
+ Octubre de 2008
 \end_layout
 
 \begin_layout Standard

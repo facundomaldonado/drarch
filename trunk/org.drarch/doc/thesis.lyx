@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -108,7 +108,7 @@ tos e implementación.
 \end_layout
 
 \begin_layout Standard
-Todo sistema que tiene software tiene una arquitectura de software.
+Todo sistema que tiene software posee una arquitectura de software.
  Sin embargo, no necesariamente existe en la práctica una documentación
  acertada de esta arquitectura.
  Quizás toda la gente que diseñó el sistema se ha ido, la documentación
@@ -143,7 +143,7 @@ DRArch
 \emph default
 , para asistir a los desarrolladores a generar la documentación arquitectónica
  utilizando un proceso de reconstrucción de arquitecturas.
- En particular, se asume que existe el código fuente del sistema.
+ En particular, se asume que existe el código fuente de la aplicación.
  El objetivo principal de 
 \emph on
 DRArch
@@ -156,6 +156,8 @@ Use-Case Maps
 \emph default
  (UCMs), una notación práctica para especificar tanto componentes como flujos
  de responsabilidades.
+ Esto permite describir el comportamiento del sistema en un alto nivel de
+ abstracción.
 \end_layout
 
 \begin_layout Standard
@@ -188,7 +190,24 @@ addcontentsline{toc}{chapter}{Agradecimientos}
 
 \end_inset
 
-...¡Gracias!
+A nuestros padres y demás familiares que nos brindaron su afecto y colaboración
+ durante estos años de estudio.
+\end_layout
+
+\begin_layout Standard
+Un especial agradecimiento a nuestro director Alvaro Soria y a nuestro co-direct
+or Andrés Díaz Pace, por su colaboración, disposición y confianza brindados
+ durante el desarrollo de este trabajo.
+\end_layout
+
+\begin_layout Standard
+A nuestros amigos y compañeros, los cuales supieron estar a nuestro lado
+ en forma incondicional durante todo este tiempo, y de los cuales nos sentimos
+ muy contentos y orgullosos.
+\end_layout
+
+\begin_layout Standard
+¡Gracias!
 \end_layout
 
 \begin_layout Standard
@@ -3293,7 +3312,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/observerObservableClassDiagram.JPG
-	scale 75
+	scale 80
 
 \end_inset
 
@@ -3505,7 +3524,7 @@ status open
 \begin_inset Graphics
 	filename img/ObserverObservableMappingClass.jpg
 	lyxscale 50
-	scale 70
+	width 60theight%
 
 \end_inset
 
@@ -3545,7 +3564,7 @@ status open
 \begin_inset Graphics
 	filename img/ObserverObservableMappingMethod.jpg
 	lyxscale 50
-	scale 70
+	width 60theight%
 
 \end_inset
 
@@ -4912,7 +4931,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/java2jquery.jpg
-	scale 75
+	scale 70
 
 \end_inset
 
@@ -5514,7 +5533,7 @@ DRArch
 \emph on
 BlackBoard
 \emph default
-, en el cual una base de conocimientos común, el 
+, en el cual una base de conocimientos común, llamada 
 \emph on
 BlackBoard
 \emph default
@@ -5557,7 +5576,7 @@ BlackBoard
 \emph on
 DRArch
 \emph default
- es un proceso guiado, es el arquitecto, el responsable de seleccionar qué
+ es un proceso guiado, es el arquitecto el responsable de seleccionar qué
  fuente de conocimiento se va a ejecutar y de decidir cuáles son las transformac
 iones que actualizaran el estado del modelo arquitectónico bajo análisis.
  Por esta razón, en la implementación del modelo 
@@ -5567,15 +5586,15 @@ BlackBoard
  utilizada en esta herramienta, será el arquitecto el encargado de seleccionar
  el orden de ejecución de las transformaciones.
  La base de conocimiento esta determinada por una base de hechos lógicos
- estilo Prolog la cual, como se dijo con anteriormente, es cargada en una
- fase inicial de recolección de información estática (código fuente) y dinámica
+ estilo Prolog la cual, como se dijo anteriormente, es cargada en una fase
+ inicial de recolección de información estática (código fuente) y dinámica
  (logs de ejecución).
  Las fuentes de conocimiento encargadas de evaluar el estado del 
 \emph on
 BlackBoard
 \emph default
  y actualizarlo, están materializados mediante un modelo de reglas.
- Las reglas están definidas a partir de una consulta, que evalúa el estado
+ Éstas reglas están definidas a partir de una consulta, que evalúa el estado
  del repositorio en busca de algún patrón; una sugerencia, la que será presentad
 a al arquitecto para cada uno de los resultados de la consulta; y una serie
  de hechos que determinan la actualización del repositorio y por ende la
@@ -5584,7 +5603,7 @@ a al arquitecto para cada uno de los resultados de la consulta; y una serie
 
 \begin_layout Standard
 Por último, el modelo de fases determina la operatibilidad de la herramienta.
- Es el componente orquestador: responsable de guiar el proceso y coordinar
+ Es el componente orquestador responsable de guiar el proceso y coordinar
  la interoperabilidad entre los módulos.
 \end_layout
 
@@ -5714,8 +5733,8 @@ DRArch
 
 \begin_layout Standard
 De esta forma la base de conocimiento evaluada en cada fase esta compuesta
- por la base de conocimiento generada por el parseo del código fuente y
- por todos los archivos de hechos lógicos que se agreguen a la fase.
+ por la base de conocimiento (generada por el parseo del código fuente)
+ y por todos los archivos de hechos lógicos que se agreguen a la fase.
 \end_layout
 
 \begin_layout Section
@@ -5728,7 +5747,23 @@ Rule Model
 \end_layout
 
 \begin_layout Standard
-El modelo de reglas esta formado principalmente por cuatro entidades.
+El modelo de reglas esta formado principalmente por cuatro entidades: 
+\family typewriter
+Rule
+\family default
+, 
+\family typewriter
+Query
+\family default
+, 
+\family typewriter
+SuggestTemplate
+\family default
+ y 
+\family typewriter
+FactTemplates
+\family default
+.
  Una regla 
 \family typewriter
 Rule
@@ -5846,8 +5881,8 @@ Básicamente el modelo de reglas es una estructura de datos, la cual es necesari
  Se eligió para su implementación el framework EMF de Eclipse.
  EMF es un framework de modelado y generación de código para generar aplicacione
 s basadas en un modelo de datos estructurado.
- A partir de la especificación de un modelo descrito en XMI, EMF provee
- las herramientas para producir un conjunto de clases Java para el modelo
+ A partir de la especificación de un modelo descripto en XMI, EMF provee
+ las herramientas para producir un conjunto de clases Java para el modelo,
  junto con un conjunto de clases 
 \emph on
 adapters
@@ -5880,8 +5915,8 @@ Phase Engine
 \end_layout
 
 \begin_layout Standard
-Este componente es el encargado de la coordinación y la mediación entre
- los componentes descriptos anteriormente.
+Este componente es el encargado de la coordinación y mediación entre los
+ componentes descriptos anteriormente.
  Como se menciono en capítulos anteriores, el enfoque 
 \emph on
 DRArch
@@ -5894,7 +5929,7 @@ DRArch
 La primera de estas características se da al brindarle al arquitecto el
  control total de lo que se evalúa, tomando todas las decisiones aceptando
  o rechazando las sugerencias propuestas por la herramienta.
- Para satisfacer las demás características se implemento un mecanismo de
+ Para satisfacer las demás características se implementó un mecanismo de
  fases iterativas que permite la composición de los resultados de las evaluacion
 es realizadas en iteraciones previas.
  
@@ -5912,7 +5947,7 @@ working set
 (modulo de código que será analizado), una serie de reglas que serán evaluadas
  sobre ese módulo y los archivos de hechos que vayan a componer la base
  de conocimiento para la fase en cuestión.
- El resultado de ejecutar una fase, son dos artefactos: un archivo de hechos
+ El resultado de ejecutar una fase son dos artefactos: un archivo de hechos
  que fueron producto de la ejecución de cada regla de la fase y un archivo
  
 \emph on
@@ -5927,8 +5962,8 @@ Alternativamente se puede enriquecer la base de conocimientos de la fase,
 \emph on
 FLABot
 \emph default
- con un modelo arquitectónico definido y volcar la información del modelo
- arquitectónico del archivo a hechos lógicos.
+ con un modelo arquitectónico definido y transformar la información del
+ modelo arquitectónico del archivo a hechos lógicos.
 \end_layout
 
 \begin_layout Standard
@@ -5945,7 +5980,7 @@ PhaseManager
 PhaseManager
 \family default
  dichas sugerencias para ser presentadas al usuario.
- Allí, se pasa el control al usuario, quien es responsable de decidir que
+ Allí se pasa el control al usuario, quien es responsable de decidir que
  sugerencias acepta y disparar la ejecución de la próxima regla.
  Antes de ejecutar la siguiente regla de la fase, la entidad 
 \family typewriter
@@ -5962,7 +5997,7 @@ RuleManger
 DiagramManager
 \family default
  que genere los diagramas.
- Finalmente, con los nuevos hechos en la base de conocimiento y el diagrama
+ Finalmente con los nuevos hechos en la base de conocimiento y el diagrama
  generado se dispara la ejecución de la nueva regla.
 \end_layout
 
@@ -6018,7 +6053,7 @@ Modelo de fases
 \begin_layout Standard
 Existen dos tipos de fases: las interactivas y las no interactivas.
  Las fases interactivas son aquellas que al finalizar la ejecución de cada
- regla, se presentan las sugerencias al usuario para que este las acepte
+ regla se presentan las sugerencias al usuario para que este las acepte
  o las rechace.
  Las no interactivas en cambio, automáticamente aceptan todas las sugerencias
  y retorna el control al usuario una vez completada la fase.
@@ -6216,10 +6251,12 @@ reference "alg:Algoritmo-ejecución-de-fases"
 
 \end_inset
 
-, en donde cada fase obtiene la primer regla y la ejecuta: muestra las sugerenci
-as y si el arquitecto acepta la sugerencia, agrega los nuevos hechos a la
- base de conocimiento, carga el nuevo modelo, actualiza los diagramas, y
- vuelve a ejecutar la siguieten regla y así hasta que no queden más reglas.
+, en donde cada una de éstas obtiene la primer regla y la ejecuta.
+ Luego muestra las sugerencias y si el arquitecto aceptas, agrega los nuevos
+ hechos a la base de conocimiento.
+ Posteriormente carga el nuevo modelo, actualiza los diagramas, y vuelve
+ a ejecutar la siguieten regla.
+ Esto se repite hasta que no queden más reglas.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -6444,7 +6481,7 @@ TraceLog Analyzer
 Como se expuso brevemente en el capítulo anterior, es necesario registrar
  los eventos de bajo nivel que ocurren en la aplicación mientras el usuario
  la ejercita con los casos de uso correspondientes.
- Para ello, se utilizó la infraestructura de instrumentación de código de
+ Para ello se utilizó la infraestructura de instrumentación de código de
  
 \emph on
 FLABot
@@ -6463,8 +6500,8 @@ reference "sec:FLABot"
 
 \end_inset
 
-), ya que define un punto de extensión para la configuración de los eventos
- que deben ser registrados en tiempo de ejecución.
+), ya que ésta define un punto de extensión para la configuración de los
+ eventos que deben ser registrados en tiempo de ejecución.
 \end_layout
 
 \begin_layout Standard
@@ -6515,9 +6552,11 @@ FlabotFileContextProvider
  Las implementaciones
  de la primera interfaz se encargan de permitir al usuario configurar de
  manera gráfica la información necesaria para la creación del log de ejecución
- (ubicación del archivo de salida, tipos de eventos a registrar, profundidad
- de la inspección, etc.), mientras que las de la segunda proveen esta información
- al módulo de instrumentación.
+ (ubicación del archivo de sa\SpecialChar \-
+li\SpecialChar \-
+da, tipos de eventos a registrar, profundidad
+ de la inspección, etc.), mientras que las de la segunda interfaz proveen
+ esta información al módulo de instrumentación.
  La relación entre 
 \emph on
 DRArch
@@ -6681,7 +6720,8 @@ ProLog
 .
  El proceso de transformación sigue un algoritmo simple: el componente utiliza
  la información de mapeo entre responsabilidades y métodos recorriendo el
- log de ejecución, tomando sus entradas (ejecuciones de métodos) una a una.
+ log de ejecución y tomando sus entradas (ejecuciones de métodos) una a
+ una.
  Este proceso se muestra en el Algoritmo\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -6690,16 +6730,16 @@ reference "alg:Algoritmo-Log-Analyzer"
 \end_inset
 
 .
- Este algoritmo también se encarga de generar los hachos del estilo 
+ Este algoritmo también se encarga de generar los hechos del estilo 
 \family typewriter
 snapshot
 \family default
 , encargados de guardar la información relacionada con el estado del sistema
  en el momento que se ejecuto una responsabilidad.
  Guardar toda la información del estado del sistema en el momento en el
- que se ejecuta cada responsabilidad es costoso ya que la información aumenta
- exponencialmente y puede traer problemas de referencia cíclica.
- Debido a esto, se define la profundidad del análisis como parámetro de
+ que se ejecuta cada responsabilidad es costoso debido a que la información
+ aumenta exponencialmente y puede traer problemas de referencia cíclica.
+ Por esta razón se define la profundidad del análisis como parámetro de
  configuración de la ejecución del log (parámetro 
 \emph on
 Level of Depth Log
@@ -7011,7 +7051,7 @@ Eclipse
 JQuery
 \emph default
  es quien utiliza las ventajas de Eclipse sobre el metamodelo del lenguaje
- Java para realiza la transformación del código fuente a una representación
+ Java para realizar la transformación del código fuente a una representación
  de hechos al estilo 
 \emph on
 ProLog
@@ -7045,21 +7085,26 @@ ProLog
 \end_layout
 
 \begin_layout Standard
-A diferencia de algunos de los enfoques mencionados en el capítulo tres
- que siguen el mismo patrón de extraer, abstraer y presentar y que utilizan
- una base de datos relacional para almacenar las representaciones intermedias
- del modelo arquitectónico, 
+A diferencia de algunos de los enfoques mencionados en el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:Trabajos-relacionados"
+
+\end_inset
+
+, los cuales siguen el mismo patrón de extraer, abstraer y presentar y que
+ utilizan una base de datos relacional para almacenar las representaciones
+ intermedias del modelo arquitectónico, 
 \emph on
 DRArch
 \emph default
- utiliza el motor de consultas y la base de datos lógica provisto por 
+ utiliza el motor de consultas y la base de datos lógica provista por 
 \emph on
 JQuery
 \emph default
 .
  Esta decisión se basa en que al momento de realizar una consulta en un
- lenguaje lógico, se consulta por el qué y no por el cómo como es el caso
- de los los enfoques relacionales, lo que hace más sencillo y natural al
+ lenguaje lógico, se consulta por el qué y no por el cómo es el caso de
+ los enfoques relacionales Esto hace que hace más sencillo y natural al
  arquitecto formular sus propias reglas.
  Para tal propósito se creó un editor utilizando las ventajas que ofrece
  SWT, un 
@@ -7071,8 +7116,8 @@ toolkit
 \end_layout
 
 \begin_layout Standard
-De esta forma, al estar todo lo necesario integrado en el ambiente de desarrollo
-, si el arquitecto pretende incorporar la tarea de reconstrucción a su rutina,
+De esta forma al estar todo lo necesario integrado en el ambiente de desarrollo,
+ si el arquitecto pretende incorporar la tarea de reconstrucción a su rutina,
  podrá hacerlo incluyendo únicamente el plug-in 
 \emph on
 DRArch
@@ -7093,7 +7138,7 @@ En el próximo capítulo se analizará el desempeño de
 \emph on
 DRArch
 \emph default
- ante un sistemas real en desarrollo: 
+ ante un sistema real en desarrollo: 
 \emph on
 G2
 \emph default
@@ -8838,9 +8883,9 @@ status open
 <features>
 <column alignment="left" valignment="middle" rightline="true" width="2in">
 <column alignment="center" valignment="middle" leftline="true" width="0.9in">
+<column alignment="center" valignment="middle" leftline="true" width="0.7in">
 <column alignment="center" valignment="middle" leftline="true" width="0.8in">
-<column alignment="center" valignment="middle" leftline="true" width="0.8in">
-<column alignment="center" valignment="middle" leftline="true" width="0.8in">
+<column alignment="center" valignment="middle" leftline="true" width="0.7in">
 <row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -9784,7 +9829,9 @@ En los capítulos previos de este trabajo se presentó
 \emph on
 DRArch
 \emph default
-, un enfoque para la reconstrucción de arquitecturas que define un proceso
+, un enfoque para la re\SpecialChar \-
+cons\SpecialChar \-
+trucción de arquitecturas que define un proceso
  interactivo, iterativo e incremental.
  Mediante el uso de información estática (código fuente), dinámica (logs
  de ejecución), experiencia de los distintos 
@@ -9810,7 +9857,11 @@ DRArch
 Eclipse
 \emph default
 , aprovechando su arquitectura extensible, su modelo para análisis estático
- de código fuente Java y su framework de interfaz de usuario.
+ de código fuente Java y su 
+\emph on
+framework
+\emph default
+ de interfaz de usuario.
  A su vez, ésto permitió aprovechar los editores de UCM y el módulo de instrumen
 tación de código de 
 \emph on
@@ -9824,13 +9875,12 @@ JQuery
 \emph on
 Eclipse
 \emph default
- sobre el metamodelo del lenguaje Java para realiza la transformación del
+ sobre el metamodelo del lenguaje Java para realizar la transformación del
  código fuente a una representación de hechos al estilo 
 \emph on
 ProLog
 \emph default
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -9839,7 +9889,10 @@ Como aporte principal,
 DRArch
 \emph default
  permite reconstruir la arquitectura de software de un sistema generando
- vistas que describan el comportamiento a un nivel de abstracción apropiado.
+ vistas que describan el comportamiento a un nivel de abstracción a\SpecialChar \-
+pro\SpecialChar \-
+pia\SpecialChar \-
+do.
  Generalmente, esta información es utilizada para colaborar con la documentación
  del sistema.
  Al mismo tiempo, el enfoque realiza un mapeo entre el código fuente y las
@@ -9880,6 +9933,11 @@ El enfoque se basa en ciertas suposiciones y tiene algunas limitaciones.
  Una de las suposiciones mas importantes es la de la selección de reglas.
  Las reglas ejecutadas para cada sistema son específicas para el estilo
  arquitectónico predominante.
+ De esta forma, el arquitecto tiene la responsabilidad de seleccionar qué
+ conjunto de reglas debe correr sobre el sistema.
+ En el peor de los casos, en donde se decida ejecutar todas las reglas disponibl
+es, la mayoría de estas reglas no aportarían información arquitectónica
+ relevante.
 \end_layout
 
 \begin_layout Standard
@@ -9904,9 +9962,6 @@ todo.
  de manera explícita las relaciones entre estos elementos (por ejemplo,
  la estructura de herencia en una vista estática o los puertos y conectores
  en tiempo de ejecución).
- Otra debilidad que detectamos en nuestro enfoque es que su análisis es
- puramente sintáctico: no considera la semántica de las prescripciones ni
- los estilos arquitectónicos.
 \end_layout
 
 \begin_layout Standard
@@ -10016,29 +10071,6 @@ key "Fowler"
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-agregar info con Pau
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-...
-\begin_inset LatexCommand cite
-key "BCHRT05"
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Validación de patrones de diseño
 \end_layout
@@ -10063,19 +10095,6 @@ DRArch
  correctamente.
  El diseño flexible de la herramienta permite realizar esta modificación
  realizando cambios menores en el código fuente.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-agragar algo mas de info
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -10108,19 +10127,6 @@ DRArch
  Mediante técnicas probabilisticas o reglas de ámbito (por nombrar algunas)
  sería posible hacer este tipo de filtrado antes de presentar los resultados
  al arquitecto.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-agragar algo mas de info
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
