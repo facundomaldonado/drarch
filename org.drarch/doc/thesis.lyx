@@ -2875,7 +2875,7 @@ DRArch
  La sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "sec:Modelo-Conceptual"
+reference "des:Modelo-conceptual"
 
 \end_inset
 
@@ -2952,6 +2952,11 @@ Task
 \end_layout
 
 \begin_layout Description
+\begin_inset LatexCommand label
+name "des:Modelo-conceptual"
+
+\end_inset
+
 Modelo\InsetSpace ~
 conceptual
 \end_layout
@@ -3093,7 +3098,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/EsquemaDrarch.PNG
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -3288,7 +3293,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/observerObservableClassDiagram.JPG
-	scale 60
+	scale 75
 
 \end_inset
 
@@ -3333,7 +3338,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/ObserverObservableComponentDiagram.jpg
-	scale 70
+	scale 75
 
 \end_inset
 
@@ -3500,7 +3505,7 @@ status open
 \begin_inset Graphics
 	filename img/ObserverObservableMappingClass.jpg
 	lyxscale 50
-	scale 50
+	scale 70
 
 \end_inset
 
@@ -3540,7 +3545,7 @@ status open
 \begin_inset Graphics
 	filename img/ObserverObservableMappingMethod.jpg
 	lyxscale 50
-	scale 50
+	scale 70
 
 \end_inset
 
@@ -4710,7 +4715,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/HotSpot-Frameworks.jpg
-	scale 70
+	scale 75
 
 \end_inset
 
@@ -4907,7 +4912,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/java2jquery.jpg
-	scale 70
+	scale 75
 
 \end_inset
 
@@ -5071,7 +5076,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/ObserverObservableRule.jpg
-	scale 70
+	scale 80
 
 \end_inset
 
@@ -5203,7 +5208,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/ObserversComponentDiagram.jpg
-	scale 60
+	scale 70
 
 \end_inset
 
@@ -6258,12 +6263,12 @@ QueryEngine
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename img/ruleEngine.png
-	width 60theight%
+	width 70theight%
 
 \end_inset
 
@@ -6352,7 +6357,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Phase Interaction.png
-	width 70text%
+	width 90text%
 
 \end_inset
 
@@ -6575,7 +6580,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/TraceLogConfigurationClassDiagram.PNG
-	width 40page%
+	width 45page%
 
 \end_inset
 
@@ -8633,7 +8638,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Recovered G2 UCM.png
-	width 50theight%
+	width 65theight%
 
 \end_inset
 
@@ -9255,7 +9260,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/CasosDeEstudioEficacia.PNG
-	width 40theight%
+	width 50theight%
 
 \end_inset
 
