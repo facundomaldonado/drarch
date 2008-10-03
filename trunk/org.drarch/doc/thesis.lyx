@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -7757,7 +7757,10 @@ Handler
 \family default
 , con algún método que tenga como argumento un evento, así como también
  propiedades privadas del tipo listas que contengan eventos.
- Esto se presenta como sugerencias y es el arquitecto que debe corroborar
+ Esto se presenta como su\SpecialChar \-
+ge\SpecialChar \-
+ren\SpecialChar \-
+cias y es el arquitecto que debe corroborar
  este tipo de supuestos, aceptando o rechazando cada sugerencia.
 \end_layout
 
@@ -8380,7 +8383,10 @@ reference "fig:Instrumentación-de-la"
 
 \begin_layout Standard
 Luego de reproducido el escenario sobre el sistema instrumentado, el log
- de ejecución generado es transformado por el componente 
+ de ejecución ge\SpecialChar \-
+ne\SpecialChar \-
+ra\SpecialChar \-
+do es transformado por el componente 
 \emph on
 TraceLog Analizer, 
 \emph default
@@ -8825,10 +8831,6 @@ Complejidad Ciclomática de los proyectos Market y G2.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -9327,10 +9329,6 @@ Eficiencia entre los distintos artefactos arquitectónicos para los proyectos
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -10091,7 +10089,9 @@ key "Gamma94"
 \emph on
 DRArch
 \emph default
- para generar reglas que validen si los patrones de diseño están implementados
+ para generar reglas que validen si los patrones de di\SpecialChar \-
+se\SpecialChar \-
+ño están implementados
  correctamente.
  El diseño flexible de la herramienta permite realizar esta modificación
  realizando cambios menores en el código fuente.
@@ -10345,7 +10345,11 @@ Un
 \emph on
 plug-in
 \emph default
- es la menor unidad de función de la plataforma Eclipse que puede ser desarrolla
+ es la menor unidad de función de la plataforma Eclipse que puede ser de\SpecialChar \-
+sa\SpecialChar \-
+rro\SpecialChar \-
+lla\SpecialChar \-
+
 da y entregada por separado.
  Por lo general, una herramienta pequeña se escribe como un solo plug-in,
  mientras que una herramienta compleja tiene su funcionalidad repartida
