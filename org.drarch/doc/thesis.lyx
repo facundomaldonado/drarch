@@ -2922,10 +2922,10 @@ r de un sistema, generando como salida una representación arquitectónica
  enfoques basados en reconstrucción de arquitecturas para tratar el problema
  que causa la falta de documentación arquitectónica.
  Si bien no se centran específicamente en la reconstrucción de comportamiento,
- su análisis detallado de cada uno nos permitió detectar aspectos que colaboran
+ el análisis detallado de cada uno nos permitió detectar aspectos que colaboran
  en los mecanismos y abstracciones aplicables al caso de UCMs.
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 XXX-No se entiende
@@ -2962,11 +2962,12 @@ Para lograr la funcionalidad propuesta,
 DRArch 
 \emph default
 sigue un proceso iterativo en el cuál el arquitecto interactúa en pequeñas
- decisiones para ir especificando incrementalmente el modelo arquitectónico
+ decisiones para ir especificando incrementalmente el mo\SpecialChar \-
+de\SpecialChar \-
+lo arquitectónico
  del sistema.
- Dicho modelo esta representado por una base de datos de conocimiento lo
- suficientemente flexible como para poder realizar consultas complejas de
- forma simple.
+ Dicho modelo esta representado por una base de conocimiento lo suficientemente
+ flexible como para poder realizar consultas complejas de forma simple.
  
 \end_layout
 
@@ -2985,7 +2986,7 @@ ciones al modelo arquitectónico.
 Luego de la fase de recolección de información empiezan las fases de especializa
 ción, las cuales van iterativa e incrementalmente modificando el modelo
  arquitectónico elevando en cada fase el nivel de abstracción y detalle.
- En estas fases, la herramienta sugiere un conjunto de modificaciones (reglas)
+ En estas fases, la herramienta sugiere un conjunto de modificaciones (hechos)
  a la descripción del modelo arquitectónico.
  Estas modificaciones representan cambios a diferentes partes de la representaci
 ón actual del sistema que pueden involucrar tanto modificaciones de estructura
@@ -3003,10 +3004,10 @@ s representan fielmente los conceptos arquitectónicos que se está intentando
 \begin_layout Standard
 Una forma de aumentar la especialización del análisis es la definición de
  una fase por aspecto del sistema.
- Se podrían reutilizar las fase para cada aspecto evaluado.
+ Asi se podrían reutilizar dichas fases para cada aspecto evaluado.
  En cada nuevo escenario se va incrementando el nivel de detalle aportado
- por cada fase, descubriendo así relaciones que tal vez en análisis anteriores
- (escenarios diferentes) no fueron descubiertos.
+ por cada una de estas, descubriendo así relaciones que tal vez en análisis
+ anteriores (escenarios diferentes) no fueron descubiertos.
  Al termino de cada fase, se generan representaciones gráficas del modelo
  arquitectónico las cuales cubren dos aspectos fundamentales de la arquitectura
  del sistema: estructura (diagramas de Componentes) y comportamiento (UCMs).
@@ -3593,7 +3594,7 @@ ProLog
 
 \begin_layout Standard
 Esta transformación es realizada al comienzo del proceso de reconstrucción
- por medio de un motor de programación lógica.
+ por medio de un parser que recorre el AST de cada archivo fuente.
  Una vez que el código fuente esta representado en forma de hechos, es posible
  realizar consultas para obtener información de forma simple y flexible.
  La flexibilidad de este enfoque permite explorar un gran abanico de relaciones
@@ -3812,20 +3813,20 @@ Observer
 \end_layout
 
 \begin_layout Standard
-Es posible construir reglas mas complejas que ayudan a identificar estructuras
+Es posible construir reglas mas complejas que ayuden a identificar estructuras
  arquitectónicas relacionando distintos tipos de información.
  Para ello es necesario conocer cuales son los aspectos a tener en cuenta
  a la hora de reconocer dichas estructuras.
- Durante el proceso de disenno se toman decisiones importantes que persistiran
+ Durante el proceso de diseño se toman decisiones importantes que persistiran
  a lo largo de todo el ciclo de vida del sistema.
  Decisiones como por ejemplo de que manera agrupar los componentes en paquetes,
- que patrones de disenno utilizar para realizar un modulo específico o más
+ que patrones de diseño utilizar para realizar un modulo específico o más
  simples como por ejemplo que visibilidad darle a determinadas clases dentro
  de un paquete.
  Todos estos elementos o practicas son comunes a todos los sistemas y las
  mismas pueden ser aprovechadas para realizar ingenieria reversa sobre un
  sistema.
- Las siguientes secciones describirán algunas de los enfoques considerados
+ Las siguientes secciones describirán algunos de los enfoques considerados
  en DRArch a la hora de definir reglas que asistan en la detección de estructura
 s arquitectónicas:
 \end_layout
@@ -3897,25 +3898,22 @@ Cuando se busca reconocer componentes basado en eventos arquitectonicos
  que no aportan valor agregado al análisis.
  En la literatura, estos elementos son conocidos como componentes de utilidad.
  Dichos componentes determinan detalles de implementación de bajo nivel.
+ Hamou et.
+ al.
  
 \begin_inset LatexCommand cite
 key "Abdelwahab"
 
 \end_inset
 
- define un componente de utilidad como: Cualquier elemento de un programa
+ definen un componente de utilidad como cualquier elemento de un programa
  diseñado por conveniencia del diseñador o el programador con la intensión
  de ser accedido desde múltiples lugares dentro de cierto ámbito (scope)
  dentro del programa.
- Con el propósito de detectar componentes de utilidad, 
-\begin_inset LatexCommand cite
-key "Abdelwahab"
-
-\end_inset
-
- desarrollaron un algoritmo basado en un analisis fan-in.
+ Con el propósito de detectar componentes de utilidad, los autores desarrollaron
+ un algoritmo basado en un analisis fan-in.
  La técnica de análisis de fan-in está basado en la exploración del grafo
- de dependencias de clases construido a raíz del análisis estático del sistema
+ de dependencias de clases construido en base al análisis estático del sistema
  y se encarga de individualizar aquellas clases que tienen un gran número
  de arcos entrantes (muchas clases dependientes).
  El grafo de dependecias de clases es un grafo dirigido donde los nodos
@@ -4058,7 +4056,7 @@ Utilizando un enfoque similar al descripto anteriormente es posible llevar
  Se define acoplamiento como el grado en que un componente esta conectado
  a otros componentes del sistema, es decir, el grado de dependencia que
  tiene.
- Todo buen diseño de componentes tiene o debería estar pensado de tal forma
+ Todo buen diseño de componentes está o debería estar pensado de tal forma
  que sus componentes sean cohesivos y con bajo acoplamiento con los demas
  componentes.
  De esta forma es posible detectar componentes agrupando en clusteres aquellas
@@ -4154,8 +4152,8 @@ Como base fundamental para medir el acoplamiento dentro de un módulo se
 El algoritmo propuesto selecciona a S como espacio de solución, el cual
  contiene todas las clases bajo análisis.
  Comienza el procesamiento eligiendo una clase de dicho espacio, posiblemente
- la que mayor fan-in y/o fan-out tenga y se la agrega a un espacio de solución
- (cluster) C1.
+ la que mayor fan-out tenga y se la agrega a un espacio de solución (cluster)
+ C1.
  Se agregan luego las clases vecinas a esta a una lista de elementos a evaluar
  dentro del espacio C1.
  Se recorre dicha lista y se van agregando dichas estas clases al cluster
@@ -4767,8 +4765,8 @@ La ejecución de una regla tiene como resultado una lista de sugerencias.
 Una sugerencia es el resultado de evaluar una de las reglas disponibles
  sobre la base del conocimiento.
  La importancia de estas decisiones de diseño varía para cada sistema de
- software y está en función de los interesados en el sistema, sus preocupaciones
-, y sus necesidades específicas.
+ software y está dada en función de los interesados en el sistema, sus preocupac
+iones, y sus necesidades específicas.
  Por ejemplo, es posible que una sugerencia proponga la creación de uno
  de los componentes mas importantes del sistema, pero el arquitecto no desea
  mostrar ese componente en la vista que esta trabajando, ya que no esta
@@ -4955,7 +4953,7 @@ DRArch
 \emph on
 FLAbot
 \emph default
-, es analizad por el componente TraceLog Analizer para generar los hechos
+, es analizado por el componente TraceLog Analizer para generar los hechos
  ProLog correspondientes al 
 \emph on
 log
@@ -5283,9 +5281,9 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Debemos admitir que no existe la magia, es decir, es imposible, desde nuestro
- punto de vista, que una herramienta pueda recuperar, sin ayuda alguna,
- el diseño arquitectónico de un sistema.
+Debemos admitir que no existe la magia.
+ Es imposible, desde nuestro punto de vista, que una herramienta pueda recuperar
+, sin ayuda alguna, el diseño arquitectónico de un sistema.
  Se necesita del conocimiento del dominio de la aplicación y fundamentalmente
  de la experiencia del usuario.
  Utilizando el enfoque 
