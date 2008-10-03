@@ -799,7 +799,11 @@ key "SAIP"
 .
  Ésto es, para desarrolladores con determinados roles, ella impone restricciones
  que deben cumplirse al momento de tomar decisiones de diseño más detallado.
- Para otras audiencias, su documentación describe las decisiones tomadas
+ Para otras audiencias, su do\SpecialChar \-
+cu\SpecialChar \-
+men\SpecialChar \-
+ta\SpecialChar \-
+ción describe las decisiones tomadas
  sobre el diseño y por lo tanto, que cosas son ciertas sobre la arquitectura.
 \end_layout
 
@@ -864,7 +868,9 @@ relevantes.
 \emph on
 comportamiento
 \emph default
- e interacciones en tiempo de ejecución y (c) cómo se relaciona con elementos
+ e in\SpecialChar \-
+teraccio\SpecialChar \-
+nes en tiempo de ejecución y (c) cómo se relaciona con elementos
  de su ambiente que no son software.
 \end_layout
 
@@ -1399,9 +1405,9 @@ Desafortunadamente, debido a la evolución natural del sistema, es probable
 , con cambios consecuentes en algunas partes de la implementación; y por
  otro lado, algunas tareas de mantenimiento pueden producir cambios en el
  código que deberían ser reflejados en modificaciones de la arquitectura.
- Si bien es aceptable que exista temporalmente cierto desfasaje, normalmente
- los desarrolladores trabajan en la implementación sin mantener el modelo
- arquitectónico, el cual rápidamente queda desactualizado.
+ Es aceptable que exista temporalmente cierto desfasaje, normalmente los
+ desarrolladores trabajan en la implementación sin mantener el modelo arquitectó
+nico, el cual rápidamente queda desactualizado.
 \end_layout
 
 \begin_layout Standard
@@ -1839,14 +1845,23 @@ Dali
 \end_layout
 
 \begin_layout Standard
-Dali es una colección de herramientas en la forma de workbench.
- Entre estas herramientas se destacan Rigi y PostgreSQL como repositorio
+Dali es una colección de he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+tas en la forma de workbench.
+ Entre estas he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+tas se destacan Rigi y PostgreSQL como repositorio
  de la aplicación.
  Rigi provee la manipulación y visualización de las vistas generadas y la
  extensión que aporta Dali a Rigi provee la habilidad de definir y aplicar
  patrones de consultas sobre los datos para generar vistas arquitectónicas
  del sistema.
- La información es extraída del código fuente utilizando una herramienta
+ La información es extraída del código fuente utilizando una he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+ta
  de análisis y luego cargadas en Dali.
  Esta información es almacenada en la base de datos PostgreSQL y visualizada
  en Rigi.
@@ -2146,7 +2161,12 @@ tagging
 \emph default
 ).
  Las entrevistas permiten obtener escenarios iniciales en base a charlas
- con desarrolladores involucrados y también mediante la inspección del código,
+ con de\SpecialChar \-
+sa\SpecialChar \-
+rro\SpecialChar \-
+lla\SpecialChar \-
+do\SpecialChar \-
+res involucrados y también mediante la inspección del código,
  por esta razón, esta técnica es completamente manual.
  El etiquetado, también de carácter manual, es un proceso donde el desarrollador
  asocia etiquetas semánticas a diferentes porciones del código fuente; más
@@ -2156,14 +2176,25 @@ tagging
  de las diferentes etiquetas colocadas en el código fuente.
  La herramienta ofrece un compilador para generar un modelo estructural
  rudimentario de la arquitectura.
- Este modelo será transformado iterativamente para incrementar el nivel
+ Este modelo será transformado i\SpecialChar \-
+te\SpecialChar \-
+ra\SpecialChar \-
+ti\SpecialChar \-
+va\SpecialChar \-
+men\SpecialChar \-
+te para incrementar el nivel
  de abstracción y para eliminar cualquier dependencia intercomponente accidental.
  La estructura estática de la arquitectura es representada por medio de
  diagramas de paquete UML: los paquetes simbolizan componentes y las dependencia
 s entre ellos, sus conexiones.
  Las conexiones entre componentes se detectan analizando las dependencias
  entre clases C++ pertenecientes a diferentes paquetes.
- La abstracción subsiguiente del modelo queda a cargo del usuario, quien
+ La abs\SpecialChar \-
+trac\SpecialChar \-
+ción sub\SpecialChar \-
+si\SpecialChar \-
+guien\SpecialChar \-
+te del modelo queda a cargo del usuario, quien
  tiene a su disposición para este propósito, dos operaciones: agregación
  y ajuste.
  La agregación permite seleccionar distintos bloques y agruparlos creando
@@ -3200,7 +3231,10 @@ Como se mencionó antes, una de las decisiones principales del enfoque
 DRArch
 \emph default
  ha sido centrarse en la reconstrucción de las vistas comportamentales de
- una arquitectura, en particular, especificadas como UCMs.
+ una arquitectura, en par\SpecialChar \-
+ti\SpecialChar \-
+cu\SpecialChar \-
+lar, especificadas como UCMs.
  Para ayudar a comprender el enfoque que se explica en este capítulo, volvemos
  al ejemplo de la Sección\InsetSpace ~
 
@@ -3245,7 +3279,11 @@ La misma información debe ser presentada de manera diferente
 
 \begin_layout Itemize
 La representación gráfica y el comportamiento de la aplicación debe reflejar
- la manipulación de datos inmediatamente
+ la ma\SpecialChar \-
+ni\SpecialChar \-
+pu\SpecialChar \-
+la\SpecialChar \-
+ción de datos inmediatamente
 \end_layout
 
 \begin_layout Itemize
@@ -3449,7 +3487,11 @@ responsabilidades
 \emph on
 responsabilidades
 \emph default
- pueden ser de mayor granularidad que las llamadas y mensajes para reducir
+ pueden ser de mayor gra\SpecialChar \-
+nu\SpecialChar \-
+la\SpecialChar \-
+ri\SpecialChar \-
+dad que las llamadas y mensajes para reducir
  el nivel de compromiso con los detalles, por este motivo, una 
 \emph on
 responsabilidad
@@ -3487,7 +3529,12 @@ código
 .
  El mapeo permite la trazabilidad entre la 
 \emph on
-responsabilidad
+res\SpecialChar \-
+pon\SpecialChar \-
+sa\SpecialChar \-
+bi\SpecialChar \-
+li\SpecialChar \-
+dad
 \emph default
  UCM de un componente y su implementación.
 \end_layout
@@ -3793,7 +3840,11 @@ Especificando reglas
 \begin_layout Standard
 El enfoque provee un conjunto de reglas basadas en patrones de diseño y
  en un análisis realizado sobre diversos sistemas.
- De esta forma, se intentó detectar cuales son los requerimientos que debe
+ De esta forma, se intentó detectar cuales son los re\SpecialChar \-
+que\SpecialChar \-
+ri\SpecialChar \-
+mien\SpecialChar \-
+tos que debe
  cumplir un sistema para que se justifique la presencia de un determinado
  artefacto arquitectónico.
  Por ejemplo, una regla puede detectar la presencia de un componente del
@@ -3872,7 +3923,10 @@ Cualquier sistema grande se debe dividir en unidades más pequeñas, de modo
  UML no impone una regla para componer los paquetes.
  Los paquetes ofrecen un mecanismo general para la organización de los modelos/s
 ubsistemas agrupando elementos de modelado.
- Cada paquete corresponde a un submodelo (subsistema) del modelo (sistema).
+ Cada paquete corresponde a un sub\SpecialChar \-
+mo\SpecialChar \-
+de\SpecialChar \-
+lo (subsistema) del modelo (sistema).
  Los paquetes son unidades de organización jerárquica de uso general de
  los modelos de UML.
  Pueden ser utilizados para el almacenamiento, el control de acceso, la
@@ -4969,7 +5023,10 @@ análisis dinámico
 \emph on
 log
 \emph default
- de ejecución generado por la combinación de las herramientas 
+ de ejecución generado por la combinación de las he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+tas 
 \emph on
 DRArch
 \emph default
@@ -5284,7 +5341,10 @@ DRArch
  proceso guiado por el arquitecto.
  Este proceso intenta utilizar la mayor cantidad de información que sea
  posible y sus principales fuentes son: el código, la trazas de ejecución
- y la experiencia de las personas involucradas en el sistema.
+ y la ex\SpecialChar \-
+pe\SpecialChar \-
+rien\SpecialChar \-
+cia de las personas involucradas en el sistema.
 \end_layout
 
 \begin_layout Standard
@@ -5309,7 +5369,10 @@ Debemos admitir que no existe la magia.
  Es imposible, desde nuestro punto de vista, que una herramienta pueda recuperar
 , sin ayuda alguna, el diseño arquitectónico de un sistema.
  Se necesita del conocimiento del dominio de la aplicación y fundamentalmente
- de la experiencia del usuario.
+ de la ex\SpecialChar \-
+pe\SpecialChar \-
+rien\SpecialChar \-
+cia del usuario.
  Utilizando el enfoque 
 \emph on
 DRArch
