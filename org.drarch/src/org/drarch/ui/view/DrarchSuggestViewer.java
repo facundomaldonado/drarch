@@ -220,6 +220,8 @@ public class DrarchSuggestViewer {
 					phaseNameText.setVisible(false);
 					phaseNameLabel.setText("Please Select a Phase");
 					root = new TreeParent("");
+					currentParentNode = root;
+					currentParentNode.setValue(null);
 			    	treeViewer.setInput(root);
 			    	treeViewer.refresh();
 				}
