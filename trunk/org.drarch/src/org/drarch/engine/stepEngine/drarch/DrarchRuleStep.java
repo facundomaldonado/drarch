@@ -28,8 +28,6 @@ public class DrarchRuleStep extends Step {
 		}
 		
 		stepSuggests = ruleManager.evaluateRule(stepRule);
-		
-		
 
 		return stepSuggests;
 	}
