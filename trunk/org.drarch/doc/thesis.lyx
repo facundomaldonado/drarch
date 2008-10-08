@@ -2853,6 +2853,13 @@ n.
  cargadas dinámicamente en los sistemas orientados a objetos).
  En efecto, determinar la configuración arquitectónica real de un sistema
  usando análisis estático es, en general, es indecidible.
+ Por ejemplo suponer que existe una division de componentes que coincide
+ perfectamente con la estructura jerárquica de paquetes del proyectos es
+ generar una simplicacion muy gruesa, que introduce errores extra.
+ Lo mismo ocurre al basar el clustering en relaciones de dependencia entre
+ clases.
+ Si bien son enfoques correctos no son determinantes en la reconstruccion
+ total y es necesario refinar y complementar con otras técnicas.
 \end_layout
 
 \begin_layout Standard
@@ -2860,7 +2867,43 @@ Además, ninguno de estos enfoques ha considerado las extracciones de
 \emph on
 paths
 \emph default
- de ejecución para generar diagramas tales como los UCMs.
+ de ejecución para generar diagramas tales como los UCMs, solo KAE genera
+ este tipo de diagramas pero con el defecto de hacerlo a partir de un análisis
+ estructural cuando la representación es inherentemente comportamental.
+\end_layout
+
+\begin_layout Standard
+Un aspecto debil, no de los enfoques sino ya de las aplicaciónes, es que
+ muy pocas tienen incorporadas las herramientas de extracción de información.
+ Otro aspecto a destacar que está fuertemente relacionado con el anterior
+ es que demasiadas tareas se hacen de forma manual.
+ Ya sea el parseo del codigo fuente, como la instrumentación de dicho código
+ o tambien la generación de información que entienda la herramienta de análisis
+ a partir de dicha información, son tareas manuales o bien realizadas por
+ otras aplicaciónes cuyos resultados hay que agregar manualmente a la herramient
+a de análisis.
+ Sería deseable que solamente la información que debe ser interpretada por
+ el ojo experto sea incorporada manualmente.
+\end_layout
+
+\begin_layout Standard
+Cabe destacar varias características interesantes de los enfoques analizados
+ que determinaron algunos de los objetivos y características deseables al
+ plantear el desarrollo del enfoque DRArch.
+ El enfoque Botton-Up y Top-Down propuesto en Mitre es interesante desde
+ el punto de vista de la flexibilidad del análisis al poder seguir cualquiera
+ de las dos estrategias.
+ El uso de programación lógica para realizar las inferencias es mucho mas
+ atractivo e intuitivo que utilizar, como lo hace Dali, una combinación
+ de SQL y Perl para la inferencia y la generación de nuevos hechos ya que
+ se enfoca en "qué" recuperar y no "cómo" hacerlo.
+ Utilizar convenciones de nombres es una alternativa interesante si no es
+ "la única alternativa" (DiscoText).
+ Es una herramienta poderosa ya que se incorpora en la fase de extracción
+ el conocimiento del arquitecto sobre el código implementado.
+ Por último el método propuesto por el SEI, AMR es un mecanismo simple que
+ sienta las bases del análisis y permite refinar y aumentar la precisión
+ de los elementos recuperados.
 \end_layout
 
 \begin_layout Chapter
