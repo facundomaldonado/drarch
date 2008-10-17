@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -70,6 +70,99 @@ preview false
 
 \begin_layout Chapter*
 Resumen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Hola Nicolas, como estas? Si, he estado leyendo los capitulos y haciendo
+ anotaciones sobre el documento, aunque todavia las tengo en papel, y las
+ tengo que marcar sobre el pdf como anotaciones, pensaba mandartelas el
+ viernes pasado pero no pudo ser :-) En lineas generales, como te habia
+ dicho, la escritura esta razonable y muestra el big picture de la tesis,
+ pero me parece que todavia quedan algunas cabos sin atar (al menos en lo
+ que se refiere a lo que esta escrito hoy por hoy).
+ Algunos puntos son los siguientes: 1- Uds tienen definido el approach y
+ el tool, eso esta Ok, pero la forma en que esta presentado es "una solucion
+ que todavia no encontro su problema", es decir, falta clarificar (especialmente
+ para un evaluador que no necesariamente conoce del tema), que cosas se
+ pueden hacer hoy con reconstruccion, cuales no, y particularmente cual
+ es el problema que ataca DArch...Algunos cabos "sueltos" mientras leia respecto
+ a esto: a) La introduccion a arquitecturas de software del capitulo 2 es
+ un poco corta, con pocos ejemplos, y asume sin mas consideraciones que
+ la "mejor" forma de documentar una arquitectura es a traves de UCMs.
+ No estoy diciendo que UCMs esta mal, pero todos sabes que documentar un
+ disenio con UCMs no es tan simple ni efectivo ...
+ b) El capitulo 3 de trabajos relacionados esta bien, pero tiene a simplificar
+ los otros enfoques y apuntar directamente a que ninguno es incremental
+ o considera varias fuentes de informacion, cuando en realidad todos mas
+ o menos dicen que tiene que ser incremental, y casi todas siguen el paradigma
+ extraer-clasificar-presenar al igual que DArch...Herramientas mas nuevas como
+ Structure101 o DSM Lattix se ocupan de una mezcla de conformance y reconstrucci
+on, Bahaus-Axivion es otra bastante completita de reconstruccion...
+ En este contexto, cual es el aporte especifico de DArch???(ver comentario
+ abajo) c) no se consideran aspectos deHuman-Computer-Interaction que afectan
+ la reconstruction, tipo la "presentacion de la informacion recuperada de
+ forma visual y efectiva para que el usuario la pueda comprender, formas
+ de navegar los modelos, etc.
+ Por ejemplo, Shrimp tiene buenas capacidades de visualizacion, comprension,
+ navegacion...
+ 2- Los casos de estudio, como estan presentados, no muestran mucha informacion
+ de como se fueron reconstruyendo las vistas, que limitaciones hubo, que
+ cosas el tool pudo reconstruir y cuales no, ...
+ ...Algunos cabos "sueltos" mientras leia respecto a esto: a) no ayuda mucho
+ el hecho de que los 2 casos de estudio se basen en el mismo estilo arquitectoni
+co subyacente (Bubble), ya que hay que hacer el analisis si lo recuperado
+ es porque esta el Bubble de base y DArch trabaja bien para Bubble, o se
+ puede aplicar a otros tipos de arquitecturas.
+ O sea, no estoy diciendo que haya que cambiar los casos de estudio, pero
+ si hacer las salvedades, suposiciones y analisis del caso b) no entendi
+ que muestran las metricas que toman para evaluar cosas de los casos de
+ estudio.
+ Dado que las metricas me suenan fuertemente inspiradas en el paper de ArchSync,
+ no se hasta que punto el "contexto " del ArchSync es extrapolable al DArch,
+ c) otra cosa que hay que discutir en los casos de estudio es como se uso
+ la documentacion original de cada caso de estudio.
+ Una opcion es: casi no se uso, y luego de realizar la recuperacion se realizo
+ una comparacion entre lo recuperado y lo que decia la documentacion inicial.
+ Otra opcion es: se uso la documentacion inicial como una forma de explorar
+ mejor el codigo realizar una mejora substancial en la documentacion o entendimi
+ento de la arquitectura.
+ Either option, se tiene que discutir d) un posible trabajo que yo agregaria
+ en los casos de estudio es recuperar las mismas arquitecturas (Market y
+ G2) con otro tool, ej con Shrimp/Creole, y hacer una comparacion de cuales
+ son los puentos fuertes y debiles de ese tool, y como DArch mejora eso
+ (especialmente la parte dinamica, interactividad, bla bla) Lo que pude
+ entender de la contribucion de DArch, despues de mucho releer, es que "DArch,
+ a diferencia de otros enfoques, intenta capturar fuentes de conocimiento
+ sobre como recuperar ciertas cosas en base a cierta informacion/evidencia
+ (no necesariamente codigo) y codificar este conocimiento mediante reglas,
+ de manera que se puedan "sugerir" alternativas al desarrollador.
+ O sea, que DArch mas que una herramienta de reconstruccion especifica es
+ un asistente que permite PLUGGEAR estrategias de reconstruccion (eventualmente
+ que vienen de otros tools) y utilizar dichas estrategias para hacer la
+ reconstruccion incremental e interactiva.
+ Ahora, DArch NO IMPLEMENTA tecnicas especificas de reconstruccion (las
+ toma prestadas) y NO MANEJA la parte de presentacion/navegacion visual
+ de las cosas de una manera amena para el usuario (o sea, los UCMs estan
+ bien pero no hay soporte arriba de esto).
+ Please, diganmente si le erre mucho con esto, y la idea es otra :-) Bue,
+ la idea no es con esto desanimarlos, sino mas bien hacer una critica constructi
+va y marcar algunos problemas logicos que aparecen cuando uno plasma una
+ idea (generalmente ya implementada) en papel.
+ Ya les mandare los comentarios mas especificos, capitulo x capitulo Supongo
+ que Alvaro tendra su propio punto de vista del estado de la tesis (probablement
+e coincidente con algunas de las cosas que les puse aca), asi que diria
+ que los proximos pasos son: mejorar los capitulos, formular de una manera
+ clara el problema y la solucion, y completar la parte de los casos de estudio.
+ Saludos y estamos en contacto, Andres
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
