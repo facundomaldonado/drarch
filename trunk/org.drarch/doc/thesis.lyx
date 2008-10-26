@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -2245,16 +2245,18 @@ En este capítulo intentaremos brindar una visión mas amplia sobre los distinto
 status open
 
 \begin_layout Standard
-Muchos enfoques de reconstrucción de arquitecturas y herramientas para apoyar
- dichos enfoques han sido cubiertos en la literatura.
+X Muchos enfoques de reconstrucción de arquitecturas y herramientas para
+ apoyar dichos enfoques han sido cubiertos en la literatura.
  !!! no se entiende!!
 \end_layout
 
 \end_inset
 
-La mayoría de estos enfoques están basados en un ciclo extraer-abstraer-presenta
-r, en el cual el sistema es analizado con el propósito de popular un repositorio
-, que luego es consultado para poder construir representaciones abstractas
+Muchos enfoques de reconstrucción de arquitecturas han sido cubiertos en
+ la literatura.
+ La mayoría de éstos están basados en un ciclo extraer-abstraer-presentar,
+ en el cual el sistema es analizado con el propósito de popular un repositorio,
+ que luego es consultado para poder construir representaciones abstractas
  del sistema que son presentadas en forma interactiva y adecuada al ingeniero
  de software.
  Tilley et.
@@ -2285,13 +2287,21 @@ Aportes relacionados
 
 \begin_layout Standard
 La problemática de descubrir el modelo arquitectónico de un sistema completament
-e implementado ha sido aborda de diversas maneras.
- Los enfoques analizados en este trabajo pueden clasificarse en:
+e implementado ha sido abordado de diversas maneras.
+ Entre ellos se encuentran enfoques de reconstruccion manuales apoyados
+ con herramientas de visualización o de extraccion de informacion, aquellos
+ que implementan lenguajes de consultas para escribir pautas para construir
+ clusteres o agregaciones automáticamente, y tambien aquellos que implementan
+ técnicas diversas como data mining, lenguajes de descripcion arquitectónica
+ (ADLs), redes de Petri o matrices de dependencias (DSM).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Esta clasificacion es de ustedes o la sacaron de algun lado.??
+X Esta clasificacion es de ustedes o la sacaron de algun lado.??
 \end_layout
 
 \end_inset
@@ -2300,20 +2310,6 @@ Esta clasificacion es de ustedes o la sacaron de algun lado.??
 \end_layout
 
 \begin_layout Standard
-• Reconstrucción manual con el apoyo de herramientas.
-\end_layout
-
-\begin_layout Standard
-• Lenguajes de consultas para escribir las pautas para construir agregaciones
- o 
-\emph on
-clusteres
-\emph default
- automáticamente .
-\end_layout
-
-\begin_layout Standard
-• 
 \begin_inset Note Note
 status open
 
@@ -2324,15 +2320,7 @@ Utilización de otras técnicaCUales?? en que categoria caen..
 
 \end_inset
 
-s, incluida la agrupación, 
-\emph on
-data
-\emph default
- 
-\emph on
-mining
-\emph default
-, utilizando lenguajes de descripción de arquitecturas (ADLs).
+
 \begin_inset Note Note
 status open
 
@@ -2351,22 +2339,48 @@ por lo menos una distincion deberia ir a ca..
 \end_layout
 
 \begin_layout Standard
-Los siguientes son algunos de los enfoques principales en cada categoría.
- No es una lista exhaustiva, pero enumera un conjunto representativo de
- enfoques y herramientas.
-\end_layout
-
-\begin_layout Subsection
-Métodos de reconstrucción manual con el apoyo de herramientas
+.
 \end_layout
 
 \begin_layout Standard
-A esta categoria pertenecen aquellas herramientas y enfoques que utilizan
- algún tipo de herramienta como analizadores de código fuente o herramientas
- de visualización para asistir en el proceso de reconstruccion.
- No hay automatización de las tareas de evaluación o inferencia de la informació
-n.
- Éstas tareas son de indole manual.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Clasificación :
+\end_layout
+
+\begin_layout Standard
+* Estructura y comportamiento
+\end_layout
+
+\begin_layout Standard
+* Visualizacio y navegacion --aspectos deHuman-Computer-Interaction 
+\end_layout
+
+\begin_layout Standard
+* Notacion de la arquitectura recuperada
+\end_layout
+
+\begin_layout Standard
+* Herramientas integradas
+\end_layout
+
+\begin_layout Standard
+* Soporte para varias fuentes de datos
+\end_layout
+
+\begin_layout Standard
+* Incremental
+\end_layout
+
+\begin_layout Standard
+* analisis de código fuente o analisis de trazas de ejecución
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -2469,21 +2483,6 @@ key "Storey2001,Shrimp2002"
  en generar vistas arquitectónicas de alto nivel agrupando manualmente elementos
  en un grafo.
  La herramienta toma como entrada archivos RSF (Rigi Standard Format).
-\end_layout
-
-\begin_layout Subsection
-Enfoques basados en lenguajes de consultas
-\end_layout
-
-\begin_layout Standard
-El siguiente conjunto de enfoques y herramientas soportan el uso de lenguajes
- de consultas (Query Languajes) para la reconstrucción.
- En cada uno de estos, consultas a una base de conocimiento son realizadas
- con el objetivo de asistir en la agrupación de componentes de bajo nivel
- componentes de nivel superior.
- O bien, partiendo de un modelo de alto nivel se realizan consultas sobre
- la base de conocimiento tratando de reconocer cada uno estos componentes
- de alto nivel.
 \end_layout
 
 \begin_layout Paragraph
@@ -2661,16 +2660,6 @@ Analizar el sistema y crear un plan de mejoras; y
 Reorganizar la arquitectura.
 \end_layout
 
-\begin_layout Subsection
-Otras técnicas
-\end_layout
-
-\begin_layout Standard
-En esta categoria estan incluidos enfoques y herramientas que utilizan tecnicas
- como la utilizacion de lenguajes arquitectonicos (ADLs), el analisis de
- traces de ejecucion, redes de Petri entre otras.
-\end_layout
-
 \begin_layout Paragraph
 DiscoTect
 \end_layout
@@ -2725,7 +2714,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/discotectArch.PNG
+	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/discotectArch.PNG
 	scale 50
 
 \end_inset
@@ -2922,6 +2911,168 @@ lidades y las trayectorias de los distintos escenarios, limitando considerableme
 nte la extracción de información.
 \end_layout
 
+\begin_layout Subsubsection
+Lattix LDM
+\end_layout
+
+\begin_layout Standard
+Lattix LDM™ ataca los factores de comunicación, visualización, análisis
+ y gestión de las arquitecturas mediante una técnica distinta a las descriptas
+ anteriormente.
+ Lattix afirma que el manejo de las dependencia entre los módulos es crítico
+ para la gestión de proyectos de software.
+\end_layout
+
+\begin_layout Standard
+Lattix aplica técnicas DSM para llevar a cabo su análisis.
+ Dependency Structure Matrix (DSM) es un enfoque para manejar la complejidad
+ de un sistema haciendo foco en las interdependencias y los flujos de informació
+n dentro y entre los diferentes dominios.
+ 
+\end_layout
+
+\begin_layout Standard
+DSM permite a los desarrolladores comunicar la arquitectura de productos
+ complejos.
+ Es tambien una herramienta que permite a los managers entender el impacto
+ de futuras revisiones y evaluar los riesgos asociados con las tareas de
+ desarrollo.
+ Lattix LDM realiza un análisis de dependencias a partir de la estructura
+ de paquetes del sistema en el caso de java, namespaces en .Net y en la estructur
+a del sistema de archivos para el caso de C/C++.
+\end_layout
+
+\begin_layout Standard
+Esta aplicación esta destinada a ser parte del proceso de desarrollo.
+ Ataca el problema de la erosion de la arquitectura, permite mantener actualizad
+a la información arquitectónica con respecto a la implementacíon.
+ 
+\end_layout
+
+\begin_layout Standard
+La forma de visualizacíon de la arquitectura utilizando DSM tiene beneficios
+ en comparación con otras métodos como UML.
+ Por ejemplo, la figura 
+\begin_inset LatexCommand ref
+reference "fig:Comparación-Ant"
+
+\end_inset
+
+ muestra el modelo UML de Ant, una herramienta para hacer builds de aplicaciones.
+ En ella se puede ver el primer problema: la escalabilidad.
+ Mientras UML es exelente para mostrar las relaciones entre clases, grandes
+ proyectos rápidamente rebalsan este tipo de representaciones gráficas al
+ querer representar todo el sistema.
+ Además es muy dificil mantener este modelo actulizado a medida que el código
+ cambia.
+ Por último, es imposible detectar referencias cruzadas en este tipo de
+ modelos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/antExample.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Comparación-Ant"
+
+\end_inset
+
+Comparación UML y DSM: Ant.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Structure 101
+\end_layout
+
+\begin_layout Standard
+Structure101, desarrollado por Headway Software Technologies, es una herramienta
+ versatil de análisis estátco de código orientada al análisis de estructura
+ (disenno, arquitectura y packaging) del codigo java, C/C++ y Ada.
+ Structure 101 evalua el código desde varias perspectivas.
+ Dispone de una perspectiva cualitativa, en la que mejora el entendimiento
+ de la estructura del código.
+ Tiene una perspectiva gráfica, en la que se pueden construir diagramas
+ la organizacion y las estructuras referenciadas dentro de un bloque de
+ código la figura 
+\begin_inset LatexCommand ref
+reference "fig:Ejemplo-Structure-101"
+
+\end_inset
+
+ muestra un ejemplo.
+ Cuenta asimismo con una perspectiva cuantitativa en la que evalua numericamente
+ la complejidad del codigo y de esa manera prove metricas.
+ Por ultimo, cuenta con una perspectiva historica, en la que revela cambios
+ en la estructura del codigo.
+ Al igual que Lattix utiliza DSM para visualizar las dependencias.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/structure101_sample.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-Structure-101"
+
+\end_inset
+
+Ejemplo Structure 101
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Resumen de características principales
 \end_layout
@@ -2935,13 +3086,16 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="5">
+<lyxtabular version="3" rows="12" columns="8">
 <features>
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
+<column alignment="center" valignment="middle" leftline="true" width="15text%">
 <column alignment="center" valignment="middle" leftline="true" rightline="true" width="15text%">
+<column alignment="center" valignment="middle" rightline="true" width="15text%">
+<column alignment="center" valignment="middle" rightline="true" width="15text%">
 <row topline="true" bottomline="true" endhead="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2972,10 +3126,29 @@ Y estructura y comportamiento???
 \begin_inset Text
 
 \begin_layout Standard
+
+\series bold
+Motivación
+\end_layout
+
+\begin_layout Standard
+(Reconstrucción, Conformance, Comunicación)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
 \align center
 
 \series bold
-Tipo
+Tipo de análisis
+\end_layout
+
+\begin_layout Standard
+(incremental/no incrementa)
 \end_layout
 
 \end_inset
@@ -2990,6 +3163,10 @@ Tipo
 Análisis implementación
 \end_layout
 
+\begin_layout Standard
+(análisis estático: codigo fuente; dinamico: traces de ejecución)
+\end_layout
+
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -2998,8 +3175,9 @@ Análisis implementación
 \begin_layout Standard
 
 \series bold
-Leng.
- arquitectónico
+Lenguaje arquitectónico 
+\series default
+(notación de la arq recuperada)
 \end_layout
 
 \end_inset
@@ -3011,7 +3189,33 @@ Leng.
 \align center
 
 \series bold
-Estrategia análisis
+Herramientas Integradas
+\end_layout
+
+\begin_layout Standard
+(no hay que realizar tareas manuales de inegración)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\series bold
+Soporte para varias fuentes de datos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\series bold
+Estructura / Comportamiento
 \end_layout
 
 \end_inset
@@ -3031,7 +3235,16 @@ PBS
 \begin_inset Text
 
 \begin_layout Standard
-Manual con ayuda de herramientas.
+Comunicación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No incremental
 \end_layout
 
 \end_inset
@@ -3058,7 +3271,26 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
---
+No.
+ Necesita extractores de hechos de código fuente y herramientas de visualización.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Carga manual de la informacion que no sea código.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura
 \end_layout
 
 \end_inset
@@ -3078,7 +3310,7 @@ Rigi
 \begin_inset Text
 
 \begin_layout Standard
-Manual con ayuda de herramientas.
+Comunicación
 \end_layout
 
 \end_inset
@@ -3087,7 +3319,16 @@ Manual con ayuda de herramientas.
 \begin_inset Text
 
 \begin_layout Standard
-estático
+No incremental.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+estático (dinamico, si se carga la información de traces en formato RSF)
 \end_layout
 
 \end_inset
@@ -3105,7 +3346,25 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
---
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Si, se cargan manualmente en formato RSF.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura.
 \end_layout
 
 \end_inset
@@ -3125,7 +3384,7 @@ Shrimp
 \begin_inset Text
 
 \begin_layout Standard
-Manual con ayuda de herramientas.
+Comunicación
 \end_layout
 
 \end_inset
@@ -3134,7 +3393,7 @@ Manual con ayuda de herramientas.
 \begin_inset Text
 
 \begin_layout Standard
-estatico
+No incremental.
 \end_layout
 
 \end_inset
@@ -3143,7 +3402,16 @@ estatico
 \begin_inset Text
 
 \begin_layout Standard
---
+No hace análisis es una herramienta de visualización.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+"boxes and lines"
 \end_layout
 
 \end_inset
@@ -3152,7 +3420,25 @@ estatico
 \begin_inset Text
 
 \begin_layout Standard
---
+Solo de visualización.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Si, se cargan los datos en formato RSF.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura.
 \end_layout
 
 \end_inset
@@ -3172,8 +3458,16 @@ Mitre
 \begin_inset Text
 
 \begin_layout Standard
-Semi automática.
- Lenguaje de consultas.
+Reconstrucción- Comunicación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Incremental
 \end_layout
 
 \end_inset
@@ -3200,7 +3494,25 @@ UML
 \begin_inset Text
 
 \begin_layout Standard
---
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura.
 \end_layout
 
 \end_inset
@@ -3220,8 +3532,16 @@ Dali
 \begin_inset Text
 
 \begin_layout Standard
-Semi automática.
- Lenguaje de consultas.
+Reconstrucción- Comunicación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Incremental
 \end_layout
 
 \end_inset
@@ -3248,46 +3568,8 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-extracción, abstracción, visualizacion
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-ARM
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Semi automática.
- Lenguaje de consultas.
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-estático
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
---
+No.
+ Se utiliza una herramienta de extracción y Rigi para la visualización.
 \end_layout
 
 \end_inset
@@ -3296,7 +3578,18 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-extracción, abstracción, visualizacion
+No en forma automática.
+ Se tendrian que incorporar los datos a Dali en formato RSF.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estrutura
 \end_layout
 
 \end_inset
@@ -3316,8 +3609,16 @@ Riva
 \begin_inset Text
 
 \begin_layout Standard
-Semi automática.
- Lenguaje de consultas.
+Reconstrucción - Comunicación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Incremental
 \end_layout
 
 \end_inset
@@ -3344,7 +3645,27 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-extracción, abstracción, visualizacion
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No en forma automática.
+ Se tendrian que incorporar los datos a en forma de hechos Prolog.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura.
 \end_layout
 
 \end_inset
@@ -3364,8 +3685,7 @@ DiscoTect
 \begin_inset Text
 
 \begin_layout Standard
-Semi automática.
- 
+Reconstrucción-Conformance
 \end_layout
 
 \end_inset
@@ -3374,7 +3694,20 @@ Semi automática.
 \begin_inset Text
 
 \begin_layout Standard
-dinámico
+Incremental
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+dinámico.
+\end_layout
+
+\begin_layout Standard
+Traducción eventos de implementación, eventos arquitectónicos
 \end_layout
 
 \end_inset
@@ -3392,7 +3725,25 @@ ACME
 \begin_inset Text
 
 \begin_layout Standard
-Traducción eventos implementación, eventos arquitectónicos
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura
 \end_layout
 
 \end_inset
@@ -3412,8 +3763,7 @@ Focus
 \begin_inset Text
 
 \begin_layout Standard
-Semi automática.
- 
+Reconstrucción
 \end_layout
 
 \end_inset
@@ -3422,7 +3772,17 @@ Semi automática.
 \begin_inset Text
 
 \begin_layout Standard
-estático
+Incremental
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+estático.
+ Clustering clases, análisis incremental asistido por el usuario
 \end_layout
 
 \end_inset
@@ -3440,7 +3800,25 @@ UML
 \begin_inset Text
 
 \begin_layout Standard
-Clustering clases, análisis incremental asistido por el usuario
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura.
 \end_layout
 
 \end_inset
@@ -3460,8 +3838,16 @@ KAE
 \begin_inset Text
 
 \begin_layout Standard
-Semi automática.
- 
+Reconstrucción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Incremental 
 \end_layout
 
 \end_inset
@@ -3488,7 +3874,173 @@ UML-UCM
 \begin_inset Text
 
 \begin_layout Standard
-Etiquetado, agregación, ajuste
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Comportamiento.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Lattix LDM™
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Conformance - Reconstrucción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No incremental
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+DSM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Structure 101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Conformance - Reconstrucción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No incremental
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+estático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Dependency Graphs-DSM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Estructura
 \end_layout
 
 \end_inset
@@ -3499,6 +4051,10 @@ Etiquetado, agregación, ajuste
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Caption
 
 \begin_layout Standard
@@ -3525,31 +4081,56 @@ Las propiedades de cada enfoque resumidas en esta sección son las siguientes:
 \end_layout
 
 \begin_layout Itemize
-Tipo: De acuerdo a la clasificación realizada en la sección anterior, agrupamos
- los distintos enfoques según el grado de automatización de las tareas.
+Motivación: Esta propiedad se refiere al fin que tiene dicha herramienta/enfoque.
+ Si apunta a solucionar los problemas de erosión arquitectónica o a la reconstru
+cción de la arquitectura y a su comunicación.
 \end_layout
 
 \begin_layout Itemize
-Tipo de Análisis: Determina el tipo de análisis en el que se basa el enfoque.
- Análisis estático, aquel realizado sobre el código fuente, basado en la
- relaciones entre clases o componentes.
- Análisis dinámico, analiza las trazas de ejecución, es decir se analiza
- el comportamiento del sistema y no la estructura estática.
+Tipo de análisis: Tipo de análisis se refiere si el análisis que realiza
+ la herramienta es incremental, elevando cada vez mas el nivel de detalle
+ o abstracción.
+ O es no incremental y el análisis se realiza de una sola vez.
 \end_layout
 
 \begin_layout Itemize
-Lenguaje arquitectónico: Lenguaje en el que se representa la arquitectura
- un vez recuperada.
+Tipo de Analisis de la implementacíon (Estático/Dinámico): Si se consideran
+ para el análisis el codigo fuente, ya sea codigo fuente o código compilado,
+ el tipo de análisis es estático.
+ Si por el contrario se consideran las trazas de ejecución, recolectadas
+ con el sistema en ejecución, el análisis es dinámico.
 \end_layout
 
 \begin_layout Itemize
-Estrategia de análisis: Detalle sobre el método utilizado para interpretar
- la información obtenida luego del análisis (estático o dinámico).
+Lenguaje arquitectónico: Lenguaje arquitectónico de las vistas generadas.
+ Ejemplos son UML, UCMs, DSM etc.
+\end_layout
+
+\begin_layout Itemize
+Herramientas integradas: La herramienta analizada dispone de todo lo necesario
+ para hacer una reconstrucción o hay que realizar tareas con otras herramientas
+ para luego combinar los resultados?
+\end_layout
+
+\begin_layout Itemize
+Soporte para varias fuentes de datos: Es posible incorporar datos de otras
+ fuentes como documentación, experiencia de los arquitectos etc?
+\end_layout
+
+\begin_layout Itemize
+Estructura / Comportamiuento: Esta propiedad refleja el aspecto de la arquitectu
+ra recuperada.
+ Si apunta a recuperar aspectos estructurales (estructura de los modulos
+ y sus dependencias) o comportamentales (interoperabilidad de los módulos
+ bajo ciertos escenarios de ejecución).
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Analisis de la categorizacion??
+X Analisis de la categorizacion??
 \end_layout
 
 \end_inset
@@ -3558,7 +4139,7 @@ Analisis de la categorizacion??
 \end_layout
 
 \begin_layout Section
-Conclusiones
+Análisis y Conclusiones 
 \end_layout
 
 \begin_layout Standard
@@ -3578,7 +4159,14 @@ n.
  en particular es realizada en tiempo de ejecución (por ejemplo, clases
  cargadas dinámicamente en los sistemas orientados a objetos).
  En efecto, determinar la configuración arquitectónica real de un sistema
- usando análisis estático es, en general, es indecidible.
+ usando análisis estático es, en general, indecidible.
+ Por ejemplo suponer que existe una division de componentes que coincide
+ perfectamente con la estructura jerárquica de paquetes del proyectos es
+ generar una simplicacion muy gruesa, que introduce errores extra.
+ Lo mismo ocurre al basar el clustering en relaciones de dependencia entre
+ clases.
+ Si bien son enfoques correctos no son determinantes en la reconstruccion
+ total y es necesario refinar y complementar con otras técnicas.
 \end_layout
 
 \begin_layout Standard
@@ -3586,12 +4174,78 @@ Además, ninguno de estos enfoques ha considerado las extracciones de
 \emph on
 paths
 \emph default
- de ejecución para generar diagramas tales como los UCMs.
+ de ejecución para generar diagramas tales como los UCMs, solo KAE genera
+ este tipo de diagramas pero con el defecto de hacerlo a partir de un análisis
+ estructural cuando la representación es inherentemente comportamental.
+ DiscoTech utiliza información dinámica, pero genera vistas estructurales
+ de la arquitectura.
+ 
+\end_layout
+
+\begin_layout Standard
+Un aspecto debil, ya no de los enfoques sino de las aplicaciónes que los
+ implementan, es que muy pocas tienen incorporadas las herramientas de extracció
+n de información.
+ Otro aspecto a destacar que está fuertemente relacionado con el anterior
+ es que demasiadas tareas se hacen de forma manual.
+ Ya sea el parseo del codigo fuente, como la instrumentación de dicho código
+ o tambien la generación de información que entienda la herramienta de análisis
+ a partir de dicha información, son tareas manuales o bien realizadas por
+ otras aplicaciónes cuyos resultados hay que agregar manualmente a la herramient
+a de análisis.
+ Sería deseable que solamente la información que debe ser interpretada por
+ el ojo experto sea incorporada manualmente.
+\end_layout
+
+\begin_layout Standard
+Cabe destacar varias características interesantes de los enfoques analizados
+ que determinaron algunos de los objetivos y características deseables al
+ plantear el desarrollo del enfoque DRArch.
+ El enfoque Botton-Up y Top-Down propuesto en Mitre es interesante desde
+ el punto de vista de la flexibilidad del análisis al poder seguir cualquiera
+ de las dos estrategias.
+ El uso de programación lógica para realizar las inferencias es mucho mas
+ atractivo e intuitivo que utilizar, como lo hace Dali, una combinación
+ de SQL y Perl para la inferencia y la generación de nuevos hechos.
+ Usando programación lógica es mas intuitiva ya que se enfoca en "qué" recuperar
+ y no "cómo" hacerlo.
+ Utilizar convenciones de nombres es una alternativa interesante siempre
+ y cuando no sea "la única alternativa" (DiscoText).
+ Es decir que el análisis no se base en convenciones sino que aproveche
+ sus beneficios ya que es una herramienta poderosa que incorpora en la fase
+ de extracción, el conocimiento del arquitecto sobre el código implementado.
+ Por último el método propuesto por el SEI, AMR es un mecanismo simple que
+ sienta las bases del análisis y permite refinar y aumentar la precisión
+ de los elementos recuperados.
+\end_layout
+
+\begin_layout Standard
+Resumiendo, la gran mayoria de los enfoques apuntan a aspectos estructurales
+ y el uso de análisis estático para cumplir con este objetivo.
+ Cabe destacar la falta del modelado de aspectos comportamentales y el uso
+ de notación arquitectónica para describir la arquitectura recuperada.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Es decir, alguno considera comportamiento??
+Falta una vuelta de rosca al ultimo parrafo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+X Es decir, alguno considera comportamiento??
 \end_layout
 
 \end_inset
