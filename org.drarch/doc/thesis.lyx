@@ -4286,6 +4286,47 @@ logs
 \end_layout
 
 \begin_layout Standard
+El objetivo principal de 
+\emph on
+DRArch
+\emph default
+ es realizar un análisis de toda la información relevante que se pueda recolecta
+r de un sistema, generando como salida una representación arquitectónica
+ por medio de diagramas de componentes y de UCMs.
+ Como bien se detalló en el capítulo anterior, existen actualmente varios
+ enfoques basados en reconstrucción de arquitecturas para tratar el problema
+ que causa la falta de documentación arquitectónica.
+ Si bien no se centran específicamente en la reconstrucción de comportamiento,
+ el análisis detallado de cada uno nos permitió detectar aspectos que colaboran
+ en los mecanismos y abstracciones aplicables al caso de UCMs.
+\end_layout
+
+\begin_layout Standard
+Otro aspecto importante es que se tenga en cuenta la información que aporten
+ aquellas personas que tengan conocimientos sobre el sistema durante el
+ proceso de reconstrucción de la arquitectura.
+ Por lo general, esta información es la mas difícil de incorporar ya que
+ la semántica no es siempre la misma.
+ Por ejemplo, un desarrollador sabe que existe una convención en donde todas
+ las clases que tengan en su nombre el sufijo 
+\emph on
+Task
+\emph default
+, representan tareas del sistema, y se desea que ese conocimiento se incorpore
+ en el proceso de reconstrucción.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Y] Este parrafo y el anterior van en el resumen de la seccion anterior...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 El resto del capítulo se encuentra organizado de la siguiente forma.
  En la sección\InsetSpace ~
 
@@ -4356,50 +4397,12 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-El objetivo principal de 
-\emph on
-DRArch
-\emph default
- es realizar un análisis de toda la información relevante que se pueda recolecta
-r de un sistema, generando como salida una representación arquitectónica
- por medio de diagramas de componentes y de UCMs.
- 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
 Aca hay que entrar con explicar el enfoque que se aborda ...
  
-\end_layout
-
-\end_inset
-
-Como bien se detalló en el capítulo anterior, existen actualmente varios
- enfoques basados en reconstrucción de arquitecturas para tratar el problema
- que causa la falta de documentación arquitectónica.
- Si bien no se centran específicamente en la reconstrucción de comportamiento,
- el análisis detallado de cada uno nos permitió detectar aspectos que colaboran
- en los mecanismos y abstracciones aplicables al caso de UCMs.
-\end_layout
-
-\begin_layout Standard
-Otro aspecto importante es que se tenga en cuenta la información que aporten
- aquellas personas que tengan conocimientos sobre el sistema durante el
- proceso de reconstrucción de la arquitectura.
- Por lo general, esta información es la mas difícil de incorporar ya que
- la semántica no es siempre la misma.
- Por ejemplo, un desarrollador sabe que existe una convención en donde todas
- las clases que tengan en su nombre el sufijo 
-\emph on
-Task
-\emph default
-, representan tareas del sistema, y se desea que ese conocimiento se incorpore
- en el proceso de reconstrucción.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Este parrafo y el anterior van en el resumen de la seccion anterior...
 \end_layout
 
 \end_inset
@@ -4660,6 +4663,10 @@ Ejemplo: Observer-Observable
 status open
 
 \begin_layout Standard
+[Y]
+\end_layout
+
+\begin_layout Standard
 En algun lado hablaron que tambien usaban un diagrama de componentes..
  si lo hacen tienen que mencionarlo aca tambien describiendo el ejemplo
  tambien utilizando dicho lenguaje..
@@ -4742,6 +4749,10 @@ y luego en la seccion de dinamico presentan los eventos de ejecucion y el
 \begin_layout Standard
 \begin_inset Note Note
 status open
+
+\begin_layout Standard
+[Y]
+\end_layout
 
 \begin_layout Standard
 Seria deseable que el ejemplo muestre dos ciclos de recuperacion..
@@ -4983,7 +4994,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/ObserverObservableComponentDiagram.jpg
+	filename img/ObserverObservableComponentDiagram.png
 	scale 75
 
 \end_inset
@@ -5042,6 +5053,22 @@ mouse
 \emph default
 , teclas, etc.).
  Obtiene sus datos del modelo.
+\end_layout
+
+\begin_layout Standard
+Las relaciones entre el componente 
+\family typewriter
+UserModelObservable
+\family default
+ y los componentes 
+\family typewriter
+UserInterfaceObserver
+\family default
+ y 
+\family typewriter
+UserLoggerObserver
+\family default
+ denotan que existe un mecanismo de notificación entre estos componentes.
 \end_layout
 
 \begin_layout Standard
@@ -5135,7 +5162,7 @@ reference "fig:Mapeos-clase-componente"
  y la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "fig:fig:Mapeos-método-responsabilidad"
+reference "fig:Mapeos-método-responsabilidad"
 
 \end_inset
 
@@ -5208,7 +5235,7 @@ status open
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "fig:fig:Mapeos-método-responsabilidad"
+name "fig:Mapeos-método-responsabilidad"
 
 \end_inset
 
@@ -5493,11 +5520,44 @@ Observer
  Si bien esto se define como una regla, durante el proceso de reconstrucción
  esta regla se presenta como sugerencia y es responsabilidad del arquitecto
  aceptar o refutar la generación un nuevo componente.
+ 
 \end_layout
 
 \begin_layout Standard
-Es posible construir reglas mas complejas que ayuden a identificar estructuras
- arquitectónicas relacionando distintos tipos de información.
+El conjunto de reglas que se seleccionaron para reconstruir el sitema de
+ ejemplo 
+\emph on
+Observer-Observable
+\emph default
+ no fue casual.
+ Previamente se ejecutó una fase con un conjunto de reglas capaces de detectar
+ estilos arquitectónicos.
+ Esto permitió detectar el estilo MVC (
+\emph on
+Model View Controler
+\emph default
+) y así poder seleccionar conjuntos de reglas relacionadas con ese estilo.
+\end_layout
+
+\begin_layout Standard
+En el estilo MVC puro, normalmente el modelo representa los datos a ser
+ mostrados, la vista es responsable de reflejarlos visualmente al usuario
+ y el controlador es responsable de administrar las entradas del usuario,
+ realizando cambios en el modelo cuando corresponda y refrescando a la vista.
+ En muchas implementaciones, las interfaces de los modelos son diseñados
+ específicamente para la vista.
+ Cuando la vista se dibuja, se comunica fuertemente con el modelo.
+ Es por esta razón que se seleccionan reglas relacionadas con el patron
+ 
+\emph on
+Observer-Observable
+\emph default
+ cuando el estilo arquitectónico MVC es detectado.
+\end_layout
+
+\begin_layout Standard
+A su vez, es posible construir reglas mas complejas que ayuden a identificar
+ estructuras arquitectónicas relacionando distintos tipos de información.
  Para ello es necesario conocer cuales son los aspectos a tener en cuenta
  a la hora de reconocer dichas estructuras.
  Durante el proceso de diseño se toman decisiones importantes que persistiran
@@ -5510,8 +5570,12 @@ Es posible construir reglas mas complejas que ayuden a identificar estructuras
  mismas pueden ser aprovechadas para realizar ingenieria reversa sobre un
  sistema.
  Las siguientes secciones describirán algunos de los enfoques considerados
- en DRArch a la hora de definir reglas que asistan en la detección de estructura
-s arquitectónicas:
+ en 
+\emph on
+DRArch
+\emph default
+ a la hora de definir reglas que asistan en la detección de estructuras
+ arquitectónicas:
 \end_layout
 
 \begin_layout Subsubsection
