@@ -84,18 +84,29 @@ Hola Nicolas, como estas? Si, he estado leyendo los capitulos y haciendo
  dicho, la escritura esta razonable y muestra el big picture de la tesis,
  pero me parece que todavia quedan algunas cabos sin atar (al menos en lo
  que se refiere a lo que esta escrito hoy por hoy).
- Algunos puntos son los siguientes: 1- Uds tienen definido el approach y
- el tool, eso esta Ok, pero la forma en que esta presentado es "una solucion
- que todavia no encontro su problema", es decir, falta clarificar (especialmente
- para un evaluador que no necesariamente conoce del tema), que cosas se
- pueden hacer hoy con reconstruccion, cuales no, y particularmente cual
- es el problema que ataca DArch...Algunos cabos "sueltos" mientras leia respecto
- a esto: a) La introduccion a arquitecturas de software del capitulo 2 es
- un poco corta, con pocos ejemplos, y asume sin mas consideraciones que
- la "mejor" forma de documentar una arquitectura es a traves de UCMs.
+ Algunos puntos son los siguientes: 
+\end_layout
+
+\begin_layout Standard
+1- Uds tienen definido el approach y el tool, eso esta Ok, pero la forma
+ en que esta presentado es "una solucion que todavia no encontro su problema",
+ es decir, falta clarificar (especialmente para un evaluador que no necesariamen
+te conoce del tema), que cosas se pueden hacer hoy con reconstruccion, cuales
+ no, y particularmente cual es el problema que ataca DArch...Algunos cabos
+ "sueltos" mientras leia respecto a esto: 
+\end_layout
+
+\begin_layout Standard
+a) La introduccion a arquitecturas de software del capitulo 2 es un poco
+ corta, con pocos ejemplos, y asume sin mas consideraciones que la "mejor"
+ forma de documentar una arquitectura es a traves de UCMs.
  No estoy diciendo que UCMs esta mal, pero todos sabes que documentar un
  disenio con UCMs no es tan simple ni efectivo ...
- b) El capitulo 3 de trabajos relacionados esta bien, pero tiene a simplificar
+ 
+\end_layout
+
+\begin_layout Standard
+b) El capitulo 3 de trabajos relacionados esta bien, pero tiene a simplificar
  los otros enfoques y apuntar directamente a que ninguno es incremental
  o considera varias fuentes de informacion, cuando en realidad todos mas
  o menos dicen que tiene que ser incremental, y casi todas siguen el paradigma
@@ -103,27 +114,45 @@ Hola Nicolas, como estas? Si, he estado leyendo los capitulos y haciendo
  Structure101 o DSM Lattix se ocupan de una mezcla de conformance y reconstrucci
 on, Bahaus-Axivion es otra bastante completita de reconstruccion...
  En este contexto, cual es el aporte especifico de DArch???(ver comentario
- abajo) c) no se consideran aspectos deHuman-Computer-Interaction que afectan
- la reconstruction, tipo la "presentacion de la informacion recuperada de
- forma visual y efectiva para que el usuario la pueda comprender, formas
- de navegar los modelos, etc.
+ abajo) 
+\end_layout
+
+\begin_layout Standard
+c) no se consideran aspectos deHuman-Computer-Interaction que afectan la
+ reconstruction, tipo la "presentacion de la informacion recuperada de forma
+ visual y efectiva para que el usuario la pueda comprender, formas de navegar
+ los modelos, etc.
  Por ejemplo, Shrimp tiene buenas capacidades de visualizacion, comprension,
  navegacion...
- 2- Los casos de estudio, como estan presentados, no muestran mucha informacion
+ 
+\end_layout
+
+\begin_layout Standard
+2- Los casos de estudio, como estan presentados, no muestran mucha informacion
  de como se fueron reconstruyendo las vistas, que limitaciones hubo, que
  cosas el tool pudo reconstruir y cuales no, ...
- ...Algunos cabos "sueltos" mientras leia respecto a esto: a) no ayuda mucho
- el hecho de que los 2 casos de estudio se basen en el mismo estilo arquitectoni
-co subyacente (Bubble), ya que hay que hacer el analisis si lo recuperado
- es porque esta el Bubble de base y DArch trabaja bien para Bubble, o se
- puede aplicar a otros tipos de arquitecturas.
+ ...Algunos cabos "sueltos" mientras leia respecto a esto: 
+\end_layout
+
+\begin_layout Standard
+a) no ayuda mucho el hecho de que los 2 casos de estudio se basen en el
+ mismo estilo arquitectonico subyacente (Bubble), ya que hay que hacer el
+ analisis si lo recuperado es porque esta el Bubble de base y DArch trabaja
+ bien para Bubble, o se puede aplicar a otros tipos de arquitecturas.
  O sea, no estoy diciendo que haya que cambiar los casos de estudio, pero
- si hacer las salvedades, suposiciones y analisis del caso b) no entendi
- que muestran las metricas que toman para evaluar cosas de los casos de
- estudio.
+ si hacer las salvedades, suposiciones y analisis del caso 
+\end_layout
+
+\begin_layout Standard
+b) no entendi que muestran las metricas que toman para evaluar cosas de
+ los casos de estudio.
  Dado que las metricas me suenan fuertemente inspiradas en el paper de ArchSync,
  no se hasta que punto el "contexto " del ArchSync es extrapolable al DArch,
- c) otra cosa que hay que discutir en los casos de estudio es como se uso
+ 
+\end_layout
+
+\begin_layout Standard
+c) otra cosa que hay que discutir en los casos de estudio es como se uso
  la documentacion original de cada caso de estudio.
  Una opcion es: casi no se uso, y luego de realizar la recuperacion se realizo
  una comparacion entre lo recuperado y lo que decia la documentacion inicial.
@@ -290,14 +319,14 @@ Use-Case Maps
 status open
 
 \begin_layout Standard
-Esta notación no solo el comportamiento sino que ademas la estructura del
- sistema..
+[Y] Esta notación no solo el comportamiento sino que ademas la estructura
+ del sistema..
 \end_layout
 
 \end_inset
 
 Esto permite describir el comportamiento del sistema en un alto nivel de
- abstracción.
+ abstracción asi como también la estructura del sistema.
 \end_layout
 
 \begin_layout Standard
@@ -311,6 +340,9 @@ sigue un proceso iterativo en el cuál el arquitecto interactúa en pequeñas
  Dicho modelo esta representado por una base de datos de conocimiento lo
  suficientemente flexible como para poder realizar consultas complejas de
  forma simple.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -346,7 +378,7 @@ A nuestros padres y demás familiares que nos brindaron su afecto y colaboració
 \end_layout
 
 \begin_layout Standard
-Un especial agradecimiento a nuestro director Alvaro Soria y a nuestro co-direct
+Un especial agradecimiento a nuestro director Álvaro Soria y a nuestro co-direct
 or Andrés Díaz Pace, por su colaboración, disposición y confianza brindados
  durante el desarrollo de este trabajo.
 \end_layout
@@ -418,6 +450,10 @@ Introducción
 status open
 
 \begin_layout Standard
+[Y]
+\end_layout
+
+\begin_layout Standard
 Aca poner algo como..
  la tendencia actual en el proceso de desarrollo software es focalizar las
  actividades de este proceso en la arquitectura del sistema.
@@ -429,8 +465,37 @@ Aca poner algo como..
 
 \end_inset
 
-La Arquitectura de Softwarerefleja captura las principales decisiones de
- diseño del sistema.
+
+\end_layout
+
+\begin_layout Standard
+La arquitectura de software es una disciplina que cumple un rol central
+ en la toma de decisiones de diseño y en la comunicación entre todos los
+ participantes del desarrollo de un producto de software.
+ Como vehículo de comunicación, su documentación es fundamental, pues la
+ falta de ella, o peor aún, el descuido al producirla y mantenerla, anulan
+ o revierten todos los beneficios que el desarrollo centrado en la arquitectura
+ puede aportar.
+\end_layout
+
+\begin_layout Standard
+La tendencia actual en el proceso de desarrollo software es focalizar las
+ actividades de este proceso en la arquitectura del sistema.
+ A este enfoque se lo conoce como desarrollo centrado en la arquitectura
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+(refs)..
+\end_layout
+
+\end_inset
+
+ Sin embargo, en la mayoria de los sistemas la documentacion es escasa o
+ inexistente.
+ La Arquitectura de Software refleja captura las principales decisiones
+ de diseño del sistema.
  Es muy difícil que estas primeras decisiones puedan cambiarse más adelante,
  por ejemplo, durante el proceso de desarrollo.
  Los efectos que tienen estas decisiones son los que más perduran en el
@@ -566,10 +631,15 @@ tru\SpecialChar \-
 ye arquitecturas de sistemas implementados utilizando
  patrones de diseño.
  Muchos de los enfoques mencionados sólo muestran aspectos estructurales
- (diagramas de clases) y muy pocos muestran resultados que permitan visualizar
- el comportamiento del sistema (ej: diagramas de UCMs o de secuencia
+ (diagramas de componentes o de clases) y muy pocos muestran resultados
+ que permitan visualizar el comportamiento del sistema (ej: diagramas de
+ UCMs o de secuencia
 \begin_inset Note Note
 status open
+
+\begin_layout Standard
+[Y]
+\end_layout
 
 \begin_layout Standard
 Muestran componentes y connectores???
@@ -599,9 +669,251 @@ guiar
  así la posibilidad de contar con la experiencia del arquitecto y su conocimient
 o en el dominio.
  Por otro lado, ninguno de estos enfoques mantiene la información recuperada
- de tal forma que sea flexible su manipulación
+ de tal forma que sea flexible su manipulación.
 \end_layout
 
+\begin_layout Subsubsection
+\begin_inset LatexCommand label
+name "sec:Necesidad-de-Documentación-Arquitectónica"
+
+\end_inset
+
+Necesidad de Documentación Arquitectónica
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Y]
+\end_layout
+
+\begin_layout Standard
+Por ahi esta discusion la pondria en motivaciones..
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La documentación de una arquitectura es fundamental para el desarrollo de
+ software ya que ésta actuá como vehiculo comunicacional entre los diferentes
+ 
+\emph on
+stakeholders
+\emph default
+ que participan a lo largo de las diferentes etapas del desarrollo.
+ De esta forma permite que el sistema se diseñe, implemente, pruebe, instale
+ y mantenga siguiendo a la arquitectura que lo sostiene.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Y]
+\end_layout
+
+\begin_layout Standard
+Esta un poco confuso este parrafo se nota la traduccion..
+ Poner algo como ...
+ ya que actuá como vehiculo comunicacional entre los diferentes stakeholder
+ que participan a lo largo de las diferentes etapas del desarrollo ....
+ Por ahi como items queda mejor que como subsecciones ya que no tiene mucho
+ puesto en cada una..
+\end_layout
+
+\end_inset
+
+ La documentación es la vía de comunicación entre desarrolladores, 
+\end_layout
+
+\begin_layout Standard
+A continuación se listan los principales motivadores que hacen necesaria
+ una herramienta de reconstrucción de arquitecturas.
+\end_layout
+
+\begin_layout Itemize
+Inexistencia de documentación
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Todo sistema que tiene software tiene una arquitectura de software.
+ Sin embargo, no necesariamente existe en la práctica una documentación
+ acertada de esta arquitectura.
+ Quizás toda la gente que diseñó el sistema se ha ido, la documentación
+ es escaza o nunca se produjo, el código fuente se ha perdido o nunca se
+ entregó, y lo único con que se cuenta es con el código ejecutable binario.
+ No obstante, una arquitectura puede existir independientemente de su especifica
+ción, lo que demuestra la importancia de la documentación.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, el hecho de lidiar con sistemas que no poseen documentación
+ es un escenario que ocurre con frecuencia dentro de las organizaciones.
+ Sistemas legados suelen no poseer documentación alguna y es muy común que
+ nuevos sistemas de software tengan que integrarse con estos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Erosión arquitectónica
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Asegurarse de que un sistema sea construido en conformidad con su diseño
+ arquitectónico durante su desarrollo, evolución y mantenimiento es importante,
+ ya que divergencias significativas entre arquitectura e implementación
+ pueden comprometer la estructura, estilo y propiedades que han sido establecida
+s mediante cuidadoso análisis a nivel arquitectónico 
+\begin_inset LatexCommand cite
+key "ABIANTOUN05b"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Durante las diferentes etapas del desarrollo de software, pueden producirse
+ cambios en la documentación arquitectónica que luego no son reflejados
+ en el código, o cambios en el código que no son apropiadamente acomodados
+ en la documentación.
+ Siendo la arquitectura una guía fundamental durante todo el ciclo de vida
+ del sistema, el desfasaje entre documentación e implementación de una arquitect
+ura se hará cada vez más difícil de remediar por sus desarrolladores, finalmente
+ deteriorando la calidad del producto.
+\end_layout
+
+\begin_layout Standard
+Desafortunadamente, debido a la evolución natural del sistema, es probable
+ que la arquitectura y la implementación pierdan consistencia.
+ Una vez que el diseño arquitectónico está listo, típicamente todos los
+ esfuerzos se focalizan en la implementación, y esto hace que la documentación
+ se desactualice progresivamente.
+ Por ejemplo, nuevos requerimientos pueden causar un rediseño de la arquitectura
+, con cambios consecuentes en algunas partes de la implementación; y por
+ otro lado, algunas tareas de mantenimiento pueden producir cambios en el
+ código que deberían ser reflejados en modificaciones de la arquitectura.
+ Es aceptable que exista temporalmente cierto desfasaje, normalmente los
+ desarrolladores trabajan en la implementación sin mantener el modelo arquitectó
+nico, el cual rápidamente queda desactualizado.
+\end_layout
+
+\begin_layout Standard
+En algunos casos, los desarrolladores pueden introducir sutiles diferencias
+ estructurales que invalidan intenciones claves de la arquitectura.
+ Por ejemplo, en un sistema estructurado en capas, es posible que un programador
+ inadvertido genere dependencias no deseadas al saltear la capa inmediatamente
+ inferior.
+ Análogamente, en el desarrollo de sistemas 
+\emph on
+web
+\emph default
+ multibanda es común el error de invocar directamente a la base de datos
+ desde la banda de presentación.
+ Como resultado, los arquitectos a menudo deben lidiar en sus análisis con
+ conocimiento incompleto e incorrecto debido a defectos en la documentación
+ 
+\begin_inset LatexCommand cite
+key "ALDRICH05"
+
+\end_inset
+
+.
+ En estos casos, las relaciones de los componentes (en el nivel arquitectónico)
+ con clases y métodos (en el nivel de implementación) ya no se mantienen,
+ y los desarrolladores deben restablecer la consistencia manualmente.
+ Éste fenómeno se conoce como 
+\emph on
+corrimiento arquitectura-implementación
+\emph default
+ 
+\begin_inset LatexCommand cite
+key "PERRY92"
+
+\end_inset
+
+ o 
+\emph on
+erosión arquitectónica
+\emph default
+.
+ Si no se maneja correctamente, revierte los beneficios del desarrollo centrado
+ en la arquitectura, ya que se pierde la trazabilidad entre re\SpecialChar \-
+que\SpecialChar \-
+ri\SpecialChar \-
+mien\SpecialChar \-
+tos,
+ decisiones de diseño y artefactos de implementación.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Reconstrucción de arquitecturas
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La Reconstrucción de Arquitecturas de Software es una técnica para generar
+ representaciones arquitectónicas de un sistema que puede ser utilizada
+ de diversas formas.
+ El principal uso de esta representación es el de documentar la arquitectura
+ existente de un sistema.
+ Si no existe la documentación o la documentación disponible esta desactualizada
+, la representación obtenida mediante la reconstrucción puede ser usada
+ como una base para la re-documentación de la arquitectura.
+ Esta representación también puede ser usada como un punto de comienzo para
+ realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
+ Finalmente, la representación puede ser usada como una forma de identificar
+ componentes re-usables o para establecer una arquitectura base dentro de
+ una línea de productos de software 
+\begin_inset LatexCommand cite
+key "Rick2003"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Existen diferentes técnicas y enfoques para recuperar representaciones de
+ la arquitectura de un sistema.
+ Esto hace que sea difícil describir las distintas etapas que un proceso
+ de reconstrucción de arquitecturas requiere.
+ Sin embargo, casi todos los enfoques estructuran un proceso en un ciclo
+ basado en extraer, abstraer y visualizar la información.
+ En todos los casos, este proceso es asistido por herramientas, las cuales
+ extraen información del sistema (ej.
+ código fuente) para ir agregando niveles de abstracción cada vez mas altos.
+ El resultado final son diagramas que representan la arquitectura del sistema.
+\end_layout
+
+\begin_layout Standard
+Una definición genérica de la Reconstrucción de Arquitecturas de Software
+ es la proponen Bass et.al.
+ en 
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+, definiendo ésta como como un proceso interpretativo, interactivo e iterativo
+ que involucra muchas actividades: no es un proceso totalmente automático.
+ Requiere de la capacidad y de la atención del experto en ingeniería reversa
+ y del arquitecto (o alguien con conocimientos sobre la arquitectura del
+ sistema).
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Objetivos y restricciones
 \end_layout
@@ -743,6 +1055,24 @@ Contexto
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[andres]
+\end_layout
+
+\begin_layout Standard
+a) La introduccion a arquitecturas de software del capitulo 2 es un poco
+ corta, con pocos ejemplos, y asume sin mas consideraciones que la "mejor"
+ forma de documentar una arquitectura es a traves de UCMs.
+ No estoy diciendo que UCMs esta mal, pero todos sabes que documentar un
+ disenio con UCMs no es tan simple ni efectivo ...
+ 
+\end_layout
+
+\end_inset
+
 En este capítulo se ofrecerá una introducción a los conceptos centrales
  sobre los que se ha realizado este trabajo.
  En primer lugar se define la noción de 
@@ -901,23 +1231,77 @@ Finalmente, de la definición se deduce que el comportamiento de los elementos
 \end_layout
 
 \begin_layout Standard
-A continuación, se presentan los estilos arquitectónicos que nos ayudan
- a describir los distintos tipos de componentes y su tipología.
+Las arquitecturas de software representan las primeras decisiones de diseño
+ de un sistema.
+ Estas decisiones son las más difíciles de corregir durante el proceso de
+ desarrollo ya que tienen un gran impacto sobre el sistema.
+ A su vez, las decisiones definen restricciones de implentación en donde
+ se aplica el concepto de 
+\emph on
+separation of concerns
+\emph default
+.
+ Por ejemplo, si una de las decisiones es que exista una separación entre
+ la presentación y modelo de un sistema, dos estructuras bien definidas
+ se dividen y cada implementación puede evolucionar independientemente de
+ la otra.
+ Un método que usualmente se utiliza para dividir el esfuerzo es el de asignar
+ diferentes grupos de desarrolladores a diferentes porciones del sistema.
+\end_layout
+
+\begin_layout Standard
+Existen muchos factores que influencian la arquitectura de un sistema.
+ Uno de los mas importantes son los denominados 
+\emph on
+stakeholders
+\emph default
+.
+ Los 
+\emph on
+stakeholders
+\emph default
+ son las personas y organizaciones que estan interesadas en la construcción
+ del sistema: el cliente, usuario final, los desarrolladores, el lider del
+ proyecto, etc.
+ Éstos colaboran con diferentes requerimientos de los cuales algunos se
+ pueden contradecir.
+ Los requerimientos no sólo son funcionales ya que construir un sistema
+ aceptable incluye aspectos como 
+\emph on
+performance
+\emph default
+, disponibilidad, flexibilidad, escalabilidad, seguridad, etc.
+ en donde cada 
+\emph on
+stakeholders
+\emph default
+ pueden estar interesados en algunos de estos requerimientos no funcionales
+ (también llamados atributos de calidad).
+\end_layout
+
+\begin_layout Standard
+Los atributos de calidad y los requerimientos son ortogonales.
+ Si esto no fuera así, la incorporación de una nueva funcionalidad del sistema
+ podría establecer el nivel de seguridad o el de disponibilidad o el de
+ 
+\emph on
+performance
+\emph default
+.
+ Generalmente, estilos y modelos arquitectónicos son utilizados ya que la
+ mayoría de éstos se basa en los atributos de cailidad.
+\end_layout
+
+\begin_layout Standard
+A continuación, se presentan los estilos y modelos arquitectónicos que nos
+ ayudan a describir los distintos tipos de componentes y su tipología.
 \end_layout
 
 \begin_layout Description
 Estilos\InsetSpace ~
+y\InsetSpace ~
+Modelos\InsetSpace ~
 Arquitectónicos
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-XXX-Poner mas info en esta seccion!!!
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -951,6 +1335,28 @@ Un estilo arquitectónico determina el vocabulario de componentes y conectores
 \end_layout
 
 \begin_layout Standard
+Por ejemplo, el estilo cliente-servidor es uno de los más comunes.
+ El cliente y servidor son dos tipos de elementos, y su coordinación es
+ descripta en términos de un protocolo que el servidor utiliza para comunicarse
+ con cada uno de los clientes.
+ El uso del término cliente-servidor implica que múltiples clientes existen,
+ es decir, no es identificado el cliente por si solo.
+\end_layout
+
+\begin_layout Standard
+Uno de los aspectos más importantes de los estilos es el hecho de que éstos
+ se basan en los atributos de calidad para definir sus componentes y su
+ tipología.
+ Ésta es la razón de por qué el arquitecto selecciona un determinado estilo
+ arquitectónico.
+ Algunos estilos representan soluciones para determinados problemas, otros
+ sirven para sistemas de alta seguridad, otros siguen siendo usados exitosamente
+ para sistemas de alta disponibilidad.
+ Elegir un estilo arquitectónico es una de las primeras y más importantes
+ decisiones del arquitecto.
+\end_layout
+
+\begin_layout Standard
 Los estilos también pueden incluir una descripción formal en donde se detalla
  la relación costo-beneficio de aplicar el estilo.
  Por ejemplo, una descripción podría ser: "Utilizar el estilo arquitectónico
@@ -962,11 +1368,68 @@ Pipes and Filters
 \emph on
 performance
 \emph default
- no es de alta prioridad.
-\begin_inset Quotes erd
+ no es de alta prioridad".
+\end_layout
+
+\begin_layout Standard
+Los modelos arquitectónicos se definen como una división de la funcionalidad
+ con flujos de dato entre los distintos elementos.
+ Es una descomposición estándar de un problema conocido en partes que cooperativ
+amente resuelven el problema.
+ Basados en la experiencia, los modelos son una característica de los dominios
+ que poseen un alto grado de madurez.
+ Por ejemplo, son bien conocidos los elementos estandar de un compilador:
+ analizador léxico, analizador sintáctico, analizador semántico y generador
+ de código intermedio, a su vez, también es conocido cómo es que estos elementos
+ interactúan para reazliar el objetivo que poseen en común.
+\end_layout
+
+\begin_layout Standard
+Los estilos y modelos arquitectónicos no son arquitecturas.
+ Son conceptos útiles para capturar elementos de una arquitectura.
+ Sin embargo, sigue siendo conveniente mostrar una imagen del sistema con
+ el estilo arquitectónico como parte de alguna vista.
+\end_layout
+
+\begin_layout Subsection
+Importancia de las arquitecturas de software
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+completar esta seccion
+\end_layout
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Desde el punto de vista técnico, las arquitecturas de software toman un
+ gran valor.
+ Algunas de las razones de la importancia de las arquitecturas de software
+ son:
+\end_layout
+
+\begin_layout Enumerate
+Comunicación entre los 
+\emph on
+stakeholders
+\emph default
+: La arquitectura de software representa una abstracción común de un sistema
+ 
+\end_layout
+
+\begin_layout Enumerate
+Primeras decisiones de diseño.
+\end_layout
+
+\begin_layout Enumerate
+Abstracción transferible de un sistema.
 \end_layout
 
 \begin_layout Subsection
@@ -1237,7 +1700,72 @@ Use-Case Maps
  y un ejemplo en donde se muestra su uso.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
+UML - Diagrama de Componentes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+completar con diagramas de componentes!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El principal objetivo de los diagramas de componentes es mostrar las relaciones
+ estructurales entre los componentes de un sistema.
+ Los componentes son considerados autónomos, encapsulando unidades entre
+ un sistema o sub-sistema que provee una o más interfaces.
+ La idea es que sea posible mostrar que los componentes se pueden reutilizar
+ o remplazar por otros componentes de la arquitectura ya que un componente
+ encapsula el comportamiento e implementa interfaces bien definidas.
+ Adicionalmente, los diagramas de componentes son los más utilizados como
+ medio de comunicación entre los distintos 
+\emph on
+stakeholders
+\emph default
+.
+ Por ejemplo, los diagramas pueden ser presentados a los clientes ya que
+ presentan un entendimiento del sistema completo en las primeras etapas
+ de la ejecución de los proyectos.
+ A su vez, los desarrolladores utilizan los diagramas de componentes ya
+ que proveen la estructura del sistema que construirán en un alto nivel
+ de abstracción.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+which helps developers begin formalizing a roadmap for the implementation,
+ and make decisions about task assignments and/or needed skill enhancements.
+ System administrators find component diagrams useful because they get an
+ early view of the logical software components that will be running on their
+ systems.
+ Although system administrators will not be able to identify the physical
+ machines or the physical executables from the diagram, a component diagram
+ will nevertheless be welcomed because it provides early information about
+ the components and their relationships (which allows sys-admins to loosely
+ plan ahead).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Notación
+\end_layout
+
+\begin_layout Subsection
 \begin_inset LatexCommand label
 name "sec:Use-Case-Maps"
 
@@ -1279,7 +1807,7 @@ nto, ya que deliberadamente dejan algunas decisiones abiertas para ser tomadas
  ellos.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Notación básica e interpretación
 \end_layout
 
@@ -1425,7 +1953,7 @@ paths
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
+\begin_layout Subsubsection
 \begin_inset LatexCommand label
 name "sub:Ejemplo-UCM"
 
@@ -1462,15 +1990,50 @@ y los componentes
 Observers
 \emph default
  están desacoplados.
- La responsabilidad 
+ El ejemplo instancia el patron de la siguiente forma: el componente 
 \emph on
-notifyObservers
+UserModelObservable
 \emph default
- en 
+ representa el rol del 
 \emph on
 Observable
 \emph default
- envía una notificación de cambio a todos los 
+ mientras que los componentes 
+\emph on
+UserInterfaceViewObserver
+\emph default
+ y de 
+\emph on
+UserLoggerObserver
+\emph default
+ son los 
+\emph on
+Observers
+\emph default
+.
+ El componente 
+\emph on
+Main
+\emph default
+ es responsable de realizar los cambios al modelo.
+ 
+\end_layout
+
+\begin_layout Standard
+La primer responsabilidad que se activa es 
+\emph on
+changeDataModel
+\emph default
+ y efectúa un cambio en el modelo.
+ Luego la responsabilidad 
+\emph on
+notifyObservers
+\emph default
+ en el componente 
+\emph on
+UserModelObservable
+\emph default
+ es activada y envía una notificación de cambio a todos los 
 \emph on
 Observers
 \emph default
@@ -1480,10 +2043,7 @@ Observers
 status open
 
 \begin_layout Standard
-LAs figuras tiene que aparece lo mas cerca de la ref en el texto cuando
- generen el pdf..
- vi que hay bastante diferencia entre el parrafo que la referencia y donde
- aparece la figura...
+[Y]
 \end_layout
 
 \begin_layout Standard
@@ -1502,15 +2062,32 @@ El ejemplo parece demasiado simple..falta algun componente que efectue el
 
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+LAs figuras tiene que aparece lo mas cerca de la ref en el texto cuando
+ generen el pdf..
+ vi que hay bastante diferencia entre el parrafo que la referencia y donde
+ aparece la figura...
+\end_layout
+
+\end_inset
+
 abilidad 
 \emph on
 update
 \emph default
- de cada 
+ de los componentes 
 \emph on
-Observer
+UserInterfaceViewObserver
 \emph default
-.
+ y de 
+\emph on
+UserLoggerObserver
+\emph default
+ respectivamente.
 \end_layout
 
 \begin_layout Standard
@@ -1518,12 +2095,12 @@ Observer
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/ObserverObservableSample.jpg
+	filename img/ObserverObservableSample.png
 	scale 60
 
 \end_inset
@@ -1555,230 +2132,6 @@ Ejemplo de UCM
 
 \begin_layout Section
 \begin_inset LatexCommand label
-name "sec:Necesidad-de-Documentación-Arquitectónica"
-
-\end_inset
-
-Necesidad de Documentación Arquitectónica
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Por ahi esta discusion la pondria en motivaciones..
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sub:Descriptiones_Arquitectónicas"
-
-\end_inset
-
- se explicaron las razones principales por las que la documentación de una
- arquitectura es fundamental para el desarrollo de software.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esta un poco confuso este parrafo se nota la traduccion..
- Poner algo como ...
- ya que actuá como vehiculo comunicacional entre los diferentes stakeholder
- que participan a lo largo de las diferentes etapas del desarrollo ....
- Por ahi como items queda mejor que como subsecciones ya que no tiene mucho
- puesto en cada una..
-\end_layout
-
-\end_inset
-
- La documentación es la vía de comunicación entre desarrolladores, y permite
- que el sistema se diseñe, implemente, pruebe, instale y mantenga siguiendo
- a la arquitectura que lo sostiene.
-\end_layout
-
-\begin_layout Standard
-A continuación se listan los principales motivadores que hacen necesaria
- una herramienta de reconstrucción de arquitecturas.
-\end_layout
-
-\begin_layout Subsection
-Inexistencia de documentación
-\end_layout
-
-\begin_layout Standard
-Todo sistema que tiene software tiene una arquitectura de software.
- Sin embargo, no necesariamente existe en la práctica una documentación
- acertada de esta arquitectura.
- Quizás toda la gente que diseñó el sistema se ha ido, la documentación
- es escaza o nunca se produjo, el código fuente se ha perdido o nunca se
- entregó, y lo único con que se cuenta es con el código ejecutable binario.
- No obstante, una arquitectura puede existir independientemente de su especifica
-ción, lo que demuestra la importancia de la documentación.
-\end_layout
-
-\begin_layout Standard
-Por lo tanto, el hecho de lidiar con sistemas que no poseen documentación
- es un escenario que ocurre con frecuencia dentro de las organizaciones.
- Sistemas legados suelen no poseer documentación alguna y es muy común que
- nuevos sistemas de software tengan que integrarse con estos.
-\end_layout
-
-\begin_layout Subsection
-Erosión arquitectónica
-\end_layout
-
-\begin_layout Standard
-Asegurarse de que un sistema sea construido en conformidad con su diseño
- arquitectónico durante su desarrollo, evolución y mantenimiento es importante,
- ya que divergencias significativas entre arquitectura e implementación
- pueden comprometer la estructura, estilo y propiedades que han sido establecida
-s mediante cuidadoso análisis a nivel arquitectónico 
-\begin_inset LatexCommand cite
-key "ABIANTOUN05b"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Durante las diferentes etapas del desarrollo de software, pueden producirse
- cambios en la documentación arquitectónica que luego no son reflejados
- en el código, o cambios en el código que no son apropiadamente acomodados
- en la documentación.
- Siendo la arquitectura una guía fundamental durante todo el ciclo de vida
- del sistema, el desfasaje entre documentación e implementación de una arquitect
-ura se hará cada vez más difícil de remediar por sus desarrolladores, finalmente
- deteriorando la calidad del producto.
-\end_layout
-
-\begin_layout Standard
-Desafortunadamente, debido a la evolución natural del sistema, es probable
- que la arquitectura y la implementación pierdan consistencia.
- Una vez que el diseño arquitectónico está listo, típicamente todos los
- esfuerzos se focalizan en la implementación, y esto hace que la documentación
- se desactualice progresivamente.
- Por ejemplo, nuevos requerimientos pueden causar un rediseño de la arquitectura
-, con cambios consecuentes en algunas partes de la implementación; y por
- otro lado, algunas tareas de mantenimiento pueden producir cambios en el
- código que deberían ser reflejados en modificaciones de la arquitectura.
- Es aceptable que exista temporalmente cierto desfasaje, normalmente los
- desarrolladores trabajan en la implementación sin mantener el modelo arquitectó
-nico, el cual rápidamente queda desactualizado.
-\end_layout
-
-\begin_layout Standard
-En algunos casos, los desarrolladores pueden introducir sutiles diferencias
- estructurales que invalidan intenciones claves de la arquitectura.
- Por ejemplo, en un sistema estructurado en capas, es posible que un programador
- inadvertido genere dependencias no deseadas al saltear la capa inmediatamente
- inferior.
- Análogamente, en el desarrollo de sistemas 
-\emph on
-web
-\emph default
- multibanda es común el error de invocar directamente a la base de datos
- desde la banda de presentación.
- Como resultado, los arquitectos a menudo deben lidiar en sus análisis con
- conocimiento incompleto e incorrecto debido a defectos en la documentación
- 
-\begin_inset LatexCommand cite
-key "ALDRICH05"
-
-\end_inset
-
-.
- En estos casos, las relaciones de los componentes (en el nivel arquitectónico)
- con clases y métodos (en el nivel de implementación) ya no se mantienen,
- y los desarrolladores deben restablecer la consistencia manualmente.
- Éste fenómeno se conoce como 
-\emph on
-corrimiento arquitectura-implementación
-\emph default
- 
-\begin_inset LatexCommand cite
-key "PERRY92"
-
-\end_inset
-
- o 
-\emph on
-erosión arquitectónica
-\emph default
-.
- Si no se maneja correctamente, revierte los beneficios del desarrollo centrado
- en la arquitectura, ya que se pierde la trazabilidad entre re\SpecialChar \-
-que\SpecialChar \-
-ri\SpecialChar \-
-mien\SpecialChar \-
-tos,
- decisiones de diseño y artefactos de implementación.
- 
-\end_layout
-
-\begin_layout Subsection
-Reconstrucción de arquitecturas
-\end_layout
-
-\begin_layout Standard
-La Reconstrucción de Arquitecturas de Software es una técnica para generar
- representaciones arquitectónicas de un sistema que puede ser utilizada
- de diversas formas.
- El principal uso de esta representación es el de documentar la arquitectura
- existente de un sistema.
- Si no existe la documentación o la documentación disponible esta desactualizada
-, la representación obtenida mediante la reconstrucción puede ser usada
- como una base para la re-documentación de la arquitectura.
- Esta representación también puede ser usada como un punto de comienzo para
- realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
- Finalmente, la representación puede ser usada como una forma de identificar
- componentes re-usables o para establecer una arquitectura base dentro de
- una línea de productos de software 
-\begin_inset LatexCommand cite
-key "Rick2003"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Existen diferentes técnicas y enfoques para recuperar representaciones de
- la arquitectura de un sistema.
- Esto hace que sea difícil describir las distintas etapas que un proceso
- de reconstrucción de arquitecturas requiere.
- Sin embargo, casi todos los enfoques estructuran un proceso en un ciclo
- basado en extraer, abstraer y visualizar la información.
- En todos los casos, este proceso es asistido por herramientas, las cuales
- extraen información del sistema (ej.
- código fuente) para ir agregando niveles de abstracción cada vez mas altos.
- El resultado final son diagramas que representan la arquitectura del sistema.
-\end_layout
-
-\begin_layout Standard
-Una definición genérica de la Reconstrucción de Arquitecturas de Software
- es la proponen Bass et.al.
- en 
-\begin_inset LatexCommand cite
-key "SAIP"
-
-\end_inset
-
-, definiendo ésta como como un proceso interpretativo, interactivo e iterativo
- que involucra muchas actividades: no es un proceso totalmente automático.
- Requiere de la capacidad y de la atención del experto en ingeniería reversa
- y del arquitecto (o alguien con conocimientos sobre la arquitectura del
- sistema).
-\end_layout
-
-\begin_layout Section
-\begin_inset LatexCommand label
 name "sec:Conclusión"
 
 \end_inset
@@ -1788,7 +2141,11 @@ Resumen y discusión
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
+
+\begin_layout Standard
+[Y]
+\end_layout
 
 \begin_layout Standard
 Este parrafo podria ir a la intro..
@@ -3364,16 +3721,6 @@ Como bien se detalló en el capítulo anterior, existen actualmente varios
  Si bien no se centran específicamente en la reconstrucción de comportamiento,
  el análisis detallado de cada uno nos permitió detectar aspectos que colaboran
  en los mecanismos y abstracciones aplicables al caso de UCMs.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-XXX-No se entiende
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3416,6 +3763,11 @@ conceptual
 status open
 
 \begin_layout Standard
+[Y ...
+ mejorar la hipotesis]
+\end_layout
+
+\begin_layout Standard
 ALGO QUE SE UTILICE COMO HIPOTESIS...
  ALGO COMO la hipotesis de esta tesis esta fundamentada en utilizacion del
  conocimiento de los patrones arquitectonicos de un sistema para la reconstrucci
@@ -3430,6 +3782,18 @@ Remarcar tambien que van a reconstruir un Object-oriented implementation..
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+La hipótesis de esta tesis esta fundamentada en la utilización del conocimiento
+ de los patrontes arquitectónicos para la reconstrucción de los diferentes
+ componentes de un sistema.
+ Para esto, asumimos que los sistemas a reconstruir estén implementados
+ con el paradigma 
+\emph on
+Object-Oriented
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -3448,12 +3812,66 @@ lo arquitectónico
 status open
 
 \begin_layout Standard
-ACA DEBERIA IR UNA FIGURA ESQUEMATICA DEL ENFOQUE
+[Y] ACA DEBERIA IR UNA FIGURA ESQUEMATICA DEL ENFOQUE
 \end_layout
 
 \end_inset
 
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/procesoDrarch.jpg
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Proceso-DRArch"
+
+\end_inset
+
+Proceso 
+\emph on
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+
+\emph on
+DRArch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3464,6 +3882,9 @@ ciones al modelo arquitectónico.
  A partir del código fuente recuperamos la información estática y mediante
  el análisis del sistema en ejecución extraemos la información dinámica
  que complementa el análisis estático.
+ Tanto la información estática como la dinámica que fueron recolectadas
+ en las primeras fases, es estilizada por el resto de las fases ya que es
+ considerada como información base.
  
 \end_layout
 
@@ -3511,66 +3932,12 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/procesoDrarch.jpg
-	lyxscale 30
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Proceso-DRArch"
-
-\end_inset
-
-Proceso 
-\emph on
-
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-
-\emph on
-DRArch
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 De esta manera, el proceso de recuperación será una tare
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Dentro del proceso faltan marcar las etapas de analisis estático y dinamico
+[Y] Dentro del proceso faltan marcar las etapas de analisis estático y dinamico
 \end_layout
 
 \end_inset
@@ -3591,7 +3958,7 @@ La descripción del proceso define seis partes principales del enfoque: el
 status open
 
 \begin_layout Standard
-Esta imagen no aporta mucho..
+[Y] Esta imagen no aporta mucho..
  sobretodo porque no estan especidicadas las diferentes partes del enfoque
  con el proceso de reconstruccion...Una unificacion de ambas figuras mas un
  poco mas de trabajo seria lo ideall...
@@ -3600,66 +3967,6 @@ Esta imagen no aporta mucho..
 \end_inset
 
  de las partes del enfoque.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/EsquemaDrarch.PNG
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-Esquemático-del"
-
-\end_inset
-
-Diagrama Esquemático del enfoque 
-\emph on
-DRArch
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-XXX-Aca debería ir un diagrama esquemático que explique el enfoque y las
- diferentes partes y luego cada subsección cuenta las diferentes partes
- por medio del ejemplo de la sección que sigue.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3736,15 +4043,49 @@ key "gamma93design"
 status open
 
 \begin_layout Standard
+[Y]
+\end_layout
+
+\begin_layout Standard
 Las diferentes partes del ejemplo tienen que ser explicadas a lo largo de
  la secciones..
  es decir..
  cuando hablan de analisis de codigo...
  introducen la implementacion...
  y el componente estructural..
- y luego en la seccion de dinamico presentan los eventos de ejecucion y
- el UCM.
- Seria deseable que el ejemplo muestre dos ciclos de recuperacion..
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[Y...hace falta mostrar los eventos que tira el Flabto???]
+\end_layout
+
+\begin_layout Standard
+y luego en la seccion de dinamico presentan los eventos de ejecucion y el
+ UCM.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Seria deseable que el ejemplo muestre dos ciclos de recuperacion..
  
 \end_layout
 
@@ -3819,7 +4160,87 @@ Observer
 \end_layout
 
 \begin_layout Standard
-En la Figura\InsetSpace ~
+Como primer paso, el arquitecto debe definir qué reglas se van a incluir
+ en la fase que se quiere ejecutar.
+ Cada fase debería tener un objetivo claro, por ejemplo, una fase podría
+ enfocarse en descubrir si existen implementaciones del patrón 
+\emph on
+Observer-Observable
+\emph default
+ o de algún otro patrón de diseño.
+\end_layout
+
+\begin_layout Subsection
+Análisis de información de artefactos de código fuente
+\end_layout
+
+\begin_layout Standard
+Se debe realizar un análisis de los artefactos relacionados con el código
+ fuente para poder capturar los aspectos estructurales del sistema.
+ Dicho análisis requiere que el código fuente sea fácilmente navegable para
+ poder ir recolectando información relevante.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Justificacion de la eleccion de Prolog..
+ 
+\end_layout
+
+\end_inset
+
+Con el objetivo de poder manipular la información estática de forma flexible,
+ el código fuente es representado por medio de un lenguaje de programación
+ lógico al estilo 
+\emph on
+ProLog
+\emph default
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Ejemplo con la traduccion...y la forma de analisis..
+\end_layout
+
+\end_inset
+
+De esta forma, se representan artefactos del código fuente (clases, variables,
+ paquetes, etc.) sobre una base de conocimiento.
+ Esto nos permíte mantener un contexto en el cual sea posible encontrar
+ información relacionada de forma sencilla ya que buscando directamente
+ en el código fuente resultaría casi imposible.
+\end_layout
+
+\begin_layout Standard
+Esta transformación es realizada al comienzo del proceso de reconstrucción
+ por medio de un parser que recorre el AST de cada archivo fuente.
+ Una vez que el código fuente esta representado en forma de hechos, es posible
+ realizar consultas para obtener información de forma simple y flexible.
+ La flexibilidad de este enfoque permite explorar un gran abanico de relaciones
+ y consultas diferentes.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, si se considera un esenario en donde un desarrollador quiere
+ reutilizar una parte en particular del código de una aplicación porque
+ contiene funcionalidad que necesita en otra aplicación que esta desarrollando,
+ dicho desarrollador debería realizar una búsqueda por todo el código fuente
+ para poder capturar las partes del código que necesita.
+ Inspeccionar directamente en el código fuente sería muy tedioso y llevaría
+ mucho tiempo, pero si el código fuente esta representado en forma de hechos
+ 
+\emph on
+ProLog
+\emph default
+, seria sencillo realizar algunas consultas para identificar partes del
+ código.
+\end_layout
+
+\begin_layout Standard
+Siguiento con el ejemplo mostrado ateriormente, en la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Diagrama-de-clases-UML-para-el-ejemplo-Observer-Observable"
@@ -3876,10 +4297,6 @@ Observer-Observable
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -3956,10 +4373,6 @@ mouse
 \emph default
 , teclas, etc.).
  Obtiene sus datos del modelo.
-\end_layout
-
-\begin_layout Subsubsection
-Mapeo UCM - implementación
 \end_layout
 
 \begin_layout Standard
@@ -4143,85 +4556,9 @@ Mapeos método - responsabilidad
 
 \end_layout
 
-\begin_layout Subsection
-Análisis de información de artefactos de código fuente
-\end_layout
-
 \begin_layout Standard
-Se debe realizar un análisis de los artefactos relacionados con el código
- fuente para poder capturar los aspectos estructurales del sistema.
- Dicho análisis requiere que el código fuente sea fácilmente navegable para
- poder ir recolectando información relevante.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Justificacion de la eleccion de Prolog..
- 
-\end_layout
-
-\end_inset
-
-Con el objetivo de poder manipular la información estática de forma flexible,
- el código fuente es representado por medio de un lenguaje de programación
- lógico al estilo 
-\emph on
-ProLog
-\emph default
-.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Ejemplo con la traduccion...y la forma de analisis..
-\end_layout
-
-\end_inset
-
-De esta forma, se representan artefactos del código fuente (clases, variables,
- paquetes, etc.) sobre una base de conocimiento.
- Esto nos permíte mantener un contexto en el cual sea posible encontrar
- información relacionada de forma sencilla ya que buscando directamente
- en el código fuente resultaría casi imposible.
-\end_layout
-
-\begin_layout Standard
-Esta transformación es realizada al comienzo del proceso de reconstrucción
- por medio de un parser que recorre el AST de cada archivo fuente.
- Una vez que el código fuente esta representado en forma de hechos, es posible
- realizar consultas para obtener información de forma simple y flexible.
- La flexibilidad de este enfoque permite explorar un gran abanico de relaciones
- y consultas diferentes.
-\end_layout
-
-\begin_layout Standard
-Por ejemplo, si se considera un esenario en donde un desarrollador quiere
- reutilizar una parte en particular del código de una aplicación porque
- contiene funcionalidad que necesita en otra aplicación que esta desarrollando,
- dicho desarrollador debería realizar una búsqueda por todo el código fuente
- para poder capturar las partes del código que necesita.
- Inspeccionar directamente en el código fuente sería muy tedioso y llevaría
- mucho tiempo, pero si el código fuente esta representado en forma de hechos
- 
-\emph on
-ProLog
-\emph default
-, seria sencillo realizar algunas consultas para identificar partes del
- código.
-\end_layout
-
-\begin_layout Standard
-En el ejemplo de la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Ejemplo:-Observer-Observable"
-
-\end_inset
-
-, todas las clases, interface, propiedades, etc.
- estarían representadas con hechos 
+Toda esta información mostrada en el ejemplo (clases, interfaces, propiedades,
+ mapeos, etc.) es representadas con hechos 
 \emph on
 ProLog
 \emph default
@@ -4272,6 +4609,74 @@ logs
  en su estado actual.
  Contienen información de bajo nivel, como llamadas a métodos, threads,
  creaciones de objetos, etc.
+\end_layout
+
+\begin_layout Standard
+En el ejemplo 
+\emph on
+Observer-Observable
+\emph default
+ sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Ejemplo:-Observer-Observable"
+
+\end_inset
+
+, el flujo de eventos que genera la ejecución de la aplicación queda reflejado
+ en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Ejemplo-Observer-Observable-UCM"
+
+\end_inset
+
+ .
+ Este caso se produce cuando algún dato del modelo es modificado.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableSample.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-Observer-Observable-UCM"
+
+\end_inset
+
+Ejemplo 
+\emph on
+Observer-Observable
+\emph default
+ de UCM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4599,10 +5004,6 @@ Grafo de dependencias que muestra un componente utilidad y clase de entrada
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
  
@@ -4699,12 +5100,12 @@ Identificación de componentes basado en acoplamiento
 Utilizando un enfoque similar al descripto anteriormente es posible llevar
  un medida de acoplamiento entre clases.
  Se define acoplamiento como el grado en que un componente esta conectado
- a otros componentes del sistema, es decir, el 
+ a otros componentes del sistema, es decir, su 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-su 
+[Y] su 
 \end_layout
 
 \end_inset
@@ -4798,12 +5199,12 @@ El grado de la complejidad de la interfaz de los componentes.
 \begin_layout Standard
 Como base fundamental para medir el acoplamiento dentro de un módulo se
  tomaron no solamente las medidas de fan-in sino tambien las de fan-out
- (valores altos determinan una alta dependencia con el ex
+ (valores altos determinan una alta dependencia con el ext
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-t
+[Y] t
 \end_layout
 
 \end_inset
@@ -5328,7 +5729,7 @@ M1
 status open
 
 \begin_layout Standard
-, no va...
+[Y], no va...
 \end_layout
 
 \end_inset
@@ -5341,7 +5742,7 @@ M2
 \family typewriter
 M3
 \family default
-; 
+, 
 \family typewriter
 
 \begin_inset Note Note
@@ -5350,7 +5751,7 @@ status open
 \begin_layout Standard
 
 \family typewriter
-se usa o , o ; no mezcla..
+[Y] se usa o , o ; no mezcla..
 \end_layout
 
 \end_inset
@@ -5612,15 +6013,13 @@ reference "fig:Diagrama-de-componentes-de-los-Observers"
  
 \end_layout
 
-\begin_layout Section
-Recorrido por la Herramienta 
-\emph on
-DRArch
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Note
 status open
+
+\begin_layout Standard
+[Y]
+\end_layout
 
 \begin_layout Standard
 Llevar esta seccion y distribuirla en la implementacion..
@@ -5628,392 +6027,7 @@ Llevar esta seccion y distribuirla en la implementacion..
 
 \end_inset
 
-En esta sección se muestra cómo hace la herramienta 
-\emph on
-DRArch
-\emph default
- para satisfacer las necesidades del enfoque mencionado, siguiendo el ejemplo
- de la sección 
-\begin_inset LatexCommand ref
-reference "sec:Ejemplo"
 
-\end_inset
-
-.
- Como primer paso, el arquitecto debe definir qué reglas se van a incluir
- en la fase que se quiere ejecutar.
- Cada fase debería tener un objetivo claro, por ejemplo, una fase podría
- enfocarse en descubrir si existen implementaciones del patrón 
-\emph on
-Observer-Observable
-\emph default
- o de algún otro patrón de diseño.
-\end_layout
-
-\begin_layout Standard
-En el 
-\series bold
-análisis estático
-\series default
-, una porción del código fuente correspondiente al ejemplo 
-\emph on
-Observer-Observable
-\emph default
-, se transforma a la representación que se detalla en la figura 
-\begin_inset LatexCommand ref
-reference "fig:Ejemplo-de-la-representación-del-código-fuente"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/java2jquery.jpg
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Ejemplo-de-la-representación-del-código-fuente"
-
-\end_inset
-
-Ejemplo de la representación del código fuente
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En el 
-\series bold
-análisis dinámico
-\series default
-, el 
-\emph on
-log
-\emph default
- de ejecución generado por la combinación de las he\SpecialChar \-
-rra\SpecialChar \-
-mien\SpecialChar \-
-tas 
-\emph on
-DRArch
-\emph default
- y 
-\emph on
-FLAbot
-\emph default
-, es analizado por el componente TraceLog Analizer para generar los hechos
- ProLog correspondientes al 
-\emph on
-log
-\emph default
- de ejecución.
- De esta forma, en la figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Observer-Observable-TraceLog"
-
-\end_inset
-
- se muestran los hechos correspondientes al ejemplo 
-\emph on
-Observer-Observable
-\emph default
- que se generan luego de analizar el 
-\emph on
-log
-\emph default
- de ejecución.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/ObserverObservableTraceLog.jpg
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Observer-Observable-TraceLog"
-
-\end_inset
-
-Transformación del 
-\emph on
-log
-\emph default
- de ejecución del ejemplo 
-\emph on
-Observer-Observable
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Siguiendo con el 
-\series bold
-modelo de reglas
-\series default
-, la herramienta 
-\emph on
-DRArch
-\emph default
- presenta una interface de usuario para la especificación de reglas (crear,
- editar y borrar reglas).
- En la figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Especificando-Reglas"
-
-\end_inset
-
- se muestra un 
-\emph on
-screenshot
-\emph default
- de la pantalla con las tres partes mas importantes de la especificación
- de una regla: la consulta, la sugerencia que genera la ejecución de la
- consulta, y los hechos que se deben agregar a la base de conocimientos
- en el caso de que el arquitecto decida aceptar la sugerencia durante el
- proceso de reconstrucción.
- En la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:JQuery"
-
-\end_inset
-
- del apéndice se encuentra un catálogo completo de los hechos disponibles
- junto con una descripción (en la herramienta es posible acceder a dicho
- catálogo a través de la ayuda).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/ObserverObservableRule.jpg
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Especificando-Reglas"
-
-\end_inset
-
-Especificación de una regla para el ejemplo 
-\emph on
-Observer-Observable
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Para reflejar la toma de decisiones y poder
-\series bold
- manipular las propuestas arquitectónicas
-\series default
-, la herramienta expone dicha funcionalidad por medio de 
-\emph on
-chekboxes
-\emph default
- que indican si la sugerencia se acepta o se rechaza.
- Siguiendo con el ejemplo del 
-\emph on
-Observer-Observable
-\emph default
-, en la figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Vista-de-sugerencias"
-
-\end_inset
-
- se muestra la vista de sugerencias para la regla que detecta componentes
- 
-\emph on
-Observer.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/DrarchSuggestView.jpg
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Vista-de-sugerencias"
-
-\end_inset
-
-Vista de sugerencias
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Finalmente, para la 
-\series bold
-generación de vistas
-\series default
-, si las sugerencias de la regla especificada en el ejemplo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Especificando-Reglas"
-
-\end_inset
-
- son aceptadas, el proceso de reconstrucción genera el diagrama de la figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Diagrama-de-componentes-de-los-Observers"
-
-\end_inset
-
-.
- Luego de que la herramienta actualice las vistas de la representación arquitect
-ónica, el arquitecto tiene la posibilidad de modificar los diagramas desde
- el editor gráfico.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/ObserversComponentDiagram.jpg
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-de-componentes-de-los-Observers"
-
-\end_inset
-
-Diagrama de componentes de los 
-\emph on
-Observers
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El recorrido mencionado en este apartado es un ejemplo simple de una iteración
- en donde se puede observar la intervención del arquitecto en el momento
- de tomar las decisiones que modifican el modelo arquitectónico.
- Las iteraciones terminan cuando ya no quedan más reglas dentro de la fase
- que actualmente se esté ejecutando.
 \end_layout
 
 \begin_layout Section
@@ -6131,7 +6145,22 @@ key "BURKHARDT97"
 \end_inset
 
 , presentando los aspectos más importantes de su implementación.
- 
+ A su vez, a medida que se describen los componentes, se muestra cómo hace
+ la herramienta 
+\emph on
+DRArch
+\emph default
+ para satisfacer las necesidades del enfoque mencionado, siguiendo el ejemplo
+ de la sección 
+\begin_inset LatexCommand ref
+reference "sec:Ejemplo"
+
+\end_inset
+
+.
+ El recorrido mencionado en este apartado es un ejemplo simple de una iteración
+ en donde se puede observar la intervención del arquitecto en el momento
+ de tomar las decisiones que modifican el modelo arquitectónico.
 \end_layout
 
 \begin_layout Standard
@@ -6562,6 +6591,60 @@ De esta forma la base de conocimiento evaluada en cada fase esta compuesta
  y por todos los archivos de hechos lógicos que se agreguen a la fase.
 \end_layout
 
+\begin_layout Standard
+En el análisis estático, una porción del código fuente correspondiente al
+ ejemplo 
+\emph on
+Observer-Observable
+\emph default
+, se transforma a la representación que se detalla en la figura 
+\begin_inset LatexCommand ref
+reference "fig:Ejemplo-de-la-representación-del-código-fuente"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/java2jquery.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-de-la-representación-del-código-fuente"
+
+\end_inset
+
+Ejemplo de la representación del código fuente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \begin_inset LatexCommand label
 name "sec:Rule-Model"
@@ -6728,6 +6811,82 @@ Como se mencionó anteriormente, es necesario que un conjunto de reglas pueda
 DRArch
 \emph default
  que hace realmente sencilla la edición y visualización de los datos.
+\end_layout
+
+\begin_layout Standard
+La herramienta 
+\emph on
+DRArch
+\emph default
+ presenta una interface de usuario para la especificación de reglas (crear,
+ editar y borrar reglas).
+ En la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Especificando-Reglas"
+
+\end_inset
+
+ se muestra un 
+\emph on
+screenshot
+\emph default
+ de la pantalla con las tres partes mas importantes de la especificación
+ de una regla: la consulta, la sugerencia que genera la ejecución de la
+ consulta, y los hechos que se deben agregar a la base de conocimientos
+ en el caso de que el arquitecto decida aceptar la sugerencia durante el
+ proceso de reconstrucción.
+ En la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:JQuery"
+
+\end_inset
+
+ del apéndice se encuentra un catálogo completo de los hechos disponibles
+ junto con una descripción (en la herramienta es posible acceder a dicho
+ catálogo a través de la ayuda).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableRule.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Especificando-Reglas"
+
+\end_inset
+
+Especificación de una regla para el ejemplo 
+\emph on
+Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -7084,6 +7243,79 @@ reference "alg:Algoritmo-ejecución-de-fases"
  Esto se repite hasta que no queden más reglas.
 \end_layout
 
+\begin_layout Standard
+Para reflejar la toma de decisiones y poder
+\series bold
+ 
+\series default
+manipular las propuestas arquitectónicas, la herramienta expone dicha funcionali
+dad por medio de 
+\emph on
+chekboxes
+\emph default
+ que indican si la sugerencia se acepta o se rechaza.
+ Siguiendo con el ejemplo del 
+\emph on
+Observer-Observable
+\emph default
+, en la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Vista-de-sugerencias"
+
+\end_inset
+
+ se muestra la vista de sugerencias para la regla que detecta componentes
+ 
+\emph on
+Observer.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/DrarchSuggestView.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Vista-de-sugerencias"
+
+\end_inset
+
+Vista de sugerencias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ Las iteraciones terminan cuando ya no quedan más reglas dentro de la fase
+ que actualmente se esté ejecutando.
+\end_layout
+
 \begin_layout Subsubsection*
 RuleManager
 \end_layout
@@ -7281,6 +7513,68 @@ Diagrama de secuencia entre los componentes
 DRArch
 \emph default
  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, la entidad es responsable de la generación de vistas.
+ Si las sugerencias de la regla especificada en el ejemplo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Especificando-Reglas"
+
+\end_inset
+
+ son aceptadas, el proceso de reconstrucción genera el diagrama de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-componentes-de-los-Observers"
+
+\end_inset
+
+.
+ A su vez, una vez que se termine la actualización de las vistas, el arquitecto
+ tiene la posibilidad de modificar los diagramas desde el editor gráfico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserversComponentDiagram.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-componentes-de-los-Observers"
+
+\end_inset
+
+Diagrama de componentes de los 
+\emph on
+Observers
 \end_layout
 
 \end_inset
@@ -7818,6 +8112,91 @@ Los hechos generados por este componente son almacenados en la base de datos
  del conocimiento junto con el resto de la información.
  De esta forma, quedaría disponible la posibilidad de relacionar información
  tanto estática como dinámica.
+\end_layout
+
+\begin_layout Standard
+Como resumen del análisis dinámico, el 
+\emph on
+log
+\emph default
+ de ejecución generado por la combinación de las he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+tas 
+\emph on
+DRArch
+\emph default
+ y 
+\emph on
+FLAbot
+\emph default
+, es analizado por el componente TraceLog Analizer para generar los hechos
+ ProLog correspondientes al 
+\emph on
+log
+\emph default
+ de ejecución.
+ De esta forma, en la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Observer-Observable-TraceLog"
+
+\end_inset
+
+ se muestran los hechos correspondientes al ejemplo 
+\emph on
+Observer-Observable
+\emph default
+ que se generan luego de analizar el 
+\emph on
+log
+\emph default
+ de ejecución.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableTraceLog.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Observer-Observable-TraceLog"
+
+\end_inset
+
+Transformación del 
+\emph on
+log
+\emph default
+ de ejecución del ejemplo 
+\emph on
+Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
