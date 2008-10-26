@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1765,6 +1765,10 @@ which helps developers begin formalizing a roadmap for the implementation,
 Notación
 \end_layout
 
+\begin_layout Standard
+...
+\end_layout
+
 \begin_layout Subsection
 \begin_inset LatexCommand label
 name "sec:Use-Case-Maps"
@@ -2339,10 +2343,6 @@ por lo menos una distincion deberia ir a ca..
 \end_layout
 
 \begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2714,7 +2714,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/discotectArch.PNG
+	filename img/discotectArch.PNG
 	scale 50
 
 \end_inset
@@ -2977,7 +2977,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/antExample.png
+	filename img/antExample.png
 	width 50text%
 
 \end_inset
@@ -3043,7 +3043,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/structure101_sample.png
+	filename img/structure101_sample.png
 	width 50text%
 
 \end_inset
@@ -4148,8 +4148,8 @@ En este capítulo se han presentado los trabajos relacionados más importantes
 \end_layout
 
 \begin_layout Standard
-Como vimos la mayoría de los enfoques actuales de reconstrucción de arquitectura
-s se encuentran basadas en el análisis del código fuente del sistema.
+Como vimos, la mayoría de los enfoques actuales de reconstrucción de arquitectur
+as se basan en el análisis del código fuente del sistema.
  Este tipo de técnicas trabajan adecuadamente si la implementación del sistema
  se encuentra organizada en patrones tanto de codificación como de modularizació
 n.
@@ -4161,10 +4161,13 @@ n.
  En efecto, determinar la configuración arquitectónica real de un sistema
  usando análisis estático es, en general, indecidible.
  Por ejemplo suponer que existe una division de componentes que coincide
- perfectamente con la estructura jerárquica de paquetes del proyectos es
- generar una simplicacion muy gruesa, que introduce errores extra.
- Lo mismo ocurre al basar el clustering en relaciones de dependencia entre
- clases.
+ perfectamente con la estructura jerárquica de paquetes de proyectos es
+ generar una simplificación muy gruesa, que introduce errores extra.
+ Lo mismo ocurre al basar el 
+\emph on
+clustering
+\emph default
+ en relaciones de dependencia entre clases.
  Si bien son enfoques correctos no son determinantes en la reconstruccion
  total y es necesario refinar y complementar con otras técnicas.
 \end_layout
@@ -4188,11 +4191,9 @@ Un aspecto debil, ya no de los enfoques sino de las aplicaciónes que los
 n de información.
  Otro aspecto a destacar que está fuertemente relacionado con el anterior
  es que demasiadas tareas se hacen de forma manual.
- Ya sea el parseo del codigo fuente, como la instrumentación de dicho código
- o tambien la generación de información que entienda la herramienta de análisis
- a partir de dicha información, son tareas manuales o bien realizadas por
- otras aplicaciónes cuyos resultados hay que agregar manualmente a la herramient
-a de análisis.
+ Ya sea el parseo del código fuente, como la instrumentación de dicho código
+ son tareas manuales o bien realizadas por otras aplicaciónes cuyos resultados
+ hay que agregarlos manualmente a la herramienta de análisis.
  Sería deseable que solamente la información que debe ser interpretada por
  el ojo experto sea incorporada manualmente.
 \end_layout
@@ -4200,15 +4201,19 @@ a de análisis.
 \begin_layout Standard
 Cabe destacar varias características interesantes de los enfoques analizados
  que determinaron algunos de los objetivos y características deseables al
- plantear el desarrollo del enfoque DRArch.
+ plantear el desarrollo del enfoque 
+\emph on
+DRArch
+\emph default
+.
  El enfoque Botton-Up y Top-Down propuesto en Mitre es interesante desde
  el punto de vista de la flexibilidad del análisis al poder seguir cualquiera
  de las dos estrategias.
  El uso de programación lógica para realizar las inferencias es mucho mas
  atractivo e intuitivo que utilizar, como lo hace Dali, una combinación
  de SQL y Perl para la inferencia y la generación de nuevos hechos.
- Usando programación lógica es mas intuitiva ya que se enfoca en "qué" recuperar
- y no "cómo" hacerlo.
+ El uso de programación lógica se enfoca en "qué" recuperar y no "cómo"
+ hacerlo.
  Utilizar convenciones de nombres es una alternativa interesante siempre
  y cuando no sea "la única alternativa" (DiscoText).
  Es decir que el análisis no se base en convenciones sino que aproveche
@@ -4960,6 +4965,16 @@ Observer-Observable
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+cambiar el color amarillo de las notas
+\end_layout
+
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
