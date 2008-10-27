@@ -1431,15 +1431,20 @@ Comunicación entre los
 stakeholders
 \emph default
 : La arquitectura de software representa una abstracción común de un sistema
- 
+ y la mayoría de los stakeholders pueden utilizarla como medio de negociación,
+ comprensión, concenso y comunicación.
 \end_layout
 
 \begin_layout Enumerate
-Primeras decisiones de diseño.
+Primeras decisiones de diseño: Las arquitecturas de software son responsables
+ de las primeras decisiones de diseño sobre el sistema.
 \end_layout
 
 \begin_layout Enumerate
-Abstracción transferible de un sistema.
+Abstracción transferible de un sistema: Una arquitectura de software constituye
+ un modelo en donde se describe cómo un sistema es estructurado y cómo sus
+ elementes funcionan juntos.
+ Este modelo, se transfiere a lo largo de todo el sistema.
 \end_layout
 
 \begin_layout Subsection
