@@ -6048,10 +6048,6 @@ Grafo de dependencias en el que se observan el grado de acoplamiento entre
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -6547,8 +6543,8 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/Hooks-Templates.jpg
-	scale 70
+	filename img/HookTemplateObserverObservable.png
+	width 50theight%
 
 \end_inset
 
@@ -6570,17 +6566,21 @@ Hooks
 \emph default
  y
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-Adaptar la figura al ejemplo conductor..
+[Y] Adaptar la figura al ejemplo conductor..
 \end_layout
 
 \end_inset
 
  
 \emph on
-Templates
+Templates 
+\emph default
+en el ejemplo 
+\emph on
+Observer-Observable
 \end_layout
 
 \end_inset
@@ -6640,7 +6640,11 @@ reference "fig:Hooks-y-Templates"
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
+
+\begin_layout Standard
+[Y]
+\end_layout
 
 \begin_layout Standard
 agregar el diagrama de clases que muestre este concepto
