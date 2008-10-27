@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -12438,6 +12438,200 @@ DRArch
 \emph default
  debe utilizarse durante el proceso de reconstrucción de arquitecturas de
  software.
+\end_layout
+
+\begin_layout Subsection
+Market con Structure 101
+\end_layout
+
+\begin_layout Standard
+Como se mencionó en el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:Trabajos-relacionados"
+
+\end_inset
+
+ Structure 101 es una herramienta de análisis estátco de código orientada
+ al análisis de estructura (disenno, arquitectura y packaging).
+ En esta sección se compararán los resultados de usar ambas herramientas
+ en la reconstrucción del proyecto Market.
+\end_layout
+
+\begin_layout Standard
+El proceso de recuperación de Structure 101 comienza seleccionando el archivo
+ .jar que contiene el 
+\emph on
+bytecode 
+\emph default
+de la aplicación que se quiere analizar y automáticamente la herramienta
+ crea las perspectivas (vistas) de la arquitectura.
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Structure 101 - Estructura de paquetes"
+
+\end_inset
+
+ se muestra la estructura de paquetes de la aplicación y en la figura 
+\begin_inset LatexCommand ref
+reference "fig:Structure101-Buble"
+
+\end_inset
+
+, el primer nivel de explosion del paquete core.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/bubbleStructure101.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Structure 101 - Estructura de paquetes"
+
+\end_inset
+
+Structure 101 - Bubble-Market Estructura de paquetes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/bubble_core_structure101.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Structure101-Buble"
+
+\end_inset
+
+Structure101 - Bubble core
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se mencionó con anterioridad, la herramienta cubre aspectos estructurales
+ del sistema en diversas perspectivas.
+ Para el caso analizado, Market, se puede observar que se toma la estructura
+ de paquetes como base del análisis y arma el grafo de dependencias basado
+ en las relaciones de uso y de "
+\emph on
+imports
+\emph default
+" de otros paquetes.
+ Para el paquete example.market, bajo la perspectiva DSM, figura 
+\begin_inset LatexCommand ref
+reference "fig:Structure-101-Market"
+
+\end_inset
+
+, se pueden observar las clases que lo componen y el grado de acoplamiento
+ con sus pares.
+ Un asistente de la herramienta resalta aquellos que tienen mayor cantidad
+ de dependencias y los resalta como componentes.
+ Debajo de la matriz se puede ver la misma vista en forma de grafo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/bubble.examples.marketDSMStructure101.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Structure-101-Market"
+
+\end_inset
+
+Structure 101 - Market
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Puede notarse que esta herramienta si bien es muy atractiva en terminos
+ visuales y de navegación de la información, está destinada a resolver problemas
+ de erosión arquitectónica.
+ Carece totalmente de aspectos comportamentales.
+ Con ver y analizar los diagramas se sabe muy poco de como es el funcionamiento
+ del sistema y de que manera interactuan los componentes.
+ De nuevo, la falta de información dinamica extraida a travéz de trazas
+ de ejecución deja ocultas relaciones entre componentes que se resulven
+ en tiempo de ejecución.
+ Otro punto (de disconformidad?) es que esta herramienta presenta toda la
+ información de una sola vez.
+ No permite establecer reglas de disennnno que guien la recuperación, ni
+ la interacción del usuario en el proceso de reconstrucción.
 \end_layout
 
 \begin_layout Chapter
