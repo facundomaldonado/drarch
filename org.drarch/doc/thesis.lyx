@@ -373,12 +373,16 @@ Para lograr la funcionalidad propuesta,
 \emph on
 DRArch 
 \emph default
-sigue un proceso iterativo en el cuál el arquitecto interactúa en pequeñas
- decisiones para ir especificando incrementalmente el modelo arquitectónico
- del sistema.
- Dicho modelo esta representado por una base de datos de conocimiento lo
- suficientemente flexible como para poder realizar consultas complejas de
- forma simple.
+sigue un proceso en el cuál el arquitecto interactúa sobre pequeñas decisiones
+ de diseño.
+ Así, se va especificando incrementalmente el modelo arquitectónico del
+ sistema.
+ El modelo arquitectónico esta representado en un leguaje de programación
+ lógica que brinda suficiente flexibilidad como para poder realizar consultas
+ complejas de forma simple.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -387,11 +391,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Este parrafo no esta claro (para un lector medio que se topa con su tesis
- por 1ra vez).
- Ponerlo mas claro Y adicionalmente, agregar una linea con informacion resumida
- de: - Uds realizaron experimentos de reconstruccion que mostraron resultados
- positivos en cuanto a ....
+agregar una linea con informacion resumida de: - Uds realizaron experimentos
+ de reconstruccion que mostraron resultados positivos en cuanto a ....
 \end_layout
 
 \end_inset
@@ -897,7 +898,7 @@ o en el dominio.
  de tal forma que sea flexible su manipulación.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Section
 \begin_inset LatexCommand label
 name "sec:Necesidad-de-Documentación-Arquitectónica"
 
@@ -1635,7 +1636,7 @@ A continuación, se presentan los estilos y modelos arquitectónicos que nos
  ayudan a describir los distintos tipos de componentes y su tipología.
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsection
 Estilos\InsetSpace ~
 y\InsetSpace ~
 Modelos\InsetSpace ~
@@ -1644,10 +1645,10 @@ Arquitectónicos
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Esta definicion esta incompleta.
+[Y] [andres] Esta definicion esta incompleta.
  La parte mas importante de un estilo es que es un "paquete de decisiones
  de diseño" que prescribe los tipos y topologia de componentes en una solucion
  de software.
@@ -1670,12 +1671,18 @@ Los estilos arquitectónicos son descripciones de los distintos tipos de
  recurrentes.
  Los estilos ofrecen modelos que se basan en la experiencia y en cómo fueron
  utilizados anteriormente.
- 
-\begin_inset Note Note
-status open
+ Es decir, un estilo es un "paquete de decisiones de diseño" que prescribe
+ los tipos y topologias de componentes en una solucion de software.
+ Como resultado, un estilo favorece ciertos atributos de calidad y desfavorece
+ otros.
+\end_layout
 
 \begin_layout Standard
-[andres] Insertar un ejemplo de un estilo arquitectonico (para clarificar)
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+[Y] [andres] Insertar un ejemplo de un estilo arquitectonico (para clarificar)
  y como seria la cosa entonces ....
  Esta piola utilizar un estilo que despues pueda aparecer en el Bubble,
  o en alguno de los casos de estudio, asi la cosa queda mas "cohesiva"
@@ -1710,8 +1717,107 @@ Por ejemplo, el estilo cliente-servidor es uno de los más comunes.
  con cada uno de los clientes.
  El uso del término cliente-servidor implica que múltiples clientes existen,
  es decir, no es identificado el cliente por si solo.
+ En la siguiente sección, se describe un estilo arqutectónico basado en
+ eventos:
 \end_layout
 
+\begin_layout Description
+Estilo\InsetSpace ~
+Invocación\InsetSpace ~
+Implícita\InsetSpace ~
+(Basada\InsetSpace ~
+en\InsetSpace ~
+Eventos)
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agragar parrafo introductorio y una imagen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Descripción
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+En lugar de invocaciones de procedimientos explícitas o directas, un componente
+ anuncia uno o más eventos y otros componentes registran el interés en un
+ evento asociando un procedimiento a dicho evento.
+\end_layout
+
+\begin_layout Itemize
+La ocurrencia de un evento causa la invocación “implícita”de procedimientos
+ en otros módulos.
+\end_layout
+
+\begin_layout Itemize
+Los componentes son los módulos cuyas interfaces ofrecen un conjunto de
+ procedimientos y de eventos.
+\end_layout
+
+\begin_layout Itemize
+Los conectores incluyen llamadas a procedimientos tradicionales, asícomo
+ la ligadura deeventos con llamadas a procedimientos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Restricciones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quien anuncia el evento no conoce a quécomponentes afecta éste.
+\end_layout
+
+\begin_layout Itemize
+No se pueden hacer asunciones acerca del ordende procesamiento.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ventajas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Provee un robusto soporte para la reutilización.
+\end_layout
+
+\begin_layout Itemize
+Facilita la evolución del sistema.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Desventajas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pérdida de control en el comportamiento del sistema.
+\end_layout
+
+\begin_layout Itemize
+Problemas en el intercambio de datos.
+\end_layout
+
+\begin_layout Itemize
+Es difícil asegurar la corrección global del sistema.
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Standard
 Uno de los aspectos más importantes de los estilos es el hecho de que éstos
  se basan en los atributos de calidad para definir sus componentes y su
@@ -1807,7 +1913,7 @@ Abstracción transferible de un sistema: Una arquitectura de software constituye
  Este modelo, se transfiere a lo largo de todo el sistema.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Atributos de calidad
 \end_layout
 
@@ -1856,29 +1962,27 @@ debe
 \end_layout
 
 \begin_layout Standard
-La documentación de la arquitectura es tanto prescriptiva como descriptiva
+Como se mencionó anteriormente, uno de los principales propósitos las arqutiectu
+ras de software es que sirven como medio de comunicación entre los distintos
  
-\begin_inset LatexCommand cite
-key "SAIP"
-
-\end_inset
-
-.
- Ésto es, para desarrolladores con determinados roles, ella impone restricciones
- que deben cumplirse al momento de tomar decisiones de diseño más detallado.
- Para otras audiencias, su do\SpecialChar \-
-cu\SpecialChar \-
-men\SpecialChar \-
-ta\SpecialChar \-
-ción describe las decisiones tomadas
- sobre el diseño y por lo tanto, que cosas son ciertas sobre la arquitectura.
+\emph on
+stakeholders.
  
-\begin_inset Note Note
-status open
+\emph default
+Su documentación facilita esta comunicación.
+ Por ejemplo, los desarrolladores utilizan la documentación para capturar
+ restricciones (o algunas libretades) durante la implementación del sistema.
+ Por otro lado, managers utilizan esta misma documentación para crear equipos
+ de trabajo y asignarlos a los diferentes módulos que describe la arquitectura.
+\end_layout
 
 \begin_layout Standard
-[andres] Me parece que esta explicacion es confusa y de muy alto nivel.Explicar
- mas concreto please ...
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+[Y] [andres] Me parece que esta explicacion es confusa y de muy alto nivel.Explic
+ar mas concreto please ...
 \end_layout
 
 \end_inset
@@ -6873,8 +6977,8 @@ S
 status open
 
 \begin_layout Standard
-que es S?? aca tambien gráfico que describa el procedimiento en base a un
- ejemplo 
+[Y] que es S?? aca tambien gráfico que describa el procedimiento en base
+ a un ejemplo 
 \end_layout
 
 \end_inset
@@ -12840,7 +12944,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/bubbleStructure101.png
+	filename img/bubbleStructure101.png
 
 \end_inset
 
@@ -12876,8 +12980,9 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/bubble_core_structure101.png
+	filename img/bubble_core_structure101.png
 
 \end_inset
 
@@ -12936,8 +13041,9 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename C:/DEV/ENVIRONMENTS/DRArchPR/projectV01/doc/img/bubble.examples.marketDSMStructure101.png
+	filename img/bubble.examples.marketDSMStructure101.png
 
 \end_inset
 
