@@ -6806,7 +6806,7 @@ Referencia entre componentes: el componente A invoca al componente B.
 
 \begin_layout Itemize
 Cantidad de datos intercambiados entre componentes: El componente A pasa
- como parametro a otro B un vector, una matriz, una variable...
+ como parametro a otro B un vector, una matriz, una variable, etc.
 \end_layout
 
 \begin_layout Itemize
@@ -6821,7 +6821,14 @@ El grado de la complejidad de la interfaz de los componentes.
 
 \begin_layout Standard
 Como base fundamental para medir el acoplamiento dentro de un módulo se
- tomaron no solamente las medidas de fan-in sino tambien las de fan-out
+ tomaron no solamente las medidas de 
+\emph on
+fan-in
+\emph default
+ sino tambien las de 
+\emph on
+fan-out
+\emph default
  (valores altos determinan una alta dependencia con el ext
 \begin_inset Note Note
 status collapsed
@@ -6836,7 +6843,11 @@ erior) conseguidas a travéz de la evaluación del grafo de dependencias.
 \end_layout
 
 \begin_layout Standard
-El algoritmo propuesto selecciona a S 
+El algoritmo propuesto selecciona un conjunto de clases a analizar 
+\family typewriter
+S
+\family default
+ 
 \begin_inset Note Note
 status open
 
@@ -6849,23 +6860,52 @@ que es S?? aca tambien gráfico que describa el procedimiento en base a un
 
 como espacio de solución, el cual contiene todas las clases bajo análisis.
  Comienza el procesamiento eligiendo una clase de dicho espacio, posiblemente
- la que mayor fan-out tenga y se la agrega a un espacio de solución (cluster)
- C1.
+ la que mayor fan-out tenga y se la agrega a un espacio de solución (
+\emph on
+cluster
+\emph default
+) 
+\family typewriter
+C1
+\family default
+.
  Se agregan luego las clases vecinas a esta a una lista de elementos a evaluar
- dentro del espacio C1.
- Se recorre dicha lista y se van agregando dichas estas clases al cluster
+ dentro del espacio 
+\family typewriter
+C1
+\family default
+.
+ Se recorre dicha lista y se van agregando dichas estas clases al 
+\emph on
+cluster
+\emph default
  siempre que su incorporación no lleve el grado de acoplamiento del todo
- el cluster por debajo de un valor umbral .
+ el 
+\emph on
+cluster
+\emph default
+ por debajo de un valor umbral .
  Si se acepta dicha clase, las clases vecinas son incorporadas a la lista
  de elementos candidatos y se continua el análisis hasta que no haya elementos
  en esta lista.
- En este momento se coloca a C1 como componente candidato y se continua
- el análisis para todas aquellas clases del espacio S original.
+ En este momento se coloca a 
+\family typewriter
+C1
+\family default
+ como componente candidato y se continua el análisis para todas aquellas
+ clases del espacio S original.
 \end_layout
 
 \begin_layout Standard
-Al termino de la ejecución del algoritmo se dispone de un conjunto de clusteres
- Ci, los cuales representan componentes cuyo valores de acoplamiento estan
+Al termino de la ejecución del algoritmo se dispone de un conjunto de 
+\emph on
+clusters
+\emph default
+ 
+\family typewriter
+Ci
+\family default
+, los cuales representan componentes cuyo valores de acoplamiento estan
  por encima del valor umbral seleccionado.
 \end_layout
 
