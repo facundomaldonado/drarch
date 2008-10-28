@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -209,9 +209,9 @@ Resumen
 status open
 
 \begin_layout Standard
-De vital importancia para el resumen es que se entiendan 2 cosas: 1- El
- problema especifico que se intentan resolver y porque es importante (para
- eso se da al principio un poquito de contexto) 2- El enfoque "clarito"
+[andres] De vital importancia para el resumen es que se entiendan 2 cosas:
+ 1- El problema especifico que se intentan resolver y porque es importante
+ (para eso se da al principio un poquito de contexto) 2- El enfoque "clarito"
  que se aplico y una idea general de los resultados que se obtuvieron.
 \end_layout
 
@@ -5320,10 +5320,10 @@ Se debe realizar un análisis de los artefactos relacionados con el código
  poder ir recolectando información relevante.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-Justificacion de la eleccion de Prolog..
+[Y] Justificacion de la eleccion de Prolog..
  
 \end_layout
 
@@ -5336,21 +5336,66 @@ Con el objetivo de poder manipular la información estática de forma flexible,
 ProLog
 \emph default
 .
+ El lenguaje de programación 
+\emph on
+ProLog
+\emph default
+ está basado en la lógica de predicados, un paradigma diferente a los lenguajes
+ de más amplio uso en la actualidad, principalmente basados en la programación
+ estructurada y la programación orientada a objetos.
+ 
+\emph on
+ProLog
+\emph default
+ brinda posibilidades más potentes y eficientes en la representación y automatiz
+ación de técnicas basadas en el conocimiento.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-Ejemplo con la traduccion...y la forma de analisis..
+[Y] Ejemplo con la traduccion...y la forma de analisis..
 \end_layout
 
 \end_inset
 
 De esta forma, se representan artefactos del código fuente (clases, variables,
  paquetes, etc.) sobre una base de conocimiento.
- Esto nos permíte mantener un contexto en el cual sea posible encontrar
- información relacionada de forma sencilla ya que buscando directamente
- en el código fuente resultaría casi imposible.
+ Por ejemplo, una la clase 
+\family typewriter
+UserModel
+\family default
+ que contiene un método 
+\family typewriter
+setName
+\family default
+ se representa con con los siguientes hechos: 
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+class(UserModel)
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+method(setName).
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+hasMethod(UserModel, setName).
+\end_layout
+
+\begin_layout Standard
+Esto nos permíte mantener un contexto en el cual sea posible encontrar informaci
+ón relacionada de forma sencilla ya que buscando directamente en el código
+ fuente resultaría casi imposible.
 \end_layout
 
 \begin_layout Standard
@@ -5717,21 +5762,208 @@ Toda esta información mostrada en el ejemplo (clases, interfaces, propiedades,
 \emph on
 ProLog
 \emph default
-, por ejemplo, la clase 
-\family typewriter
-UserModel
-\family default
- queda representada de la siguiente forma: 
-\family typewriter
-class(UserModel)
-\family default
 .
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
 Puede ir una tabla con las diferentes reglas...
 \end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="1">
+<features>
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Hechos Prolog 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+class(UserModel)
+\family default
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+class(UserInterface)
+\family default
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+class(UserModel)
+\family default
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+interface(Observer)
+\family default
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -6117,10 +6349,17 @@ key "Abdelwahab"
 
  definen un componente de utilidad como cualquier elemento de un programa
  diseñado por conveniencia del diseñador o el programador con la intensión
- de ser accedido desde múltiples lugares dentro de cierto ámbito (scope)
- dentro del programa.
+ de ser accedido desde múltiples lugares dentro de cierto ámbito (
+\emph on
+scope
+\emph default
+) dentro del programa.
  Con el propósito de detectar componentes de utilidad, los autores desarrollaron
- un algoritmo basado en un analisis fan-in.
+ un algoritmo basado en un analisis
+\emph on
+ fan-in
+\emph default
+.
  
 \begin_inset Note Note
 status collapsed
@@ -6143,7 +6382,7 @@ status collapsed
 
 \begin_layout Standard
 \align block
-y se encarga de individualizar aquellas clases que tienen un gran número
+[Y] y se encarga de individualizar aquellas clases que tienen un gran número
  de arcos entrantes (muchas clases dependientes) puede ir despues..
 \end_layout
 
@@ -6208,43 +6447,91 @@ Para determinar si una clase es considerada una utilidad, se propone la
 \end_layout
 
 \begin_layout Standard
-Dada una clase C y los siguientes conjuntos:
+Dada una clase 
+\family typewriter
+C
+\family default
+ y los siguientes conjuntos:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+S
+\family default
+: Conjunto de clases consideradas en el análisis.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+IN
+\family default
+: Un subconjunto de S que consiste en las clases que dependen de C (fan-in).
 \end_layout
 
 \begin_layout Standard
-* S: Conjunto de clases consideradas en el análisis.
-\end_layout
-
-\begin_layout Standard
-* IN: Un subconjunto de S que consiste en las clases que dependen de C (fan-in).
-\end_layout
-
-\begin_layout Standard
-Se define la medición de utilidad U de la clase C como:
+Se define la medición de utilidad 
+\family typewriter
+U
+\family default
+ de la clase 
+\family typewriter
+C
+\family default
+ como:
 \end_layout
 
 \begin_layout Standard
 \align center
+
+\family typewriter
 U = |IN| / (|S|-1)
 \end_layout
 
 \begin_layout Standard
-S es usado para representar el scope considerado en el análisis de U.
- Por ejemplo, si se estan buscando utilidades a nivel de sistema, S contendrá
- todas las clases del sistema.
+El conjunto 
+\family typewriter
+S
+\family default
+ es usado para representar el 
+\emph on
+scope
+\emph default
+ considerado en el análisis de 
+\family typewriter
+U
+\family default
+.
+ Por ejemplo, si se estan buscando utilidades a nivel de sistema, 
+\family typewriter
+S
+\family default
+ contendrá todas las clases del sistema.
  Por el contrario, si la busqueda está restringida a un paquete en particular,
- entonces S contendrá solo las clases de dicho paquete.
+ entonces 
+\family typewriter
+S
+\family default
+ contendrá solo las clases de dicho paquete.
 \end_layout
 
 \begin_layout Standard
-Los valores de U varian de 0 a 1.
- 0 indica que la clase no tiene arcos de entrada.
+Los valores de 
+\family typewriter
+U
+\family default
+ varian de 0 a 1 en donde 0 indica que la clase no tiene arcos de entrada.
  Este dato es de mucha utilidad, por ejemplo cuando se esta evaluando un
  módulo específico, esta clase determina el punto de acceso a dicho módulo.
- Si en cambio evaluamos el sistema entero, dicha clase es o bien el punto
- de entrada al sistema o es una clase que nunca se invoca.
+ Si en cambio evaluamos el sistema entero, dicha clase es el punto de entrada
+ al sistema o es una clase que nunca se invoca.
  Notar que las dependencias de dicha clase sobre sí misma no estan consideradas
- lo que explica el valor |S| -1.
+ lo que explica el valor 
+\family typewriter
+|S| -1
+\family default
+.
 \end_layout
 
 \begin_layout Standard
@@ -6281,7 +6568,7 @@ status open
 \series bold
 utility
 \series default
-(phase: Phase)
+(S)
 \end_layout
 
 \begin_layout Standard
