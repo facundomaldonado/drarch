@@ -6419,6 +6419,17 @@ status open
 
 \begin_layout Standard
 \align center
+\begin_inset Graphics
+	filename img/GrafoObserverObservable.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Caption
 
 \begin_layout Standard
@@ -6674,7 +6685,6 @@ Algoritmo de detección de componentes de utilidad.
 \end_layout
 
 \begin_layout Standard
-Ejemplo:
 \begin_inset Note Note
 status open
 
@@ -6764,6 +6774,17 @@ status open
 \begin_inset Graphics
 	filename img/Coupled components Component Graph.png
 	width 30theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/GrafoAcoplamientoObserverObservable.png
+	width 80text%
 
 \end_inset
 
