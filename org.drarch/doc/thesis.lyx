@@ -266,6 +266,7 @@ tos e implementación.
 Todo sistema de software posee una arquitectura de software subyacente.
  Sin embargo, no necesariamente existe en la práctica una documentación
  acertada de esta arquitectura.
+ 
 \begin_inset Note Note
 status open
 
@@ -327,19 +328,20 @@ En este trabajo, proponemos un enfoque materializado en una herramienta
 DRArch
 \emph default
 , para asistir a los desarrolladores a generar la documentación arquitectónica
- utilizando un proceso de 
+ utilizando un proceso de suscesivos refinamientos de forma incremental.
+ 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-evolutivo o de suscesivos refinamientos incremental Extender un poco estos
- párrafos...
+[Y] evolutivo o de suscesivos refinamientos incremental Extender un poco
+ estos párrafos...
 \end_layout
 
 \end_inset
 
-reconstrucción de arquitecturas.
- En particular, se asume que existe el código fuente de la aplicación.
+En este proceso de reconstrucción de arquitecturas, se asume que existe
+ el código fuente de la aplicación.
  El objetivo principal de 
 \emph on
 DRArch
@@ -530,16 +532,19 @@ Aca poner algo como..
 La arquitectura de software es una disciplina que cumple un rol central
  en la toma de decisiones de diseño 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Agregar una linea tipo "Por ejemplo, ...." [ejemplo de decisiones]
+[Y] [andres] Agregar una linea tipo "Por ejemplo, ...." [ejemplo de decisiones]
 \end_layout
 
 \end_inset
 
  y en la comunicación entre todos los participantes del desarrollo de un
  producto de software.
+ Por ejemplo, algunas decisiones de diseño que involucra esta disciplina
+ son: asignación de recursos, difinición de restricciones entre la comunicación
+ de los distintos ementos, declaracón de responsabilidades, etc.
  Como vehículo de comunicación, su documentación es fundamental, pues la
  falta de ella, o peor aún, el descuido al producirla y mantenerla, anulan
  o revierten todos los beneficios que el desarrollo centrado en la arquitectura
@@ -551,11 +556,17 @@ La tendencia actual en el proceso de desarrollo software es focalizar las
  actividades de este proceso en la arquitectura del sistema.
  A este enfoque se lo conoce como desarrollo centrado en la arquitectura
  
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+ 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-(refs)..
+[Y] (refs)..
 \end_layout
 
 \end_inset
@@ -603,11 +614,13 @@ key "UCMBOOK"
 Todo sistema de software posee una arquitectura de software subyacente.
  Sin embargo, no necesariamente existe en la práctica una documentación
  acertada de esta arquitectura.
+ Ni siquiera es necesario que existan diagrámas, vistas ó representaciones
+ gráficas para poder afirmar que un sistema posee una arquitectura de software.
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Entre las razones de la falta de documentación se encuentran .....
+[alvaro] Entre las razones de la falta de documentación se encuentran .....
 \end_layout
 
 \end_inset
@@ -616,26 +629,39 @@ Entre las razones de la falta de documentación se encuentran .....
  es un escenario que ocurre con frecuencia dentro de las organizaciones.
  Muchas veces, los expertos que diseñaron el sistema se han ido de la organizaci
 ón, la documentación existente es escasa o esta desactualizada, no se dispone
- de todo el codigo fuente y lo único con que se cuenta es con el código
+ de todo el código fuente y lo único con que se cuenta es con el código
  ejecutable binario.
- Adicionalmente, los sistemas legados suelen no poseer documentación alguna
+ También existen casos en donde la documentación disponible es inválida,
+ es decir, el sistema no fue implementado siguiendo las restricciones y
+ decisiones de diseño que la documentación describe.
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, los sistemas legados suelen no poseer documentación alguna
  y es muy común que nuevos sistemas de software tengan que integrarse con
  estos.
  En estas situaciones, dado que una arquitectura puede existir independientement
-e de su especificación, es que cobran importancia las enfoques de documentación
- y reconstrucción de arquitecturas 
+e de su especificación, es que cobran importancia los enfoques de reconstrucción
+ de arquitecturas 
 \begin_inset LatexCommand cite
 key "SAIP"
 
 \end_inset
 
 .
+ Una de las principales contribuciones que aportan estos enfoques es que
+ las representaciónes que generan, sirven para comenzar o contribuir con
+ la de documentación de la arquitectura de software.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-[andres] Dado que es una copia del parrafo del Resumen, tengo aqui los mismos
- comentarios que puse en el Resumen.
+[Y] ...
+ [andres] Dado que es una copia del parrafo del Resumen, tengo aqui los
+ mismos comentarios que puse en el Resumen.
  
 \end_layout
 
@@ -1143,11 +1169,10 @@ tos,
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
+\begin_layout Section
 Reconstrucción de arquitecturas
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 La Reconstrucción de Arquitecturas de Software es una técnica para generar
  representaciones arquitectónicas de un sistema que puede ser utilizada
@@ -1221,7 +1246,6 @@ key "SAIP"
  sistema).
 \end_layout
 
-\end_deeper
 \begin_layout Section
 Objetivos
 \end_layout
@@ -1375,10 +1399,10 @@ Contexto
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres]
+[Y] [andres]
 \end_layout
 
 \begin_layout Standard
@@ -1519,22 +1543,26 @@ llo.
  entre ellos.
  A pesar de que ambas vistas aportan información sobre la arquitectura,
  ninguna de ellas la describe en su totalidad.
+ Por ejemplo, en una vista de 
+\emph on
+deployment
+\emph default
+, el sistema se describe en términos de cómo es el 
+\emph on
+deploy
+\emph default
+ sobre las distintas plataformas y cómo éstas se comunican unas con otras.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] What about vistas de deployment?
+[Y] [andres] What about vistas de deployment?
 \end_layout
 
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
 \begin_layout Standard
-[pela] poner algo de las 4 vistas
+In this view, the software is described in terms of how it is deployed across
+ various platforms, and how these parts communicate with each other.
 \end_layout
 
 \end_inset
@@ -1923,6 +1951,7 @@ status open
 
 \begin_layout Standard
 [andres] explicar que son...
+ y ejemplificar!
 \end_layout
 
 \end_inset
@@ -2197,11 +2226,11 @@ La documentación de la arquitectura libera al arquitecto de tener que contestar
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Como les marque en otras partes, no se vayan "derechito" a los
- UCMs, sino den algo mas de info de contexto ...
+[Y] [andres] Como les marque en otras partes, no se vayan "derechito" a
+ los UCMs, sino den algo mas de info de contexto ...
  Por favor insertar referencias, texto y hasta alguna figura de otras notaciones
  para describir arquitecturas, tipo Model 4 + 1 de Krutchen, o algunos diagramas
  de UML2 por ejemplo...
@@ -2209,28 +2238,71 @@ status open
 
 \end_inset
 
-Entre las múltiples representaciones gráficas posibles, una de las descripciones
- arquitectónicas elegidas para representar la arquitectura reconstruida
- de un sistema es la de UCMs, en especial, para representar el comportamiento
+En las siguientes secciones, se describen distintas notaciones para representar
+ una arquitectura de softsware.
+ Cada una de estas notaciones muestra un aspecto de la arquitectura.
+ Por ejemplo, los diagramas de componentes muestran aspectos estructurales,
+ mientras que la notación UCMs se especializa en mostrar el comportamiento
+ del sistema.
  
-\begin_inset LatexCommand cite
-key "BUHR95"
+\end_layout
+
+\begin_layout Subsection
+Modelo 4 + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[nico] completar : http://www.ibm.com/developerworks/wireless/library/wi-arch11/
+ 
+\end_layout
 
 \end_inset
 
-.
- A diferencia de otras descripciones arquitectónicas (basadas principalmente
- en mostrar la estructura de sistemas), este tipo de notaciones ayuda a
- las personas a razonar acerca del comportamiento del sistema.
- Otra de las razones principales de la elección de esta notación se basa
- en que permite la especificación conjunta de los principales aspectos arquitect
-ónicos independientemente de la tecnología en la cual el sistema fue implementad
-o.
- En la siguiente sección se describe la notación de los 
-\emph on
-Use-Case Maps
-\emph default
- y un ejemplo en donde se muestra su uso.
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/Esquema4mas1.gif
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Esquema-4+1"
+
+\end_inset
+
+Modelo 4 + 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2242,7 +2314,8 @@ UML - Diagrama de Componentes
 status open
 
 \begin_layout Standard
-completar con diagramas de componentes!
+completar con diagramas de componentes! .............http://www.ibm.com/developerworks/rational
+/library/dec04/bell/
 \end_layout
 
 \end_inset
@@ -2329,13 +2402,14 @@ key "BUHR95"
  de uso y una extensión de ellos hacia el diseño de alto nivel.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Esto esta confuso, y no se entiende a que apuntan las frases, por
- ejemplo palabras tipo: apropiado para especificacion formal (a mi me parece
- mas una notacion informal), decisiones deliberadamente abiertas (cuales
- son, a que se refiere), y demas...
+[Y ...
+ hay un NO son un lenguaje formal...] [andres] Esto esta confuso, y no se entiende
+ a que apuntan las frases, por ejemplo palabras tipo: apropiado para especificac
+ion formal (a mi me parece mas una notacion informal), decisiones deliberadament
+e abiertas (cuales son, a que se refiere), y demas...
  Lo que es importante decir (y que el lector quiere sabes) es que "los UCMs
  combinan en una notacion de alto nivel el flujo global de comportamiento
  y la estructura de componentes", o algo similar ...
@@ -2355,9 +2429,11 @@ Sin embargo, el modelo no depende de la definición de casos de uso: provee
 \begin_layout Standard
 Por sus cualidades, los UCMs son la notación elegida para representar las
  vistas comportamentales de las arquitecturas reconstruidas.
+ Éstos combinan, en una notacion de alto nivel, el flujo global del comportamien
+to y la estructura de componentes del sistema.
  Los UCMs no son un lenguaje apropiado para especificación formal de comportamie
-nto, ya que deliberadamente dejan algunas decisiones abiertas para ser tomadas
- durante el diseño detallado.
+nto, ya que deliberadamente dejan algunas decisiones de diseño abiertas
+ para ser tomadas durante el diseño detallado.
  Los UCM son solamente una notación para razonar y explicar el comportamiento
  de un sistema.
  Es importante de tener esto presente ya que es fácil caer en la trampa
@@ -2521,6 +2597,46 @@ Ejemplo
 \end_layout
 
 \begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserverObservableSample.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-de-UCM"
+
+\end_inset
+
+Ejemplo de UCM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 La Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -2655,43 +2771,23 @@ UserLoggerObserver
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/ObserverObservableSample.png
-	scale 60
+Entre las múltiples representaciones gráficas posibles, una de las descripciones
+ arquitectónicas elegidas para representar la arquitectura reconstruida
+ de un sistema es la de UCMs, en especial, para representar el comportamiento
+ 
+\begin_inset LatexCommand cite
+key "BUHR95"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Ejemplo-de-UCM"
-
-\end_inset
-
-Ejemplo de UCM
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+.
+ A diferencia de otras descripciones arquitectónicas (basadas principalmente
+ en mostrar la estructura de sistemas), este tipo de notaciones ayuda a
+ las personas a razonar acerca del comportamiento del sistema.
+ Otra de las razones principales de la elección de esta notación se basa
+ en que permite la especificación conjunta de los principales aspectos arquitect
+ónicos independientemente de la tecnología en la cual el sistema fue implementad
+o.
 \end_layout
 
 \begin_layout Section
@@ -2733,20 +2829,22 @@ En este capítulo se introdujo el concepto de arquitectura de software, una
 \end_layout
 
 \begin_layout Standard
-Posteriormente se presentó la notación de UCMs, un modelo para la descripción
- de patrones de comportamiento y algunos aspectos estructurales en un alto
- nivel de abs\SpecialChar \-
+Posteriormente se presentaron distintas notaciones que usualmente se utilizan
+ para representar arquitecturas de software: El modelo 4 + 1, los diagramas
+ de componentes de UML y la notación Use Case Maps (UCMs).
+ La notación de UCMs, un modelo para la descripción de patrones de comportamient
+o y algunos aspectos estructurales en un alto nivel de abs\SpecialChar \-
 trac\SpecialChar \-
-ción y granularidad.
+ción y granularida
+d.
  Esta notación es especialmente útil para la documentación de comportamiento
  a nivel arquitectónico, ya que permite expresar, analizar y comunicar las
- trazas causa-efecto que proyectan los casos de uso sobre el sistema, dejando
- de lado los detalles contextualmente irrelevantes.
+ trazas causa-efecto que proyectan los casos de uso sobre el sistema.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-Este parrafo, y en especial la ultima parte, es un poco criptico/confuso,
+[Y]Este parrafo, y en especial la ultima parte, es un poco criptico/confuso,
  mejorar lo de "contextualmente irrelevantes"
 \end_layout
 
@@ -6549,6 +6647,16 @@ Grafo de dependencias que muestra un componente utilidad y clase de entrada
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[nico] explicar la imagen desde el ejemplo
 \end_layout
 
 \end_inset
