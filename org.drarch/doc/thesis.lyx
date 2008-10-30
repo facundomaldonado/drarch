@@ -266,16 +266,6 @@ tos e implementación.
 Todo sistema de software posee una arquitectura de software subyacente.
  Sin embargo, no necesariamente existe en la práctica una documentación
  acertada de esta arquitectura.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Entre las razones de la falta de documentación se encuentran .....
-\end_layout
-
-\end_inset
-
  Por lo tanto, el hecho de lidiar con sistemas que no poseen documentación
  es un escenario que ocurre con frecuencia dentro de las organizaciones.
  Muchas veces, los expertos que diseñaron el sistema se han ido de la organizaci
@@ -660,8 +650,12 @@ status open
 
 \begin_layout Standard
 [Y] ...
- [andres] Dado que es una copia del parrafo del Resumen, tengo aqui los
- mismos comentarios que puse en el Resumen.
+ [andres] falta lo de ejemplificar!
+\end_layout
+
+\begin_layout Standard
+Dado que es una copia del parrafo del Resumen, tengo aqui los mismos comentarios
+ que puse en el Resumen.
  
 \end_layout
 
@@ -707,26 +701,54 @@ stakeholders
  Esta es una de las situaciones donde surge la necesidad de reconstruir
  la arquitectura de un sistema.
  La Reconstrucción de Arquitecturas es una técnica para generar representaciones
- arquitectónicas del sistema que puede ser utilizada de diversas formas
+ arquitectónicas del sistema.
+ Generalmente, esta técnica consiste en realizar las siguietnes actividades
+ de forma iterativa:
+\end_layout
+
+\begin_layout Itemize
+Extracción de información: El propósito de esta actividad es extraer información
+ de distintas fuentes.
+\end_layout
+
+\begin_layout Itemize
+Unificación de la información: Es necesario que la información recolectada
+ este representada en una estructura de datos común.
+\end_layout
+
+\begin_layout Itemize
+Análisis de información: En esta actividad es donde se realiza el mayor
+ trabajo de la reconstrucción ya que se construyen abstracciones y varias
+ representaciones de la información recolectada.
+\end_layout
+
+\begin_layout Itemize
+Generación de vistas: Se crean vistas que representen y describan la arquitectur
+a del sistema.
  
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+[Y] [andres] antes de explicar los posibles usos de la tecnica, explicar
+ primero en que consiste la tecnica en si!!!
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+...que puede ser utilizada de diversas formas 
 \begin_inset LatexCommand cite
 key "SAIP"
 
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-[andres] antes de explicar los posibles usos de la tecnica, explicar primero
- en que consiste la tecnica en si!!!
-\end_layout
-
-\end_inset
-
-El principal uso de esta representación es el de documentar la arquitectura
+ El principal uso de esta representación es el de documentar la arquitectura
  existente de un sistema.
  Si no existe la documentación o la documentación disponible esta desactualizada
 , la representación obtenida mediante la reconstrucción puede ser usada
@@ -748,13 +770,24 @@ key "Rick2003"
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
+\end_inset
+
+
+\end_layout
 
 \begin_layout Standard
-[andres] Seria bueno no hablar todo en abstracto, y agregar un parrafo con
- un ejemplito textual concreto de a lo que Uds se refieren.
+Supongamos que se tiene un sistema en el que existen varios componentes
+ que envian y reciben eventos, con mucha flexibillidad a la hora de programar,
+ y uno quisiera saber qué componentes trabajan con qué eventos, y ver el
+ estilo de eventos general para realizar modificaciones.
+ En esta situación, una representación de la arquitectura podría brindarnos
+ la iformación necesaria.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+[Y] [andres] Seria bueno no hablar todo en abstracto, y agregar un parrafo
+ con un ejemplito textual concreto de a lo que Uds se refieren.
  Por ejemplo, algo tipo "Supongamos que se tiene un sistema en el que existen
  varios componentes que envian y reciben eventos, con mucha flexibillidad
  a la hora de programar, y uno quisiera saber que componentes trabajan con
@@ -770,10 +803,10 @@ status open
 Debido a la importancia de la arquitectura de software en la toma de decisión
  en diferentes etapas del proceso de desarrollo, 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] No esta facil de leer eso de "refleje arquitectonicamente...".
+[Y] [andres] No esta facil de leer eso de "refleje arquitectonicamente...".
  Yo diria mejor que contar con una buena documentacion es indispensable.
  Y en particular, si las prescripciones arquitectonicas se reflejan en el
  disenio detallado e implementacion, mucho mejor, porque esto ayuda a que
@@ -786,16 +819,44 @@ te mapeables a codigo o que puedan ejecutarse, por ejemplo la dinamica del
 
 \end_inset
 
-es necesario contar con documentación actualizada que refleje arquitectónicament
-e relaciones en la implementación del sistema.
- Esta documentación puede ser extraída a partir de información provista
- por las sentencias del código fuente.
+contar con una buena documentacion es indispensable.
+ Y en particular, si las prescripciones arquitectonicas se reflejan en el
+ diseño detallado e implementación, mucho mejor, porque esto ayuda a que
+ los razonamientos realizados a nivel arquitectónico se cumplan efectivamente
+ en la implementación.
+ A diferencia de las clases y paquetes, las abstracciones arquitectonicas
+ no son cosas que sean directamente mapeables a código o que puedan ejecutarse.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[andres] , por ejemplo la dinamica del sistema, bla bla...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Esta documentación puede ser extraída a partir de información provista por
+ las sentencias del código fuente.
  Sin embargo, el código fuente provee una vista parcial de los aspectos
  arquitectónicos que no incluye la dinámica de los diversos componentes
  de software.
  Evidencia de la dinámica del sistema puede ser obtenida del análisis de
  la ejecución de las sentencias y los valores correspondientes en tiempo
  de ejecución.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -821,32 +882,42 @@ Cuales??' dividirlas en los correspondientes grupos..
 
 \end_inset
 
-s, la información se obtiene tanto del código fuente como del sistema en
- ejecución o sólo
+s 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-[andres] Este "solo" es tendencioso, en que le estan dando con un canio
- a todo lo que hay :-).
- Y en realidad, dado que es un tema amplio, no creo que lo que exista sea
- tan malo...
- Es mejor marcar primero lo bueno, y luego lo que no se adecua :-) tipo
- "Otra alternativa es usar patrones porque esto posibilita....
- pero ...."
+armin o dali?
 \end_layout
 
 \end_inset
 
- re\SpecialChar \-
-cons\SpecialChar \-
-tru\SpecialChar \-
-ye arquitecturas de sistemas implementados utilizando patrones
+, se utilizan enfoques que reconstruyen patrones de diseño porque esto posibilit
+a 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+...
+\end_layout
+
+\end_inset
+
+ pero restringe el análisis a sistemas implementados utilizando patrones
  de diseño.
  Muchos de los enfoques mencionados sólo muestran aspectos estructurales
- (diagramas de componentes o de clases) y muy pocos muestran resultados
- que permitan visualizar el comportamiento del sistema (ej: diagramas de
- UCMs o de secuencia
+ como diagramas de componentes o de clases y muy pocos muestran resultados
+ que permitan visualizar el comportamiento del sistema de forma simple.
+ Es decir, en el que se puedan visualizar procesos de más alto nivel que
+ la de una simple secuencia de ejecución como lo son los diagramas de secuencia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+(ej: diagramas de UCMs o de secuencia
 \begin_inset Note Note
 status collapsed
 
@@ -862,12 +933,17 @@ Muestran componentes y connectores???
 
 ).
  
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] De nuevo, no sean tan tendeciosos a que si no usa UCMs esta todo
- mal, porque digamos que los UCMs son una notacion que nosotros utilizamos
+[Y] [andres] De nuevo, no sean tan tendeciosos a que si no usa UCMs esta
+ todo mal, porque digamos que los UCMs son una notacion que nosotros utilizamos
  por "conveniencia" (ya estaba soportada por el FLABot), y por otro lado,
  respecto a los "diagramas de secuencia", el Eclipse trae un tool que los
  reconstruye si uno quiere, pero el problema es que son tan detallados que
@@ -884,10 +960,10 @@ status open
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] No concuerdo con esto.
+[Y][andres] No concuerdo con esto.
  De hecho, casi todos los tools que conozco se basan en el paradigma "extraer-ab
 straer-presentar" que necesariamente require de varios pasos y de la experiencia
  del desarrollador para saber que extraer, como abstraerlo y como visualizarlo
@@ -920,6 +996,13 @@ guiar
  Además, no es posible manipular la información de forma interactiva, perdiendo
  así la posibilidad de contar con la experiencia del arquitecto y su conocimient
 o en el dominio.
+ 
+\end_layout
+
+\begin_layout Standard
+En resumen, la mayoría de los enfoques se basan en el paradigma "extraer-abstrae
+r-presentar" que necesariamente requiere de varios pasos y de la experiencia
+ del desarrollador para saber qué extraer, cómo abstraerlo y cómo visualizarlo.
  Por otro lado, ninguno de estos enfoques mantiene la información recuperada
  de tal forma que sea flexible su manipulación.
 \end_layout
@@ -932,12 +1015,12 @@ name "sec:Necesidad-de-Documentación-Arquitectónica"
 
 Necesidad de Documentación Arquitectónica 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Hay un poco de confusion (al menos en el texto) entre lo que es
- "documentacion arquitectonica" y "reconstruccion de arquitecturas", y me
- gustaria que esto este bien claro para el lector "medio".
+[Y] [andres] Hay un poco de confusion (al menos en el texto) entre lo que
+ es "documentacion arquitectonica" y "reconstruccion de arquitecturas",
+ y me gustaria que esto este bien claro para el lector "medio".
 \end_layout
 
 \begin_layout Standard
@@ -976,7 +1059,7 @@ Por ahi esta discusion la pondria en motivaciones..
 
 \begin_layout Standard
 La documentación de una arquitectura es fundamental para el desarrollo de
- software ya que ésta actuá como vehiculo comunicacional entre los diferentes
+ software ya que ésta actua como vehículo comunicacional entre los diferentes
  
 \emph on
 stakeholders
@@ -1005,12 +1088,16 @@ Esta un poco confuso este parrafo se nota la traduccion..
 
 \end_inset
 
- La documentación es la vía de comunicación entre desarrolladores, 
+ 
 \end_layout
 
 \begin_layout Standard
 A continuación se listan los principales motivadores que hacen necesaria
- una herramienta de reconstrucción de arquitecturas.
+ una herramienta de reconstrucción de arquitecturas para documentar o re-documen
+tar descripciones arquitectónicas de un sistema.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -1030,20 +1117,19 @@ Inexistencia de documentación
 
 \begin_deeper
 \begin_layout Standard
-Todo sistema que tiene software tiene una arquitectura de software.
- Sin embargo, no necesariamente existe en la práctica una documentación
- acertada de esta arquitectura.
- Quizás toda la gente que diseñó el sistema se ha ido, la documentación
- es escaza o nunca se produjo, el código fuente se ha perdido o nunca se
- entregó, y lo único con que se cuenta es con el código ejecutable binario.
- No obstante, una arquitectura puede existir independientemente de su especifica
-ción, lo que demuestra la importancia de la documentación.
+Como se mencionó previamente, existen varios motivos por los que un sistema
+ no dispone de documentación que describa la arquitectura de software.
+ También es muy común que no se cuente con los expertos que diseñaron el
+ sistema.
+ El hecho de lidiar con sistemas de estas características implica que sea
+ necesaria una documentación de la arquitectura del mismo ya que para poder
+ mantener y entender un sistema, es necesario conocer su arquitectra.
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-[andres] Esto me suena que ya lo lei en otra parte.
- Traten de no copy-pastear mucho ...
+falta un ejemplo
 \end_layout
 
 \end_inset
@@ -1051,21 +1137,14 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-Por lo tanto, el hecho de lidiar con sistemas que no poseen documentación
- es un escenario que ocurre con frecuencia dentro de las organizaciones.
- Sistemas legados suelen no poseer documentación alguna y es muy común que
- nuevos sistemas de software tengan que integrarse con estos.
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 Erosión arquitectónica
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-Esta frase es criptica.
+[Y] Esta frase es criptica.
  Explicarla mejor pleaes (por ejemplo, se ve que para poder entender lo
  del analisis a nivel arquitectonico, necesitan explicar en alguno lugar
  un poco mas de atributos de calidad, ya que los analisis son en general
@@ -1090,7 +1169,15 @@ key "ABIANTOUN05b"
 \end_inset
 
 .
- 
+ Generalmente, estos análisis son de atributos de calidad y éstos se describen
+ en la seccion\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sub:Atributos-de-calidad"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1174,19 +1261,14 @@ Reconstrucción de arquitecturas
 \end_layout
 
 \begin_layout Standard
-La Reconstrucción de Arquitecturas de Software es una técnica para generar
- representaciones arquitectónicas de un sistema que puede ser utilizada
- de diversas formas.
- El principal uso de esta representación es el de documentar la arquitectura
- existente de un sistema.
- Si no existe la documentación o la documentación disponible esta desactualizada
-, la representación obtenida mediante la reconstrucción puede ser usada
- como una base para la re-documentación de la arquitectura.
- Esta representación también puede ser usada como un punto de comienzo para
- realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
- Finalmente, la representación puede ser usada como una forma de identificar
- componentes re-usables o para establecer una arquitectura base dentro de
- una línea de productos de software 
+La Reconstrucción de Arquitecturas de Software se define como una técnica
+ para generar representaciones arquitectónicas de un sistema.
+ Si bien el principal uso de esta representación es el de documentar la
+ arquitectura existente de un sistema, también puede ser utilizada de diversas
+ formas: como base para la re-documentación de la arquitectura, como punto
+ de comienzo para realizar re-ingeniería sobre el sistema y crear una nueva
+ arquitectura, como forma de identificar componentes re-usables o para establece
+r una arquitectura base dentro de una línea de productos de software 
 \begin_inset LatexCommand cite
 key "Rick2003"
 
@@ -1194,16 +1276,17 @@ key "Rick2003"
 
 .
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Idem, ya lo vi antes a esto :-)...
+[Y][andres] Idem, ya lo vi antes a esto :-)...
  concentrase mas en en que consiste la tecnica de reconstruccion
 \end_layout
 
 \end_inset
 
-
+ Estos motivos hacen que los enfoques de reconstrucción de arquitectuas
+ tomen importancia.
 \end_layout
 
 \begin_layout Standard
@@ -1214,20 +1297,66 @@ Existen diferentes técnicas y enfoques para recuperar representaciones de
  Sin embargo, casi todos los enfoques estructuran un proceso en un ciclo
  basado en extraer, abstraer y visualizar la información
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Una figura ilustrativa del extraer-abstraer-visualizar ayudaria
+[Y][andres] Una figura ilustrativa del extraer-abstraer-visualizar ayudaria
  a entender mejor las cosas
 \end_layout
 
 \end_inset
 
-.
+ (ver figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Enfoque-Extraer-Abstraer-Presentar"
+
+\end_inset
+
+).
  En todos los casos, este proceso es asistido por herramientas, las cuales
  extraen información del sistema (ej.
  código fuente) para ir agregando niveles de abstracción cada vez mas altos.
  El resultado final son diagramas que representan la arquitectura del sistema.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ExtraerAbstraerPresentar.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Enfoque-Extraer-Abstraer-Presentar"
+
+\end_inset
+
+Enfoque Extraer-Abstraer-Presentar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1292,7 +1421,7 @@ Se debe tener en cuenta en el análisis la información que aporten las personas
 status open
 
 \begin_layout Standard
-Solo una?? ?porque dice restricciones??? no hay mas??? no entiendo bien
+[Y] Solo una?? ?porque dice restricciones??? no hay mas??? no entiendo bien
  la restriccion....
 \end_layout
 
@@ -1665,6 +1794,11 @@ A continuación, se presentan los estilos y modelos arquitectónicos que nos
 \end_layout
 
 \begin_layout Subsection
+\begin_inset LatexCommand label
+name "sub:Estilos-y-Modelos"
+
+\end_inset
+
 Estilos\InsetSpace ~
 y\InsetSpace ~
 Modelos\InsetSpace ~
@@ -1758,12 +1892,52 @@ en\InsetSpace ~
 Eventos)
 \end_layout
 
-\begin_layout Description
-\begin_inset Note Note
+\begin_layout Standard
+La idea principal del estilo de Invocación Implícita es que en vez de invocar
+ directamente a una tarea, un componente puede producir uno o más eventos.
+ Otros componentes en el sistema pueden registrar un evento asociando una
+ tarea con un evento.
+ Cuando se lanza un evento, el sistema invoca a todos las tareas que estén
+ registradas a ese evento.
+ Es por esto que la invocación se realiza de forma implícita.
+ Para poder comprender este concepto, en la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Invocación-Implícita-vs."
+
+\end_inset
+
+ se muestra como funciona la invocación explícita y la implícita.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Standard
-agragar parrafo introductorio y una imagen
+\align center
+\begin_inset Graphics
+	filename img/InvocacionImplicita-Explicita.PNG
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Invocación-Implícita-vs."
+
+\end_inset
+
+Invocación Implícita vs.
+ Explícita
 \end_layout
 
 \end_inset
@@ -1771,7 +1945,11 @@ agragar parrafo introductorio y una imagen
 
 \end_layout
 
-\begin_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Descripción
 \end_layout
@@ -1783,6 +1961,7 @@ En lugar de invocaciones de procedimientos explícitas o directas, un componente
  evento asociando un procedimiento a dicho evento.
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 La ocurrencia de un evento causa la invocación “implícita”de procedimientos
  en otros módulos.
@@ -1942,6 +2121,11 @@ Abstracción transferible de un sistema: Una arquitectura de software constituye
 \end_layout
 
 \begin_layout Subsection
+\begin_inset LatexCommand label
+name "sub:Atributos-de-calidad"
+
+\end_inset
+
 Atributos de calidad
 \end_layout
 
@@ -2025,21 +2209,37 @@ Quizás el concepto más importante asociado con la documentación de arquitectu
 \emph on
 vista
 \emph default
+, por ejemplo, el estilo arquitectónico de Invocación Implícita descripto
+ en la sección\InsetSpace ~
 
+\begin_inset LatexCommand ref
+reference "sub:Estilos-y-Modelos"
+
+\end_inset
+
+ es mostrado con la vista de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Invocación-Implícita-vs."
+
+\end_inset
+
+.
+ 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Si es que no se puso una figura para el ejemplo de estilo de la
- seccion anterior, mostrarlo aca para ejemplificar lo de vista (y obvio,
+[Y] [andres] Si es que no se puso una figura para el ejemplo de estilo de
+ la seccion anterior, mostrarlo aca para ejemplificar lo de vista (y obvio,
  decir este es el estilo X mostrado con la vista Y)
 \end_layout
 
 \end_inset
 
 .
- Recordando la definición de la sección anterior, vemos a la arquitectura
- como 
+ Recordando la definición de la arquitectura definida anteriormente, vemos
+ a la esta como 
 \begin_inset Quotes eld
 \end_inset
 
