@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -3166,9 +3166,9 @@ Esto podria ir en el contexto..o juntar ambas secciones..
 \end_inset
 
 El problema de la falta de documentación arquitectónica o incluso su desactualiz
-ación, como así también la re-ingeniería y la desicronización entre la arquitect
-ura y su implementación han sido reconocidos en el capítulo anterior como
- los principales motivadores de este trabajo.
+ación, como así también la re-ingeniería y la falta de sincronizacion entre
+ arquitectura e implementacion constituyen los principales motivadores de
+ este trabajo.
 \begin_inset Note Note
 status open
 
@@ -3187,9 +3187,9 @@ Y concluir el contexto con los trabajos relaciones que fueron la base de
 \end_layout
 
 \begin_layout Standard
-En este capítulo intentaremos brindar una visión mas amplia sobre los distintos
- aportes existentes relacionados con la reconstrucción de arquitecturas,
- destacando los rasgos principales de cada enfoque.
+En este capítulo se brinda una visión mas amplia sobre los distintos aportes
+ existentes relacionados con la reconstrucción de arquitecturas, destacando
+ los rasgos principales de cada enfoque.
 \end_layout
 
 \begin_layout Standard
@@ -3204,13 +3204,11 @@ X Muchos enfoques de reconstrucción de arquitecturas y herramientas para
 
 \end_inset
 
-Muchos enfoques de reconstrucción de arquitecturas han sido cubiertos en
- la literatura.
- La mayoría de éstos están basados en un ciclo extraer-abstraer-presentar,
- en el cual el sistema es analizado con el propósito de popular un repositorio,
- que luego es consultado para poder construir representaciones abstractas
- del sistema que son presentadas en forma interactiva y adecuada al ingeniero
- de software.
+La mayoría de los enfoques y herramientas para reconstrucción de arquitecturas
+ están basados en un ciclo "extraer-abstraer-presentar", en el cuál el sistema
+ es analizado con el propósito de popular un repositorio, que luego es consultad
+o para poder construir representaciones abstractas del sistema que son presentad
+as en forma interactiva y adecuada al ingeniero de software.
  Tilley et.
  al 
 \begin_inset LatexCommand cite
@@ -3224,8 +3222,9 @@ key "Tilley1996"
 \end_layout
 
 \begin_layout Standard
-En la siguiente sección resumimos aquellos trabajos que tratan la reconstrucción
- de arquitecturas de software y discutiremos los enfoques tomados por ellos.
+En la siguiente sección se resumirán aquellos trabajos que tratan la reconstrucc
+ión de arquitecturas de software y se discutirán los enfoques tomados por
+ ellos.
 \end_layout
 
 \begin_layout Section
@@ -3244,8 +3243,12 @@ e implementado ha sido abordado de diversas maneras.
  con herramientas de visualización o de extraccion de informacion, aquellos
  que implementan lenguajes de consultas para escribir pautas para construir
  clusteres o agregaciones automáticamente, y tambien aquellos que implementan
- técnicas diversas como data mining, lenguajes de descripcion arquitectónica
- (ADLs), redes de Petri o matrices de dependencias (DSM).
+ técnicas diversas como mineria de datos ("
+\emph on
+data mining
+\emph default
+"), lenguajes de descripcion arquitectónica (ADLs), redes de Petri o matrices
+ de dependencias (DSM).
 \end_layout
 
 \begin_layout Standard
@@ -3295,35 +3298,47 @@ por lo menos una distincion deberia ir a ca..
 status open
 
 \begin_layout Standard
-Clasificación :
+For each tool/approach:
 \end_layout
 
 \begin_layout Standard
-* Estructura y comportamiento
+* what it does input language(s) (e.g., is it source code only or does it
+ include things like makefiles?) 
 \end_layout
 
 \begin_layout Standard
-* Visualizacio y navegacion --aspectos deHuman-Computer-Interaction 
+* output 
 \end_layout
 
 \begin_layout Standard
-* Notacion de la arquitectura recuperada
+** what views does it (help) build; code/module views or runtime/C&C views?
+ 
 \end_layout
 
 \begin_layout Standard
-* Herramientas integradas
+** what are the elements and relationships of these views 
 \end_layout
 
 \begin_layout Standard
-* Soporte para varias fuentes de datos
+** can the output be externalized (other than screen shots)? any flexibility/cus
+tomizability in format? 
 \end_layout
 
 \begin_layout Standard
-* Incremental
+* does it support abstraction (i.e., the developer can define architectural
+ concepts and their mapping to code constructs)? 
 \end_layout
 
 \begin_layout Standard
-* analisis de código fuente o analisis de trazas de ejecución
+* use examples
+\end_layout
+
+\begin_layout Standard
+**published case studies 
+\end_layout
+
+\begin_layout Standard
+**anything that hints at scope capabilities or usability 
 \end_layout
 
 \end_inset
@@ -3363,32 +3378,117 @@ performance
 \emph default
 , planes futuros, diagramas arquitectónicos e información sobre la historia
  del proyecto.
- Bowman y otros han presentado un método para extraer documentación arquitectóni
-ca desde el código de un sistema completamente implementado utilizando PBS
-\begin_inset LatexCommand cite
-key "BOWMAN99"
+ 
+\end_layout
+
+\begin_layout Standard
+El Software Bookshelf se accede por medio de un conjunto de páginas Web.
+ Hay una página para cada uno de los subsistemas que componen el sistema
+ evaluado.
+ Cada una de estas páginas son a veces llamadas estantes (
+\emph on
+shelves
+\emph default
+).
+ Las mismas están organizadas de manera jerarquica, lo que refleja la descomposi
+ción del sistema en subsistemas.
+ A su vez cada página esta vinculada a las páginas de los subsistemas y
+ muestran un diagrama de arquitectura llamado "paisaje" de su subsistema,
+ y que esta vinculado al código fuente y a la documentación de los subsistemas.
+ La figura 
+\begin_inset LatexCommand ref
+reference "fig:PBS-Example."
 
 \end_inset
 
-.
- En un ejemplo ellos reconstruyeron la arquitectura de un sistema Linux.
- Analizaron el código fuente utilizando el programa cfx (
+ muestra un "paisaje" de un sistema ejemplo [referencia a la pagina : http://swa
+g.uwaterloo.ca/pbs/examples/C488/V1/index.html].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/PBS_Example.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:PBS-Example."
+
+\end_inset
+
+Ejemplo de PBS analizando el compilador c488.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+PBS esta compuesto por una serie de herramientas que ayudan en la contrucción
+ de 
 \emph on
-c-code fact extractor
+"Bookshelves"
 \emph default
-) para obtener información del código y poder generar conjuntos de relaciones
- entre los elementos identificados.
- Luego, manualmente crearon una descomposición del sistema Linux en subsistemas
- y asignaron los archivos fuentes a dichos subsistemas.
- Por medio de una herramienta de manipulación de hechos (
-\emph on
-facts
-\emph default
-), determinaron las relaciones entre los subsistemas identificados.
- Finalmente, utilizan una herramienta de visualización para visualizar la
- estructura del sistema extraída.
- El refinamiento de la estructura resultante se lleva a cabo moviendo los
- archivos de código fuente entre subsistemas.
+:
+\end_layout
+
+\begin_layout Standard
+Extractores: Los exrtactores parsean el código fuente y generan lo hechos
+ correspondientes.
+ Los hechos facilitan la construcción del grafo de dependencias.
+ Existen extractores para algunos lenguajes como c y pascal.
+\end_layout
+
+\begin_layout Standard
+Manipuladores de hechos: Los hechos producidos por los extractores (o por
+ alguna otra fuente, incluida la preparación manual) son efectivamente una
+ base de datos, la cual puede ser manipulada.
+ Una herramienta llamada Grok opera sobre hechos excritos en RSF y es usado
+ para leer los hechos y crear los hechos (sub grafos) para cada subsistema.
+ 
+\end_layout
+
+\begin_layout Standard
+Disennnnador de diagramas: Los grafos tienen atributos que determinan el
+ "layout" del mismo.
+ Estos dan la posición, tamannnno y colores de los grafos para poder dibujarlos
+ como diagramas.
+ La herramienta llamada Layouter lee los hechos que representan el grafo
+ y les agrega atributos de layout.
+\end_layout
+
+\begin_layout Standard
+Visualizador de diagramas: Hay una herramienta llamada LS (Landscape) Viewer
+ que lee grafos consus atributos de layout y lo muestra como un diagrama
+ en la pantalla.
+\end_layout
+
+\begin_layout Standard
+Cada vez que el sistema es "built", hechos relevantes (como llamadas a procedimi
+entos y referencias a datos) son extraidas de éste.
+ Mediante la comparación con los hechos anteriores con los nuevos, se detectan
+ nuevos archivos, llamados "huerfanos".
+ Un algoritmo los asigna automáticamente a un subsistema y tambien provee
+ de información de layout para la actualización de los diagramas.
 \end_layout
 
 \begin_layout Paragraph
@@ -3396,23 +3496,106 @@ Rigi
 \end_layout
 
 \begin_layout Standard
-Rigi es una herramienta de visualización y manipulación de información de
- software
+Rigi es una herramienta visual e interactiva diseñada para ayudarle a comprender
+ mejor y re-documentar un sistema de software
 \begin_inset LatexCommand cite
 key "RIGI2002"
 
 \end_inset
 
 .
- Contiene un interprete para aplicar operaciones a la información visualizada,
- y permite también la manipulación manual de la información presentada al
- usuario.
- El principal aporte de esta herramienta son los 
+ En Rigi, los artefactos están almacenados en un repositorio subyacente
+ y manipulados a través de de una herramienta llamada 
+\emph on
+rigiedit
+\emph default
+, que provee la edición, la manipulación y capacidades de exploración.
+ Rigi también incluye parsers que extraen los artefactos del sistema de
+ software.
+ Un modelo de dominio especifica los tipos de entidad y las relaciones de
+ interés.
+ El flujo de entrada alimenta 
+\emph on
+rigiedit
+\emph default
+ el cual representa visualmente el gráfico inicial.
+ 
+\end_layout
+
+\begin_layout Standard
+Para gestionar la complejidad del, 
+\emph on
+rigiedit
+\emph default
+ permite seleccionar, filtrar, diseñar y modificar el gráfico para identificar
+ los subsistemas pertinentes (automática o manualmente colapsando artefactos
+ relacionados en subsistemas).
+ Estos subsistemas suelen representar conceptos tales como tipos de datos
+ abstractos
+\end_layout
+
+\begin_layout Standard
+El nuevo gráfico creado es más simple, está organizado jerárquicamente,
+ se puede navegar, analizar y presentar utilizando diversos layouts de forma
+ automática o guiada por el usuario.
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Ejemplo-Rigi"
+
+\end_inset
+
+ muestra la secuencia de pasos desde que el grafo inicial es armado hasta
+ la vista final, con subsistemas colapsados y diagramados jerárquicamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/RIGI_sample.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-Rigi"
+
+\end_inset
+
+Ejemplo Rigi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El principal aporte de esta herramienta son los 
 \emph on
 parsers
 \emph default
  para extraer la información de varios lenguajes en un formato propio, Rigi
- Standard Format (RSF).
+ Standard Format (RSF) los cuales han sido usados extensamente por otras
+ herramientas de reconstrucción como Dali y SHriMP.
 \end_layout
 
 \begin_layout Paragraph
@@ -3420,17 +3603,81 @@ SHriMP
 \end_layout
 
 \begin_layout Standard
-SHriMP es un sistema de visualización y navegación de la información 
+SHriMP (Simple Hierarchical Multi-Perspective) es un sistema de visualización
+ y navegación de la información 
 \begin_inset LatexCommand cite
 key "Storey2001,Shrimp2002"
 
 \end_inset
 
 .
+ SHriMP utiliza grafos anidados para presentar la información que está jerárquic
+amente organizada.
+ Introduce el concepto de vistas "anidadas-intercambiables" permitiendo
+ a los usuarios a explorar múltiples perspectivas de la información en diferente
+s niveles de abstracción.
+ 
+\end_layout
+
+\begin_layout Standard
+Este enfoque presta especial atencion a la "metafora" visual utilizada para
+ explorar e investigar el código, por ejemplo, utilizando distitnos tipos
+ de vistas jerarquicas y distintos tipos de zoom (normal, semantico, fish_eye).
  Cuando es usado para reconstrucción, la herramienta puede asistir al usuario
  en generar vistas arquitectónicas de alto nivel agrupando manualmente elementos
  en un grafo.
  La herramienta toma como entrada archivos RSF (Rigi Standard Format).
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Ejemplo-SHriMP"
+
+\end_inset
+
+ muestra la herramienta en acción.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/SHriMP_sample.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-SHriMP"
+
+\end_inset
+
+Ejemplo SHriMP.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -3538,11 +3785,11 @@ key "GUO99"
 \end_inset
 
 .
- ARM consiste en cuatro fases principales: 
+ ARM consiste de cuatro fases principales: 
 \end_layout
 
 \begin_layout Enumerate
-Desarrollar un plan para reconocer patrones concretos, 
+Desarrollo de un plan para reconocer patrones concretos, 
 \end_layout
 
 \begin_layout Enumerate
@@ -3581,7 +3828,7 @@ key "Riva2000"
 \end_inset
 
 .
- El proceso que Riva describe consiste en seis fases: 
+ El proceso que Riva describe consiste de seis fases: 
 \end_layout
 
 \begin_layout Enumerate
@@ -3613,10 +3860,10 @@ DiscoTect
 \end_layout
 
 \begin_layout Standard
-DiscoTect que mapea eventos de bajo nivel del sistema a operaciones arquitectóni
-cas abstractas; interpretadas luego por un motor especial que ﬁnalmente
- construye la estructura arquitectónica del sistema en tiempo de ejecución
- como una descripción ACME 
+Este enfoque se basa en el mapeo de eventos de bajo nivel del sistema a
+ operaciones arquitectónicas abstractas; interpretadas luego por un motor
+ especial que ﬁnalmente construye la estructura arquitectónica del sistema
+ en tiempo de ejecución como una descripción ACME 
 \begin_inset LatexCommand cite
 key "ACME"
 
@@ -3768,7 +4015,42 @@ clustering
  basadas en las relaciones de dependencia entre clases Java.
  Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
  parcialmente en base a la inspección de código fuente.
- Como contras, se puede mencionar la escasa automatización (por ejemplo,
+ Como desventajas, se puede mencionar la escasa automatización (por ejemplo,
+ las abstracciones deben ser realizadas por el usuario) y nuevamente, la
+ falta de soporte para aspectos comportamentales de la arquitectura como
+ es el caso de las representaciones UCM.
+\end_layout
+
+\begin_layout Standard
+Focus
+\begin_inset LatexCommand cite
+key "MEDVIDOVIC06"
+
+\end_inset
+
+ es el fruto de un enfoque basado en ingeniería reversa.
+ Su objetivo es extraer una descripción estructural de la arquitectura en
+ función de la información provista por su implementación y el desarrollador.
+ El código fuente de una aplicación es analizado estáticamente para obtener
+ un diagrama de clases UML y luego las clases interrelacionadas son agrupadas
+ en componentes.
+ Este enfoque mantiene los mapeos entre arquitectura e implementaci´on durante
+ la evoluci´on apli- cando el proceso de descubrimiento incrementalmente
+ sobre las porciones de código fuente modiﬁcadas.
+ Los mapeos deﬁnen a los componentes como un grupo de clases relacionadas.
+ El proceso de clustering para determinar los componentes utiliza diferentes
+ políticas, principalmente basadas en las relaciones de dependencia entre
+ clases Java.
+ Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
+ parcialmente en base a la inspección de código fuente.
+ La Figura MMMASMDMMAD ilustra las principales actividades ordenadas parcialment
+e realizadas por Focus para recuperar una arquitectura.
+ El enfoque es interesante para propagar cambios desde la implementación
+ hacia la arquitectura.
+ La virtud principal, radica en reﬁnar progresivamente la vista arquitectónica
+ en función de los cambios sucesivos del código, en lugar de intentar recuperarl
+a íntegramente con un único análisis exhaustivo.
+ Como desventajas, se puede mencionar la escasa automatización (por ejemplo,
  las abstracciones deben ser realizadas por el usuario) y nuevamente, la
  falta de soporte para aspectos comportamentales de la arquitectura como
  es el caso de las representaciones UCM.
@@ -3779,8 +4061,8 @@ KLOCwork’s Architecture Excavation method (KAE)
 \end_layout
 
 \begin_layout Standard
-KAE, un enfoque que aborda la especiﬁcación UCM y emplea mecanismos de ingenierí
-a reversa (Amyot et.
+KAE es un enfoque que aborda la especiﬁcación UCM y emplea mecanismos de
+ ingeniería reversa (Amyot et.
  al.
  
 \begin_inset LatexCommand cite
@@ -3791,7 +4073,11 @@ key "AMYOT-SAM02"
 ), extrae escenarios UCM a partir del análisis estático de código C++.
  Su ﬁnalidad es ayudar al nuevo desarrollador a comprender la arquitectura
  “escondida” detrás de una implementación preexistente.
- KAE utiliza una técnica híbrida basada en entrevistas (
+ 
+\end_layout
+
+\begin_layout Standard
+KAE utiliza una técnica híbrida basada en entrevistas (
 \emph on
 interviews
 \emph default
@@ -3814,8 +4100,12 @@ res involucrados y también mediante la inspección del código,
  de la arquitectura.
  KAE aproxima los casos de uso iniciales, en forma de trayectorias a través
  de las diferentes etiquetas colocadas en el código fuente.
- La herramienta ofrece un compilador para generar un modelo estructural
- rudimentario de la arquitectura.
+ 
+\end_layout
+
+\begin_layout Standard
+La herramienta ofrece un compilador para generar un modelo estructural rudimenta
+rio de la arquitectura.
  Este modelo será transformado i\SpecialChar \-
 te\SpecialChar \-
 ra\SpecialChar \-
@@ -3839,7 +4129,11 @@ te del modelo queda a cargo del usuario, quien
  y ajuste.
  La agregación permite seleccionar distintos bloques y agruparlos creando
  un nuevo nivel en la jerarquía.
- El ajuste es otra operación visual donde se mueven bloques para eliminar
+ 
+\end_layout
+
+\begin_layout Standard
+El ajuste es otra operación visual donde se mueven bloques para eliminar
  dependencias entre paquetes de niveles mas altos que fueron introducidos
  por emplazamientos accidentales de funcionalidad a nivel de archivo.
  Como las etiquetas se aplicaron antes al código fuente y éste ya ha sido
@@ -3847,7 +4141,11 @@ te del modelo queda a cargo del usuario, quien
  Case Maps como trayectorias a través de las distintas etiquetas colocadas
  en distintos puntos dentro de los paquetes (que ahora son vistos como component
 es).
- Aunque éste es uno de los pocos enfoques que trabaja con las especiﬁcaciones
+ 
+\end_layout
+
+\begin_layout Standard
+Aunque éste es uno de los pocos enfoques que trabaja con las especiﬁcaciones
  UCM, se realizan demasiadas tareas manuales y otras tantas aplicando simpliﬁcac
 iones gruesas, que introducen errores extra, como es el caso de suponer
  que existe una división de componentes que coincide perfectamente con la
@@ -4112,7 +4410,7 @@ Análisis implementación
 \end_layout
 
 \begin_layout Standard
-(análisis estático: codigo fuente; dinamico: traces de ejecución)
+(análisis estático: codigo fuente; dinamico: trazas de ejecución)
 \end_layout
 
 \end_inset
@@ -4276,7 +4574,7 @@ No incremental.
 \begin_inset Text
 
 \begin_layout Standard
-estático (dinamico, si se carga la información de traces en formato RSF)
+estático (dinamico, si se carga la información de trazas en formato RSF)
 \end_layout
 
 \end_inset
