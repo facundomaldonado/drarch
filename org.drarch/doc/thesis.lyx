@@ -2572,7 +2572,86 @@ Notación
 \end_layout
 
 \begin_layout Standard
-...
+En la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:modelado-visual-componentes"
+
+\end_inset
+
+ se muestra una descripción básica de los diferentes elementos visuales
+ que conforman la notación, junto con los conceptos asociados a cada uno
+ de ellos.
+ La idea principal detrás...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/NotacionDiagramaDeComponentesUML.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:modelado-visual-componentes"
+
+\end_inset
+
+Modelado visual de los componentes en UML
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Conclusion
+\end_layout
+
+\begin_layout Standard
+The component diagram is a very important diagram that architects will often
+ create early in a project.
+ However, the component diagram's usefulness spans the life of the system.
+ Component diagrams are invaluable because they model and document a system's
+ architecture.
+ Because component diagrams document a system's architecture, the developers
+ and the eventual system administrators of the system find this work product-cri
+tical in helping them understand the system.
+\end_layout
+
+\begin_layout Standard
+Component diagrams also serve as input to a software system's deployment
+ diagram, which will be the topic of my next article in this series.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
