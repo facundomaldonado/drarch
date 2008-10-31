@@ -1099,11 +1099,11 @@ tar descripciones arquitectónicas de un sistema.
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Yo trataria que cada una de las subsecciones de abajo tenga una
- mencion a un ejemplo concreto (cosa de ir dando contexto)
+[Y] ..[andres] Yo trataria que cada una de las subsecciones de abajo tenga
+ una mencion a un ejemplo concreto (cosa de ir dando contexto)
 \end_layout
 
 \end_inset
@@ -1124,17 +1124,12 @@ Como se mencionó previamente, existen varios motivos por los que un sistema
  El hecho de lidiar con sistemas de estas características implica que sea
  necesaria una documentación de la arquitectura del mismo ya que para poder
  mantener y entender un sistema, es necesario conocer su arquitectra.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-falta un ejemplo
-\end_layout
-
-\end_inset
-
-
+ No contar con la documentación arquitectónica de un sistema aumenta considerabl
+emente el riesgo de que el proyecto fracase.
+ Por ejemplo, en un sistema donde los componentes se comunican mediante
+ un mecanismo de invocación implícita, es muy dificil darse cuenta cuáles
+ son los componentes que se relacionan sin tener descripciónes arquitectónicas
+ de alto nivel que lo reflejen.
 \end_layout
 
 \end_deeper
@@ -2104,8 +2099,29 @@ Comunicación entre los
 stakeholders
 \emph default
 : La arquitectura de software representa una abstracción común de un sistema
- y la mayoría de los stakeholders pueden utilizarla como medio de negociación,
- comprensión, concenso y comunicación.
+ y la mayoría de los 
+\emph on
+stakeholders
+\emph default
+ pueden utilizarla como medio de negociación, comprensión, concenso y comunicaci
+ón.
+ Por ejemplo, los usuarios estan interesados el sistema esté disponible
+ cuando se necesite, en cambio, los clientes estan interesados en que la
+ arquitectura se implemente en tiempo y forma y con el presupuesto disponible,
+ por otro lado, los 
+\emph on
+managers
+\emph default
+ se interesan en si la arquitectura permite trabajar en equipo y de forma
+ controlada.
+ Y finalmente el arquitecto esta interesado en realizar todos estos objetivos.
+\newline
+La
+ arquitectura provee un leguaje común en el cuál diferentes intereses puede
+ ser expresados, negociados y resueltos.
+ Sin este lenguaje, es dificil entender un sistema lo suficiente como para
+ poder tomar las primeras decisiones que influencien la funcionalidad y
+ calidad del sistema.
 \end_layout
 
 \begin_layout Enumerate
@@ -2127,6 +2143,43 @@ name "sub:Atributos-de-calidad"
 \end_inset
 
 Atributos de calidad
+\end_layout
+
+\begin_layout Standard
+Usualmente, los requerimientos que se definen para un sistema no sólo son
+ funcionales, sino que también se definen requerimientos no funcionales
+ que se denominan Atributos de Calidad.
+ Por ejemplo, un cliente podría especificar un requerimiento que defina
+ que cuando se inicie una transacción, el sistema no debe demorar más de
+ dos segundo en procesarla.
+ Éste escenario es un requerimiento no funcional que pertenece al acategoría
+ 
+\emph on
+performance
+\emph default
+ de los atributos de calidad.
+ Los requerimientos funcionales y los atributos de calidad son ortogonales.
+ Si esto no fuera así, la incorporación de una nueva funcionalidad del sistema
+ podría establecer el nivel de seguridad o el de disponibilidad o el de
+ 
+\emph on
+performance
+\emph default
+.
+ Es importante que los atributos de calidad tengan participación durante
+ el diseño del sistema.
+ Éstos deberian porder diseñarse y evaluarse a nivel arquitectónico.
+ Si bien la arquitectura del sistema provee las bases para que los atributos
+ de calidad se cumplan, esto no es suficiente ya que existen otras dependencias.
+ Por ejemplo, la 
+\emph on
+performance
+\emph default
+ incluye easpectos arquitectónicos como qué responsabilidad debe ser asignada
+ a cada componente y no arquitectónicos como la elección de algoritmos para
+ implementar determiada responsabilidad.
+ Los estilos y modelos arquitectónicos se basan principalmente en los atributos
+ de cailidad.
 \end_layout
 
 \begin_layout Standard
@@ -2448,21 +2501,56 @@ En las siguientes secciones, se describen distintas notaciones para representar
 \end_layout
 
 \begin_layout Subsection
-Modelo 4 + 1
+Modelo de Vistas 4 + 1
 \end_layout
 
 \begin_layout Standard
+El modelo de vistas 4 + 1 propone separar el sistema en cuatro vistas escenciale
+s: la lógica, la de proceso, la física y la de desarrollo.
+ Luego, para contribuir con las mediciones, presenta una vista más: la de
+ casos de uso que permite describir aspectos funcionales del sistema entero
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-[nico] completar : http://www.ibm.com/developerworks/wireless/library/wi-arch11/
- 
+Ref ...Kruchten
 \end_layout
 
 \end_inset
 
+.
+ 
+\end_layout
 
+\begin_layout Standard
+Cada una de las cinco vistas del modelo 4 + 1 describen distintos aspectos
+ del sistema mientras que intencionalmente ocultan otros.
+ El propósito principal de este modelo es que define una exelente forma
+ en que los 
+\emph on
+stakeholders
+\emph default
+ comprendan la arqutiectura del sistema.
+ Los arquitectos utilizan este modelo para entender y documentar varias
+ capas de una aplicación de forma sistemática y estandar.
+ Los documentos creados por el modelo son fácilmente utilizados por todos
+ los miembros del equipo de desarrollo.
+\end_layout
+
+\begin_layout Standard
+Las cuatro primeras vistas de modelo representan aspectos lógicos, de preocesami
+ento, físicos y de desarrollo de una arquitectura.
+ La quinta vista consiste en los casos de uso y los escenarios que podrían
+ describir con más detalle el resto de las vistas.
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Esquema-4+1"
+
+\end_inset
+
+ muestra un esquema con las cinco vistas del modelo.
 \end_layout
 
 \begin_layout Standard
@@ -2492,7 +2580,7 @@ name "fig:Esquema-4+1"
 
 \end_inset
 
-Modelo 4 + 1
+Esquema Modelo de Vistas 4 + 1
 \end_layout
 
 \end_inset
@@ -2503,24 +2591,363 @@ Modelo 4 + 1
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+A continuación se describen las distintas vistas que porpone el modelo de
+ vistas 4 + 1.
+\end_layout
+
+\begin_layout Subsubsection
+Vista Lógica
+\end_layout
+
+\begin_layout Standard
+La vista lógica del modelo soporta requerimientos de comportamiento y muestra
+ cómo el sistema esta distribuído en un conjunto de abstracciones.
+ Las clases y los objetos son los elementos mas estudiados por esta vista.
+ Se pueden utilizar diagramas de clase, de colaboración y de secuancia,
+ entre otros, para mostrar las relaciones entre los elementos.
+ Los diagramas de clases muestran clases y sus atributos, métodos y asociaciones
+ con otras clases del sistema.
+\end_layout
+
+\begin_layout Standard
+Los diagramas de clases muestran una "imágen" completa del sistema.
+ Por un lado, los diagramas de clase son estáticos, por lo tanto, no dicen
+ nada sobre el sistema reacciona a los eventos de los usuarios.
+ Por otro lado, estos diagramas son demasiado detallados como para ofrecer
+ una idea general de la arquitectura de todo el sitema.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/DiagramaDeColaboracion.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-Colaboración"
+
+\end_inset
+
+Diagrama de Colaboración 
+\emph on
+Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/DiagramaDeSecuencia.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-Secuencia"
+
+\end_inset
+
+Diagrama de Secuencia 
+\emph on
+Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los diagramas de colaboración (o de comunicación) y de secuancia muestran
+ cómo interactuan los objetos del sistema.
+ Un diagrama de colaboración es una forma simple de mostrar los objetos
+ del sistema y los mensajes y llamadas que pasan entre ellos.
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-Colaboración"
+
+\end_inset
+
+ es un simple diagrama de colaboración en el que cada mensaje esta asociado
+ a un número que indica el orden de la secuencia.
+ Estos diagramas son muy prácticos para mostrar como los objetos colaboran
+ en el sistema.
+ Si se desa mostrar más detalles sobre la lógica del sistema, un diagrama
+ de secuencias seria ideal (ver figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-Secuencia"
+
+\end_inset
+
+).
+ Los diagramas de secuencia proveen mas detalles que los diagramas de colaboraci
+ón pero siguen manteniendo la distancia de mostrar la arquitectura general
+ de todo el sistema.
+ Arquitectos y diseñadores suelen utilizar estos diagramas para refinar
+ detalles el diseño.
+ Por ejemplo, observando el diagrama de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-Secuencia"
+
+\end_inset
+
+ se podría realizar un cambio en el diseño si se desea que un nuevo objeto
+ (
+\family typewriter
+Notifier
+\family default
+) responsable de notificar a cada 
+\family typewriter
+observer
+\family default
+ y que estas notificaciones corran en un proceso distinto.
+\end_layout
+
+\begin_layout Subsubsection
+Vista de Desarrollo
+\end_layout
+
+\begin_layout Standard
+La vista de desarrollo es usada para describir los módulos del sistema.
+ Los módulos más bloques más grandes que las clases y los objetos y varian
+ de acuerdo al ambiente de desarrollo.
+ Los paquetes, sub-sistemas y las bibliotecas son considerados módulos.
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-Paquetes"
+
+\end_inset
+
+ muestra como los paquetes de un sistema son anidados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/DiagramaDePaquetes.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-Paquetes"
+
+\end_inset
+
+Diagrama de Paquetes 
+\emph on
+Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+También es posible utilizar las vistas de desarrollo para estudiar la ubicación
+ de los archivos del sistema y del ambiente de desarrollo.
+ Adicionalmente, es una buena forma de visualizar las capas de un sistema
+ si es que éste mantiene un estilo arquitectónico de capas.
+ Un típico estilo arquitectónico de capas puede contener una capa para la
+ presentación, otra capa de negocios y finalmente una capa de persistencia
+ de datos.
+\end_layout
+
+\begin_layout Subsubsection
+Vista de proceso
+\end_layout
+
+\begin_layout Standard
+La vista de proceso permite describir y estudiar los procesos del sistema
+ y como estos se comunican, si es que estos se comunican unos con otros.
+ Una vista abstracta de los procesos y la comunicación de estos puede ayudar
+ para advertir sobre errores.
+ Esta vista es importante cuando el sistema posee multiples y simultaneos
+ procesos o 
+\emph on
+threads
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+La vista de proceso puede descripta desde varios niveles de abstracción,
+ comenzando desde la ejecución independiente de una rede de comunicación
+ de sistemas.
+ Esta vista tiene en cuenta varios requerimientos no funcionales (atributos
+ de calidad) como 
+\emph on
+performance
+\emph default
+, disponibilidad, etc.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Vista Física
+\end_layout
+
+\begin_layout Standard
+La vista física describe cómo la aplicación se instala y cómo se ejecuta
+ en el una red de computadoras.
+ Esta vista tiene en cuenta requerimientos no funcionales como la disponibilidad
+, escalabilidad y 
+\emph on
+performance
+\emph default
+.
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-Deployment"
+
+\end_inset
+
+ es un diagrama de 
+\emph on
+deployment
+\emph default
+ de un sistema web.
+ Se tiene un nodo por cada usuario que corre el browser en su propia computadora.
+ El sistema y la base de datos poseen sus propios nodos.
+ Los nodos contienen una o mas computadoras.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/DiagramaDeDeployment.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-Deployment"
+
+\end_inset
+
+Diagrama de 
+\emph on
+Deployment
+\emph default
+ 
+\emph on
+Observer-Observable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+La quinta vista
+\end_layout
+
+\begin_layout Standard
+La quinta vista (+ 1) del modelo de vistas 4 + 1 consiste en los casos de
+ uso y escenarios que podían describir con más detalle el resto de las vistas.
+ Los casos de uso representan los aspectos funcionales del sistema.
+ Sin embargo, en el caso del modelo vista 4 + 1, son utilizados para explicar
+ la funcionalidad y las estructuras que describen las otras vistas.
+ De esta forma, la vista de casos de uso consiste en diagramas de casos
+ de uso y de especificaciones detalladas de las acciones y condiciones dentro
+ de cada caso de uso.
 \end_layout
 
 \begin_layout Subsection
 UML - Diagrama de Componentes
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-completar con diagramas de componentes! .............http://www.ibm.com/developerworks/rational
-/library/dec04/bell/
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2545,28 +2972,6 @@ stakeholders
  de abstracción.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-which helps developers begin formalizing a roadmap for the implementation,
- and make decisions about task assignments and/or needed skill enhancements.
- System administrators find component diagrams useful because they get an
- early view of the logical software components that will be running on their
- systems.
- Although system administrators will not be able to identify the physical
- machines or the physical executables from the diagram, a component diagram
- will nevertheless be welcomed because it provides early information about
- the components and their relationships (which allows sys-admins to loosely
- plan ahead).
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Notación
 \end_layout
@@ -2582,7 +2987,41 @@ reference "fig:modelado-visual-componentes"
  se muestra una descripción básica de los diferentes elementos visuales
  que conforman la notación, junto con los conceptos asociados a cada uno
  de ellos.
- La idea principal detrás...
+ En la sección 
+\family typewriter
+a)
+\family default
+ de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:modelado-visual-componentes"
+
+\end_inset
+
+ se muestran distintas formas posibles de modelar un compomente.
+ El a sección 
+\family typewriter
+b)
+\family default
+ se muestran como se modelan las interfaces, 
+\family typewriter
+writeLog
+\family default
+ y 
+\family typewriter
+readLog
+\family default
+ son interface que provee el componente mientras que 
+\family typewriter
+dataSource
+\family default
+ es una interface que requiere.
+ Finalmente, en la sección 
+\family typewriter
+c)
+\family default
+ se muestra cómo se relacionan los componentes.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2625,33 +3064,21 @@ Modelado visual de los componentes en UML
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Conclusion
-\end_layout
-
-\begin_layout Standard
-The component diagram is a very important diagram that architects will often
- create early in a project.
- However, the component diagram's usefulness spans the life of the system.
- Component diagrams are invaluable because they model and document a system's
- architecture.
- Because component diagrams document a system's architecture, the developers
- and the eventual system administrators of the system find this work product-cri
-tical in helping them understand the system.
-\end_layout
-
-\begin_layout Standard
-Component diagrams also serve as input to a software system's deployment
- diagram, which will be the topic of my next article in this series.
- 
-\end_layout
-
-\end_inset
-
-
+El diagrama de componentes es uno de los diagramas más importantes y es
+ uno de los primero que se crean.
+ Estos diagramas son invaluables porque modelan y documentan la arquitectura
+ del sistema.
+ Este tipo de diagrama es muy usado por los 
+\emph on
+stakeholders
+\emph default
+ para poder comprender el sistema.
+ También sirve como entrada para otro tipo de diagrmas como son los diagramas
+ de 
+\emph on
+deployment
+\emph default
+.
 \end_layout
 
 \begin_layout Subsection
@@ -7188,17 +7615,6 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/Utility Component Graph.png
-	width 30theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
 	filename img/GrafoObserverObservable.png
 	width 80text%
 
@@ -7542,7 +7958,8 @@ grado de dependencia que tiene.
  componentes.
  De esta forma es posible detectar componentes agrupando en clusteres aquellas
  clases que tengan una fuerte interacción con sus clases vecinas.
- La figura 
+ La figura\InsetSpace ~
+
 \begin_inset LatexCommand ref
 reference "fig:Grafo-de-dependencias-acoplamiento"
 
@@ -7550,6 +7967,17 @@ reference "fig:Grafo-de-dependencias-acoplamiento"
 
  muestra un grafo de dependencias en el que se pueden distinguir estas propiedad
 es.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+explicar un poco mas la imagen
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7557,17 +7985,6 @@ es.
 wide false
 sideways false
 status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/Coupled components Component Graph.png
-	width 30theight%
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Standard
 \align center
