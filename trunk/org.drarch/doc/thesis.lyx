@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -607,7 +607,7 @@ Todo sistema de software posee una arquitectura de software subyacente.
  Ni siquiera es necesario que existan diagrámas, vistas ó representaciones
  gráficas para poder afirmar que un sistema posee una arquitectura de software.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 [alvaro] Entre las razones de la falta de documentación se encuentran .....
@@ -646,7 +646,7 @@ key "SAIP"
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 [Y] ...
@@ -677,7 +677,7 @@ name "sec:Motivación"
 
 El problema de recuperar la documentación arquitectónica
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 [andres] que los parrafos que siguen hablen del problema especifico
@@ -828,7 +828,7 @@ contar con una buena documentacion es indispensable.
  no son cosas que sean directamente mapeables a código o que puedan ejecutarse.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 [andres] , por ejemplo la dinamica del sistema, bla bla...
@@ -860,19 +860,12 @@ Esta documentación puede ser extraída a partir de información provista por
 \end_layout
 
 \begin_layout Standard
-Algunas soluciones a la Reconstrucción de Arquitecturas se han propuesto
- en 
-\begin_inset LatexCommand cite
-key "BOWMAN99,GALL95,TZERPOS96,Harris1995,Rick2003,GUO99"
-
-\end_inset
-
-.
- En la mayoría, la arquitectura del sistema se extrae principalmente por
- medio del análisis del código fuente.
+En algunas soluciones a la Reconstrucción de Arquitecturas que se han propuesto
+ la arquitectura del sistema se extrae principalmente por medio del análisis
+ del código fuente.
  En otra
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Cuales??' dividirlas en los correspondientes grupos..
@@ -884,7 +877,7 @@ Cuales??' dividirlas en los correspondientes grupos..
 
 s 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 armin o dali?
@@ -892,19 +885,9 @@ armin o dali?
 
 \end_inset
 
-, se utilizan enfoques que reconstruyen patrones de diseño porque esto posibilit
-a 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-...
-\end_layout
-
-\end_inset
-
- pero restringe el análisis a sistemas implementados utilizando patrones
- de diseño.
+, se utilizan enfoques que reconstruyen patrones de diseño porque esto asegura
+ que la reconstrucción se más precisa pero restringe el análisis a sistemas
+ implementados utilizando patrones de diseño.
  Muchos de los enfoques mencionados sólo muestran aspectos estructurales
  como diagramas de componentes o de clases y muy pocos muestran resultados
  que permitan visualizar el comportamiento del sistema de forma simple.
@@ -1368,6 +1351,17 @@ key "SAIP"
  Requiere de la capacidad y de la atención del experto en ingeniería reversa
  y del arquitecto (o alguien con conocimientos sobre la arquitectura del
  sistema).
+ 
+\end_layout
+
+\begin_layout Standard
+La ingeniería de reversa sobre una arquitectura consiste en todas las actividade
+s que hacen que una arquitectura de software sea expícita.
+ Generalmente, el análisis comienza desde el nivel de implementación y se
+ va moviendo hasta que llega el nivel arquitectónico.
+ El objetivo de este proceso es extraer modelos arquitectónicos del sistema
+ desde la implementación.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1375,10 +1369,10 @@ Objetivos
 \end_layout
 
 \begin_layout Standard
-Como objetivo principal del trabajo se propuso reconstruir la arquitectura
- de un sistema de softwar
+Como objetivo principal del trabajo se propuso definir un enfoque flexible
+ para reconstruir arquitecturas de sistemas de softwar
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 hablar del enfoque a utilizar...
@@ -1387,9 +1381,19 @@ hablar del enfoque a utilizar...
 \end_inset
 
 e.
- Para cumplir con este objetivo, el proceso de reconstrucción genera diagramas
- (vistas arquitectónicas) que representan aspectos estructurales y comportamenta
-les del sistema.
+ Para cumplir con este objetivo, el proceso de reconstrucción consiste en
+ recolectar información de distintas fuentes (código fuente, logs de ejecución,
+ experiencia de los expertos del sistema, etc) para consolidarlas en una
+ representación común en la que se pueda relacionar la información de forma
+ sencilla e intuitiva.
+ Esta representación se realiza utilizando programación lógica.
+ Luego, por medio de un mecanismo de consultas, se analiza la información
+ disponible para generar sugerencias al usuario sobre el modelo arquitectónico
+ a reconstruir.
+ Este proceso ser repite con el fin de ir refinando de forma incremental
+ el modelo arquitectónico.
+ El modelo que se va consruyendo se transforma diagramas (vistas arquitectónicas
+) que representan aspectos estructurales y comportamentales del sistema.
 \end_layout
 
 \begin_layout Standard
@@ -1405,24 +1409,22 @@ cas que pueden dificultar la aplicación de un enfoque de esta
 \end_layout
 
 \begin_layout Itemize
-Se debe tener en cuenta en el análisis la información que aporten las personas
- que poseen conocimiento del sistema del cual se quiere obtener una representaci
-ón arquitectónica.
- Así como también aquella información que este basada en la experiencia.
+Los sistemas que utilicen el enfoque para reconstruir se arquitectura deben
+ ser implementados siguiendo el paradigma de programación orientada a objetos.
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-[Y] Solo una?? ?porque dice restricciones??? no hay mas??? no entiendo bien
- la restriccion....
-\end_layout
-
-\end_inset
-
-
+Se debe planificar cuál va a ser la estrategia de reconstrucción en base
+ a un estudio de la información existente (entrevistas con desarrolladores,
+ documentos, etc.) y en base a la semántica que poseen los artefactos arquitectón
+icos.
+ Es decir, se debe definir cuáles son los conceptos arquitectónicos que
+ se desean reconstruir y a que granularidad (sub-sistema, componentes, módulos
+ o clases son algunos ejemplos) ya que cada sistema tiene su propio concepto.
+ Por ejemplo, en determinados sistemas se desea reconstruir componentes
+ que representen eventos mientras que en otros, no es de interes que los
+ eventos esten representados por componentes sino que lo que interesa es
+ que se representen las tareas.
 \end_layout
 
 \begin_layout Section
@@ -1431,10 +1433,10 @@ Organización del trabajo
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] Esto esta todo amontonado.
+[Y] [andres] Esto esta todo amontonado.
  Separar las ideas y comentarios de cada capitulo en sus respectivos parrafos.
  
 \end_layout
@@ -1449,20 +1451,28 @@ reference "cha:Contexto"
 
 \end_inset
 
- se presentan los conceptos de Arquitecturas de Software, Descripciones
- de Arquitecturas, Use Case Maps y la necesidad de la documentación Arquitectóni
-ca, que son las nociones principales en las que está basado nuestro enfoque.
- Una vez introducido el contexto, en el capítulo\InsetSpace ~
+ se presentan los conceptos de Arquitecturas de Software donde se describe
+ su importancia, los estilos arquitectónicos y los atributos de calidad.
+ Luego se introducen las Descripciones de Arquitecturas y se detallan los
+ Diagramas de Componentes, el Modelo de Vistas 4 + 1 y los Use Case Maps.
+\end_layout
+
+\begin_layout Standard
+Una vez introducido el contexto, en el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "cha:Trabajos-relacionados"
 
 \end_inset
 
- se analizan y comparan algunos trabajos relacionados que, de diferentes
- maneras, apuntan a solucionar el problema de falta o inexistencia de documentac
-ión arquitectónica a través de la reconstrucción arquitectónica.
- Luego de este análisis, en el capítulo\InsetSpace ~
+ se analizan y comparan algunos trabajos relacionados que de diferentes
+ maneras apuntan a solucionar el problema de falta o inexistencia de documentaci
+ón arquitectónica a través de la reconstrucción de arqutiecturas.
+ 
+\end_layout
+
+\begin_layout Standard
+Luego de este análisis, en el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "cha:El-enfoque-DRArch"
@@ -1476,7 +1486,11 @@ DRArch
 , detallando cada uno de los pasos que propone para la reconstrucción de
  arquitecturas.
  Para aplicar el enfoque se desarrollo un prototipo de soporte.
- En el capítulo\InsetSpace ~
+ 
+\end_layout
+
+\begin_layout Standard
+En el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "cha:Implementación"
@@ -1484,7 +1498,22 @@ reference "cha:Implementación"
 \end_inset
 
  se presentan su diseño y los aspectos más importantes de su implementación.
- A modo de casos de estudio, se ejercitó la herramienta implementada con
+ A su vez, se realiza un recorrido por la herramienta 
+\emph on
+DRArch
+\emph default
+ mostrando interfaces de usuario, representaciones de los datos, etc.
+\end_layout
+
+\begin_layout Standard
+Más adelante, en el capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Casos-de-Estudio"
+
+\end_inset
+
+, a modo de casos de estudio se ejercitó la herramienta implementada con
  el sistema G2 – una aplicación comercial desarrollada en un proyecto de
  transferencia con la empresa Delsat, S.A.
  – y de 
@@ -1493,15 +1522,11 @@ Market
 \emph default
  – un proyecto de prueba contruido sobre un framework de invocación (nota:
  el proyecto G2 se basa en el mismo framework).
- Más adelante, en el capítulo\InsetSpace ~
+ Luego, se presentan los resultados de estos casos de estudio.
+\end_layout
 
-\begin_inset LatexCommand ref
-reference "cha:Casos-de-Estudio"
-
-\end_inset
-
-, se presentan los resultados de estos casos de estudio.
- Finalmente, en el capítulo\InsetSpace ~
+\begin_layout Standard
+Finalmente, en el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "cha:Conclusiones-y-Trabajos"
@@ -2074,19 +2099,6 @@ Importancia de las arquitecturas de software
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-completar esta seccion
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Desde el punto de vista técnico, las arquitecturas de software toman un
  gran valor.
  Algunas de las razones de la importancia de las arquitecturas de software
@@ -2127,6 +2139,32 @@ La
 \begin_layout Enumerate
 Primeras decisiones de diseño: Las arquitecturas de software son responsables
  de las primeras decisiones de diseño sobre el sistema.
+ Una implementación de un sistema respeta una arquitectura si es que cumplió
+ con la estructura de las decisiones de diseño que se describieron en la
+ arquitectura.
+ Esto quiere decir que la implementación debe poder dividirse en los elementos
+ prescriptos, los elementos deben poder interactuar entre ellos y cada elemento
+ debe complir con las responsabilidades tal como se describió en la arquitectura.
+\newline
+
+La arquitectura no solo prescribe la estructura del sistema si no que también
+ la estructura del proyecto y en algunas ocasiones, la estructura de toda
+ la organización.
+ Por ejemplo, si la arquitectura esta basada en un estilo de capas, se podría
+ asignar una capa por desarrollador o grupo de desarrolladores.
+\newline
+Otra de las
+ decisiones que se plantean en la arquitectura son los requerimientos no
+ funcionales.
+ De esta forma, la arquitectura determina los atributos de calidad del sistema.
+ El la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Atributos-de-Calidad"
+
+\end_inset
+
+ se explica en detalle los atributos de calidad.
 \end_layout
 
 \begin_layout Enumerate
@@ -2134,6 +2172,15 @@ Abstracción transferible de un sistema: Una arquitectura de software constituye
  un modelo en donde se describe cómo un sistema es estructurado y cómo sus
  elementes funcionan juntos.
  Este modelo, se transfiere a lo largo de todo el sistema.
+ Si el re-uso de artefactos ser realiza en una etapa temprana, mayor srá
+ el beneficio.
+ Es decir, si re-usar código es un beneficio, re-usar componentes al nivel
+ arquitectónico prevee enormes beneficios.
+ No sólo es el código se re-usa, también la experiencia en construir arquitectur
+as con componentes que se re-usan de otras.
+ Cuando las decisiones arquitectónicas son re-utilizadas a través de distintos
+ sistemas, todas las consecuencias de las primeras decisiones descriptas
+ en el punto anterior también son transferidas.
 \end_layout
 
 \begin_layout Subsection
@@ -2152,7 +2199,7 @@ Usualmente, los requerimientos que se definen para un sistema no sólo son
  Por ejemplo, un cliente podría especificar un requerimiento que defina
  que cuando se inicie una transacción, el sistema no debe demorar más de
  dos segundo en procesarla.
- Éste escenario es un requerimiento no funcional que pertenece al acategoría
+ Éste escenario es un requerimiento no funcional que pertenece al categoría
  
 \emph on
 performance
@@ -2168,32 +2215,169 @@ performance
 .
  Es importante que los atributos de calidad tengan participación durante
  el diseño del sistema.
- Éstos deberian porder diseñarse y evaluarse a nivel arquitectónico.
+ Éstos deberían poder diseñarse y evaluarse a nivel arquitectónico.
  Si bien la arquitectura del sistema provee las bases para que los atributos
  de calidad se cumplan, esto no es suficiente ya que existen otras dependencias.
  Por ejemplo, la 
 \emph on
 performance
 \emph default
- incluye easpectos arquitectónicos como qué responsabilidad debe ser asignada
+ incluye aspectos arquitectónicos como qué responsabilidad debe ser asignada
  a cada componente y no arquitectónicos como la elección de algoritmos para
- implementar determiada responsabilidad.
+ implementar determinada responsabilidad.
  Los estilos y modelos arquitectónicos se basan principalmente en los atributos
- de cailidad.
+ de calidad.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+A continuación se describen algunos atributos de calidad:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Performance
+\emph default
+: Este atributo de calidad tiene que ver con los tiempos.
+ Los eventos ocurren (interrupciones, mensajes, peticiones de los usuarios
+ o el paso del tiempo) y el sistema debe responder a éstos.
+ Es decir, la 
+\emph on
+performance
+\emph default
+ es responsable en cuánto tiempo tarda al sistema en responder a los eventos
+ que ocurren.
+\end_layout
+
+\begin_layout Itemize
+Modificabilidad: El atributo de calidad modificabilidad se enfoca en el
+ costo que implica realizar un cambio en alguna parte del sistema.
+ Por lo tanto, es necesario identificar qué partes del sistema son las que
+ pueden cambiar y en qué momento (en tiempo de desarrollo, de compilación,
+ de configuración o de ejecución).
+\end_layout
+
+\begin_layout Itemize
+Disponibilidad: Este atributo de calidad esta asociado a las fallas del
+ sistema y las consecuencias que acarrean.
+ Una falla del sistema ocurre cuando el sistema no provee consistentemente
+ un servicio según lo especificado.
+ Por ejemplo, una vez que el sistema falla, es importante saber cuánto tiempo
+ requiere reparar el error.
+\end_layout
+
+\begin_layout Itemize
+Seguridad: La seguridad es una medida del sistema que permite restringir
+ el uso no autorizado de determinados servicios del sistema a los usuarios.
+ Un ataque al sistema es cuando se intenta romper la seguridad de este.
+ Por ejemplo, un usuario no autorizado a editar datos intenta modificarlos.
+\end_layout
+
+\begin_layout Itemize
+Usabilidad: La usabilidad se enfoca en medir que tan fácil es para un usuario
+ realizar una tarea en el sistema.
+ Por ejemplo, si un usuario desea cancelar un pedido, esta actividad no
+ debería pasar por más de dos pantallas.
+\end_layout
+
+\begin_layout Standard
+Los escenarios de los atributos de calidad son un requerimiento específico
+ y consisten en seis partes:
+\end_layout
+
+\begin_layout Enumerate
+Fuente del estimulo: Alguna entidad que genere el estimulo, por ejemplo,
+ un usuario, un sistema o algún otro actor.
+\end_layout
+
+\begin_layout Enumerate
+Estímulo: Es la condición que necesita ser considerada.
+\end_layout
+
+\begin_layout Enumerate
+Ambiente: El estimulo ocurre bajo determinadas condiciones.
+ Por ejemplo, bajo condiciones normales.
+\end_layout
+
+\begin_layout Enumerate
+Artefacto: El artefacto que es estimulado.
+ Podría ser todo el sistema o alguna parte de este.
+\end_layout
+
+\begin_layout Enumerate
+Respuesta: La respuesta es la actividad que se debe tomar luego de que se
+ produzca el estimulo.
+\end_layout
+
+\begin_layout Enumerate
+Medición de la respuesta: Cuando la respuesta ocurre, esta debe ser medida
+ para que el requerimiento pueda ser testeado.
+\end_layout
+
+\begin_layout Standard
+La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Atributos-de-Calidad"
+
+\end_inset
+
+ muestra las seis partes de los escenarios de los atributos calidad.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Standard
-[andres] explicar que son...
- y ejemplificar!
+\align center
+\begin_inset Graphics
+	filename img/AtributosDeCalidad.PNG
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Atributos-de-Calidad"
+
+\end_inset
+
+Partes de los escenarios de los atributos calidad
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un escenario para el atributo de calidad modificabilidad podría ser el siguiente
+:
+\end_layout
+
+\begin_layout Standard
+"Un desarrollador (Fuente del estimulo) desea realizar un cambio el la interfaz
+ de usuario para modificar el color de la pantalla (Estimulo).
+ Este cambio debería realizarse en el código (Artefacto) en tiempo de diseño
+ (Ambiente).
+ Debería llevar menos de 3 horas (Medición de la respuesta) para realizar
+ el cambio y ninguna otra funcionalidad del sistema debería modificarse
+ (Respuesta)."
 \end_layout
 
 \begin_layout Subsection
@@ -2228,7 +2412,7 @@ debe
 \end_layout
 
 \begin_layout Standard
-Como se mencionó anteriormente, uno de los principales propósitos las arqutiectu
+Como se mencionó anteriormente, uno de los principales propósitos las arquitectu
 ras de software es que sirven como medio de comunicación entre los distintos
  
 \emph on
@@ -2237,9 +2421,13 @@ stakeholders.
 \emph default
 Su documentación facilita esta comunicación.
  Por ejemplo, los desarrolladores utilizan la documentación para capturar
- restricciones (o algunas libretades) durante la implementación del sistema.
- Por otro lado, managers utilizan esta misma documentación para crear equipos
- de trabajo y asignarlos a los diferentes módulos que describe la arquitectura.
+ restricciones (o algunas libertades) durante la implementación del sistema.
+ Por otro lado, 
+\emph on
+managers
+\emph default
+ utilizan esta misma documentación para crear equipos de trabajo y asignarlos
+ a los diferentes módulos que describe la arquitectura.
 \end_layout
 
 \begin_layout Standard
@@ -2403,7 +2591,7 @@ Otra información.
 Documentación\InsetSpace ~
 de\InsetSpace ~
 comportamiento.
- Las vistas convencionales de representacion arquitectónica presentan 
+ Las vistas convencionales de representación arquitectónica presentan 
 \emph on
 información estructural
 \emph default
@@ -2526,21 +2714,21 @@ Ref ...Kruchten
 \begin_layout Standard
 Cada una de las cinco vistas del modelo 4 + 1 describen distintos aspectos
  del sistema mientras que intencionalmente ocultan otros.
- El propósito principal de este modelo es que define una exelente forma
+ El propósito principal de este modelo es que define una excelente forma
  en que los 
 \emph on
 stakeholders
 \emph default
- comprendan la arqutiectura del sistema.
+ comprendan la arquitectura del sistema.
  Los arquitectos utilizan este modelo para entender y documentar varias
- capas de una aplicación de forma sistemática y estandar.
+ capas de una aplicación de forma sistemática y estándar.
  Los documentos creados por el modelo son fácilmente utilizados por todos
  los miembros del equipo de desarrollo.
 \end_layout
 
 \begin_layout Standard
-Las cuatro primeras vistas de modelo representan aspectos lógicos, de preocesami
-ento, físicos y de desarrollo de una arquitectura.
+Las cuatro primeras vistas de modelo representan aspectos lógicos, de procesamie
+nto, físicos y de desarrollo de una arquitectura.
  La quinta vista consiste en los casos de uso y los escenarios que podrían
  describir con más detalle el resto de las vistas.
  La figura\InsetSpace ~
@@ -2594,7 +2782,7 @@ Esquema Modelo de Vistas 4 + 1
 \end_layout
 
 \begin_layout Standard
-A continuación se describen las distintas vistas que porpone el modelo de
+A continuación se describen las distintas vistas que propone el modelo de
  vistas 4 + 1.
 \end_layout
 
@@ -2604,20 +2792,20 @@ Vista Lógica
 
 \begin_layout Standard
 La vista lógica del modelo soporta requerimientos de comportamiento y muestra
- cómo el sistema esta distribuído en un conjunto de abstracciones.
+ cómo el sistema esta distribuido en un conjunto de abstracciones.
  Las clases y los objetos son los elementos mas estudiados por esta vista.
- Se pueden utilizar diagramas de clase, de colaboración y de secuancia,
+ Se pueden utilizar diagramas de clase, de colaboración y de secuencia,
  entre otros, para mostrar las relaciones entre los elementos.
  Los diagramas de clases muestran clases y sus atributos, métodos y asociaciones
  con otras clases del sistema.
 \end_layout
 
 \begin_layout Standard
-Los diagramas de clases muestran una "imágen" completa del sistema.
+Los diagramas de clases muestran una "imagen" completa del sistema.
  Por un lado, los diagramas de clase son estáticos, por lo tanto, no dicen
  nada sobre el sistema reacciona a los eventos de los usuarios.
  Por otro lado, estos diagramas son demasiado detallados como para ofrecer
- una idea general de la arquitectura de todo el sitema.
+ una idea general de la arquitectura de todo el sistema.
  
 \end_layout
 
@@ -2708,8 +2896,8 @@ Observer-Observable
 \end_layout
 
 \begin_layout Standard
-Los diagramas de colaboración (o de comunicación) y de secuancia muestran
- cómo interactuan los objetos del sistema.
+Los diagramas de colaboración (o de comunicación) y de secuencia muestran
+ cómo interactúan los objetos del sistema.
  Un diagrama de colaboración es una forma simple de mostrar los objetos
  del sistema y los mensajes y llamadas que pasan entre ellos.
  La figura\InsetSpace ~
@@ -2723,7 +2911,7 @@ reference "fig:Diagrama-de-Colaboración"
  a un número que indica el orden de la secuencia.
  Estos diagramas son muy prácticos para mostrar como los objetos colaboran
  en el sistema.
- Si se desa mostrar más detalles sobre la lógica del sistema, un diagrama
+ Si se desea mostrar más detalles sobre la lógica del sistema, un diagrama
  de secuencias seria ideal (ver figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -2762,7 +2950,7 @@ Vista de Desarrollo
 
 \begin_layout Standard
 La vista de desarrollo es usada para describir los módulos del sistema.
- Los módulos más bloques más grandes que las clases y los objetos y varian
+ Los módulos más bloques más grandes que las clases y los objetos y varían
  de acuerdo al ambiente de desarrollo.
  Los paquetes, sub-sistemas y las bibliotecas son considerados módulos.
  La figura\InsetSpace ~
@@ -2835,7 +3023,7 @@ La vista de proceso permite describir y estudiar los procesos del sistema
  y como estos se comunican, si es que estos se comunican unos con otros.
  Una vista abstracta de los procesos y la comunicación de estos puede ayudar
  para advertir sobre errores.
- Esta vista es importante cuando el sistema posee multiples y simultaneos
+ Esta vista es importante cuando el sistema posee múltiples y simultáneos
  procesos o 
 \emph on
 threads
@@ -2845,7 +3033,7 @@ threads
 
 \begin_layout Standard
 La vista de proceso puede descripta desde varios niveles de abstracción,
- comenzando desde la ejecución independiente de una rede de comunicación
+ comenzando desde la ejecución independiente de una red de comunicación
  de sistemas.
  Esta vista tiene en cuenta varios requerimientos no funcionales (atributos
  de calidad) como 
@@ -2881,7 +3069,11 @@ reference "fig:Diagrama-de-Deployment"
 deployment
 \emph default
  de un sistema web.
- Se tiene un nodo por cada usuario que corre el browser en su propia computadora.
+ Se tiene un nodo por cada usuario que corre el 
+\emph on
+browser
+\emph default
+ en su propia computadora.
  El sistema y la base de datos poseen sus propios nodos.
  Los nodos contienen una o mas computadoras.
 \end_layout
@@ -2896,7 +3088,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/DiagramaDeDeployment.png
-	width 60text%
+	width 30text%
 
 \end_inset
 
@@ -2998,7 +3190,7 @@ reference "fig:modelado-visual-componentes"
 
 \end_inset
 
- se muestran distintas formas posibles de modelar un compomente.
+ se muestran distintas formas posibles de modelar un componente.
  El a sección 
 \family typewriter
 b)
@@ -3011,11 +3203,11 @@ writeLog
 \family typewriter
 readLog
 \family default
- son interface que provee el componente mientras que 
+ son interfaces que provee el componente mientras que 
 \family typewriter
 dataSource
 \family default
- es una interface que requiere.
+ es una interfaz que requiere.
  Finalmente, en la sección 
 \family typewriter
 c)
@@ -6126,11 +6318,7 @@ La hipótesis de esta tesis esta fundamentada en la utilización del conocimient
  de los patrontes arquitectónicos para la reconstrucción de los diferentes
  componentes de un sistema.
  Para esto, asumimos que los sistemas a reconstruir estén implementados
- con el paradigma 
-\emph on
-Object-Oriented
-\emph default
-.
+ con el paradigma de programación orientada a objetos.
 \end_layout
 
 \begin_layout Standard
