@@ -344,9 +344,10 @@ DRArch
 Use-Case Maps
 \emph default
  (UCMs).
- La mayoría de la información relevante proviene del código fuente, del
- log de ejecución del sistema, de la experiencia del arquitecto y del conocimien
-to de las personas que desarrollaron el sistema.
+ La mayoría de la información relevante proviene del código fuente (información
+ estática), del log de ejecución del sistema (información dinámica), de
+ la experiencia del arquitecto y del conocimiento de las personas que desarrolla
+ron el sistema.
  Los UCMs son una notación práctica para especificar tanto componentes como
  flujos de responsabilidades.
  
@@ -379,15 +380,26 @@ sigue un proceso en el cuál el arquitecto interactúa sobre pequeñas decisione
 \end_layout
 
 \begin_layout Standard
-[Resultados de los experimentos]
+Con el objetivo de afirmar las supocisiones del enfoque, se realizaron experimen
+tos con distintos casos de estudio.
+ Éstos mostraron resultados positivos en cuanto a la cantidad de artefactos
+ arquitectónicos que deben ser reconstruídos teniendo en cuenta la documentación
+ original de cada caso.
+ A su vez, los mismos casos de estudio fueron reconstruídos por una herramienta
+ distinta (Structure 101) para realizar comparaciones y demostrar cuáles
+ son los beneficios del enfoque 
+\emph on
+DRArch
+\emph default
+ en comparación con otros enfoques existentes.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres]
+[Y] [andres]
 \end_layout
 
 \begin_layout Standard
@@ -402,10 +414,10 @@ agregar una linea con informacion resumida de: - Uds realizaron experimentos
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-Agregar parte del resultado de las experiencias ..
+[Y]Agregar parte del resultado de las experiencias ..
  es decir, que en base a experiencias a demostrado su ...
 \end_layout
 
@@ -5082,16 +5094,15 @@ Resumen de características principales
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide true
-sideways false
-status open
+A continuación se muestra una tabla con las principales características
+ de los distintos enfoques.
+\end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="7">
-<features rotate="true">
+<features islongtable="true">
 <column alignment="center" valignment="middle" leftline="true" width="12text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
 <column alignment="center" valignment="middle" leftline="true" width="10text%">
@@ -5099,7 +5110,7 @@ status open
 <column alignment="center" valignment="middle" leftline="true" width="11text%">
 <column alignment="center" valignment="middle" leftline="true" rightline="true" width="15text%">
 <column alignment="center" valignment="middle" rightline="true" width="13text%">
-<row topline="true" bottomline="true" endhead="true">
+<row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -5602,7 +5613,7 @@ Estructura.
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row topline="true" endhead="true" endfirsthead="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -5934,29 +5945,6 @@ Estructura
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "tab:Características-principales-de"
-
-\end_inset
-
-Características principales de los distintos enfoques
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -11763,7 +11751,7 @@ Por otro lado, la documentación original de los sistemas que se utilizaron
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 2- Los casos de estudio, como estan presentados, no muestran mucha informacion
@@ -12331,6 +12319,8 @@ ge\SpecialChar \-
 ren\SpecialChar \-
 cias y es el arquitecto que debe corroborar
  este tipo de supuestos, aceptando o rechazando cada sugerencia.
+ En este tipo de sugerencias es donde la herramienta presenta una de sus
+ limitaciones ya que la sugerencia presenta una gran ambiguedad.
 \end_layout
 
 \begin_layout Itemize
@@ -12339,6 +12329,42 @@ del\InsetSpace ~
 agente: Como dijimos anteriormente, los agentes representan
  entidades del sistema, y este conjunto de reglas intenta descubrir el conjunto
  de clases que se materializan con un componente agente.
+\end_layout
+
+\begin_layout Itemize
+Relaciones: Estas relaciones fueron un poco difíciles de reconstruir ya
+ que la información que se utilizó fue la que generó el log de ejecución.
+ De esta forma, se intentó crear una asociación entre un componente tarea
+ y un evento cuando dentro de la ejecución del método 
+\family typewriter
+run
+\family default
+ de la tarea se ejecuta la siguiente linea de código:
+\newline
+
+\family typewriter
+EventManager.publishEvent(anEvent);
+\family default
+ 
+\newline
+Donde la clase 
+\family typewriter
+anEvent
+\family default
+ es el nombre del componente evento que debe ser asociado.
+ Para saber cuál es el nombre de la clase 
+\family typewriter
+anEvent
+\family default
+ en tiempo de ejecución, se utilizan hechos como 
+\family typewriter
+invocationMethod
+\family default
+ y 
+\family typewriter
+snapshot
+\family default
+ dentro de la consulta que compone la regla.
 \end_layout
 
 \begin_layout Standard
@@ -12524,11 +12550,41 @@ ción del framework Bubble para el dominio del Market.
 path
 \emph default
  de ejecución que recorra las responsabilidades de cada componente reconstruido.
+ A continuación se muestra en detalle una de las consultas que se utilizó
+ para obtener el 
+\emph on
+path
+\emph default
+ de ejecución:
+\end_layout
+
+\begin_layout Quote
+
+\family typewriter
+\size small
+executedMothod(?Order, ?Method, ?Type, ?Value), 
+\newline
+child(?Class, ?Method),
+ 
+\newline
+materialization(?Component, ?Package, ?Class), 
+\newline
+component(?Component), 
+\newline
+responsib
+ility(?Responsibility),
+\newline
+hasResponsibility(?Component, ?Responsibility),
+\newline
+name(?Meth
+od, ?Responsibility)
 \end_layout
 
 \begin_layout Standard
-El resultado obtenido luego de la ejecución de esta fase se muestra en la
- Figura\InsetSpace ~
+Esta consulta retorna una lista de las responsabilidades ejecutadas respetando
+ orden de ejecución.
+ El resultado obtenido luego de la ejecución de esta fase se muestra en
+ la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Resultado-de-la-fase-de-instanciacion-market"
