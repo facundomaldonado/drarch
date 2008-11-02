@@ -14,7 +14,7 @@
 \font_sf_scale 100
 \font_tt_scale 100
 \graphics default
-\float_placement h
+\float_placement H
 \paperfontsize default
 \spacing single
 \papersize a4paper
@@ -34,7 +34,7 @@
 \defskip medskip
 \quotes_language swedish
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
@@ -5142,6 +5142,12 @@ Ejemplo Structure 101
 
 \end_layout
 
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
 \begin_layout Section
 Resumen de características principales
 \end_layout
@@ -5156,7 +5162,7 @@ A continuación se muestra una tabla con las principales características
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="7">
 <features islongtable="true">
-<column alignment="center" valignment="middle" leftline="true" width="12text%">
+<column alignment="center" valignment="top" leftline="true" width="12text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
 <column alignment="center" valignment="middle" leftline="true" width="10text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
@@ -6082,7 +6088,7 @@ ra recuperada.
  bajo ciertos escenarios de ejecución).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -10801,6 +10807,19 @@ QueryEngine
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+corregir esta imgen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -14620,6 +14639,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bubbleStructure101.png
+	width 50text%
 
 \end_inset
 
@@ -14658,6 +14678,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bubble_core_structure101.png
+	width 100text%
 
 \end_inset
 
@@ -14719,6 +14740,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bubble.examples.marketDSMStructure101.png
+	width 100text%
 
 \end_inset
 
@@ -14813,7 +14835,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/G2_structure101.png
-	width 60text%
+	width 100text%
 
 \end_inset
 
