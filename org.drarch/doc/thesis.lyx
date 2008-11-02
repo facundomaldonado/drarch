@@ -4036,8 +4036,13 @@ reference "fig:PBS-Example."
 
 \end_inset
 
- muestra un "paisaje" de un sistema ejemplo [referencia a la pagina : http://swa
-g.uwaterloo.ca/pbs/examples/C488/V1/index.html].
+ muestra un "paisaje" de un sistema ejemplo 
+\begin_inset LatexCommand cite
+key "PBS_web"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4047,8 +4052,10 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename img/PBS_Example.png
+	width 70text%
 
 \end_inset
 
@@ -4193,8 +4200,10 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename img/RIGI_sample.png
+	width 70text%
 
 \end_inset
 
@@ -4281,8 +4290,10 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename img/SHriMP_sample.png
+	width 70text%
 
 \end_inset
 
@@ -4445,6 +4456,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/dali workbech.PNG
+	width 60text%
 
 \end_inset
 
@@ -4465,10 +4477,6 @@ Arquitectura Dali
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -4678,8 +4686,10 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename img/discotectExample.PNG
+	width 60text%
 
 \end_inset
 
@@ -4762,8 +4772,8 @@ key "MEDVIDOVIC06"
  clases Java.
  Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
  parcialmente en base a la inspección de código fuente.
- La Figura MMMASMDMMAD ilustra las principales actividades ordenadas parcialment
-e realizadas por Focus para recuperar una arquitectura.
+ La Figura ilustra las principales actividades ordenadas parcialmente realizadas
+ por Focus para recuperar una arquitectura.
  El enfoque es interesante para propagar cambios desde la implementación
  hacia la arquitectura.
  La virtud principal, radica en reﬁnar progresivamente la vista arquitectónica
@@ -4773,6 +4783,50 @@ a íntegramente con un único análisis exhaustivo.
  las abstracciones deben ser realizadas por el usuario) y nuevamente, la
  falta de soporte para aspectos comportamentales de la arquitectura como
  es el caso de las representaciones UCM.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ejemplo_Focus.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplofocus"
+
+\end_inset
+
+Actividades principales del proceso de recuperación de arquitecturas de
+ Focus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -4880,8 +4934,10 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename img/KAEScreenshot.PNG
+	width 60text%
 
 \end_inset
 
@@ -4992,9 +5048,10 @@ sideways false
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename img/antExample.png
-	width 50text%
+	width 70text%
 
 \end_inset
 
@@ -5060,7 +5117,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/structure101_sample.png
-	width 50text%
+	width 65text%
 
 \end_inset
 
