@@ -5479,7 +5479,7 @@ Estructura.
 \end_inset
 </cell>
 </row>
-<row topline="true" newpage="true">
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -5613,7 +5613,7 @@ Estructura.
 \end_inset
 </cell>
 </row>
-<row topline="true" endhead="true" endfirsthead="true">
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
