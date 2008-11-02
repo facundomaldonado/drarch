@@ -4308,86 +4308,35 @@ Mitre
 \end_layout
 
 \begin_layout Standard
-Mitre es un 
-\emph on
-framework
-\emph default
- pensado para la reconstrucción de arquitecturas que soporta tanto un enfoque
- 
-\emph on
-bottom-up
-\emph default
- como 
-\emph on
-top-down
-\emph default
- 
-\begin_inset LatexCommand cite
-key "Harris1995"
-
-\end_inset
-
-.
- El 
-\emph on
-framework
-\emph default
- consiste de tres componentes: una representación arquitectónica, un motor
- de consultas sobre el código fuente y la capacidad de ofrecer una vista
- del sistema de alto nivel.
- El enfoque 
-\emph on
-bottom-up
-\emph default
- usa la vista de alto nivel para mostrar la estructura de archivos y componentes
- del sistema y a partir de ahí permite ir organizando la información en
- 
-\emph on
-clusters
-\emph default
- más significativos.
- El análisis 
-\emph on
-top-down
-\emph default
- comienza desde un estilo arquitectónico particular definiendo los componentes
- que luego tendrán que ser reconocidos en el software.
- Consultas de reconocimientos son ejecutadas para determinar si los componentes
- esperados existen en el código fuente.
- Este enfoque esta basado en un motor de consultas que es independiente
- del lenguaje de implementación del sistema.
- Las consultas se realizan sobre un árbol de análisis sintáctico (AST) el
- cual es construido luego de parsear el código fuente.
-\end_layout
-
-\begin_layout Paragraph
-Dali 
-\end_layout
-
-\begin_layout Standard
-Dali es una colección de he\SpecialChar \-
-rra\SpecialChar \-
-mien\SpecialChar \-
-tas en la forma de workbench.
- Entre estas he\SpecialChar \-
-rra\SpecialChar \-
-mien\SpecialChar \-
-tas se destacan Rigi y PostgreSQL como repositorio
- de la aplicación.
- Rigi provee la manipulación y visualización de las vistas generadas y la
- extensión que aporta Dali a Rigi provee la habilidad de definir y aplicar
- patrones de consultas sobre los datos para generar vistas arquitectónicas
- del sistema.
- La información es extraída del código fuente utilizando una he\SpecialChar \-
-rra\SpecialChar \-
-mien\SpecialChar \-
-ta
- de análisis y luego cargadas en Dali.
- Esta información es almacenada en la base de datos PostgreSQL y visualizada
- en Rigi.
- Las consultas son escritas en combinación de SQL y Perl con el propósito
- de generar abstracciones de la información.
- 
+ManSart (MITRE Software Architecture Recovery Tool.
+ ManSART reconoce caracteristicas arquitectónicas en el código fuente mediante
+ el uso de una libreria de "reconocedores".
+ Características arquitectónicas se consideran aquellas partes que constituyen
+ los estilos arquitectónicos que a su vez definen los principios organizacionale
+s que guían a los programadores en el desarrollo de código.
+ Ejemplos de estilos arquitectónicos son "task spawning", pipe and filter,
+ tipos abstractos de datos y repositorios.
+ (re escribir) ManSART esta construido en base a mecanismos de análisis
+ de código fuente.
+ El proceso de reconstrucción pasa secuencialmente por tres etapas: reconocimien
+to, manipulación y presentación.
+ Al comenzar el análisis se genera un conjunto de vistas iniciales del sistema.
+ Despues de parsear el código llevandolo a una representación arbol de análisis
+ sintáctico (AST), los "reconocedores" detectan las características arquitectóni
+cas llevandolas a vistas que corresponden a varios estilos arquitectónicos.
+ Estos reconocedores usan tres niveles de representacion: AST, reconocimiento
+ de caracteristicas y reconocimiento de estilos arquitectónicos.
+ El primero se usa como base de los demas.
+ El segundo, se basa en un conjunto de patrones que emplean modelos específicos
+ del lenguaje y del sistema operativo para reconocer porciones de código
+ que forman partes de implementaciones de estilos arquitectónicos.
+ Este nivel de reconocimiento se hace sobre AST y abstracciones de los flujos
+ de datos y de control.
+ Por ultimo, el nivel de reconocimiento de estilos arquitectónicos agrupa
+ aquellas características reconocidas en el nivel anterior para reconocer
+ un estilo arquitectónico.
+ La herramienta tiene una poderosa interfaz gráfica que permite la edicion
+ y manipulación manual de las vistas generadas.
 \end_layout
 
 \begin_layout Paragraph
@@ -4395,7 +4344,7 @@ AMR (
 \emph on
 Architecture Reconstruction Method
 \emph default
-) 
+) - Dali 
 \end_layout
 
 \begin_layout Standard
@@ -4436,46 +4385,134 @@ El mecanismo es simple, reglas que definen patrones son transformadas en
  la detección de patrones.
 \end_layout
 
+\begin_layout Standard
+Dali es la herramienta desarrollada para ejercitar el metodo descripto anteriorm
+ente.
+ Es una colección de he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+tas en la forma de workbench.
+ Entre estas he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+tas se destacan Rigi y PostgreSQL como repositorio
+ de la aplicación.
+ Rigi provee la manipulación y visualización de las vistas generadas y la
+ extensión que aporta Dali a Rigi provee la habilidad de definir y aplicar
+ patrones de consultas sobre los datos para generar vistas arquitectónicas
+ del sistema.
+ La información es extraída del código fuente utilizando una he\SpecialChar \-
+rra\SpecialChar \-
+mien\SpecialChar \-
+ta
+ de análisis y luego cargadas en Dali.
+ Esta información es almacenada en la base de datos PostgreSQL y visualizada
+ en Rigi.
+ Las consultas son escritas en combinación de SQL y Perl con el propósito
+ de generar abstracciones de la información.
+ 
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Arquitectura Dali"
+
+\end_inset
+
+ muestra como es la arquitectura de Dali.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/dali workbech.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Arquitectura Dali"
+
+\end_inset
+
+Arquitectura Dali
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Riva 
 \end_layout
 
 \begin_layout Standard
-Riva provee un enfoque basado en extraer información del código fuente,
- cargar dicha información en una base Prolog, y usar hechos Prolog para
- construir abstracciones de esa información y visualizar esas abstracciones
- usando Rigi 
+Claudio Riva y Yang Yaojin desarrollaron un proceso de reconstrucción de
+ arquitecturas y apoyado por varias herramientas y lenguajes (Rigi, scripts
+ Perl, Prolog).
+ El proceso consta de cuatro pasos, que se aplican iterativamente con el
+ fin de extraer vistas cada vez más centradas en la arquitectura de un sistema.
+ Los cuatro pasos son: 
+\end_layout
+
+\begin_layout Standard
+1.
+ Definición de conceptos importantes de arquitectura basandose en la documentaci
+ón y en el conocimiento de los desarrolladores.
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ Recopilación de datos, en la que un modelo del sistema es construido en
+ términos de los conceptos definidos en el paso 1.
+ 
+\end_layout
+
+\begin_layout Standard
+3.
+ Abstracción, en la que el modelo es enriquecido con abstracciones (espec'ificas
+ del dominio) que conducen a una vista de mas alto nivel del sistema.
+\end_layout
+
+\begin_layout Standard
+4.
+ Presentación de la arquitectura reconstruida en varios formatos, como gráficos,
+ diagramas UML, y graficos de secuencia de mensajes, teniendo en cuenta
+ la vista arquitect'onica necesaria (lógica, de procesos, física, de desarrollo).
+ La extracción del modelo desde el código fuente es apoyado por analizadores
+ de código fuente.
+ Las abstracciones se calculan utilizando reglas Prolog.
+ La presentación de los resultados se realiza a través de Rigi 
 \begin_inset LatexCommand cite
 key "Riva2000"
 
 \end_inset
 
 .
- El proceso que Riva describe consiste de seis fases: 
-\end_layout
-
-\begin_layout Enumerate
-Desarrollar una descripción a alto nivel de la arquitectura; 
-\end_layout
-
-\begin_layout Enumerate
-Extraer información del código fuente; 
-\end_layout
-
-\begin_layout Enumerate
-Abstraer para generar un modelo arquitectónico; 
-\end_layout
-
-\begin_layout Enumerate
-Reglamentación del sistema; 
-\end_layout
-
-\begin_layout Enumerate
-Analizar el sistema y crear un plan de mejoras; y 
-\end_layout
-
-\begin_layout Enumerate
-Reorganizar la arquitectura.
 \end_layout
 
 \begin_layout Paragraph
@@ -4610,6 +4647,53 @@ pipe-and-ﬁlter
  La herramienta todavía necesita ser evaluada con estilos arquitectónicos
  más complejos, donde los mapeos a código no son necesariamente directos.
  
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Ejemplo-DiscoTect"
+
+\end_inset
+
+ muetra un ejemplo de arquitectura recuperada con DiscoTect.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/discotectExample.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-DiscoTect"
+
+\end_inset
+
+Ejemplo DiscoTect
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -4768,13 +4852,64 @@ es).
 \end_layout
 
 \begin_layout Standard
-Aunque éste es uno de los pocos enfoques que trabaja con las especiﬁcaciones
- UCM, se realizan demasiadas tareas manuales y otras tantas aplicando simpliﬁcac
-iones gruesas, que introducen errores extra, como es el caso de suponer
- que existe una división de componentes que coincide perfectamente con la
- estructura jerárquica de paquetes del proyecto, o crear trayectorias UCM
- en base al análisis estático del código, cuando en realidad la especiﬁcación
- es inherentemente comportamental.
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Ejemplo-KAE"
+
+\end_inset
+
+ es un ejemplo de un UCM recuperado con KAE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/KAEScreenshot.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Ejemplo-KAE"
+
+\end_inset
+
+Ejemplo KAE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aunque éste es uno de los pocos enfoques que apunda a recontruir aspectos
+ de comportamiento, se realizan demasiadas tareas manuales y otras tantas
+ aplicando simpliﬁcaciones gruesas, que introducen errores extra, como es
+ el caso de suponer que existe una división de componentes que coincide
+ perfectamente con la estructura jerárquica de paquetes del proyecto, o
+ crear trayectorias UCM en base al análisis estático del código, cuando
+ en realidad la especiﬁcación es inherentemente comportamental.
  Además, es el usuario quien determina en todo momento cuáles son las responsabi
 lidades y las trayectorias de los distintos escenarios, limitando considerableme
 nte la extracción de información.
@@ -4955,16 +5090,15 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="8">
+<lyxtabular version="3" rows="12" columns="7">
 <features rotate="true">
+<column alignment="center" valignment="middle" leftline="true" width="12text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
+<column alignment="center" valignment="middle" leftline="true" width="10text%">
 <column alignment="center" valignment="middle" leftline="true" width="15text%">
-<column alignment="center" valignment="middle" leftline="true" width="15text%">
-<column alignment="center" valignment="middle" leftline="true" width="16text%">
-<column alignment="center" valignment="middle" leftline="true" width="15text%">
+<column alignment="center" valignment="middle" leftline="true" width="11text%">
 <column alignment="center" valignment="middle" leftline="true" rightline="true" width="15text%">
-<column alignment="center" valignment="middle" rightline="true" width="15text%">
-<column alignment="center" valignment="middle" rightline="true" width="15text%">
+<column alignment="center" valignment="middle" rightline="true" width="13text%">
 <row topline="true" bottomline="true" endhead="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -5055,22 +5189,6 @@ Lenguaje arquitectónico
 \begin_inset Text
 
 \begin_layout Standard
-\align center
-
-\series bold
-Herramientas Integradas
-\end_layout
-
-\begin_layout Standard
-(no hay que realizar tareas manuales de inegración)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 
 \series bold
 Soporte para varias fuentes de datos
@@ -5132,16 +5250,6 @@ estático
 
 \begin_layout Standard
 --
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-No.
- Necesita extractores de hechos de código fuente y herramientas de visualización.
 \end_layout
 
 \end_inset
@@ -5215,15 +5323,6 @@ estático (dinamico, si se carga la información de trazas en formato RSF)
 \begin_inset Text
 
 \begin_layout Standard
-Si
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 Si, se cargan manualmente en formato RSF.
 \end_layout
 
@@ -5281,15 +5380,6 @@ No hace análisis es una herramienta de visualización.
 
 \begin_layout Standard
 "boxes and lines"
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Solo de visualización.
 \end_layout
 
 \end_inset
@@ -5363,15 +5453,6 @@ UML
 \begin_inset Text
 
 \begin_layout Standard
-Si
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 No
 \end_layout
 
@@ -5429,16 +5510,6 @@ estático
 
 \begin_layout Standard
 --
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-No.
- Se utiliza una herramienta de extracción y Rigi para la visualización.
 \end_layout
 
 \end_inset
@@ -5506,15 +5577,6 @@ estático
 
 \begin_layout Standard
 --
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Si
 \end_layout
 
 \end_inset
@@ -5594,15 +5656,6 @@ ACME
 \begin_inset Text
 
 \begin_layout Standard
-Si
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 No
 \end_layout
 
@@ -5669,15 +5722,6 @@ UML
 \begin_inset Text
 
 \begin_layout Standard
-Si
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 No
 \end_layout
 
@@ -5725,7 +5769,8 @@ Incremental
 \begin_inset Text
 
 \begin_layout Standard
-estático
+estático (informaci'on de como se comporta el sistema es realizado mediante
+ entrevistas - subjetivo)
 \end_layout
 
 \end_inset
@@ -5743,15 +5788,6 @@ UML-UCM
 \begin_inset Text
 
 \begin_layout Standard
-Si
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 No
 \end_layout
 
@@ -5761,7 +5797,7 @@ No
 \begin_inset Text
 
 \begin_layout Standard
-Comportamiento.
+Estructura/Comportamiento.
 \end_layout
 
 \end_inset
@@ -5809,15 +5845,6 @@ estático
 
 \begin_layout Standard
 DSM
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Si
 \end_layout
 
 \end_inset
@@ -5883,15 +5910,6 @@ estático
 
 \begin_layout Standard
 Dependency Graphs-DSM
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Si
 \end_layout
 
 \end_inset
@@ -5968,17 +5986,13 @@ Tipo de Analisis de la implementacíon (Estático/Dinámico): Si se consideran
  el tipo de análisis es estático.
  Si por el contrario se consideran las trazas de ejecución, recolectadas
  con el sistema en ejecución, el análisis es dinámico.
+ Como se ve, esta caracter'istica est'a fuertemente relacionada con el tipo
+ de entrada que la herramienta/enfoque considera.
 \end_layout
 
 \begin_layout Itemize
 Lenguaje arquitectónico: Lenguaje arquitectónico de las vistas generadas.
  Ejemplos son UML, UCMs, DSM etc.
-\end_layout
-
-\begin_layout Itemize
-Herramientas integradas: La herramienta analizada dispone de todo lo necesario
- para hacer una reconstrucción o hay que realizar tareas con otras herramientas
- para luego combinar los resultados?
 \end_layout
 
 \begin_layout Itemize
