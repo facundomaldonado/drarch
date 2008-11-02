@@ -2718,12 +2718,8 @@ El modelo de vistas 4 + 1 propone separar el sistema en cuatro vistas esenciales
  Luego, para contribuir con las mediciones, presenta una vista más: la de
  casos de uso que permite describir aspectos funcionales del sistema entero
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Ref ...Kruchten
-\end_layout
+\begin_inset LatexCommand cite
+key "Kruchten1995"
 
 \end_inset
 
@@ -9610,11 +9606,11 @@ name "sec:Arquitectura"
 
 Arquitectura
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-tendrian que tener una seccion donde explican las decisiones de diseño para
- cada subcomponente..
+[Y] tendrian que tener una seccion donde explican las decisiones de diseño
+ para cada subcomponente..
 \end_layout
 
 \end_inset
@@ -9878,6 +9874,79 @@ Diagrama de paquetes.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Decisiones de diseño
+\end_layout
+
+\begin_layout Standard
+En esta sección se describen algunas de las principales decisiones de diseño
+ tomadas para cada componente de la arqutiectura del 
+\emph on
+DRArch
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Para el componente Query Engine se utilizó el motor de consultas que provee
+ el plug-in 
+\emph on
+JQuery.
+
+\emph default
+ Principalmente, por ofrecer un lenguaje de programación lógica fácilmente
+ manipulado desde una API en Java.
+\end_layout
+
+\begin_layout Standard
+En el componente Rule Model, en donde es necesario persistir, visualizar
+ y editar de forma gráfica y amigable el modelo, se eligió para su implementació
+n el framework EMF de Eclipse.
+ EMF es un framework de modelado y generación de código para generar aplicacione
+s basadas en un modelo de datos estructurado.
+\end_layout
+
+\begin_layout Standard
+En diseño del componente Phase Engine con el fin de dar soporte a distintos
+ tipos de fases, se utilizó una clase abstracta para representar una face.
+ Luego, los ditintos tipos de fase pueden extender de la clase abstracta.
+ Pirncipalmente se detectaron dos tipos de fases: Interactivas y No Interactivas
+ (acepta automáticamente todas las sugerencias).
+ Para orquestar la lógica del motor de fases, se utilizó una entidad 
+\family typewriter
+PhaseManager
+\family default
+ responsable de coordinar y dirigir el estado de cada fase.
+ En este componente se incluye la generación y modelado de diagramas.
+ Esto es realizado por 
+\emph on
+Flabot 
+\emph default
+ya que posee unos editores gráficos para diagramas de Componentes y de UCMs
+ y expone un modelo fácilmente manejable.
+ De esta forma, se traduce la información reprecentada en hechos 
+\emph on
+Prolog
+\emph default
+, al modelo 
+\emph on
+FLAbot
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Por último, para el componente Trace Log Analizer, se decidió utilizar el
+ 
+\emph on
+Flabot
+\emph default
+ como herramienta de instrumetación de código ya que la instrumentación
+ no es intrusiva (no es necesario modificar el código) y genera un log de
+ ejecución en formato XML de forma que se posible su análisis.
+ 
 \end_layout
 
 \begin_layout Section
