@@ -9898,6 +9898,9 @@ JQuery.
 \emph default
  Principalmente, por ofrecer un lenguaje de programación lógica fácilmente
  manipulado desde una API en Java.
+ JQuery, ademas de aportar el motor y el lenguaje, tambien provee del parseo
+ de código fuente como asi también la generación de hechos lógicos en base
+ a éste parseo.
 \end_layout
 
 \begin_layout Standard
@@ -9906,6 +9909,13 @@ En el componente Rule Model, en donde es necesario persistir, visualizar
 n el framework EMF de Eclipse.
  EMF es un framework de modelado y generación de código para generar aplicacione
 s basadas en un modelo de datos estructurado.
+\end_layout
+
+\begin_layout Standard
+La plataforma eclipse posibilitó la creación de wizards que asistan la generació
+n de proyectos DRArch, así como la generacíon de reglas mediante la creación
+ de un editor gráfico que opera directamente sobre el modelo EMF utilizado
+ para las reglas.
 \end_layout
 
 \begin_layout Standard
