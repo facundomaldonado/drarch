@@ -207,12 +207,12 @@ e coincidente con algunas de las cosas que les puse aca), asi que diria
 \begin_layout Chapter*
 Resumen
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
-[andres] De vital importancia para el resumen es que se entiendan 2 cosas:
- 1- El problema especifico que se intentan resolver y porque es importante
- (para eso se da al principio un poquito de contexto) 2- El enfoque "clarito"
+[Y] ..[andres] De vital importancia para el resumen es que se entiendan 2
+ cosas: 1- El problema especifico que se intentan resolver y porque es important
+e (para eso se da al principio un poquito de contexto) 2- El enfoque "clarito"
  que se aplico y una idea general de los resultados que se obtuvieron.
 \end_layout
 
@@ -5123,7 +5123,7 @@ Nombre
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Y estructura y comportamiento???
@@ -5146,7 +5146,10 @@ Motivación
 \end_layout
 
 \begin_layout Standard
-(Reconstrucción, Conformance, Comunicación)
+(Re\SpecialChar \-
+cons\SpecialChar \-
+truc\SpecialChar \-
+ción, Conformance, Comunicación)
 \end_layout
 
 \end_inset
@@ -5162,7 +5165,10 @@ Tipo de análisis
 \end_layout
 
 \begin_layout Standard
-(incremental/no incrementa)
+(in\SpecialChar \-
+cre\SpecialChar \-
+men\SpecialChar \-
+tal / no incrementa)
 \end_layout
 
 \end_inset
@@ -5343,7 +5349,7 @@ Si, se cargan manualmente en formato RSF.
 \begin_inset Text
 
 \begin_layout Standard
-Estructura.
+Estructura
 \end_layout
 
 \end_inset
@@ -5408,7 +5414,7 @@ Si, se cargan los datos en formato RSF.
 \begin_inset Text
 
 \begin_layout Standard
-Estructura.
+Estructura
 \end_layout
 
 \end_inset
@@ -5428,7 +5434,7 @@ Mitre
 \begin_inset Text
 
 \begin_layout Standard
-Reconstrucción- Comunicación
+Reconstrucción - Comunicación
 \end_layout
 
 \end_inset
@@ -5437,7 +5443,9 @@ Reconstrucción- Comunicación
 \begin_inset Text
 
 \begin_layout Standard
-Incremental
+Incre\SpecialChar \-
+men\SpecialChar \-
+tal
 \end_layout
 
 \end_inset
@@ -5473,7 +5481,7 @@ No
 \begin_inset Text
 
 \begin_layout Standard
-Estructura.
+Estructura
 \end_layout
 
 \end_inset
@@ -5493,7 +5501,7 @@ Dali
 \begin_inset Text
 
 \begin_layout Standard
-Reconstrucción- Comunicación
+Reconstrucción - Comunicación
 \end_layout
 
 \end_inset
@@ -5502,7 +5510,9 @@ Reconstrucción- Comunicación
 \begin_inset Text
 
 \begin_layout Standard
-Incremental
+Incre\SpecialChar \-
+men\SpecialChar \-
+tal
 \end_layout
 
 \end_inset
@@ -5569,7 +5579,9 @@ Reconstrucción - Comunicación
 \begin_inset Text
 
 \begin_layout Standard
-Incremental
+Incre\SpecialChar \-
+men\SpecialChar \-
+tal
 \end_layout
 
 \end_inset
@@ -5607,7 +5619,7 @@ No en forma automática.
 \begin_inset Text
 
 \begin_layout Standard
-Estructura.
+Estructura
 \end_layout
 
 \end_inset
@@ -5636,7 +5648,9 @@ Reconstrucción-Conformance
 \begin_inset Text
 
 \begin_layout Standard
-Incremental
+Incre\SpecialChar \-
+men\SpecialChar \-
+tal
 \end_layout
 
 \end_inset
@@ -5696,7 +5710,10 @@ Focus
 \begin_inset Text
 
 \begin_layout Standard
-Reconstrucción
+Re\SpecialChar \-
+cons\SpecialChar \-
+truc\SpecialChar \-
+ción
 \end_layout
 
 \end_inset
@@ -5705,7 +5722,9 @@ Reconstrucción
 \begin_inset Text
 
 \begin_layout Standard
-Incremental
+Incre\SpecialChar \-
+men\SpecialChar \-
+tal
 \end_layout
 
 \end_inset
@@ -5742,7 +5761,7 @@ No
 \begin_inset Text
 
 \begin_layout Standard
-Estructura.
+Estructura
 \end_layout
 
 \end_inset
@@ -5762,7 +5781,10 @@ KAE
 \begin_inset Text
 
 \begin_layout Standard
-Reconstrucción
+Re\SpecialChar \-
+cons\SpecialChar \-
+truc\SpecialChar \-
+ción
 \end_layout
 
 \end_inset
@@ -5771,7 +5793,9 @@ Reconstrucción
 \begin_inset Text
 
 \begin_layout Standard
-Incremental 
+Incre\SpecialChar \-
+men\SpecialChar \-
+tal
 \end_layout
 
 \end_inset
@@ -5808,7 +5832,7 @@ No
 \begin_inset Text
 
 \begin_layout Standard
-Estructura/Comportamiento.
+Estructura / Comportamiento
 \end_layout
 
 \end_inset
@@ -5828,7 +5852,10 @@ Lattix LDM™
 \begin_inset Text
 
 \begin_layout Standard
-Conformance - Reconstrucción
+Conformance - Re\SpecialChar \-
+cons\SpecialChar \-
+truc\SpecialChar \-
+ción
 \end_layout
 
 \end_inset
@@ -5893,7 +5920,10 @@ Structure 101
 \begin_inset Text
 
 \begin_layout Standard
-Conformance - Reconstrucción
+Conformance - Re\SpecialChar \-
+cons\SpecialChar \-
+truc\SpecialChar \-
+ción
 \end_layout
 
 \end_inset
@@ -5920,7 +5950,10 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-Dependency Graphs-DSM
+De\SpecialChar \-
+pen\SpecialChar \-
+den\SpecialChar \-
+cy Graphs - DSM
 \end_layout
 
 \end_inset
