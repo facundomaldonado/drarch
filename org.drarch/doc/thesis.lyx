@@ -14753,6 +14753,85 @@ Puede notarse que esta herramienta si bien es muy atractiva en terminos
  interacción del usuario en el proceso de reconstrucción.
 \end_layout
 
+\begin_layout Subsection
+G2 con Structure 101
+\end_layout
+
+\begin_layout Standard
+De la misma forma que con Market, se utilizó Structure101 para analizar
+ el sistema G2.
+\end_layout
+
+\begin_layout Standard
+Dado que Market es un sistema pequeño, se pudieron detectar facilmente las
+ extensiones del framework bubble como son tareas y eventos.
+ En el caso de G2, estas extensiones del framework se encuentran desperdigadas
+ a lo largo de toda la estructura de paquetes del proyecto.
+ La forma en que Structure trabaja es inherentemente estructural por lo
+ que el gran aporte que esta herramienta ofrece en este caso es la comprensión
+ de la forma en que está organizado el sistema y como así tambien permite
+ visualizar las dependencias entre paquetes.
+\end_layout
+
+\begin_layout Standard
+A nuestro entender, G2 al igual que Market son sistemas donde lo más importante
+ es saber cómo funcionan.
+ Así, las vistas estructurales no aportan el conocimiento necesario sobre
+ su funcionamiento como si lo harían representaciones UCM's o diagramas
+ UML de secuencia.
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:G2-Structure101"
+
+\end_inset
+
+ muestra las dependencias entre los principales módulos del sistema G2.
+ En ella se puede ver el gran acoplamiento con el módulo bubble y marcadas
+ en rojo, las dependencias circulares entre algunos módulos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/G2_structure101.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:G2-Structure101"
+
+\end_inset
+
+G2 analizado por Strucutre101
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 \begin_inset LatexCommand label
 name "cha:Conclusiones-y-Trabajos"
