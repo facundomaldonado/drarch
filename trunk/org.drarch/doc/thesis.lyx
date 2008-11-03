@@ -382,12 +382,12 @@ sigue un proceso en el cuál el arquitecto interactúa sobre pequeñas decisione
 \end_layout
 
 \begin_layout Standard
-Con el objetivo de afirmar las supocisiones del enfoque, se realizaron experimen
+Con el objetivo de afirmar las suposiciones del enfoque, se realizaron experimen
 tos con distintos casos de estudio.
  Éstos mostraron resultados positivos en cuanto a la cantidad de artefactos
- arquitectónicos que deben ser reconstruídos teniendo en cuenta la documentación
+ arquitectónicos que deben ser reconstruidos teniendo en cuenta la documentación
  original de cada caso.
- A su vez, los mismos casos de estudio fueron reconstruídos por una herramienta
+ A su vez, los mismos casos de estudio fueron reconstruidos por una herramienta
  distinta (Structure 101) para realizar comparaciones y demostrar cuáles
  son los beneficios del enfoque 
 \emph on
@@ -845,7 +845,7 @@ te mapeables a codigo o que puedan ejecutarse, por ejemplo la dinamica del
 
 \end_inset
 
-contar con una buena documentacion es indispensable.
+contar con una buena documentación es indispensable.
  Y en particular, si las prescripciones arquitectónicas se reflejan en el
  diseño detallado e implementación, mucho mejor, porque esto ayuda a que
  los razonamientos realizados a nivel arquitectónico se cumplan efectivamente
@@ -1089,9 +1089,9 @@ status collapsed
 \begin_layout Standard
 Esta un poco confuso este parrafo se nota la traduccion..
  Poner algo como ...
- ya que actuá como vehiculo comunicacional entre los diferentes stakeholder
+ ya que actuá como vehiculo comunicacional entre los diferentes stakeholders
  que participan a lo largo de las diferentes etapas del desarrollo ....
- Por ahi como items queda mejor que como subsecciones ya que no tiene mucho
+ Por ahí como ítem queda mejor que como bisecciones ya que no tiene mucho
  puesto en cada una..
 \end_layout
 
@@ -3617,7 +3617,7 @@ y los componentes
 Observers
 \emph default
  están desacoplados.
- El ejemplo instancia el patron de la siguiente forma: el componente 
+ El ejemplo instancia el patrón de la siguiente forma: el componente 
 \emph on
 UserModelObservable
 \emph default
@@ -9679,7 +9679,7 @@ reference "sec:Arquitectura"
  Con\SpecialChar \-
 ti\SpecialChar \-
 nu\SpecialChar \-
-a con una descripción de cada uno de los componentes más importanes
+a con una descripción de cada uno de los componentes más importantes
  de la arquitectura.
  En las secciones\InsetSpace ~
 
@@ -9759,7 +9759,7 @@ DRArch
  su arquitectura extensible, su modelo para análisis estático de código
  fuente Java y su framework de interfaz de usuario.
  Otro factor que influenció la decisión es la tendencia creciente en el
- uso de Eclipse como herramiento para el desarrollo de software.
+ uso de Eclipse como herramienta para el desarrollo de software.
  
 \begin_inset Note Note
 status collapsed
@@ -10014,7 +10014,7 @@ Decisiones de diseño
 
 \begin_layout Standard
 En esta sección se describen algunas de las principales decisiones de diseño
- tomadas para cada componente de la arqutiectura del 
+ tomadas para cada componente de la arquitectura del 
 \emph on
 DRArch
 \emph default
@@ -10814,7 +10814,7 @@ Algoritmo de ejecución del modelo Fases
 \end_layout
 
 \begin_layout Standard
-La ejecución de cada fase se decribe en el Algorítmo\InsetSpace ~
+La ejecución de cada fase se describe en el Algoritmo\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "alg:Algoritmo-ejecución-de-fases"
@@ -10825,7 +10825,7 @@ reference "alg:Algoritmo-ejecución-de-fases"
  Luego muestra las sugerencias y si el arquitecto aceptas, agrega los nuevos
  hechos a la base de conocimiento.
  Posteriormente carga el nuevo modelo, actualiza los diagramas, y vuelve
- a ejecutar la siguieten regla.
+ a ejecutar la siguiente regla.
  Esto se repite hasta que no queden más reglas.
 \end_layout
 
@@ -12057,7 +12057,7 @@ Si bien los casos de uso se basan en un mismo estilo arquitectónico subyacente
 \emph on
 DRArch
 \emph default
- sea eficiente sólo con este típo de estilos arquitectónicos, si no que
+ sea eficiente sólo con este tipo de estilos arquitectónicos, si no que
  soporta una gran variedad.
  Los casos de estudio seleccionados son sistemas donde la organización estática
  (estructura de paquetes) no tiene un rol relevante en la arquitectura.
@@ -12070,7 +12070,7 @@ Por otro lado, la documentación original de los sistemas que se utilizaron
  para realizar los experimentos, casi no se tuvo en cuenta para realizar
  la reconstrucción.
  Sin embargo, luego de obtener los resultados, la documentación original
- se utilizó para realizar comparaciónes y así poder medir la eficiencia
+ se utilizó para realizar comparaciones y así poder medir la eficiencia
  de la herramienta.
 \end_layout
 
@@ -13145,22 +13145,6 @@ Structure 101 - Market
 
 \end_layout
 
-\begin_layout Standard
-Puede notarse que esta herramienta si bien es muy atractiva en terminos
- visuales y de navegación de la información, está destinada a resolver problemas
- de erosión arquitectónica.
- Carece totalmente de aspectos comportamentales.
- Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
- del sistema y de qué manera interactuan los componentes.
- De nuevo, la falta de información dinámica extraida a travéz de trazas
- de ejecución deja ocultas relaciones entre componentes que se resulven
- en tiempo de ejecución.
- Otro punto de disconformidad es que esta herramienta presenta toda la informaci
-ón de una sola vez.
- No permite establecer reglas de diseño que guien la recuperación, ni la
- interacción del usuario en el proceso de reconstrucción.
-\end_layout
-
 \begin_layout Section
 \begin_inset LatexCommand label
 name "sec:G2"
@@ -13884,7 +13868,7 @@ De la misma forma que con Market, se utilizó Structure101 para analizar
 
 \begin_layout Standard
 Dado que Market es un sistema pequeño, se pudieron detectar facilmente las
- extensiones del framework bubble como son tareas y eventos.
+ extensiones del framework Bubble como son tareas y eventos.
  En el caso de G2, estas extensiones del framework se encuentran desperdigadas
  a lo largo de toda la estructura de paquetes del proyecto.
  La forma en que Structure trabaja es inherentemente estructural por lo
@@ -15001,6 +14985,22 @@ DRArch
 \emph default
  debe utilizarse durante el proceso de reconstrucción de arquitecturas de
  software.
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, puedo notarse que la herramienta Structure 101 si bien es
+ muy atractiva en terminos visuales y de navegación de la información, está
+ destinada a resolver problemas de erosión arquitectónica.
+ Carece totalmente de aspectos comportamentales.
+ Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
+ del sistema y de qué manera interactuan los componentes.
+ La falta de información dinámica extraida a travéz de trazas de ejecución
+ deja ocultas relaciones entre componentes que se resulven en tiempo de
+ ejecución.
+ Otro punto de disconformidad es que esta herramienta presenta toda la informaci
+ón de una sola vez.
+ No permite establecer reglas de diseño que guien la recuperación, ni la
+ interacción del usuario en el proceso de reconstrucción.
 \end_layout
 
 \begin_layout Chapter
