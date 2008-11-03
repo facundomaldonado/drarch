@@ -269,7 +269,9 @@ Todo sistema de software posee una arquitectura de software subyacente.
  acertada de esta arquitectura.
  Por lo tanto, el hecho de lidiar con sistemas que no poseen documentación
  es un escenario que ocurre con frecuencia dentro de las organizaciones.
- Muchas veces, los expertos que diseñaron el sistema se han ido de la organizaci
+ Muchas veces, los expertos que di\SpecialChar \-
+seña\SpecialChar \-
+ron el sistema se han ido de la organizaci
 ón, la documentación existente es escasa o esta desactualizada, no se dispone
  de todo el código fuente y lo único con que se cuenta es con el código
  ejecutable binario.
@@ -555,7 +557,11 @@ status collapsed
  Por ejemplo, algunas decisiones de diseño que involucra esta disciplina
  son: asignación de recursos, definición de restricciones entre la comunicación
  de los distintos elementos, declaración de responsabilidades, etc.
- Como vehículo de comunicación, su documentación es fundamental, pues la
+ Como vehículo de comunicación, su do\SpecialChar \-
+cu\SpecialChar \-
+men\SpecialChar \-
+ta\SpecialChar \-
+ción es fundamental, pues la
  falta de ella, o peor aún, el descuido al producirla y mantenerla, anulan
  o revierten todos los beneficios que el desarrollo centrado en la arquitectura
  puede aportar.
@@ -1195,7 +1201,11 @@ Desafortunadamente, debido a la evolución natural del sistema, es probable
  Una vez que el diseño arquitectónico está listo, típicamente todos los
  esfuerzos se focalizan en la implementación, y esto hace que la documentación
  se desactualice progresivamente.
- Por ejemplo, nuevos requerimientos pueden causar un rediseño de la arquitectura
+ Por ejemplo, nuevos re\SpecialChar \-
+que\SpecialChar \-
+ri\SpecialChar \-
+mien\SpecialChar \-
+tos pueden causar un rediseño de la arquitectura
 , con cambios consecuentes en algunas partes de la implementación; y por
  otro lado, algunas tareas de mantenimiento pueden producir cambios en el
  código que deberían ser reflejados en modificaciones de la arquitectura.
@@ -1390,7 +1400,10 @@ Objetivos
 
 \begin_layout Standard
 Como objetivo principal del trabajo se propuso definir un enfoque flexible
- para reconstruir arquitecturas de sistemas de software
+ para re\SpecialChar \-
+cons\SpecialChar \-
+tru\SpecialChar \-
+ir arquitecturas de sistemas de software
 \begin_inset Note Note
 status collapsed
 
@@ -1407,10 +1420,13 @@ e.
  representación común en la que se pueda relacionar la información de forma
  sencilla e intuitiva.
  Esta representación se realiza utilizando programación lógica.
- Luego, por medio de un mecanismo de consultas, se analiza la información
+ Luego, por medio de un me\SpecialChar \-
+ca\SpecialChar \-
+nis\SpecialChar \-
+mo de consultas, se analiza la información
  disponible para generar sugerencias al usuario sobre el modelo arquitectónico
  a reconstruir.
- Este proceso ser repite con el fin de ir refinando de forma incremental
+ Este proceso se repite con el fin de ir refinando de forma incremental
  el modelo arquitectónico.
  El modelo que se va construyendo se transforma diagramas (vistas arquitectónica
 s) que representan aspectos estructurales y comportamentales del sistema.
@@ -1806,7 +1822,10 @@ stakeholders
 \emph on
 performance
 \emph default
-, disponibilidad, flexibilidad, escalabilidad, seguridad, etc.
+, disponibilidad, flexi\SpecialChar \-
+bi\SpecialChar \-
+li\SpecialChar \-
+dad, escalabilidad, seguridad, etc.
  en donde cada 
 \emph on
 stakeholders
@@ -1830,7 +1849,9 @@ performance
 
 \begin_layout Standard
 A continuación, se presentan los estilos y modelos arquitectónicos que nos
- ayudan a describir los distintos tipos de componentes y su tipología.
+ ayudan a des\SpecialChar \-
+cri\SpecialChar \-
+bir los distintos tipos de componentes y su tipología.
 \end_layout
 
 \begin_layout Subsection
@@ -2130,7 +2151,9 @@ Comunicación entre los
 \emph on
 stakeholders
 \emph default
-: La arquitectura de software representa una abstracción común de un sistema
+: La arquitectura de software representa una abs\SpecialChar \-
+trac\SpecialChar \-
+ción común de un sistema
  y la mayoría de los 
 \emph on
 stakeholders
@@ -2159,7 +2182,9 @@ La
 \begin_layout Enumerate
 Primeras decisiones de diseño: Las arquitecturas de software son responsables
  de las primeras decisiones de diseño sobre el sistema.
- Una implementación de un sistema respeta una arquitectura si es que cumplió
+ Una implementación de un sistema res\SpecialChar \-
+pe\SpecialChar \-
+ta una arquitectura si es que cumplió
  con la estructura de las decisiones de diseño que se describieron en la
  arquitectura.
  Esto quiere decir que la implementación debe poder dividirse en los elementos
@@ -2259,7 +2284,9 @@ A continuación se describen algunos atributos de calidad:
 Performance
 \emph default
 : Este atributo de calidad tiene que ver con los tiempos.
- Los eventos ocurren (interrupciones, mensajes, peticiones de los usuarios
+ Los eventos o\SpecialChar \-
+cu\SpecialChar \-
+rren (interrupciones, mensajes, peticiones de los usuarios
  o el paso del tiempo) y el sistema debe responder a éstos.
  Es decir, la 
 \emph on
@@ -2909,7 +2936,11 @@ Observer-Observable
 
 \begin_layout Standard
 Los diagramas de colaboración (o de comunicación) y de secuencia muestran
- cómo interactúan los objetos del sistema.
+ cómo in\SpecialChar \-
+te\SpecialChar \-
+rac\SpecialChar \-
+tú\SpecialChar \-
+an los objetos del sistema.
  Un diagrama de colaboración es una forma simple de mostrar los objetos
  del sistema y los mensajes y llamadas que pasan entre ellos.
  La figura\InsetSpace ~
@@ -3342,7 +3373,13 @@ Por sus cualidades, los UCMs son la notación elegida para representar las
  Éstos combinan, en una notación de alto nivel, el flujo global del comportamien
 to y la estructura de componentes del sistema.
  Los UCMs no son un lenguaje apropiado para especificación formal de comportamie
-nto, ya que deliberadamente dejan algunas decisiones de diseño abiertas
+nto, ya que de\SpecialChar \-
+li\SpecialChar \-
+be\SpecialChar \-
+ra\SpecialChar \-
+da\SpecialChar \-
+men\SpecialChar \-
+te dejan algunas decisiones de diseño abiertas
  para ser tomadas durante el diseño detallado.
  Los UCM son solamente una notación para razonar y explicar el comportamiento
  de un sistema.
@@ -3740,7 +3777,10 @@ En este capítulo se introdujo el concepto de arquitectura de software, una
 
 \begin_layout Standard
 Posteriormente se presentaron distintas notaciones que usualmente se utilizan
- para representar arquitecturas de software: El modelo 4 + 1, los diagramas
+ para re\SpecialChar \-
+pre\SpecialChar \-
+sen\SpecialChar \-
+tar arquitecturas de software: El modelo 4 + 1, los diagramas
  de componentes de UML y la notación Use Case Maps (UCMs).
  La notación de UCMs, un modelo para la descripción de patrones de comportamient
 o y algunos aspectos estructurales en un alto nivel de abs\SpecialChar \-
@@ -3788,7 +3828,7 @@ Trabajos relacionados
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Esto podria ir en el contexto..o juntar ambas secciones..
@@ -3801,7 +3841,7 @@ ación, como así también la re-ingeniería y la falta de sincronización entre
  arquitectura e implementación constituyen los principales motivadores de
  este trabajo.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Y concluir el contexto con los trabajos relaciones que fueron la base de
@@ -3825,7 +3865,7 @@ En este capítulo se brinda una visión mas amplia sobre los distintos aportes
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 X Muchos enfoques de reconstrucción de arquitecturas y herramientas para
@@ -3847,7 +3887,8 @@ key "Tilley1996"
 
 \end_inset
 
- describe el enfoque extraer-abstraer-presentar con mayor detalle, refiriéndose
+ describe el enfoque extraer-abstraer-presentar con ma\SpecialChar \-
+yor detalle, refiriéndose
  a los pasos de recolección de información, inferencia de conocimiento,
  y presentación de la información.
 \end_layout
@@ -3872,9 +3913,15 @@ La problemática de descubrir el modelo arquitectónico de un sistema completame
 e implementado ha sido abordado de diversas maneras.
  Entre ellos se encuentran enfoques de reconstruccion manuales apoyados
  con herramientas de visualización o de extraccion de informacion, aquellos
- que implementan lenguajes de consultas para escribir pautas para construir
- clusteres o agregaciones automáticamente, y tambien aquellos que implementan
- técnicas diversas como mineria de datos ("
+ que implementan lenguajes de consultas para escribir pautas para cons\SpecialChar \-
+tru\SpecialChar \-
+ir
+ 
+\emph on
+clusters
+\emph default
+ o agregaciones automáticamente, y tambien aquellos que implementan técnicas
+ diversas como mineria de datos ("
 \emph on
 data mining
 \emph default
@@ -3884,7 +3931,7 @@ data mining
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 X Esta clasificacion es de ustedes o la sacaron de algun lado.??
@@ -3897,7 +3944,7 @@ X Esta clasificacion es de ustedes o la sacaron de algun lado.??
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Utilización de otras técnicaCUales?? en que categoria caen..
@@ -3908,7 +3955,7 @@ Utilización de otras técnicaCUales?? en que categoria caen..
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Estan clasificando desde el inicio entre estructura y comportamiento y ahora
@@ -3926,7 +3973,7 @@ por lo menos una distincion deberia ir a ca..
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 For each tool/approach:
@@ -4263,7 +4310,10 @@ s niveles de abstracción.
 Este enfoque presta especial atencion a la "metafora" visual utilizada para
  explorar e investigar el código, por ejemplo, utilizando distitnos tipos
  de vistas jerarquicas y distintos tipos de zoom (normal, semantico, fish_eye).
- Cuando es usado para reconstrucción, la herramienta puede asistir al usuario
+ Cuando es usado para reconstrucción, la he\SpecialChar \-
+rra\SpecialChar \-
+mient\SpecialChar \-
+a puede asistir al usuario
  en generar vistas arquitectónicas de alto nivel agrupando manualmente elementos
  en un grafo.
  La herramienta toma como entrada archivos RSF (Rigi Standard Format).
@@ -4367,7 +4417,10 @@ Architecture Reconstruction Method
 \end_layout
 
 \begin_layout Standard
-ARM es un método de reconstrucción de arquitecturas semi-automático el cual
+ARM es un método de re\SpecialChar \-
+cons\SpecialChar \-
+truc\SpecialChar \-
+ción de arquitecturas semi-automático el cual
  puede ser usado para asistir en la recuperación de arquitecturas para sistemas
  que son diseñados e implementados usando patrones 
 \begin_inset LatexCommand cite
@@ -4416,7 +4469,11 @@ rra\SpecialChar \-
 mien\SpecialChar \-
 tas se destacan Rigi y PostgreSQL como repositorio
  de la aplicación.
- Rigi provee la manipulación y visualización de las vistas generadas y la
+ Rigi provee la manipulación y vi\SpecialChar \-
+sua\SpecialChar \-
+li\SpecialChar \-
+za\SpecialChar \-
+ción de las vistas generadas y la
  extensión que aporta Dali a Rigi provee la habilidad de definir y aplicar
  patrones de consultas sobre los datos para generar vistas arquitectónicas
  del sistema.
@@ -4759,20 +4816,30 @@ key "MEDVIDOVIC06"
  El código fuente de una aplicación es analizado estáticamente para obtener
  un diagrama de clases UML y luego las clases interrelacionadas son agrupadas
  en componentes.
- Este enfoque mantiene los mapeos entre arquitectura e implementaci´on durante
- la evoluci´on apli- cando el proceso de descubrimiento incrementalmente
- sobre las porciones de código fuente modiﬁcadas.
+ Este enfoque mantiene los mapeos entre arquitectura e implementación durante
+ la evolución aplicando el proceso de descubrimiento incrementalmente sobre
+ las porciones de código fuente modiﬁcadas.
  Los mapeos deﬁnen a los componentes como un grupo de clases relacionadas.
- El proceso de clustering para determinar los componentes utiliza diferentes
- políticas, principalmente basadas en las relaciones de dependencia entre
- clases Java.
+ El proceso de 
+\emph on
+clustering
+\emph default
+ para determinar los componentes utiliza diferentes políticas, principalmente
+ basadas en las relaciones de dependencia entre clases Java.
  Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
  parcialmente en base a la inspección de código fuente.
- La Figura ilustra las principales actividades ordenadas parcialmente realizadas
- por Focus para recuperar una arquitectura.
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Ejemplofocus"
+
+\end_inset
+
+ ilustra las principales actividades ordenadas parcialmente realizadas por
+ Focus para recuperar una arquitectura.
  El enfoque es interesante para propagar cambios desde la implementación
  hacia la arquitectura.
- La virtud principal, radica en reﬁnar progresivamente la vista arquitectónica
+ La virtud principal radica en reﬁnar progresivamente la vista arquitectónica
  en función de los cambios sucesivos del código, en lugar de intentar recuperarl
 a íntegramente con un único análisis exhaustivo.
  Como desventajas, se puede mencionar la escasa automatización (por ejemplo,
@@ -5030,7 +5097,10 @@ reference "fig:Comparación-Ant"
  En ella se puede ver el primer problema: la escalabilidad.
  Mientras UML es exelente para mostrar las relaciones entre clases, grandes
  proyectos rápidamente rebalsan este tipo de representaciones gráficas al
- querer representar todo el sistema.
+ querer re\SpecialChar \-
+pre\SpecialChar \-
+sen\SpecialChar \-
+tar todo el sistema.
  Además es muy dificil mantener este modelo actulizado a medida que el código
  cambia.
  Por último, es imposible detectar referencias cruzadas en este tipo de
@@ -6062,22 +6132,23 @@ Tipo de análisis: Tipo de análisis se refiere si el análisis que realiza
 
 \begin_layout Itemize
 Tipo de Analisis de la implementacíon (Estático/Dinámico): Si se consideran
- para el análisis el codigo fuente, ya sea codigo fuente o código compilado,
+ para el análisis el código fuente, ya sea código fuente o código compilado,
  el tipo de análisis es estático.
  Si por el contrario se consideran las trazas de ejecución, recolectadas
  con el sistema en ejecución, el análisis es dinámico.
- Como se ve, esta caracter'istica est'a fuertemente relacionada con el tipo
+ Como se ve, esta característica está fuertemente relacionada con el tipo
  de entrada que la herramienta/enfoque considera.
 \end_layout
 
 \begin_layout Itemize
-Lenguaje arquitectónico: Lenguaje arquitectónico de las vistas generadas.
+Lenguaje arquitectónico: Hace referencia al lenguaje arquitectónico de las
+ vistas generadas.
  Ejemplos son UML, UCMs, DSM etc.
 \end_layout
 
 \begin_layout Itemize
-Soporte para varias fuentes de datos: Es posible incorporar datos de otras
- fuentes como documentación, experiencia de los arquitectos etc?
+Soporte para varias fuentes de datos: Indica si es posible incorporar datos
+ de otras fuentes como documentación, experiencia de los arquitectos etc.
 \end_layout
 
 \begin_layout Itemize
@@ -6114,7 +6185,11 @@ En este capítulo se han presentado los trabajos relacionados más importantes
 Como vimos, la mayoría de los enfoques actuales de reconstrucción de arquitectur
 as se basan en el análisis del código fuente del sistema.
  Este tipo de técnicas trabajan adecuadamente si la implementación del sistema
- se encuentra organizada en patrones tanto de codificación como de modularizació
+ se encuentra organizada en patrones tanto de co\SpecialChar \-
+di\SpecialChar \-
+fi\SpecialChar \-
+ca\SpecialChar \-
+ción como de modularizació
 n.
  Sin embargo, estas técnicas se ven limitadas cuando las estructuras del
  sistema son conocidas en tiempo de ejecución.
@@ -6125,7 +6200,9 @@ n.
  usando análisis estático es, en general, indecidible.
  Por ejemplo suponer que existe una division de componentes que coincide
  perfectamente con la estructura jerárquica de paquetes de proyectos es
- generar una simplificación muy gruesa, que introduce errores extra.
+ ge\SpecialChar \-
+ne\SpecialChar \-
+rar una simplificación muy gruesa, que introduce errores extra.
  Lo mismo ocurre al basar el 
 \emph on
 clustering
@@ -9023,7 +9100,9 @@ Observer-Observable
  de la siguiente forma.
  Se declaró un nuevo método abstracto llamado 
 \family typewriter
-writeLog(String message)
+write\SpecialChar \-
+Log(\SpecialChar \-
+String message)
 \family default
  el cual es invocado por el método 
 \family typewriter
@@ -9553,7 +9632,10 @@ reference "sec:Arquitectura"
 \end_inset
 
 .
- Continua con una descripción de cada uno de los componentes más importanes
+ Con\SpecialChar \-
+ti\SpecialChar \-
+nu\SpecialChar \-
+a con una descripción de cada uno de los componentes más importanes
  de la arquitectura.
  En las secciones\InsetSpace ~
 
@@ -9903,9 +9985,13 @@ JQuery.
 
 \emph default
  Principalmente, por ofrecer un lenguaje de programación lógica fácilmente
- manipulado desde una API en Java.
- JQuery, ademas de aportar el motor y el lenguaje, tambien provee del parseo
- de código fuente como asi también la generación de hechos lógicos en base
+ ma\SpecialChar \-
+ni\SpecialChar \-
+pu\SpecialChar \-
+la\SpecialChar \-
+do desde una API en Java.
+ JQuery, además de aportar el motor y el lenguaje, también provee del parseo
+ de código fuente como así también la generación de hechos lógicos en base
  a éste parseo.
 \end_layout
 
@@ -9918,16 +10004,19 @@ s basadas en un modelo de datos estructurado.
 \end_layout
 
 \begin_layout Standard
-La plataforma eclipse posibilitó la creación de wizards que asistan la generació
-n de proyectos DRArch, así como la generacíon de reglas mediante la creación
- de un editor gráfico que opera directamente sobre el modelo EMF utilizado
- para las reglas.
+La plataforma eclipse posibilitó la creación de 
+\emph on
+wizards
+\emph default
+ que asistan la generación de proyectos DRArch, así como la generación de
+ reglas mediante la creación de un editor gráfico que opera directamente
+ sobre el modelo EMF utilizado para las reglas.
 \end_layout
 
 \begin_layout Standard
 En diseño del componente Phase Engine con el fin de dar soporte a distintos
- tipos de fases, se utilizó una clase abstracta para representar una face.
- Luego, los ditintos tipos de fase pueden extender de la clase abstracta.
+ tipos de fases, se utilizó una clase abstracta para representar una fase.
+ Luego, los distintos tipos de fase pueden extender de la clase abstracta.
  Pirncipalmente se detectaron dos tipos de fases: Interactivas y No Interactivas
  (acepta automáticamente todas las sugerencias).
  Para orquestar la lógica del motor de fases, se utilizó una entidad 
@@ -9942,7 +10031,7 @@ Flabot
 \emph default
 ya que posee unos editores gráficos para diagramas de Componentes y de UCMs
  y expone un modelo fácilmente manejable.
- De esta forma, se traduce la información reprecentada en hechos 
+ De esta forma, se traduce la información representada en hechos 
 \emph on
 Prolog
 \emph default
@@ -9959,7 +10048,7 @@ Por último, para el componente Trace Log Analizer, se decidió utilizar el
 \emph on
 Flabot
 \emph default
- como herramienta de instrumetación de código ya que la instrumentación
+ como herramienta de instrumentación de código ya que la instrumentación
  no es intrusiva (no es necesario modificar el código) y genera un log de
  ejecución en formato XML de forma que se posible su análisis.
  
@@ -12660,7 +12749,9 @@ eventos: Este conjunto de reglas tiene como objetivo
 Detección\InsetSpace ~
 de\InsetSpace ~
 Agentes: Las consultas que pertenecen a las reglas de este conjunto
- sugieren que las clases que extienden de la clase 
+ su\SpecialChar \-
+gie\SpecialChar \-
+ren que las clases que extienden de la clase 
 \family typewriter
 Agent
 \family default
