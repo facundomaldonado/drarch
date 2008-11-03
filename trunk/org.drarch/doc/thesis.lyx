@@ -3845,9 +3845,9 @@ status collapsed
 
 \begin_layout Standard
 Y concluir el contexto con los trabajos relaciones que fueron la base de
- la motivacion de este trabajo..
+ la motivación de este trabajo..
  porque las limitaciones encontrdas en los enfoques actuales proveniente
- del analisis de los trabajos relacionados tambien es parte de la motivacion
+ del analisis de los trabajos relacionados tambien es parte de la motivación
  de este trabajo..
  
 \end_layout
@@ -3911,8 +3911,8 @@ Aportes relacionados
 \begin_layout Standard
 La problemática de descubrir el modelo arquitectónico de un sistema completament
 e implementado ha sido abordado de diversas maneras.
- Entre ellos se encuentran enfoques de reconstruccion manuales apoyados
- con herramientas de visualización o de extraccion de informacion, aquellos
+ Entre ellos se encuentran enfoques de reconstrucción manuales apoyados
+ con herramientas de visualización o de extracción de información, aquellos
  que implementan lenguajes de consultas para escribir pautas para cons\SpecialChar \-
 tru\SpecialChar \-
 ir
@@ -3925,7 +3925,7 @@ clusters
 \emph on
 data mining
 \emph default
-"), lenguajes de descripcion arquitectónica (ADLs), redes de Petri o matrices
+"), lenguajes de descripción arquitectónica (ADLs), redes de Petri o matrices
  de dependencias (DSM).
 \end_layout
 
@@ -3934,7 +3934,7 @@ data mining
 status collapsed
 
 \begin_layout Standard
-X Esta clasificacion es de ustedes o la sacaron de algun lado.??
+X Esta clasificación es de ustedes o la sacaron de algún lado.??
 \end_layout
 
 \end_inset
@@ -4068,7 +4068,7 @@ El Software Bookshelf se accede por medio de un conjunto de páginas Web.
 shelves
 \emph default
 ).
- Las mismas están organizadas de manera jerarquica, lo que refleja la descomposi
+ Las mismas están organizadas de manera jerárquica, lo que refleja la descomposi
 ción del sistema en subsistemas.
  A su vez cada página esta vinculada a las páginas de los subsistemas y
  muestran un diagrama de arquitectura llamado "paisaje" de su subsistema,
@@ -4128,7 +4128,7 @@ Ejemplo de PBS analizando el compilador c488.
 \end_layout
 
 \begin_layout Standard
-PBS esta compuesto por una serie de herramientas que ayudan en la contrucción
+PBS esta compuesto por una serie de herramientas que ayudan en la construcción
  de 
 \emph on
 "Bookshelves"
@@ -4137,8 +4137,12 @@ PBS esta compuesto por una serie de herramientas que ayudan en la contrucción
 \end_layout
 
 \begin_layout Standard
-Extractores: Los exrtactores parsean el código fuente y generan lo hechos
- correspondientes.
+Extractores: Los extractores parsean el código fuente y generan lo hechos
+ co\SpecialChar \-
+rres\SpecialChar \-
+pon\SpecialChar \-
+dien\SpecialChar \-
+tes.
  Los hechos facilitan la construcción del grafo de dependencias.
  Existen extractores para algunos lenguajes como c y pascal.
 \end_layout
@@ -4147,15 +4151,18 @@ Extractores: Los exrtactores parsean el código fuente y generan lo hechos
 Manipuladores de hechos: Los hechos producidos por los extractores (o por
  alguna otra fuente, incluida la preparación manual) son efectivamente una
  base de datos, la cual puede ser manipulada.
- Una herramienta llamada Grok opera sobre hechos excritos en RSF y es usado
+ Una herramienta llamada Grok opera sobre hechos escritos en RSF y es usado
  para leer los hechos y crear los hechos (sub grafos) para cada subsistema.
  
 \end_layout
 
 \begin_layout Standard
-Disennnnador de diagramas: Los grafos tienen atributos que determinan el
- "layout" del mismo.
- Estos dan la posición, tamannnno y colores de los grafos para poder dibujarlos
+Diseñador de diagramas: Los grafos tienen atributos que determinan el "
+\emph on
+layout
+\emph default
+" del mismo.
+ Estos dan la posición, tamaño y colores de los grafos para poder dibujarlos
  como diagramas.
  La herramienta llamada Layouter lee los hechos que representan el grafo
  y les agrega atributos de layout.
@@ -4163,16 +4170,24 @@ Disennnnador de diagramas: Los grafos tienen atributos que determinan el
 
 \begin_layout Standard
 Visualizador de diagramas: Hay una herramienta llamada LS (Landscape) Viewer
- que lee grafos consus atributos de layout y lo muestra como un diagrama
+ que lee grafos con sus atributos de layout y lo muestra como un diagrama
  en la pantalla.
 \end_layout
 
 \begin_layout Standard
-Cada vez que el sistema es "built", hechos relevantes (como llamadas a procedimi
-entos y referencias a datos) son extraidas de éste.
+Cada vez que el sistema es compilado (
+\emph on
+build
+\emph default
+), hechos relevantes (como llamadas a pro\SpecialChar \-
+ce\SpecialChar \-
+di\SpecialChar \-
+mien\SpecialChar \-
+tos y referencias a datos)
+ son extraídas de éste.
  Mediante la comparación con los hechos anteriores con los nuevos, se detectan
  nuevos archivos, llamados "huerfanos".
- Un algoritmo los asigna automáticamente a un subsistema y tambien provee
+ Un algoritmo los asigna automáticamente a un subsistema y también provee
  de información de layout para la actualización de los diagramas.
 \end_layout
 
@@ -4307,9 +4322,9 @@ s niveles de abstracción.
 \end_layout
 
 \begin_layout Standard
-Este enfoque presta especial atencion a la "metafora" visual utilizada para
- explorar e investigar el código, por ejemplo, utilizando distitnos tipos
- de vistas jerarquicas y distintos tipos de zoom (normal, semantico, fish_eye).
+Este enfoque presta especial atencion a la "metáfora" visual utilizada para
+ explorar e investigar el código, por ejemplo, utilizando distintos tipos
+ de vistas jerárquicas y distintos tipos de zoom (normal, semántico, fish_eye).
  Cuando es usado para reconstrucción, la he\SpecialChar \-
 rra\SpecialChar \-
 mient\SpecialChar \-
@@ -4378,24 +4393,44 @@ Mitre
 
 \begin_layout Standard
 ManSart (MITRE Software Architecture Recovery Tool.
- ManSART reconoce caracteristicas arquitectónicas en el código fuente mediante
- el uso de una libreria de "reconocedores".
+ ManSART reconoce ca\SpecialChar \-
+rac\SpecialChar \-
+te\SpecialChar \-
+rís\SpecialChar \-
+ti\SpecialChar \-
+cas arquitectónicas en el código fuente mediante
+ el uso de una librería de "reconocedores".
  Características arquitectónicas se consideran aquellas partes que constituyen
  los estilos arquitectónicos que a su vez definen los principios organizacionale
 s que guían a los programadores en el desarrollo de código.
- Ejemplos de estilos arquitectónicos son "task spawning", pipe and filter,
- tipos abstractos de datos y repositorios.
+ Ejemplos de estilos arquitectónicos son "
+\emph on
+task
+\emph default
+ 
+\emph on
+spawning
+\emph default
+", pipe 
+\emph on
+and
+\emph default
+ 
+\emph on
+filter
+\emph default
+, tipos abstractos de datos y repositorios.
  (re escribir) ManSART esta construido en base a mecanismos de análisis
  de código fuente.
  El proceso de reconstrucción pasa secuencialmente por tres etapas: reconocimien
 to, manipulación y presentación.
  Al comenzar el análisis se genera un conjunto de vistas iniciales del sistema.
- Despues de parsear el código llevandolo a una representación arbol de análisis
+ Después de parsear el código llevándolo a una representación árbol de análisis
  sintáctico (AST), los "reconocedores" detectan las características arquitectóni
-cas llevandolas a vistas que corresponden a varios estilos arquitectónicos.
- Estos reconocedores usan tres niveles de representacion: AST, reconocimiento
- de caracteristicas y reconocimiento de estilos arquitectónicos.
- El primero se usa como base de los demas.
+cas llevándolas a vistas que corresponden a varios estilos arquitectónicos.
+ Estos reconocedores usan tres niveles de representación: AST, reconocimiento
+ de características y reconocimiento de estilos arquitectónicos.
+ El primero se usa como base de los demás.
  El segundo, se basa en un conjunto de patrones que emplean modelos específicos
  del lenguaje y del sistema operativo para reconocer porciones de código
  que forman partes de implementaciones de estilos arquitectónicos.
@@ -4404,12 +4439,12 @@ cas llevandolas a vistas que corresponden a varios estilos arquitectónicos.
  Por ultimo, el nivel de reconocimiento de estilos arquitectónicos agrupa
  aquellas características reconocidas en el nivel anterior para reconocer
  un estilo arquitectónico.
- La herramienta tiene una poderosa interfaz gráfica que permite la edicion
+ La herramienta tiene una poderosa interfaz gráfica que permite la edición
  y manipulación manual de las vistas generadas.
 \end_layout
 
 \begin_layout Paragraph
-AMR (
+ARM (
 \emph on
 Architecture Reconstruction Method
 \emph default
@@ -4458,7 +4493,7 @@ El mecanismo es simple, reglas que definen patrones son transformadas en
 \end_layout
 
 \begin_layout Standard
-Dali es la herramienta desarrollada para ejercitar el metodo descripto anteriorm
+Dali es la herramienta desarrollada para ejercitar el método descripto anteriorm
 ente.
  Es una colección de he\SpecialChar \-
 rra\SpecialChar \-
@@ -4553,7 +4588,7 @@ Claudio Riva y Yang Yaojin desarrollaron un proceso de reconstrucción de
 
 \begin_layout Standard
 1.
- Definición de conceptos importantes de arquitectura basandose en la documentaci
+ Definición de conceptos importantes de arquitectura basándose en la documentaci
 ón y en el conocimiento de los desarrolladores.
  
 \end_layout
@@ -4567,15 +4602,15 @@ Claudio Riva y Yang Yaojin desarrollaron un proceso de reconstrucción de
 
 \begin_layout Standard
 3.
- Abstracción, en la que el modelo es enriquecido con abstracciones (espec'ificas
+ Abstracción, en la que el modelo es enriquecido con abstracciones (especificas
  del dominio) que conducen a una vista de mas alto nivel del sistema.
 \end_layout
 
 \begin_layout Standard
 4.
  Presentación de la arquitectura reconstruida en varios formatos, como gráficos,
- diagramas UML, y graficos de secuencia de mensajes, teniendo en cuenta
- la vista arquitect'onica necesaria (lógica, de procesos, física, de desarrollo).
+ diagramas UML, y gráficos de secuencia de mensajes, teniendo en cuenta
+ la vista arquitectónica necesaria (lógica, de procesos, física, de desarrollo).
  La extracción del modelo desde el código fuente es apoyado por analizadores
  de código fuente.
  Las abstracciones se calculan utilizando reglas Prolog.
@@ -4676,7 +4711,7 @@ Arquitectura de la herramienta DiscoTect
 La red de Petri coloreada se obtiene como resultado de la compilación de
  una especiﬁcación escrita en un lenguaje especial llamado DiscoStep.
  DiscoStep fue diseñado para traducir la ejecución de instrucciones Java
- a eventos arquitectónicamente signiﬁcativos, considerando que la aridad
+ a eventos arquitectonicamente signiﬁcativos, considerando que la aridad
  de esta relación entre ambos tipos es n-m y que normalmente los eventos
  de alto nivel pueden ocurrir simultáneamente cuando el sistema bajo análisis
  posee varios procesos o hilos de ejecución concurrentes.
@@ -4729,7 +4764,7 @@ reference "fig:Ejemplo-DiscoTect"
 
 \end_inset
 
- muetra un ejemplo de arquitectura recuperada con DiscoTect.
+ muestra un ejemplo de arquitectura recuperada con DiscoTect.
 \end_layout
 
 \begin_layout Standard
@@ -4793,7 +4828,10 @@ l de la arquitectura en función de la información provista por su implementaci
 \emph on
 clustering
 \emph default
- para determinar los componentes utiliza diferentes políticas, principalmente
+ para determinar los componentes utiliza di\SpecialChar \-
+fe\SpecialChar \-
+ren\SpecialChar \-
+tes políticas, principalmente
  basadas en las relaciones de dependencia entre clases Java.
  Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
  parcialmente en base a la inspección de código fuente.
@@ -4824,7 +4862,10 @@ key "MEDVIDOVIC06"
 \emph on
 clustering
 \emph default
- para determinar los componentes utiliza diferentes políticas, principalmente
+ para determinar los componentes utiliza di\SpecialChar \-
+fe\SpecialChar \-
+ren\SpecialChar \-
+tes políticas, principalmente
  basadas en las relaciones de dependencia entre clases Java.
  Los casos de uso son especiﬁcados por el arquitecto y luego chequeados
  parcialmente en base a la inspección de código fuente.
@@ -5034,7 +5075,7 @@ Ejemplo KAE
 \end_layout
 
 \begin_layout Standard
-Aunque éste es uno de los pocos enfoques que apunda a recontruir aspectos
+Aunque éste es uno de los pocos enfoques que apunta a reconstruir aspectos
  de comportamiento, se realizan demasiadas tareas manuales y otras tantas
  aplicando simpliﬁcaciones gruesas, que introducen errores extra, como es
  el caso de suponer que existe una división de componentes que coincide
@@ -5069,7 +5110,7 @@ n dentro y entre los diferentes dominios.
 \begin_layout Standard
 DSM permite a los desarrolladores comunicar la arquitectura de productos
  complejos.
- Es tambien una herramienta que permite a los managers entender el impacto
+ Es también una herramienta que permite a los managers entender el impacto
  de futuras revisiones y evaluar los riesgos asociados con las tareas de
  desarrollo.
  Lattix LDM realiza un análisis de dependencias a partir de la estructura
@@ -5079,13 +5120,13 @@ a del sistema de archivos para el caso de C/C++.
 
 \begin_layout Standard
 Esta aplicación esta destinada a ser parte del proceso de desarrollo.
- Ataca el problema de la erosion de la arquitectura, permite mantener actualizad
-a la información arquitectónica con respecto a la implementacíon.
+ Ataca el problema de la erosión de la arquitectura, permite mantener actualizad
+a la información arquitectónica con respecto a la implementación.
  
 \end_layout
 
 \begin_layout Standard
-La forma de visualizacíon de la arquitectura utilizando DSM tiene beneficios
+La forma de idealización de la arquitectura utilizando DSM tiene beneficios
  en comparación con otras métodos como UML.
  Por ejemplo, la figura 
 \begin_inset LatexCommand ref
@@ -5095,14 +5136,14 @@ reference "fig:Comparación-Ant"
 
  muestra el modelo UML de Ant, una herramienta para hacer builds de aplicaciones.
  En ella se puede ver el primer problema: la escalabilidad.
- Mientras UML es exelente para mostrar las relaciones entre clases, grandes
+ Mientras UML es excelente para mostrar las relaciones entre clases, grandes
  proyectos rápidamente rebalsan este tipo de representaciones gráficas al
  querer re\SpecialChar \-
 pre\SpecialChar \-
 sen\SpecialChar \-
 tar todo el sistema.
- Además es muy dificil mantener este modelo actulizado a medida que el código
- cambia.
+ Además es muy difícil mantener este modelo actualizado a medida que el
+ código cambia.
  Por último, es imposible detectar referencias cruzadas en este tipo de
  modelos.
 \end_layout
@@ -5152,13 +5193,13 @@ Structure 101
 
 \begin_layout Standard
 Structure101, desarrollado por Headway Software Technologies, es una herramienta
- versatil de análisis estátco de código orientada al análisis de estructura
- (disenno, arquitectura y packaging) del codigo java, C/C++ y Ada.
- Structure 101 evalua el código desde varias perspectivas.
+ versátil de análisis estático de código orientada al análisis de estructura
+ (diseño, arquitectura y packaging) del código java, C/C++ y Ada.
+ Structure 101 evalúa el código desde varias perspectivas.
  Dispone de una perspectiva cualitativa, en la que mejora el entendimiento
  de la estructura del código.
  Tiene una perspectiva gráfica, en la que se pueden construir diagramas
- la organizacion y las estructuras referenciadas dentro de un bloque de
+ la organización y las estructuras referenciadas dentro de un bloque de
  código la figura 
 \begin_inset LatexCommand ref
 reference "fig:Ejemplo-Structure-101"
@@ -5166,10 +5207,10 @@ reference "fig:Ejemplo-Structure-101"
 \end_inset
 
  muestra un ejemplo.
- Cuenta asimismo con una perspectiva cuantitativa en la que evalua numericamente
- la complejidad del codigo y de esa manera prove metricas.
- Por ultimo, cuenta con una perspectiva historica, en la que revela cambios
- en la estructura del codigo.
+ Cuenta asimismo con una perspectiva cuantitativa en la que evalúa puercamente
+ la complejidad del código y de esa manera provee métricas.
+ Por ultimo, cuenta con una perspectiva histórica, en la que revela cambios
+ en la estructura del código.
  Al igual que Lattix utiliza DSM para visualizar las dependencias.
 \end_layout
 
@@ -5313,7 +5354,7 @@ Análisis implementación
 \end_layout
 
 \begin_layout Standard
-(análisis estático: codigo fuente; dinamico: trazas de ejecución)
+(análisis estático: código fuente; dinámico: trazas de ejecución)
 \end_layout
 
 \end_inset
@@ -5326,7 +5367,7 @@ Análisis implementación
 \series bold
 Lenguaje arquitectónico 
 \series default
-(notación de la arq recuperada)
+(notación de la arquitectura recuperada)
 \end_layout
 
 \end_inset
@@ -5404,7 +5445,7 @@ estático
 \begin_inset Text
 
 \begin_layout Standard
-Carga manual de la informacion que no sea código.
+Carga manual de la información que no sea código.
 \end_layout
 
 \end_inset
@@ -5451,7 +5492,7 @@ No incremental.
 \begin_inset Text
 
 \begin_layout Standard
-estático (dinamico, si se carga la información de trazas en formato RSF)
+estático (dinámico, si se carga la información de trazas en formato RSF)
 \end_layout
 
 \end_inset
@@ -5489,7 +5530,7 @@ Estructura
 \begin_inset Text
 
 \begin_layout Standard
-Shrimp
+SHriMP
 \end_layout
 
 \end_inset
@@ -5669,7 +5710,7 @@ estático
 
 \begin_layout Standard
 No en forma automática.
- Se tendrian que incorporar los datos a Dali en formato RSF.
+ Se tendrían que incorporar los datos a Dali en formato RSF.
  
 \end_layout
 
@@ -5679,7 +5720,7 @@ No en forma automática.
 \begin_inset Text
 
 \begin_layout Standard
-Estrutura
+Estructura
 \end_layout
 
 \end_inset
@@ -5738,7 +5779,7 @@ estático
 
 \begin_layout Standard
 No en forma automática.
- Se tendrian que incorporar los datos a en forma de hechos Prolog.
+ Se tendrían que incorporar los datos a en forma de hechos Prolog.
  
 \end_layout
 
@@ -5933,7 +5974,7 @@ tal
 \begin_inset Text
 
 \begin_layout Standard
-estático (informaci'on de como se comporta el sistema es realizado mediante
+estático (información de como se comporta el sistema es realizado mediante
  entrevistas - subjetivo)
 \end_layout
 
@@ -6131,7 +6172,7 @@ Tipo de análisis: Tipo de análisis se refiere si el análisis que realiza
 \end_layout
 
 \begin_layout Itemize
-Tipo de Analisis de la implementacíon (Estático/Dinámico): Si se consideran
+Tipo de Análisis de la implementación (Estático/Dinámico): Si se consideran
  para el análisis el código fuente, ya sea código fuente o código compilado,
  el tipo de análisis es estático.
  Si por el contrario se consideran las trazas de ejecución, recolectadas
@@ -6142,7 +6183,10 @@ Tipo de Analisis de la implementacíon (Estático/Dinámico): Si se consideran
 
 \begin_layout Itemize
 Lenguaje arquitectónico: Hace referencia al lenguaje arquitectónico de las
- vistas generadas.
+ vistas ge\SpecialChar \-
+ne\SpecialChar \-
+ra\SpecialChar \-
+das.
  Ejemplos son UML, UCMs, DSM etc.
 \end_layout
 
@@ -6152,9 +6196,9 @@ Soporte para varias fuentes de datos: Indica si es posible incorporar datos
 \end_layout
 
 \begin_layout Itemize
-Estructura / Comportamiuento: Esta propiedad refleja el aspecto de la arquitectu
-ra recuperada.
- Si apunta a recuperar aspectos estructurales (estructura de los modulos
+Estructura / Comportamiento: Esta propiedad refleja el aspecto de la arquitectur
+a recuperada.
+ Si apunta a recuperar aspectos estructurales (estructura de los módulos
  y sus dependencias) o comportamentales (interoperabilidad de los módulos
  bajo ciertos escenarios de ejecución).
 \end_layout
@@ -6164,7 +6208,7 @@ ra recuperada.
 status open
 
 \begin_layout Standard
-X Analisis de la categorizacion??
+X Análisis de la categorización??
 \end_layout
 
 \end_inset
@@ -6198,7 +6242,7 @@ n.
  cargadas dinámicamente en los sistemas orientados a objetos).
  En efecto, determinar la configuración arquitectónica real de un sistema
  usando análisis estático es, en general, indecidible.
- Por ejemplo suponer que existe una division de componentes que coincide
+ Por ejemplo suponer que existe una división de componentes que coincide
  perfectamente con la estructura jerárquica de paquetes de proyectos es
  ge\SpecialChar \-
 ne\SpecialChar \-
@@ -6208,7 +6252,7 @@ rar una simplificación muy gruesa, que introduce errores extra.
 clustering
 \emph default
  en relaciones de dependencia entre clases.
- Si bien son enfoques correctos no son determinantes en la reconstruccion
+ Si bien son enfoques correctos no son determinantes en la reconstrucción
  total y es necesario refinar y complementar con otras técnicas.
 \end_layout
 
@@ -6218,21 +6262,21 @@ Además, ninguno de estos enfoques ha considerado las extracciones de
 paths
 \emph default
  de ejecución para generar diagramas tales como los UCMs, solo KAE genera
- este tipo de diagramas pero con el defecto de hacerlo a partir de un análisis
- estructural cuando la representación es inherentemente comportamental.
+ este tipo de diagramas pero con particularidad de hacerlo a partir de un
+ análisis estructural cuando la representación es inherentemente comportamental.
  DiscoTech utiliza información dinámica, pero genera vistas estructurales
  de la arquitectura.
  
 \end_layout
 
 \begin_layout Standard
-Un aspecto debil, ya no de los enfoques sino de las aplicaciónes que los
+Un aspecto débil, ya no de los enfoques sino de las aplicaciones que los
  implementan, es que muy pocas tienen incorporadas las herramientas de extracció
 n de información.
  Otro aspecto a destacar que está fuertemente relacionado con el anterior
  es que demasiadas tareas se hacen de forma manual.
  Ya sea el parseo del código fuente, como la instrumentación de dicho código
- son tareas manuales o bien realizadas por otras aplicaciónes cuyos resultados
+ son tareas manuales o bien realizadas por otras aplicaciones cuyos resultados
  hay que agregarlos manualmente a la herramienta de análisis.
  Sería deseable que solamente la información que debe ser interpretada por
  el ojo experto sea incorporada manualmente.
@@ -6255,17 +6299,17 @@ DRArch
  El uso de programación lógica se enfoca en "qué" recuperar y no "cómo"
  hacerlo.
  Utilizar convenciones de nombres es una alternativa interesante siempre
- y cuando no sea "la única alternativa" (DiscoText).
+ y cuando no sea "la única alternativa" (DiscoTect).
  Es decir que el análisis no se base en convenciones sino que aproveche
  sus beneficios ya que es una herramienta poderosa que incorpora en la fase
  de extracción, el conocimiento del arquitecto sobre el código implementado.
- Por último el método propuesto por el SEI, AMR es un mecanismo simple que
+ Por último el método propuesto por el SEI, ARM es un mecanismo simple que
  sienta las bases del análisis y permite refinar y aumentar la precisión
  de los elementos recuperados.
 \end_layout
 
 \begin_layout Standard
-Resumiendo, la gran mayoria de los enfoques apuntan a aspectos estructurales
+Resumiendo, la gran mayoría de los enfoques apuntan a aspectos estructurales
  y el uso de análisis estático para cumplir con este objetivo.
  Cabe destacar la falta del modelado de aspectos comportamentales y el uso
  de notación arquitectónica para describir la arquitectura recuperada.
@@ -6277,7 +6321,7 @@ Resumiendo, la gran mayoria de los enfoques apuntan a aspectos estructurales
 status open
 
 \begin_layout Standard
-Falta una vuelta de rosca al ultimo parrafo.
+Falta una vuelta de rosca al ultimo párrafo.
 \end_layout
 
 \end_inset
@@ -12015,6 +12059,10 @@ DRArch
 \emph default
  sea eficiente sólo con este típo de estilos arquitectónicos, si no que
  soporta una gran variedad.
+ Los casos de estudio seleccionados son sistemas donde la organización estática
+ (estructura de paquetes) no tiene un rol relevante en la arquitectura.
+ Sin embargo, la naturaleza dinámica de estos sistemas, los hacen atractivos
+ para poner a prueba a DRArch.
 \end_layout
 
 \begin_layout Standard
@@ -12352,7 +12400,7 @@ reference "fig:Market-UCMs"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -12390,7 +12438,7 @@ Diagramas UCMs para el proyecto Market
 \end_layout
 
 \begin_layout Subsection
-Caso 1
+DRArch
 \end_layout
 
 \begin_layout Standard
@@ -12444,7 +12492,7 @@ reference "fig:Configuración-del-log"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -12660,7 +12708,7 @@ reference "fig:Resultado-de-la-fase-de-invocacion-implicita-market"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -12774,7 +12822,7 @@ reference "fig:Resultado-de-la-fase-de-materializacion-i-e-market"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -12912,6 +12960,205 @@ Resultado de la fase de Instanciación del Market
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Structure 101
+\end_layout
+
+\begin_layout Standard
+Como se mencionó en el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:Trabajos-relacionados"
+
+\end_inset
+
+ Structure 101 es una herramienta de análisis estátco de código orientada
+ al análisis de estructura (diseño, arquitectura y packaging).
+ En esta sección se compararán los resultados de usar ambas herramientas
+ en la reconstrucción del proyecto Market.
+\end_layout
+
+\begin_layout Standard
+El proceso de recuperación de Structure 101 comienza seleccionando el archivo
+ .jar que contiene el 
+\emph on
+bytecode 
+\emph default
+de la aplicación que se quiere analizar y automáticamente la herramienta
+ crea las perspectivas (vistas) de la arquitectura.
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Structure 101 - Estructura de paquetes"
+
+\end_inset
+
+ se muestra la estructura de paquetes de la aplicación y en la figura 
+\begin_inset LatexCommand ref
+reference "fig:Structure101-Buble"
+
+\end_inset
+
+, el primer nivel de explosion del paquete core.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/bubbleStructure101.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Structure 101 - Estructura de paquetes"
+
+\end_inset
+
+Structure 101 - Bubble-Market Estructura de paquetes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/bubble_core_structure101.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Structure101-Buble"
+
+\end_inset
+
+Structure101 - Bubble core
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se mencionó con anterioridad, la herramienta cubre aspectos estructurales
+ del sistema en diversas perspectivas.
+ Para el caso analizado, Market, se puede observar que se toma la estructura
+ de paquetes como base del análisis y arma el grafo de dependencias basado
+ en las relaciones de uso y de "
+\emph on
+imports
+\emph default
+" de otros paquetes.
+ Para el paquete example.market, bajo la perspectiva DSM, figura 
+\begin_inset LatexCommand ref
+reference "fig:Structure-101-Market"
+
+\end_inset
+
+, se pueden observar las clases que lo componen y el grado de acoplamiento
+ con sus pares.
+ Un asistente de la herramienta resalta aquellos que tienen mayor cantidad
+ de dependencias y los resalta como componentes.
+ Debajo de la matriz se puede ver la misma vista en forma de grafo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/bubble.examples.marketDSMStructure101.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Structure-101-Market"
+
+\end_inset
+
+Structure 101 - Market
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Puede notarse que esta herramienta si bien es muy atractiva en terminos
+ visuales y de navegación de la información, está destinada a resolver problemas
+ de erosión arquitectónica.
+ Carece totalmente de aspectos comportamentales.
+ Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
+ del sistema y de qué manera interactuan los componentes.
+ De nuevo, la falta de información dinámica extraida a travéz de trazas
+ de ejecución deja ocultas relaciones entre componentes que se resulven
+ en tiempo de ejecución.
+ Otro punto de disconformidad es que esta herramienta presenta toda la informaci
+ón de una sola vez.
+ No permite establecer reglas de diseño que guien la recuperación, ni la
+ interacción del usuario en el proceso de reconstrucción.
 \end_layout
 
 \begin_layout Section
@@ -13142,7 +13389,7 @@ n G2
 \end_layout
 
 \begin_layout Subsection
-Caso 1
+Drarch
 \begin_inset LatexCommand label
 name "sub:G2-Caso-1"
 
@@ -13614,6 +13861,85 @@ Diagrama UCM generado por
 DRArch
 \emph default
  para el caso de uso "eliminar usuario" de la aplicación G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Structure 101
+\end_layout
+
+\begin_layout Standard
+De la misma forma que con Market, se utilizó Structure101 para analizar
+ el sistema G2.
+\end_layout
+
+\begin_layout Standard
+Dado que Market es un sistema pequeño, se pudieron detectar facilmente las
+ extensiones del framework bubble como son tareas y eventos.
+ En el caso de G2, estas extensiones del framework se encuentran desperdigadas
+ a lo largo de toda la estructura de paquetes del proyecto.
+ La forma en que Structure trabaja es inherentemente estructural por lo
+ que el gran aporte que esta herramienta ofrece en este caso es la comprensión
+ de la forma en que está organizado el sistema y como así tambien permite
+ visualizar las dependencias entre paquetes.
+\end_layout
+
+\begin_layout Standard
+A nuestro entender, G2 al igual que Market son sistemas donde lo más importante
+ es saber cómo funcionan.
+ Así, las vistas estructurales no aportan el conocimiento necesario sobre
+ su funcionamiento como si lo harían representaciones UCM's o diagramas
+ UML de secuencia.
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:G2-Structure101"
+
+\end_inset
+
+ muestra las dependencias entre los principales módulos del sistema G2.
+ En ella se puede ver el gran acoplamiento con el módulo bubble y marcadas
+ en rojo, las dependencias circulares entre algunos módulos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/G2_structure101.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:G2-Structure101"
+
+\end_inset
+
+G2 analizado por Strucutre101
 \end_layout
 
 \end_inset
@@ -14675,284 +15001,6 @@ DRArch
 \emph default
  debe utilizarse durante el proceso de reconstrucción de arquitecturas de
  software.
-\end_layout
-
-\begin_layout Subsection
-Market con Structure 101
-\end_layout
-
-\begin_layout Standard
-Como se mencionó en el capítulo 
-\begin_inset LatexCommand ref
-reference "cha:Trabajos-relacionados"
-
-\end_inset
-
- Structure 101 es una herramienta de análisis estátco de código orientada
- al análisis de estructura (disenno, arquitectura y packaging).
- En esta sección se compararán los resultados de usar ambas herramientas
- en la reconstrucción del proyecto Market.
-\end_layout
-
-\begin_layout Standard
-El proceso de recuperación de Structure 101 comienza seleccionando el archivo
- .jar que contiene el 
-\emph on
-bytecode 
-\emph default
-de la aplicación que se quiere analizar y automáticamente la herramienta
- crea las perspectivas (vistas) de la arquitectura.
-\end_layout
-
-\begin_layout Standard
-La figura 
-\begin_inset LatexCommand ref
-reference "fig:Structure 101 - Estructura de paquetes"
-
-\end_inset
-
- se muestra la estructura de paquetes de la aplicación y en la figura 
-\begin_inset LatexCommand ref
-reference "fig:Structure101-Buble"
-
-\end_inset
-
-, el primer nivel de explosion del paquete core.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/bubbleStructure101.png
-	width 50text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Structure 101 - Estructura de paquetes"
-
-\end_inset
-
-Structure 101 - Bubble-Market Estructura de paquetes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/bubble_core_structure101.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Structure101-Buble"
-
-\end_inset
-
-Structure101 - Bubble core
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Como se mencionó con anterioridad, la herramienta cubre aspectos estructurales
- del sistema en diversas perspectivas.
- Para el caso analizado, Market, se puede observar que se toma la estructura
- de paquetes como base del análisis y arma el grafo de dependencias basado
- en las relaciones de uso y de "
-\emph on
-imports
-\emph default
-" de otros paquetes.
- Para el paquete example.market, bajo la perspectiva DSM, figura 
-\begin_inset LatexCommand ref
-reference "fig:Structure-101-Market"
-
-\end_inset
-
-, se pueden observar las clases que lo componen y el grado de acoplamiento
- con sus pares.
- Un asistente de la herramienta resalta aquellos que tienen mayor cantidad
- de dependencias y los resalta como componentes.
- Debajo de la matriz se puede ver la misma vista en forma de grafo.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/bubble.examples.marketDSMStructure101.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Structure-101-Market"
-
-\end_inset
-
-Structure 101 - Market
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Puede notarse que esta herramienta si bien es muy atractiva en terminos
- visuales y de navegación de la información, está destinada a resolver problemas
- de erosión arquitectónica.
- Carece totalmente de aspectos comportamentales.
- Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
- del sistema y de qué manera interactuan los componentes.
- De nuevo, la falta de información dinámica extraida a travéz de trazas
- de ejecución deja ocultas relaciones entre componentes que se resulven
- en tiempo de ejecución.
- Otro punto (de disconformidad?) es que esta herramienta presenta toda la
- información de una sola vez.
- No permite establecer reglas de diseño que guien la recuperación, ni la
- interacción del usuario en el proceso de reconstrucción.
-\end_layout
-
-\begin_layout Subsection
-G2 con Structure 101
-\end_layout
-
-\begin_layout Standard
-De la misma forma que con Market, se utilizó Structure101 para analizar
- el sistema G2.
-\end_layout
-
-\begin_layout Standard
-Dado que Market es un sistema pequeño, se pudieron detectar facilmente las
- extensiones del framework bubble como son tareas y eventos.
- En el caso de G2, estas extensiones del framework se encuentran desperdigadas
- a lo largo de toda la estructura de paquetes del proyecto.
- La forma en que Structure trabaja es inherentemente estructural por lo
- que el gran aporte que esta herramienta ofrece en este caso es la comprensión
- de la forma en que está organizado el sistema y como así tambien permite
- visualizar las dependencias entre paquetes.
-\end_layout
-
-\begin_layout Standard
-A nuestro entender, G2 al igual que Market son sistemas donde lo más importante
- es saber cómo funcionan.
- Así, las vistas estructurales no aportan el conocimiento necesario sobre
- su funcionamiento como si lo harían representaciones UCM's o diagramas
- UML de secuencia.
-\end_layout
-
-\begin_layout Standard
-La figura 
-\begin_inset LatexCommand ref
-reference "fig:G2-Structure101"
-
-\end_inset
-
- muestra las dependencias entre los principales módulos del sistema G2.
- En ella se puede ver el gran acoplamiento con el módulo bubble y marcadas
- en rojo, las dependencias circulares entre algunos módulos.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/G2_structure101.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:G2-Structure101"
-
-\end_inset
-
-G2 analizado por Strucutre101
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
