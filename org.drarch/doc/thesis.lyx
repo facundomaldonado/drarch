@@ -515,6 +515,17 @@ mainmatter
 
 \begin_layout Chapter
 Introducción
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+revisar todo el cap.
+ y las notas que puso andres en el doc
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -557,19 +568,17 @@ status collapsed
  Por ejemplo, algunas decisiones de diseño que involucra esta disciplina
  son: asignación de recursos, definición de restricciones entre la comunicación
  de los distintos elementos, declaración de responsabilidades, etc.
- Como vehículo de comunicación, su do\SpecialChar \-
+ Como vehículo de comunicación, la do\SpecialChar \-
 cu\SpecialChar \-
 men\SpecialChar \-
 ta\SpecialChar \-
-ción es fundamental, pues la
- falta de ella, o peor aún, el descuido al producirla y mantenerla, anulan
- o revierten todos los beneficios que el desarrollo centrado en la arquitectura
- puede aportar.
+ción de la arquitectura es fundament
+al
 \end_layout
 
 \begin_layout Standard
-La tendencia actual en el proceso de desarrollo software es focalizar las
- actividades de este proceso en la arquitectura del sistema.
+Una tendencia actual en el proceso de desarrollo software es la de focalizar
+ las actividades de este proceso en la arquitectura del sistema.
  A este enfoque se lo conoce como desarrollo centrado en la arquitectura
  
 \begin_inset LatexCommand cite
@@ -587,14 +596,12 @@ status collapsed
 
 \end_inset
 
- Sin embargo, en la mayoría de los sistemas la documentación es escasa o
- inexistente.
- La Arquitectura de Software refleja captura las principales decisiones
- de diseño del sistema.
+ Sin embargo, en la mayoría de los sistemas la documentación arquitectónica
+ es escasa o inexistente.
+ La arquitectura de software captura las principales decisiones de diseño
+ del sistema.
  Es muy difícil que estas primeras decisiones puedan cambiarse más adelante,
  por ejemplo, durante el proceso de desarrollo.
- Los efectos que tienen estas decisiones son los que más perduran en el
- ciclo de vida de un sistema.
  En general, una arquitectura abarca aspectos estructurales y de comportamiento
  así como también de 
 \emph on
@@ -621,7 +628,7 @@ key "UCMBOOK"
 
  proveen un modelo para aspectos de comportamiento.
  Aún con la ayuda de las arquitecturas, entender cómo funciona un sistema
- complejo y comunicárselo a los demás continua siendo un problema para muchas
+ complejo y comunicárselo a los stakeholders es un problema para muchas
  organizaciones.
  
 \end_layout
@@ -630,33 +637,24 @@ key "UCMBOOK"
 Todo sistema de software posee una arquitectura de software subyacente.
  Sin embargo, no necesariamente existe en la práctica una documentación
  acertada de esta arquitectura.
- Ni siquiera es necesario que existan diagramas, vistas ó representaciones
- gráficas para poder afirmar que un sistema posee una arquitectura de software.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[alvaro] Entre las razones de la falta de documentación se encuentran .....
-\end_layout
-
-\end_inset
-
- Por lo tanto, el hecho de lidiar con sistemas que no poseen documentación
- es un escenario que ocurre con frecuencia dentro de las organizaciones.
+ El hecho de lidiar con sistemas que no poseen documentación es un escenario
+ que ocurre con frecuencia dentro de las organizaciones.
  Muchas veces, los expertos que diseñaron el sistema se han ido de la organizaci
-ón, la documentación existente es escasa o esta desactualizada y lo único
- con que se cuenta es con el código fuente.
+ón, la documentación existente es escasa o esta desactualizada, no se dispone
+ de todo el código fuente y lo único con que se cuenta es con el código
+ ejecutable binario.
  También existen casos en donde la documentación disponible es inválida,
  es decir, el sistema no fue implementado siguiendo las restricciones y
  decisiones de diseño que la documentación describe.
+ Adicionalmente, los sistemas legados suelen no poseer documentación alguna
+ y es muy común que nuevos sistemas de software tengan que integrarse con
+ estos.
+ 
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, los sistemas legados suelen no poseer documentación alguna
- y es muy común que nuevos sistemas de software tengan que integrarse con
- estos.
- En estas situaciones, dado que una arquitectura puede existir independientement
-e de su especificación, es que cobran importancia los enfoques de reconstrucción
+En estas situaciones, dado que una arquitectura existe independientemente
+ de su especificación, es que cobran importancia los enfoques de reconstrucción
  de arquitecturas 
 \begin_inset LatexCommand cite
 key "SAIP"
@@ -664,34 +662,9 @@ key "SAIP"
 \end_inset
 
 .
- Una de las principales contribuciones que aportan estos enfoques es que
- las representaciones que generan, sirven para comenzar o contribuir con
- la de documentación de la arquitectura de software.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] ...
- [andres] falta lo de ejemplificar!
-\end_layout
-
-\begin_layout Standard
-Dado que es una copia del parrafo del Resumen, tengo aqui los mismos comentarios
- que puse en el Resumen.
- 
-\end_layout
-
-\begin_layout Standard
-Yo diria si pueden que no copien literalmente del Resumen, sino que aca
- elaboren o ejempliquen un poco :-)
-\end_layout
-
-\end_inset
-
-
+ Una de las principales contribuciones de estos enfoques es la generación
+ de representaciones que sirven para comenzar (o contribuir a) la documentación
+ explícita de la arquitectura de software.
 \end_layout
 
 \begin_layout Section
@@ -727,75 +700,15 @@ Otro comentario es que Reconstruccion es una forma de chequear Architecture
 
 \end_layout
 
-\begin_layout Subsubsection
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-Por ahi esta discusion la pondria en motivaciones..
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 La documentación de una arquitectura es fundamental para el desarrollo de
  software ya que ésta actúa como vehículo comunicacional entre los diferentes
- 
-\emph on
-stakeholders
-\emph default
- que participan a lo largo de las diferentes etapas del desarrollo.
- De esta forma permite que el sistema se diseñe, implemente, pruebe, instale
- y mantenga siguiendo a la arquitectura que lo sostiene.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-Esta un poco confuso este parrafo se nota la traduccion..
- Poner algo como ...
- ya que actuá como vehiculo comunicacional entre los diferentes stakeholders
- que participan a lo largo de las diferentes etapas del desarrollo ....
- Por ahí como ítem queda mejor que como bisecciones ya que no tiene mucho
- puesto en cada una..
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-A continuación se listan los principales motivadores que hacen necesaria
- una herramienta de reconstrucción de arquitecturas para documentar o re-documen
-tar descripciones arquitectónicas de un sistema.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] ..[andres] Yo trataria que cada una de las subsecciones de abajo tenga
- una mencion a un ejemplo concreto (cosa de ir dando contexto)
-\end_layout
-
-\end_inset
-
-
+ stakeholders que participan en las diferentes etapas del desarrollo.
+ La documentación permite que el sistema se diseñe, implemente, pruebe,
+ instale y mantenga de acuerdo a las prescripciones arquitectónicas.
+ A continuación, se discuten los principales factores que motivan la reconstrucc
+ion de arquitecturas para documentar o re-documentar la arquitectura de
+ un sistema.
 \end_layout
 
 \begin_layout Itemize
@@ -804,19 +717,18 @@ Inexistencia de documentación
 
 \begin_deeper
 \begin_layout Standard
-Como se mencionó previamente, existen varios motivos por los que un sistema
- no dispone de documentación que describa la arquitectura de software.
- También es muy común que no se cuente con los expertos que diseñaron el
- sistema.
- El hecho de lidiar con sistemas de estas características implica que sea
- necesaria una documentación de la arquitectura del mismo ya que para poder
- mantener y entender un sistema, es necesario conocer su arquitectra.
- No contar con la documentación arquitectónica de un sistema aumenta considerabl
-emente el riesgo de que el proyecto fracase.
+Como se mencionó previamente, existen varias razones por las cuáles un sistema
+ puede no disponer de documentación que describa la arquitectura de software.
+ También es muy común que no se cuente con los expertos que originalmente
+ diseñaron el sistema.
+ En sistemas de estas características,es necesario conocer su arquitectura
+ para poder comprender y mantener el sistema.
  Por ejemplo, en un sistema donde los componentes se comunican mediante
  un mecanismo de invocación implícita, es muy difícil darse cuenta cuáles
  son los componentes que se relacionan sin tener descripciones arquitectónicas
  de alto nivel que lo reflejen.
+ No contar con la documentación arquitectónica aumenta considerablemente
+ el riesgo de fracasos.
 \end_layout
 
 \end_deeper
@@ -843,69 +755,61 @@ status collapsed
 Asegurarse de que un sistema sea construido en conformidad con su diseño
  arquitectónico durante su desarrollo, evolución y mantenimiento es importante,
  ya que divergencias significativas entre arquitectura e implementación
- pueden comprometer la estructura, estilo y propiedades que han sido establecida
-s mediante cuidadoso análisis a nivel arquitectónico 
+ pueden comprometer la estructura y calidad del sistema 
 \begin_inset LatexCommand cite
 key "ABIANTOUN05b"
 
 \end_inset
 
 .
- Generalmente, estos análisis son de atributos de calidad y éstos se describen
- en la sección\InsetSpace ~
+ Durante el desarrollo, es normal que se produzcan cambios en la documentación
+ arquitectónica que luego no son reflejados en el código, o cambios en el
+ código que no son apropiadamente documentados.
+ A medida que el desfasaje entre documentación e implementación de una arquitect
+ura se agrava, será cada vez más difícil de remediarlo por sus desarrolladores,
+ con el consiguiente deterioro en la calidad del producto.
+ Por ejemplo, una arquitectura de pipes and filters 
+\begin_inset Note Note
+status open
 
-\begin_inset LatexCommand ref
-reference "sub:Atributos-de-calidad"
+\begin_layout Standard
+[REF]
+\end_layout
 
 \end_inset
 
-.
+ permite ciertos análisis de performance para predecir la latencia del sistema,
+ pero una implementación equivocada de la estructura de pipes y filters
+ puede invalidar dicho análisis, y conducir a problemas con la latencia
+ final del sistema.
+ 
 \end_layout
 
 \begin_layout Standard
-Durante las diferentes etapas del desarrollo de software, pueden producirse
- cambios en la documentación arquitectónica que luego no son reflejados
- en el código, o cambios en el código que no son apropiadamente acomodados
- en la documentación.
- Siendo la arquitectura una guía fundamental durante todo el ciclo de vida
- del sistema, el desfasaje entre documentación e implementación de una arquitect
-ura se hará cada vez más difícil de remediar por sus desarrolladores, finalmente
- deteriorando la calidad del producto.
-\end_layout
-
-\begin_layout Standard
-Desafortunadamente, debido a la evolución natural del sistema, es probable
- que la arquitectura y la implementación pierdan consistencia.
- Una vez que el diseño arquitectónico está listo, típicamente todos los
- esfuerzos se focalizan en la implementación, y esto hace que la documentación
- se desactualice progresivamente.
- Por ejemplo, nuevos re\SpecialChar \-
-que\SpecialChar \-
-ri\SpecialChar \-
-mien\SpecialChar \-
-tos pueden causar un rediseño de la arquitectura
+La arquitectura y la implementación pueden también perder consistencia debido
+ a la evolución natural del sistema.
+ Una vez que el diseño arquitectónico está listo, los esfuerzos se focalizan
+ generalmente en la implementación, y esto hace que la documentación se
+ desactualice progresivamente.
+ Por ejemplo, nuevos requerimientos pueden causar un rediseño de la arquitectura
 , con cambios consecuentes en algunas partes de la implementación; y por
  otro lado, algunas tareas de mantenimiento pueden producir cambios en el
- código que deberían ser reflejados en modificaciones de la arquitectura.
- Es aceptable que exista temporalmente cierto desfasaje, normalmente los
- desarrolladores trabajan en la implementación sin mantener el modelo arquitectó
-nico, el cual rápidamente queda desactualizado.
+ código que deberían ser reflejados mediante modificaciones de la arquitectura.
+ Si bien es aceptable que exista temporalmente cierto desfasaje, el problema
+ surge cuando los desarrolladores trabajan en la implementación sin mantener
+ la documentación arquitectónica.
 \end_layout
 
 \begin_layout Standard
-En algunos casos, los desarrolladores pueden introducir sutiles diferencias
- estructurales que invalidan intenciones claves de la arquitectura.
+En otros casos, los desarrolladores suelen introducir pequeñas diferencias
+ estructurales que invalidan reglas clave de la arquitectura.
  Por ejemplo, en un sistema estructurado en capas, es posible que un programador
- inadvertido genere dependencias no deseadas al saltear la capa inmediatamente
- inferior.
- Análogamente, en el desarrollo de sistemas 
-\emph on
-web
-\emph default
- multibanda es común el error de invocar directamente a la base de datos
- desde la banda de presentación.
- Como resultado, los arquitectos a menudo deben lidiar en sus análisis con
- conocimiento incompleto e incorrecto debido a defectos en la documentación
+ inadvertidamente genere dependencias no deseadas al saltear la capa inmediatame
+nte inferior.
+ Análogamente, en el desarrollo de sistemas web multibanda, es común el
+ error de invocar directamente a la base de datos desde la banda de presentación.
+ Como resultado, los análisis a nivel arquitectónico se ven afectados por
+ información incompleta e incorrecto debido a defectos en la documentación
  
 \begin_inset LatexCommand cite
 key "ALDRICH05"
@@ -916,28 +820,21 @@ key "ALDRICH05"
  En estos casos, las relaciones de los componentes (en el nivel arquitectónico)
  con clases y métodos (en el nivel de implementación) ya no se mantienen,
  y los desarrolladores deben restablecer la consistencia manualmente.
- Éste fenómeno se conoce como 
-\emph on
-corrimiento arquitectura-implementación
-\emph default
  
+\end_layout
+
+\begin_layout Standard
+Éste fenómeno se conoce como corrimiento arquitectura-implementación\InsetSpace ~
+
 \begin_inset LatexCommand cite
 key "PERRY92"
 
 \end_inset
 
- o 
-\emph on
-erosión arquitectónica
-\emph default
-.
- Si no se maneja correctamente, revierte los beneficios del desarrollo centrado
- en la arquitectura, ya que se pierde la trazabilidad entre re\SpecialChar \-
-que\SpecialChar \-
-ri\SpecialChar \-
-mien\SpecialChar \-
-tos,
- decisiones de diseño y artefactos de implementación.
+ o erosión arquitectónica.
+ Si no se maneja correctamente, estos desfasajes atentan contra los beneficios
+ del desarrollo centrado en la arquitectura, ya que se pierde la trazabilidad
+ entre requerimientos, decisiones de diseño y artefactos de implementación.
  
 \end_layout
 
@@ -949,61 +846,54 @@ Reconstrucción de arquitecturas
 \begin_layout Standard
 La Reconstrucción de Arquitecturas de Software se define como una técnica
  para generar representaciones arquitectónicas de un sistema.
- Si bien el principal uso de esta representación es el de documentar la
- arquitectura existente de un sistema, también puede ser utilizada de diversas
- formas: como base para la re-documentación de la arquitectura, como punto
- de comienzo para realizar re-ingeniería sobre el sistema y crear una nueva
- arquitectura, como forma de identificar componentes re-usables o para establece
-r una arquitectura base dentro de una línea de productos de software 
+ En el contexto de nuestro, el principal uso de esta representación es el
+ de documentar la arquitectura existente de un sistema.
+ Sin embargo, la representación puede también ser utilizada con otros propósitos
+: como base para la re-documentación de la arquitectura, como punto de comienzo
+ para realizar re-ingeniería sobre el sistema y crear una nueva arquitectura,
+ como forma de identificar componentes reusables, o para establecer una
+ arquitectura base dentro de una línea de productos de software 
 \begin_inset LatexCommand cite
 key "Rick2003"
 
 \end_inset
 
 .
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y][andres] Idem, ya lo vi antes a esto :-)...
- concentrase mas en en que consiste la tecnica de reconstruccion
-\end_layout
-
-\end_inset
-
- Estos motivos hacen que los enfoques de reconstrucción de arquitecturas
- tomen importancia.
 \end_layout
 
 \begin_layout Standard
 Existen diferentes técnicas y enfoques para recuperar representaciones de
  la arquitectura de un sistema.
- Esto hace que sea difícil describir las distintas etapas que un proceso
- de reconstrucción de arquitecturas requiere.
- Sin embargo, casi todos los enfoques estructuran un proceso en un ciclo
- basado en extraer, abstraer y visualizar la información
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y][andres] Una figura ilustrativa del extraer-abstraer-visualizar ayudaria
- a entender mejor las cosas
-\end_layout
-
-\end_inset
-
- (ver figura\InsetSpace ~
+ Básicamente, la mayoría de los enfoques estructuran un proceso de reconstrucció
+n en un ciclo basado en extraer, abstraer y visualizar la información, como
+ se muestra en la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Enfoque-Extraer-Abstraer-Presentar"
 
 \end_inset
 
-).
- En todos los casos, este proceso es asistido por herramientas, las cuales
+.
+ En todos los casos, este proceso es asistido por herramientas, las cuáles
  extraen información del sistema (ej.
- código fuente) para ir agregando niveles de abstracción cada vez mas altos.
- El resultado final son diagramas que representan la arquitectura del sistema.
+ código fuente) y permiten ir tratándola a distintos niveles de abstracción.
+ El principal actor es un experto en ingenieria reversa que utiliza una
+ o más herramientas durante el proceso.
+ La entrada del proceso no es solamente codigo fuente, sino que tambien
+ abarca
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+...
+ bla bla bla
+\end_layout
+
+\end_inset
+
+.
+ El resultado final es generalmente un conjunto de diagramas que representan
+ la arquitectura del sistema.
 \end_layout
 
 \begin_layout Standard
@@ -1032,7 +922,17 @@ name "fig:Enfoque-Extraer-Abstraer-Presentar"
 
 \end_inset
 
-Enfoque Extraer-Abstraer-Presentar
+Enfoque Extraer-Abstraer-Presentar (Adaptado de 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+REF
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \end_inset
@@ -1047,26 +947,38 @@ Enfoque Extraer-Abstraer-Presentar
 
 \begin_layout Standard
 Una definición genérica de la Reconstrucción de Arquitecturas de Software
- es la proponen Bass et.al.
+ es la que proponen Bass et.al.
  en 
 \begin_inset LatexCommand cite
 key "SAIP"
 
 \end_inset
 
-, definiendo ésta como como un proceso interpretativo, interactivo e iterativo
- que involucra muchas actividades: no es un proceso totalmente automático.
- Requiere de la capacidad y de la atención del experto en ingeniería reversa
- y del arquitecto (o alguien con conocimientos sobre la arquitectura del
- sistema).
- 
+.
+ La reconstruccion es definida como un proceso interpretativo, interactivo
+ e iterativo que involucra varias actividades.La reconstruccion no es un
+ proceso totalmente automático, sino que requiere de la capacidad y de la
+ atención del experto en ingeniería reversa y del arquitecto (o alguien
+ con conocimientos sobre la arquitectura del sistema).
 \end_layout
 
 \begin_layout Standard
-La ingeniería de reversa sobre una arquitectura consiste en todas las actividade
-s que hacen que una arquitectura de software sea explícita.
- Generalmente, el análisis comienza desde el nivel de implementación y se
- va moviendo hasta que llega el nivel arquitectónico.
+La ingeniería de reversa 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Ingenieria reversa de la arquitectura lo usan como sinonimo de reconstruccion?
+ Si es asi, aclarar porque aca confunde un poco ...
+\end_layout
+
+\end_inset
+
+de una arquitectura consiste en todas las actividades que hacen que una
+ arquitectura de software sea explícita.
+ Generalmente, el análisis comienza en el nivel de implementación, y se
+ va moviendo hacia niveles mas altos de abstracción, hasta llegar al nivel
+ arquitectónico.
  El objetivo de este proceso es extraer modelos arquitectónicos del sistema
  desde la implementación.
  
@@ -1093,11 +1005,8 @@ status collapsed
 
 \begin_layout Standard
 Es comúnmente aceptado que una arquitectura de software puede ser utilizada
- como vehículo de comunicación entre los 
-\emph on
-stakeholders
-\emph default
- (personas con diferentes necesidades de un sistema).
+ como vehículo de comunicación entre los stakeholders (personas con diferentes
+ necesidades de un sistema).
  Sin embargo puede verse la falta de documentación arquitectónica en la
  mayoría de los proyectos de desarrollo actuales, especialmente en empresas
  de software pequeñas.
@@ -1106,7 +1015,7 @@ stakeholders
  La Reconstrucción de Arquitecturas es una técnica para generar representaciones
  arquitectónicas del sistema.
  Generalmente, esta técnica consiste en realizar las siguientes actividades
- de forma iterativa:
+ de forma iterativa: 
 \end_layout
 
 \begin_layout Itemize
@@ -1128,54 +1037,6 @@ Análisis de información: En esta actividad es donde se realiza el mayor
 \begin_layout Itemize
 Generación de vistas: Se crean vistas que representen y describan la arquitectur
 a del sistema.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] antes de explicar los posibles usos de la tecnica, explicar
- primero en que consiste la técnica en si!!!
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-...que puede ser utilizada de diversas formas 
-\begin_inset LatexCommand cite
-key "SAIP"
-
-\end_inset
-
-.
- El principal uso de esta representación es el de documentar la arquitectura
- existente de un sistema.
- Si no existe la documentación o la documentación disponible esta desactualizada
-, la representación obtenida mediante la reconstrucción puede ser usada
- como una base para la re-documentación de la arquitectura.
- Esta representación también puede ser usada como un punto de comienzo para
- realizar re-ingeniería sobre el sistema y crear una nueva arquitectura.
- Finalmente, la re\SpecialChar \-
-pre\SpecialChar \-
-sen\SpecialChar \-
-ta\SpecialChar \-
-ción puede ser usada como una forma de identificar
- componentes reusables o para establecer una arquitectura base dentro de
- una línea de productos de software 
-\begin_inset LatexCommand cite
-key "Rick2003"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1185,112 +1046,27 @@ Supongamos que se tiene un sistema en el que existen varios componentes
  estilo de eventos general para realizar modificaciones.
  En esta situación, una representación de la arquitectura podría brindarnos
  la información necesaria.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] Seria bueno no hablar todo en abstracto, y agregar un párrafo
- con un ejemplito textual concreto de a lo que Uds se refieren.
- Por ejemplo, algo tipo "Supongamos que se tiene un sistema en el que existen
- varios componentes que envian y reciben eventos, con mucha flexibillidad
- a la hora de programar, y uno quisiera saber que componentes trabajan con
- que eventos, y ver el estilo de eventos general, blba bla bla ...."
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 Debido a la importancia de la arquitectura de software en la toma de decisión
- en diferentes etapas del proceso de desarrollo, 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] No esta facil de leer eso de "refleje arquitectonicamente...".
- Yo diria mejor que contar con una buena documentacion es indispensable.
- Y en particular, si las prescripciones arquitectonicas se reflejan en el
- disenio detallado e implementacion, mucho mejor, porque esto ayuda a que
- los razonamientos realizados a nivel arquitectonico se cumplan efectivamente
- en la implementacion, bla bla ...
- Y luego, que las abstracciones arquitectonicas no son cosas que sean directamen
-te mapeables a codigo o que puedan ejecutarse, por ejemplo la dinamica del
- sistema, bla bla...
-\end_layout
-
-\end_inset
-
-contar con una buena documentación es indispensable.
+ en diferentes etapas del proceso de desarrollo, contar con una buena documentac
+ión es indispensable.
  Y en particular, si las prescripciones arquitectónicas se reflejan en el
  diseño detallado e implementación, mucho mejor, porque esto ayuda a que
  los razonamientos realizados a nivel arquitectónico se cumplan efectivamente
  en la implementación.
  A diferencia de las clases y paquetes, las abstracciones arquitectónicas
  no son cosas que sean directamente mapeables a código o que puedan ejecutarse.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[andres] , por ejemplo la dinamica del sistema, bla bla...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Esta documentación puede ser extraída a partir de información provista por
- las sentencias del código fuente.
- Sin embargo, el código fuente provee una vista parcial de los aspectos
- arquitectónicos que no incluye la dinámica de los diversos componentes
- de software.
- Evidencia de la dinámica del sistema puede ser obtenida del análisis de
- la ejecución de las sentencias y los valores correspondientes en tiempo
- de ejecución.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 En algunas soluciones a la Reconstrucción de Arquitecturas que se han propuesto
  la arquitectura del sistema se extrae principalmente por medio del análisis
  del código fuente.
- En otra
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Cuales??' dividirlas en los correspondientes grupos..
- las referencias son algo antiguas..
- 
-\end_layout
-
-\end_inset
-
-s 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-armin o dali?
-\end_layout
-
-\end_inset
-
-, se utilizan enfoques que reconstruyen patrones de diseño porque esto asegura
- que la reconstrucción se más precisa pero restringe el análisis a sistemas
- implementados utilizando patrones de diseño.
+ En otras , se utilizan enfoques que reconstruyen patrones de diseño porque
+ esto asegura que la reconstrucción se más precisa pero restringe el análisis
+ a sistemas implementados utilizando patrones de diseño.
  Muchos de los enfoques mencionados sólo muestran aspectos estructurales
  como diagramas de componentes o de clases y muy pocos muestran resultados
  que permitan visualizar el comportamiento del sistema de forma simple.
@@ -1299,90 +1075,15 @@ armin o dali?
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-(ej: diagramas de UCMs o de secuencia
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-Muestran componentes y connectores???
-\end_layout
-
-\end_inset
-
-).
- 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] De nuevo, no sean tan tendeciosos a que si no usa UCMs esta
- todo mal, porque digamos que los UCMs son una notacion que nosotros utilizamos
- por "conveniencia" (ya estaba soportada por el FLABot), y por otro lado,
- respecto a los "diagramas de secuencia", el Eclipse trae un tool que los
- reconstruye si uno quiere, pero el problema es que son tan detallados que
- no se puede ver mucho.
- El queso de "reconstruir comportamiento" esta en reconstruir "procesos"
- y cosas de mas alto nivel que la simple secuencia, y es ahi donde los UCMs
- pueden aportar, se entiende como re-enfocar el parrafo????
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y][andres] No concuerdo con esto.
- De hecho, casi todos los tools que conozco se basan en el paradigma "extraer-ab
-straer-presentar" que necesariamente require de varios pasos y de la experiencia
- del desarrollador para saber que extraer, como abstraerlo y como visualizarlo
- .
- Es cierto que algunas herramientas de reingenieria para C/Java directamente
- me transforman el codigo a diagramas UML, pero estos son los tools "menos
- interesantes".
- Lo que si creo que esta bien es que "la informacion de varias fuentes no
- es facilmente manipulable ni abstraible", y ahi si el DRArch puede aportar
- algo.
- En resumen, por favor rescriban el parrafo para que quede claro que problema
- resolveria su enfoque...
-\end_layout
-
-\end_inset
-
 Estos enfoques presentan el resultado de la reconstrucción en un solo paso
  y el arquitecto no ve el progreso del proceso de reconstrucción.
- Esto hace que el proceso no se pueda 
-\begin_inset Quotes eld
-\end_inset
-
-guiar
-\begin_inset Quotes erd
-\end_inset
-
- a medida que se reconstruye la arquitectura.
+ Esto hace que el proceso no se pueda “guiar” a medida que se reconstruye
+ la arquitectura.
  Es decir, no se tiene control sobre qué y cómo se recupera la información,
  ni se puede intervenir si lo considera necesario.
  Además, no es posible manipular la información de forma interactiva, perdiendo
  así la posibilidad de contar con la experiencia del arquitecto y su conocimient
 o en el dominio.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1391,6 +1092,7 @@ r-presentar" que necesariamente requiere de varios pasos y de la experiencia
  del desarrollador para saber qué extraer, cómo abstraerlo y cómo visualizarlo.
  Por otro lado, ninguno de estos enfoques mantiene la información recuperada
  de tal forma que sea flexible su manipulación.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1398,72 +1100,292 @@ Objetivos
 \end_layout
 
 \begin_layout Standard
-Como objetivo principal del trabajo se propuso definir un enfoque flexible
- para re\SpecialChar \-
-cons\SpecialChar \-
-tru\SpecialChar \-
-ir arquitecturas de sistemas de software
+Como objetivo principal del trabajo se propone definir un enfoque flexible
+ para reconstruir arquitecturas de sistemas de software.
+ Para ello, se asume un proceso de reconstrucción semi-automático que consiste
+ en recolectar información de distintas fuentes (código fuente, logs de
+ ejecución, experiencia de los expertos del sistema, etc.) y consolidarla
+ en una representación común, a fin de permitir al usuario-desarrollador
+ relacionar distintas piezas de información de forma sencilla
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
-hablar del enfoque a utilizar...
+Trataria de ser un poco mas especifico sobre la “forma”, ya que si ponen
+ “simple y sencilla” es algo muy generico y que no aporta mucho al enfoque
+ ...
 \end_layout
 
 \end_inset
 
-e.
- Para cumplir con este objetivo, el proceso de reconstrucción consiste en
- recolectar información de distintas fuentes (código fuente, logs de ejecución,
- experiencia de los expertos del sistema, etc) para consolidarlas en una
- representación común en la que se pueda relacionar la información de forma
- sencilla e intuitiva.
- Esta representación se realiza utilizando programación lógica.
- Luego, por medio de un me\SpecialChar \-
-ca\SpecialChar \-
-nis\SpecialChar \-
-mo de consultas, se analiza la información
- disponible para generar sugerencias al usuario sobre el modelo arquitectónico
- a reconstruir.
- Este proceso se repite con el fin de ir refinando de forma incremental
- el modelo arquitectónico.
+.
+ Para esta representación se utiliza programación lógica.
+ La idea es que una herramienta de asistencia pueda analizar la información
+ disponible, y por medio de un mecanismo, pueda generar sugerencias al usuario-d
+esarrollador sobre posibles vistas del modelo arquitectónico a reconstruir.
+ Este proceso se repite, con el fin de ir refinando el modelo arquitectónico
+ de manera incremental.
  El modelo que se va construyendo se transforma diagramas (vistas arquitectónica
 s) que representan aspectos estructurales y comportamentales del sistema.
+ Este enfoque, que denominamos 
+\emph on
+DRArch
+\emph default
+, se esquematiza en la Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Enfoque-de-asistencia-DRArch"
+
+\end_inset
+
+.
+ Esencialmente, este trabajo no pretende desarrollar una nueva herramienta
+ de reconstrucción de arquitecturas, sino desarrollar un asistente que facilite
+ (y haga mas productivas) las interacciones entre el usuario y distintas
+ herramientas de reconstrucción existentes.
+ 
 \end_layout
 
 \begin_layout Standard
-Por otro lado, el análisis de algunos trabajos similares puso a la luz ciertas
- ca\SpecialChar \-
-rac\SpecialChar \-
-te\SpecialChar \-
-rís\SpecialChar \-
-ti\SpecialChar \-
-cas que pueden dificultar la aplicación de un enfoque de esta
- naturaleza.
- Por esta razón se impusieron las siguientes restricciones:
+Un aspecto a destacar de 
+\emph on
+DRArch
+\emph default
+ es que permite recolectar y procesar información comportamental del sistema,
+ que es recolectada de logs del sistema, 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+bla bla bla 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/EnfoqueDrarch.PNG
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+actualizar la imágen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Enfoque-de-asistencia-DRArch"
+
+\end_inset
+
+Enfoque de asistencia 
+\emph on
+DRArch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A fin de hacer el enfoque 
+\emph on
+DRArch
+\emph default
+ tratable computacionalmente, se impusieron dos restricciones adicionales
+ para el proceso de reconstrucción de arquitecturas:
 \end_layout
 
 \begin_layout Itemize
-Los sistemas que utilicen el enfoque para reconstruir se arquitectura deben
- ser implementados siguiendo el paradigma de programación orientada a objetos.
+Los sistemas de los cuales se pretende reconstruir su arquitectura deben
+ ser implementados de acuerdo al paradigma de programación orientada a objetos.
+ 
 \end_layout
 
 \begin_layout Itemize
-Se debe planificar cuál va a ser la estrategia de reconstrucción en base
- a un estudio de la información existente (entrevistas con desarrolladores,
- documentos, etc.) y en base a la semántica que poseen los artefactos arquitectón
-icos.
- Es decir, se debe definir cuáles son los conceptos arquitectónicos que
- se desean reconstruir y a que granularidad (sub-sistema, componentes, módulos
- o clases son algunos ejemplos) ya que cada sistema tiene su propio concepto.
- Por ejemplo, en determinados sistemas se desea reconstruir componentes
- que representen eventos mientras que en otros, no es de interés que los
- eventos estén representados por componentes sino que lo que interesa es
- que se representen las tareas.
+El usuario debe planificar cuál va a ser la estrategia de reconstrucción
+ en base a un estudio de la información existente (entrevistas con desarrollador
+es, documentos, etc.), y seleccionar como los conceptos relevantes del diseño
+ del sistema se van a mapear a tipos específicos de artefactos arquitectónicos.
+ Es decir, el usuario debe definir cuáles son los conceptos arquitectónicos
+ que se desean reconstruir y a que granularidad (por ej., subsistema, componentes
+, módulos o clases, etc.).
+ Por ejemplo, en determinados sistemas el usuario puede estar interesado
+ en reconstruir componentes que representen eventos, mientras que en otros
+ sistemas, el usuario puede decidir que las fuentes de eventos se modelen
+ como tareas (y no como componentes).
+\end_layout
+
+\begin_layout Standard
+La herramienta DRArch que da soporte a nuestro enfoque fue diseñada como
+ un framework Java que 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+bla,bla, bla...
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Organización del trabajo
+Organización del informe
+\end_layout
+
+\begin_layout Standard
+El resto de este trabajo se encuentra organizado de la siguiente manera.
+ En el capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Contexto"
+
+\end_inset
+
+ se presentan los conceptos de arquitecturas de software, se describe su
+ importancia, y se tratan los conceptos de estilos arquitectónicos y atributos
+ de calidad.
+ Luego, se introducen las nociones básicas de descripciones de arquitecturas,
+ y se detallan los diagramas de componentes, el modelo de vistas “4 + 1”
+ y los Use Case Maps.
+\end_layout
+
+\begin_layout Standard
+Una vez introducido el contexto, en el capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Trabajos-relacionados"
+
+\end_inset
+
+ se analizan y comparan trabajos relacionados sobre reconstrucción de arquitectu
+ras que, de diferentes maneras, proporcionan soluciones al problema de la
+ falta o inexistencia de documentación arquitectónica.
+ Luego de este análisis, en el capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:El-enfoque-DRArch"
+
+\end_inset
+
+ se explica el enfoque 
+\emph on
+DRArch
+\emph default
+, detallando los pasos que propone para la reconstrucción de arquitecturas.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto comentarlo arriba, en el ultimo parrafo de seccion 1.4 (sobre el Framework)
+ java
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Implementación"
+
+\end_inset
+
+ se presentan el diseño de la herramienta 
+\emph on
+DRArch
+\emph default
+ y los aspectos más importantes de su implementación.
+ A su vez, se realiza un recorrido por la herramienta, mostrando interfaces
+ de usuario y representaciones de los datos.
+\end_layout
+
+\begin_layout Standard
+En el capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Casos-de-Estudio"
+
+\end_inset
+
+, se describen dos casos de estudio sobre los cuales se ejercitó la herramienta
+ implementada.
+ El primer caso de estudio es el sistema G2, que es una aplicación comercial
+ desarrollada en un proyecto de transferencia con la empresa Delsat, S.A.
+ El segundo caso de estudio, llamado Market, es un proyecto de prueba construido
+ sobre un framework de invocación implícita via eventos (nota: el proyecto
+ G2 se basa en el mismo framework).
+ Luego, se presentan los resultados de estos casos de estudio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ PORQUE NO SE DICE ACA QUE SE COMPARARON LOS RESULTADOS CON OTRA HERRAMIENTA
+ EXISTENTE (STRUCTURE101)?? (OJO, NO COPIAR TAL CUAL DEL RESUMEN )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, en el capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Conclusiones-y-Trabajos"
+
+\end_inset
+
+ se presentan las conclusiones del trabajo, y algunas propuestas para posibles
+ trabajos futuros.
+ 
+\end_layout
+
+\begin_layout Standard
+***
 \end_layout
 
 \begin_layout Standard
@@ -12087,8 +12009,8 @@ status collapsed
 \begin_layout Standard
 [Y] a) no ayuda mucho el hecho de que los 2 casos de estudio se basen en
  el mismo estilo arquitectonico subyacente (Bubble), ya que hay que hacer
- el analisis si lo recuperado es porque esta el Bubble de base y DArch trabaja
- bien para Bubble, o se puede aplicar a otros tipos de arquitecturas.
+ el analisis si lo recuperado es porque esta el Bubble de base y DRArch
+ trabaja bien para Bubble, o se puede aplicar a otros tipos de arquitecturas.
  O sea, no estoy diciendo que haya que cambiar los casos de estudio, pero
  si hacer las salvedades, suposiciones y analisis del caso 
 \end_layout
@@ -12097,7 +12019,7 @@ status collapsed
 [Y] b) no entendi que muestran las metricas que toman para evaluar cosas
  de los casos de estudio.
  Dado que las metricas me suenan fuertemente inspiradas en el paper de ArchSync,
- no se hasta que punto el "contexto " del ArchSync es extrapolable al DArch,
+ no se hasta que punto el "contexto " del ArchSync es extrapolable al DRArch,
 \end_layout
 
 \begin_layout Standard
@@ -12115,8 +12037,8 @@ ento de la arquitectura.
 d) un posible trabajo que yo agregaria en los casos de estudio es recuperar
  las mismas arquitecturas (Market y G2) con otro tool, ej con Shrimp/Creole,
  y hacer una comparacion de cuales son los puentos fuertes y debiles de
- ese tool, y como DArch mejora eso (especialmente la parte dinamica, interactivi
-dad, bla bla)
+ ese tool, y como DRArch mejora eso (especialmente la parte dinamica, interactiv
+idad, bla bla)
 \end_layout
 
 \end_inset
