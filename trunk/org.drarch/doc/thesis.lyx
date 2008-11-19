@@ -846,8 +846,8 @@ Reconstrucción de arquitecturas
 \begin_layout Standard
 La Reconstrucción de Arquitecturas de Software se define como una técnica
  para generar representaciones arquitectónicas de un sistema.
- En el contexto de nuestro, el principal uso de esta representación es el
- de documentar la arquitectura existente de un sistema.
+ En el contexto de éste trabajo, el principal uso de esta representación
+ es el de documentar la arquitectura existente de un sistema.
  Sin embargo, la representación puede también ser utilizada con otros propósitos
 : como base para la re-documentación de la arquitectura, como punto de comienzo
  para realizar re-ingeniería sobre el sistema y crear una nueva arquitectura,
@@ -880,13 +880,20 @@ reference "fig:Enfoque-Extraer-Abstraer-Presentar"
  El principal actor es un experto en ingenieria reversa que utiliza una
  o más herramientas durante el proceso.
  La entrada del proceso no es solamente codigo fuente, sino que tambien
- abarca
+ abarca información textual, información dinámica, información sobre la
+ organización física, histórica y humana como asi tambien la experiencia
+ de lo las personas involucradas 
+\begin_inset LatexCommand cite
+key "Verjus2007"
+
+\end_inset
+
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-...
- bla bla bla
+Y bla...bla..bla..
 \end_layout
 
 \end_inset
@@ -1152,17 +1159,29 @@ Un aspecto a destacar de
 DRArch
 \emph default
  es que permite recolectar y procesar información comportamental del sistema,
- que es recolectada de logs del sistema, 
+ que es recolectada de logs del sistema.
+ Si bien es posible reconstruir aspectos comportamentales basando el análisis
+ en el código fuente 
+\begin_inset LatexCommand cite
+key "AMYOT-SAM02"
+
+\end_inset
+
+, hay casos en los que resulta casi imposible determinar el comportamiento
+ real de la aplicación.
+ Se puede mencionar por ejemplo casos en los que se explota el polimorfismo
+ de la orientación a objetos y las instanciaciónes se dan en tiempo de ejecución.
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-bla bla bla 
+[Y] bla...bla...bla..
 \end_layout
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4845,10 +4864,6 @@ Actividades principales del proceso de recuperación de arquitecturas de
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -4983,10 +4998,6 @@ Ejemplo KAE
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
