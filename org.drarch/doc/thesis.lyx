@@ -6290,12 +6290,12 @@ En este capítulo se presenta el enfoque
 \emph on
 DRArch
 \emph default
-, que propone la creación de una he\SpecialChar \-
+, que propone una he\SpecialChar \-
 rra\SpecialChar \-
 mien\SpecialChar \-
-ta de soporte para la reconstrucción
- de arquitecturas de software, usando para ello información estática (código
- fuente) y dinámica (
+ta de soporte para la reconstrucción de arquitecturas
+ de software, usando para ello información estática (código fuente) y dinámica
+ (
 \emph on
 logs
 \emph default
@@ -6308,22 +6308,27 @@ El objetivo principal de
 \emph on
 DRArch
 \emph default
- es realizar un análisis de toda la información relevante que se pueda recolecta
-r de un sistema, generando como salida una representación arquitectónica.
- Como bien se detalló en el capítulo anterior, existen actualmente varios
- enfoques basados en reconstrucción de arquitecturas para tratar el problema
- que causa la falta de documentación arquitectónica.
- Si bien no se centran específicamente en la reconstrucción de comportamiento,
- el análisis detallado de cada uno nos permitió detectar aspectos que colaboran
- en los mecanismos y abstracciones aplicables al caso de UCMs.
+ es asistir al desarrollador realizando un análisis de la información relevante
+ que se pueda recolectar de un sistema y generando como salida una representació
+n arquitectónica.
+ Como bien se detalló en el capítulo anterior, existen varios enfoques basados
+ en reconstrucción de arquitecturas para tratar el problema que causa la
+ falta de documentación arquitectónica.
+ Si bien estos enfoques no se centran en la reconstrucción de arquitecturas
+ que muestren aspectos comportamentales del sistema, su análisis permitió
+ detectar ciertos aspectos que colaboran con el enfoque 
+\emph on
+DRArch
+\emph default
+ con mecanismos para generar diagramas de UCMs.
 \end_layout
 
 \begin_layout Standard
-Otro aspecto importante es que se tenga en cuenta la información que aporten
- aquellas personas que tengan conocimientos sobre el sistema durante el
- proceso de reconstrucción de la arquitectura.
+Otro aspecto importante es que se tenga en cuenta durante el proceso de
+ reconstrucción de la arquitectura la información que aporten aquellas personas
+ que tengan conocimientos sobre el sistema.
  Por lo general, esta información es la mas difícil de incorporar ya que
- la semántica no es siempre la misma.
+ por lo general depende de la naturaleza de cada sistema.
  Por ejemplo, un desarrollador sabe que existe una convención en donde todas
  las clases que tengan en su nombre el sufijo 
 \emph on
@@ -6331,75 +6336,25 @@ Task
 \emph default
 , representan tareas del sistema, y se desea que ese conocimiento se incorpore
  en el proceso de reconstrucción.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
-[Y] Este parrafo y el anterior van en el resumen de la seccion anterior...
+No es necesario poner un TOC en cada inicio de capitulo, ni en cada seccion
+ grande, ...
+ porque la lectura se hace pesada y reiterativa ...
+ Please, eliminen este tipo de parrafos "indices" en otros lados de la tesis
+ tambien ...
+ A lo sumo, se puede justificar un parrafo que recapitule lo presentado
+ en el informe en el capitulo de Conclusiones.
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-El resto del capítulo se encuentra organizado de la siguiente forma.
- En la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Análisis"
-
-\end_inset
-
- se presenta un breve 
-\emph on
-análisis
-\emph default
- del problema y de los trabajos relacionados que dieron origen al conjunto
- de requerimientos para la creación de 
-\emph on
-DRArch
-\emph default
-.
- Luego, en la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Ejemplo:-Observer-Observable"
-
-\end_inset
-
- se muestra un ejemplo concreto para poder comprender el funcionamiento
- de 
-\emph on
-DRArch
-\emph default
-.
- La sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "des:Modelo-conceptual"
-
-\end_inset
-
- presenta el 
-\emph on
-modelo conceptual
-\emph default
- de 
-\emph on
-DRArch
-\emph default
-, junto con una breve descripción de cada uno de los elementos que interactúan
- para alcanzar la funcionalidad propuesta.
- Finalmente, en la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Conclusiones-Cap4"
-
-\end_inset
-
- se presentan las conclusiones del capítulo.
 \end_layout
 
 \begin_layout Section
@@ -6408,112 +6363,38 @@ name "sec:Análisis"
 
 \end_inset
 
-Enfoque 
-\emph on
-DRArch
+Modelo Concemptual
 \end_layout
 
 \begin_layout Standard
-El enfoque permite recuperar de forma flexible arquitecturas de sistemas
- de software.
+El enfoque permite recuperar arquitecturas de sistemas de software mostrando
+ aspectos estructurales y comportamentales.
  El proceso de reconstrucción consiste en recolectar información de distintas
  fuentes.
  Por ejemplo, código fuente, logs de ejecución, experiencia de los expertos
  del sistema, etc.
- Esta información se consolida en una representación para poder relacionar
- la información de forma sencilla e intuitiva.
- Esta representación se realiza utilizando programación lógica.
+ Esta información se consolida en una representación común.
  Luego, por medio de un mecanismo de consultas, se analiza la información
  disponible para generar sugerencias al usuario sobre el modelo arquitectónico
  a reconstruir.
- Las sugerencias son afirmaciones que el arquitecto debe aceptar o rechazar.
- Este proceso ser repite con el fin de ir refinando de forma incremental
- el modelo arquitectónico.
- El modelo que se va construyendo se transforma diagramas de componentes
+ El modelo que se va construyendo se transforma en diagramas de componentes
  y de UCMs que representan aspectos estructurales y comportamentales del
  sistema en un alto nivel de abstracción.
+ Las sugerencias son afirmaciones que el arquitecto debe aceptar o rechazar.
+ Este proceso se repite con el fin de ir refinando de forma incremental
+ el modelo arquitectónico.
+ De esta manera, el proceso de recuperación será una tarea donde el enfoque
+ sugerirá un conjunto de transformaciones arquitectónicas y el arquitecto
+ del sistema analizará y decidirá cuales de estas transformaciones es la
+ más adecuada.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] Aca hay que entrar con explicar el enfoque que se aborda ...
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-\begin_inset LatexCommand label
-name "des:Modelo-conceptual"
-
-\end_inset
-
-Modelo\InsetSpace ~
-conceptual
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-[Y ...
- mejorar la hipotesis]
-\end_layout
-
-\begin_layout Standard
-ALGO QUE SE UTILICE COMO HIPOTESIS...
- ALGO COMO la hipotesis de esta tesis esta fundamentada en utilizacion del
- conocimiento de los patrones arquitectonicos de un sistema para la reconstrucci
-on de los diferentes componentes de un sistema.
-\end_layout
-
-\begin_layout Standard
-Remarcar tambien que van a reconstruir un Object-oriented implementation..
- no cualquier implementacion...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La hipótesis de esta tesis esta fundamentada en la utilización del conocimiento
- de los patrones arquitectónicos para la reconstrucción de los diferentes
- componentes de un sistema.
- Para esto, asumimos que los sistemas a reconstruir estén implementados
- con el paradigma de programación orientada a objetos.
-\end_layout
-
-\begin_layout Standard
-Para lograr la funcionalidad propuesta, 
-\emph on
-DRArch 
-\emph default
-sigue un proceso iterativo en el cuál el arquitecto interactúa en pequeñas
- decisiones para ir especificando incrementalmente el mo\SpecialChar \-
-de\SpecialChar \-
-lo arquitectónico
- del sistema.
- Dicho modelo esta representado por una base de conocimiento lo suficientemente
- flexible como para poder realizar consultas complejas de forma simple.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] ACA DEBERIA IR UNA FIGURA ESQUEMATICA DEL ENFOQUE
-\end_layout
-
-\end_inset
-
- La figura\InsetSpace ~
+La descripción del proceso define seis partes principales del enfoque: el
+ análisis estático, análisis dinámico, un modelo de reglas, la identificación
+ de estructuras arquitectónicas, el manejo de las alternativas arquitectónicas
+ y la generación de vistas.
+ La Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Proceso-DRArch"
@@ -6525,6 +6406,38 @@ reference "fig:Proceso-DRArch"
 DRArch
 \emph default
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+La idea de este parrafo es contar que DRArch, basandose en el esquema de
+ recolectar-abstraer-presentar, procesa informacion estatica y dinamica,
+ e incorpora un mecanismo de asistencia basado en i) sugerencias al desarrollado
+r y ii) representacion uniforme de la informacion para que puedan hacerse
+ queries sobre ella ...
+ (es la idea) Tambien es importante aca establecer la terminologia comun
+ que se va a usar a lo largo de los capitulos venideros.
+ Por ejemplo: - Que tipos de artefactos de entrada considera el tool - Que
+ tipos de artefactos produce como salida - Que cosas son sugerencias y que
+ cosas no? Cual es el resultado de aceptar una sugerencia? Que la terminologia
+ que usen/introduzcan sea consistente con lo que se usa en las figuras (ej.
+ FIgura 4.1) Y luego si, meterse un poquito mas en el proceso, explicar las
+ fases y eso ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El enfoque se basa en la utilización de heurísticas para la detección de
+ componentes arquitectónicos y patrones de diseño en aplicaciones orientadas
+ a objetos.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -6546,6 +6459,19 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Corregir figura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -6555,6 +6481,10 @@ name "fig:Proceso-DRArch"
 \end_inset
 
 Proceso 
+\emph on
+DRArch
+\emph default
+ 
 \emph on
 
 \begin_inset Note Note
@@ -6589,9 +6519,9 @@ ciones al modelo arquitectónico.
  A partir del código fuente recuperamos la información estática y mediante
  el análisis del sistema en ejecución extraemos la información dinámica
  que complementa el análisis estático.
- Tanto la información estática como la dinámica que fueron recolectadas
- en las primeras fases, es estilizada por el resto de las fases ya que es
- considerada como información base.
+ Tanto la información estática como la dinámica (recolectadas en las primeras
+ fases) son utilizadas por el resto de las fases ya que es considerada como
+ información base.
  
 \end_layout
 
@@ -6599,11 +6529,22 @@ ciones al modelo arquitectónico.
 Luego de la fase de recolección de información empiezan las fases de especializa
 ción, las cuales van iterativa e incrementalmente modificando el modelo
  arquitectónico elevando en cada fase el nivel de abstracción y detalle.
- En estas fases, la herramienta sugiere un conjunto de modificaciones (hechos)
- a la descripción del modelo arquitectónico.
+ En estas fases, la herramienta sugiere un conjunto de modificaciones a
+ la descripción del modelo arquitectónico.
  Estas modificaciones representan cambios a diferentes partes de la representaci
 ón actual del sistema que pueden involucrar tanto modificaciones de estructura
- como de escenario de comportamiento.
+ como de escenario de comportamiento 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Explicar lo que es un "escenario de comportamiento", probablmente antes
+ de llegar a este punto ...
+\end_layout
+
+\end_inset
+
+.
  A partir de estas sugerencias, el arquitecto decide cual de estas modificacione
 s representan fielmente los conceptos arquitectónicos que se está intentando
  reconstruir como así también descartar todas las sugerencias porque no
@@ -6617,51 +6558,21 @@ s representan fielmente los conceptos arquitectónicos que se está intentando
 \begin_layout Standard
 Una forma de aumentar la especialización del análisis es la definición de
  una fase por aspecto del sistema.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta frase no se entiende porque usa 2 conceptos no explicados: "especializacion
+ del analisis", "aspecto de sistema"
+\end_layout
+
+\end_inset
+
  Así se podrían reutilizar dichas fases para cada aspecto evaluado.
  En cada nuevo escenario se va incrementando el nivel de detalle aportado
  por cada una de estas, descubriendo así relaciones que tal vez en análisis
  anteriores (escenarios diferentes) no fueron descubiertos.
- Al termino de cada fase, se generan representaciones gráficas del modelo
- arquitectónico las cuales cubren dos aspectos fundamentales de la arquitectura
- del sistema: estructura (diagramas de Componentes) y comportamiento (UCMs).
-\end_layout
-
-\begin_layout Standard
-De esta manera, el proceso de recuperación será una tare
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] Dentro del proceso faltan marcar las etapas de analisis estático y dinamico
-\end_layout
-
-\end_inset
-
-a donde el enfoque sugerirá un conjunto de transformaciones arquitectónicas
- y el arquitecto del sistema analizará y decidirá cuales de estas transformacion
-es es la más adecuada.
-\end_layout
-
-\begin_layout Standard
-La descripción del proceso define seis partes principales del enfoque: el
- análisis estático, análisis dinámico, un modelo de reglas, la identificación
- de estructuras arquitectónicas, el manejo de las alternativas arquitectónicas
- y la generación de vistas.
- En la figura\InsetSpace ~
- se muestra un diagrama esquemático
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] Esta imagen no aporta mucho..
- sobretodo porque no estan especidicadas las diferentes partes del enfoque
- con el proceso de reconstruccion...Una unificacion de ambas figuras mas un
- poco mas de trabajo seria lo ideall...
-\end_layout
-
-\end_inset
-
- de las partes del enfoque.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -6672,14 +6583,7 @@ Con el objetivo de poder comprender el enfoque pragmáticamente, en la siguiente
 Observer-Observable
 \emph default
 .
- El resto de las 
-\emph on
-sub
-\emph default
--secciones describen cada una de las partes del enfoque que se muestran
- en el diagrama esquemático de la figura\InsetSpace ~
- haciendo referencia o agregando
- mas detalles al ejemplo.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -6692,110 +6596,24 @@ Ejemplo: Observer-Observable
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-En algun lado hablaron que tambien usaban un diagrama de componentes..
- si lo hacen tienen que mencionarlo aca tambien describiendo el ejemplo
- tambien utilizando dicho lenguaje..
-\end_layout
-
-\end_inset
-
-Como se mencionó antes, una de las decisiones principales del enfoque 
+Una vista importante en 
 \emph on
 DRArch
 \emph default
- ha sido centrarse en la reconstrucción de las vistas comportamentales de
- una arquitectura, en par\SpecialChar \-
-ti\SpecialChar \-
-cu\SpecialChar \-
-lar, especificadas como UCMs.
- Para ayudar a comprender el enfoque que se explica en este capítulo, volvemos
- al ejemplo de la Sección\InsetSpace ~
+ es la de UCMs que muestra comportamiento.
+ Retomando el ejemplo de Sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "sub:Ejemplo-UCM"
 
 \end_inset
 
-, basado en un patrón 
-\emph on
-Observer-Observable
-\emph default
  
-\begin_inset LatexCommand cite
-key "gamma93design"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-Las diferentes partes del ejemplo tienen que ser explicadas a lo largo de
- la secciones..
- es decir..
- cuando hablan de analisis de codigo...
- introducen la implementacion...
- y el componente estructural..
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y...hace falta mostrar los eventos que tira el Flabto???]
-\end_layout
-
-\begin_layout Standard
-y luego en la seccion de dinamico presentan los eventos de ejecucion y el
- UCM.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-Seria deseable que el ejemplo muestre dos ciclos de recuperacion..
- 
-\end_layout
-
-\begin_layout Standard
-podria mostrarse primero que identifca MVC como estilo arquitectónico principal
- y luego observer-observable como refinamiento de la comunicaciones Modelo-Vista
- Modelo-Controlador
+...bla bla bla del ejemplo
 \end_layout
 
 \end_inset
@@ -6806,48 +6624,19 @@ podria mostrarse primero que identifca MVC como estilo arquitectónico principal
 \begin_layout Standard
 El patrón 
 \emph on
-Observer-Observable
+Observer-Observable\InsetSpace ~
+
 \emph default
+
+\begin_inset LatexCommand cite
+key "gamma93design"
+
+\end_inset
+
  se aplica en el contexto de aplicaciones interactivas que demandan un alto
  grado de interacción con el usuario.
- Estos sistemas normalmente requieren un alto grado de flexibilidad, en
- especial sobre la interfaz de usuario, que debe adaptarse a las necesidades,
- muchas veces conflictivas, de los diferentes usuarios.
- En particular, 
-\emph on
-Observer-Observable
-\emph default
- apunta a satisfacer las siguientes necesidades:
-\end_layout
-
-\begin_layout Itemize
-La misma información debe ser presentada de manera diferente
-\end_layout
-
-\begin_layout Itemize
-La representación gráfica y el comportamiento de la aplicación debe reflejar
- la ma\SpecialChar \-
-ni\SpecialChar \-
-pu\SpecialChar \-
-la\SpecialChar \-
-ción de datos inmediatamente
-\end_layout
-
-\begin_layout Itemize
-Cambios en la interfaz de usuario deben ser fáciles de introducir, incluso,
- en tiempo de ejecución
-\end_layout
-
-\begin_layout Itemize
-El núcleo de la aplicación (
-\emph on
-Observable
-\emph default
-) debe verse inalterado por el cambio de estilos o interfaces gráficas
-\end_layout
-
-\begin_layout Standard
-En el estilo 
+ El principal objetivo es desacoplar la vista de los datos.
+ En el estilo 
 \emph on
 Observer-Observable
 \emph default
@@ -6871,6 +6660,17 @@ Como primer paso, el arquitecto debe definir qué reglas se van a incluir
 Observer-Observable
 \emph default
  o de algún otro patrón de diseño.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto se va a entender mejor (por ahi con algo mas de explicacion), una vez
+ que mejoren la primera parte del capitulo y la figura 4.1 con las fases...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -6878,52 +6678,52 @@ Análisis de información de artefactos de código fuente
 \end_layout
 
 \begin_layout Standard
-Se debe realizar un análisis de los artefactos relacionados con el código
- fuente para poder capturar los aspectos estructurales del sistema.
- Dicho análisis requiere que el código fuente sea fácilmente navegable para
- poder ir recolectando información relevante.
- 
+Se debe realizar un análisis de los artefactos
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
-[Y] Justificacion de la eleccion de Prolog..
- 
+Acuerdense que en la primera parte del capitulo tienen que explicar que
+ son artefactos para uds, y dar algunos ejemplos, ...
+ para que esto se entienda mejor
 \end_layout
 
 \end_inset
 
-Con el objetivo de poder manipular la información estática de forma flexible,
- el código fuente es representado por medio de un lenguaje de programación
- lógico al estilo 
+ relacionados con el código fuente para poder capturar los aspectos estructurale
+s del sistema.
+ Dicho análisis requiere que el código fuente esté disponible.
+ Con el objetivo de poder manipular la información estática, el código fuente
+ es representado por medio de un lenguaje de programación lógico al estilo
+ 
 \emph on
 ProLog
 \emph default
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Usan Prolog o no? Si es un lenguaje pseudo-Prolog, digan como se llama,
+ pongan la referencia, y digan (brevemente) que "agrega" sobre el Prolog
+ tradicional ...
+\end_layout
+
+\end_inset
+
 .
  El lenguaje de programación 
 \emph on
 ProLog
 \emph default
- está basado en la lógica de predicados, un paradigma diferente a los lenguajes
- de más amplio uso en la actualidad, principalmente basados en la programación
- estructurada y la programación orientada a objetos.
- 
+ está basado en la lógica de predicados.
+ Los lenguajes de programación tipo 
 \emph on
-ProLog
+Prolog
 \emph default
- brinda posibilidades más potentes y eficientes en la representación y automatiz
-ación de técnicas basadas en el conocimiento.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] Ejemplo con la traduccion...y la forma de analisis..
-\end_layout
-
-\end_inset
-
-De esta forma, se representan artefactos del código fuente (clases, variables,
+ son declarativos (no opracional como programación orientada a objetos),
+ permiten hacer inferencias y soportan prototipación de ideas.
+ De esta forma, se representan artefactos del código fuente (clases, variables,
  paquetes, etc.) sobre una base de conocimiento.
  Por ejemplo, una la clase 
 \family typewriter
@@ -6957,18 +6757,56 @@ hasMethod(UserModel, setName).
 \end_layout
 
 \begin_layout Standard
-Esto nos permite mantener un contexto en el cual sea posible encontrar informaci
-ón relacionada de forma sencilla ya que buscando directamente en el código
- fuente resultaría casi imposible.
+Esto nos permite mantener un contexto en el cuál sea posible encontrar informaci
+ón relacionada mediante consultas que aprovechan las capacidades de inferencia
+ del paradigma de programación lógica.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+- Buscar directamente en el codigo, que cosa?? Lo que buscan son "elementos
+ y relaciones arquitectonicas" (artefactos?)??? 
 \end_layout
 
 \begin_layout Standard
-Esta transformación es realizada al comienzo del proceso de reconstrucción
- por medio de un parser que recorre el AST de cada archivo fuente.
+- En cualquier caso, lo de "resulta imposible" es un eufemismo..., sean mas
+ claros en porque a un parser le costaria resolver la misma funcionalidad
+ ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ya que buscando directamente en el código fuente resultaría casi imposible.
+\end_layout
+
+\begin_layout Standard
+Esta transformación de código Java a hechos (o representacion) 
+\emph on
+Prolog
+\emph default
+ es realizada al comienzo del proceso de reconstrucción por medio de un
+ parser que recorre el AST de cada archivo fuente.
  Una vez que el código fuente esta representado en forma de hechos, es posible
- realizar consultas para obtener información de forma simple y flexible.
- La flexibilidad de este enfoque permite explorar un gran abanico de relaciones
- y consultas diferentes.
+ realizar consultas para obtener información deseada.
+ La flexibilidad de este enfoque permite explorar un gran abanico 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+No me den el pantallazo general, prefiero que me cuenten de "un abanico
+ (mas chico)" de relaciones especificas y consultas especificas ...
+ Y luego digan.
+ "los tipos de relaciones y consultas se pueden extender en el futuro" o
+ algo asi ...
+\end_layout
+
+\end_inset
+
+ de relaciones y consultas diferentes.
 \end_layout
 
 \begin_layout Standard
@@ -6985,6 +6823,37 @@ ProLog
 \emph default
 , seria sencillo realizar algunas consultas para identificar partes del
  código.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Comenten tambien la contrapartida de usar Prolog, que son: la consistencia
+ de la base de hechos, el que cada vez que toco codigo Java tengo que regenerar
+ los hechos, o cualquier otro que se les ocurra ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+El ejemplo esta Ok para aclarar porque el Prolog puede ser ventajoso.
+ Sin embargo, el contexto es para "desarrollo con reuso" y no tiene mucho
+ que ver con "reconstruccion":-( ...
+ Se puede tunear el ejemplo para focalizarlo mas en un caso de reconstruccion???
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7102,7 +6971,10 @@ Observable
  Representa los datos y la funcionalidad principal de la aplicación.
  Provee un mecanismo para registrar los observadores.
  De este modo, permite la notificación de los cambios sufridos manteniendo
- la independencia del modelo con sus diferentes vistas.
+ la independencia del modelo con sus diferentes vistas u otros observers
+ (los observers pueden ser parte del modelo, por ejemplo, la notificación
+ entre celdas de una planilla de cálculo).
+ 
 \end_layout
 
 \begin_layout Description
@@ -7110,8 +6982,8 @@ Observable
 \emph on
 Observer
 \emph default
- Provee información al usuario de manera visual y obtiene información del
- usuario mediante eventos (por ejemplo, 
+ Generalmente provee información al usuario de manera visual y obtiene informaci
+ón del usuario mediante eventos (por ejemplo, 
 \emph on
 clicks
 \emph default
@@ -7124,7 +6996,11 @@ mouse
 \end_layout
 
 \begin_layout Standard
-Las relaciones entre el componente 
+Una instanciación concreta del 
+\emph on
+Observer-Observable
+\emph default
+ se muestra en las relaciones entre el componente 
 \family typewriter
 UserModelObservable
 \family default
@@ -7140,7 +7016,8 @@ User\SpecialChar \-
 Logger\SpecialChar \-
 Observer
 \family default
- denotan que existe un mecanismo de notificación entre estos componentes.
+ en donde denotan que existe un mecanismo de notificación entre estos componente
+s.
 \end_layout
 
 \begin_layout Standard
@@ -7159,9 +7036,10 @@ reference "sub:Ejemplo-UCM"
 
 \end_inset
 
-, el comportamiento especificado a nivel arquitectónico toma distancia de
- los detalles de interacción como las llamadas o mensajes entre componentes.
- En el lenguaje UCM, el comportamiento se representa en términos secuencias
+, el comportamiento especificado a nivel arquitectónico no muestra los detalles
+ de interacción como las llamadas o mensajes entre objetos dentro de un
+ componente.
+ En el lenguaje UCM, el comportamiento se representa en términos de secuencias
  causa-efecto entre 
 \emph on
 responsabilidades
@@ -7176,7 +7054,8 @@ nu\SpecialChar \-
 la\SpecialChar \-
 ri\SpecialChar \-
 dad que las llamadas y mensajes para reducir
- el nivel de compromiso con los detalles, por este motivo, una 
+ el nivel de compromiso con los detalles.
+ Por este motivo una 
 \emph on
 responsabilidad
 \emph default
@@ -7188,10 +7067,7 @@ responsabilidad
 responsabilidades
 \emph default
 .
-\end_layout
-
-\begin_layout Standard
-En otras palabras, existe una correspondencia de aridad 
+ En otras palabras, existe una correspondencia de aridad 
 \family typewriter
 n:m
 \family default
@@ -7220,7 +7096,7 @@ bi\SpecialChar \-
 li\SpecialChar \-
 dad
 \emph default
- UCM de un componente y su implementación.
+ UCM de un componente y su implementación en las distintas clases.
 \end_layout
 
 \begin_layout Standard
@@ -7328,9 +7204,15 @@ Algunos hechos
 \emph on
 Prolog
 \emph default
- de la tabla\InsetSpace ~
- muestran cómo es representada la información mostrada en el
- ejemplo (clases, interfaces, propiedades, mapeos, etc.).
+ del Cuadro\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "tab:Hechos-Prolog-pare"
+
+\end_inset
+
+ muestran cómo es representada la información mostrada en el ejemplo (clases,
+ interfaces, propiedades, mapeos, etc.).
 \begin_inset Note Note
 status collapsed
 
@@ -7341,6 +7223,23 @@ status collapsed
 \end_inset
 
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Aca faltaria un parrafo o dos que explique la relacion entre estos mappings
+ y como ayudan en el proceso del tool.
+ Es decir, estos mappings los tiene que proveer el desarrollador "a priori"
+ al tool?, el tool tiene reglas ya sobre como hacer los mappings? o como
+ es que funciona ...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7616,13 +7515,6 @@ En el ejemplo
 \emph on
 Observer-Observable
 \emph default
- sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Ejemplo:-Observer-Observable"
-
-\end_inset
-
 , el flujo de eventos que genera la ejecución de la aplicación queda reflejado
  en la Figura\InsetSpace ~
 
@@ -7690,6 +7582,20 @@ logs
  que es necesario guiar la ejecución de la aplicación, interactuando con
  ella de manera que se ejercite los casos de uso en donde los artefactos
  que se quieren reconstruir tengan participación dentro de la ejecución.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Mencionar algo que relacione la instrumentacion con el mapping de arriba,
+ ...
+ o al menos de donde sale la configuracion inicial de los puntos a instrumentar
+ (porque supongo que no se insertan probes en todo el codigo, o si?) Tambien,
+ dividir la oracion en partes, porque esta muy larga ...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7699,6 +7605,17 @@ Los hechos generados por el análisis dinámico, se almacenan en la base de
  Adicionalmente, es posible relacionar información del modelo que incrementalmen
 te se está generando y la información aportada por experiencia y el conocimiento
  de las personas involucradas en el proceso de reconstrucción.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto es "muy general" y vago, como se hace esto en la practica? (si es que
+ se hace), o como se aplicaria al ejemplo ...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7721,6 +7638,21 @@ notifyAllObservers
 \family default
  queda representado de la siguiente forma:  
 \family typewriter
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+
+\family typewriter
+Medio escueto.
+ Quedaria mejor de poner varios hechos que capturen esta informacion, asi
+ se ven como quedan variaciones "ejecuciones" (analogo al cuadro de arriba,
+ por ejemplo)
+\end_layout
+
+\end_inset
+
 executedMethod(1, UserModel.notifyAllObservers, void, null).
 \family default
 En donde el primer argumento es el orden de ejecución, el segundo, el método
