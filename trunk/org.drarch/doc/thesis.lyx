@@ -6369,23 +6369,27 @@ Modelo Concemptual
 \begin_layout Standard
 El enfoque permite recuperar arquitecturas de sistemas de software mostrando
  aspectos estructurales y comportamentales.
- El proceso de reconstrucción consiste en recolectar información de distintas
- fuentes.
- Por ejemplo, código fuente, logs de ejecución, experiencia de los expertos
- del sistema, etc.
+ Basandose en el esquema de recolectar-abstraer-presentar, el proceso de
+ reconstrucción consiste en recolectar información de distintas fuentes.
+ Por ejemplo, los principales artefactos que se tienen en cuenta son: código
+ fuente, logs de ejecución, experiencia de los expertos del sistema, etc.
  Esta información se consolida en una representación común.
  Luego, por medio de un mecanismo de consultas, se analiza la información
  disponible para generar sugerencias al usuario sobre el modelo arquitectónico
  a reconstruir.
- El modelo que se va construyendo se transforma en diagramas de componentes
- y de UCMs que representan aspectos estructurales y comportamentales del
- sistema en un alto nivel de abstracción.
  Las sugerencias son afirmaciones que el arquitecto debe aceptar o rechazar.
+ Si una suegerencia es aceptada, se realiza una transformación en el modelo.
+ Así es como el modelo se va construyendo y en cada paso se transforma en
+ diagramas de componentes y de UCMs que representan aspectos estructurales
+ y comportamentales del sistema en un alto nivel de abstracción.
+ Los UCMs pueden mostrar escenarios de comportamiento, es decir, escenarios
+ basados en los requerimientos del sistema en donde se describen los resultados
+ esperados de cada componente de la arquitectura.
  Este proceso se repite con el fin de ir refinando de forma incremental
  el modelo arquitectónico.
  De esta manera, el proceso de recuperación será una tarea donde el enfoque
  sugerirá un conjunto de transformaciones arquitectónicas y el arquitecto
- del sistema analizará y decidirá cuales de estas transformaciones es la
+ del sistema analizará y decidirá cuáles de estas transformaciones es la
  más adecuada.
 \end_layout
 
@@ -6413,19 +6417,9 @@ DRArch
 status open
 
 \begin_layout Standard
-La idea de este parrafo es contar que DRArch, basandose en el esquema de
- recolectar-abstraer-presentar, procesa informacion estatica y dinamica,
- e incorpora un mecanismo de asistencia basado en i) sugerencias al desarrollado
-r y ii) representacion uniforme de la informacion para que puedan hacerse
- queries sobre ella ...
- (es la idea) Tambien es importante aca establecer la terminologia comun
- que se va a usar a lo largo de los capitulos venideros.
- Por ejemplo: - Que tipos de artefactos de entrada considera el tool - Que
- tipos de artefactos produce como salida - Que cosas son sugerencias y que
- cosas no? Cual es el resultado de aceptar una sugerencia? Que la terminologia
- que usen/introduzcan sea consistente con lo que se usa en las figuras (ej.
- FIgura 4.1) Y luego si, meterse un poquito mas en el proceso, explicar las
- fases y eso ...
+Que la terminologia que usen/introduzcan sea consistente con lo que se usa
+ en las figuras (ej.
+ FIgura 4.1)
 \end_layout
 
 \end_inset
@@ -6533,19 +6527,8 @@ ción, las cuales van iterativa e incrementalmente modificando el modelo
  la descripción del modelo arquitectónico.
  Estas modificaciones representan cambios a diferentes partes de la representaci
 ón actual del sistema que pueden involucrar tanto modificaciones de estructura
- como de escenario de comportamiento 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Explicar lo que es un "escenario de comportamiento", probablmente antes
- de llegar a este punto ...
-\end_layout
-
-\end_inset
-
-.
- A partir de estas sugerencias, el arquitecto decide cual de estas modificacione
+ como de comportamiento.
+ A partir de estas sugerencias, el arquitecto decide cuál de estas modificacione
 s representan fielmente los conceptos arquitectónicos que se está intentando
  reconstruir como así también descartar todas las sugerencias porque no
  aportan información relevante al análisis.
@@ -6556,14 +6539,22 @@ s representan fielmente los conceptos arquitectónicos que se está intentando
 \end_layout
 
 \begin_layout Standard
-Una forma de aumentar la especialización del análisis es la definición de
- una fase por aspecto del sistema.
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Esta frase no se entiende porque usa 2 conceptos no explicados: "especializacion
- del analisis", "aspecto de sistema"
+Una forma de aumentar la del análisis es la definición de una fase por aspecto
+ del sistema.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[andres] Esta frase no se entiende porque usa 2 conceptos no explicados:
+ "especializacion del analisis", "aspecto de sistema"
+\end_layout
+
+\begin_layout Standard
+[nico] volamos todo el parrafo?...yo tampoco entiendo que se quiso poner.
 \end_layout
 
 \end_inset
@@ -6573,6 +6564,11 @@ Esta frase no se entiende porque usa 2 conceptos no explicados: "especializacion
  por cada una de estas, descubriendo así relaciones que tal vez en análisis
  anteriores (escenarios diferentes) no fueron descubiertos.
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6608,17 +6604,12 @@ reference "sub:Ejemplo-UCM"
 
 \end_inset
 
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-...bla bla bla del ejemplo
-\end_layout
-
-\end_inset
-
-
+, se puede observar cómo se comporta la aplicación y cómo se instancia el
+ patrón de diseño 
+\emph on
+Observer-Observable
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -6674,24 +6665,17 @@ Esto se va a entender mejor (por ahi con algo mas de explicacion), una vez
 \end_layout
 
 \begin_layout Subsection
+\begin_inset LatexCommand label
+name "sub:Análisis-de-información"
+
+\end_inset
+
 Análisis de información de artefactos de código fuente
 \end_layout
 
 \begin_layout Standard
-Se debe realizar un análisis de los artefactos
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Acuerdense que en la primera parte del capitulo tienen que explicar que
- son artefactos para uds, y dar algunos ejemplos, ...
- para que esto se entienda mejor
-\end_layout
-
-\end_inset
-
- relacionados con el código fuente para poder capturar los aspectos estructurale
-s del sistema.
+Se debe realizar un análisis de los artefactos relacionados con el código
+ fuente para poder capturar los aspectos estructurales del sistema.
  Dicho análisis requiere que el código fuente esté disponible.
  Con el objetivo de poder manipular la información estática, el código fuente
  es representado por medio de un lenguaje de programación lógico al estilo
@@ -6699,19 +6683,17 @@ s del sistema.
 \emph on
 ProLog
 \emph default
- 
-\begin_inset Note Note
-status open
+ llamado TyRuBa\InsetSpace ~
 
-\begin_layout Standard
-Usan Prolog o no? Si es un lenguaje pseudo-Prolog, digan como se llama,
- pongan la referencia, y digan (brevemente) que "agrega" sobre el Prolog
- tradicional ...
-\end_layout
+\begin_inset LatexCommand cite
+key "Volder1998"
 
 \end_inset
 
 .
+ TyRuBa es un motor lógico de inferencia que a diferencia del paradigma
+ de programación lógica tradicional, éste fue diseñado para representar
+ código Java.
  El lenguaje de programación 
 \emph on
 ProLog
@@ -6760,27 +6742,23 @@ hasMethod(UserModel, setName).
 Esto nos permite mantener un contexto en el cuál sea posible encontrar informaci
 ón relacionada mediante consultas que aprovechan las capacidades de inferencia
  del paradigma de programación lógica.
+ Realizar este tipo de consultas sobre la representación original del código
+ fuente (AST: 
+\emph on
+abstract syntax tree
+\emph default
+) resulta 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-- Buscar directamente en el codigo, que cosa?? Lo que buscan son "elementos
- y relaciones arquitectonicas" (artefactos?)??? 
-\end_layout
-
-\begin_layout Standard
-- En cualquier caso, lo de "resulta imposible" es un eufemismo..., sean mas
- claros en porque a un parser le costaria resolver la misma funcionalidad
- ...
+...
+ eufemismo!
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-ya que buscando directamente en el código fuente resultaría casi imposible.
 \end_layout
 
 \begin_layout Standard
@@ -6807,6 +6785,7 @@ No me den el pantallazo general, prefiero que me cuenten de "un abanico
 \end_inset
 
  de relaciones y consultas diferentes.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7259,7 +7238,7 @@ status open
 \begin_inset Text
 
 \begin_layout Standard
-Hechos Prolog 
+Hechos Prolog (información estática)
 \end_layout
 
 \end_inset
@@ -7467,7 +7446,7 @@ Hechos
 \emph on
 Prolog
 \emph default
- pare el ejemplo 
+ que representan la información estática pare el ejemplo 
 \emph on
 Observer-Observable
 \end_layout
@@ -7579,18 +7558,36 @@ logs
  de ejecución, es necesario instrumentar la aplicación y realizar ejecuciones
  sobre casos de uso que reflejen el comportamiento del sistema.
  En este punto es imprescindible la intervención manual del arquitecto ya
- que es necesario guiar la ejecución de la aplicación, interactuando con
- ella de manera que se ejercite los casos de uso en donde los artefactos
- que se quieren reconstruir tengan participación dentro de la ejecución.
+ que es necesario guiar la ejecución de la aplicación.
+ Para esto, se interactúa con el sistema de manera que se ejerciten los
+ casos de uso en donde los artefactos que se quieren reconstruir tengan
+ participación dentro de la ejecución.
+\end_layout
+
+\begin_layout Standard
+Los mapeos clase-componente y método-responsabilidad que se mostraron en
+ la sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sub:Análisis-de-información"
+
+\end_inset
+
+ son de gran ayuda para la generación del log ya que se reduce considerablemente
+ la cantidad puntos del sistema en dónde se tienen que instrumentar.
+ Si este mapeo no existe, es posible instrumentar todo el código fuente
+ seleccionado para generar el log.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Mencionar algo que relacione la instrumentacion con el mapping de arriba,
- ...
- o al menos de donde sale la configuracion inicial de los puntos a instrumentar
- (porque supongo que no se insertan probes en todo el codigo, o si?) Tambien,
- dividir la oracion en partes, porque esta muy larga ...
+[nico] En este último caso se debe tener en cuenta que el código seleccionado
+ para instrumentar la aplicación y el caso de uso seleccionado para ejercitar
+ el sistema podría generar gran cantidad de información...
+ [hace falta aclarar esto?]
 \end_layout
 
 \end_inset
@@ -7605,17 +7602,18 @@ Los hechos generados por el análisis dinámico, se almacenan en la base de
  Adicionalmente, es posible relacionar información del modelo que incrementalmen
 te se está generando y la información aportada por experiencia y el conocimiento
  de las personas involucradas en el proceso de reconstrucción.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esto es "muy general" y vago, como se hace esto en la practica? (si es que
- se hace), o como se aplicaria al ejemplo ...
-\end_layout
-
-\end_inset
-
-
+ De esta manera, al termino de cada fase los diagramas son generados y el
+ experto en reconstrucción tiene la posibilidad de agragar, quitar o modificar
+ artefactos arquitectónicos directamente sobre los diagramas.
+ Luego, las modificaciónes realizadas sobre los diagramas se sincronizan
+ con el modelo para continuar con el proceso de reconstrucción.
+ Por ejemplo, si alguna de las personas involucradas en el proceso de reconstruc
+ción sabe que existe un componente 
+\emph on
+observer
+\emph default
+ que no ha sido detectado, este nuevo componente se agrega directamente
+ al diagrama.
 \end_layout
 
 \begin_layout Standard
@@ -7631,32 +7629,219 @@ reference "sec:Ejemplo:-Observer-Observable"
 \emph on
 paths
 \emph default
- de ejecución.
- La ejecución del método 
-\family typewriter
-notifyAllObservers
-\family default
- queda representado de la siguiente forma:  
-\family typewriter
+ de ejecución así como también un "snapshot" de las propiedades de los objetos
+ involucrados en cada llamada a método.
+ Algunos hechos generados por el análisis del log se muestran en el Cuadro\InsetSpace ~
 
-\begin_inset Note Note
+\begin_inset LatexCommand ref
+reference "tab:Hechos-Prolog-info-dinamica"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
 status open
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="1">
+<features>
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Hechos Prolog (información dinámica)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Standard
 
 \family typewriter
-Medio escueto.
- Quedaria mejor de poner varios hechos que capturen esta informacion, asi
- se ven como quedan variaciones "ejecuciones" (analogo al cuadro de arriba,
- por ejemplo)
+executedMethod(1, Main.changeDataModel, void, null).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+executedMethod(2, UserModel.setName, void, null).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+executedMethod(3, UserModel.notifyAllObservers, void, null).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+executedMethod(4, UserInterfaceView.update, void, null).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+executedMethod(5, UserLogger.update, void, null).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+snapshot(1, userModel.name, 'aName').
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+snapshot(2, userModel.name, 'aNewName').
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+snapshot(3, userModel.name, 'aNewName').
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+snapshot(4, userModel.name, 'aNewName').
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\family typewriter
+snapshot(5, userModel.name, 'aNewName').
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "tab:Hechos-Prolog-info-dinamica"
+
+\end_inset
+
+Hechos 
+\emph on
+Prolog
+\emph default
+ que representan la infromación dinámica pare el ejemplo 
+\emph on
+Observer-Observable
 \end_layout
 
 \end_inset
 
-executedMethod(1, UserModel.notifyAllObservers, void, null).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En predicado 
+\family typewriter
+executedMethod
 \family default
-En donde el primer argumento es el orden de ejecución, el segundo, el método
- ejecutado, el tercero el tipo de retorno y el cuarto, el valor de retorno.
+ el primer argumento es el orden de ejecución, el segundo, el método ejecutado,
+ el tercero el tipo de retorno y el cuarto, el valor de retorno.
+ Y en el predicado 
+\family typewriter
+snapshot 
+\family default
+el primer argumento es el identificador de ejecución, el segundo, la propiedad
+ del objeto afectada y el tercero el valor de la propidedad del objeto.
 \end_layout
 
 \begin_layout Subsection
@@ -17624,7 +17809,7 @@ Predicados ternarios
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -18396,7 +18581,7 @@ significa:
 ?I 
 \family default
 \size default
-nel identificador de ejecución, 
+el identificador de ejecución, 
 \family typewriter
 \size small
 ?F
