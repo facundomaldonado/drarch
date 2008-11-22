@@ -6373,10 +6373,11 @@ El enfoque permite recuperar arquitecturas de sistemas de software mostrando
  reconstrucción consiste en recolectar información de distintas fuentes.
  Por ejemplo, los principales artefactos que se tienen en cuenta son: código
  fuente, logs de ejecución, experiencia de los expertos del sistema, etc.
- Esta información se consolida en una representación común.
- Luego, por medio de un mecanismo de consultas, se analiza la información
- disponible para generar sugerencias al usuario sobre el modelo arquitectónico
- a reconstruir.
+ Esta información se consolida en una representación común llamada base
+ del conocimiento.
+ Luego, por medio de un mecanismo de reglas, se analiza la información disponibl
+e para generar sugerencias al usuario sobre el modelo arquitectónico a reconstru
+ir.
  Las sugerencias son afirmaciones que el arquitecto debe aceptar o rechazar.
  Si una suegerencia es aceptada, se realiza una transformación en el modelo.
  Así es como el modelo se va construyendo y en cada paso se transforma en
@@ -6414,7 +6415,7 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Que la terminologia que usen/introduzcan sea consistente con lo que se usa
@@ -6443,22 +6444,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/procesoDrarch.jpg
-	lyxscale 30
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Corregir figura
-\end_layout
+	filename img/ProcesoDrarchActivityDiagram.png
 
 \end_inset
 
@@ -6681,7 +6667,7 @@ Se debe realizar un análisis de los artefactos relacionados con el código
  es representado por medio de un lenguaje de programación lógico al estilo
  
 \emph on
-ProLog
+Prolog
 \emph default
  llamado TyRuBa\InsetSpace ~
 
@@ -6693,7 +6679,7 @@ key "Volder1998"
 .
  TyRuBa es un motor lógico de inferencia que a diferencia del paradigma
  de programación lógica tradicional, éste fue diseñado para representar
- código Java.
+ código Java siendo un lenguaje más declarativo.
  El lenguaje de programación 
 \emph on
 ProLog
@@ -6747,7 +6733,10 @@ Esto nos permite mantener un contexto en el cuál sea posible encontrar informac
 \emph on
 abstract syntax tree
 \emph default
-) resulta 
+) es 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -6770,9 +6759,12 @@ Prolog
  parser que recorre el AST de cada archivo fuente.
  Una vez que el código fuente esta representado en forma de hechos, es posible
  realizar consultas para obtener información deseada.
- La flexibilidad de este enfoque permite explorar un gran abanico 
+ La flexibilidad de este enfoque permite explorar un gran abanico
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 No me den el pantallazo general, prefiero que me cuenten de "un abanico
@@ -6785,7 +6777,42 @@ No me den el pantallazo general, prefiero que me cuenten de "un abanico
 \end_inset
 
  de relaciones y consultas diferentes.
- 
+ Con la siguiente consulta, se obtienen todos los metodos 
+\emph on
+getters
+\emph default
+ del sistema:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+class(?C), method(?C,?M), re_name(?M,/^get/), modifier(?M,public).
+\end_layout
+
+\begin_layout Standard
+Para reducir el espacio de búsqueda y poder organizar el resultado en paquetes,
+ la consulta queda de la siguiente forma:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+class(?C), method(?C,?M), re_name(?M,/^get/), modifier(?M,public), package(?P),
+ child(?P, ?C).
+\end_layout
+
+\begin_layout Standard
+Los tipos de relaciones y consultas se pueden extender en el futuro para
+ combinarlos con la infrmación dinámica del sistema y con la información
+ arquitectónica reconstruída.
+ Es decir, en vez de relacionar los 
+\emph on
+getters 
+\emph default
+con paquetes, es posible relacionarlos con componentes arquitectónicos.
 \end_layout
 
 \begin_layout Standard
@@ -6798,15 +6825,21 @@ Por ejemplo, si se considera un escenario en donde un desarrollador quiere
  mucho tiempo, pero si el código fuente esta representado en forma de hechos
  
 \emph on
-ProLog
+Prolog
 \emph default
-, seria sencillo realizar algunas consultas para identificar partes del
+, sería sencillo realizar algunas consultas para identificar partes del
  código.
+ Por otro lado, transformar el código fuente a hechos 
+\emph on
+Prolog 
+\emph default
+tiene como contrapartida que cada vez que se modifica el código Java es
+ necesario regenerar los hechos.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Comenten tambien la contrapartida de usar Prolog, que son: la consistencia
