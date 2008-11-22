@@ -4564,6 +4564,11 @@ key "Riva2000"
 \end_layout
 
 \begin_layout Paragraph
+\begin_inset LatexCommand label
+name "par:DiscoTect"
+
+\end_inset
+
 DiscoTect
 \end_layout
 
@@ -8103,19 +8108,15 @@ El enfoque provee un conjunto de reglas basadas en patrones de diseño y
  El proposito de estas reglas es la codificacion de heuristicas que buscan
  ciertas estructuras y evidencias en el codigo para determinar la (posible)
  presencia de un artefacto arquitectonico particular.
- Estas heuristicas han sido compiladas a partir de enfoques como 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-....
- CITAR REFERENCIAS QUE SOPORTEN LA IDEA Por ejemplo, asumo que tomaron ideas
- del enfoque DISCOTECT, pero funcionando de manera "inversa", no?
-\end_layout
+ Estas heuristicas han sido compiladas a partir de enfoques como DiscoTech
+ 
+\begin_inset LatexCommand ref
+reference "par:DiscoTect"
 
 \end_inset
 
-Por ejemplo, una regla puede detectar la presencia de un componente del
+.
+ Por ejemplo, una regla puede detectar la presencia de un componente del
  tipo Observer y una evidencia puede ser la presencia de una clase que
  implementa la interface Observer.
 \end_layout
@@ -8144,7 +8145,7 @@ Los parrafos de esta seccion tienen redundancia con lo anterior, consolidarlo
  Otro comentario: no entiendo cual fase iria primero, la de sugerir el observer-
 observable y luego la de sugerir el MVC? o es al reves, primero el MVC y
  luego el Observer? Si es la 2da opcion, entonces Ademas, "invertir" la
- explicacion actualde porque las reglas Observer-Observable funcionan dentro
+ explicacion actual porque las reglas Observer-Observable funcionan dentro
  del MVC.
  
 \end_layout
@@ -8216,7 +8217,7 @@ Observer-Observable
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 No entiendo el proposito de este parrafo tan general aca, ni tengo idea
@@ -8239,7 +8240,7 @@ Lo que si pondria es una frase tipo: "Inicialmente, se decidio codificar
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 SACAR --> A su vez, es posible construir reglas mas complejas que ayuden
@@ -8260,13 +8261,11 @@ SACAR --> A su vez, es posible construir reglas mas complejas que ayuden
 
 \end_inset
 
- Las siguientes secciones describirán algunos de los enfoques considerados
- en 
-\emph on
-DRArch
-\emph default
- a la hora de definir reglas que asistan en la detección de estructuras
- arquitectónicas:
+Como se mencionó anteriormente, se decidió codificar en DRArch un repertorio
+ básico de fuentes de conocimiento (reglas) para asistir en la detección
+ de artefactos arquitectónicos.
+ Las reglas se basan en enfoques preexistentes y se describen en las secciones
+ subsiguientes.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8283,7 +8282,7 @@ Cualquier sistema grande se debe dividir en unidades más pequeñas, de modo
  Pero para ser funcional, la asignación debe seguir un cierto principio
  racional, tal como funcionalidad común o implementación relacionada
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
  y punto de vista común ?????
@@ -8310,7 +8309,7 @@ lo (subsistema) del modelo (sistema).
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Pela: yo sacaria esto: Los paquetes contienen elementos del modelo al más
@@ -8352,8 +8351,8 @@ Pela: yo sacaria esto: Los paquetes contienen elementos del modelo al más
 \begin_layout Standard
 Aprovechando la organización estructural que brinda la estructura de paquetes,
  junto con los permisos de acceso y la visibilidad de los elementos contenidos
- por este, es posible individualizar o detectar posibles componentes arquitectón
-icos.
+ en éste, es posible individualizar o detectar posibles componentes arquitectóni
+cos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8879,8 +8878,8 @@ reference "fig:Grafo-de-dependencias-acoplamiento"
 
 \end_inset
 
-En la figura pueden verse claramente dos conjuntos de clases agrupados por
- el grado de acoplamiento entre sus clases vecinas.
+En la figura pueden verse claramente dos conjuntos de clases (Modelo y Presentac
+ión) agrupados por el grado de acoplamiento entre sus clases vecinas.
  De esta forma es posible realizar reglas que reconozcan este tipo de agrupación
 es y el asistente las sugerirá como componentes del modelo.
  
@@ -9448,7 +9447,7 @@ key "Fayad99"
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Andres: Agregar las REFERENCIAS en las que se basaron para lo de frameworks
@@ -9522,7 +9521,7 @@ Hooks
 \emph default
  y
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 [Y] Adaptar la figura al ejemplo conductor..
@@ -9798,7 +9797,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/HotspotObserverObservable.png
+	filename img/HotspotObserverObservableJuntos.png
 	width 50theight%
 
 \end_inset
@@ -9822,7 +9821,26 @@ Identificación de Hot Spots.
 \emph default
 Ejemplo
 \emph on
- para el caso Observer-Observable
+ para el caso Observer-Observable.
+ 
+\emph default
+En la sección A de la figura se puede ver a la clase Consumer que invoca
+ al método 
+\emph on
+Template
+\emph default
+.
+ En sección B, se puede ver que la clase 
+\emph on
+Consumer
+\emph default
+ implementa el método template el cual invoca al método 
+\emph on
+Hook
+\emph default
+.
+ Ambos casos con sus correspondietes contrapartes en el ejemplo Observer-Observa
+ble.
 \end_layout
 
 \end_inset
@@ -9836,7 +9854,7 @@ Ejemplo
 \end_layout
 
 \begin_layout Section
-Manipulación de alternativas arquitectónicas
+Manipulación de alternativas arquitectónica
 \end_layout
 
 \begin_layout Standard
@@ -9898,7 +9916,7 @@ Al termino de cada fase, se cuenta cuenta con una representación gráfica
  Cuando un conjunto de reglas finaliza su ejecución, se generan diagramas
  de componentes y de UCMs.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 ANDRES: Esto sale out of nowhere.
@@ -10029,7 +10047,7 @@ idas" para ciertos estilos arquitectonicos, es asi?
 El proceso de reconstrucción es controlado por el arquitecto en todo momento.
  Su modelo 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 flexible (ANDRES: Nunca se dijo claramente en el capitulo que las reglas
@@ -12419,18 +12437,13 @@ Casos de estudio
 
 \begin_layout Standard
 Este capítulo describe una serie de casos de estudio que realizamos para
- verificar si las suposiciones hechas a nivel conceptual pueden ser corroboradas
- en la práctica.
- Los casos de estudio presentados aquí apuntan primero a demostrar que el
- enfoque 
+ verificar que el enfoque 
 \emph on
 DRArch
 \emph default
  puede ser aplicable a la reconstrucción arquitectónica de un sistema, y
  segundo, a ilustrar cómo se usó la herramienta en diferentes proyectos
  para poder investigar los puntos fuertes y débiles del enfoque.
- En particular, en este capítulo se pretende analizar la utilidad y efectividad
- de la herramienta frente a un sistema real ya implementado.
  En cada caso de estudio se presenta (a) un detalle de la arquitectura del
  sistema --necesaria para realizar comparaciones--, (b) un resumen de las
  fases ejecutadas --describiendo la naturaleza de las reglas-- y (c) las
@@ -12440,20 +12453,9 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-La selección de los casos de estudio estuvo organizada de acuerdo con una
- estrategia incremental.
- Inicialmente, se probó la herramienta con ejemplos simples como los presentados
- en los capítulos anteriores.
- Ésto permitió ajustar el funcionamiento del prototipo hasta obtener resultados
- aceptables.
- Una vez alcanzada una versión re\SpecialChar \-
-la\SpecialChar \-
-ti\SpecialChar \-
-va\SpecialChar \-
-men\SpecialChar \-
-te estable del prototipo, se realizó
- la reconstrucción de un proyecto de prueba llamado Market, y luego, se
- paso a reconstruir un proyecto comercial de tamaño mediano, llamado 
+Se realizó la reconstrucción de un proyecto de prueba llamado Market, y
+ luego, se paso a reconstruir un proyecto comercial de tamaño mediano, llamado
+ 
 \emph on
 G2
 \emph default
@@ -12509,19 +12511,64 @@ Suposiciones
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Description
+No estoy seguro que esta subseccion de suposiciones tenga que ir aca...
+ Dado que algunos de los comentarios parecen "postmortem" luego de realizar
+ los experimentos, se podria mover la subseccion a la parte de analisis
+ (del final) Otra alternativa es mover una version resumida de esto antes
+ del parrafo anterior (ver flecha) Otra alternativa es juntar la suposicion
+ de los estilos arquitectonicos como aclaracion luego de una subseccion
+ que habla del framework Bubble aca (y luego si introducir el ejemplo del
+ Market)
+\end_layout
+
+\begin_layout Description
+--->para mi va al final
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Si bien los casos de uso se basan en un mismo estilo arquitectónico subyacente
  (framework de invocación implícita), esto no implica que la herramienta
  
 \emph on
 DRArch
 \emph default
- sea eficiente sólo con este tipo de estilos arquitectónicos, si no que
- soporta una gran variedad.
+ sea aplicable sólo a este tipo de estilos arquitectónicos, sino que soporta
+ tambien otros estilos 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Andres: tales como....
+\end_layout
+
+\end_inset
+
+.
  Los casos de estudio seleccionados son sistemas donde la organización estática
  (estructura de paquetes) no tiene un rol relevante en la arquitectura.
  Sin embargo, la naturaleza dinámica de estos sistemas, los hacen atractivos
  para poner a prueba a DRArch.
 \end_layout
+
+\begin_layout Standard
+El contar con los expertos que desarrollaron el sistema permitió obtener
+ un panorama muy acertado de los elementos arquitectónicos que se deberían
+ construir.
+ Este hecho permitió que la documentación original del sistema fuera tenida
+ en cuenta solamente para realizar comparaciones y asi poder medir la eficiencia
+ de la herramienta.
+ 
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
 Por otro lado, la documentación original de los sistemas que se utilizaron
@@ -12530,6 +12577,11 @@ Por otro lado, la documentación original de los sistemas que se utilizaron
  Sin embargo, luego de obtener los resultados, la documentación original
  se utilizó para realizar comparaciones y así poder medir la eficiencia
  de la herramienta.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12589,7 +12641,23 @@ name "sec:Market"
 
 \end_inset
 
-Market
+Caso 1: Market
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Explicar (dar mas contexto) la metafora del "mercado electronico" y de posibles
+ aplicaciones de esto (ver reports del flabot para intel).
+ Sino es como que de repente se introduce lo de los "agentes con tareas
+ en un contenedor"
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
