@@ -7855,17 +7855,15 @@ iones al modelo arquitectónico.
 \emph on
 snapshot
 \emph default
- del modelo recuperado por fases anteriores y produce como salida una evolución
- del modelo de entrada en base a las transformaciones aplicadas durante
- la ejecución de la fase.
- De esta forma una fase se convierte en un componente customizable y reutilizabl
-e el cual es independiente del modelo arquitectónico de entrada.
+ del modelo recuperado por fases anteriores, y produce como salida un nuevo
+ modelo que es el resultado de aplicar las transformaciones seleccionadas
+ por el arquitecto en la fase actual sobre el modelo de entrada.
 \end_layout
 
 \begin_layout Standard
-La ejecución de cada fase es a su vez, es un proceso interactivo.
- Cada fase contiene un conjunto de reglas las cuales determinan las transformaci
-ones al modelo.
+La ejecución de cada fase es un proceso interactivo.
+ Cada fase contiene un conjunto de reglas, las cuales determinan las transformac
+iones al modelo.
  Estas transformaciones permitirán al arquitecto relacionar elementos arquitectó
 nicos (ej.: componentes, relaciones entre componentes, etc.) a diferentes
  estructuras de código (ej.: clases, métodos, etc).
@@ -7874,6 +7872,19 @@ nicos (ej.: componentes, relaciones entre componentes, etc.) a diferentes
 
 \begin_layout Enumerate
 una consulta sobre la base de conocimiento; 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Andres: Notar que si van a usar el termino "base de conocimiento" por todos
+ lados, seria bueno incluir un componente con ese nombre en la figura 4.1
+ o explicar en el texto cercano a 4.1 que hay una base de conocimiento bla
+ bla (digo, para unificar terminologia)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -7886,45 +7897,228 @@ una serie de hechos (
 \emph on
 facts
 \emph default
-), los cuales representan las transformaciones a la base de conocimiento.
+), los cuales representan las transformaciones a aplicar sobre la base de
+ conocimiento.
+\end_layout
+
+\begin_layout Standard
+El algoritmo 
+\begin_inset LatexCommand ref
+reference "alg:Ejemplo de regla"
+
+\end_inset
+
+ muestra un ejemplo concreto de una regla con las 3 partes antes descripta.
+ El arquitecto encargado de la reconstrucción es el responsable de la especifica
+ción de las reglas.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Consulta: 
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+implements(?Class, ?Interface),
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+name(?Class, ?ClassName),
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+name(?Interface, 'Observer')
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Sugerencia:
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+"Crear el componente ?ClassName"
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Hechos:
+\end_layout
+
+\begin_layout Standard
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+Componente(?ClassName)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "alg:Ejemplo de regla"
+
+\end_inset
+
+Ejemplo de definición de regla.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Especificando reglas
+Especificación de reglas
 \end_layout
 
 \begin_layout Standard
 El enfoque provee un conjunto de reglas basadas en patrones de diseño y
  en un análisis realizado sobre diversos sistemas.
- De esta forma, se intentó detectar cuales son los re\SpecialChar \-
-que\SpecialChar \-
-ri\SpecialChar \-
-mien\SpecialChar \-
-tos que debe
- cumplir un sistema para que se justifique la presencia de un determinado
- artefacto arquitectónico.
- Por ejemplo, una regla puede detectar la presencia de un componente del
- tipo 
-\emph on
-Observer
-\emph default
- y su justificación sería que existe una clase que implementa la interface
- 
-\emph on
-Observer
-\emph default
-.
+ El proposito de estas reglas es la codificacion de heuristicas que buscan
+ ciertas estructuras y evidencias en el codigo para determinar la (posible)
+ presencia de un artefacto arquitectonico particular.
+ Estas heuristicas han sido compiladas a partir de enfoques como 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+....
+ CITAR REFERENCIAS QUE SOPORTEN LA IDEA Por ejemplo, asumo que tomaron ideas
+ del enfoque DISCOTECT, pero funcionando de manera "inversa", no?
+\end_layout
+
+\end_inset
+
+Por ejemplo, una regla puede detectar la presencia de un componente del
+ tipo Observer y una evidencia puede ser la presencia de una clase que
+ implementa la interface Observer.
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, las reglas pueden ser especificadas por el arquitecto que
+Un conjunto inicial de reglas genéricas es provista por la herramienta,
+ las cuales pueden ser utilizadas siempre y cuando se correspondan con las
+ características del sistema y/o los objetivos de la reconstrucción.
+ Adicionalmente, las reglas pueden ser especificadas por el arquitecto que
  realiza el proceso de reconstrucción.
  Las reglas incorporadas por el arquitecto pueden ser utilizadas en cualquiera
- de las fase del proceso de reconstrucción.
+ de las fases del proceso de reconstrucción.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Identificación de estructuras arquitectónicas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Los parrafos de esta seccion tienen redundancia con lo anterior, consolidarlo
+ mejor con lo anterior.
+ Otro comentario: no entiendo cual fase iria primero, la de sugerir el observer-
+observable y luego la de sugerir el MVC? o es al reves, primero el MVC y
+ luego el Observer? Si es la 2da opcion, entonces Ademas, "invertir" la
+ explicacion actualde porque las reglas Observer-Observable funcionan dentro
+ del MVC.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7950,7 +8144,18 @@ El conjunto de reglas que se seleccionaron para reconstruir el sistema de
 \emph on
 Observer-Observable
 \emph default
- no fue casual.
+ no fue casual
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Porque no mostrar un ejemplo de la regla para sugerir este estilo, cosa
+ de ilustrar lo descripto en 1, 2, 3 arriba?
+\end_layout
+
+\end_inset
+
+.
  Previamente se ejecutó una fase con un conjunto de reglas capaces de detectar
  estilos arquitectónicos.
  Esto permitió detectar el estilo MVC (
@@ -7977,8 +8182,36 @@ Observer-Observable
 \end_layout
 
 \begin_layout Standard
-A su vez, es posible construir reglas mas complejas que ayuden a identificar
- estructuras arquitectónicas relacionando distintos tipos de información.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+No entiendo el proposito de este parrafo tan general aca, ni tengo idea
+ de como se "soporta/implementa" esto en el tool.
+ Yo diria de recortarlo y evitar ser pesados ..
+\end_layout
+
+\begin_layout Standard
+Lo que si pondria es una frase tipo: "Inicialmente, se decidio codificar
+ en DRArch un repertorio basico de fuentes de conocimiento (reglas) para
+ asistir en la deteccion de artefactos arquitectonicos.
+ Las reglas se basan en enfoques preexistentes [REFs], y se describen en
+ las secciones subsiguientes." 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+SACAR --> A su vez, es posible construir reglas mas complejas que ayuden
+ a identificar estructuras arquitectónicas relacionando distintos tipos
+ de información.
  Para ello es necesario conocer cuales son los aspectos a tener en cuenta
  a la hora de reconocer dichas estructuras.
  Durante el proceso de diseño se toman decisiones importantes que persistirán
@@ -7990,6 +8223,10 @@ A su vez, es posible construir reglas mas complejas que ayuden a identificar
  Todos estos elementos o practicas son comunes a todos los sistemas y las
  mismas pueden ser aprovechadas para realizar ingeniería reversa sobre un
  sistema.
+\end_layout
+
+\end_inset
+
  Las siguientes secciones describirán algunos de los enfoques considerados
  en 
 \emph on
@@ -8011,9 +8248,17 @@ Cualquier sistema grande se debe dividir en unidades más pequeñas, de modo
  Un paquete es una parte de un modelo.
  Cada parte del modelo debe pertenecer a un paquete.
  Pero para ser funcional, la asignación debe seguir un cierto principio
- racional, tal como funcionalidad común, implementación relacionada y punto
- de vista común.
- UML no impone una regla para componer los paquetes.
+ racional, tal como funcionalidad común o implementación relacionada
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ y punto de vista común ?????
+\end_layout
+
+\end_inset
+
+.
  Los paquetes ofrecen un mecanismo general para la organización de los modelos/s
 ubsistemas agrupando elementos de modelado.
  Cada paquete corresponde a un sub\SpecialChar \-
@@ -8022,16 +8267,24 @@ de\SpecialChar \-
 lo (subsistema) del modelo (sistema).
  Los paquetes son unidades de organización jerárquica de uso general de
  los modelos de UML.
+ UML no impone una regla para componer los paquetes.
  Pueden ser utilizados para el almacenamiento, el control de acceso, la
  gestión de la configuración y la construcción de bibliotecas que contengan
  fragmentos reutilizables del modelo.
  Un paquete puede contener otros paquetes, sin límite de anidamiento pero
  cada elemento pertenece a (está definido en) sólo un paquete.
- Los paquetes contienen elementos del modelo al más alto nivel tales como
- clases y sus relaciones, máquinas de estado, diagramas de casos de uso,
- interacciones y colaboraciones; atributos, operaciones, estados, líneas
- de vida y mensajes están contenidos en otros elementos y no aparecen como
- contenido directo de los paquetes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Pela: yo sacaria esto: Los paquetes contienen elementos del modelo al más
+ alto nivel tales como clases y sus relaciones, máquinas de estado, diagramas
+ de casos de uso, interacciones y colaboraciones; atributos, operaciones,
+ estados, líneas de vida y mensajes están contenidos en otros elementos
+ y no aparecen como contenido directo de los paquetes.
  Una clase de un paquete puede aparecer en otro paquete por la importación
  a través de una relación de dependencia entre paquetes.
  Todas las clases no son necesariamente visibles desde el exterior del paquete,
@@ -8058,14 +8311,38 @@ lo (subsistema) del modelo (sistema).
  de nombres del paquete del cliente como sinónimos de los caminos completos.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aprovechando la organización estructural que brinda la estructura de paquetes,
+ junto con los permisos de acceso y la visibilidad de los elementos contenidos
+ por este, es posible individualizar o detectar posibles componentes arquitectón
+icos.
+\end_layout
+
 \begin_layout Subsubsection
 Reconocimiento de componentes de utilidad 
 \end_layout
 
 \begin_layout Standard
 \align block
-Cuando se busca reconocer componentes basado en eventos arquitectónicos
- de bajo nivel, es interesante también filtrar o excluir del análisis aquellos
+Cuando se busca reconocer componentes 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+\align block
+basado en eventos arquitectónicos de bajo nivel ANDRES: la frase "eventos
+ arquitectonicos de bajo nivel" es muy confusa.
+ Supongo que los "eventos" son los elementos del log, no?
+\end_layout
+
+\end_inset
+
+ es interesante también filtrar o excluir del análisis aquellos elementos
  que no aportan valor agregado al análisis.
  En la literatura, estos elementos son conocidos como componentes de utilidad.
  Dichos componentes determinan detalles de implementación de bajo nivel.
@@ -8200,7 +8477,13 @@ status collapsed
 
 \begin_layout Standard
 Para determinar si una clase es considerada una utilidad, se propone la
- siguiente medición:
+ siguiente medición 
+\begin_inset LatexCommand cite
+key "Abdelwahab"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -8297,8 +8580,7 @@ U
 
 \begin_layout Standard
 Dada esta medición y el grafo de dependencias, el algoritmo de detección
- de componentes de utilidad es sencillo.
- La descripción de éste, se muestra en el Algoritmo\InsetSpace ~
+ de componentes de utilidad se muestra en el Algoritmo\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "alg:Algoritmo-de-utilidad"
@@ -8481,11 +8763,21 @@ Las clases contenidas en el conjunto solución son cadidatas a ser clases
 
 \begin_layout Subsubsection
 Identificación de componentes basado en acoplamiento
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Incluir referencia de donde sale esta heuristica
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Utilizando un enfoque similar al descripto anteriormente es posible llevar
- un medida de acoplamiento entre clases.
+Utilizando un enfoque similar al descripto anteriormente es posiblecalcular
+ una medida de acoplamiento entre clases.
  Se define acoplamiento como el grado en que un componente esta conectado
  a otros componentes del sistema, es decir, su 
 \begin_inset Note Note
@@ -8518,7 +8810,12 @@ reference "fig:Grafo-de-dependencias-acoplamiento"
 \end_inset
 
 , se pueden distinguir estas propiedades.
- Es decir, el acoplamiento del conjunto de clases que relacionadas con el
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Es decir, el acoplamiento del conjunto de clases que relacionadas con el
  modelo (conjunto 
 \family typewriter
 A
@@ -8543,9 +8840,19 @@ reference "fig:Grafo-de-dependencias-acoplamiento"
 \end_inset
 
 ) podrían conformar otro componente distinto.
+ ANDRES: Reescribir para que sea mas claro y el lector pueda asociarlo con
+ drarch.
+\end_layout
+
+\end_inset
+
+En la figura pueden verse claramente dos conjuntos de clases agrupados por
+ el grado de acoplamiento entre sus clases vecinas.
+ De esta forma es posible realizar reglas que reconozcan este tipo de agrupación
+es y el asistente las sugerirá como componentes del modelo.
  
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 [Y] explicar un poco mas la imagen
@@ -8624,13 +8931,13 @@ El grado de la complejidad de la interfaz de los componentes.
 
 \begin_layout Standard
 Como base fundamental para medir el acoplamiento dentro de un módulo se
- tomaron no solamente las medidas de 
+ tomaron tanto medidas de 
 \emph on
 fan-in
 \emph default
- sino también las de 
+ como medidas 
 \emph on
-fan-out
+de fan-out
 \emph default
  (valores altos determinan una alta dependencia con el ext
 \begin_inset Note Note
@@ -8994,16 +9301,26 @@ Algoritmo para la detección de componentes basado en el grado de acoplamiento.
 \end_layout
 
 \begin_layout Subsubsection
-
+Identificación de 
 \emph on
 Hot Spot
 \emph default
- y 
+ 
 \emph on
-Frameworks
+en frameworks
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Andres: Poner un pequenio parrafo que motive porque el concepto de framework/ins
+tanciacion es relevante para una representacion arquitectonica ...
+\end_layout
+
+\end_inset
+
 El concepto principal del diseño de 
 \emph on
 frameworks 
@@ -9086,11 +9403,29 @@ hook
 \emph on
 template
 \emph default
-).
+)
+\begin_inset LatexCommand cite
+key "Fayad99"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Andres: Agregar las REFERENCIAS en las que se basaron para lo de frameworks
+ de esta subseccion.
+ ej.
+ Fayad99
+\end_layout
+
+\end_inset
+
 Generalmente, los métodos 
 \emph on
 template
@@ -9154,7 +9489,7 @@ Hooks
 \emph default
  y
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 [Y] Adaptar la figura al ejemplo conductor..
@@ -9246,32 +9581,42 @@ agregar el diagrama de clases que muestre este concepto
 \end_layout
 
 \begin_layout Standard
-En base a esto, decidimos utilizar esta estrategia para identificar componentes
+En base a esto, se decidió utilizar una estrategia para identificar componentes
  arquitectónicos.
  En primer lugar identificamos los métodos 
 \emph on
 hook
 \emph default
-, y a partir de esto se abren dos posibilidades.
+, y a partir de esto se plantean dos posibilidades.
  
 \end_layout
 
 \begin_layout Itemize
-La primera, si la clase 
-\emph on
-hook
-\emph default
- posee el método 
+La método 
 \emph on
 template
 \emph default
-, de esta forma se busca quién invoca al método 
+ invoca el metodo 
+\emph on
+hook
+\emph default
+ declarado en la misma clase.
+ La implementación de el método 
+\emph on
+hook
+\emph default
+ pertenece a la misma jerarquía que la clase que declara el método 
 \emph on
 template
 \emph default
 .
- Y se procede a lo mismo que la anterior: se seleccionan como posibles component
-es y se recupera la relación (Sección A de la figura\InsetSpace ~
+ De esta forma se busca quién invoca al método 
+\emph on
+template
+\emph default
+.
+ Se seleccionan como posibles componentes y se recupera la relación (Sección
+ A de la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Hot-Spot-y-Frameworks"
@@ -9307,16 +9652,24 @@ Observable
 \end_layout
 
 \begin_layout Itemize
-La segunda, si el método 
+El método 
 \emph on
 hook
 \emph default
- es invocado desde otra jerarquía, es decir, la clase que invoca el método
- 
+ y el método 
+\emph on
+template 
+\emph default
+pertenecen a clases de distintas jerarquías.
+ Es decir, la clase que invoca el método 
 \emph on
 hook
 \emph default
- no es subclase de la clase que declara el método template que lo invoca.
+ no pertenece a la jerarquía de la clase que contiene al método 
+\emph on
+template
+\emph default
+ que lo invoca.
  Se seleccionan dichas clases como posibles componentes, y se recupera también
  la relación, en la que la clase 
 \emph on
@@ -9380,6 +9733,27 @@ Cada parte debe ir construyendo una porcion de la arquitectura final..
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Andres: 
+\end_layout
+
+\begin_layout Standard
+Que son la (A) y la (B) aca? fases?...
+ no puedo adivinarlo
+\end_layout
+
+\begin_layout Standard
+Por ahi no es el mejor tipo de diagrama para visualizar "invocations", asi
+ que agregar texto al diagrama que aclare quien es el template/hook que
+ llama a quien ...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9410,16 +9784,12 @@ name "fig:Hot-Spot-y-Frameworks"
 
 \end_inset
 
-Hot Spot
-\emph default
- y 
-\emph on
-Frameworks.
+Identificación de Hot Spots.
  
 \emph default
 Ejemplo
 \emph on
- Observer-Observable
+ para el caso Observer-Observable
 \end_layout
 
 \end_inset
@@ -9432,7 +9802,7 @@ Ejemplo
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Manipulación de alternativas arquitectónicas
 \end_layout
 
@@ -9460,22 +9830,8 @@ queda descolgada de la linea general..
 \end_layout
 
 \begin_layout Standard
-Una vez realizada la recolección de información, 
-\emph on
-DRArch
-\emph default
- utiliza un conjunto de reglas para proponer alternativas arquitectónicas.
- La forma en la que las alternativas se presentan es por medio la ejecución
- de reglas, ya que tienen como resultado una lista de sugerencias.
- Estas sugerencias proponen cambios al modelo arquitectónico y deben ser
- aceptadas o rechazadas por el arquitecto.
- Esto permite que las actualizaciones arquitectónicas sean controladas.
- 
-\end_layout
-
-\begin_layout Standard
-Una sugerencia es el resultado de evaluar una de las reglas disponibles
- sobre la base del conocimiento.
+Como se mencionó anteriormente una sugerencia es el resultado de evaluar
+ una de las reglas disponibles sobre la base del conocimiento.
  La importancia de estas decisiones de diseño varía para cada sistema de
  software y está dada en función de los interesados en el sistema, sus preocupac
 iones, y sus necesidades específicas.
@@ -9497,10 +9853,6 @@ De esta forma, aceptar o rechazar una sugerencia se convierte en una decisión
 ad, seguridad, etc.
 \end_layout
 
-\begin_layout Subsection
-Generación de Vistas
-\end_layout
-
 \begin_layout Standard
 Al termino de cada fase, se cuenta cuenta con una representación gráfica
  del modelo arquitectónico la cual cubre dos aspectos fundamentales de la
@@ -9511,13 +9863,28 @@ Al termino de cada fase, se cuenta cuenta con una representación gráfica
  son interpretados como tales para generar vistas que permitan mostrar la
  arquitectura del sistema.
  Cuando un conjunto de reglas finaliza su ejecución, se generan diagramas
- de componentes y de UCMs con su correspondiente mapeo al código fuente.
+ de componentes y de UCMs.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ANDRES: Esto sale out of nowhere.
+ Porque el mapeo es "correspondiente"?, y donde se hablo de FLABot antes?
+\end_layout
+
+\begin_layout Standard
+Saco esto --> con su correspondiente mapeo al código fuente.
  Estos diagramas están representados en 
 \emph on
 FLAbot
 \emph default
 .
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9559,7 +9926,6 @@ reference "fig:Diagrama-de-componentes-de-los-Observers"
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -9596,28 +9962,60 @@ DRArch
 , que permite obtener vistas arquitectónicas de un sistema a partir de un
  proceso guiado por el arquitecto.
  Este proceso intenta utilizar la mayor cantidad de información que sea
- posible y sus principales fuentes son: el código, la trazas de ejecución
- y la ex\SpecialChar \-
+ posible y sus principales fuentes son: el código, la trazas 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Trazas o log? ponerse de acuerdo en como lo van a nombrar y usarlo consistenteme
+nte en toda la tesis 
+\end_layout
+
+\end_inset
+
+de ejecución y la ex\SpecialChar \-
 pe\SpecialChar \-
 rien\SpecialChar \-
 cia de las personas involucradas en el sistema.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ANDRES: Me sigue quedando en el aire como se incorpora esta experiencia
+ al tool.
+ Asumo que este knowledge se configura en el setup del tool con reglas "predefin
+idas" para ciertos estilos arquitectonicos, es asi?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 El proceso de reconstrucción es controlado por el arquitecto en todo momento.
- Su modelo flexible de generación de reglas permite al arquitecto tener
- el control de cuándo y cómo actualizar el modelo arquitectónico.
+ Su modelo 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+flexible (ANDRES: Nunca se dijo claramente en el capitulo que las reglas
+ se puede generar "flexiblemente" (por ahi esto esta en el capitulo que
+ sigue))
+\end_layout
+
+\end_inset
+
+ de generación de reglas permite al arquitecto tener el control de cuándo
+ y cómo actualizar el modelo arquitectónico.
 \end_layout
 
 \begin_layout Standard
-Por otro lado, 
-\emph on
-DRArch
-\emph default
- no impone restricciones de un lenguaje específico en el que este implementado
- el sistema a analizar.
+Si bien la implementación por defecto de DRAch es para Java, no se imponen
+ restricciones de un lenguaje específico en el que este implementado el
+ sistema a analizar.
  El hecho de transformar la información del sistema a una base de conocimientos
- permite la aplicación del enfoque en muchos sistemas existentes.
+ permite la aplicación del enfoque en muchos lenguajes existentes.
 \end_layout
 
 \begin_layout Standard
@@ -9634,34 +10032,12 @@ cia del usuario.
 DRArch
 \emph default
 , es posible alcanzar una aproximación de la arquitectura.
- Uno de los aspectos más fuerte del enfoque es que permite especificar cualquier
- tipo de información del sistema para luego ser procesada (consultas a través
- de reglas) y relacionar cualquier tipo de información.
-\end_layout
-
-\begin_layout Standard
-Adicionalmente, es posible extender la funcionalidad para que la enfoque
- brinde soporte para algunos de los siguientes ítems: 
-\end_layout
-
-\begin_layout Itemize
-Identificar patrones de diseño.
  
-\end_layout
-
-\begin_layout Itemize
-Definir un conjunto de reglas que verifiquen si el diseño propuesto se correspon
-de con la implementación.
- 
-\end_layout
-
-\begin_layout Itemize
-Detectar anti-patrones.
 \end_layout
 
 \begin_layout Standard
 En el siguiente capítulo se muestran en detalle algunos aspectos de la implement
-ación.
+ación de DRArch.
 \end_layout
 
 \begin_layout Chapter
@@ -18643,6 +19019,10 @@ bibfiles "bibliography"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
