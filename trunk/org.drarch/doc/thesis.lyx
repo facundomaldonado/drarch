@@ -12556,7 +12556,11 @@ Andres: tales como....
  Los casos de estudio seleccionados son sistemas donde la organización estática
  (estructura de paquetes) no tiene un rol relevante en la arquitectura.
  Sin embargo, la naturaleza dinámica de estos sistemas, los hacen atractivos
- para poner a prueba a DRArch.
+ para poner a prueba a 
+\emph on
+DRArch
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -12635,6 +12639,55 @@ idad, bla bla)
 
 \end_layout
 
+\begin_layout Subsubsection
+Framework Bubble
+\end_layout
+
+\begin_layout Standard
+Market y G2 utilizan un framework basado en invocación implícita llamado
+ Bubble\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "CAMPO02"
+
+\end_inset
+
+, donde los componentes principales son: agentes, tareas, sensores y eventos.
+ Los agentes representan entidades del dominio y para separa el estado de
+ las acciones, se utiliza la noción de tareas.
+ La interacción entre los agentes, es realizada a través de eventos que
+ ellos mismos producen y reciben.
+ Los agentes están asociados a sensores (filtros) que son registrados para
+ activarse con determinados eventos o grupos de eventos 
+\begin_inset LatexCommand cite
+key "Andres2001"
+
+\end_inset
+
+.
+ La figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-clases-Bubble"
+
+\end_inset
+
+ muestra un diagrama de clases del framework Bubble con las principales
+ clases pintadas con color azul y la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Modelo-arquitectónico-del-Bubble"
+
+\end_inset
+
+ muestra un diagrama del modelo arquitectónico del 
+\emph on
+framework
+\emph default
+.
+ 
+\end_layout
+
 \begin_layout Section
 \begin_inset LatexCommand label
 name "sec:Market"
@@ -12661,6 +12714,10 @@ Explicar (dar mas contexto) la metafora del "mercado electronico" y de posibles
 \end_layout
 
 \begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
 Market es un sistema donde compradores (
 \emph on
 buyers
@@ -12683,58 +12740,33 @@ tasks
 ).
  Una tarea esta compuesta por uno o mas procedimientos.
  Las tareas se disparan con condiciones predefinidas, y pueden estar relacionada
-s al estado interno del agente o a un evento 
+s al estado interno del agente o a un evento
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Again, explicar (dar contexto) del tipo de tareas que podrian haber en un
+ Market.
+ Las interacciones entre los agentes estan basadas en el protocolo Contract-Net
+ (pueden hablar algo de esto tambien)
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset LatexCommand cite
 key "Drogoul92"
 
 \end_inset
 
 .
- Para realizar este comportamiento, Market utiliza un framework basado en
- invocación implícita llamado Bubble\InsetSpace ~
-
-\begin_inset LatexCommand cite
-key "CAMPO02"
-
-\end_inset
-
-, donde los componentes principales son: agentes, tareas, sensores y eventos.
- Los agentes representan entidades del dominio y para separa el estado de
- las acciones, se utiliza la noción de tareas.
- La interacción entre los agentes, llamados 
-\emph on
-bubbles
-\emph default
-, es realizada a través de eventos que ellos mismos producen y reciben.
- Los agentes están asociados a sensores (como filtros) que son registrados
- para activarse con determinados eventos o grupos de eventos 
-\begin_inset LatexCommand cite
-key "Andres2001"
-
-\end_inset
-
-.
- La figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Diagrama-de-clases-Bubble"
-
-\end_inset
-
- muestra un diagrama de clases del framework Bubble con las principales
- clases pintadas con color azul y la figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Modelo-arquitectónico-del-Bubble"
-
-\end_inset
-
- muestra un diagrama del modelo arquitectónico del 
-\emph on
-fremework
-\emph default
-.
  
+\end_layout
+
+\begin_layout Standard
+Market es un proyecto de ejemplo para probar el funcionamiento de un framework,
+ con unas 40 clases, especificado parcialmente a nivel arquitectónico por
+ 10 escenarios UCM.
 \end_layout
 
 \begin_layout Standard
@@ -12794,6 +12826,25 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Yo no usaria esta figura para explicar el Bubble (digamos que con la figura
+ 6.1 esta bien), sino que adaptaria esta figura para reflejar el ejemplo
+ del Market!!! (que no aparece graficamente en ningun lado)
+\end_layout
+
+\begin_layout Standard
+[todo]instanciar la figura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -12821,7 +12872,36 @@ Modelo arquitectónico del framework Bubble.
 
 \begin_layout Standard
 La instanciación del framework Bubble que realiza Market esta materializada
- con las siguientes clases:
+ por las siguientes clases:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Antes de entrar aca, por favor explicar como funciona el mecanismo de interaccio
+n entre los agentes del mercado en base al protocolo Contract-Net (y agregar
+ una REF al protocolo) Sino las tareas de abajo no se entienden ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Explicar brevemente que hace cada uno de estos items en la solucion del
+ Market
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -12834,7 +12914,7 @@ BidTask
 \end_layout
 
 \begin_layout Itemize
-BuyTask
+BuyTask: Responsable de realizar una compra.
 \end_layout
 
 \begin_layout Itemize
@@ -12864,7 +12944,7 @@ Agentes
 
 \begin_deeper
 \begin_layout Itemize
-Customer
+Customer: Clientes interesados en comprar items.
 \end_layout
 
 \begin_layout Itemize
@@ -12905,6 +12985,24 @@ TimerSensor
 
 \end_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Aca es importante aclarar que no solo se conto con acceso a la documentacion
+ del Bubble-Market, sino contar que se tuvo "acceso" a los "expertos" que
+ construyeron el framework y la aplicacion para el proyecto FLABot (Alvaro
+ y yo, ejejej).
+ Esto implica contar "el proceso" que siguieron Uds para hacer la reconstruccion
+ ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 La documentación de la arquitectura del Market provee un conjunto de UCMs
  que nos permiten entender el comportamiento del sistema.
  Con el objetivo de poder hacer comparaciones con los resultados obtenidos
@@ -12919,14 +13017,24 @@ reference "fig:Market-UCMs"
 
 \end_inset
 
- se muestran algunos de estos UCMs.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Pongan un parrafito que explique la figura please
+\end_layout
+
+\end_inset
+
+se muestran algunos de estos UCMs.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -12964,7 +13072,25 @@ Diagramas UCMs para el proyecto Market
 \end_layout
 
 \begin_layout Subsection
+Uso de 
+\emph on
 DRArch
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Incompleto y misterioso :-), porque es "uno de los aspectos mas importantes"
+ y no me dicen cual :-) Otra cosita, de donde sale que el concepto de "tarea"
+ es fundamental para la reconstruccion? (ojo, esta bien que es fundamental,
+ pero lo ponen asi salido de la galera)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12978,6 +13104,24 @@ DRArch
  en 
 \emph on
 tareas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Poner aca una explicacion del setup inicial de DRArch (ej.
+ que conocimiento inicial le tuvieron que cargar), y tambien introducir
+ lo que van a hacer a traves de una serie de fases (que vienen luego), asi
+ el lector no se pierde ...
+ Por ejemplo, hay una serie de reglas de deteccion usadas en la fase de
+ invocacion implicita que el lector no tiene idea de donde salieron!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -12999,7 +13143,18 @@ Un caso de uso típico para este sistema es el de realizar una oferta (
 \emph on
 bidding
 \emph default
-).
+)
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Como les puse antes, esto require que previamente se haya explicado el protocolo
+ de Contract-Net (donde el bidding es una de las fases del protocolo)
+\end_layout
+
+\end_inset
+
+.
  Debido a que la aplicación es un un ejemplo para utilizar el framework
  Bubble, hay un único punto de entrada al sistema que ejecuta todos los
  casos de uso sin interface de gráfica (modo consola) y sin necesidad de
@@ -13018,7 +13173,7 @@ reference "fig:Configuración-del-log"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -13060,6 +13215,18 @@ FLAbot.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Todo bien con la figura anterior, pero en ningun momento comentaron que
+ es lo que se "instrumento" del codigo de Bubble para generar el log ...
+ Pongan algo de eso (porque asumo que no instrumentaron todos los metodos
+ del codigo antes y despues)
+\end_layout
+
+\end_inset
+
 Luego de generar el log, 
 \emph on
 DRArch
@@ -13068,15 +13235,56 @@ DRArch
  para que se pueda tener en cuenta en el análisis.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Antes de entrar con todas las subsecciones "Fase de ...", explicar de donde
+ salen y que es lo que van a hacer...
+ (esta explicacion tambien podria ir al inicio de 6.1.1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Fase de estructura de paquetes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Un poco atravesado el parrafo este.
+ Reformular y acortar
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Basado en el supuesto de que cualquier sistema se debe dividir en unidades
  más pequeñas, esta fase intenta identificar esas unidades con el objetivo
  de acotar el análisis y hacer foco en las unidades de mayor relevancia.
- Las reglas que componen esta fase son simples (del estilo 
+ Las reglas que componen esta fase son simples
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Una duda, se mostro en algun lado el estilo "simple" package(?P)?.
+ Si aparecio en el capitulo de implementacion (o en algun otro lado), todo
+ Ok; sino van a tener que explicar algo mas aca para que se entienda ...
+\end_layout
+
+\end_inset
+
+ (del estilo 
 \family typewriter
 package(?P)
 \family default
@@ -13089,6 +13297,22 @@ bubble.core
 , 
 \family typewriter
 distribution
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+
+\family typewriter
+Una aclaracion: el paquete distribution es una extension del Bubble, pero
+ es "irrelevante" desde el punto de vista de la reconstruccion del Market
+ (porque no se usa), asi que en algun lado mas adelante debieran mostrar
+ como uds (los reverse engineers) "descartaron" un analisis fino de este
+ paquete ...
+\end_layout
+
+\end_inset
+
+
 \family default
  y 
 \family typewriter
@@ -13110,7 +13334,7 @@ Fase de invocación implícita
 \begin_layout Standard
 Esta fase esta compuesta por reglas cuyo propósito es descubrir componentes
  y relaciones que puedan ser parte de un framework basado en invocaciones
- implícitas, es decir, detectar los puntos de extención para el manejo de
+ implícitas, es decir, detectar los puntos de extensión para el manejo de
  eventos, tareas, agentes, etc.
  Con la división de unidades realizada en la fase anterior, se decidió correr
  esta fase únicamente a los artefactos de código fuente ubicados dentro
@@ -13125,6 +13349,22 @@ bubble.core
 DRArch
 \emph default
  se agrupan en las siguientes categorías:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Todo ok, pero de donde salieron estas reglas? quien las define? cuando las
+ define (setup, a medida que progresa la reconstrucion)??? Quien cargo conocimie
+nto sobre la arquitectura Bubble que le informa a DRArch que puede detectar
+ conceptos tales como "manejador de eventos", "agente", etc ...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -13176,21 +13416,45 @@ cias y es el arquitecto que debe corroborar
 
 \begin_layout Itemize
 Detección\InsetSpace ~
-del\InsetSpace ~
-agente: Como dijimos anteriormente, los agentes representan
+de\InsetSpace ~
+agentes: Como dijimos anteriormente, los agentes representan
  entidades del sistema, y este conjunto de reglas intenta descubrir el conjunto
  de clases que se materializan con un componente agente.
 \end_layout
 
 \begin_layout Itemize
-Relaciones: Estas relaciones fueron un poco difíciles de reconstruir ya
- que la información que se utilizó fue la que generó el log de ejecución.
+Relaciones: Estas relaciones
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Que relaciones?
+\end_layout
+
+\end_inset
+
+ fueron un poco difíciles de reconstruir ya que la información que se utilizó
+ fue la que generó el log de ejecución.
  De esta forma, se intentó crear una asociación entre un componente tarea
  y un evento cuando dentro de la ejecución del método 
 \family typewriter
 run
 \family default
  de la tarea se ejecuta la siguiente linea de código:
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto involucra un conocimiento bastante fino del modelo Bubble y de su implement
+acion.
+ Por lo tanto, habria que explicar de donde salio esta regla? Una alternativa,
+ es decir que la "minaron" en base a entrevistas con los expertos que diseñaron
+ el sistema ...
+\end_layout
+
+\end_inset
+
+
 \newline
 
 \family typewriter
@@ -13286,6 +13550,16 @@ A diferencia de la fase anterior, esta fase esta compuesta por reglas cuyo
 DRArch
 \emph default
  en las siguientes categorías:
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Idem comentarios sobre las reglas de la subseccion anterior
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -13395,10 +13669,33 @@ Al termino de la ejecución de esta fase se obtuvieron aquellos componentes
 ción del framework Bubble para el dominio del Market.
  Las consultas realizadas en esta fase están muy relacionadas al caso de
  uso que se utilizó para generar el log de ejecución.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta parte casi no se explico en la pagina 63.
+ Con lo cual no queda muy claro que es lo que se pretende hacer aca con
+ los mappings ...
+ Y por lo tanto, el "facil" de realizar consultas queda en el aire tambien
+ ...
+\end_layout
+
+\end_inset
+
  Los métodos de cada clase representan una responsabilidad al momento de
  generar el log, y las responsabilidades de cada componente reconstruido
  están materializadas con los correspondientes métodos de las clases asociadas.
- Así, es fácil realizar consultas que sugieran un 
+ Así, es fácil
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+facil
+\end_layout
+
+\end_inset
+
+ realizar consultas que sugieran un 
 \emph on
 path
 \emph default
@@ -13445,6 +13742,17 @@ reference "fig:Resultado-de-la-fase-de-instanciacion-market"
 \end_inset
 
 .
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Tienen que explicar un poco que es lo que representa el UCM obtenido (porque
+ no es self-explanatory)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13489,20 +13797,19 @@ Resultado de la fase de Instanciación del Market
 \end_layout
 
 \begin_layout Subsection
-Structure 101
+Uso de Structure 101
 \end_layout
 
 \begin_layout Standard
-Como se mencionó en el capítulo 
+Como se mencionó en el capítulo\InsetSpace ~
+
 \begin_inset LatexCommand ref
 reference "cha:Trabajos-relacionados"
 
 \end_inset
 
- Structure 101 es una herramienta de análisis estátco de código orientada
+, Structure 101 es una herramienta de análisis estático de código orientada
  al análisis de estructura (diseño, arquitectura y packaging).
- En esta sección se compararán los resultados de usar ambas herramientas
- en la reconstrucción del proyecto Market.
 \end_layout
 
 \begin_layout Standard
@@ -13542,6 +13849,17 @@ status open
 \begin_inset Graphics
 	filename img/bubbleStructure101.png
 	width 50text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Hay que decir en algun lado (por ahi en el texto) que son las flechas y
+ numeritos
+\end_layout
 
 \end_inset
 
@@ -13588,6 +13906,25 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta es una ingenieria reversa "tradicional" del codigo, pero tengo entendido
+ que Structure101 permite recuperar vistas "mas interesantes" para la comparacio
+n! Por ej.
+ hay una que muestra la estructura de "layers" y "salteo de layers" y otra
+ que permite identificar tambien "fat", calculo que este tipo de vistas
+ son mas utiles y significativas para su comparacion con DRArch (otherwise,
+ me estan tirando abajo a proposito al Structure101 :-))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -13597,6 +13934,17 @@ name "fig:Structure101-Buble"
 \end_inset
 
 Structure101 - Bubble core
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+En general, es importante "interpretar" para el lector lo que resulta de
+ cada diagrama "reconstruido" (tanto con DRArch como con Structure101)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13611,7 +13959,17 @@ Structure101 - Bubble core
 
 \begin_layout Standard
 Como se mencionó con anterioridad, la herramienta cubre aspectos estructurales
- del sistema en diversas perspectivas.
+ del sistema en diversas perspectivas
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Aja, que perspectivas son estas? (comentar las que serian utiles para Market)
+\end_layout
+
+\end_inset
+
+.
  Para el caso analizado, Market, se puede observar que se toma la estructura
  de paquetes como base del análisis y arma el grafo de dependencias basado
  en las relaciones de uso y de "
@@ -13677,7 +14035,7 @@ name "sec:G2"
 
 \end_inset
 
-G2
+Caso 2: G2
 \end_layout
 
 \begin_layout Standard
@@ -13704,7 +14062,7 @@ web
 \emph default
  para ser delegadas al servidor G2 en la segunda banda, correspondiente
  a la lógica del negocio, por intermedio del componente GateKeeper.
- Esta banda fue implementada mediante la instanciación del framework 
+ Esta banda está implementada mediante la instanciación del framework 
 \emph on
 Bubble
 \emph default
@@ -13728,15 +14086,12 @@ agentes reactivos
  Las tareas relacionadas con la administración del modelo del negocio normalment
 e interactúan con el componente de persistencia para consultar o alterar
  los datos relevantes del repositorio de datos, en la tercer banda.
- Esto puede observarse en la figura\InsetSpace ~
+ 
+\end_layout
 
-\begin_inset LatexCommand ref
-reference "fig:Arquitectura-de-G2"
-
-\end_inset
-
-, donde se muestra un diagrama con la arquitectura principal del sistema
- G2.
+\begin_layout Standard
+G2 es un proyecto mediano de aproximadamente 900 clases, especificado parcialmen
+te a nivel arquitectónico por 34 escenarios UCM.
 \end_layout
 
 \begin_layout Standard
@@ -13751,6 +14106,28 @@ status open
 	filename img/bubble.png
 	lyxscale 50
 	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Algunos comentarios para mejorar la imagen esta: - Cual es el sentido de
+ duplicar la figura 6.2?, no me parece - Uds referencian esta figura como
+ un 3-tier, pero eso no se refleja en ningun lado en la figura (yo marque
+ los tiers que me parecian, aproximadamente) - No hay otra figura "mas clara"
+ de la arquitectura del G2 en otro lado?
+\end_layout
+
+\begin_layout Standard
+Conclusion: Refinar la figura para que represente la arquitectura de lo
+ que dicen que es!
+\end_layout
 
 \end_inset
 
@@ -13780,8 +14157,8 @@ Arquitectura de G2
 \end_layout
 
 \begin_layout Standard
-Los siguientes casos de estudio sobre el sistema G2 se efectuaron sobre
- el componente de la segunda banda del modelo 
+Los siguientes casos de uso sobre el sistema G2 se efectuaron sobre el component
+e de la segunda banda del modelo 
 \emph on
 three
 \emph default
@@ -13789,8 +14166,18 @@ three
 \emph on
 tier
 \emph default
-, por ser éste el subsistema mas complejo y donde se concentró el trabajo
- de desarrollo.
+, por ser éste el subsistema 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+cual componente? cual subsistema?(de nuevo, esto debiera venir de una buena
+ figura 6.11)
+\end_layout
+
+\end_inset
+
+mas complejo.
 \end_layout
 
 \begin_layout Standard
@@ -13814,6 +14201,18 @@ reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
 DRArch
 \emph default
 .
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+De nuevo, "interpretar" los diagramas para el cristiano comun, y tambien
+ aclarar que este "entendimiento inicial" del sistema lo lograron hablando
+ con los expertos que diseñaron G2 (juan carlino, alvaro, others...)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13843,7 +14242,10 @@ name "fig:Diagrama-de-componentes-g2-eliminar-usuario"
 
 \end_inset
 
-Diagrama de componentes original para el caso de uso "eliminar usuario"
+Diagrama de componentes original para el caso de uso 
+\emph on
+removeUser
+\emph default
  de la aplicación G2
 \end_layout
 
@@ -13855,98 +14257,6 @@ Diagrama de componentes original para el caso de uso "eliminar usuario"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/RemoveUserUCM.png
-	width 45theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
-
-\end_inset
-
-Diagrama de UCMs original para el caso de uso "eliminar usuario" de la aplicació
-n G2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Drarch
-\begin_inset LatexCommand label
-name "sub:G2-Caso-1"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Con el objetivo de poder reconstruir uno de los aspectos más importantes
- de la arquitectura del sistema G2, en este caso de estudio se utilizó la
- herramienta 
-\emph on
-DRArch
-\emph default
- teniendo en cuenta de que la funcionalidad del sistema esta organizada
- en 
-\emph on
-tareas 
-\emph default
-y
-\emph on
- eventos.
- 
-\emph default
-Como se mencionó en la sección anterior, este sistema esta basado en el
- framework 
-\emph on
-Bubble 
-\emph default
-de la misma forma que el sistema analizado anteriormente con lo cual se
- reutilizarán las fases de análisis implementadas en el análisis anterior
- para recuperar la instanciación del 
-\emph on
-framework
-\emph default
-.
- Pos\SpecialChar \-
-te\SpecialChar \-
-rior\SpecialChar \-
-mente, aumentando el espacio de solución, se irán descubriendo
- todos aquellos componentes que interactúan con los componentes del 
-\emph on
-framework
-\emph default
-.
- 
 \end_layout
 
 \begin_layout Standard
@@ -14008,6 +14318,126 @@ Response
 .
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/RemoveUserUCM.png
+	width 45theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Este diagrama me parece que es muy escueto, pueden poner al menos 2 casos
+ de uso ?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
+
+\end_inset
+
+Diagrama de UCMs original para el caso de uso 
+\emph on
+removeUser
+\emph default
+ de la aplicación G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Uso de Drarch
+\begin_inset LatexCommand label
+name "sub:G2-Caso-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con el objetivo de poder reconstruir uno de los aspectos más importantes
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Lo mismo que el otro comentario, cual es el "aspecto mas importante"? (no
+ lo nombran)
+\end_layout
+
+\end_inset
+
+de la arquitectura del sistema G2, en este caso de estudio se utilizó la
+ herramienta 
+\emph on
+DRArch
+\emph default
+ teniendo en cuenta de que la funcionalidad del sistema esta organizada
+ en 
+\emph on
+tareas 
+\emph default
+y
+\emph on
+ eventos.
+ 
+\emph default
+Como se mencionó en la sección anterior, este sistema esta basado en el
+ framework 
+\emph on
+Bubble 
+\emph default
+de la misma forma que el sistema analizado anteriormente con lo cual se
+ reutilizarán las fases de análisis implementadas en el análisis anterior
+ para recuperar la instanciación del 
+\emph on
+framework
+\emph default
+.
+ Pos\SpecialChar \-
+te\SpecialChar \-
+rior\SpecialChar \-
+mente, se irán descubriendo todos aquellos componentes que interactúan
+ con los componentes del 
+\emph on
+framework
+\emph default
+.
+ 
+\end_layout
+
 \begin_layout Subsubsection
 Fase de recolección de información
 \end_layout
@@ -14043,16 +14473,20 @@ reference "fig:Instrumentación-de-la"
 \end_layout
 
 \begin_layout Standard
-Luego de reproducido el escenario sobre el sistema instrumentado, el log
- de ejecución ge\SpecialChar \-
-ne\SpecialChar \-
-ra\SpecialChar \-
-do es transformado por el componente 
+Luego de la ejecución del escenario sobre el sistema instrumentado, el log
+ de ejecución resultante es transformado
 \emph on
-TraceLog Analizer, 
+ 
 \emph default
-para realizar la transformación correspondiente (representación del log
- en hechos al estilo ProLog).
+a hechos al estilo 
+\emph on
+Prolog
+\emph default
+ por el componente 
+\emph on
+TraceLog Analizer
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -14098,6 +14532,33 @@ Instrumentación de la aplicación G2 durante el caso de uso “eliminar usuario
 \begin_layout Standard
 Una vez finalizada la fase de recolección, se continúa con la ejecución
  del resto de las fases.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Mismo comentario que para el Market: - de donde salen estas fases? 
+\end_layout
+
+\begin_layout Standard
+- ya se tenia knowledge pre-compilado sobre el estilo arquitectonico de
+ invocacion implicita (what about el 3-tier que se usa en G2) 
+\end_layout
+
+\begin_layout Standard
+- Ya se tenia info precompilada de posibles mapeos (para la fase de materializac
+ion)? 
+\end_layout
+
+\begin_layout Standard
+- Ya se tenia info para la fase de instanciacion?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -14211,8 +14672,7 @@ ilidades que se ejecutaron.
 \emph on
 multithread
 \emph default
- no se puede o mejor dicho no es recomendable realizar un seguimiento de
- la ejecución a nivel de 
+ no es recomendable realizar un seguimiento de la ejecución a nivel de 
 \emph on
 thread
 \emph default
@@ -14228,29 +14688,22 @@ threads
  eventos.
  Así, siguiendo el rastro de un evento a lo largo de la ejecución del caso
  de uso, se encontró un nuevo tipo de componente que no había sido descubierto
- en fases anteriores y que pertenece al framework Bubble: los Sensores.
- De esta forma, los agentes están asociados a sensores (como filtros) que
- son registrados para activarse con determinados eventos o grupos de eventos.
- 
-\end_layout
-
-\begin_layout Standard
-Debido a que la fase de invocación implícita se basó en el caso de análisis
- del sistema Market y dada la simplicidad del caso de uso utilizado para
- ejercitar 
+ en fases anteriores y que pertenece al 
+\emph on
+framework
+\emph default
+ Bubble: los Sensores.
+ Las fases anteriores no descibrieron el nuevo componente debido a que se
+ utilizó un caso de uso simple y por esto han quedado fuera del análisis
+ dinámico varios eventos de bajo nivel.
+ Luego, la riqueza del caso de uso utilizado para ejercitar 
 \emph on
 DRArch
 \emph default
- en ese momento, han quedado fuera del análisis dinámico varios eventos
- de bajo nivel que si fueron capturados gracias a la riqueza del caso de
- uso utilizado para ejercitar 
-\emph on
-DRArch
-\emph default
- con el sistema G2.
+ con el sistema G2 facilitó la detección de dicho componente.
  Con esta nueva información, se procedió a incorporar nuevas reglas a la
  fase de invocación implícita que descubrieran estos eventos de bajo nivel
- y se reejecutaron las fases anteriores.
+ y se re-ejecutaron las fases anteriores.
 \end_layout
 
 \begin_layout Standard
@@ -14294,7 +14747,11 @@ reference "fig:Diagrama-UCM-DRArch-remove-user"
 \end_inset
 
  reflejan como ha resultado la reconstrucción de la arquitectura para el
- sistema G2 basados en el caso de uso "elimina usuario".
+ sistema G2 basados en el caso de uso 
+\emph on
+removeUser
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -14315,6 +14772,19 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Interpretar la figura para el usuario!!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -14327,7 +14797,11 @@ Diagrama de componentes generado por
 \emph on
 DRArch
 \emph default
- para el caso de uso "eliminar usuario" de la aplicación G2
+ para el caso de uso 
+\emph on
+removeUser
+\emph default
+ de la aplicación G2
 \end_layout
 
 \end_inset
@@ -14358,6 +14832,19 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Interpretar la figura para el usuario!!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -14370,7 +14857,11 @@ Diagrama UCM generado por
 \emph on
 DRArch
 \emph default
- para el caso de uso "eliminar usuario" de la aplicación G2
+ para el caso de uso 
+\emph on
+removeUser
+\emph default
+ de la aplicación G2
 \end_layout
 
 \end_inset
@@ -14384,7 +14875,7 @@ DRArch
 \end_layout
 
 \begin_layout Subsection
-Structure 101
+Uso de Structure 101
 \end_layout
 
 \begin_layout Standard
@@ -14395,11 +14886,15 @@ De la misma forma que con Market, se utilizó Structure101 para analizar
 \begin_layout Standard
 Dado que Market es un sistema pequeño, se pudieron detectar facilmente las
  extensiones del framework Bubble como son tareas y eventos.
- En el caso de G2, estas extensiones del framework se encuentran desperdigadas
- a lo largo de toda la estructura de paquetes del proyecto.
- La forma en que Structure trabaja es inherentemente estructural por lo
- que el gran aporte que esta herramienta ofrece en este caso es la comprensión
- de la forma en que está organizado el sistema y como así tambien permite
+ En el caso de G2, estas extensiones del 
+\emph on
+framework
+\emph default
+ se encuentran desperdigadas a lo largo de toda la estructura de paquetes
+ del proyecto.
+ La forma en que Structure 101 trabaja es inherentemente estructural por
+ lo que el gran aporte que esta herramienta ofrece en este caso es la comprensió
+n de la forma en que está organizado el sistema y como así tambien permite
  visualizar las dependencias entre paquetes.
 \end_layout
 
@@ -14407,12 +14902,13 @@ Dado que Market es un sistema pequeño, se pudieron detectar facilmente las
 A nuestro entender, G2 al igual que Market son sistemas donde lo más importante
  es saber cómo funcionan.
  Así, las vistas estructurales no aportan el conocimiento necesario sobre
- su funcionamiento como si lo harían representaciones UCM's o diagramas
- UML de secuencia.
+ su funcionamiento como si lo harían representaciones UCMs o diagramas UML
+ de secuencia.
 \end_layout
 
 \begin_layout Standard
-La figura 
+La figura\InsetSpace ~
+
 \begin_inset LatexCommand ref
 reference "fig:G2-Structure101"
 
@@ -14434,6 +14930,21 @@ status open
 \begin_inset Graphics
 	filename img/G2_structure101.png
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Mismos comentarios sobre mostrar instead "vistas interesantes" que puede
+ proveer Structure101 (y que por ahi DRArch no tiene), cosa de que el analisis
+ al final sea mas fair :-)
+\end_layout
 
 \end_inset
 
@@ -14474,21 +14985,67 @@ Análisis de resultados
 \begin_layout Standard
 Los casos de prueba desarrollados en el presente capítulo ponen bajo análisis
  dos sistemas de proporciones diferentes.
- Por un lado, Market, un proyecto de ejemplo para probar el funcionamiento
- de un framework, con unas 40 clases, especificado parcialmente a nivel
- arquitectónico por 10 escenarios UCM.
- Por otro lado, G2, un proyecto mediano de aproximadamente 900 clases, también
- especificado parcialmente a nivel arquitectónico por 34 escenarios UCM.
- Si bien es importante tener en cuenta la cantidad de clases como medida
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Antes de empezar a discutir las metricas, es importante poner upfront los
+ criterios (o cosas que se busco analizar) con DRArch en los 2 casos de
+ estudio.
+ Veo 2 criterios (al menos): 
+\end_layout
+
+\begin_layout Standard
+1) DRArch permite recuperar arquitecturas de sistemas complejos --> aca
+ juega la metrica de complejidad ciclomatica 
+\end_layout
+
+\begin_layout Standard
+2) DRArch da buenas sugerencias porque complementa la info estatica con
+ info dinamica --> aca entra a jugar la metrica que uds llaman "eficiencia"
+ (ver mis comentarios sobre esto)
+\end_layout
+
+\begin_layout Standard
+Se entiende la idea de como "justificar" las metricas que usaron?
+\end_layout
+
+\end_inset
+
+Si bien es importante tener en cuenta la cantidad de clases como medida
  de tamaño de un sistema, en nuestro caso es importante determinar cuáles
  de estas clases juegan un papel importante en la materialización de la
  arquitectura.
 \end_layout
 
 \begin_layout Standard
-En el análisis se incluye el concepto de eficiencia, ya que es de utilidad
- medir la capacidad de lograr el efecto que se desea o se espera una vez
- que se han obtenido los resultados.
+En el análisis se incluye el concepto de eficiencia
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Ojo con este termino, que puede tener distintas connotaciones para distintas
+ personas ...
+ Es su idea de eficiencia lo mismo que "precision" en recuperacion de informacio
+n? por ej: true positives/ total?
+\end_layout
+
+\end_inset
+
+, ya que es de utilidad medir la capacidad de lograr el efecto que se desea
+ o se espera una vez que se han obtenido los resultados
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto intenta aclarar pero confunde mas...
+ Dar un ejemplo concreto de su intepretacion de "eficiencia"
+\end_layout
+
+\end_inset
+
+.
  Es por esto que en la fase de recolección de información de los casos de
  estudio, los casos de uso que se seleccionaron para generar el log de ejecución
 , se basaron en los escenarios UCM disponibles en la documentación arquitectura
@@ -14498,6 +15055,67 @@ En el análisis se incluye el concepto de eficiencia, ya que es de utilidad
 DRArch
 \emph default
  comparando los componentes descubiertos sobre los que debería haber descubierto.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+[andres]Por esto pregunto si su concepto de eficiencia es lo mismo que "precisio
+n" ...
+ (recuerden que Daniela viene de este area)
+\end_layout
+
+\begin_layout Standard
+Precisión se refiere a la dispersión del conjunto de valores obtenidos de
+ mediciones repetidas de una magnitud.
+ Cuanto menor es la dispersión mayor la precisión.
+ Una medida común de la variabilidad es la desviación estándar de las mediciones
+ y la precisión se puede estimar como una función de ella.
+\end_layout
+
+\begin_layout Standard
+Exactitud se refiere a que tan cerca del valor real se encuentra el valor
+ medido.
+ En términos estadístico, la exactitud está relacionada con el sesgo de
+ una estimación.
+ Cuanto menor es el sesgo más exacta es una estimación.
+\end_layout
+
+\begin_layout Standard
+Cuando expresamos la exactitud de un resultado se expresa mediante el error
+ absoluto que es la diferencia entre el valor experimental y el valor verdadero.
+\end_layout
+
+\begin_layout Standard
+Analogías útiles [editar]
+\end_layout
+
+\begin_layout Standard
+Ejemplo 1
+\end_layout
+
+\begin_layout Standard
+Varias medidas son como flechas disparadas hacia un objetivo.
+ La exactitud describe la proximidad de las flechas al centro del objetivo.
+ Las flechas que impactaron más cerca del centro se consideran más exactas.
+ Cuanto más cerca están las medidas a un valor aceptado, más exacto es un
+ sistema.
+\end_layout
+
+\begin_layout Standard
+La precisión, en este ejemplo, es el tamaño del grupo de flechas.
+ Cuanto más cercanas entre sí estén las flechas que impactaron el objetivo,
+ más preciso será el sistema.
+ Hay que notar que el hecho de que las flechas estén muy cercanas entre
+ sí es independiente al hecho que estén cerca del centro del objetivo.
+ En sí, se puede decir que la precisión es el grado de repetibilidad del
+ resultado.
+ Se podría resumir que exactitud es el grado de veracidad, mientra que precisión
+ es el grado de reproductibilidad.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14540,6 +15158,16 @@ key "Cobertura"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto significaria que el objetivo fue no solo reconstruir las aplicaciones
+ sino tambien el framework Bubble subyacente? Si fue asi, aclararlo al principio
+\end_layout
+
+\end_inset
+
 En el caso de Market, 
 \emph on
 DRArch 
@@ -14550,7 +15178,17 @@ fremework
 \emph default
  Bubble, mientras que en el G2, la eficiencia fue del 92%.
  Esto quiere decir que la mejora realizada en el refinamiento de las reglas
- fue positiva.
+ fue positiva
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta "conclusion" esta poco clara, explicar mejor
+\end_layout
+
+\end_inset
+
+.
  La Tabla\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -14923,6 +15561,19 @@ G2
 
 \begin_layout Standard
 Eficiencia
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+agregaria "(promedio)", ya que supongo que promediaron los resultados de
+ cada columna, ...
+ ademas, estaria bueno poner la formulita que usaron para lograr este resultado
+ en algun lado...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14972,6 +15623,24 @@ Eficiencia
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+como se obtuvieron los numeros para los artefactos "esperados" (correctos)?
+ los dedujeron uds? le preguntaron a los expertos?
+\end_layout
+
+\begin_layout Standard
+[todo] del los UCMs originales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -14985,6 +15654,21 @@ Eficiencia por artefactos arquitectónicos del
 DRArch
 \emph default
  en los proyectos Market y en G2.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+La pregunta sobre que tan fair es el analisis para Structure101: - Porque
+ no incluir tambien en la tabla la "eficiencia" de Structure101, para hacer
+ las comparaciones mas "jugosas"????
 \end_layout
 
 \end_inset
@@ -15410,6 +16094,21 @@ complejidad ciclomática
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Mismos comentarios que para Tabla 6.1 arriba: - como se determino lo que
+ "se debe reconstruir"? - como se calcularo el & eficiencia? - porque no
+ se pueden incluir los resultados de Structure101 en la tabla?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -15428,6 +16127,26 @@ DRArch
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Otro aspecto importante a analizar en un asistente es la "cantidad de conocimien
+to" (o el esfuerzo) para hacer el setup del tool al principio, para que
+ luego pueda dar "sugerencias utiles" al usuario.
+ Discutir este punto en el analisis please...
+\end_layout
+
+\begin_layout Standard
+[todo] ...
 \end_layout
 
 \end_inset
@@ -15476,7 +16195,22 @@ Eficiencia vs.
 \end_layout
 
 \begin_layout Standard
-El haber utilizado ProLog para la implementación del componente 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Dar una idea de cuantos hechos Prolog se debieron almacenar y como esto
+ puede haber afectado la inferencia (o sea, la escalabilidad del enfoque
+ DRArch, que seria un tradeoff a sus buenas capacidades de asistencia)
+\end_layout
+
+\end_inset
+
+El haber utilizado 
+\emph on
+Prolog
+\emph default
+ para la implementación del componente 
 \emph on
 Rule Model
 \emph default
@@ -15491,35 +16225,87 @@ dos.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+El analisis es bastante superficial :-( Un aspecto a tener en cuenta es
+ que uds recuperaron solo "algunos casos de uso" que se reconstruyeron como
+ UCMs, porque se suponia que eran los relevantes al estudio ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 En resumen, las pruebas realizadas sobre ambos proyectos revelaron la importante
  asistencia que significa el uso de 
 \emph on
 DRArch
 \emph default
  en el proceso de reconstrucción.
- El espacio de búsqueda, tal como debería ser analizado por un arquitecto
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+El espacio de búsqueda, tal como debería ser analizado por un arquitecto
  para descubrir artefactos arquitectónicos, se reduce notablemente en comparació
 n con el total de clases del sistema.
- Por otro lado, la precisión de la herramienta se ve comprometida por la
- complejidad ciclomática de cada proyecto y por las reglas seleccionadas
- para realizar la reconstrucción.
+ [explicarlo mejor o no incluir esta oracion]
+\end_layout
+
+\end_inset
+
+ Por otro lado, la precisión 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+aja, esto indicaria eficiencia=precision? (unificar terminologia)
+\end_layout
+
+\end_inset
+
+ de la herramienta se ve comprometida por la complejidad de cada proyecto
+ y por las reglas seleccionadas para realizar la reconstrucción.
  Éste último índice irá en aumento a medida que se refinen las reglas y
- se agregue información a la base de conocimiento, confirmando la suposición
- de que de 
-\emph on
-DRArch
-\emph default
- debe utilizarse durante el proceso de reconstrucción de arquitecturas de
- software.
+ se agregue información a la base de conocimiento.
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, puedo notarse que la herramienta Structure 101 si bien es
- muy atractiva en terminos visuales y de navegación de la información, está
- destinada a resolver problemas de erosión arquitectónica.
- Carece totalmente de aspectos comportamentales.
+Adicionalmente, puedo notarse que la herramienta Structure 101, si bien
+ es muy atractiva en terminos visuales y de navegación de la información,
+ está destinada a resolver problemas de erosión arquitectónica.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+El analisis que hacen es muy light y "castigado" para Structure101 :-( Los
+ problemas de erosion arquitectonica tambien los puede tratar DRArch (porque
+ son generales), asi que esto no es un aspecto negativo ...
+\end_layout
+
+\end_inset
+
+Carece totalmente de aspectos comportamentales.
  Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
- del sistema y de qué manera interactuan los componentes.
+ del sistema y de qué manera interactuan los componentes
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Bue,no fue tan asi, de los diagramas producidos por Structure101 "se sabe
+ muy poco", porque Uds los presentan sin explicarlos y no muestran los "diagrama
+s interesantes" que provee Structure101 :-)
+\end_layout
+
+\end_inset
+
+.
  La falta de información dinámica extraida a travéz de trazas de ejecución
  deja ocultas relaciones entre componentes que se resulven en tiempo de
  ejecución.
