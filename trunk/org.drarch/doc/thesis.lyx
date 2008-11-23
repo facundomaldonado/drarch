@@ -12698,23 +12698,16 @@ Caso 1: Market
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Explicar (dar mas contexto) la metafora del "mercado electronico" y de posibles
- aplicaciones de esto (ver reports del flabot para intel).
- Sino es como que de repente se introduce lo de los "agentes con tareas
- en un contenedor"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-.
+El comercio electrónico consiste en la compra y venta de productos o de
+ servicios a través de sistemas electrónicos como Internet u otras redes
+ de computadoras.
+ Generalmente estos sistemas son implementados como aplicaciones Web.
+ Una gran variedad de comercio se realiza de esta manera, estimulando la
+ creación y utilización de innovaciones como la transferencia de fondos
+ electrónica, la administración de cadenas de suministro, el marketing en
+ Internet, el procesamiento de transacciones en línea, el intercambio electrónic
+o de datos, los sistemas de administración del inventario, y los sistemas
+ automatizados de recolección de datos.
 \end_layout
 
 \begin_layout Standard
@@ -12727,8 +12720,23 @@ buyers
 sellers
 \emph default
 ) son libres de realizar transacciones.
+ Para realizar las interacciones, Market se basa en el protocolo 
+\emph on
+Contract-Net
+\emph default
+ (CNP)\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Smith1980"
+
+\end_inset
+
+.
+ CNP consiste en la automaticación de la negociación entre compradores y
+ vendedores a traves del comercio electrónico.
+ El protocolo define dos tipos de agentes, inicializadores y participantes.
  De esta forma, el mercado es un contenedor de agentes en donde compradores
- y vendedores son simples agentes (
+ (participantes) y vendedores (inicializadores) son simples agentes (
 \emph on
 agents
 \emph default
@@ -12737,23 +12745,29 @@ agents
 \emph on
 tasks
 \emph default
-).
- Una tarea esta compuesta por uno o mas procedimientos.
- Las tareas se disparan con condiciones predefinidas, y pueden estar relacionada
-s al estado interno del agente o a un evento
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Again, explicar (dar contexto) del tipo de tareas que podrian haber en un
- Market.
- Las interacciones entre los agentes estan basadas en el protocolo Contract-Net
- (pueden hablar algo de esto tambien)
+) tales cómo: 
 \end_layout
 
-\end_inset
+\begin_layout Itemize
+Realizar un aviso de venta de un producto.
+\end_layout
 
- 
+\begin_layout Itemize
+Realizar una oferta.
+\end_layout
+
+\begin_layout Itemize
+Aceptar una oferta.
+\end_layout
+
+\begin_layout Itemize
+Rechazar una oferta.
+\end_layout
+
+\begin_layout Standard
+Una tarea esta compuesta por uno o mas procedimientos.
+ Las tareas se disparan con condiciones predefinidas, y pueden estar relacionada
+s al estado interno del agente o a un evento 
 \begin_inset LatexCommand cite
 key "Drogoul92"
 
@@ -12871,32 +12885,21 @@ Modelo arquitectónico del framework Bubble.
 \end_layout
 
 \begin_layout Standard
-La instanciación del framework Bubble que realiza Market esta materializada
- por las siguientes clases:
+La instanciación del 
+\emph on
+framework
+\emph default
+ Bubble que realiza Market esta materializada por las siguientes clases:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Antes de entrar aca, por favor explicar como funciona el mecanismo de interaccio
 n entre los agentes del mercado en base al protocolo Contract-Net (y agregar
  una REF al protocolo) Sino las tareas de abajo no se entienden ...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Explicar brevemente que hace cada uno de estos items en la solucion del
- Market
 \end_layout
 
 \end_inset
@@ -12910,7 +12913,7 @@ Tareas:
 
 \begin_deeper
 \begin_layout Itemize
-BidTask
+BidTask: Realiza una oferta.
 \end_layout
 
 \begin_layout Itemize
@@ -12918,23 +12921,23 @@ BuyTask: Responsable de realizar una compra.
 \end_layout
 
 \begin_layout Itemize
-InitializeTimerTask
+InitializeTimerTask: Comienza el tiempo de una oferta.
 \end_layout
 
 \begin_layout Itemize
-ProcessOrderTask
+ProcessOrderTask: Envía el contrato de la transacción.
 \end_layout
 
 \begin_layout Itemize
-RequestTask
+RequestTask: Escucha ofertas de los clientes.
 \end_layout
 
 \begin_layout Itemize
-SellTask
+SellTask: Realiza la acción de venta.
 \end_layout
 
 \begin_layout Itemize
-TimerTask
+TimerTask: Controla el tiempo de una oferta.
 \end_layout
 
 \end_deeper
@@ -12944,15 +12947,15 @@ Agentes
 
 \begin_deeper
 \begin_layout Itemize
-Customer: Clientes interesados en comprar items.
+Customer: Clientes interesados en comprar productos.
 \end_layout
 
 \begin_layout Itemize
-Dealer
+Dealer: Inicializador o vendedor del producto.
 \end_layout
 
 \begin_layout Itemize
-Timer
+Timer: Controla el tiempo de la oferta.
 \end_layout
 
 \end_deeper
@@ -12962,7 +12965,7 @@ Eventos
 
 \begin_deeper
 \begin_layout Itemize
-MarketAgentEvent
+MarketAgentEvent: Contenedor de agentes.
 \end_layout
 
 \end_deeper
@@ -12972,15 +12975,15 @@ Sensores
 
 \begin_deeper
 \begin_layout Itemize
-CustomerSensor
+CustomerSensor: Eventos relacionados con los compradores.
 \end_layout
 
 \begin_layout Itemize
-DealerSensor
+DealerSensor: Eventos relacionados con los vendedores.
 \end_layout
 
 \begin_layout Itemize
-TimerSensor
+TimerSensor: Eventos relacionados con el tiempo de las ofertas.
 \end_layout
 
 \end_deeper
@@ -13003,7 +13006,13 @@ Aca es importante aclarar que no solo se conto con acceso a la documentacion
 \end_layout
 
 \begin_layout Standard
-La documentación de la arquitectura del Market provee un conjunto de UCMs
+La información de la arquitectura del Market se obtuvo por medio de la documenta
+ción existente y por los expertos que construyeron el 
+\emph on
+framework
+\emph default
+ Bubble y la aplicación.
+ La documentación de la arquitectura del Market provee un conjunto de UCMs
  que nos permiten entender el comportamiento del sistema.
  Con el objetivo de poder hacer comparaciones con los resultados obtenidos
  con el 
