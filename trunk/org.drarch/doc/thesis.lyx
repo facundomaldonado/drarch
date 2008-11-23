@@ -9177,16 +9177,28 @@ en frameworks
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Andres: Poner un pequenio parrafo que motive porque el concepto de framework/ins
-tanciacion es relevante para una representacion arquitectonica ...
-\end_layout
+Los frameworks orientados a objetos son, quizás, la herramienta más efectiva
+ para alcanzar el reuso tanto de diseño como de código 
+\begin_inset LatexCommand cite
+key "Fayad97"
 
 \end_inset
 
+.
+ El principal beneficio de los frameworks 
+\begin_inset LatexCommand cite
+key "Johnson97,Fayad99"
+
+\end_inset
+
+ es que estos proveen un esqueleto general y reusable de clases y patrones
+ de comportamiento para un dominio específico.
+ Basándose en frameworks, el desarrollo de nuevas aplicaciones se puede
+ llevar a cabo de manera flexible y directa con un adicional ahorro de tiempo
+ y esfuerzo de diseño.
+\end_layout
+
+\begin_layout Standard
 El concepto principal del diseño de 
 \emph on
 frameworks 
@@ -12918,8 +12930,91 @@ tareas.
 \end_layout
 
 \begin_layout Standard
+Como se mencionó en el capítulo xxx
 \begin_inset Note Note
 status open
+
+\begin_layout Standard
+ENFOQUE????
+\end_layout
+
+\end_inset
+
+ es necesario realizar una fase inicial, fase cero, en la que se realizan
+ entrevistas con los expertos del sistema (a recuperar) y se reavisa la
+ documentación del sistema con el objetivo de llegar a un entendimiento
+ común sobre cuáles son los elementos del sistema de interes arquitectónico.
+ Es el objetivo de esta fase también que juntos, los expertos del sistema
+ y el/los expertos en recuperación, armen las reglas y su agrupación en
+ fases, como asi también el orden de evaluación de las mismas.
+ En esta fase se recolecta toda la información necesaria para que el experto
+ en recuperación pueda tener conocimiento suficiente como para poder aceptar
+ o rechazar las sugerencias de DRArch.
+\end_layout
+
+\begin_layout Standard
+Fase cero
+\end_layout
+
+\begin_layout Standard
+En el framework Bubble, el comportamiento de los agentes esta definido mediante
+ tareas mediante un mecanismo condición-acción.
+ Por ejemplo, una tarea es un módulo compuesto por una serie de acciones
+ a ser ejecutadas por un agente cuando se cumplen ciertas condiciones.
+ De esta forma se ve que la funcionalidad del sistema está organizada alrededor
+ de éstas tareas.
+\end_layout
+
+\begin_layout Standard
+De las entrevistas con los expertos surgieron las siguientes especificaciónes
+ de componentes:
+\end_layout
+
+\begin_layout Itemize
+Todo lo que hereda de la clase Task es un componente.
+ El nombre de la clase es el nombre del componente.
+ El método run de la tarea se debe asociar a una responsabilidad con el
+ mismo nombre de la tarea.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset LatexCommand label
+name "ite:Asociación-Tarea-Evento-1"
+
+\end_inset
+
+Crear una asociación entre un componente tarea y un evento cuando dentro
+ de la implementación de la tarea se encuentra la siguiente porción de código:
+ new EventIdCondition( EventHierarchyManager.getEventId(...Event.class)));
+\end_layout
+
+\begin_layout Itemize
+\begin_inset LatexCommand label
+name "ite:Asociación-Tarea-Evento-2"
+
+\end_inset
+
+Crear una asociación entre un componente tarea y un evento cuando dentro
+ de la ejecucion del método run de la tarea se ejecuta un EventManager.publishEve
+nt(anEvent); donde la clase de anEvent es el nombre del componente evento
+ que debe ser asociado.
+ 
+\end_layout
+
+\begin_layout Standard
+Basado en estas reglas se planeo dividir el analisis en x fases.
+ La primera, la fase de recolección es común a todos los procesos de recuperació
+n.
+ La misma consiste en recolectar la información dinámica y en la instrumentación
+ de código.
+ El objetivo de la fase siguiente es reducir el espacio de solución haciendo
+ foco principalemente en aquellas porciones de código relevantes a la recuperaci
+ón.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Standard
 Poner aca una explicacion del setup inicial de DRArch (ej.
@@ -12956,7 +13051,7 @@ bidding
 \emph default
 )
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Como les puse antes, esto require que previamente se haya explicado el protocolo
@@ -12966,10 +13061,10 @@ Como les puse antes, esto require que previamente se haya explicado el protocolo
 \end_inset
 
 .
- Debido a que la aplicación es un un ejemplo para utilizar el framework
- Bubble, hay un único punto de entrada al sistema que ejecuta todos los
- casos de uso sin interface de gráfica (modo consola) y sin necesidad de
- utilizar datos de entrada.
+ Debido a que la aplicación es un ejemplo para utilizar el framework Bubble,
+ hay un único punto de entrada al sistema que ejecuta todos los casos de
+ uso sin interface de gráfica (modo consola) y sin necesidad de utilizar
+ datos de entrada.
  En la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -12978,6 +13073,25 @@ reference "fig:Configuración-del-log"
 \end_inset
 
  se muestra la configuración necesaria para generar el log de ejecución.
+ Cabe destacar que para la instrumentación de Market se incrementó el nivel
+ de profundidad del snapshot de objetos (sección Level Of Depth Log de la
+ figura).
+ Esta propiedad que brinda Flabot permitirá obtener la información necesaria
+ para la ejecución de las reglas como las descriptas en la sección anterior
+ (
+\begin_inset LatexCommand ref
+reference "ite:Asociación-Tarea-Evento-1"
+
+\end_inset
+
+
+\begin_inset LatexCommand ref
+reference "ite:Asociación-Tarea-Evento-2"
+
+\end_inset
+
+) en las que se necesita acceder a información de los objetos contenidos
+ en otra instancia.
 \end_layout
 
 \begin_layout Standard
@@ -13027,7 +13141,7 @@ FLAbot.
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Todo bien con la figura anterior, pero en ningun momento comentaron que
@@ -13048,7 +13162,7 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Antes de entrar con todas las subsecciones "Fase de ...", explicar de donde
@@ -13067,7 +13181,7 @@ Fase de estructura de paquetes
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Un poco atravesado el parrafo este.
@@ -13080,28 +13194,13 @@ Un poco atravesado el parrafo este.
 \end_layout
 
 \begin_layout Standard
-Basado en el supuesto de que cualquier sistema se debe dividir en unidades
- más pequeñas, esta fase intenta identificar esas unidades con el objetivo
- de acotar el análisis y hacer foco en las unidades de mayor relevancia.
- Las reglas que componen esta fase son simples
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Una duda, se mostro en algun lado el estilo "simple" package(?P)?.
- Si aparecio en el capitulo de implementacion (o en algun otro lado), todo
- Ok; sino van a tener que explicar algo mas aca para que se entienda ...
+Basado en la premisa de que todo sistema se debe dividir en unidades más
+ pequeñas, esta fase intenta identificar esas unidades con el objetivo de
+ acotar el análisis y hacer foco en aquellas unidades de mayor relevancia.
 \end_layout
 
-\end_inset
-
- (del estilo 
-\family typewriter
-package(?P)
-\family default
-) ya que proponen la división de unidades basándose en la estructura de
- paquetes que presenta el código fuente.
- De esta forma, se identificaron tres unidades distintas: 
+\begin_layout Standard
+De esta forma, se identificaron tres unidades distintas: 
 \family typewriter
 bubble.core
 \family default
@@ -13109,7 +13208,7 @@ bubble.core
 \family typewriter
 distribution
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -13131,6 +13230,16 @@ market
 \family default
 .
  
+\end_layout
+
+\begin_layout Standard
+En este punto se volvio a pedir asistencia a los expertos del sistema, quienes
+ recomendaron descartar el paquete 
+\family typewriter
+distribution 
+\family default
+dado que es irrelevante desde el punto de vista de la reconstrucción de
+ Market (no lo usa) dado que es una extensión Bubble.
 \end_layout
 
 \begin_layout Subsubsection
@@ -13159,12 +13268,13 @@ bubble.core
 \emph on
 DRArch
 \emph default
- se agrupan en las siguientes categorías:
+ se agrupan en las siguientes categorías construidas en base al análisis
+ y la información provista por los expertos en la fase cero.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Todo ok, pero de donde salieron estas reglas? quien las define? cuando las
@@ -13234,18 +13344,8 @@ agentes: Como dijimos anteriormente, los agentes representan
 \end_layout
 
 \begin_layout Itemize
-Relaciones: Estas relaciones
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Que relaciones?
-\end_layout
-
-\end_inset
-
- fueron un poco difíciles de reconstruir ya que la información que se utilizó
- fue la que generó el log de ejecución.
+Relaciones: Las relaciones entre componentes fueron difíciles de reconstruir
+ ya que la información que se utilizó fue la que generó el log de ejecución.
  De esta forma, se intentó crear una asociación entre un componente tarea
  y un evento cuando dentro de la ejecución del método 
 \family typewriter
@@ -13253,7 +13353,7 @@ run
 \family default
  de la tarea se ejecuta la siguiente linea de código:
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Esto involucra un conocimiento bastante fino del modelo Bubble y de su implement
@@ -13291,6 +13391,9 @@ invocationMethod
 snapshot
 \family default
  dentro de la consulta que compone la regla.
+ Esta regla involcra un conocimiento muy fino del modelo Bubble y su implementac
+ión que sólo puede conocerce gracias a las entrevistas realizadas en la
+ fase cero.
 \end_layout
 
 \begin_layout Standard
@@ -13362,7 +13465,7 @@ DRArch
 \emph default
  en las siguientes categorías:
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Idem comentarios sobre las reglas de la subseccion anterior
