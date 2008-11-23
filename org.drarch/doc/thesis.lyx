@@ -12676,7 +12676,7 @@ reference "fig:Diagrama-de-clases-Bubble"
  clases pintadas con color azul y la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "fig:Modelo-arquitectónico-del-Bubble"
+reference "fig:Modelo-arquitectónico-del-Market-Bubble"
 
 \end_inset
 
@@ -12831,27 +12831,8 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/BubbleModeloConceptual.png
+	filename img/MarketModeloConceptual.png
 	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Yo no usaria esta figura para explicar el Bubble (digamos que con la figura
- 6.1 esta bien), sino que adaptaria esta figura para reflejar el ejemplo
- del Market!!! (que no aparece graficamente en ningun lado)
-\end_layout
-
-\begin_layout Standard
-[todo]instanciar la figura
-\end_layout
 
 \end_inset
 
@@ -12863,19 +12844,19 @@ Yo no usaria esta figura para explicar el Bubble (digamos que con la figura
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "fig:Modelo-arquitectónico-del-Bubble"
+name "fig:Modelo-arquitectónico-del-Market-Bubble"
 
 \end_inset
 
-Modelo arquitectónico del framework Bubble.
+Modelo arquitectónico Market instanciado por el 
+\emph on
+framework
+\emph default
+ Bubble.
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -12890,21 +12871,6 @@ La instanciación del
 framework
 \emph default
  Bubble que realiza Market esta materializada por las siguientes clases:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Antes de entrar aca, por favor explicar como funciona el mecanismo de interaccio
-n entre los agentes del mercado en base al protocolo Contract-Net (y agregar
- una REF al protocolo) Sino las tareas de abajo no se entienden ...
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -12988,32 +12954,14 @@ TimerSensor: Eventos relacionados con el tiempo de las ofertas.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Aca es importante aclarar que no solo se conto con acceso a la documentacion
- del Bubble-Market, sino contar que se tuvo "acceso" a los "expertos" que
- construyeron el framework y la aplicacion para el proyecto FLABot (Alvaro
- y yo, ejejej).
- Esto implica contar "el proceso" que siguieron Uds para hacer la reconstruccion
- ...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 La información de la arquitectura del Market se obtuvo por medio de la documenta
-ción existente y por los expertos que construyeron el 
+ción existente y por medio de los expertos que construyeron el 
 \emph on
 framework
 \emph default
  Bubble y la aplicación.
- La documentación de la arquitectura del Market provee un conjunto de UCMs
- que nos permiten entender el comportamiento del sistema.
+ La documentación de la arquitectura provee un conjunto de UCMs que nos
+ permiten entender el comportamiento del sistema.
  Con el objetivo de poder hacer comparaciones con los resultados obtenidos
  con el 
 \emph on
@@ -13026,17 +12974,37 @@ reference "fig:Market-UCMs"
 
 \end_inset
 
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Pongan un parrafito que explique la figura please
-\end_layout
-
-\end_inset
-
-se muestran algunos de estos UCMs.
+ se muestran algunos de estos UCMs.
+ En el primer caso, el un vendedor realiza una oferta (
+\family typewriter
+startAction
+\family default
+ y 
+\family typewriter
+afferProduct
+\family default
+) y un cliente recive (
+\family typewriter
+listenToBids
+\family default
+) la oferta y la revisa (
+\family typewriter
+checkPreferences
+\family default
+).
+ En el segundo caso, el cliente realiza un pedido de compra (
+\family typewriter
+initializeRequest
+\family default
+ y 
+\family typewriter
+placeOrder
+\family default
+), luego el vendedor acepta el pedido (acceptRequest) y lo registra (
+\family typewriter
+storeRequest
+\family default
+).
 \end_layout
 
 \begin_layout Standard
