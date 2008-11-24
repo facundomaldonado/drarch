@@ -722,16 +722,6 @@ key "Verjus2007"
 
 \end_inset
 
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Y bla...bla..bla..
-\end_layout
-
-\end_inset
-
 .
  El resultado final es generalmente un conjunto de diagramas que representan
  la arquitectura del sistema.
@@ -1005,17 +995,6 @@ key "AMYOT-SAM02"
  real de la aplicación.
  Se puede mencionar por ejemplo casos en los que se explota el polimorfismo
  de la orientación a objetos y las instanciaciónes se dan en tiempo de ejecución.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-[Y] bla...bla...bla..
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Standard
@@ -6284,6 +6263,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/ProcesoDrarchActivityDiagram.png
+	width 100text%
 
 \end_inset
 
@@ -6368,8 +6348,8 @@ s representan fielmente los conceptos arquitectónicos que se está intentando
 status open
 
 \begin_layout Standard
-Una forma de aumentar la del análisis es la definición de una fase por aspecto
- del sistema.
+Una forma de aumentar la especializacion del análisis es la definición de
+ una fase por aspecto del sistema.
 \begin_inset Note Note
 status open
 
@@ -6581,7 +6561,8 @@ status open
 
 \begin_layout Standard
 ...
- eufemismo!
+ eufemismo!..
+ cual es la desventaja de consultar AST en ves de prolog
 \end_layout
 
 \end_inset
@@ -7086,6 +7067,10 @@ Aca faltaria un parrafo o dos que explique la relacion entre estos mappings
  Es decir, estos mappings los tiene que proveer el desarrollador "a priori"
  al tool?, el tool tiene reglas ya sobre como hacer los mappings? o como
  es que funciona ...
+\end_layout
+
+\begin_layout Standard
+[explicar los facts que se agregan luego de ejecutar una regla]
 \end_layout
 
 \end_inset
@@ -7744,19 +7729,6 @@ nicos (ej.: componentes, relaciones entre componentes, etc.) a diferentes
 
 \begin_layout Enumerate
 una consulta sobre la base de conocimiento; 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Andres: Notar que si van a usar el termino "base de conocimiento" por todos
- lados, seria bueno incluir un componente con ese nombre en la figura 4.1
- o explicar en el texto cercano a 4.1 que hay una base de conocimiento bla
- bla (digo, para unificar terminologia)
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -8633,7 +8605,8 @@ Identificación de componentes basado en acoplamiento
 status open
 
 \begin_layout Standard
-Incluir referencia de donde sale esta heuristica
+Incluir referencia de donde sale esta heuristica [ref a la matriz de dependencia
+]
 \end_layout
 
 \end_inset
@@ -8678,7 +8651,7 @@ reference "fig:Grafo-de-dependencias-acoplamiento"
 , se pueden distinguir estas propiedades.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Es decir, el acoplamiento del conjunto de clases que relacionadas con el
@@ -8716,17 +8689,6 @@ En la figura pueden verse claramente dos conjuntos de clases (Modelo y Presentac
 ión) agrupados por el grado de acoplamiento entre sus clases vecinas.
  De esta forma es posible realizar reglas que reconozcan este tipo de agrupación
 es y el asistente las sugerirá como componentes del modelo.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-[Y] explicar un poco mas la imagen
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -9612,7 +9574,7 @@ Cada parte debe ir construyendo una porcion de la arquitectura final..
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Andres: 
@@ -9875,7 +9837,7 @@ pe\SpecialChar \-
 rien\SpecialChar \-
 cia de las personas involucradas en el sistema.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 ANDRES: Me sigue quedando en el aire como se incorpora esta experiencia
@@ -12417,21 +12379,6 @@ El contar con los expertos que desarrollaron el sistema permitió obtener
  en cuenta solamente para realizar comparaciones y asi poder medir la eficiencia
  de la herramienta.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Por otro lado, la documentación original de los sistemas que se utilizaron
- para realizar los experimentos, casi no se tuvo en cuenta para realizar
- la reconstrucción.
- Sin embargo, luego de obtener los resultados, la documentación original
- se utilizó para realizar comparaciones y así poder medir la eficiencia
- de la herramienta.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -12898,35 +12845,6 @@ Diagramas UCMs para el proyecto Market
 Uso de 
 \emph on
 DRArch
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Incompleto y misterioso :-), porque es "uno de los aspectos mas importantes"
- y no me dicen cual :-) Otra cosita, de donde sale que el concepto de "tarea"
- es fundamental para la reconstruccion? (ojo, esta bien que es fundamental,
- pero lo ponen asi salido de la galera)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Con el objetivo de poder reconstruir uno de los aspectos más importantes
- de la arquitectura del sistema Market, en este caso de estudio se utilizó
- la herramienta 
-\emph on
-DRArch
-\emph default
- teniendo en cuenta de que la funcionalidad del sistema esta organizada
- en 
-\emph on
-tareas.
 \end_layout
 
 \begin_layout Standard
@@ -13412,7 +13330,7 @@ reference "fig:Resultado-de-la-fase-de-invocacion-implicita-market"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -13536,7 +13454,7 @@ reference "fig:Resultado-de-la-fase-de-materializacion-i-e-market"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -13580,36 +13498,18 @@ Fase de instanciación
 \begin_layout Standard
 Al termino de la ejecución de esta fase se obtuvieron aquellos componentes
  comprometidos con la ejecución del caso de uso que forman parte de la instancia
-ción del framework Bubble para el dominio del Market.
+ción del 
+\emph on
+framework
+\emph default
+ Bubble para el dominio del Market.
  Las consultas realizadas en esta fase están muy relacionadas al caso de
  uso que se utilizó para generar el log de ejecución.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esta parte casi no se explico en la pagina 63.
- Con lo cual no queda muy claro que es lo que se pretende hacer aca con
- los mappings ...
- Y por lo tanto, el "facil" de realizar consultas queda en el aire tambien
- ...
-\end_layout
-
-\end_inset
-
- Los métodos de cada clase representan una responsabilidad al momento de
- generar el log, y las responsabilidades de cada componente reconstruido
- están materializadas con los correspondientes métodos de las clases asociadas.
- Así, es fácil
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-facil
-\end_layout
-
-\end_inset
-
- realizar consultas que sugieran un 
+ Las responsabilidades de los componenetes estan mapeadas a métodos.
+ Los métodos corresponden a las clases que están asociadas con cada componente.
+ Esto es de gran utilidad ya que una de las informaciones que provee el
+ log de ejecución, indica qué métodos fueron ejecutados y en qué orden.
+ Así, es posible realizar consultas que sugieran un 
 \emph on
 path
 \emph default
@@ -13648,25 +13548,26 @@ od, ?Responsibility)
 Esta consulta retorna una lista de las responsabilidades ejecutadas respetando
  orden de ejecución.
  El resultado obtenido luego de la ejecución de esta fase se muestra en
- la figura\InsetSpace ~
+ la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Resultado-de-la-fase-de-instanciacion-market"
 
 \end_inset
 
-.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Tienen que explicar un poco que es lo que representa el UCM obtenido (porque
- no es self-explanatory)
-\end_layout
-
-\end_inset
-
-
+, en donde un cliente (
+\family typewriter
+Customer
+\family default
+) realiza un pedido (
+\family typewriter
+Request
+\family default
+) para procesar una compra y el vendedor (
+\family typewriter
+Dealer
+\family default
+) es quién recive ese pedido.
 \end_layout
 
 \begin_layout Standard
@@ -14026,19 +13927,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-repasar el comentario de la figura
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -14113,12 +14001,11 @@ UserDBView
 UserManager
 \family default
 ).
- 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 De nuevo, "interpretar" los diagramas para el cristiano comun, y tambien
@@ -14466,7 +14353,11 @@ Una vez finalizada la fase de recolección, se continúa con la ejecución
 status open
 
 \begin_layout Standard
-Mismo comentario que para el Market: - de donde salen estas fases? 
+Mismo comentario que para el Market: 
+\end_layout
+
+\begin_layout Standard
+- de donde salen estas fases? 
 \end_layout
 
 \begin_layout Standard
@@ -14911,10 +14802,14 @@ Análisis de resultados
 
 \begin_layout Standard
 Los casos de prueba desarrollados en el presente capítulo ponen bajo análisis
- dos sistemas de proporciones diferentes.
+ dos sistemas de proporciones diferentes y con un mismo 
+\emph on
+framework
+\emph default
+ subyacente (Bubble), el cuál es uno de los objetivos a reconstruir.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Antes de empezar a discutir las metricas, es importante poner upfront los
@@ -14940,6 +14835,18 @@ Se entiende la idea de como "justificar" las metricas que usaron?
 
 \end_inset
 
+Uno de los criterios utilizados para realizar el análisis de los resultados
+ obtenidos se basa en recuperar arquitecturas de sistemas complejos.
+ Otro, se basa en las buenas sugerencias que proporciona la herramienta
+ 
+\emph on
+DRArch
+\emph default
+ porque complementa la información estática, la dinámica y la experiencia
+ de los que desarrollaron el sistema.
+\end_layout
+
+\begin_layout Standard
 Si bien es importante tener en cuenta la cantidad de clases como medida
  de tamaño de un sistema, en nuestro caso es importante determinar cuáles
  de estas clases juegan un papel importante en la materialización de la
@@ -14947,43 +14854,33 @@ Si bien es importante tener en cuenta la cantidad de clases como medida
 \end_layout
 
 \begin_layout Standard
-En el análisis se incluye el concepto de eficiencia
-\begin_inset Note Note
-status open
+En el análisis se incluye el concepto de exactitud, ya que es de utilidad
+ medir qué tan cerca del valor real se encuentra el valor medido.
+ Por ejemplo, si una porción de la arquitectura original del sistema muestra
+ 15 componentes, y la reconstrucción muestra 10, la exactitud describe la
+ proximidad del valor medido (10 artefactos arquitectónicos) al valor real
+ (15 artefactos arquitectónicos).
+ Cuanto más cerca están las medidas a un valor aceptado, más exacto es un
+ sistema.
+ En la Figura\InsetSpace ~
 
-\begin_layout Standard
-Ojo con este termino, que puede tener distintas connotaciones para distintas
- personas ...
- Es su idea de eficiencia lo mismo que "precision" en recuperacion de informacio
-n? por ej: true positives/ total?
-\end_layout
-
-\end_inset
-
-, ya que es de utilidad medir la capacidad de lograr el efecto que se desea
- o se espera una vez que se han obtenido los resultados
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esto intenta aclarar pero confunde mas...
- Dar un ejemplo concreto de su intepretacion de "eficiencia"
-\end_layout
+\begin_inset LatexCommand ref
+reference "fig:Fórmula-de-Exactitud"
 
 \end_inset
 
-.
+ se muestra la fórmula utilizada para calcular la exactitud.
  Es por esto que en la fase de recolección de información de los casos de
  estudio, los casos de uso que se seleccionaron para generar el log de ejecución
 , se basaron en los escenarios UCM disponibles en la documentación arquitectura
  de cada proyecto.
- De esta forma, es posible medir la eficiencia del 
+ De esta forma, es posible medir la exactitud del 
 \emph on
 DRArch
 \emph default
  comparando los componentes descubiertos sobre los que debería haber descubierto.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 [andres]Por esto pregunto si su concepto de eficiencia es lo mismo que "precisio
@@ -15046,6 +14943,44 @@ La precisión, en este ejemplo, es el tamaño del grupo de flechas.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/FormulaExactitud.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Fórmula-de-Exactitud"
+
+\end_inset
+
+Fórmula de Exactitud para Artefactos Arquitectónicos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Otra de las métricas que se incluye en el análisis es la Complejidad Ciclomática
  (
 \emph on
@@ -15058,7 +14993,7 @@ ty
 \emph default
 ) ya que es una métrica del software que proporciona una medición cuantitativa
  de la complejidad lógica de un programa.
- Es una de las métricas de software mas am\SpecialChar \-
+ Es una de las métricas de software más am\SpecialChar \-
 plia\SpecialChar \-
 men\SpecialChar \-
 te aceptada, ya que ha
@@ -15085,16 +15020,6 @@ key "Cobertura"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esto significaria que el objetivo fue no solo reconstruir las aplicaciones
- sino tambien el framework Bubble subyacente? Si fue asi, aclararlo al principio
-\end_layout
-
-\end_inset
-
 En el caso de Market, 
 \emph on
 DRArch 
@@ -15103,19 +15028,9 @@ detectó un 78% de los artefactos arquitectónicos pertenecientes al
 \emph on
 fremework
 \emph default
- Bubble, mientras que en el G2, la eficiencia fue del 92%.
- Esto quiere decir que la mejora realizada en el refinamiento de las reglas
- fue positiva
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esta "conclusion" esta poco clara, explicar mejor
-\end_layout
-
-\end_inset
-
-.
+ Bubble, mientras que en el G2, la exactitud fue del 92%.
+ Esto quiere decir que las modificaciones realizadas a las reglas asociadas
+ a Bubble son válidas ya que la exactitud mojoró luego del refinamiento.
  La Tabla\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -15123,9 +15038,17 @@ reference "tab:Eficacia-del-DRArch-parcial"
 
 \end_inset
 
- muestra la eficiencia de los artefactos arquitectónicos (componentes, relacione
-s y responsabilidades) del Market y del G2.
- Estos mismos resultados están representados al figura\InsetSpace ~
+ muestra la exactitud de los artefactos arquitectónicos (componentes, relaciones
+ y responsabilidades) del Market y del G2.
+ La cantidad de artefactos arquitectónicos esperados se calculó teniendo
+ en cuenta la documentación original.
+ Por ejemplo, en uno de los diagramas que describe el 
+\emph on
+framework
+\emph default
+ Bubble se muestran 4 componentes (valor esperado) entonces la reconstrucción
+ debería aproximarse a esos 4 componentes (valor obtenido).
+ Los mismos resultados están representados en la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Eficacia-entre-los-artefactos"
@@ -15487,20 +15410,7 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-Eficiencia
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-agregaria "(promedio)", ya que supongo que promediaron los resultados de
- cada columna, ...
- ademas, estaria bueno poner la formulita que usaron para lograr este resultado
- en algun lado...
-\end_layout
-
-\end_inset
-
-
+Promedio de la exactitud 
 \end_layout
 
 \end_inset
@@ -15550,24 +15460,6 @@ agregaria "(promedio)", ya que supongo que promediaron los resultados de
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-como se obtuvieron los numeros para los artefactos "esperados" (correctos)?
- los dedujeron uds? le preguntaron a los expertos?
-\end_layout
-
-\begin_layout Standard
-[todo] del los UCMs originales
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -15576,7 +15468,7 @@ name "tab:Eficacia-del-DRArch-parcial"
 
 \end_inset
 
-Eficiencia por artefactos arquitectónicos del 
+Exactitud por artefactos arquitectónicos del 
 \emph on
 DRArch
 \emph default
@@ -15980,7 +15872,7 @@ complejidad ciclomática
 \begin_inset Text
 
 \begin_layout Standard
-% eficiencia
+% Exactitud
 \end_layout
 
 \end_inset
@@ -16044,7 +15936,7 @@ name "tab:Eficacia-del-DRArch"
 
 \end_inset
 
-Eficiencia total del 
+Exactitud total del 
 \emph on
 DRArch
 \emph default
@@ -16107,7 +15999,7 @@ name "fig:Eficiencia-vs.-Complejidad"
 
 \end_inset
 
-Eficiencia vs.
+Exactitud vs.
  Complejidad
 \end_layout
 
@@ -16143,7 +16035,11 @@ Rule Model
 \emph default
 , si bien brinda flexibilidad a la hora de agregar o modificar reglas, acarrea
  los problemas típicos en los lenguajes interpretados.
- Por otro lado, la ejecución de una aplicación instrumentada es cada vez
+ También, almacenar tanta cantidad de hechos 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, la ejecución de una aplicación instrumentada es cada vez
  más lenta a medida que crece la cantidad de puntos que están siendo inspecciona
 dos.
  Asimismo, la memoria y el procesamiento requeridos para el análisis de
@@ -16173,31 +16069,9 @@ En resumen, las pruebas realizadas sobre ambos proyectos revelaron la importante
 DRArch
 \emph default
  en el proceso de reconstrucción.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-El espacio de búsqueda, tal como debería ser analizado por un arquitecto
- para descubrir artefactos arquitectónicos, se reduce notablemente en comparació
-n con el total de clases del sistema.
- [explicarlo mejor o no incluir esta oracion]
-\end_layout
-
-\end_inset
-
- Por otro lado, la precisión 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-aja, esto indicaria eficiencia=precision? (unificar terminologia)
-\end_layout
-
-\end_inset
-
- de la herramienta se ve comprometida por la complejidad de cada proyecto
- y por las reglas seleccionadas para realizar la reconstrucción.
+ Por otro lado, la precisión de la herramienta se ve comprometida por la
+ complejidad de cada proyecto y por las reglas seleccionadas para realizar
+ la reconstrucción.
  Éste último índice irá en aumento a medida que se refinen las reglas y
  se agregue información a la base de conocimiento.
 \end_layout
