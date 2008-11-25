@@ -1015,19 +1015,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-actualizar la imágen
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -7309,7 +7296,7 @@ Al igual que la información estática, la información dinámica es representad
 ProLog
 \emph default
  y sobre la misma base del conocimiento.
- Para obtener dicha información, primero se debe instrumentar la aplicación
+ Para obtener dicha i nformación, primero se debe instrumentar la aplicación
  para poder generar logs de ejecución.
  Luego, es necesario realizar un análisis de los 
 \emph on
@@ -8159,25 +8146,8 @@ Reconocimiento de componentes de utilidad
 
 \begin_layout Standard
 \align block
-Cuando se busca reconocer componentes 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-\align block
-basado en eventos arquitectónicos de bajo nivel ANDRES: la frase "eventos
- arquitectonicos de bajo nivel" es muy confusa.
- Supongo que los "eventos" son los elementos del log, no?
-\end_layout
-
-\begin_layout Standard
-[nico: esta nota ya esta?]
-\end_layout
-
-\end_inset
-
- es interesante también filtrar o excluir del análisis aquellos elementos
- que no aportan valor agregado al análisis.
+Cuando se busca reconocer componentes es interesante también filtrar o excluir
+ del análisis aquellos elementos que no aportan valor agregado al análisis.
  En la literatura, estos elementos son conocidos como componentes de utilidad.
  Dichos componentes determinan detalles de implementación de bajo nivel.
  Hamou et.
