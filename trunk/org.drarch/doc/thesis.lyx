@@ -1081,8 +1081,12 @@ es, documentos, etc.), y seleccionar como los conceptos relevantes del diseño
 \end_layout
 
 \begin_layout Standard
-La herramienta DRArch que da soporte a nuestro enfoque fue diseñada como
- un framework Java que 
+La herramienta 
+\emph on
+DRArch
+\emph default
+ que da soporte a nuestro enfoque fue diseñada como un framework Java que
+ 
 \begin_inset Note Note
 status open
 
@@ -1184,23 +1188,19 @@ reference "cha:Casos-de-Estudio"
  El primer caso de estudio es el sistema G2, que es una aplicación comercial
  desarrollada en un proyecto de transferencia con la empresa Delsat, S.A.
  El segundo caso de estudio, llamado Market, es un proyecto de prueba construido
- sobre un framework de invocación implícita via eventos (nota: el proyecto
- G2 se basa en el mismo framework).
- Luego, se presentan los resultados de estos casos de estudio.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
- PORQUE NO SE DICE ACA QUE SE COMPARARON LOS RESULTADOS CON OTRA HERRAMIENTA
- EXISTENTE (STRUCTURE101)?? (OJO, NO COPIAR TAL CUAL DEL RESUMEN )
-\end_layout
-
-\end_inset
-
-
+ sobre un 
+\emph on
+framework
+\emph default
+ de invocación implícita via eventos (nota: el proyecto G2 se basa en el
+ mismo 
+\emph on
+framework
+\emph default
+).
+ A su ves, ambos casos de estudio se reconstruyeron con la herramienta Structure
+ 101 para poder compar los resutados obtenidos.
+ Luego, se presenta el análisis de los resultados de estos casos de estudio.
 \end_layout
 
 \begin_layout Standard
@@ -1215,6 +1215,10 @@ reference "cha:Conclusiones-y-Trabajos"
  trabajos futuros.
  
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
 ***
@@ -1324,6 +1328,11 @@ reference "cha:Conclusiones-y-Trabajos"
 
  se presentan las conclusiones del trabajo, junto con algunas propuestas
  para posibles trabajos futuros.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -6344,39 +6353,6 @@ s representan fielmente los conceptos arquitectónicos que se está intentando
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Una forma de aumentar la especializacion del análisis es la definición de
- una fase por aspecto del sistema.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-[andres] Esta frase no se entiende porque usa 2 conceptos no explicados:
- "especializacion del analisis", "aspecto de sistema"
-\end_layout
-
-\begin_layout Standard
-[nico] volamos todo el parrafo?...yo tampoco entiendo que se quiso poner.
-\end_layout
-
-\end_inset
-
- Así se podrían reutilizar dichas fases para cada aspecto evaluado.
- En cada nuevo escenario se va incrementando el nivel de detalle aportado
- por cada una de estas, descubriendo así relaciones que tal vez en análisis
- anteriores (escenarios diferentes) no fueron descubiertos.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Con el objetivo de poder comprender el enfoque pragmáticamente, en la siguiente
  sub-sección se presenta un ejemplo simple de una pieza de un sistema, en
  donde se utiliza el patrón de diseño 
@@ -6456,17 +6432,6 @@ Como primer paso, el arquitecto debe definir qué reglas se van a incluir
 Observer-Observable
 \emph default
  o de algún otro patrón de diseño.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esto se va a entender mejor (por ahi con algo mas de explicacion), una vez
- que mejoren la primera parte del capitulo y la figura 4.1 con las fases...
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -6552,22 +6517,10 @@ Esto nos permite mantener un contexto en el cuál sea posible encontrar informac
 \emph on
 abstract syntax tree
 \emph default
-) es 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-...
- eufemismo!..
- cual es la desventaja de consultar AST en ves de prolog
-\end_layout
-
-\end_inset
-
-
+) no es tan intuitivo ya que hasta un simple programa ("Hello World!") genera
+ un árbol de búsqueda complejo.
+ Realizar una consulta que recorra el árbol para relacionar distintos artefactos
+ de código fuente puede resultar engorroso.
 \end_layout
 
 \begin_layout Standard
@@ -7058,8 +7011,35 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+Las reglas definen un conjunto de hechos 
+\emph on
+Prolog
+\emph default
+ que proponen cambios al modelo arquitectónico que se aplican cuando una
+ sugerencia es aceptada.
+ Dentro de este conjunto se encuentran los hechos que estan relacionados
+ con el mapeo del modelo arquitectónico al código fuente.
+ Generalmente, la creación de un componente (agregar un hecho como 
+\family typewriter
+\size small
+component(A)
+\family default
+\size default
+) es realizada junto con un mapeo al código (se agrega otro hecho 
+\family typewriter
+\size small
+materialization(A, package, Class)
+\family default
+\size default
+).
+ Otra forma de realizar el mapeo es por medio de los diagramas, es decir,
+ realizar explícitamente la asociación entre los artefactos arquitectónicos
+ y el código fuente utilizando los editores de los diagramas de componentes
+ y de UCMs.
+ Luego, estos diagramas son sincronizados con el modelo arquitectónico incorpora
+ndo la información de mapeo.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Aca faltaria un parrafo o dos que explique la relacion entre estos mappings
@@ -7438,7 +7418,7 @@ reference "sub:Análisis-de-información"
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 [nico] En este último caso se debe tener en cuenta que el código seleccionado
@@ -7762,7 +7742,7 @@ ción de las reglas.
 \begin_inset Float algorithm
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -7943,7 +7923,7 @@ Identificación de estructuras arquitectónicas
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Los parrafos de esta seccion tienen redundancia con lo anterior, consolidarlo
@@ -7962,7 +7942,7 @@ observable y luego la de sugerir el MVC? o es al reves, primero el MVC y
 \end_layout
 
 \begin_layout Standard
-En el ejemplo 
+Como se mostró en el ejemplo 
 \emph on
 Observer-Observable
 \emph default
@@ -7977,6 +7957,10 @@ Observer
  aceptar o refutar la generación un nuevo componente.
  
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Standard
 El conjunto de reglas que se seleccionaron para reconstruir el sistema de
@@ -8018,7 +8002,12 @@ En el estilo MVC puro, normalmente el modelo representa los datos a ser
 \emph on
 Observer-Observable
 \emph default
- cuando el estilo arquitectónico MVC es detectado.
+ cuando el estilo arquitectónico MVC fue detectado.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8067,9 +8056,12 @@ SACAR --> A su vez, es posible construir reglas mas complejas que ayuden
 
 \end_inset
 
-Como se mencionó anteriormente, se decidió codificar en DRArch un repertorio
- básico de fuentes de conocimiento (reglas) para asistir en la detección
- de artefactos arquitectónicos.
+Como se mencionó anteriormente, se decidió codificar en 
+\emph on
+DRArch
+\emph default
+ un repertorio básico de fuentes de conocimiento (reglas) para asistir en
+ la detección de artefactos arquitectónicos.
  Las reglas se basan en enfoques preexistentes y se describen en las secciones
  subsiguientes.
 \end_layout
@@ -8176,6 +8168,10 @@ status open
 basado en eventos arquitectónicos de bajo nivel ANDRES: la frase "eventos
  arquitectonicos de bajo nivel" es muy confusa.
  Supongo que los "eventos" son los elementos del log, no?
+\end_layout
+
+\begin_layout Standard
+[nico: esta nota ya esta?]
 \end_layout
 
 \end_inset
