@@ -1015,6 +1015,19 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+actualizar la imágen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -7296,7 +7309,7 @@ Al igual que la información estática, la información dinámica es representad
 ProLog
 \emph default
  y sobre la misma base del conocimiento.
- Para obtener dicha i nformación, primero se debe instrumentar la aplicación
+ Para obtener dicha información, primero se debe instrumentar la aplicación
  para poder generar logs de ejecución.
  Luego, es necesario realizar un análisis de los 
 \emph on
@@ -14055,8 +14068,11 @@ browser
 \emph default
  una solicitud de eliminar a otro usuario del sistema, siempre que sus permisos
  lo permitan.
- Cuando esta solicitud llega al sistema por medio del GateKeeper, se activan
- los agentes encargados de eliminar a un usuario del modelo.
+ Cuando esta solicitud llega al sistema por medio del 
+\family typewriter
+GateKeeper
+\family default
+, se activan los agentes encargados de eliminar a un usuario del modelo.
  Una vez que el agente asignado detecta esta señal, invoca a la tarea de
  eliminación, representada por la responsabilidad UCM 
 \emph on
@@ -15921,7 +15937,7 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Otro aspecto importante a analizar en un asistente es la "cantidad de conocimien
@@ -15980,8 +15996,32 @@ Exactitud vs.
 \end_layout
 
 \begin_layout Standard
+Es importante mencionar el esfuerzo realizado para hacer el 
+\emph on
+setup 
+\emph default
+inicial de la herramienta 
+\emph on
+DRArch
+\emph default
+ ya que esto es fundamental para que las sugerencias propuestas por el asistente
+ sean útiles para el usuario.
+ El 
+\emph on
+setup 
+\emph default
+de la herramienta significa realizar entrevistas con los expertos del sistema
+ y crear las reglas necesarias para comenzar con el proceso de reconstrucción.
+ En promedio (entre G2 y Market), este 
+\emph on
+setup 
+\emph default
+requirió un esfuerzo de 24 horas/hombre aproximadamente.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Dar una idea de cuantos hechos Prolog se debieron almacenar y como esto
@@ -16001,16 +16041,25 @@ Rule Model
 \emph default
 , si bien brinda flexibilidad a la hora de agregar o modificar reglas, acarrea
  los problemas típicos en los lenguajes interpretados.
- También, almacenar tanta cantidad de hechos 
-\end_layout
-
-\begin_layout Standard
-Por otro lado, la ejecución de una aplicación instrumentada es cada vez
+ Para un sistema como el Market, que sólo posee 40 clases, la cantidad de
+ hechos que se necesitan para representar el código fuente supera los 100.000
+ hechos.
+ También es necesario tener en cuenta la cantidad de hechos que genera la
+ representación del log de ejecución.
+ Esta cantidad aumenta a medida que se ejecutan los casos de uso instrumentados.
+ Esto causa un problema de escalabilidad y representa un tradeoff a las
+ buenas capacidades de asistencia del 
+\emph on
+DRArch
+\emph default
+.
+ Por otro lado, la ejecución de una aplicación instrumentada es cada vez
  más lenta a medida que crece la cantidad de puntos que están siendo inspecciona
 dos.
  Asimismo, la memoria y el procesamiento requeridos para el análisis de
  los logs de bajo nivel crece según la naturaleza del caso de uso que esta
  siendo analizado.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -16040,12 +16089,14 @@ DRArch
  la reconstrucción.
  Éste último índice irá en aumento a medida que se refinen las reglas y
  se agregue información a la base de conocimiento.
+ Un aspecto a tener en cuenta es que se recuperaron sólo los casos de uso
+ relevantes y se reconstruyeron como UCMs.
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, puedo notarse que la herramienta Structure 101, si bien
- es muy atractiva en terminos visuales y de navegación de la información,
- está destinada a resolver problemas de erosión arquitectónica.
+Adicionalmente, pudo notarse que la herramienta Structure 101, si bien es
+ muy atractiva en terminos visuales y de navegación de la información, está
+ destinada a resolver problemas de erosión arquitectónica.
  
 \begin_inset Note Note
 status open
@@ -16092,26 +16143,26 @@ Conclusiones y trabajos futuros
 \end_layout
 
 \begin_layout Standard
-En los capítulos previos se presentó 
+En los capítulos previos de este trabajo se presentó 
 \emph on
 DRArch
 \emph default
 , un enfoque para la re\SpecialChar \-
 cons\SpecialChar \-
-trucción de arquitecturas que se basa en un proceso
+trucción de arquitecturas que define un proceso
  interactivo, iterativo e incremental.
  Mediante el uso de información estática (código fuente), dinámica (logs
- de ejecución) y experiencia de los distintos 
+ de ejecución), experiencia de los distintos 
 \emph on
 stakeholders
 \emph default
-, 
+, etc., 
 \emph on
 DRArch
 \emph default
- ofrece sugerencias de recontrucccion al arquitecto, quien pueden aceptar
- o rechazar estas sugerencias para generar diagramas de componentes y de
- UCMs.
+ permite reconstruir la arquitectura de un sistema por medio de un proceso
+ en el cual el arquitecto acepta o rechaza sugerencias para generar diagramas
+ de UCMs.
 \end_layout
 
 \begin_layout Standard
@@ -16132,14 +16183,13 @@ framework
  A su vez, ésto permitió aprovechar los editores de UCM y el módulo de instrumen
 tación de código de 
 \emph on
-FLABot.
-
+FLABot
 \emph default
- La utilización del plug-in 
+ así como también la utilización del plug-in 
 \emph on
 JQuery
 \emph default
- permitó utilizar las ventajas de 
+, que es quien utiliza las ventajas de 
 \emph on
 Eclipse
 \emph default
@@ -16157,9 +16207,12 @@ Como aporte principal,
 DRArch
 \emph default
  permite reconstruir la arquitectura de software de un sistema generando
- vistas que describan el comportamiento a un alto nivel de abstracción.
- Generalmente, las vistas reconstruídas son utilizadas para colaborar en
- la re-documentación del sistema.
+ vistas que describan el comportamiento a un nivel de abstracción a\SpecialChar \-
+pro\SpecialChar \-
+pia\SpecialChar \-
+do.
+ Generalmente, esta información es utilizada para colaborar con la documentación
+ del sistema.
  Al mismo tiempo, el enfoque realiza un mapeo entre el código fuente y las
  vistas generadas.
  Por lo tanto, el análisis realizado por la herramienta también puede ser
@@ -16171,29 +16224,11 @@ DRArch
 Una de las ventajas que posee el enfoque es que el proceso de reconstrucción
  tiene en cuenta la información dinámica, es decir, la información que genera
  el sistema cuando se está ejecutando.
- Esto hace que que se pueda enriquecer la información estática recuperada
- con información de comportamiento, y este es uno de los aportes distintivos
- de 
-\emph on
-DRArch
-\emph default
- con respecto a otras herramientas.
+ Esto hace que se pueda describir el comportamiento del sistema y sea uno
+ de los diferenciales más importantes con respecto a otros enfoques.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-No entiendo que agrega este parrafo (que es redundante con el 1er parrafo
- del capitulo).
- Yo diria mejor poner cosas puntuales (resultados) derivados del capitulo
- de caso de estudio.
- Elaborar sobre esto (o sobre otra cosa), pero ser concretos ...!!! 
-\end_layout
-
-\end_inset
-
 Adicionalmente, se puede incorporar al análisis información del contexto,
  información aportada por la experiencia del arquitecto, información de
  los 
@@ -16237,52 +16272,9 @@ es, la mayoría de estas reglas no aportarían información arquitectónica
 El haber utilizado programación lógica para definir el modelo de reglas
  brinda flexibilidad a la hora de realizar consultas, pero acarrea los problemas
  típicos en los lenguajes interpretados.
- Una de las principales desventajas del enfoque, es que a medida que el
- numero de reglas aumenta, pueden existir conflictos de activacion (o activarse
- muchas reglas al mismo tiempo) entre las reglas, que el arquitecto debe
- resolver.
- En general, el orden de activación de las reglas hace que se activen ciertas
- reglas (que estan primero) y no las que uno quiere que se activen.
- Por otro lado, la eficiencia de las inferencias puede ser un problema.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-No entiendo este supuesto problema de los sistemas de reglas...
- Los problemas que pueden nombrar son los siguientes: 
-\end_layout
-
-\begin_layout Standard
-- A medida que el numero de reglas aumenta, pueden existir conflictos de
- activacion (o activarse muchas reglas al mismo tiempo) entre las reglas,
- que el arquitecto debe resolver.
- 
-\end_layout
-
-\begin_layout Standard
-- En gral.
- (y relacionado con lo anterior), el orden de activacion de las reglas hace
- que se activen ciertas reglas (que estan primero) y no las que uno quiere
- que se activen.
-\end_layout
-
-\begin_layout Standard
-- La eficiencia de las inferencias puede ser un problema.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-ver nota y aclararlo
-\end_layout
-
-\end_inset
-
-
+ Una de las principales desventajas del enfoque, es que el modelo de reglas
+ propone cierta ambigüedad que debe resolver el arquitecto en el momento
+ de tomar las decisiones, aceptando o rechazando sugerencias.
 \end_layout
 
 \begin_layout Standard
@@ -16294,84 +16286,10 @@ DRArch
 ades, que es reforzada mediante los mapeos componente-clase y responsabilidad-mé
 todo.
  Sin embargo, esta información no puede considerarse una documentación completa
- de un sistema a nivel arquitectónico por los siguietnes motivos: 
-\end_layout
-
-\begin_layout Itemize
-La información no considera cuestiones de 
-\emph on
-deployment
-\emph default
-.
-\end_layout
-
-\begin_layout Itemize
-La información no documenta 
-\emph on
-design rationale.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-what?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-La información no captura ni casos de uso ni escenarios para atributos de
- calidad.
-\end_layout
-
-\begin_layout Itemize
-La información de mapeos esta en la herramienta, pero no es fácil de comprender
- por el usuario (ya que se captura mediante dialogos) y no cuenta con el
- racional que justifica dichos mapeos.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Que la info de UCMs + mapeos no puede considerarse una documentacion completa
- esta OK.
- Ahora el porque esta errado!! Aca van algunos motivos mas "interesantes"
- por los cuales la info is not enough:
-\end_layout
-
-\begin_layout Standard
-- La info no considera cuestiones de deployment 
-\end_layout
-
-\begin_layout Standard
-- La info no documenta design rationale 
-\end_layout
-
-\begin_layout Standard
-- La info no captura ni casos de uso ni escenarios para atributos de calidad
- 
-\end_layout
-
-\begin_layout Standard
-- La informacion de mapeos esta en el tool, pero no es facil de comprender
- por el usuario (ya que se captura mediante dialogos) y no cuenta con el
- racional que justifica dichos mapeos.
-\end_layout
-
-\begin_layout Standard
-..., ya que no define de manera explícita las relaciones entre estos elementos
- (por ejemplo, la estructura de herencia en una vista estática o los puertos
- y conectores en tiempo de ejecución).
-\end_layout
-
-\end_inset
-
-
+ de la estructura de un sistema a nivel arquitectónico, ya que no define
+ de manera explícita las relaciones entre estos elementos (por ejemplo,
+ la estructura de herencia en una vista estática o los puertos y conectores
+ en tiempo de ejecución).
 \end_layout
 
 \begin_layout Standard
@@ -16382,9 +16300,10 @@ Finalmente, es necesario mencionar algunas desventajas inherentes a las
 \emph on
 FLABot
 \emph default
- ha sido utilizado exitosamente en un gran número de aplicaciones; sin embargo,
- la elección de los puntos a inspeccionar para generar un log de ejecución
- implica un 
+ se encuentra estable y ha sido utilizado exitosamente en un gran número
+ de aplicaciones.
+ Sin embargo, la elección de los puntos a inspeccionar para generar un log
+ de ejecución implica un 
 \emph on
 tradeoff
 \emph default
@@ -16393,13 +16312,13 @@ tradeoff
  y el estado de todos los objetos en cada instante.
  De esta manera, se podría rea\SpecialChar \-
 li\SpecialChar \-
-zar un análisis más preciso y exhaustivo.
+zar un análisis más preciso y exhaustivo,
+ ya que se contaría con absolutamente toda la información posible acerca
+ de la ejecución de la aplicación.
  Sin embargo, la cantidad de información almacenada se volvería inmanejable
  y la aplicación analizada se vería extremadamente afectada en su rendimiento,
  ya que por cada línea ejecutada se activaría el mecanismo de publicación
  y subscripción de eventos del instrumentador.
- Aunque se pudiera instrumentar todo el código, sería imposible en la practica
- ejecutar "todos los posibles caminos" de cobertura del código.
 \end_layout
 
 \begin_layout Section
@@ -16408,8 +16327,8 @@ Trabajos futuros
 
 \begin_layout Standard
 La elaboración de este trabajo, junto con la implementación del prototipo,
- puso en evidencia posibilidades de investigaciones futuras, como así también
- algunas posibles mejoras a la implementación existente.
+ puso en evidencia nuevas posibilidades para investigaciones futuras, como
+ así también algunas posibles mejoras a la implementación existente.
  En esta sección se describen algunas de ellas.
 \end_layout
 
@@ -16418,9 +16337,9 @@ Detección de Aspectos
 \end_layout
 
 \begin_layout Standard
-El Desarrollo de Software Orientado a Aspectos (DSOA) es un paradigma de
- programación cuya idea principal es proporcionar un soporte para la separación
- de 
+El Desarrollo de Software Orientado a Aspectos (DSOA) es el paradigma de
+ programación cuya idea principal es proporcionar un soporte avanzado para
+ la separación de 
 \emph on
 concerns 
 \emph default
@@ -16430,7 +16349,7 @@ aspecto.
  
 \emph default
 Existen técnicas de DSOA que proveen modios sitemáticos para identificación,
- modularización, representación y composición de 
+ modularización representación y composición de 
 \emph on
 crosscutting concerns
 \emph default
@@ -16442,12 +16361,9 @@ crosscutting concern
  se refiere a factores de calidad o funcionalidad del software que no pueden
  ser efectivamente modularizados usando técnicas habituales de desarrollo
  de software.
- Generalmente estos 
-\emph on
-concerns
-\emph default
- se dispersan a lo largo de todo el código fuente, generando lo que se denomina
- 
+ Generalmente estos concerns constituyen requerimientos no funcionales del
+ sistema y se dispersan a lo largo de todo el código fuente generando lo
+ que se denomina 
 \emph on
 código mezclado y diseminado
 \emph default
@@ -16483,21 +16399,6 @@ key "Fowler"
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Todo Ok esta mini-intro a aspectos y refactoring to aspects, pero en ningun
- lado se menciona como DRArch podria ayudar con eso!! Agregar un parrafo
- que diga explicitamente como su enfoque puede ser extendido para esto ...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Validación de patrones de diseño
 \end_layout
@@ -16514,33 +16415,20 @@ key "Gamma94"
  Muchas veces es necesario asegurarse de que los patrones estén implementados
  correctamente, ya que las modificaciones en el código fuente durante el
  desarrollo del sistema pueden afectar los patrones existentes.
- Se puede utilizar una parte de la funcionalidad del 
+ Se pude utilizar una parte de la funcionalidad del 
 \emph on
 DRArch
 \emph default
- para generar 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Ampliar un poco el cómo DRArch podria ayudar aca.
- Por ejemplo " que instrumente la aplicacion, y luego chequee sobre el conjunto
- de hechos ...
- blablabla".
- 
-\end_layout
-
-\end_inset
-
-reglas que validen si los patrones de di\SpecialChar \-
+ para generar reglas que validen si los patrones de di\SpecialChar \-
 se\SpecialChar \-
-ño están implementados correctamente.
+ño están implementados
+ correctamente.
  El diseño flexible de la herramienta permite realizar esta modificación
  realizando cambios menores en el código fuente.
 \end_layout
 
 \begin_layout Subsection
-Algoritmos
+Incorporando algoritmos
 \end_layout
 
 \begin_layout Standard
@@ -16549,42 +16437,26 @@ Algoritmos
 DRArch
 \emph default
  esta basado en un proceso donde interviene un modelo de reglas.
- Gracias a este modelo de reglas se cuenta con flexibilidad para definir
+ Gracias a este modelo de reglas se gana mucha flexibilidad a la hora definir
  consultas sobre la información que se quiere obtener.
- Sin embargo, el modelo de reglas también aporta cierto grado de ambigüedad,
- la cual es resuelta por el arquitecto en el momento de aceptar o rechazar
- cada sugerencia.
+ Sin embargo, también aporta cierto grado de ambigüedad, la cual es resuelta
+ por el arquitecto en el momento de aceptar o rechazar cada sugerencia.
  Una forma de evitar esta ambigüedad es incorporando algoritmos que validen
  los resultados de la ejecución de cada regla.
+ Esto también aumenta el grado de automatización del proceso propuesto por
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Insertar aca una oracion que diga como se "validarian" estos resultados.
-\end_layout
-
-\end_inset
-
-Esto también aumentaría el grado de automatización del proceso propuesto
- por 
 \emph on
 DRArch
 \emph default
 , ya que la interacción con el arquitecto disminuye al no tener que tomar
  tantas decisiones.
+ Por ejemplo, una desventaja de los sistemas basados en reglas es que baja
+ la eficiencia cuando se tratan espacios de búsqueda muy grandes, al generar
+ sugerencias invalidas cuya evaluación y eliminación disminuye el rendimiento
+ (costo humano, no computacional).
  Mediante técnicas probabilisticas o reglas de ámbito (por nombrar algunas)
- sería posible hacer este tipo 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-que tipo?
-\end_layout
-
-\end_inset
-
- de filtrado antes de presentar los resultados al arquitecto.
+ sería posible hacer este tipo de filtrado antes de presentar los resultados
+ al arquitecto.
 \end_layout
 
 \begin_layout Subsection
@@ -16595,7 +16467,13 @@ Especialización del enfoque
 Durante la elaboración de este trabajo, se trató de mantener la generalidad
  del enfoque al no limitarlo a ningún estilo arquitectónico en particular
  o a algún conjunto de convenciones de implementación específico.
- Sin embargo, creemos que los estilos arquitectónicos y las convenciones
+ Como objetivo de diseño, ésto tuvo un efecto positivo en el trabajo ya
+ que permite el uso de la herramienta en cualquier sistema que haya sido
+ implementado en Java.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, creemos que los estilos arquitectónicos y las convenciones
  de implementación pueden aportar información valiosa al enfoque.
  Mediante la especificación de reglas, se puede mejorar su precisión incorporand
 o un catálogo de de reglas orientadas a los distintos estilos arquitectónicos
@@ -16633,9 +16511,9 @@ También, es destacable notar que el proceso propuesto por
 \emph on
 DRArch
 \emph default
- (Top-Down o Bottom-Up) tiene una correspondencia directa con el proceso
- de razonamiento de los agentes.
- Este razonamiento puede ser de encadenamiento progresivo (
+ Top-Down o Down-Top tiene una correspondencia directa con el proceso de
+ razonamiento de los agentes.
+ Este puede ser de encadenamiento progresivo (
 \emph on
 forward chainning
 \emph default
@@ -16646,18 +16524,6 @@ backward chainning
 \emph default
 ), que considera una posible solución y trata de probar su validez.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Lo que estan describiendo aca son los 2 tipos de sistemas de reglas, pero
- no entiendo como se relaciona con el agente ...Si se puede ser mas especifico,
- mejor!!
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -16672,28 +16538,15 @@ sac\SpecialChar \-
 tua\SpecialChar \-
 li\SpecialChar \-
 za\SpecialChar \-
-dos
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esto sin explicacion no se entiende, es muy criptico.
- - tiene sentido en ArchSync, pero aca "merece" primero un contexto...
- Hablaron en el resto de la tesis de "casos de uso" y "paths desactualizados"?
- Aclarar que son "UCM paths"
-\end_layout
-
-\end_inset
-
- se debe realizar de manera manual.
+dos se debe realizar de manera manual.
  En caso de tener que verificar un número considerable de paths, la tarea
  se puede volver muy tediosa, aumentando la probabilidad de introducir errores
  en el análisis por distracciones del usuario.
 \end_layout
 
 \begin_layout Standard
-Un trabajo futuro para mitigar puede ser permitir el mapeo de UCMs con casos
- de test.
+Un posible trabajo futuro para mitigar esta debilidad del enfoque puede
+ ser permitir el mapeo de UCMs con casos de test.
  Al contar la herramienta con información acerca de qué caso de test corresponde
  a cada 
 \emph on
