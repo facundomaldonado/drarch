@@ -1015,19 +1015,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-actualizar la imágen
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -7309,7 +7296,7 @@ Al igual que la información estática, la información dinámica es representad
 ProLog
 \emph default
  y sobre la misma base del conocimiento.
- Para obtener dicha información, primero se debe instrumentar la aplicación
+ Para obtener dicha i nformación, primero se debe instrumentar la aplicación
  para poder generar logs de ejecución.
  Luego, es necesario realizar un análisis de los 
 \emph on
@@ -9894,10 +9881,7 @@ El presente capítulo está dedicado a la descripción del diseño e implementac
 DRArch
 \emph default
 .
- Para ello, su estructura y funcionamiento serán descriptos mediante diagramas
- de paquetes y de descomposición de módulos a nivel arquitectónico y, a
- nivel de diseño detallado, mediante diagramas de clases y de interacción
- en notación UML (
+ Para ello, su utilizó notación UML (
 \emph on
 Uniﬁed Modeling Language
 \emph default
@@ -9908,7 +9892,12 @@ key "BURKHARDT97"
 \end_inset
 
 , presentando los aspectos más importantes de su implementación.
- A su vez, a medida que se describen los componentes, se muestra cómo hace
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+A su vez, a medida que se describen los componentes, se muestra cómo hace
  la herramienta 
 \emph on
 DRArch
@@ -9921,6 +9910,16 @@ reference "sec:Ejemplo"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+[andres]Me perdi algo aca (al menos la seccion que falta en la referencia).
+ El recorrido de la herramienta va en este capitulo o va en el capitulo
+ anterior?
+\end_layout
+
+\end_inset
+
  El recorrido mencionado en este apartado es un ejemplo simple de una iteración
  en donde se puede observar la intervención del arquitecto en el momento
  de tomar las decisiones que modifican el modelo arquitectónico.
@@ -9944,33 +9943,8 @@ ti\SpecialChar \-
 nu\SpecialChar \-
 a con una descripción de cada uno de los componentes más importantes
  de la arquitectura.
- En las secciones\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Query-Engine"
-
-\end_inset
-
-, 
-\begin_inset LatexCommand ref
-reference "sec:Rule-Model"
-
-\end_inset
-
-, 
-\begin_inset LatexCommand ref
-reference "sec:Phase-Engine"
-
-\end_inset
-
- y 
-\begin_inset LatexCommand ref
-reference "sec:TraceLog-Analyzer"
-
-\end_inset
-
- se explican en detalle cómo fueron diseñados e implementados los componentes
- 
+ En las secciones siguientes se explican en detalle cómo fueron diseñados
+ e implementados los componentes 
 \emph on
 Query Engine
 \emph default
@@ -10018,9 +9992,9 @@ status collapsed
 \emph on
 DRArch
 \emph default
- fue implementado como un plug-in de la plataforma Eclipse, aprovechando
- su arquitectura extensible, su modelo para análisis estático de código
- fuente Java y su framework de interfaz de usuario.
+ fue diseñado como un plug-in para la plataforma Eclipse, aprovechando su
+ arquitectura extensible, su modelo para análisis estático de código fuente
+ Java y su framework de interfaz de usuario.
  Otro factor que influenció la decisión es la tendencia creciente en el
  uso de Eclipse como herramienta para el desarrollo de software.
  
@@ -10074,6 +10048,18 @@ DRArch
 \emph on
 FLABot
 \emph default
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+decir que se integro a la herramienta o al proyecto FLABot.
+ Y luego explicar brevemente en que consistio ese proyecto.
+ Y ademas agregar una referencia (o URL) para FLABot
+\end_layout
+
+\end_inset
+
 , permitiendo aprovechar el editor gráﬁco de UCMs.
  Además se utilizó el instrumentador de 
 \emph on
@@ -10089,13 +10075,24 @@ FLABot
 \emph on
 JQuery
 \emph default
+v
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Al igual que para FLABot (arriba), mencionar brevemente que es JQuery y
+ dar una referencia (o URL) de la herramienta
+\end_layout
+
+\end_inset
+
 .
  Si bien 
 \emph on
 JQuery
 \emph default
  también ha sido desarrollado como plug-in, en este trabajo se utilizo a
- modo de librería.
+ modo biblioteca.
  El diseño de 
 \emph on
 DRArch
@@ -10126,8 +10123,13 @@ reference "sec:Plataforma-Eclipse"
 DRArch
 \emph default
 .
- En el caso particular de este trabajo, es necesario un cierto nivel de
- integración para aprovechar los componentes existentes de 
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+En el caso particular de este trabajo, es necesario un cierto nivel de integraci
+ón para aprovechar los componentes existentes de 
 \emph on
 FLABot
 \emph default
@@ -10146,6 +10148,11 @@ data-centered
  las herramientas.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 La funcionalidad propia de 
 \emph on
@@ -10155,6 +10162,16 @@ DRArch
 \emph on
 BlackBoard
 \emph default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Insertar referencia al estilo Blackboard
+\end_layout
+
+\end_inset
+
 , en el cual una base de conocimientos común
 \begin_inset Note Note
 status collapsed
@@ -10166,23 +10183,42 @@ status collapsed
 
 \end_inset
 
- es iterativamente actualizada por fuentes de conocimiento especializadas
- (los especialistas), comenzando con la especificación de un problema y
- culminando con la solución.
+ es actualizada por fuentes de conocimiento especializadas (los especialistas).
  Cada fuente de conocimiento actualiza la base de conocimiento con una solución
- parcial cuando sus requisitos coinciden con el estado de la base de conocimient
-o.
+ parcial cuando sus precondiciones de activación coinciden con el estado
+ de la base de conocimiento.
  De esta forma los especialistas trabajan juntos en la resolución del problema.
  El modelo 
 \emph on
 BlackBoard
 \emph default
- fue originalmente designado para manejar problemas complejos y mal definidos.
- Los sistemas basados en este modelo están principalmente enfocados en la
- inteligencia artificial.
+ fue originalmente designado para manejar problemas complejos y parcialmente
+ definidos o incompletos.
+ Los sistemas basados en este modelo se usan generalmente para resolver
+ problemas del campo de la inteligencia artificial.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+poner una referencia a esto del Blackboard para IA
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto repite lo mostrado (mas generalmente) para el Blackboard, asi que de
+ alguna forma "eliminen la redundancia" [desde esta nota hasta la prox.]
+\end_layout
+
+\end_inset
+
 En la base de conocimiento las fuentes de conocimiento son ejecutadas automática
 mente cuando sus precondiciones coinciden con el estado de la base de conocimien
 to y el estado de este es actualizado con las transformaciones propias de
@@ -10194,29 +10230,63 @@ DRArch
  es un proceso guiado, es el arquitecto el responsable de seleccionar qué
  fuente de conocimiento se va a ejecutar y de decidir cuáles son las transformac
 iones que actualizaran el estado del modelo arquitectónico bajo análisis.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Una cosa que no queda clara de su modelo de Blackboard es quien juega el
+ rol de Control component para las KnowledgeSources
+\end_layout
+
+\end_inset
+
  Por esta razón, en la implementación del modelo 
 \emph on
 BlackBoard
 \emph default
  utilizada en esta herramienta, será el arquitecto el encargado de seleccionar
- el orden de ejecución de las transformaciones.
+ el orden de ejecución de las transformaciones
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+De que "tranformaciones" hablan? (no se introdujeron todavia).
+ Son las transformaciones que se mencionan al final del parrafo?
+\end_layout
+
+\end_inset
+
+.
  La base de conocimiento esta determinada por una base de hechos lógicos
- estilo Prolog la cual, como se dijo anteriormente, es cargada en una fase
- inicial de recolección de información estática (código fuente) y dinámica
- (logs de ejecución).
+ estilo 
+\emph on
+Prolog
+\emph default
+ la cual es cargada en una fase inicial de recolección de información estática
+ (código fuente) y dinámica (logs de ejecución).
  Las fuentes de conocimiento encargadas de evaluar el estado de la base
  de conocimiento y actualizarlo, están materializados mediante un modelo
  de reglas.
- Éstas reglas están definidas a partir de una consulta, que evalúa el estado
- del repositorio en busca de algún patrón; una sugerencia, la que será presentad
-a al arquitecto para cada uno de los resultados de la consulta; y una serie
- de hechos que determinan la actualización del repositorio y por ende la
- transformación del modelo arquitectónico bajo reconstrucción.
+ Éstas reglas están definidas a partir de:
+\end_layout
+
+\begin_layout Itemize
+una consulta, que evalúa el estado del repositorio en busca de algún patrón;
+ 
+\end_layout
+
+\begin_layout Itemize
+una sugerencia, la que será presentada al arquitecto para cada uno de los
+ resultados de la consulta; 
+\end_layout
+
+\begin_layout Itemize
+y una serie de hechos que determinan la actualización del repositorio y
+ por ende la transformación del modelo arquitectónico bajo reconstrucción.
 \end_layout
 
 \begin_layout Standard
-Por último, el modelo de fases determina la operatibilidad de la herramienta.
- Es el componente orquestador responsable de guiar el proceso y coordinar
+Por último, el modelo de fases es responsable de guiar el proceso y coordinar
  la interoperabilidad entre los módulos.
 \end_layout
 
@@ -10228,8 +10298,6 @@ reference "fig:Diagrama de Paquetes"
 \end_inset
 
  se describen los componentes principales de la herramienta.
- A continuación se provee una descripción de las responsabilidades de cada
- uno.
 \end_layout
 
 \begin_layout Standard
@@ -10243,6 +10311,23 @@ status open
 \begin_inset Graphics
 	filename img/Package Domain Model.png
 	width 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+La figura esta "estatica" esta bien, pero tambien haria falta mostrar una
+ vista de COMPONENTS AT RUNTIME (tipo C&C) que muestre el esquema de blackboard
+ y la integracion con las distintas cosas y el flujo de datos/control, cosa
+ de visualizar mejor el estilo arquitectonico (ya que la figura 5.1 no muestra
+ gran cosa de arquitectura)
+\end_layout
 
 \end_inset
 
@@ -10276,6 +10361,24 @@ Decisiones de diseño
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Una parte indispensable para justificar estas decisiones de diseño del DRArch
+ son los REQUERIMIENTOS FUNCIONALES Y DE CALIDAD que actuaron como DRIVERS
+ de las decisiones, En ningun lado se habla de estos requerimientos!!! (asumo
+ que Uds los saben, pero ponerlos explicitamente ayuda a "ordenar" el discurso)
+ Por ej., porque se eligio JQuery? en base a que requerimientos que tenian
+ inicialmente? y asi para el resto de las decisiones tomadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 En esta sección se describen algunas de las principales decisiones de diseño
  tomadas para cada componente de la arquitectura del 
 \emph on
@@ -10288,27 +10391,56 @@ DRArch
 Para el componente Query Engine se utilizó el motor de consultas que provee
  el plug-in 
 \emph on
-JQuery.
-
+JQuery
 \emph default
- Principalmente, por ofrecer un lenguaje de programación lógica fácilmente
- ma\SpecialChar \-
+ por ofrecer un lenguaje de programación lógica fácilmente ma\SpecialChar \-
 ni\SpecialChar \-
 pu\SpecialChar \-
 la\SpecialChar \-
-do desde una API en Java.
- JQuery, además de aportar el motor y el lenguaje, también provee del parseo
- de código fuente como así también la generación de hechos lógicos en base
- a éste parseo.
+do desde
+ una API en Java.
+ JQuery, además de aportar el motor y el lenguaje, proporciona capacidades
+ para realizar analisis sintatico (
+\emph on
+parsing
+\emph default
+) de código fuente como así también la generación de hechos lógicos en base
+ a este 
+\emph on
+parsing
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
-En el componente Rule Model, en donde es necesario persistir, visualizar
- y editar de forma gráfica y amigable el modelo, se eligió para su implementació
-n el framework EMF de Eclipse.
+El componente Rule Model se encarga de visualizar y editar de forma gráfica
+ y amigable el modelo; y hay que salvar su estado de forma persistente por
+ medio del framework EMF de Eclipse.
+ Es necesario que un conjunto de reglas pueda ser reutilizado y ejecutado
+ varias veces y sobre distintas instancias de la base de conocimiento.
+ Por esta razón es necesario persistir las reglas creadas para su posterior
+ utilización y/o edición.
+ Utilizando las capacidades del framework EMF, se logró la persistencia
+ del modelo como así también la creación de un editor propio de la herramienta
+ 
+\emph on
+DRArch
+\emph default
+ que hace realmente sencilla la edición y visualización de los datos.
  EMF es un framework de modelado y generación de código para generar aplicacione
 s basadas en un modelo de datos estructurado.
+ A partir de la especificación de un modelo descripto en XMI, EMF provee
+ las herramientas para producir un conjunto de clases Java para el modelo,
+ junto con un conjunto de clases 
+\emph on
+adapters
+\emph default
+ que permiten la visualización y edición del mismo.
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Standard
 La plataforma eclipse posibilitó la creación de 
@@ -10321,28 +10453,59 @@ wizards
 \end_layout
 
 \begin_layout Standard
-En diseño del componente Phase Engine con el fin de dar soporte a distintos
- tipos de fases, se utilizó una clase abstracta para representar una fase.
- Luego, los distintos tipos de fase pueden extender de la clase abstracta.
- Pirncipalmente se detectaron dos tipos de fases: Interactivas y No Interactivas
- (acepta automáticamente todas las sugerencias).
+[andres: No entiendo que tienen que ver los wizards con el diseño arquitectonico.
+ Me parece mas una conveniencia de implementacion,o algo "descolgado" del
+ discurso general....
+ (por ahi se puede explicar en otro lado del capitulo)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el diseño del componente Phase Engine se detectaron dos tipos de fases:
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Idem, esto viene "sin anestesia" y no se entiende bien porque se comenta
+ aca...
+ Please arreglar
+\end_layout
+
+\end_inset
+
+Interactivas y No Interactivas (acepta automáticamente todas las sugerencias).
  Para orquestar la lógica del motor de fases, se utilizó una entidad 
 \family typewriter
 PhaseManager
 \family default
  responsable de coordinar y dirigir el estado de cada fase.
  En este componente se incluye la generación y modelado de diagramas.
- Esto es realizado por 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Si ya introdujeron FLABot antes, esto se puede explicar mejor aca
+\end_layout
+
+\end_inset
+
+Esto es realizado por 
 \emph on
 Flabot 
 \emph default
 ya que posee unos editores gráficos para diagramas de Componentes y de UCMs
  y expone un modelo fácilmente manejable.
- De esta forma, se traduce la información representada en hechos 
+ Se traduce la información representada en hechos 
 \emph on
 Prolog
 \emph default
-, al modelo 
+ al modelo 
 \emph on
 FLAbot
 \emph default
@@ -10373,21 +10536,19 @@ Query Engine
 \begin_layout Standard
 Este componente tiene como principal responsabilidad la ejecución de las
  consultas sobre la base de conocimiento y la gestión de esta.
-\end_layout
-
-\begin_layout Standard
-Forma parte de este componente el motor de consultas y la base de conocimiento.
+ El motor de consultas y la base de conocimiento forman parte de este componente.
  Ambas entidades están construidas sobre el plug-in 
 \emph on
 JQuery
 \emph default
- 
+ (ver apéndice\InsetSpace ~
+
 \begin_inset LatexCommand ref
 reference "sec:JQuery"
 
 \end_inset
 
-.
+).
  
 \end_layout
 
@@ -10398,7 +10559,14 @@ JQuery
 \emph default
  esta basado en 
 \emph on
-TyRuBa
+TyRuBa\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Volder2006"
+
+\end_inset
+
+
 \emph default
  que es un lenguaje de programación lógica implementado en Java.
  De esta forma 
@@ -10412,32 +10580,50 @@ DRArch
  de tres componentes fundamentales: el motor de inferencias, el lenguaje
  de consultas que se ulitizarán en las reglas y la implementación de la
  base de conocimiento sobre la que se realizarán dichas consultas.
- Cada uno de estos componentes han sido abstraídos desacoplándolos de su
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto esta OK para decir en la presentacion oral, pero aca sale "de la nada"
+ ya que no se ve ninguna necesidad de esta abstraccion y desacople...Arreglar
+ please
+\end_layout
+
+\end_inset
+
+Cada uno de estos componentes han sido abstraídos desacoplándolos de su
  implementación permitiendo que, con mínimo esfuerzo, dichas implementaciones
  puedan variar o evolucionar independientemente.
 \end_layout
 
 \begin_layout Subsubsection
 KnowledgeBase
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+No he visto este componente en ningun diagrama, de donde sale?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 La base de conocimiento consta de dos partes.
  La primera esta basada en los hechos generados durante la fase de recolección
- de la información y la segunda consiste en todos lo hechos generados por
- las ejecuciones de las reglas 
+ de la información (generada por el parseo del código fuente).
+ La segunda consiste en todos lo hechos generados por las ejecuciones de
+ las reglas 
 \emph on
 DRArch
 \emph default
- los cuales se agrupan por fases de ejecución.
- Estos últimos se han hecho persistentes en un archivo de texto con el propósito
- de reutilizar el resultado del análisis realizado en fases subsiguientes.
-\end_layout
-
-\begin_layout Standard
-De esta forma la base de conocimiento evaluada en cada fase esta compuesta
- por la base de conocimiento (generada por el parseo del código fuente)
- y por todos los archivos de hechos lógicos que se agreguen a la fase.
+ (información del modelo arquitectónico), y por el análisis dinámico (informació
+n de los logs de ejecución).
+ Estos hechos son guardados en un archivo de texto con el propósito de reutiliza
+r el resultado del análisis realizado en fases subsiguientes.
 \end_layout
 
 \begin_layout Standard
@@ -10453,6 +10639,20 @@ reference "fig:Ejemplo-de-la-representación-del-código-fuente"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Es importante marcar si se usaron Design Patterns en el diseño (que no vi
+ que mencionaran ninguno)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10525,9 +10725,8 @@ FactTemplates
 \family typewriter
 Rule
 \family default
- es la entidad mas importante de este componente porque determina la unidad
- funcional de la herramienta.
- Una regla, esta determinada por un 
+ es la entidad más importante de este componente y esta determinada por
+ un 
 \family typewriter
 Query
 \family default
@@ -10544,9 +10743,12 @@ FactTemplates
 \family typewriter
 Query
 \family default
-, a su vez, esta compuesto por una sentencia en formato ProLog que será
- utilizada para realizar una consulta sobre la base de conocimiento y un
- conjunto de variables de interés.
+, a su vez, esta compuesto por una sentencia en formato 
+\emph on
+Prolog
+\emph default
+ que será utilizada para realizar una consulta sobre la base de conocimiento
+ y un conjunto de variables de interés.
  Estas variables son parte de la consulta.
 \end_layout
 
@@ -10633,36 +10835,6 @@ Modelo de reglas
 \end_layout
 
 \begin_layout Standard
-Básicamente el modelo de reglas es una estructura de datos, la cual es necesario
- persistir, visualizar y editar de forma gráfica y amigable para el usuario.
- Se eligió para su implementación el framework EMF de Eclipse.
- EMF es un framework de modelado y generación de código para generar aplicacione
-s basadas en un modelo de datos estructurado.
- A partir de la especificación de un modelo descripto en XMI, EMF provee
- las herramientas para producir un conjunto de clases Java para el modelo,
- junto con un conjunto de clases 
-\emph on
-adapters
-\emph default
- que permiten la visualización y edición del mismo.
-\end_layout
-
-\begin_layout Standard
-Como se mencionó anteriormente, es necesario que un conjunto de reglas pueda
- ser reutilizado y ejecutado varias veces y sobre distintas instancias de
- la base de conocimiento.
- Por esta razón es necesario persistir las reglas creadas para su posterior
- utilización y/o edición.
- Utilizando las capacidades del framework EMF, se logró la persistencia
- del modelo como así también la creación de un editor propio de la herramienta
- 
-\emph on
-DRArch
-\emph default
- que hace realmente sencilla la edición y visualización de los datos.
-\end_layout
-
-\begin_layout Standard
 La herramienta 
 \emph on
 DRArch
@@ -10745,6 +10917,16 @@ name "sec:Phase-Engine"
 \end_inset
 
 Phase Engine
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Este este el componente que actua como Control en el esquema de Blackboard???
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10755,13 +10937,25 @@ Este componente es el encargado de la coordinación y mediación entre los
 DRArch
 \emph default
  posee las propiedades de ser interactivo, iterativo e incremental.
- 
+ En el diseño del componente Phase Engine, con el fin de dar soporte a distintos
+ tipos de fases, se utilizó una clase abstracta para representar una fase.
+ Luego, los distintos tipos de fase pueden extender de la clase abstracta.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta explicacion es muy general, ser mas concretos please [ultima oracion]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 La primera de estas características se da al brindarle al arquitecto el
- control total de lo que se evalúa, tomando todas las decisiones aceptando
- o rechazando las sugerencias propuestas por la herramienta.
+ control de lo que se evalúa, tomando todas las decisiones aceptando o rechazand
+o las sugerencias propuestas por la herramienta.
  Para satisfacer las demás características se implementó un mecanismo de
  fases iterativas que permite la composición de los resultados de las evaluacion
 es realizadas en iteraciones previas.
@@ -10780,9 +10974,16 @@ working set
 (modulo de código que será analizado), una serie de reglas que serán evaluadas
  sobre ese módulo y los archivos de hechos que vayan a componer la base
  de conocimiento para la fase en cuestión.
- El resultado de ejecutar una fase son dos artefactos: un archivo de hechos
- que fueron producto de la ejecución de cada regla de la fase y un archivo
- 
+ El resultado de ejecutar una fase son dos artefactos: 
+\end_layout
+
+\begin_layout Itemize
+un archivo de hechos que fueron producto de la ejecución de cada regla de
+ la fase;
+\end_layout
+
+\begin_layout Itemize
+un archivo 
 \emph on
 FLABot
 \emph default
@@ -10790,16 +10991,37 @@ FLABot
 \end_layout
 
 \begin_layout Standard
-Alternativamente se puede enriquecer la base de conocimientos de la fase,
+Alternativamente, se puede enriquecer la base de conocimientos de la fase,
  incorporando un archivo 
 \emph on
 FLABot
 \emph default
  con un modelo arquitectónico definido y transformar la información del
  modelo arquitectónico del archivo a hechos lógicos.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+como? dar un ejemplo concreto [despues del 'y'] 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto quedaria mas claro si se agrega un diagrama de secuencia mostrando
+ las interacciones entre los componentes [sig.
+ parrafo]
+\end_layout
+
+\end_inset
+
 La entidad 
 \family typewriter
 PhaseManager
@@ -10832,6 +11054,16 @@ DiagramManager
  que genere los diagramas.
  Finalmente con los nuevos hechos en la base de conocimiento y el diagrama
  generado se dispara la ejecución de la nueva regla.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Se uso algun Design Pattern aca? para que?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10884,6 +11116,19 @@ Modelo de fases
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+El parrafo esta contado bastante general ...Los diferentes tipos de fases habria
+ que aclararlos con ejemplos concretos que orienten al lector (no recuerdo
+ haber leido de fases interactivas y no interactivas en el capitulo anterior)
+ Como, cuando, y quien configuraria estas fases? [sig.
+ parrafo]
+\end_layout
+
+\end_inset
+
 Existen dos tipos de fases: las interactivas y las no interactivas.
  Las fases interactivas son aquellas que al finalizar la ejecución de cada
  regla se presentan las sugerencias al usuario para que este las acepte
@@ -11100,7 +11345,7 @@ Para reflejar la toma de decisiones y poder
 manipular las propuestas arquitectónicas, la herramienta expone dicha funcionali
 dad por medio de 
 \emph on
-chekboxes
+checkboxes
 \emph default
  que indican si la sugerencia se acepta o se rechaza.
  Siguiendo con el ejemplo del 
@@ -11147,7 +11392,7 @@ name "fig:Vista-de-sugerencias"
 
 \end_inset
 
-Vista de sugerencias
+Vista de sugerencias para una fase interactiva
 \end_layout
 
 \end_inset
@@ -11281,7 +11526,11 @@ QueryEngine
 \emph on
 FLABot
 \emph default
- y se delega a esta herramienta el renderizado de los diagramas.
+ y se delega a esta herramienta la presentación gráfica (
+\emph on
+rendering
+\emph default
+) de los diagramas.
  
 \end_layout
 
@@ -11314,6 +11563,20 @@ status open
 \begin_inset Graphics
 	filename img/Phase Interaction.png
 	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Explicar (intepretar) un poco mejor estos diagramas, en vez de mostrarlos
+ y no decir nada ...
+\end_layout
 
 \end_inset
 
@@ -11355,6 +11618,20 @@ status open
 \begin_inset Graphics
 	filename img/Sequence Diagram.png
 	width 50pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Explicar (intepretar) un poco mejor estos diagramas, en vez de mostrarlos
+ y no decir nada ...
+\end_layout
 
 \end_inset
 
@@ -11426,6 +11703,20 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta figura se puede jungar con la figura 5.6 (vista de sugerencias) en una
+ sola figura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -11459,9 +11750,18 @@ TraceLog Analyzer
 \end_layout
 
 \begin_layout Standard
-Como se expuso brevemente en el capítulo anterior, es necesario registrar
- los eventos de bajo nivel que ocurren en la aplicación mientras el usuario
- la ejercita con los casos de uso correspondientes.
+Es necesario registrar los eventos de bajo nivel que ocurren en la aplicación
+ mientras el usuario la ejercita con los casos de uso correspondientes
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Que casos de uso? de donde salen?
+\end_layout
+
+\end_inset
+
+.
  Para ello se utilizó la infraestructura de instrumentación de código de
  
 \emph on
@@ -11486,20 +11786,31 @@ reference "sec:FLABot"
 \end_layout
 
 \begin_layout Standard
-Básicamente, para la ejecución de una aplicación instrumentada es necesario
- (a) crear una nueva configuración de ejecución en Eclipse (
+Básicamente, para la ejecución de una aplicación instrumentada es necesario:
+\end_layout
+
+\begin_layout Itemize
+(a) Crear una nueva configuración de ejecución en Eclipse (
 \emph on
 launch configuration
 \emph default
 , Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "cap:Launch-config"
+reference "fig:Configuración-de-ejecución"
 
 \end_inset
 
-) y (b) iniciar la ejecución de esta configuración.
+).
+\end_layout
+
+\begin_layout Itemize
+(b) Iniciar la ejecución de la nueva configuración.
  
+\end_layout
+
+\begin_layout Standard
+
 \emph on
 FLABot
 \emph default
@@ -11608,6 +11919,19 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Falta informacion de metodos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
@@ -11648,7 +11972,7 @@ DRArch
 \emph default
  es relativamente simple.
  El arquitecto debe configurar la ejecución de la aplicación a instrumentar
- desde una interfaz de usuario de la figura\InsetSpace ~
+ desde la interfaz de usuario de la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Configuración-de-ejecución"
@@ -11688,6 +12012,21 @@ El nivel de profundidad en el que se va a guardar la información.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+como se usan los mappings para construir el log (configuracion de los puntos
+ a instrumentar)??? [sig.
+ parrafo]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Una vez que fue creado un log de ejecución para un caso de uso en particular,
  
 \emph on
@@ -11719,7 +12058,20 @@ snapshot
  en el momento que se ejecuto una responsabilidad.
  Guardar toda la información del estado del sistema en el momento en el
  que se ejecuta cada responsabilidad es costoso debido a que la información
- aumenta exponencialmente y puede traer problemas de referencia cíclica.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Explicar esto mejor.
+ Y especialmente explicar que soluciona el parametro "profundidad", porque
+ se ve que esta pero no se dice en que ayuda para el analisis de la info
+ dinamica [hasta el punto]
+\end_layout
+
+\end_inset
+
+aumenta exponencialmente y puede traer problemas de referencia cíclica.
  Por esta razón se define la profundidad del análisis como parámetro de
  configuración de la ejecución del log (parámetro 
 \emph on
@@ -11972,7 +12324,7 @@ Algoritmo Log Analyzer
 \begin_layout Standard
 Los hechos generados por este componente son almacenados en la base de datos
  del conocimiento junto con el resto de la información.
- De esta forma, quedaría disponible la posibilidad de relacionar información
+ De esta forma, queda disponible la posibilidad de relacionar información
  tanto estática como dinámica.
 \end_layout
 
@@ -12020,13 +12372,26 @@ log
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename img/ObserverObservableTraceLog.jpg
 	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+corregir el orden de ejecución
+\end_layout
 
 \end_inset
 
@@ -12095,6 +12460,21 @@ JQuery
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta bien resumir, pero no repetir todo lo mismo de nuevo ...
+ mejorar la redaccion un poco [sig.
+ 3 parrafos]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \emph on
 Eclipse
@@ -12157,8 +12537,8 @@ reference "cha:Trabajos-relacionados"
 
 \end_inset
 
-, los cuales siguen el mismo patrón de extraer, abstraer y presentar y que
- utilizan una base de datos relacional para almacenar las representaciones
+, los cuales siguen el mismo enfoque de extraer, abstraer y presentar y
+ que utilizan una base de datos relacional para almacenar las representaciones
  intermedias del modelo arquitectónico, 
 \emph on
 DRArch
@@ -12169,10 +12549,18 @@ JQuery
 \emph default
 .
  Esta decisión se basa en que al momento de realizar una consulta en un
- lenguaje lógico, se consulta por el qué y no por el cómo es el caso de
- los enfoques relacionales Esto hace que hace más sencillo y natural al
- arquitecto formular sus propias reglas.
- Para tal propósito se creó un editor utilizando las ventajas que ofrece
+ lenguaje lógico, se consulta por el qué y no por el cómo, que es el caso
+ de los enfoques relacionales.
+ Esto hace que la programación lógica sea una alternativa interesante al
+ enfoque relacional, ya que hace más sencillo y natural formular reglas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Para tal propósito se creó un editor utilizando las ventajas que ofrece
  SWT, un 
 \emph on
 toolkit
@@ -12182,9 +12570,18 @@ toolkit
 \end_layout
 
 \begin_layout Standard
-De esta forma al estar todo lo necesario integrado en el ambiente de desarrollo,
- si el arquitecto pretende incorporar la tarea de reconstrucción a su rutina,
- podrá hacerlo incluyendo únicamente el plug-in 
+[mover esto donde corresponda]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el ambiente de desarrollo, si el arquitecto pretende incorporar la tarea
+ de reconstrucción a su rutina, podrá hacerlo incluyendo únicamente el plug-in
+ 
 \emph on
 DRArch
 \emph default
@@ -12197,20 +12594,6 @@ FLABot
 JQuery
 \emph default
 .
-\end_layout
-
-\begin_layout Standard
-En el próximo capítulo se analizará el desempeño de 
-\emph on
-DRArch
-\emph default
- ante un sistema real en desarrollo: 
-\emph on
-G2
-\emph default
-.
- Tales casos de estudio permitirán evaluar mejor la conveniencia de las
- decisiones de diseño explicadas en este capítulo.
 \end_layout
 
 \begin_layout Chapter
@@ -14068,11 +14451,8 @@ browser
 \emph default
  una solicitud de eliminar a otro usuario del sistema, siempre que sus permisos
  lo permitan.
- Cuando esta solicitud llega al sistema por medio del 
-\family typewriter
-GateKeeper
-\family default
-, se activan los agentes encargados de eliminar a un usuario del modelo.
+ Cuando esta solicitud llega al sistema por medio del GateKeeper, se activan
+ los agentes encargados de eliminar a un usuario del modelo.
  Una vez que el agente asignado detecta esta señal, invoca a la tarea de
  eliminación, representada por la responsabilidad UCM 
 \emph on
@@ -15937,7 +16317,7 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 Otro aspecto importante a analizar en un asistente es la "cantidad de conocimien
@@ -15996,32 +16376,8 @@ Exactitud vs.
 \end_layout
 
 \begin_layout Standard
-Es importante mencionar el esfuerzo realizado para hacer el 
-\emph on
-setup 
-\emph default
-inicial de la herramienta 
-\emph on
-DRArch
-\emph default
- ya que esto es fundamental para que las sugerencias propuestas por el asistente
- sean útiles para el usuario.
- El 
-\emph on
-setup 
-\emph default
-de la herramienta significa realizar entrevistas con los expertos del sistema
- y crear las reglas necesarias para comenzar con el proceso de reconstrucción.
- En promedio (entre G2 y Market), este 
-\emph on
-setup 
-\emph default
-requirió un esfuerzo de 24 horas/hombre aproximadamente.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 Dar una idea de cuantos hechos Prolog se debieron almacenar y como esto
@@ -16041,25 +16397,16 @@ Rule Model
 \emph default
 , si bien brinda flexibilidad a la hora de agregar o modificar reglas, acarrea
  los problemas típicos en los lenguajes interpretados.
- Para un sistema como el Market, que sólo posee 40 clases, la cantidad de
- hechos que se necesitan para representar el código fuente supera los 100.000
- hechos.
- También es necesario tener en cuenta la cantidad de hechos que genera la
- representación del log de ejecución.
- Esta cantidad aumenta a medida que se ejecutan los casos de uso instrumentados.
- Esto causa un problema de escalabilidad y representa un tradeoff a las
- buenas capacidades de asistencia del 
-\emph on
-DRArch
-\emph default
-.
- Por otro lado, la ejecución de una aplicación instrumentada es cada vez
+ También, almacenar tanta cantidad de hechos 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, la ejecución de una aplicación instrumentada es cada vez
  más lenta a medida que crece la cantidad de puntos que están siendo inspecciona
 dos.
  Asimismo, la memoria y el procesamiento requeridos para el análisis de
  los logs de bajo nivel crece según la naturaleza del caso de uso que esta
  siendo analizado.
- 
 \end_layout
 
 \begin_layout Standard
@@ -16089,14 +16436,12 @@ DRArch
  la reconstrucción.
  Éste último índice irá en aumento a medida que se refinen las reglas y
  se agregue información a la base de conocimiento.
- Un aspecto a tener en cuenta es que se recuperaron sólo los casos de uso
- relevantes y se reconstruyeron como UCMs.
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, pudo notarse que la herramienta Structure 101, si bien es
- muy atractiva en terminos visuales y de navegación de la información, está
- destinada a resolver problemas de erosión arquitectónica.
+Adicionalmente, puedo notarse que la herramienta Structure 101, si bien
+ es muy atractiva en terminos visuales y de navegación de la información,
+ está destinada a resolver problemas de erosión arquitectónica.
  
 \begin_inset Note Note
 status open
@@ -16143,26 +16488,26 @@ Conclusiones y trabajos futuros
 \end_layout
 
 \begin_layout Standard
-En los capítulos previos de este trabajo se presentó 
+En los capítulos previos se presentó 
 \emph on
 DRArch
 \emph default
 , un enfoque para la re\SpecialChar \-
 cons\SpecialChar \-
-trucción de arquitecturas que define un proceso
+trucción de arquitecturas que se basa en un proceso
  interactivo, iterativo e incremental.
  Mediante el uso de información estática (código fuente), dinámica (logs
- de ejecución), experiencia de los distintos 
+ de ejecución) y experiencia de los distintos 
 \emph on
 stakeholders
 \emph default
-, etc., 
+, 
 \emph on
 DRArch
 \emph default
- permite reconstruir la arquitectura de un sistema por medio de un proceso
- en el cual el arquitecto acepta o rechaza sugerencias para generar diagramas
- de UCMs.
+ ofrece sugerencias de recontrucccion al arquitecto, quien pueden aceptar
+ o rechazar estas sugerencias para generar diagramas de componentes y de
+ UCMs.
 \end_layout
 
 \begin_layout Standard
@@ -16183,13 +16528,14 @@ framework
  A su vez, ésto permitió aprovechar los editores de UCM y el módulo de instrumen
 tación de código de 
 \emph on
-FLABot
+FLABot.
+
 \emph default
- así como también la utilización del plug-in 
+ La utilización del plug-in 
 \emph on
 JQuery
 \emph default
-, que es quien utiliza las ventajas de 
+ permitó utilizar las ventajas de 
 \emph on
 Eclipse
 \emph default
@@ -16207,12 +16553,9 @@ Como aporte principal,
 DRArch
 \emph default
  permite reconstruir la arquitectura de software de un sistema generando
- vistas que describan el comportamiento a un nivel de abstracción a\SpecialChar \-
-pro\SpecialChar \-
-pia\SpecialChar \-
-do.
- Generalmente, esta información es utilizada para colaborar con la documentación
- del sistema.
+ vistas que describan el comportamiento a un alto nivel de abstracción.
+ Generalmente, las vistas reconstruídas son utilizadas para colaborar en
+ la re-documentación del sistema.
  Al mismo tiempo, el enfoque realiza un mapeo entre el código fuente y las
  vistas generadas.
  Por lo tanto, el análisis realizado por la herramienta también puede ser
@@ -16224,11 +16567,29 @@ do.
 Una de las ventajas que posee el enfoque es que el proceso de reconstrucción
  tiene en cuenta la información dinámica, es decir, la información que genera
  el sistema cuando se está ejecutando.
- Esto hace que se pueda describir el comportamiento del sistema y sea uno
- de los diferenciales más importantes con respecto a otros enfoques.
+ Esto hace que que se pueda enriquecer la información estática recuperada
+ con información de comportamiento, y este es uno de los aportes distintivos
+ de 
+\emph on
+DRArch
+\emph default
+ con respecto a otras herramientas.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+No entiendo que agrega este parrafo (que es redundante con el 1er parrafo
+ del capitulo).
+ Yo diria mejor poner cosas puntuales (resultados) derivados del capitulo
+ de caso de estudio.
+ Elaborar sobre esto (o sobre otra cosa), pero ser concretos ...!!! 
+\end_layout
+
+\end_inset
+
 Adicionalmente, se puede incorporar al análisis información del contexto,
  información aportada por la experiencia del arquitecto, información de
  los 
@@ -16272,9 +16633,52 @@ es, la mayoría de estas reglas no aportarían información arquitectónica
 El haber utilizado programación lógica para definir el modelo de reglas
  brinda flexibilidad a la hora de realizar consultas, pero acarrea los problemas
  típicos en los lenguajes interpretados.
- Una de las principales desventajas del enfoque, es que el modelo de reglas
- propone cierta ambigüedad que debe resolver el arquitecto en el momento
- de tomar las decisiones, aceptando o rechazando sugerencias.
+ Una de las principales desventajas del enfoque, es que a medida que el
+ numero de reglas aumenta, pueden existir conflictos de activacion (o activarse
+ muchas reglas al mismo tiempo) entre las reglas, que el arquitecto debe
+ resolver.
+ En general, el orden de activación de las reglas hace que se activen ciertas
+ reglas (que estan primero) y no las que uno quiere que se activen.
+ Por otro lado, la eficiencia de las inferencias puede ser un problema.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+No entiendo este supuesto problema de los sistemas de reglas...
+ Los problemas que pueden nombrar son los siguientes: 
+\end_layout
+
+\begin_layout Standard
+- A medida que el numero de reglas aumenta, pueden existir conflictos de
+ activacion (o activarse muchas reglas al mismo tiempo) entre las reglas,
+ que el arquitecto debe resolver.
+ 
+\end_layout
+
+\begin_layout Standard
+- En gral.
+ (y relacionado con lo anterior), el orden de activacion de las reglas hace
+ que se activen ciertas reglas (que estan primero) y no las que uno quiere
+ que se activen.
+\end_layout
+
+\begin_layout Standard
+- La eficiencia de las inferencias puede ser un problema.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ver nota y aclararlo
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -16286,10 +16690,84 @@ DRArch
 ades, que es reforzada mediante los mapeos componente-clase y responsabilidad-mé
 todo.
  Sin embargo, esta información no puede considerarse una documentación completa
- de la estructura de un sistema a nivel arquitectónico, ya que no define
- de manera explícita las relaciones entre estos elementos (por ejemplo,
- la estructura de herencia en una vista estática o los puertos y conectores
- en tiempo de ejecución).
+ de un sistema a nivel arquitectónico por los siguietnes motivos: 
+\end_layout
+
+\begin_layout Itemize
+La información no considera cuestiones de 
+\emph on
+deployment
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+La información no documenta 
+\emph on
+design rationale.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+what?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+La información no captura ni casos de uso ni escenarios para atributos de
+ calidad.
+\end_layout
+
+\begin_layout Itemize
+La información de mapeos esta en la herramienta, pero no es fácil de comprender
+ por el usuario (ya que se captura mediante dialogos) y no cuenta con el
+ racional que justifica dichos mapeos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Que la info de UCMs + mapeos no puede considerarse una documentacion completa
+ esta OK.
+ Ahora el porque esta errado!! Aca van algunos motivos mas "interesantes"
+ por los cuales la info is not enough:
+\end_layout
+
+\begin_layout Standard
+- La info no considera cuestiones de deployment 
+\end_layout
+
+\begin_layout Standard
+- La info no documenta design rationale 
+\end_layout
+
+\begin_layout Standard
+- La info no captura ni casos de uso ni escenarios para atributos de calidad
+ 
+\end_layout
+
+\begin_layout Standard
+- La informacion de mapeos esta en el tool, pero no es facil de comprender
+ por el usuario (ya que se captura mediante dialogos) y no cuenta con el
+ racional que justifica dichos mapeos.
+\end_layout
+
+\begin_layout Standard
+..., ya que no define de manera explícita las relaciones entre estos elementos
+ (por ejemplo, la estructura de herencia en una vista estática o los puertos
+ y conectores en tiempo de ejecución).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -16300,10 +16778,9 @@ Finalmente, es necesario mencionar algunas desventajas inherentes a las
 \emph on
 FLABot
 \emph default
- se encuentra estable y ha sido utilizado exitosamente en un gran número
- de aplicaciones.
- Sin embargo, la elección de los puntos a inspeccionar para generar un log
- de ejecución implica un 
+ ha sido utilizado exitosamente en un gran número de aplicaciones; sin embargo,
+ la elección de los puntos a inspeccionar para generar un log de ejecución
+ implica un 
 \emph on
 tradeoff
 \emph default
@@ -16312,13 +16789,13 @@ tradeoff
  y el estado de todos los objetos en cada instante.
  De esta manera, se podría rea\SpecialChar \-
 li\SpecialChar \-
-zar un análisis más preciso y exhaustivo,
- ya que se contaría con absolutamente toda la información posible acerca
- de la ejecución de la aplicación.
+zar un análisis más preciso y exhaustivo.
  Sin embargo, la cantidad de información almacenada se volvería inmanejable
  y la aplicación analizada se vería extremadamente afectada en su rendimiento,
  ya que por cada línea ejecutada se activaría el mecanismo de publicación
  y subscripción de eventos del instrumentador.
+ Aunque se pudiera instrumentar todo el código, sería imposible en la practica
+ ejecutar "todos los posibles caminos" de cobertura del código.
 \end_layout
 
 \begin_layout Section
@@ -16327,8 +16804,8 @@ Trabajos futuros
 
 \begin_layout Standard
 La elaboración de este trabajo, junto con la implementación del prototipo,
- puso en evidencia nuevas posibilidades para investigaciones futuras, como
- así también algunas posibles mejoras a la implementación existente.
+ puso en evidencia posibilidades de investigaciones futuras, como así también
+ algunas posibles mejoras a la implementación existente.
  En esta sección se describen algunas de ellas.
 \end_layout
 
@@ -16337,9 +16814,9 @@ Detección de Aspectos
 \end_layout
 
 \begin_layout Standard
-El Desarrollo de Software Orientado a Aspectos (DSOA) es el paradigma de
- programación cuya idea principal es proporcionar un soporte avanzado para
- la separación de 
+El Desarrollo de Software Orientado a Aspectos (DSOA) es un paradigma de
+ programación cuya idea principal es proporcionar un soporte para la separación
+ de 
 \emph on
 concerns 
 \emph default
@@ -16349,7 +16826,7 @@ aspecto.
  
 \emph default
 Existen técnicas de DSOA que proveen modios sitemáticos para identificación,
- modularización representación y composición de 
+ modularización, representación y composición de 
 \emph on
 crosscutting concerns
 \emph default
@@ -16361,9 +16838,12 @@ crosscutting concern
  se refiere a factores de calidad o funcionalidad del software que no pueden
  ser efectivamente modularizados usando técnicas habituales de desarrollo
  de software.
- Generalmente estos concerns constituyen requerimientos no funcionales del
- sistema y se dispersan a lo largo de todo el código fuente generando lo
- que se denomina 
+ Generalmente estos 
+\emph on
+concerns
+\emph default
+ se dispersan a lo largo de todo el código fuente, generando lo que se denomina
+ 
 \emph on
 código mezclado y diseminado
 \emph default
@@ -16399,6 +16879,21 @@ key "Fowler"
 .
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Todo Ok esta mini-intro a aspectos y refactoring to aspects, pero en ningun
+ lado se menciona como DRArch podria ayudar con eso!! Agregar un parrafo
+ que diga explicitamente como su enfoque puede ser extendido para esto ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Validación de patrones de diseño
 \end_layout
@@ -16415,20 +16910,33 @@ key "Gamma94"
  Muchas veces es necesario asegurarse de que los patrones estén implementados
  correctamente, ya que las modificaciones en el código fuente durante el
  desarrollo del sistema pueden afectar los patrones existentes.
- Se pude utilizar una parte de la funcionalidad del 
+ Se puede utilizar una parte de la funcionalidad del 
 \emph on
 DRArch
 \emph default
- para generar reglas que validen si los patrones de di\SpecialChar \-
+ para generar 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Ampliar un poco el cómo DRArch podria ayudar aca.
+ Por ejemplo " que instrumente la aplicacion, y luego chequee sobre el conjunto
+ de hechos ...
+ blablabla".
+ 
+\end_layout
+
+\end_inset
+
+reglas que validen si los patrones de di\SpecialChar \-
 se\SpecialChar \-
-ño están implementados
- correctamente.
+ño están implementados correctamente.
  El diseño flexible de la herramienta permite realizar esta modificación
  realizando cambios menores en el código fuente.
 \end_layout
 
 \begin_layout Subsection
-Incorporando algoritmos
+Algoritmos
 \end_layout
 
 \begin_layout Standard
@@ -16437,26 +16945,42 @@ Incorporando algoritmos
 DRArch
 \emph default
  esta basado en un proceso donde interviene un modelo de reglas.
- Gracias a este modelo de reglas se gana mucha flexibilidad a la hora definir
+ Gracias a este modelo de reglas se cuenta con flexibilidad para definir
  consultas sobre la información que se quiere obtener.
- Sin embargo, también aporta cierto grado de ambigüedad, la cual es resuelta
- por el arquitecto en el momento de aceptar o rechazar cada sugerencia.
+ Sin embargo, el modelo de reglas también aporta cierto grado de ambigüedad,
+ la cual es resuelta por el arquitecto en el momento de aceptar o rechazar
+ cada sugerencia.
  Una forma de evitar esta ambigüedad es incorporando algoritmos que validen
  los resultados de la ejecución de cada regla.
- Esto también aumenta el grado de automatización del proceso propuesto por
  
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Insertar aca una oracion que diga como se "validarian" estos resultados.
+\end_layout
+
+\end_inset
+
+Esto también aumentaría el grado de automatización del proceso propuesto
+ por 
 \emph on
 DRArch
 \emph default
 , ya que la interacción con el arquitecto disminuye al no tener que tomar
  tantas decisiones.
- Por ejemplo, una desventaja de los sistemas basados en reglas es que baja
- la eficiencia cuando se tratan espacios de búsqueda muy grandes, al generar
- sugerencias invalidas cuya evaluación y eliminación disminuye el rendimiento
- (costo humano, no computacional).
  Mediante técnicas probabilisticas o reglas de ámbito (por nombrar algunas)
- sería posible hacer este tipo de filtrado antes de presentar los resultados
- al arquitecto.
+ sería posible hacer este tipo 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+que tipo?
+\end_layout
+
+\end_inset
+
+ de filtrado antes de presentar los resultados al arquitecto.
 \end_layout
 
 \begin_layout Subsection
@@ -16467,13 +16991,7 @@ Especialización del enfoque
 Durante la elaboración de este trabajo, se trató de mantener la generalidad
  del enfoque al no limitarlo a ningún estilo arquitectónico en particular
  o a algún conjunto de convenciones de implementación específico.
- Como objetivo de diseño, ésto tuvo un efecto positivo en el trabajo ya
- que permite el uso de la herramienta en cualquier sistema que haya sido
- implementado en Java.
-\end_layout
-
-\begin_layout Standard
-Sin embargo, creemos que los estilos arquitectónicos y las convenciones
+ Sin embargo, creemos que los estilos arquitectónicos y las convenciones
  de implementación pueden aportar información valiosa al enfoque.
  Mediante la especificación de reglas, se puede mejorar su precisión incorporand
 o un catálogo de de reglas orientadas a los distintos estilos arquitectónicos
@@ -16511,9 +17029,9 @@ También, es destacable notar que el proceso propuesto por
 \emph on
 DRArch
 \emph default
- Top-Down o Down-Top tiene una correspondencia directa con el proceso de
- razonamiento de los agentes.
- Este puede ser de encadenamiento progresivo (
+ (Top-Down o Bottom-Up) tiene una correspondencia directa con el proceso
+ de razonamiento de los agentes.
+ Este razonamiento puede ser de encadenamiento progresivo (
 \emph on
 forward chainning
 \emph default
@@ -16524,6 +17042,18 @@ backward chainning
 \emph default
 ), que considera una posible solución y trata de probar su validez.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Lo que estan describiendo aca son los 2 tipos de sistemas de reglas, pero
+ no entiendo como se relaciona con el agente ...Si se puede ser mas especifico,
+ mejor!!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -16538,15 +17068,28 @@ sac\SpecialChar \-
 tua\SpecialChar \-
 li\SpecialChar \-
 za\SpecialChar \-
-dos se debe realizar de manera manual.
+dos
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esto sin explicacion no se entiende, es muy criptico.
+ - tiene sentido en ArchSync, pero aca "merece" primero un contexto...
+ Hablaron en el resto de la tesis de "casos de uso" y "paths desactualizados"?
+ Aclarar que son "UCM paths"
+\end_layout
+
+\end_inset
+
+ se debe realizar de manera manual.
  En caso de tener que verificar un número considerable de paths, la tarea
  se puede volver muy tediosa, aumentando la probabilidad de introducir errores
  en el análisis por distracciones del usuario.
 \end_layout
 
 \begin_layout Standard
-Un posible trabajo futuro para mitigar esta debilidad del enfoque puede
- ser permitir el mapeo de UCMs con casos de test.
+Un trabajo futuro para mitigar puede ser permitir el mapeo de UCMs con casos
+ de test.
  Al contar la herramienta con información acerca de qué caso de test corresponde
  a cada 
 \emph on
