@@ -4934,6 +4934,11 @@ Comparación UML y DSM: Ant.
 \end_layout
 
 \begin_layout Subsubsection
+\begin_inset LatexCommand label
+name "sub:Structure-101"
+
+\end_inset
+
 Structure 101
 \end_layout
 
@@ -14030,17 +14035,6 @@ status open
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Hay que decir en algun lado (por ahi en el texto) que son las flechas y
- numeritos
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -14066,6 +14060,14 @@ Structure 101 - Bubble-Market Estructura de paquetes
 \end_layout
 
 \begin_layout Standard
+Las flechas indican dependecias.
+ Estas se pueden dar por una relación directa entre dos componentes, como
+ una clase extendiendo de otra.
+ O debido a relaciones entre items contenidos por los dos componentes, por
+ ejemplo un método de una clase que invoca a un método de otra clase produce
+ una dependencia entre estas dos clases.
+ El número junto a la flecha es el número total de referencias entre 2 component
+es dependientes.
 \begin_inset Float figure
 wide false
 sideways false
@@ -14083,18 +14085,103 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Structure101-Buble"
+
+\end_inset
+
+Structure101 - Bubble core
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Structure101-Buble"
+
+\end_inset
+
+ muestra la vista 
+\begin_inset Quotes sld
+\end_inset
+
+tradicional
+\begin_inset Quotes srd
+\end_inset
+
+ de las herramientas de ingeniería reversa.
+ Las flechas en rojo muestran las dependencias circulares entre las clases.
+ En el capítulo 3 
+\begin_inset LatexCommand ref
+reference "sub:Structure-101"
+
+\end_inset
+
+ se describieron las propiedades de Structure101, entre ellas se destacan
+ las vistas, agrupadas en perspectivas que denotan características relevantes
+ a la estructura y complejidad del sistema.
+ Entre ellas se destaca la perspectiva arquitectóinca, y en ella la vista
+ con el mismo nombre.
+ La notación gráfica para los diagramas de ésta organizada en celdas con
+ el objetivo de transmitir una serie de propiedades arquitectónicas:
+\end_layout
+
+\begin_layout Itemize
+Composición, es indicada con una o mas celdas contenidas en una celda padre.
+\end_layout
+
+\begin_layout Itemize
+Capas (Layering), es indicada mediante una organización de celdas Top-Down.
+ Las celdas sólo deben ser usadas por celdas de las capas superiores.
+ Es posible especificar "strinct layering", es decir, que las celdas solamente
+ dependan de aquellas en la próxima capa y no en capas que simplemente se
+ encuentren por debajo de ella.
+\end_layout
+
+\begin_layout Itemize
+Violaciones a la estructura de capas.
+ Las violaciones (llamadas a capas superiores) son marcadas en el diagrama
+ mediante flechas.
+ Por defecto las flechas hacia abajo no se muestran.
+\end_layout
+
+\begin_layout Standard
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Market-Layering"
+
+\end_inset
+
+  refleja ésta perspectiva.
+ Se puede ver la estructura del módulo Market y por debajo la composición
+ del modulo Core.
+ Las flechas no se muestran debido a que todas las invocaciones son realizadas
+ desde el paquete Market al paquete Core.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Standard
-Esta es una ingenieria reversa "tradicional" del codigo, pero tengo entendido
- que Structure101 permite recuperar vistas "mas interesantes" para la comparacio
-n! Por ej.
- hay una que muestra la estructura de "layers" y "salteo de layers" y otra
- que permite identificar tambien "fat", calculo que este tipo de vistas
- son mas utiles y significativas para su comparacion con DRArch (otherwise,
- me estan tirando abajo a proposito al Structure101 :-))
-\end_layout
+\align center
+\begin_inset Graphics
+	filename img/Structure101Market-Core Layers.png
+	width 50text%
 
 \end_inset
 
@@ -14106,22 +14193,11 @@ n! Por ej.
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "fig:Structure101-Buble"
+name "fig:Market-Layering"
 
 \end_inset
 
-Structure101 - Bubble core
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-En general, es importante "interpretar" para el lector lo que resulta de
- cada diagrama "reconstruido" (tanto con DRArch como con Structure101)
-\end_layout
-
-\end_inset
-
-
+Composición y organización en capas del sistema Market.
 \end_layout
 
 \end_inset
@@ -14136,17 +14212,7 @@ En general, es importante "interpretar" para el lector lo que resulta de
 
 \begin_layout Standard
 Como se mencionó con anterioridad, la herramienta cubre aspectos estructurales
- del sistema en diversas perspectivas
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Aja, que perspectivas son estas? (comentar las que serian utiles para Market)
-\end_layout
-
-\end_inset
-
-.
+ del sistema en diversas perspectivas.
  Para el caso analizado, Market, se puede observar que se toma la estructura
  de paquetes como base del análisis y arma el grafo de dependencias basado
  en las relaciones de uso y de "
@@ -14162,8 +14228,42 @@ reference "fig:Structure-101-Market"
 
 , se pueden observar las clases que lo componen y el grado de acoplamiento
  con sus pares.
- Un asistente de la herramienta resalta aquellos que tienen mayor cantidad
- de dependencias y los resalta como componentes.
+ Un asistente de la herramienta resalta y agrupa aquellas clases que tienen
+ poseen dependencias circulares entre ellas y los resalta como componentes
+ "enredados" (
+\emph on
+tangles
+\emph default
+).
+ Este asistente resalta dos tipos de componentes 
+\emph on
+tangles
+\emph default
+ y 
+\emph on
+clusters
+\emph default
+, estos últimos son aquellos componentes con un grado importante de acoplamiento
+ sin dependencias circulares.
+ Los componentes 
+\emph on
+tangles
+\emph default
+ no son deseables desde el punto de vista de la herramienta mientras los
+ 
+\emph on
+clusters
+\emph default
+ si.
+ En Market, el asistente resaltó tres componentes como 
+\emph on
+tangles
+\emph default
+ y ningun 
+\emph on
+cluster
+\emph default
+.
  Debajo de la matriz se puede ver la misma vista en forma de grafo.
 \end_layout
 
@@ -14563,40 +14663,85 @@ name "sub:G2-Caso-1"
 \end_layout
 
 \begin_layout Standard
-Con el objetivo de poder reconstruir uno de los aspectos más importantes
+De la misma forma que con Market, se realizará una fase cero, con el objetivo
+ de recabar información relevante a la arquitectura de G2 que ayude en la
+ definición de reglas.
+ Dado que G2 tambien está basado en el framework Bubble, las mismas reglas
+ y la misma organización de fases tienen sentido al aplicarlas a G2.
  
+\end_layout
+
+\begin_layout Standard
+Fase cero
+\end_layout
+
+\begin_layout Standard
+Al igual que Market la funcionalidad del sistema está organizada alrededor
+ de éstas tareas y eventos.
+ De las entrevistas con los expertos surgieron consideraciones adicionales
+ que  se listarán a continualción junto con las ya definidas para Market:
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Lo mismo que el otro comentario, cual es el "aspecto mas importante"? (no
- lo nombran)
+Revisar lista de reglas
 \end_layout
 
 \end_inset
 
-de la arquitectura del sistema G2, en este caso de estudio se utilizó la
- herramienta 
-\emph on
-DRArch
-\emph default
- teniendo en cuenta de que la funcionalidad del sistema esta organizada
- en 
-\emph on
-tareas 
-\emph default
-y
-\emph on
- eventos.
+
+\end_layout
+
+\begin_layout Itemize
+Todo lo que hereda de la clase Task es un componente.
+ El nombre de la clase es el nombre del componente.
+ El método run de la tarea se debe asociar a una responsabilidad con el
+ mismo nombre de la tarea.
+\end_layout
+
+\begin_layout Itemize
+Crear una asociación entre un componente tarea y un evento cuando dentro
+ de la implementación de la tarea se encuentra la siguiente porción de código:
+ new EventIdCondition( EventHierarchyManager.getEventId(...Event.class)));
+\end_layout
+
+\begin_layout Itemize
+Crear una asociación entre un componente tarea y un evento cuando dentro
+ de la ejecucion del método run de la tarea se ejecuta un EventManager.publishEve
+nt(anEvent); donde la clase de anEvent es el nombre del componente evento
+ que debe ser asociado.
  
-\emph default
-Como se mencionó en la sección anterior, este sistema esta basado en el
- framework 
-\emph on
-Bubble 
-\emph default
-de la misma forma que el sistema analizado anteriormente con lo cual se
- reutilizarán las fases de análisis implementadas en el análisis anterior
+\end_layout
+
+\begin_layout Itemize
+Todo lo que hereda de DBView es un componente cuyo nombre es la clase que hereda
+ y cada método de DBView es una responsabilidad del componente.
+\end_layout
+
+\begin_layout Itemize
+Cada subpaquete de com.delsatgroup.g2.modeladmin.* es un componente cuyo nombre
+ es el nombre del paquete, cada uno de estos paquetes contienen 2 paquetes:
+ db y task donde cada tarea en task es un componente y esta asociado al
+ componente del paquete contenedor.
+ Y, dentro del paquete db esta una clase que hereda de DBView cuyos métodos
+ son las responsabilidades del componente (paquete contenedor).
+ 
+\end_layout
+
+\begin_layout Itemize
+Toda clase que herede de GenericModelAdminCategoryEvent es un componente
+ cuyo nombre es obtenido a partir de ejecutar el método staticGetEventName()
+ 
+\end_layout
+
+\begin_layout Standard
+Basado en estas reglas se planeo dividir el analisis en x fases.
+ La primera, la fase de recolección es idéntica a la fase de recolección
+ de Market, se utilizo el mismo nivel de profundidad para el log.
+ El objetivo de la fase siguiente es reducir el espacio de solución haciendo
+ foco principalemente en aquellas porciones de código relevantes a la recuperaci
+ón.
+ Se reutilizarán las fases de análisis implementadas en el análisis anterior
  para recuperar la instanciación del 
 \emph on
 framework
@@ -14712,7 +14857,7 @@ Una vez finalizada la fase de recolección, se continúa con la ejecución
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Mismo comentario que para el Market: 
@@ -15095,8 +15240,9 @@ reference "fig:G2-Structure101"
 \end_inset
 
  muestra las dependencias entre los principales módulos del sistema G2.
- En ella se puede ver el gran acoplamiento con el módulo bubble y marcadas
- en rojo, las dependencias circulares entre algunos módulos.
+ En ella se puede ver la gran dependencia con el módulo bubble y marcadas
+ en rojo, las dependencias circulares entre algunos módulos, incluso entre
+ el módulo Bubble (core) con un componente de utilidad.
 \end_layout
 
 \begin_layout Standard
@@ -15145,6 +15291,68 @@ G2 analizado por Strucutre101
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset LatexCommand ref
+reference "fig:Layering G2"
+
+\end_inset
+
+ se tomó el módulo 
+\series bold
+com.delsatgroup.g2.modeladmin.user 
+\series default
+para obtener alguna perspectiva mas interesante desde el punto de vista
+ de la comparación ya que posee los componentes involucrados en el caso
+ de uso utilizado por DRArch para la reconstrucción.
+ En ella se puede observar como está organizado el módulo User, las tareas
+ que determinan la funcionalidad del mismo, los eventos que disparan dichas
+ tareas y el módulo de acceso a datos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/G2-Layers-User.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Layering G2"
+
+\end_inset
+
+Composición y organización en capas del módulo modeladmin del sistema G2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -20267,10 +20475,6 @@ bibfiles "bibliography"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
