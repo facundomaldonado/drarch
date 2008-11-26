@@ -602,7 +602,11 @@ key "ABIANTOUN05b"
  A medida que el desfasaje entre documentación e implementación de una arquitect
 ura se agrava, será cada vez más difícil de remediarlo por sus desarrolladores,
  con el consiguiente deterioro en la calidad del producto.
- Por ejemplo, una arquitectura de pipes and filters 
+ Por ejemplo, una arquitectura de 
+\emph on
+pipes and filters
+\emph default
+ 
 \begin_inset Note Note
 status open
 
@@ -5954,19 +5958,6 @@ a recuperada.
  bajo ciertos escenarios de ejecución).
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-X Análisis de la categorización??
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Análisis y Conclusiones 
 \end_layout
@@ -9841,9 +9832,12 @@ flexible (ANDRES: Nunca se dijo claramente en el capitulo que las reglas
 \end_layout
 
 \begin_layout Standard
-Si bien la implementación por defecto de DRAch es para Java, no se imponen
- restricciones de un lenguaje específico en el que este implementado el
- sistema a analizar.
+Si bien la implementación por defecto de 
+\emph on
+DRArch
+\emph default
+ es para Java, no se imponen restricciones de un lenguaje específico en
+ el que este implementado el sistema a analizar.
  El hecho de transformar la información del sistema a una base de conocimientos
  permite la aplicación del enfoque en muchos lenguajes existentes.
 \end_layout
@@ -9867,7 +9861,11 @@ DRArch
 
 \begin_layout Standard
 En el siguiente capítulo se muestran en detalle algunos aspectos de la implement
-ación de DRArch.
+ación de 
+\emph on
+DRArch
+\emph default
+.
 \end_layout
 
 \begin_layout Chapter
@@ -9899,7 +9897,7 @@ key "BURKHARDT97"
 , presentando los aspectos más importantes de su implementación.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 A su vez, a medida que se describen los componentes, se muestra cómo hace
@@ -10045,17 +10043,24 @@ En vez de esto..
 \end_layout
 
 \begin_layout Standard
-Para el soporte de edición de diagramas se integró 
+Para el soporte de edición de diagramas 
 \emph on
 DRArch
 \emph default
- a 
+ utiliza 
 \emph on
-FLABot
+FLABot\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "FLAbot"
+
+\end_inset
+
+
 \emph default
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 decir que se integro a la herramienta o al proyecto FLABot.
@@ -10065,7 +10070,26 @@ decir que se integro a la herramienta o al proyecto FLABot.
 
 \end_inset
 
-, permitiendo aprovechar el editor gráﬁco de UCMs.
+, permitiendo aprovechar los editores gráﬁcos de componentes y de UCMs.
+ 
+\emph on
+FLABot
+\emph default
+ es una herramienta de soporte para la localización de fallas (ver apéndice\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Eclipse-FLABot-y-JQuery"
+
+\end_inset
+
+ sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:FLABot"
+
+\end_inset
+
+).
  Además se utilizó el instrumentador de 
 \emph on
 bytecode
@@ -10080,18 +10104,32 @@ FLABot
 \emph on
 JQuery
 \emph default
-v
-\begin_inset Note Note
-status open
 
-\begin_layout Standard
-Al igual que para FLABot (arriba), mencionar brevemente que es JQuery y
- dar una referencia (o URL) de la herramienta
-\end_layout
+\begin_inset LatexCommand cite
+key "JQueryWeb"
 
 \end_inset
 
 .
+ 
+\emph on
+JQuery
+\emph default
+ es un buscador flexible de código fuente basado en consultas (ver apéndice\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Eclipse-FLABot-y-JQuery"
+
+\end_inset
+
+ sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:JQuery"
+
+\end_inset
+
+).
  Si bien 
 \emph on
 JQuery
@@ -10200,17 +10238,14 @@ BlackBoard
  fue originalmente designado para manejar problemas complejos y parcialmente
  definidos o incompletos.
  Los sistemas basados en este modelo se usan generalmente para resolver
- problemas del campo de la inteligencia artificial.
-\begin_inset Note Note
-status open
+ problemas del campo de la inteligencia artificial\InsetSpace ~
 
-\begin_layout Standard
-poner una referencia a esto del Blackboard para IA
-\end_layout
+\begin_inset LatexCommand cite
+key "Hayes-Roth1985"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -10245,23 +10280,6 @@ Una cosa que no queda clara de su modelo de Blackboard es quien juega el
 
 \end_inset
 
- Por esta razón, en la implementación del modelo 
-\emph on
-BlackBoard
-\emph default
- utilizada en esta herramienta, será el arquitecto el encargado de seleccionar
- el orden de ejecución de las transformaciones
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-De que "tranformaciones" hablan? (no se introdujeron todavia).
- Son las transformaciones que se mencionan al final del parrafo?
-\end_layout
-
-\end_inset
-
-.
  La base de conocimiento esta determinada por una base de hechos lógicos
  estilo 
 \emph on
@@ -16584,8 +16602,32 @@ Exactitud vs.
 \end_layout
 
 \begin_layout Standard
+Es importante mencionar el esfuerzo realizado para hacer el 
+\emph on
+setup 
+\emph default
+inicial de la herramienta 
+\emph on
+DRArch
+\emph default
+ ya que esto es fundamental para que las sugerencias propuestas por el asistente
+ sean útiles para el usuario.
+ El 
+\emph on
+setup 
+\emph default
+de la herramienta significa realizar entrevistas con los expertos del sistema
+ y crear las reglas necesarias para comenzar con el proceso de reconstrucción.
+ En promedio (entre G2 y Market), este 
+\emph on
+setup 
+\emph default
+requirió un esfuerzo de 24 horas/hombre aproximadamente.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Dar una idea de cuantos hechos Prolog se debieron almacenar y como esto
@@ -16605,11 +16647,19 @@ Rule Model
 \emph default
 , si bien brinda flexibilidad a la hora de agregar o modificar reglas, acarrea
  los problemas típicos en los lenguajes interpretados.
- También, almacenar tanta cantidad de hechos 
-\end_layout
-
-\begin_layout Standard
-Por otro lado, la ejecución de una aplicación instrumentada es cada vez
+ Para un sistema como el Market, que sólo posee 40 clases, la cantidad de
+ hechos que se necesitan para representar el código fuente supera los 100.000
+ hechos.
+ También es necesario tener en cuenta la cantidad de hechos que genera la
+ representación del log de ejecución.
+ Esta cantidad aumenta a medida que se ejecutan los casos de uso instrumentados.
+ Esto causa un problema de escalabilidad y representa un tradeoff a las
+ buenas capacidades de asistencia del 
+\emph on
+DRArch
+\emph default
+.
+ Por otro lado, la ejecución de una aplicación instrumentada es cada vez
  más lenta a medida que crece la cantidad de puntos que están siendo inspecciona
 dos.
  Asimismo, la memoria y el procesamiento requeridos para el análisis de
@@ -17583,6 +17633,9 @@ key "SAIP"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -17861,8 +17914,12 @@ JQuery
 \end_layout
 
 \begin_layout Standard
-JQuery es un buscador flexible de código fuente basado en consultas y desarrolla
-do como un plug-in de Eclipse.
+
+\emph on
+JQuery
+\emph default
+ es un buscador flexible de código fuente basado en consultas y desarrollado
+ como un plug-in de Eclipse.
  Esta implementado sobre un lenguaje lógico de consultas.
  El mismo soporta búsquedas directas de subconjuntos de elementos especícos
  de código fuente de acuerdo a algún criterio especicado por una consulta.
