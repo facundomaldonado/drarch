@@ -10172,7 +10172,7 @@ Ambiente: antes de empezar el proceso de recuperación (en tiempo de ejecución)
 \end_layout
 
 \begin_layout Itemize
-Artefacto : sistema.
+Artefacto: sistema.
  
 \end_layout
 
@@ -10641,8 +10641,12 @@ key "Garlan1996"
 \end_inset
 
  no es el adoptado.
- Teniendo en cuenta el primer atributo de calidad (Modicabilidad 1.b), se
- pensó en el estilo 
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta el primer atributo de calidad (Modificabilidad 1.b) y
+ los requerimientos funcionales de mayor prioridad, se pensó en el estilo
+ 
 \emph on
 BlackBoard
 \emph default
@@ -10657,7 +10661,7 @@ key "Garlan1996"
  En este estilo podemos distinguir a la estructura central como la base
  de conocimientos (
 \family typewriter
-KnoledgeBase
+KnowledgeBase
 \family default
 ) en la cual operan diferentes componentes.
  De esta forma, diferentes módulos pueden acceder a la información y utilizarla
@@ -10949,16 +10953,6 @@ Cada uno de estos componentes han sido abstraídos desacoplándolos de su
 
 \begin_layout Subsubsection
 KnowledgeBase
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-No he visto este componente en ningun diagrama, de donde sale?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -10992,20 +10986,6 @@ reference "fig:Ejemplo-de-la-representación-del-código-fuente"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Es importante marcar si se usaron Design Patterns en el diseño (que no vi
- que mencionaran ninguno)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -11032,6 +11012,122 @@ name "fig:Ejemplo-de-la-representación-del-código-fuente"
 \end_inset
 
 Ejemplo de la representación del código fuente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se uso un patrón de diseño 
+\emph on
+Adapter
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+ en su forma 
+\emph on
+object adapter
+\emph default
+ en la implementación de la interfase 
+\family typewriter
+QueryEngine
+\family default
+, adaptando el pedido de ejecución de la consulta al motor de 
+\emph on
+JQuery
+\emph default
+, en la clase 
+\family typewriter
+QueryEngineImpl
+\family default
+.
+ Esta última se compone de un 
+\family typewriter
+Query
+\family default
+ del plugin 
+\emph on
+JQuery
+\emph default
+.
+ Así, al llegar un pedido de evaluar una consulta, el 
+\family typewriter
+QueryEngine
+\family default
+ instancia el valor de su atributo y ejecuta la consulta (ver Figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:QueryEngineAdapter"
+
+\end_inset
+
+).
+ También se utilizó el patrón 
+\emph on
+TemplateMethod
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+ para la implementación del método 
+\family typewriter
+evaluateQuery
+\family default
+ de la clase 
+\family typewriter
+QueryEngine
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/QueryEngineAdapter.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:QueryEngineAdapter"
+
+\end_inset
+
+Diagrama de UML de clases y de secuencia para la implementación del patrón
+ de diseño 
+\emph on
+Adapter
+\emph default
+ 
 \end_layout
 
 \end_inset
@@ -11260,6 +11356,44 @@ Observer-Observable
 
 \end_layout
 
+\begin_layout Standard
+En este componente se utilizó el patrones de diseño 
+\emph on
+Abstract Factory
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+.
+ Todos estos elementos que involucran al Rule Model son creados por 
+\family typewriter
+RuleModelFactory
+\family default
+.
+ Se decidió la utilización de este patrón por la necesidad de alcanzar la
+ independencia entre la creación de los elementos del modelo y su implementación
+, ya que cada formato de query dependerá del lenguaje lógico que se utilice
+ en las consultas.
+ El patrón 
+\emph on
+Singleton
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+ fue usado también para asegurar una única instancia de la fábrica y proveer
+ un único punto de acceso a la creación de los objetos pertenecientes al
+ modelo.
+\end_layout
+
 \begin_layout Section
 \begin_inset LatexCommand label
 name "sec:Phase-Engine"
@@ -11404,16 +11538,6 @@ DiagramManager
  que genere los diagramas.
  Finalmente con los nuevos hechos en la base de conocimiento y el diagrama
  generado se dispara la ejecución de la nueva regla.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Se uso algun Design Pattern aca? para que?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -11850,6 +11974,97 @@ Rule Manager
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+El patrón de diseño 
+\emph on
+Mediator
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+ se implementó en la clase 
+\family typewriter
+RuleManager
+\family default
+, para que guíe el proceso de evaluación de una consulta y el 
+\emph on
+parsing
+\emph default
+ de los resultados, tanto a sugerencias como a hechos.
+ Así, se evita que cada uno de los componentes que se encargan de evaluar
+ la consulta (
+\family typewriter
+QueryEngine
+\family default
+), realizar el 
+\emph on
+parsing
+\emph default
+ de los resultados a sugerencias (
+\family typewriter
+SuggestMaker
+\family default
+) y realizar el 
+\emph on
+parsing
+\emph default
+ de de los hechos (
+\family typewriter
+FactGenerator
+\family default
+) se comuniquen entre ellos.
+\end_layout
+
+\begin_layout Standard
+También se utilizó el patrón de diseño 
+\emph on
+Iterator
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+ en la clase 
+\family typewriter
+ResultSet
+\family default
+, la cual representa el resultado de una consulta a la base de conocimiento.
+ Lo que importa es acceder a cada uno de los resultados en forma consecutiva,
+ sin importar su representación, sólo la forma de recorrerlos.
+ En la implementación de la interface 
+\family typewriter
+ResultSet
+\family default
+ (
+\family typewriter
+ResultSetImpl
+\family default
+) se utilizó también el patrón 
+\emph on
+Adapter
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Gamma94"
+
+\end_inset
+
+ para adaptar este objeto del modelo al resultado dado por el motor del
+ plugin 
+\emph on
+JQuery
+\emph default
+.
 \end_layout
 
 \begin_layout Subsubsection*
