@@ -349,17 +349,6 @@ mainmatter
 
 \begin_layout Chapter
 Introducción
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-revisar todo el cap.
- y las notas que puso andres en el doc
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -604,18 +593,15 @@ ura se agrava, será cada vez más difícil de remediarlo por sus desarrolladore
  con el consiguiente deterioro en la calidad del producto.
  Por ejemplo, una arquitectura de 
 \emph on
-pipes and filters
-\emph default
- 
-\begin_inset Note Note
-status open
+pipes and filters\InsetSpace ~
 
-\begin_layout Standard
-[REF]
-\end_layout
+\begin_inset LatexCommand cite
+key "Garlan1996"
 
 \end_inset
 
+
+\emph default
  permite ciertos análisis de performance para predecir la latencia del sistema,
  pero una implementación equivocada de la estructura de pipes y filters
  puede invalidar dicho análisis, y conducir a problemas con la latencia
@@ -757,13 +743,10 @@ name "fig:Enfoque-Extraer-Abstraer-Presentar"
 
 \end_inset
 
-Enfoque Extraer-Abstraer-Presentar (Adaptado de 
-\begin_inset Note Note
-status open
+Enfoque Extraer-Abstraer-Presentar (Adaptado de\InsetSpace ~
 
-\begin_layout Standard
-REF
-\end_layout
+\begin_inset LatexCommand cite
+key "Tilley1996"
 
 \end_inset
 
@@ -791,16 +774,16 @@ key "SAIP"
 
 .
  La reconstruccion es definida como un proceso interpretativo, interactivo
- e iterativo que involucra varias actividades.La reconstruccion no es un
- proceso totalmente automático, sino que requiere de la capacidad y de la
- atención del experto en ingeniería reversa y del arquitecto (o alguien
- con conocimientos sobre la arquitectura del sistema).
+ e iterativo que involucra varias actividades.
+ La reconstrucción no es un proceso totalmente automático, sino que requiere
+ de la capacidad y de la atención del experto en ingeniería reversa y del
+ arquitecto (o alguien con conocimientos sobre la arquitectura del sistema).
 \end_layout
 
 \begin_layout Standard
 La ingeniería de reversa 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Ingenieria reversa de la arquitectura lo usan como sinonimo de reconstruccion?
@@ -809,8 +792,8 @@ Ingenieria reversa de la arquitectura lo usan como sinonimo de reconstruccion?
 
 \end_inset
 
-de una arquitectura consiste en todas las actividades que hacen que una
- arquitectura de software sea explícita.
+de una arquitectura (Reconstrucción de Arquitecturas) consiste en todas
+ las actividades que hacen que una arquitectura de software sea explícita.
  Generalmente, el análisis comienza en el nivel de implementación, y se
  va moviendo hacia niveles mas altos de abstracción, hasta llegar al nivel
  arquitectónico.
@@ -1072,18 +1055,30 @@ es, documentos, etc.), y seleccionar como los conceptos relevantes del diseño
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
 La herramienta 
 \emph on
 DRArch
 \emph default
- que da soporte a nuestro enfoque fue diseñada como un framework Java que
- 
+ que da soporte a nuestro enfoque fue diseñada como un 
+\emph on
+framework
+\emph default
+ Java que 
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
 bla,bla, bla...
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1123,7 +1118,10 @@ reference "cha:Trabajos-relacionados"
  se analizan y comparan trabajos relacionados sobre reconstrucción de arquitectu
 ras que, de diferentes maneras, proporcionan soluciones al problema de la
  falta o inexistencia de documentación arquitectónica.
- Luego de este análisis, en el capítulo\InsetSpace ~
+\end_layout
+
+\begin_layout Standard
+Luego de este análisis, en el capítulo\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "cha:El-enfoque-DRArch"
@@ -1135,18 +1133,6 @@ reference "cha:El-enfoque-DRArch"
 DRArch
 \emph default
 , detallando los pasos que propone para la reconstrucción de arquitecturas.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esto comentarlo arriba, en el ultimo parrafo de seccion 1.4 (sobre el Framework)
- java
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1157,7 +1143,7 @@ reference "cha:Implementación"
 
 \end_inset
 
- se presentan el diseño de la herramienta 
+ se presentan el diseño del prototipo de la herramienta 
 \emph on
 DRArch
 \emph default
@@ -1205,125 +1191,6 @@ reference "cha:Conclusiones-y-Trabajos"
  se presentan las conclusiones del trabajo, y algunas propuestas para posibles
  trabajos futuros.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-***
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] Esto esta todo amontonado.
- Separar las ideas y comentarios de cada capitulo en sus respectivos párrafos.
- 
-\end_layout
-
-\end_inset
-
-El resto de este trabajo se encuentra organizado de la siguiente manera.
- En el capítulo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cha:Contexto"
-
-\end_inset
-
- se presentan los conceptos de Arquitecturas de Software donde se describe
- su importancia, los estilos arquitectónicos y los atributos de calidad.
- Luego se introducen las Descripciones de Arquitecturas y se detallan los
- Diagramas de Componentes, el Modelo de Vistas 4 + 1 y los Use Case Maps.
-\end_layout
-
-\begin_layout Standard
-Una vez introducido el contexto, en el capítulo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cha:Trabajos-relacionados"
-
-\end_inset
-
- se analizan y comparan algunos trabajos relacionados que de diferentes
- maneras apuntan a solucionar el problema de falta o inexistencia de documentaci
-ón arquitectónica a través de la reconstrucción de arquitecturas.
- 
-\end_layout
-
-\begin_layout Standard
-Luego de este análisis, en el capítulo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cha:El-enfoque-DRArch"
-
-\end_inset
-
- se explica el enfoque 
-\emph on
-DRArch
-\emph default
-, detallando cada uno de los pasos que propone para la reconstrucción de
- arquitecturas.
- Para aplicar el enfoque se desarrollo un prototipo de soporte.
- 
-\end_layout
-
-\begin_layout Standard
-En el capítulo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cha:Implementación"
-
-\end_inset
-
- se presentan su diseño y los aspectos más importantes de su implementación.
- A su vez, se realiza un recorrido por la herramienta 
-\emph on
-DRArch
-\emph default
- mostrando interfaces de usuario, representaciones de los datos, etc.
-\end_layout
-
-\begin_layout Standard
-Más adelante, en el capítulo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cha:Casos-de-Estudio"
-
-\end_inset
-
-, a modo de casos de estudio se ejercitó la herramienta implementada con
- el sistema G2 – una aplicación comercial desarrollada en un proyecto de
- transferencia con la empresa Delsat, S.A.
- – y de 
-\emph on
-Market
-\emph default
- – un proyecto de prueba construido sobre un framework de invocación (nota:
- el proyecto G2 se basa en el mismo framework).
- Luego, se presentan los resultados de estos casos de estudio.
-\end_layout
-
-\begin_layout Standard
-Finalmente, en el capítulo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "cha:Conclusiones-y-Trabajos"
-
-\end_inset
-
- se presentan las conclusiones del trabajo, junto con algunas propuestas
- para posibles trabajos futuros.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
@@ -5109,7 +4976,7 @@ Análisis implementación
 \end_layout
 
 \begin_layout Standard
-(análisis estático: código fuente; dinámico: trazas de ejecución)
+(análisis estático: código fuente; dinámico: logs de ejecución)
 \end_layout
 
 \end_inset
@@ -5247,7 +5114,7 @@ No incremental.
 \begin_inset Text
 
 \begin_layout Standard
-estático (dinámico, si se carga la información de trazas en formato RSF)
+estático (dinámico, si se carga la información de logs en formato RSF)
 \end_layout
 
 \end_inset
@@ -5930,8 +5797,8 @@ Tipo de análisis: Tipo de análisis se refiere si el análisis que realiza
 Tipo de Análisis de la implementación (Estático/Dinámico): Si se consideran
  para el análisis el código fuente, ya sea código fuente o código compilado,
  el tipo de análisis es estático.
- Si por el contrario se consideran las trazas de ejecución, recolectadas
- con el sistema en ejecución, el análisis es dinámico.
+ Si por el contrario se consideran los logs de ejecución, recolectados con
+ el sistema en ejecución, el análisis es dinámico.
  Como se ve, esta característica está fuertemente relacionada con el tipo
  de entrada que la herramienta/enfoque considera.
 \end_layout
@@ -6064,19 +5931,6 @@ status open
 
 \begin_layout Standard
 Falta una vuelta de rosca al ultimo párrafo.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-X Es decir, alguno considera comportamiento??
 \end_layout
 
 \end_inset
@@ -8518,7 +8372,7 @@ Algoritmo de detección de componentes de utilidad.
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 mostrar mediante un ejemplo..
@@ -9783,18 +9637,8 @@ DRArch
 , que permite obtener vistas arquitectónicas de un sistema a partir de un
  proceso guiado por el arquitecto.
  Este proceso intenta utilizar la mayor cantidad de información que sea
- posible y sus principales fuentes son: el código, la trazas 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Trazas o log? ponerse de acuerdo en como lo van a nombrar y usarlo consistenteme
-nte en toda la tesis 
-\end_layout
-
-\end_inset
-
-de ejecución y la ex\SpecialChar \-
+ posible y sus principales fuentes son: el código, el log de ejecución y
+ la ex\SpecialChar \-
 pe\SpecialChar \-
 rien\SpecialChar \-
 cia de las personas involucradas en el sistema.
@@ -10205,13 +10049,10 @@ DRArch
 \emph on
 BlackBoard
 \emph default
+\InsetSpace ~
 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Insertar referencia al estilo Blackboard
-\end_layout
+\begin_inset LatexCommand cite
+key "Garlan1996"
 
 \end_inset
 
@@ -10422,8 +10263,12 @@ pu\SpecialChar \-
 la\SpecialChar \-
 do desde
  una API en Java.
- JQuery, además de aportar el motor y el lenguaje, proporciona capacidades
- para realizar analisis sintatico (
+ 
+\emph on
+JQuery
+\emph default
+, además de aportar el motor y el lenguaje, proporciona capacidades para
+ realizar analisis sintatico (
 \emph on
 parsing
 \emph default
@@ -10443,15 +10288,22 @@ El componente Rule Model se encarga de visualizar y editar de forma gráfica
  varias veces y sobre distintas instancias de la base de conocimiento.
  Por esta razón es necesario persistir las reglas creadas para su posterior
  utilización y/o edición.
- Utilizando las capacidades del framework EMF, se logró la persistencia
- del modelo como así también la creación de un editor propio de la herramienta
- 
+ Utilizando las capacidades del 
+\emph on
+framework
+\emph default
+ EMF, se logró la persistencia del modelo como así también la creación de
+ un editor propio de la herramienta 
 \emph on
 DRArch
 \emph default
  que hace realmente sencilla la edición y visualización de los datos.
- EMF es un framework de modelado y generación de código para generar aplicacione
-s basadas en un modelo de datos estructurado.
+ EMF es un 
+\emph on
+framework
+\emph default
+ de modelado y generación de código para generar aplicaciones basadas en
+ un modelo de datos estructurado.
  A partir de la especificación de un modelo descripto en XMI, EMF provee
  las herramientas para producir un conjunto de clases Java para el modelo,
  junto con un conjunto de clases 
@@ -10524,6 +10376,7 @@ Flabot
 \emph default
 ya que posee unos editores gráficos para diagramas de Componentes y de UCMs
  y expone un modelo fácilmente manejable.
+ El modelo es representado por un esquema XML.
  Se traduce la información representada en hechos 
 \emph on
 Prolog
@@ -10605,7 +10458,7 @@ DRArch
  base de conocimiento sobre la que se realizarán dichas consultas.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Esto esta OK para decir en la presentacion oral, pero aca sale "de la nada"
@@ -10615,9 +10468,19 @@ Esto esta OK para decir en la presentacion oral, pero aca sale "de la nada"
 
 \end_inset
 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
 Cada uno de estos componentes han sido abstraídos desacoplándolos de su
  implementación permitiendo que, con mínimo esfuerzo, dichas implementaciones
  puedan variar o evolucionar independientemente.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -11020,17 +10883,17 @@ Alternativamente, se puede enriquecer la base de conocimientos de la fase,
 FLABot
 \emph default
  con un modelo arquitectónico definido y transformar la información del
- modelo arquitectónico del archivo a hechos lógicos.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-como? dar un ejemplo concreto [despues del 'y'] 
-\end_layout
-
-\end_inset
-
-
+ modelo arquitectónico del archivo 
+\emph on
+FLABot
+\emph default
+ a hechos lógicos.
+ Por ejemplo, por medio del editor gráfico el arcquitecto crea un nuevo
+ componente y luego realiza explícitamente la sincronización con 
+\emph on
+DRArch
+\emph default
+ para que la base del conocimiento se actualice.
 \end_layout
 
 \begin_layout Standard
@@ -11475,7 +11338,7 @@ QueryEngine
 status open
 
 \begin_layout Standard
-corregir esta imgen
+corregir esta imgen porque se va d ela pagina
 \end_layout
 
 \end_inset
@@ -11774,19 +11637,16 @@ TraceLog Analyzer
 
 \begin_layout Standard
 Es necesario registrar los eventos de bajo nivel que ocurren en la aplicación
- mientras el usuario la ejercita con los casos de uso correspondientes
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Que casos de uso? de donde salen?
+ mientras el usuario la ejercita con los casos de uso del sistema.
+ Estos casos de uso son seleccionados por los expertos del sistema y por
+ los expertos en reconstrucción ya que deben ser los casos que más participen
+ con los artefactos arquitectónicos que se desean reconstruir.
+ 
 \end_layout
 
-\end_inset
-
-.
- Para ello se utilizó la infraestructura de instrumentación de código de
- 
+\begin_layout Standard
+Para generar el log, se utilizó la infraestructura de instrumentación de
+ código de 
 \emph on
 FLABot
 \emph default
@@ -11933,21 +11793,8 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/TraceLogConfigurationClassDiagram.PNG
+	filename img/TraceLog Configuration.png
 	width 45page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Falta informacion de metodos
-\end_layout
 
 \end_inset
 
@@ -12058,7 +11905,7 @@ Log Analyzer
  se encarga de interpretar los eventos de bajo nivel contenidos en el log
  para transformarlos en hechos al estilo 
 \emph on
-ProLog
+Prolog
 \emph default
 .
  El proceso de transformación sigue un algoritmo simple: el componente utiliza
@@ -12079,11 +11926,36 @@ snapshot
 \family default
 , encargados de guardar la información relacionada con el estado del sistema
  en el momento que se ejecuto una responsabilidad.
+ Esta información es de gran utilidad durante el proceso de reconstrucción
+ ya que muchas veces es necesario conocer el valor de la propiedad de una
+ clase en el momento en que se ejecuta un método.
+ Por ejemplo, en el momento de ejecutar el método 
+\family typewriter
+run
+\family default
+ de la tarea 
+\family typewriter
+AddUser
+\family default
+, se desa saber qué usuario lanzó el evento que disparó dicha tarea.
+ Esa información es un atributo (del tipo 
+\family typewriter
+String
+\family default
+) de un objeto que se encuentra a 
+\family typewriter
+n
+\family default
+ niveles de anidamiento (produndidad) contenida en la instancia 
+\family typewriter
+AddUser
+\family default
+.
  Guardar toda la información del estado del sistema en el momento en el
  que se ejecuta cada responsabilidad es costoso debido a que la información
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Explicar esto mejor.
@@ -12094,7 +11966,7 @@ Explicar esto mejor.
 
 \end_inset
 
-aumenta exponencialmente y puede traer problemas de referencia cíclica.
+aumenta exponencialmente.
  Por esta razón se define la profundidad del análisis como parámetro de
  configuración de la ejecución del log (parámetro 
 \emph on
@@ -12402,19 +12274,6 @@ status open
 \begin_inset Graphics
 	filename img/ObserverObservableTraceLog.jpg
 	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-corregir el orden de ejecución
-\end_layout
 
 \end_inset
 
@@ -13233,20 +13092,14 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Como se mencionó en el capítulo xxx
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-ENFOQUE????
-\end_layout
-
-\end_inset
-
- es necesario realizar una fase inicial, fase cero, en la que se realizan
- entrevistas con los expertos del sistema (a recuperar) y se reavisa la
- documentación del sistema con el objetivo de llegar a un entendimiento
- común sobre cuáles son los elementos del sistema de interes arquitectónico.
+Es necesario realizar una fase inicial (fase cero o 
+\emph on
+setup
+\emph default
+) en la que se realizan entrevistas con los expertos del sistema (a recuperar)
+ y se reavisa la documentación del sistema con el objetivo de llegar a un
+ entendimiento común sobre cuáles son los elementos del sistema de interes
+ arquitectónico.
  Es el objetivo de esta fase también que juntos, los expertos del sistema
  y el/los expertos en recuperación, armen las reglas y su agrupación en
  fases, como asi también el orden de evaluación de las mismas.
@@ -15370,10 +15223,6 @@ Composición y organización en capas del módulo modeladmin del sistema G2
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -16543,7 +16392,7 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Otro aspecto importante a analizar en un asistente es la "cantidad de conocimien
