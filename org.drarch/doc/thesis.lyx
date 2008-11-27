@@ -1953,7 +1953,7 @@ Los escenarios de los atributos de calidad son un requerimiento específico
 \end_layout
 
 \begin_layout Enumerate
-Fuente del estimulo: Alguna entidad que genere el estimulo, por ejemplo,
+Fuente del estímulo: Alguna entidad que genere el estimulo, por ejemplo,
  un usuario, un sistema o algún otro actor.
 \end_layout
 
@@ -9815,6 +9815,384 @@ reference "sec:Conclusiones"
 \end_layout
 
 \begin_layout Section
+Requerimientos
+\end_layout
+
+\begin_layout Standard
+El principal requerimiento es el de reconstruir la arquitectura de un sistema
+ de software: Extraer información relevante desde el código fuente y desde
+ el sistema en ejecución para representar la arquitectura en diagramas de
+ componentes y de UCMs.
+ Los requerimientos funcionales y no funcionales presentados en las siguientes
+ secciones se encuentran priorizados con el fin de detectar los 
+\emph on
+arquitectural drivers
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+Requerimietos funcionales abstractos
+\end_layout
+
+\begin_layout Enumerate
+El sistema tiene que ser capaz de generar información visual, grácos o texto
+ para mostrar y almacenar los datos producidos.
+ Prioridad: 3
+\end_layout
+
+\begin_layout Enumerate
+La recuperación de información debe ser un proceso iterativo en el que en
+ cada paso, se incremente el nivel de detalle de la información recuperada.
+ Prioridad: 2
+\end_layout
+
+\begin_layout Enumerate
+La información extraída debe provenir del código fuente, del sistema en
+ ejecución y del conocimiento de los expertos del sistema.
+ Prioridad: 7
+\end_layout
+
+\begin_layout Enumerate
+El sistema debe ofrecer la posibilidad de realizar una búsqueda en la informació
+n extraída mediante criterios de búsqueda especícos.
+ Prioridad: 1
+\end_layout
+
+\begin_layout Enumerate
+El sistema debe ofrecer al usuario la posibilidad de crear, modicar u optimizar
+ criterios de búsqueda sobre la información extraída.
+ Prioridad: 4
+\end_layout
+
+\begin_layout Enumerate
+El resultado de cada búsqueda por un criterio será presentada al usuario
+ en forma de sugerencia.
+ Prioridad: 5
+\end_layout
+
+\begin_layout Enumerate
+El usuario debe llevar el control del proceso de recuperación y customizar
+ su comportamiento.
+ Prioridad: 6
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El pasaje de una etapa a la siguiente será decisión del usuario.
+\end_layout
+
+\begin_layout Enumerate
+El usuario tendrá la responsabilidad de aceptar o no las sugerencias propuestas
+ por el sistema.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Las sugerencias aceptadas pasaran a formar parte del contexto de búsqueda
+ (aportaran información adicional).
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Luego de cada paso, el usuario debe poder visualizar el estado de la información
+ recuperada.
+ Prioridad: 8
+\end_layout
+
+\begin_layout Subsection
+Requerimientos de calidad
+\end_layout
+
+\begin_layout Standard
+Se describen los siguientes escenarios de calidad: 
+\end_layout
+
+\begin_layout Enumerate
+Modicabilidad 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Un 
+\emph on
+stakeholder
+\emph default
+ desea que se cambie la herramienta de visualización luego del 
+\emph on
+release
+\emph default
+.
+ El cambio deberá llevarse a cabo en una semana sin afectar otros componentes.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fuente del estímulo: stakeholder.
+ 
+\end_layout
+
+\begin_layout Itemize
+Estímulo: cambio en la herramienta de visualización.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ambiente: luego del 
+\emph on
+release
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Artefacto: código.
+ 
+\end_layout
+
+\begin_layout Itemize
+Respuesta: el cambio es llevado a cabo sin afectar otros componentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Medición de la respuesta: una semana.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prioridad: 4
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Un desarrollador desea manipular (agregar, modicar, consultar) información
+ relevante a la información del sistema a recuperar.
+ Dicha manipulación se debe realizar sin afectar otros componentes.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fuente del estímulo: desarrollador.
+ 
+\end_layout
+
+\begin_layout Itemize
+Estímulo: manipular información.
+\end_layout
+
+\begin_layout Itemize
+Ambiente: en tiempo de desarrollo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Artefacto: base de datos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Respuesta: la manipulación de la información es llevada a cabo sin afectar
+ otros componentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Medición de la respuesta: En ocho horas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prioridad: 1
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Flexibilidad 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Un usuario decide optimizar una búsqueda sobre el sistema a analizar deniendo
+ su propio criterio antes de empezar el proceso de recuperación.
+ El cambio deberá llevarse a cabo instantáneamente sin afectar otros componentes.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fuente del estímulo: usuario.
+ 
+\end_layout
+
+\begin_layout Itemize
+Estímulo: optimización de búsqueda de información.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ambiente: antes de empezar el proceso de recuperación (en tiempo de ejecución).
+ 
+\end_layout
+
+\begin_layout Itemize
+Artefacto : sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+Respuesta: el cambio es llevado a cabo sin afectar otros componentes.
+\end_layout
+
+\begin_layout Itemize
+Medición de la respuesta: instantáneamente.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prioridad: 3
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Por cada criterio de búsqueda, un usuario dene qué información se debe agregar
+ al diseño que se va a recuperando.
+ El cambio deberá llevarse a cabo instantáneamente sin afectar otros componentes.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fuente del estímulo: usuario.
+ 
+\end_layout
+
+\begin_layout Itemize
+Estímulo: denir qué información se debe agregar al diseño recuperado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ambiente: antes de empezar el proceso de recuperación (en tiempo de ejecución).
+\end_layout
+
+\begin_layout Itemize
+Artefacto : sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+Respuesta: el cambio es llevado a cabo sin afectar otros componentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Medición de la respuesta: instantáneamente.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prioridad: 2
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Un usuario acepta las decisiones propuestas por el sistema en tiempo de
+ ejecución.
+ Esta información queda disponible para las siguientes búsquedas instantáneament
+e.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fuente del estímulo: usuario.
+ 
+\end_layout
+
+\begin_layout Itemize
+Estímulo: aceptación de las propuestas del sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ambiente: tiempo de ejecución.
+ 
+\end_layout
+
+\begin_layout Itemize
+Artefacto : sistema.
+\end_layout
+
+\begin_layout Itemize
+Respuesta: la información queda disponible para las siguientes búsquedas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Medición de la respuesta: instantáneamente.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prioridad: 6
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Usabilidad 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El usuario desea aprender cómo crear un criterio de búsqueda.
+ El sistema provee ayuda para realizar esta tarea.
+ El usuario aprende cómo armar el criterio en 30 min.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fuente del estímulo: usuario.
+\end_layout
+
+\begin_layout Itemize
+Estímulo: aprender cómo crear un criterio de búsqueda 
+\end_layout
+
+\begin_layout Itemize
+Ambiente: antes de empezar el proceso de recuperación (en tiempo de ejecución).
+ 
+\end_layout
+
+\begin_layout Itemize
+Artefacto : sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+Respuesta: proveer ayuda para poder realizar la tarea.
+ 
+\end_layout
+
+\begin_layout Itemize
+Medición de la respuesta: 30 min.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prioridad: 5
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
 \begin_inset LatexCommand label
 name "sec:Arquitectura"
 
@@ -10225,30 +10603,149 @@ Decisiones de diseño
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Una parte indispensable para justificar estas decisiones de diseño del DRArch
- son los REQUERIMIENTOS FUNCIONALES Y DE CALIDAD que actuaron como DRIVERS
- de las decisiones, En ningun lado se habla de estos requerimientos!!! (asumo
- que Uds los saben, pero ponerlos explicitamente ayuda a "ordenar" el discurso)
- Por ej., porque se eligio JQuery? en base a que requerimientos que tenian
- inicialmente? y asi para el resto de las decisiones tomadas
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 En esta sección se describen algunas de las principales decisiones de diseño
  tomadas para cada componente de la arquitectura del 
 \emph on
 DRArch
 \emph default
 .
+\end_layout
+
+\begin_layout Standard
+El estilo arquitectónico intuitivo para este tipo de herramientas parecería
+ ser el de
+\emph on
+ pipes and filters
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Garlan1996"
+
+\end_inset
+
+.
+ Simplifica el mantenimiento del sistema, permite el reuso y la extensibilidad.
+ Sin embargo, en este estilo es muy difícil crear aplicaciones interactivas:
+ no hay forma que los filtros interactúen de forma cooperativa para resolver
+ un problema.
+ Debido a este tradeof el estilo 
+\emph on
+pipes and filters
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Garlan1996"
+
+\end_inset
+
+ no es el adoptado.
+ Teniendo en cuenta el primer atributo de calidad (Modicabilidad 1.b), se
+ pensó en el estilo 
+\emph on
+BlackBoard
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Garlan1996"
+
+\end_inset
+
+.
+ En este estilo podemos distinguir a la estructura central como la base
+ de conocimientos (
+\family typewriter
+KnoledgeBase
+\family default
+) en la cual operan diferentes componentes.
+ De esta forma, diferentes módulos pueden acceder a la información y utilizarla
+ con distintos propósitos.
+ Entonces, se define el 
+\emph on
+BlackBoard
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Garlan1996"
+
+\end_inset
+
+ como el estilo dominante para la arquitectura (ver Figura\InsetSpace ~
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+ref a la figura del estilo
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Para los atributos de calidad que siguen (Flexiblidad 2.b y 2.a), se pensó
+ en un estilo 
+\emph on
+Rule-based
+\emph default
+\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "Garlan1996"
+
+\end_inset
+
+.
+ Si bien no se empleó el estilo tal cual esta definido, se usó la orientación
+ al uso de reglas y hechos para ralizar consultas sobre una base del conocimient
+o.
+ Este estilo permite una gran flexibilidad a la hora de realizar consultas
+ sobre la información.
+ También permite incorporar información de manera sencilla para que pueda
+ ser utilizada junto con el resto de la base del conocimiento.
+ El modelo de reglas está representado por el componente Rule Model.
+\end_layout
+
+\begin_layout Standard
+El componente Rule Model se encarga de visualizar y editar de forma gráfica
+ y amigable el modelo; y hay que salvar su estado de forma persistente por
+ medio del 
+\emph on
+framework
+\emph default
+ EMF de Eclipse.
+ Es necesario que un conjunto de reglas pueda ser reutilizado y ejecutado
+ varias veces y sobre distintas instancias de la base del conocimiento.
+ Por esta razón es necesario persistir las reglas creadas para su posterior
+ utilización y/o edición.
+ Utilizando las capacidades del 
+\emph on
+framework
+\emph default
+ EMF, se logró la persistencia del modelo como así también la creación de
+ un editor propio de la herramienta 
+\emph on
+DRArch
+\emph default
+ que hace realmente sencilla la edición y visualización de los datos.
+ EMF es un 
+\emph on
+framework
+\emph default
+ de modelado y generación de código para generar aplicaciones basadas en
+ un modelo de datos estructurado.
+ A partir de la especificación de un modelo descripto en XMI, EMF provee
+ las herramientas para producir un conjunto de clases Java para el modelo,
+ junto con un conjunto de clases 
+\emph on
+adapters
+\emph default
+ que permiten la visualización y edición del mismo.
 \end_layout
 
 \begin_layout Standard
@@ -10278,39 +10775,6 @@ parsing
 parsing
 \emph default
 .
-\end_layout
-
-\begin_layout Standard
-El componente Rule Model se encarga de visualizar y editar de forma gráfica
- y amigable el modelo; y hay que salvar su estado de forma persistente por
- medio del framework EMF de Eclipse.
- Es necesario que un conjunto de reglas pueda ser reutilizado y ejecutado
- varias veces y sobre distintas instancias de la base de conocimiento.
- Por esta razón es necesario persistir las reglas creadas para su posterior
- utilización y/o edición.
- Utilizando las capacidades del 
-\emph on
-framework
-\emph default
- EMF, se logró la persistencia del modelo como así también la creación de
- un editor propio de la herramienta 
-\emph on
-DRArch
-\emph default
- que hace realmente sencilla la edición y visualización de los datos.
- EMF es un 
-\emph on
-framework
-\emph default
- de modelado y generación de código para generar aplicaciones basadas en
- un modelo de datos estructurado.
- A partir de la especificación de un modelo descripto en XMI, EMF provee
- las herramientas para producir un conjunto de clases Java para el modelo,
- junto con un conjunto de clases 
-\emph on
-adapters
-\emph default
- que permiten la visualización y edición del mismo.
 \end_layout
 
 \begin_layout Standard
@@ -16797,7 +17261,7 @@ to" (o el esfuerzo) para hacer el setup del tool al principio, para que
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
