@@ -13254,7 +13254,7 @@ reference "ite:Asociación-Tarea-Evento-2"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -13568,7 +13568,7 @@ reference "fig:Resultado-de-la-fase-de-invocacion-implicita-market"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -13743,7 +13743,7 @@ framework
  Bubble para el dominio del Market.
  Las consultas realizadas en esta fase están muy relacionadas al caso de
  uso que se utilizó para generar el log de ejecución.
- Las responsabilidades de los componenetes estan mapeadas a métodos.
+ Las responsabilidades de los componentes estan mapeadas a métodos.
  Los métodos corresponden a las clases que están asociadas con cada componente.
  Esto es de gran utilidad ya que una de las informaciones que provee el
  log de ejecución, indica qué métodos fueron ejecutados y en qué orden.
@@ -13895,7 +13895,7 @@ reference "fig:Structure101-Buble"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -13942,7 +13942,7 @@ es dependientes.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -14046,7 +14046,7 @@ reference "fig:Market-Layering"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -14142,7 +14142,7 @@ cluster
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -14246,7 +14246,7 @@ te a nivel arquitectónico por 34 escenarios UCM.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -14685,7 +14685,7 @@ TraceLog Analizer
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -14954,7 +14954,7 @@ removeUser
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -15014,7 +15014,7 @@ removeUser
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -15120,28 +15120,13 @@ reference "fig:G2-Structure101"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename img/G2_structure101.png
 	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Mismos comentarios sobre mostrar instead "vistas interesantes" que puede
- proveer Structure101 (y que por ahi DRArch no tiene), cosa de que el analisis
- al final sea mas fair :-)
-\end_layout
 
 \end_inset
 
@@ -15194,7 +15179,7 @@ para obtener alguna perspectiva mas interesante desde el punto de vista
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset Graphics
@@ -15383,7 +15368,7 @@ La precisión, en este ejemplo, es el tamaño del grupo de flechas.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -15506,7 +15491,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="5">
+<lyxtabular version="3" rows="11" columns="5">
 <features>
 <column alignment="left" valignment="middle" rightline="true" width="2in">
 <column alignment="center" valignment="middle" leftline="true" width="0.9in">
@@ -15612,7 +15597,7 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-# componentes arquitectónicos reconstruidos
+# componentes arquitectónicos reconstruidos (DRArch)
 \end_layout
 
 \end_inset
@@ -15649,6 +15634,53 @@ G2
 
 \begin_layout Standard
 5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+# componentes arquitectónicos reconstruidos (Structure101)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3
 \end_layout
 
 \end_inset
@@ -15706,7 +15738,7 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-# relaciones arquitectónicos reconstruidos
+# relaciones arquitectónicos reconstruidos (DRArch)
 \end_layout
 
 \end_inset
@@ -15743,6 +15775,53 @@ G2
 
 \begin_layout Standard
 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+# relaciones arquitectónicos reconstruidos (Structure101)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2
 \end_layout
 
 \end_inset
@@ -15800,7 +15879,7 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-# responsabilidades arquitectónicos reconstruidos
+# responsabilidades arquitectónicos reconstruidos (DRArch)
 \end_layout
 
 \end_inset
@@ -15837,6 +15916,53 @@ G2
 
 \begin_layout Standard
 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+# responsabilidades arquitectónicos reconstruidos (Structure101)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+N/A
 \end_layout
 
 \end_inset
@@ -16070,9 +16196,12 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="4">
+<lyxtabular version="3" rows="8" columns="7">
 <features>
 <column alignment="left" valignment="top" rightline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" width="0">
@@ -16086,7 +16215,7 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16095,7 +16224,16 @@ Market
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16104,11 +16242,29 @@ G2
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
 G2 (sin mejora)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
 \end_layout
 
 \end_inset
@@ -16124,7 +16280,7 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16133,7 +16289,16 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16142,11 +16307,29 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
 ~1100
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
 \end_layout
 
 \end_inset
@@ -16162,7 +16345,7 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16171,7 +16354,16 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16180,11 +16372,29 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
 98
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
 \end_layout
 
 \end_inset
@@ -16200,7 +16410,7 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16209,7 +16419,16 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -16218,11 +16437,159 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
 42
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+complejidad ciclomática
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1,672
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1,45
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1,45
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+DRArch
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Structure101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+DRArch
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Structure101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+DRArch
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Structure101
 \end_layout
 
 \end_inset
@@ -16251,7 +16618,25 @@ G2 (sin mejora)
 \begin_inset Text
 
 \begin_layout Standard
+34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
 42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+14
 \end_layout
 
 \end_inset
@@ -16265,40 +16650,11 @@ G2 (sin mejora)
 
 \end_inset
 </cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-complejidad ciclomática
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-1,672
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-1,45
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
-1,45
+N/A
 \end_layout
 
 \end_inset
@@ -16327,7 +16683,25 @@ complejidad ciclomática
 \begin_inset Text
 
 \begin_layout Standard
+39%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
 100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+33%
 \end_layout
 
 \end_inset
@@ -16337,6 +16711,15 @@ complejidad ciclomática
 
 \begin_layout Standard
 92%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+N/A
 \end_layout
 
 \end_inset
@@ -16414,7 +16797,7 @@ to" (o el esfuerzo) para hacer el setup del tool al principio, para que
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -16539,19 +16922,82 @@ DRArch
 \emph default
  en el proceso de reconstrucción.
  Por otro lado, la precisión de la herramienta se ve comprometida por la
- complejidad de cada proyecto y por las reglas seleccionadas para realizar
- la reconstrucción.
+ complejidad de cada proyecto, por las reglas seleccionadas para realizar
+ la reconstrucción y por la cantidad de información que pueda ser incorporada
+ por los expertos en el sistema (lo que se traducirá a nuevas reglas).
  Éste último índice irá en aumento a medida que se refinen las reglas y
  se agregue información a la base de conocimiento.
+ Es importante resaltar que la información de ejecución está basada en los
+ casos de uso ejecutados por lo que la precisión del análisis esta determinada
+ en gran medida tanto por la riqueza de los casos de uso como en la cantidad
+ de estos que se ejecuten.
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, puedo notarse que la herramienta Structure 101, si bien
- es muy atractiva en terminos visuales y de navegación de la información,
- está destinada a resolver problemas de erosión arquitectónica.
+Podemos afirmar que DRArch puede ser usado para tratar problemas de erosión
+ arquitectónica.
+ En la figura 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
+
+\end_inset
+
+ extraida de la documentación de G2 podemos ver que la responsabilidad ListUsers
+ se ejecuta y el path de ejecución continua hasta el componente ResponseGenerato
+r .
+ En la vista reconstruida 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-UCM-DRArch-remove-user"
+
+\end_inset
+
+, se observa que luego de ejecutarse la tarea ListUserTask el path de ejecución
+ vuelve al componente DBView que ejecuta la consulta en la base de datos.
+ No se trata de un error en la reconstrucción sino que la documentación
+ no refleja ese comportamiento.
+\end_layout
+
+\begin_layout Standard
+Comparando con la herramienta Structure 101, puede notarse que la misma
+ está destinada principalmente a comunicar la arquitectura entre todos los
+ roles involucrados en el desarrollo y a asistir a los programadores en
+ evitar desviarse de la arquitectura durante el desarrollo.
+ Si bien la herramienta es muy atractiva en terminos visuales y de navegación
+ de la información, carece totalmente de aspectos comportamentales que ayuden
+ a visualizar el sistema en funcionamiento.
+ Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
+ del sistema y de qué manera interactuan los componentes en tiempo de ejecución.
+ No tiene noción de responsabilidades a nivel de componentes o mejor dicho
+ celdas en las vistas arquitectónicas.
  
+\end_layout
+
+\begin_layout Standard
+En el proceso de reconstrucción del sistema G2 principalmente, se utilizo
+ el conocimiento adquirido para DRArch y las mismas reglas definidas por
+ los expertos para modelar los diagramas de arquitectura expuestos anteriormente.
+ La naturaleza de estas reglas hace que el mapeo entre componentes arquitectónic
+os y artefactos de código (clases) se en muchos casos directo, por lo que
+ las mediciones fueron en cierta medida muy acertadas.
+ La falta de información dinámica extraida a travéz de trazas de ejecución
+ deja ocultas relaciones entre componentes que se resuelven en tiempo de
+ ejecución.
+\end_layout
+
+\begin_layout Standard
+Los puntos fuertes de Structure101 en comparación con DRArch son principalmente
+ la velocidad de análisis del código fuente, la gran variedad de vistas
+ y perspectivas entre las que figura una vista de mediciones de complejidad
+ muy util para el análisis y su posible aplicación a la reingenieria.
+ El tiempo de setup de la herramienta es cero en comparación con DRArch.
+ Si bien es necesario invertir el mismo tiempo con los expertos a fin de
+ adquirir el conocimiento necesario sobre el sistema, la herramienta no
+ necesita definir reglas ni ningun tipo de configuración extra.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 El analisis que hacen es muy light y "castigado" para Structure101 :-( Los
@@ -16561,11 +17007,9 @@ El analisis que hacen es muy light y "castigado" para Structure101 :-( Los
 
 \end_inset
 
-Carece totalmente de aspectos comportamentales.
- Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
- del sistema y de qué manera interactuan los componentes
+
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Bue,no fue tan asi, de los diagramas producidos por Structure101 "se sabe
@@ -16575,14 +17019,7 @@ s interesantes" que provee Structure101 :-)
 
 \end_inset
 
-.
- La falta de información dinámica extraida a travéz de trazas de ejecución
- deja ocultas relaciones entre componentes que se resulven en tiempo de
- ejecución.
- Otro punto de disconformidad es que esta herramienta presenta toda la informaci
-ón de una sola vez.
- No permite establecer reglas de diseño que guien la recuperación, ni la
- interacción del usuario en el proceso de reconstrucción.
+
 \end_layout
 
 \begin_layout Chapter
