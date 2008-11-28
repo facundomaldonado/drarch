@@ -154,7 +154,11 @@ En este trabajo, proponemos un enfoque semi-automatizado para asistir a
 \emph on
 DRArch
 \emph default
- e implementada en Java y Prolog.
+ e implementada en Java y 
+\emph on
+Prolog
+\emph default
+.
  El objetivo principal de 
 \emph on
 DRArch
@@ -924,19 +928,7 @@ Como objetivo principal del trabajo se propone definir un enfoque flexible
  en recolectar información de distintas fuentes (código fuente, logs de
  ejecución, experiencia de los expertos del sistema, etc.) y consolidarla
  en una representación común, a fin de permitir al usuario-desarrollador
- relacionar distintas piezas de información de forma sencilla
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Trataria de ser un poco mas especifico sobre la “forma”, ya que si ponen
- “simple y sencilla” es algo muy generico y que no aporta mucho al enfoque
- ...
-\end_layout
-
-\end_inset
-
-.
+ relacionar distintas piezas de información.
  Para esta representación se utiliza programación lógica.
  La idea es que una herramienta de asistencia pueda analizar la información
  disponible, y por medio de un mecanismo, pueda generar sugerencias al usuario-d
@@ -6004,7 +5996,7 @@ Task
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 No es necesario poner un TOC en cada inicio de capitulo, ni en cada seccion
@@ -8418,7 +8410,7 @@ Las clases contenidas en el conjunto solución son cadidatas a ser clases
 \begin_layout Subsubsection
 Identificación de componentes basado en acoplamiento
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Incluir referencia de donde sale esta heuristica [ref a la matriz de dependencia
@@ -8444,7 +8436,13 @@ status collapsed
 
 \end_inset
 
-grado de dependencia que tiene.
+grado de dependencia que tiene 
+\begin_inset LatexCommand cite
+key "DSMWeb"
+
+\end_inset
+
+.
  Todo buen diseño de componentes está o debería estar pensado de tal forma
  que sus componentes sean cohesivos y con bajo acoplamiento con los demás
  componentes.
@@ -10469,8 +10467,11 @@ key "Hayes-Roth1985"
 
 \begin_layout Standard
 En el estilo arquitectónico 
+\emph on
+BlackBoard
 \series bold
-Blackboard 
+\emph default
+ 
 \series default
 se utilizan tres tipos de componentes: blackboard, fuente de conocimiento
  y sub-sistema de control (los mismos pueden observarse en la figura 
@@ -10519,7 +10520,11 @@ name "fig:Modelo-Blackboard-DRArch"
 
 \end_inset
 
-Modelo Blackboard utilizado por DRArch.
+Modelo Blackboard utilizado por 
+\emph on
+DRArch
+\emph default
+.
 \end_layout
 
 \end_inset
@@ -10533,8 +10538,11 @@ Modelo Blackboard utilizado por DRArch.
 \end_layout
 
 \begin_layout Standard
-La base de conocimiento (Blackboard) esta determinada por una base de hechos
- lógicos estilo 
+La base de conocimiento (
+\emph on
+Blackboard
+\emph default
+) esta determinada por una base de hechos lógicos estilo 
 \emph on
 Prolog
 \emph default
@@ -10573,8 +10581,15 @@ iones que actualizaran el estado del modelo arquitectónico bajo análisis.
 bilidad entre los módulos.
  El arquitecto asistido por este componente de gestión, conforman el componente
  de control del modelo.
- Este mapeo del modelo Blackboard a los componentes DRArch se puede visualizar
- en la figura 
+ Este mapeo del modelo 
+\emph on
+Blackboard
+\emph default
+ a los componentes 
+\emph on
+DRArch
+\emph default
+ se puede visualizar en la figura 
 \begin_inset LatexCommand ref
 reference "fig:Modelo-Blackboard-DRArch"
 
@@ -10859,9 +10874,12 @@ wizards
 \end_layout
 
 \begin_layout Standard
-Durante el uso de DRArch puede llegarse a un punto donde la especificación
- de la regla es tan precisa que siempre serán aceptadas todas las sugerencias
- que el asistente proponga.
+Durante el uso de 
+\emph on
+DRArch
+\emph default
+ puede llegarse a un punto donde la especificación de la regla es tan precisa
+ que siempre serán aceptadas todas las sugerencias que el asistente proponga.
  Es engorroso desde el punto de vista del usuario final tener que aceptar
  todas y cada una de estas sugerencias.
  Para evitar esto, se pueden agrupar estas reglas en fases que no requieran
@@ -10881,8 +10899,16 @@ Flabot
 \emph default
 .
  Este modelo es expuesto mediante un API lo que facilitó su integración.
- Al momento de generar los diagramas DRArch vuelve a consultar la base de
- conocimientos para armar el modelo de diagramas propio de DRArch.
+ Al momento de generar los diagramas 
+\emph on
+DRArch
+\emph default
+ vuelve a consultar la base de conocimientos para armar el modelo de diagramas
+ propio de 
+\emph on
+DRArch
+\emph default
+.
  Este último es el que se traduce al modelo 
 \emph on
 FLAbot
@@ -13315,8 +13341,11 @@ No estoy seguro que esta subseccion de suposiciones tenga que ir aca...
 
 \begin_layout Standard
 Si bien los casos de uso se basan en un mismo estilo arquitectónico subyacente
- (framework de invocación implícita), esto no implica que la herramienta
- 
+ (
+\emph on
+framework
+\emph default
+ de invocación implícita), esto no implica que la herramienta 
 \emph on
 DRArch
 \emph default
@@ -13404,7 +13433,11 @@ idad, bla bla)
 \end_layout
 
 \begin_layout Subsubsection
-Framework Bubble
+
+\emph on
+Framework
+\emph default
+ Bubble
 \end_layout
 
 \begin_layout Standard
@@ -13832,7 +13865,11 @@ setup
  fases, como asi también el orden de evaluación de las mismas.
  En esta fase se recolecta toda la información necesaria para que el experto
  en recuperación pueda tener conocimiento suficiente como para poder aceptar
- o rechazar las sugerencias de DRArch.
+ o rechazar las sugerencias de 
+\emph on
+DRArch
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -15149,8 +15186,11 @@ browser
 \emph default
  una solicitud de eliminar a otro usuario del sistema, siempre que sus permisos
  lo permitan.
- Cuando esta solicitud llega al sistema por medio del GateKeeper, se activan
- los agentes encargados de eliminar a un usuario del modelo.
+ Cuando esta solicitud llega al sistema por medio del 
+\family typewriter
+GateKeeper
+\family default
+, se activan los agentes encargados de eliminar a un usuario del modelo.
  Una vez que el agente asignado detecta esta señal, invoca a la tarea de
  eliminación, representada por la responsabilidad UCM 
 \emph on
@@ -15193,6 +15233,58 @@ Response
 \end_layout
 
 \begin_layout Standard
+Otro escenario donde verse la implementación en del 
+\emph on
+framework
+\emph default
+ Bubble es en caso de uso 
+\emph on
+logout
+\emph default
+.
+ Una petición desde el 
+\emph on
+browser
+\emph default
+ se envía para realizar el 
+\emph on
+logout
+\emph default
+ del usuario.
+ El componente 
+\family typewriter
+GateKeeper
+\family default
+ activa los agentes encargados de realizar el 
+\emph on
+logout
+\emph default
+.
+ Cuando el agente detecta la señal, invoca a la tarea 
+\family typewriter
+LogoutTask
+\family default
+ materializada en el componente 
+\family typewriter
+LoginManager
+\family default
+.
+ Luego, se invalida la sesión ejecutando la resposabilidad 
+\family typewriter
+InvalidateSession
+\family default
+ y se envía la respuesta al 
+\emph on
+browser
+\emph default
+ (responsabilidad 
+\family typewriter
+SendResponse
+\family default
+).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -15202,7 +15294,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/RemoveUserUCM.png
-	width 45theight%
+	width 70text%
 
 \end_inset
 
@@ -15210,13 +15302,10 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Este diagrama me parece que es muy escueto, pueden poner al menos 2 casos
- de uso ?
-\end_layout
+\align center
+\begin_inset Graphics
+	filename img/G2LogutUCM.png
+	width 75text%
 
 \end_inset
 
@@ -15233,9 +15322,13 @@ name "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
 
 \end_inset
 
-Diagrama de UCMs original para el caso de uso 
+Diagrama de UCMs original para los casos de uso 
 \emph on
 removeUser
+\emph default
+ y 
+\emph on
+logout
 \emph default
  de la aplicación G2
 \end_layout
@@ -15251,7 +15344,11 @@ removeUser
 \end_layout
 
 \begin_layout Subsection
-Uso de Drarch
+Uso de 
+\emph on
+Drarch
+\emph default
+
 \begin_inset LatexCommand label
 name "sub:G2-Caso-1"
 
@@ -15264,8 +15361,12 @@ name "sub:G2-Caso-1"
 De la misma forma que con Market, se realizará una fase cero, con el objetivo
  de recabar información relevante a la arquitectura de G2 que ayude en la
  definición de reglas.
- Dado que G2 tambien está basado en el framework Bubble, las mismas reglas
- y la misma organización de fases tienen sentido al aplicarlas a G2.
+ Dado que G2 tambien está basado en el 
+\emph on
+framework
+\emph default
+ Bubble, las mismas reglas y la misma organización de fases tienen sentido
+ al aplicarlas a G2.
  
 \end_layout
 
@@ -15277,65 +15378,125 @@ Fase cero
 Al igual que Market la funcionalidad del sistema está organizada alrededor
  de éstas tareas y eventos.
  De las entrevistas con los expertos surgieron consideraciones adicionales
- que  se listarán a continualción junto con las ya definidas para Market:
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Revisar lista de reglas
-\end_layout
-
-\end_inset
-
-
+ que  se listarán a continualción junto con las que se definieron para Market:
 \end_layout
 
 \begin_layout Itemize
-Todo lo que hereda de la clase Task es un componente.
+Todo lo que hereda de la clase 
+\family typewriter
+Task
+\family default
+ es un componente.
  El nombre de la clase es el nombre del componente.
- El método run de la tarea se debe asociar a una responsabilidad con el
- mismo nombre de la tarea.
+ El método 
+\family typewriter
+run
+\family default
+ de la tarea se debe asociar a una responsabilidad con el mismo nombre de
+ la tarea.
 \end_layout
 
 \begin_layout Itemize
 Crear una asociación entre un componente tarea y un evento cuando dentro
  de la implementación de la tarea se encuentra la siguiente porción de código:
- new EventIdCondition( EventHierarchyManager.getEventId(...Event.class)));
+\newline
+
+\family typewriter
+new EventIdCondition( EventHierarchyManager.getEventId(...Event.class)));
 \end_layout
 
 \begin_layout Itemize
 Crear una asociación entre un componente tarea y un evento cuando dentro
- de la ejecucion del método run de la tarea se ejecuta un EventManager.publishEve
-nt(anEvent); donde la clase de anEvent es el nombre del componente evento
- que debe ser asociado.
+ de la ejecucion del método 
+\family typewriter
+run
+\family default
+ de la tarea se ejecuta la siguiente linea: 
+\newline
+ 
+\family typewriter
+EventManager.publishEvent(anEvent);
+\family default
+ 
+\newline
+donde la clase de 
+\family typewriter
+anEvent
+\family default
+ es el nombre del componente evento que debe ser asociado.
  
 \end_layout
 
 \begin_layout Itemize
-Todo lo que hereda de DBView es un componente cuyo nombre es la clase que hereda
- y cada método de DBView es una responsabilidad del componente.
+Todo lo que hereda de 
+\family typewriter
+DBView
+\family default
+ es un componente cuyo nombre es la clase que hereda y cada método de 
+\family typewriter
+DBView
+\family default
+ es una responsabilidad del componente.
 \end_layout
 
 \begin_layout Itemize
-Cada subpaquete de com.delsatgroup.g2.modeladmin.* es un componente cuyo nombre
- es el nombre del paquete, cada uno de estos paquetes contienen 2 paquetes:
- db y task donde cada tarea en task es un componente y esta asociado al
- componente del paquete contenedor.
- Y, dentro del paquete db esta una clase que hereda de DBView cuyos métodos
- son las responsabilidades del componente (paquete contenedor).
+Cada subpaquete de 
+\family typewriter
+com.delsatgroup.g2.modeladmin.*
+\family default
+ es un componente cuyo nombre es el nombre del paquete, cada uno de estos
+ paquetes contienen dos paquetes: 
+\family typewriter
+db
+\family default
+ y 
+\family typewriter
+task
+\family default
+ donde cada tarea en 
+\family typewriter
+task
+\family default
+ es un componente y esta asociado al componente del paquete contenedor.
+ Y, dentro del paquete 
+\family typewriter
+db
+\family default
+ hay una clase que hereda de 
+\family typewriter
+DBView
+\family default
+ cuyos métodos son las responsabilidades del componente (paquete contenedor).
  
 \end_layout
 
 \begin_layout Itemize
-Toda clase que herede de GenericModelAdminCategoryEvent es un componente
- cuyo nombre es obtenido a partir de ejecutar el método staticGetEventName()
+Toda clase que herede de 
+\family typewriter
+GenericModelAdminCategoryEvent
+\family default
+ es un componente cuyo nombre es obtenido a partir de ejecutar el método
  
+\family typewriter
+staticGetEventName()
+\family default
+ .
 \end_layout
 
 \begin_layout Standard
-Basado en estas reglas se planeo dividir el analisis en x fases.
+Basado en estas reglas se planeo dividir el analisis en 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+x
+\end_layout
+
+\end_inset
+
+ fases.
  La primera, la fase de recolección es idéntica a la fase de recolección
- de Market, se utilizo el mismo nivel de profundidad para el log.
+ de Market, se utilizó el mismo nivel de profundidad para el log.
  El objetivo de la fase siguiente es reducir el espacio de solución haciendo
  foco principalemente en aquellas porciones de código relevantes a la recuperaci
 ón.
@@ -15412,7 +15573,7 @@ TraceLog Analizer
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -15895,7 +16056,11 @@ com.delsatgroup.g2.modeladmin.user
 \series default
 para obtener alguna perspectiva mas interesante desde el punto de vista
  de la comparación ya que posee los componentes involucrados en el caso
- de uso utilizado por DRArch para la reconstrucción.
+ de uso utilizado por 
+\emph on
+DRArch
+\emph default
+ para la reconstrucción.
  En ella se puede observar como está organizado el módulo User, las tareas
  que determinan la funcionalidad del mismo, los eventos que disparan dichas
  tareas y el módulo de acceso a datos.
@@ -16218,7 +16383,7 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="5">
+<lyxtabular version="3" rows="12" columns="5">
 <features>
 <column alignment="left" valignment="middle" rightline="true" width="2in">
 <column alignment="center" valignment="middle" leftline="true" width="0.9in">
@@ -16324,7 +16489,11 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-# componentes arquitectónicos reconstruidos (DRArch)
+# componentes arquitectónicos reconstruidos (
+\emph on
+DRArch
+\emph default
+)
 \end_layout
 
 \end_inset
@@ -16465,7 +16634,11 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-# relaciones arquitectónicos reconstruidos (DRArch)
+# relaciones arquitectónicos reconstruidos (
+\emph on
+DRArch
+\emph default
+)
 \end_layout
 
 \end_inset
@@ -16606,7 +16779,11 @@ G2
 \begin_inset Text
 
 \begin_layout Standard
-# responsabilidades arquitectónicos reconstruidos (DRArch)
+# responsabilidades arquitectónicos reconstruidos (
+\emph on
+DRArch
+\emph default
+)
 \end_layout
 
 \end_inset
@@ -16700,7 +16877,11 @@ N/A
 \begin_inset Text
 
 \begin_layout Standard
-Promedio de la exactitud 
+Promedio de la exactitud (
+\emph on
+DRArch
+\emph default
+)
 \end_layout
 
 \end_inset
@@ -16742,6 +16923,53 @@ Promedio de la exactitud
 \end_inset
 </cell>
 </row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Promedio de la exactitud (Structure101)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
 </lyxtabular>
 
 \end_inset
@@ -16762,7 +16990,7 @@ Exactitud por artefactos arquitectónicos del
 \emph on
 DRArch
 \emph default
- en los proyectos Market y en G2.
+ y de Structure101 en los proyectos Market y en G2.
 \end_layout
 
 \end_inset
@@ -17271,6 +17499,8 @@ complejidad ciclomática
 \begin_inset Text
 
 \begin_layout Standard
+
+\emph on
 DRArch
 \end_layout
 
@@ -17289,6 +17519,8 @@ Structure101
 \begin_inset Text
 
 \begin_layout Standard
+
+\emph on
 DRArch
 \end_layout
 
@@ -17307,6 +17539,8 @@ Structure101
 \begin_inset Text
 
 \begin_layout Standard
+
+\emph on
 DRArch
 \end_layout
 
@@ -17627,21 +17861,6 @@ dos.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-El analisis es bastante superficial :-( Un aspecto a tener en cuenta es
- que uds recuperaron solo "algunos casos de uso" que se reconstruyeron como
- UCMs, porque se suponia que eran los relevantes al estudio ...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 En resumen, las pruebas realizadas sobre ambos proyectos revelaron la importante
  asistencia que significa el uso de 
 \emph on
@@ -17661,8 +17880,11 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Podemos afirmar que DRArch puede ser usado para tratar problemas de erosión
- arquitectónica.
+Podemos afirmar que 
+\emph on
+DRArch
+\emph default
+ puede ser usado para tratar problemas de erosión arquitectónica.
  En la figura 
 \begin_inset LatexCommand ref
 reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
@@ -17701,8 +17923,12 @@ Comparando con la herramienta Structure 101, puede notarse que la misma
 
 \begin_layout Standard
 En el proceso de reconstrucción del sistema G2 principalmente, se utilizo
- el conocimiento adquirido para DRArch y las mismas reglas definidas por
- los expertos para modelar los diagramas de arquitectura expuestos anteriormente.
+ el conocimiento adquirido para 
+\emph on
+DRArch
+\emph default
+ y las mismas reglas definidas por los expertos para modelar los diagramas
+ de arquitectura expuestos anteriormente.
  La naturaleza de estas reglas hace que el mapeo entre componentes arquitectónic
 os y artefactos de código (clases) se en muchos casos directo, por lo que
  las mediciones fueron en cierta medida muy acertadas.
@@ -17712,11 +17938,19 @@ os y artefactos de código (clases) se en muchos casos directo, por lo que
 \end_layout
 
 \begin_layout Standard
-Los puntos fuertes de Structure101 en comparación con DRArch son principalmente
- la velocidad de análisis del código fuente, la gran variedad de vistas
- y perspectivas entre las que figura una vista de mediciones de complejidad
- muy util para el análisis y su posible aplicación a la reingenieria.
- El tiempo de setup de la herramienta es cero en comparación con DRArch.
+Los puntos fuertes de Structure101 en comparación con 
+\emph on
+DRArch
+\emph default
+ son principalmente la velocidad de análisis del código fuente, la gran
+ variedad de vistas y perspectivas entre las que figura una vista de mediciones
+ de complejidad muy util para el análisis y su posible aplicación a la reingenie
+ria.
+ El tiempo de setup de la herramienta es cero en comparación con 
+\emph on
+DRArch
+\emph default
+.
  Si bien es necesario invertir el mismo tiempo con los expertos a fin de
  adquirir el conocimiento necesario sobre el sistema, la herramienta no
  necesita definir reglas ni ningun tipo de configuración extra.
@@ -17973,23 +18207,6 @@ deployment
 \end_layout
 
 \begin_layout Itemize
-La información no documenta 
-\emph on
-design rationale.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-what?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
 La información no captura ni casos de uso ni escenarios para atributos de
  calidad.
 \end_layout
@@ -18151,18 +18368,18 @@ key "Fowler"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Todo Ok esta mini-intro a aspectos y refactoring to aspects, pero en ningun
- lado se menciona como DRArch podria ayudar con eso!! Agregar un parrafo
- que diga explicitamente como su enfoque puede ser extendido para esto ...
-\end_layout
-
-\end_inset
-
-
+Crear reglas en la herramienta 
+\emph on
+DRArch
+\emph default
+ para que detecten los 
+\emph on
+concerns
+\emph default
+ dispersados en el código no requiere de muchos cambios.
+ En vez de generar sugerencias que modifiquen el modelo arquitectónico,
+ deberían sugerir si es posible aplicar un enfoque orientado a Aspectos
+ que involucre los artefactos detectados.
 \end_layout
 
 \begin_layout Subsection
@@ -18187,7 +18404,7 @@ DRArch
 \emph default
  para generar 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Ampliar un poco el cómo DRArch podria ayudar aca.
@@ -18202,9 +18419,20 @@ Ampliar un poco el cómo DRArch podria ayudar aca.
 reglas que validen si los patrones de di\SpecialChar \-
 se\SpecialChar \-
 ño están implementados correctamente.
+ También 
+\emph on
+DRArch
+\emph default
+ podría instrumentar la aplicación para que la información dinámica se tenga
+ en cuenta para validar ciertos patrones sobre el conjunto de hechos generados
+ al ejercitar la aplicación.
  El diseño flexible de la herramienta permite realizar esta modificación
  realizando cambios menores en el código fuente.
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Subsection
 Algoritmos
@@ -18254,6 +18482,11 @@ que tipo?
  de filtrado antes de presentar los resultados al arquitecto.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Especialización del enfoque
 \end_layout
@@ -18292,39 +18525,6 @@ Dada la naturaleza del problema y de la solución propuesta, es natural pensar
  es posible que sea de utilidad (falso negativo por parte del arquitecto).
  Un segundo agente puede ser utilizado para construir el conjunto de reglas
  que serán ejecutadas a continuación.
- 
-\end_layout
-
-\begin_layout Standard
-También, es destacable notar que el proceso propuesto por 
-\emph on
-DRArch
-\emph default
- (Top-Down o Bottom-Up) tiene una correspondencia directa con el proceso
- de razonamiento de los agentes.
- Este razonamiento puede ser de encadenamiento progresivo (
-\emph on
-forward chainning
-\emph default
-), considerando todos los datos conocidos y avanzar hasta encontrar la solución,
- como de razonamiento regresivo (
-\emph on
-backward chainning
-\emph default
-), que considera una posible solución y trata de probar su validez.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Lo que estan describiendo aca son los 2 tipos de sistemas de reglas, pero
- no entiendo como se relaciona con el agente ...Si se puede ser mas especifico,
- mejor!!
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
