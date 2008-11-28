@@ -10612,7 +10612,7 @@ reference "fig:Diagrama de Paquetes"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -11059,7 +11059,7 @@ reference "fig:Ejemplo-de-la-representación-del-código-fuente"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -11170,7 +11170,7 @@ QueryEngine
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -11315,7 +11315,7 @@ reference "fig:Modelo-de-reglas"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -11389,7 +11389,7 @@ reference "sec:JQuery"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -11561,7 +11561,7 @@ el nuevo modelo y los incorpora a la base de conocimientos.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -11589,10 +11589,6 @@ Actualización del modelo arquitectónico a partir de cambios en el modelo
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -11661,7 +11657,7 @@ reference "fig:Phase-model"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -11738,7 +11734,7 @@ working-set
 \begin_inset Float algorithm
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -11959,7 +11955,7 @@ Observer.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
 \align center
@@ -12053,12 +12049,13 @@ corregir esta imgen porque se va d ela pagina
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename img/ruleEngine.png
-	width 70theight%
+	width 55theight%
 
 \end_inset
 
@@ -12201,8 +12198,9 @@ DRArch
 \family typewriter
 QueryEngine
 \family default
- para obtener la información arquitectónica con la que construirá el modelo.
- Luego es llevado al modelo 
+ para obtener la información arquitectónica con la que construirá el modelo
+ de diagramas DRArch.
+ Luego este modelo es llevado al modelo 
 \emph on
 FLABot
 \emph default
@@ -12215,21 +12213,112 @@ rendering
 \end_layout
 
 \begin_layout Standard
-La Figura\InsetSpace ~
+Es decir, la entidad es responsable de la generación de vistas.
+ Si las sugerencias de la regla especificada en el ejemplo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Especificando-Reglas"
+
+\end_inset
+
+ son aceptadas, el proceso de reconstrucción genera el diagrama de la figura\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-de-componentes-de-los-Observers"
+
+\end_inset
+
+.
+ Además, una vez que se termine la actualización de las vistas, el arquitecto
+ tiene la posibilidad de modificar los diagramas desde el editor gráfico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/ObserversComponentDiagram.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Esta figura se puede jungar con la figura 5.6 (vista de sugerencias) en una
+ sola figura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-componentes-de-los-Observers"
+
+\end_inset
+
+Diagrama de componentes de los 
+\emph on
+Observers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los tres grandes componentes de la implementación de DRArch son representados
+ en la figura \InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Phase-Management-Interaction"
 
 \end_inset
 
- y la Figura\InsetSpace ~
+.
+ En ésta se detallan cada uno de sus sub-componentes y sus interacciones.
+ Se puede observar como el componente PhaseManager es el mediador, coordina
+ la ejecución de las fases y sus reglas, y también lanza la generación de
+ los diagramas.
+ En el diagrama \InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Diagrama-de-secuencias"
 
 \end_inset
 
- muestran los distintos componentes y sus relaciones.
+ se detalla el orden en el cual estos componentes interactuan ante dos situacion
+es.
+ Por un lado la ejecución de una fase, donde el arquitecto selecciona la
+ fase y lanza su ejecución.
+ El PhaseManager luego ejecuta cada una de las reglas que forman parte de
+ la fase seleccionada.
+ En segundo lugar se muestra como el arquitecto, luego de seleccionar las
+ sugerencias propuestas, actualiza el modelo.
+ Así, se crean nuevos hechos en base a las sugerencias y luego el DiagramManager
+ consulta el nuevo estado del modelo arquitectónico para construir los diagramas.
 \end_layout
 
 \begin_layout Standard
@@ -12251,7 +12340,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Explicar (intepretar) un poco mejor estos diagramas, en vez de mostrarlos
@@ -12306,7 +12395,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Explicar (intepretar) un poco mejor estos diagramas, en vez de mostrarlos
@@ -12332,82 +12421,6 @@ Diagrama de secuencia entre los componentes
 DRArch
 \emph default
  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Es decir, la entidad es responsable de la generación de vistas.
- Si las sugerencias de la regla especificada en el ejemplo\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Especificando-Reglas"
-
-\end_inset
-
- son aceptadas, el proceso de reconstrucción genera el diagrama de la figura\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "fig:Diagrama-de-componentes-de-los-Observers"
-
-\end_inset
-
-.
- A su vez, una vez que se termine la actualización de las vistas, el arquitecto
- tiene la posibilidad de modificar los diagramas desde el editor gráfico.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/ObserversComponentDiagram.jpg
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esta figura se puede jungar con la figura 5.6 (vista de sugerencias) en una
- sola figura
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-de-componentes-de-los-Observers"
-
-\end_inset
-
-Diagrama de componentes de los 
-\emph on
-Observers
 \end_layout
 
 \end_inset
@@ -13137,7 +13150,7 @@ JQuery
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Esta bien resumir, pero no repetir todo lo mismo de nuevo ...
@@ -13155,31 +13168,30 @@ Esta bien resumir, pero no repetir todo lo mismo de nuevo ...
 \emph on
 Eclipse
 \emph default
- fue seleccionado principalmente por ser el entorno de desarrollo Java más
- popular en la actualidad y además, por brindar una arquitectura preparada
- para la integración de herramientas mediante extensiones.
- En segundo lugar, 
-\emph on
-Eclipse
-\emph default
- ofrece un metamodelo del lenguaje Java idóneo para la manipulación de informaci
-ón de código fuente.
- 
+ es el entorno de desarrollo Java más popular en la actualidad y fue seleccionad
+o principalmente por ofrecer un mecanismo de extensión (plugins) que permite
+ la integración de nuevas herramientas.
+ Ofrece tambien un framework para implementar modelos extensibles (EMF)
+ que permite el desarrollo de modelos y crear editores y diagramas en base
+ a estos modelos.
+ Posee tambien un metamodelo del lenguaje Java idóneo para la manipulación
+ del código fuente.
 \end_layout
 
 \begin_layout Standard
-
+La selección de 
 \emph on
-JQuery
+JQuery 
 \emph default
- es quien utiliza las ventajas de Eclipse sobre el metamodelo del lenguaje
- Java para realizar la transformación del código fuente a una representación
- de hechos al estilo 
-\emph on
-ProLog
-\emph default
-.
- 
+se realizó en base a varios factores.
+ En primer lugar y más importante, gran parte de las tareas necesarias por
+ el enfoque DRArch son cubiertas por esta herramienta.
+ La definición del lenguaje lógico y el motor de inferencias estan basados
+ en TyRuBa que forman parte de la JQuery.
+ El parseo de código fuente junto con la generación de hechos lógicos también
+ es provista por la herramienta.
+ En segundo lugar, JQuery ofrece una vista en la cual es posible "ensayar"
+ consultas que luego formarán parte de las reglas DRArch.
 \end_layout
 
 \begin_layout Standard
@@ -13233,7 +13245,7 @@ JQuery
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Para tal propósito se creó un editor utilizando las ventajas que ofrece
@@ -13350,76 +13362,6 @@ reference "sec:Análisis-de-resultados"
 \end_inset
 
 , se comparan los resultados de ambos mediante un breve análisis.
-\end_layout
-
-\begin_layout Description
-Suposiciones
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Description
-No estoy seguro que esta subseccion de suposiciones tenga que ir aca...
- Dado que algunos de los comentarios parecen "postmortem" luego de realizar
- los experimentos, se podria mover la subseccion a la parte de analisis
- (del final) Otra alternativa es mover una version resumida de esto antes
- del parrafo anterior (ver flecha) Otra alternativa es juntar la suposicion
- de los estilos arquitectonicos como aclaracion luego de una subseccion
- que habla del framework Bubble aca (y luego si introducir el ejemplo del
- Market)
-\end_layout
-
-\begin_layout Description
---->para mi va al final
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Si bien los casos de uso se basan en un mismo estilo arquitectónico subyacente
- (
-\emph on
-framework
-\emph default
- de invocación implícita), esto no implica que la herramienta 
-\emph on
-DRArch
-\emph default
- sea aplicable sólo a este tipo de estilos arquitectónicos, sino que soporta
- tambien otros estilos 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Andres: tales como....
-\end_layout
-
-\end_inset
-
-.
- Los casos de estudio seleccionados son sistemas donde la organización estática
- (estructura de paquetes) no tiene un rol relevante en la arquitectura.
- Sin embargo, la naturaleza dinámica de estos sistemas, los hacen atractivos
- para poner a prueba a 
-\emph on
-DRArch
-\emph default
-.
-\end_layout
-
-\begin_layout Standard
-El contar con los expertos que desarrollaron el sistema permitió obtener
- un panorama muy acertado de los elementos arquitectónicos que se deberían
- construir.
- Este hecho permitió que la documentación original del sistema fuera tenida
- en cuenta solamente para realizar comparaciones y asi poder medir la eficiencia
- de la herramienta.
- 
 \end_layout
 
 \begin_layout Standard
@@ -15525,17 +15467,7 @@ staticGetEventName()
 \end_layout
 
 \begin_layout Standard
-Basado en estas reglas se planeo dividir el analisis en 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-x
-\end_layout
-
-\end_inset
-
- fases.
+Basado en estas reglas se planeo dividir el analisis en cinco fases.
  La primera, la fase de recolección es idéntica a la fase de recolección
  de Market, se utilizó el mismo nivel de profundidad para el log.
  El objetivo de la fase siguiente es reducir el espacio de solución haciendo
@@ -18001,6 +17933,94 @@ DRArch
 \begin_inset Note Note
 status collapsed
 
+\begin_layout Description
+Suposiciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Description
+No estoy seguro que esta subseccion de suposiciones tenga que ir aca...
+ Dado que algunos de los comentarios parecen "postmortem" luego de realizar
+ los experimentos, se podria mover la subseccion a la parte de analisis
+ (del final) Otra alternativa es mover una version resumida de esto antes
+ del parrafo anterior (ver flecha) Otra alternativa es juntar la suposicion
+ de los estilos arquitectonicos como aclaracion luego de una subseccion
+ que habla del framework Bubble aca (y luego si introducir el ejemplo del
+ Market)
+\end_layout
+
+\begin_layout Description
+--->para mi va al final
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si bien los casos de uso se basan en un mismo estilo arquitectónico subyacente
+ (
+\emph on
+framework
+\emph default
+ de invocación implícita), esto no implica que la herramienta 
+\emph on
+DRArch
+\emph default
+ sea aplicable sólo a este tipo de estilos arquitectónicos.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+, sino que soporta tambien otros estilos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+Andres: tales como....
+\end_layout
+
+\end_inset
+
+.
+ Los casos de estudio seleccionados son sistemas donde la organización estática
+ (estructura de paquetes) no tiene un rol relevante en la arquitectura.
+ Sin embargo, la naturaleza dinámica de estos sistemas, los hacen atractivos
+ para poner a prueba a 
+\emph on
+DRArch
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+El contar con los expertos que desarrollaron el sistema permitió obtener
+ un panorama muy acertado de los elementos arquitectónicos que se deberían
+ construir.
+ Este hecho permitió que la documentación original del sistema fuera tenida
+ en cuenta solamente para realizar comparaciones y asi poder medir la eficiencia
+ de la herramienta.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Standard
 El analisis que hacen es muy light y "castigado" para Structure101 :-( Los
  problemas de erosion arquitectonica tambien los puede tratar DRArch (porque
@@ -18124,7 +18144,7 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 No entiendo que agrega este parrafo (que es redundante con el 1er parrafo
@@ -18136,6 +18156,11 @@ No entiendo que agrega este parrafo (que es redundante con el 1er parrafo
 
 \end_inset
 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
 Adicionalmente, se puede incorporar al análisis información del contexto,
  información aportada por la experiencia del arquitecto, información de
  los 
@@ -18144,6 +18169,11 @@ stackeholders
 \emph default
  y cualquier otro tipo de información, ya que la representación es lo suficiente
 mente flexible como para traducir este tipo de información.
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
 status collapsed
 
@@ -18569,8 +18599,21 @@ Dada la naturaleza del problema y de la solución propuesta, es natural pensar
 \end_layout
 
 \begin_layout Subsection
-Mapeo de paths con casos de test
+Ejercitación de la herramienta con casos de test
 \end_layout
+
+\begin_layout Standard
+Un aspecto debil de DRArch es el hecho de ejecutar manualmente los casos
+ de uso para ejercitar la herramienta con el propósito de loguear la información
+ de ejecución.
+\end_layout
+
+\begin_layout Standard
+Un trabajo futuro para mitigar este hecho es el de utilizar los casos de
+ test, más específicamente los test funcionales automatizados, para automátizar
+ el proceso de extracción de la información dinámica.
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
 Una vez que la aplicación que está siendo analizada se ha puesto en ejecución,
@@ -18609,6 +18652,11 @@ path
 \emph default
 , sería posible la creación de los logs de ejecución necesarios sin intervención
  del usuario.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
