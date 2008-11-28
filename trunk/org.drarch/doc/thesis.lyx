@@ -10468,39 +10468,73 @@ key "Hayes-Roth1985"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+En el estilo arquitectónico 
+\series bold
+Blackboard 
+\series default
+se utilizan tres tipos de componentes: blackboard, fuente de conocimiento
+ y sub-sistema de control (los mismos pueden observarse en la figura 
+\begin_inset LatexCommand ref
+reference "fig:Modelo-Blackboard-DRArch"
+
+\end_inset
+
+).
+ El blackboard, es un repositorio de datos, la base de conocimientos.
+ Las fuentes de conocimiento son los expertos, los especialistas en resolver
+ un aspecto del problema global.
+ Cada fuente de conocimiento implementa una regla o algoritmo que colabora
+ para obtener una solución parcial.
+ Cuando una fuente de conocimiento es ejecutada el estado del blackboard
+ es actualizado con las trasnformaciones propias de la fuente.
+ El subsistema de control es el encargado de coordinar la actividad de las
+ fuentes de conocimiento.
+ El control monitorea los cambios en el blackboard y decide que fuente de
+ conocimiento debe ejecutarse.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Standard
-Esto repite lo mostrado (mas generalmente) para el Blackboard, asi que de
- alguna forma "eliminen la redundancia" [desde esta nota hasta la prox.]
+\align center
+\begin_inset Graphics
+	filename img/Modelo Blackboard Drarch.png
+	width 55text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Modelo-Blackboard-DRArch"
+
+\end_inset
+
+Modelo Blackboard utilizado por DRArch.
 \end_layout
 
 \end_inset
 
-En la base de conocimiento las fuentes de conocimiento son ejecutadas automática
-mente cuando sus precondiciones coinciden con el estado de la base de conocimien
-to y el estado de este es actualizado con las transformaciones propias de
- cada fuente.
- Dado que proceso de recuperación arquitectónica descripto por 
-\emph on
-DRArch
-\emph default
- es un proceso guiado, es el arquitecto el responsable de seleccionar qué
- fuente de conocimiento se va a ejecutar y de decidir cuáles son las transformac
-iones que actualizaran el estado del modelo arquitectónico bajo análisis.
-\begin_inset Note Note
-status open
 
-\begin_layout Standard
-Una cosa que no queda clara de su modelo de Blackboard es quien juega el
- rol de Control component para las KnowledgeSources
 \end_layout
 
 \end_inset
 
- La base de conocimiento esta determinada por una base de hechos lógicos
- estilo 
+
+\end_layout
+
+\begin_layout Standard
+La base de conocimiento (Blackboard) esta determinada por una base de hechos
+ lógicos estilo 
 \emph on
 Prolog
 \emph default
@@ -10528,8 +10562,25 @@ y una serie de hechos que determinan la actualización del repositorio y
 \end_layout
 
 \begin_layout Standard
-Por último, el modelo de fases es responsable de guiar el proceso y coordinar
- la interoperabilidad entre los módulos.
+Dado que el proceso de recuperación arquitectónica descripto por 
+\emph on
+DRArch
+\emph default
+ es un proceso guiado, es el arquitecto el responsable de seleccionar qué
+ fuente de conocimiento se va a ejecutar y de decidir cuáles son las transformac
+iones que actualizaran el estado del modelo arquitectónico bajo análisis.
+ El modelo de fases es responsable de guiar el proceso y coordinar la interopera
+bilidad entre los módulos.
+ El arquitecto asistido por este componente de gestión, conforman el componente
+ de control del modelo.
+ Este mapeo del modelo Blackboard a los componentes DRArch se puede visualizar
+ en la figura 
+\begin_inset LatexCommand ref
+reference "fig:Modelo-Blackboard-DRArch"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -10808,52 +10859,49 @@ wizards
 \end_layout
 
 \begin_layout Standard
-En el diseño del componente Phase Engine se detectaron dos tipos de fases:
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Idem, esto viene "sin anestesia" y no se entiende bien porque se comenta
- aca...
- Please arreglar
-\end_layout
-
-\end_inset
-
-Interactivas y No Interactivas (acepta automáticamente todas las sugerencias).
+Durante el uso de DRArch puede llegarse a un punto donde la especificación
+ de la regla es tan precisa que siempre serán aceptadas todas las sugerencias
+ que el asistente proponga.
+ Es engorroso desde el punto de vista del usuario final tener que aceptar
+ todas y cada una de estas sugerencias.
+ Para evitar esto, se pueden agrupar estas reglas en fases que no requieran
+ la interacción del usuario.
+ Así, en el diseño del componente Phase Engine se modelaron dos tipos de
+ fases: Interactivas y No Interactivas (acepta todas las sugerencias elevando
+ el nivel de automatización del proceso).
  Para orquestar la lógica del motor de fases, se utilizó una entidad 
 \family typewriter
 PhaseManager
 \family default
  responsable de coordinar y dirigir el estado de cada fase.
- En este componente se incluye la generación y modelado de diagramas.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Si ya introdujeron FLABot antes, esto se puede explicar mejor aca
-\end_layout
-
-\end_inset
-
-Esto es realizado por 
+ En este componente se incluye la generación y modelado de diagramas, acción
+ que es llevada a cabo mediante el modelo de diagramas de 
 \emph on
-Flabot 
+Flabot
 \emph default
-ya que posee unos editores gráficos para diagramas de Componentes y de UCMs
- y expone un modelo fácilmente manejable.
- El modelo es representado por un esquema XML.
- Se traduce la información representada en hechos 
-\emph on
-Prolog
-\emph default
- al modelo 
+.
+ Este modelo es expuesto mediante un API lo que facilitó su integración.
+ Al momento de generar los diagramas DRArch vuelve a consultar la base de
+ conocimientos para armar el modelo de diagramas propio de DRArch.
+ Este último es el que se traduce al modelo 
 \emph on
 FLAbot
 \emph default
 .
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+podemos relacionarlo con el req de cambio de 
+\series bold
+dibujador
+\series default
+ de diagramas
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
