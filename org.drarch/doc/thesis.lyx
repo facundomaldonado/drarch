@@ -150,7 +150,7 @@ La Reconstrucción de Arquitecturas de Software es una técnica para generar
 \begin_layout Standard
 En este trabajo, proponemos un enfoque semi-automatizado para asistir a
  los desarrolladores en tareas de reconstrucción de arquitecturas de software.
- El enfoque es acopañado por una herramienta de soporte llamada 
+ El enfoque es acompañado por una herramienta de soporte llamada 
 \emph on
 DRArch
 \emph default
@@ -369,7 +369,7 @@ Aca poner algo como..
  actividades de este proceso en la arquitectura del sistema.
  A este enfoque se lo conoce como desarrollo centrado en la arquitectura
  (refs)..
- Sin embargo, en la mayoria de los sistemas la documentacion es escasa o
+ Sin embargo, en la mayoría de los sistemas la documentación es escasa o
  inexistente..
 \end_layout
 
@@ -506,12 +506,12 @@ status collapsed
 
 \begin_layout Standard
 [Y] [andres] Hay un poco de confusion (al menos en el texto) entre lo que
- es "documentacion arquitectonica" y "reconstruccion de arquitecturas",
- y me gustaria que esto este bien claro para el lector "medio".
+ es "documentacion arquitectónica" y "reconstrucción de arquitecturas",
+ y me gustaría que esto este bien claro para el lector "medio".
 \end_layout
 
 \begin_layout Standard
-Obvio que en algun momento la necesidad de documentar lleva a reconstruccion,
+Obvio que en algún momento la necesidad de documentar lleva a reconstruccion,
  pero en general son 2 cosas separadas.
  Uno puede (re-)documentar sin reconstruir, y puede reconstruir sin estar
  interesado en la documentacion ...
@@ -519,7 +519,7 @@ Obvio que en algun momento la necesidad de documentar lleva a reconstruccion,
 
 \begin_layout Standard
 Otro comentario es que Reconstruccion es una forma de chequear Architecture
- Conformance, pero no es la unica forma ...
+ Conformance, pero no es la única forma ...
 \end_layout
 
 \end_inset
@@ -534,7 +534,7 @@ La documentación de una arquitectura es fundamental para el desarrollo de
  La documentación permite que el sistema se diseñe, implemente, pruebe,
  instale y mantenga de acuerdo a las prescripciones arquitectónicas.
  A continuación, se discuten los principales factores que motivan la reconstrucc
-ion de arquitecturas para documentar o re-documentar la arquitectura de
+ión de arquitecturas para documentar o re-documentar la arquitectura de
  un sistema.
 \end_layout
 
@@ -607,7 +607,10 @@ key "Garlan1996"
 
 \emph default
  permite ciertos análisis de performance para predecir la latencia del sistema,
- pero una implementación equivocada de la estructura de pipes y filters
+ pero una implementación equivocada de la estructura de pipes y 
+\emph on
+filters
+\emph default
  puede invalidar dicho análisis, y conducir a problemas con la latencia
  final del sistema.
  
@@ -705,11 +708,11 @@ reference "fig:Enfoque-Extraer-Abstraer-Presentar"
  En todos los casos, este proceso es asistido por herramientas, las cuáles
  extraen información del sistema (ej.
  código fuente) y permiten ir tratándola a distintos niveles de abstracción.
- El principal actor es un experto en ingenieria reversa que utiliza una
+ El principal actor es un experto en ingeniería reversa que utiliza una
  o más herramientas durante el proceso.
- La entrada del proceso no es solamente codigo fuente, sino que tambien
+ La entrada del proceso no es solamente código fuente, sino que también
  abarca información textual, información dinámica, información sobre la
- organización física, histórica y humana como asi tambien la experiencia
+ organización física, histórica y humana como así también la experiencia
  de lo las personas involucradas 
 \begin_inset LatexCommand cite
 key "Verjus2007"
@@ -777,7 +780,7 @@ key "SAIP"
 \end_inset
 
 .
- La reconstruccion es definida como un proceso interpretativo, interactivo
+ La reconstrucción es definida como un proceso interpretativo, interactivo
  e iterativo que involucra varias actividades.
  La reconstrucción no es un proceso totalmente automático, sino que requiere
  de la capacidad y de la atención del experto en ingeniería reversa y del
@@ -790,8 +793,8 @@ La ingeniería de reversa
 status collapsed
 
 \begin_layout Standard
-Ingenieria reversa de la arquitectura lo usan como sinonimo de reconstruccion?
- Si es asi, aclarar porque aca confunde un poco ...
+Ingeniería reversa de la arquitectura lo usan como sinónimo de reconstrucción?
+ Si es así, aclarar porque acá confunde un poco ...
 \end_layout
 
 \end_inset
@@ -817,7 +820,7 @@ El problema de recuperar la documentación arquitectónica
 status collapsed
 
 \begin_layout Standard
-[andres] que los parrafos que siguen hablen del problema especifico
+[andres] que los párrafos que siguen hablen del problema especifico
 \end_layout
 
 \end_inset
@@ -973,7 +976,7 @@ key "AMYOT-SAM02"
 , hay casos en los que resulta casi imposible determinar el comportamiento
  real de la aplicación.
  Se puede mencionar por ejemplo casos en los que se explota el polimorfismo
- de la orientación a objetos y las instanciaciónes se dan en tiempo de ejecución.
+ de la orientación a objetos y las instanciaciones se dan en tiempo de ejecución.
 \end_layout
 
 \begin_layout Standard
@@ -1161,14 +1164,14 @@ reference "cha:Casos-de-Estudio"
 \emph on
 framework
 \emph default
- de invocación implícita via eventos (nota: el proyecto G2 se basa en el
+ de invocación implícita vía eventos (nota: el proyecto G2 se basa en el
  mismo 
 \emph on
 framework
 \emph default
 ).
  A su ves, ambos casos de estudio se reconstruyeron con la herramienta Structure
- 101 para poder compar los resutados obtenidos.
+ 101 para poder comparar los resultados obtenidos.
  Luego, se presenta el análisis de los resultados de estos casos de estudio.
 \end_layout
 
@@ -3277,44 +3280,7 @@ UserModelObservable
 Observers
 \emph default
 .
- Ésto causa la activación de la respons
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-Hacer referencia a cada parte de la notacion(es decir, nombre de los roles
- y porque son asi ..
- como userModel, userInterfaceView...etc...)..
- el amarillo es un poco fuerte..
- para el resto de los colores..
- por ahi ponerlos sin color de fondo a los comentarios 
-\end_layout
-
-\begin_layout Standard
-El ejemplo parece demasiado simple..falta algun componente que efectue el
- inicio del cambio..
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] LAs figuras tiene que aparece lo mas cerca de la ref en el texto cuando
- generen el pdf..
- vi que hay bastante diferencia entre el parrafo que la referencia y donde
- aparece la figura...
-\end_layout
-
-\end_inset
-
-abilidad 
+ Ésto causa la activación de la responsabilidad 
 \emph on
 update
 \emph default
@@ -3532,108 +3498,13 @@ ir
 \emph on
 clusters
 \emph default
- o agregaciones automáticamente, y tambien aquellos que implementan técnicas
- diversas como mineria de datos ("
+ o agregaciones automáticamente, y también aquellos que implementan técnicas
+ diversas como minería de datos ("
 \emph on
 data mining
 \emph default
 "), lenguajes de descripción arquitectónica (ADLs), redes de Petri o matrices
  de dependencias (DSM).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-X Esta clasificación es de ustedes o la sacaron de algún lado.??
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Utilización de otras técnicaCUales?? en que categoria caen..
- 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Estan clasificando desde el inicio entre estructura y comportamiento y ahora
- las clasifican de otra manera...
-\end_layout
-
-\begin_layout Standard
-por lo menos una distincion deberia ir a ca..
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-For each tool/approach:
-\end_layout
-
-\begin_layout Standard
-* what it does input language(s) (e.g., is it source code only or does it
- include things like makefiles?) 
-\end_layout
-
-\begin_layout Standard
-* output 
-\end_layout
-
-\begin_layout Standard
-** what views does it (help) build; code/module views or runtime/C&C views?
- 
-\end_layout
-
-\begin_layout Standard
-** what are the elements and relationships of these views 
-\end_layout
-
-\begin_layout Standard
-** can the output be externalized (other than screen shots)? any flexibility/cus
-tomizability in format? 
-\end_layout
-
-\begin_layout Standard
-* does it support abstraction (i.e., the developer can define architectural
- concepts and their mapping to code constructs)? 
-\end_layout
-
-\begin_layout Standard
-* use examples
-\end_layout
-
-\begin_layout Standard
-**published case studies 
-\end_layout
-
-\begin_layout Standard
-**anything that hints at scope capabilities or usability 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Paragraph
@@ -3749,14 +3620,17 @@ PBS esta compuesto por una serie de herramientas que ayudan en la construcción
 \end_layout
 
 \begin_layout Standard
-Extractores: Los extractores parsean el código fuente y generan lo hechos
- co\SpecialChar \-
+Extractores: Los extractores realizan el 
+\emph on
+parsing
+\emph default
+ el código fuente y generan lo hechos co\SpecialChar \-
 rres\SpecialChar \-
 pon\SpecialChar \-
 dien\SpecialChar \-
 tes.
  Los hechos facilitan la construcción del grafo de dependencias.
- Existen extractores para algunos lenguajes como c y pascal.
+ Existen extractores para algunos lenguajes como C y Pascal.
 \end_layout
 
 \begin_layout Standard
@@ -3769,21 +3643,28 @@ Manipuladores de hechos: Los hechos producidos por los extractores (o por
 \end_layout
 
 \begin_layout Standard
-Diseñador de diagramas: Los grafos tienen atributos que determinan el "
+Diseñador de diagramas: Los grafos tienen atributos que determinan el 
 \emph on
 layout
 \emph default
-" del mismo.
+ del mismo.
  Estos dan la posición, tamaño y colores de los grafos para poder dibujarlos
  como diagramas.
  La herramienta llamada Layouter lee los hechos que representan el grafo
- y les agrega atributos de layout.
+ y les agrega atributos de 
+\emph on
+layout
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
 Visualizador de diagramas: Hay una herramienta llamada LS (Landscape) Viewer
- que lee grafos con sus atributos de layout y lo muestra como un diagrama
- en la pantalla.
+ que lee grafos con sus atributos de 
+\emph on
+layout
+\emph default
+ y lo muestra como un diagrama en la pantalla.
 \end_layout
 
 \begin_layout Standard
@@ -3800,7 +3681,11 @@ tos y referencias a datos)
  Mediante la comparación con los hechos anteriores con los nuevos, se detectan
  nuevos archivos, llamados "huerfanos".
  Un algoritmo los asigna automáticamente a un subsistema y también provee
- de información de layout para la actualización de los diagramas.
+ de información de 
+\emph on
+layout
+\emph default
+ para la actualización de los diagramas.
 \end_layout
 
 \begin_layout Paragraph
@@ -3848,8 +3733,11 @@ rigiedit
 
 \begin_layout Standard
 El nuevo gráfico creado es más simple, está organizado jerárquicamente,
- se puede navegar, analizar y presentar utilizando diversos layouts de forma
- automática o guiada por el usuario.
+ se puede navegar, analizar y presentar utilizando diversos 
+\emph on
+layouts
+\emph default
+ de forma automática o guiada por el usuario.
 \end_layout
 
 \begin_layout Standard
@@ -3934,7 +3822,7 @@ s niveles de abstracción.
 \end_layout
 
 \begin_layout Standard
-Este enfoque presta especial atencion a la "metáfora" visual utilizada para
+Este enfoque presta especial atención a la "metáfora" visual utilizada para
  explorar e investigar el código, por ejemplo, utilizando distintos tipos
  de vistas jerárquicas y distintos tipos de zoom (normal, semántico, fish_eye).
  Cuando es usado para reconstrucción, la he\SpecialChar \-
@@ -4023,7 +3911,11 @@ task
 \emph on
 spawning
 \emph default
-", pipe 
+", 
+\emph on
+pipe
+\emph default
+ 
 \emph on
 and
 \emph default
@@ -4110,7 +4002,11 @@ ente.
  Es una colección de he\SpecialChar \-
 rra\SpecialChar \-
 mien\SpecialChar \-
-tas en la forma de workbench.
+tas en la forma de 
+\emph on
+workbench
+\emph default
+.
  Entre estas he\SpecialChar \-
 rra\SpecialChar \-
 mien\SpecialChar \-
@@ -4191,7 +4087,10 @@ Riva
 
 \begin_layout Standard
 Claudio Riva y Yang Yaojin desarrollaron un proceso de reconstrucción de
- arquitecturas y apoyado por varias herramientas y lenguajes (Rigi, scripts
+ arquitecturas y apoyado por varias herramientas y lenguajes (Rigi, 
+\emph on
+scripts
+\emph default
  Perl, Prolog).
  El proceso consta de cuatro pasos, que se aplican iterativamente con el
  fin de extraer vistas cada vez más centradas en la arquitectura de un sistema.
@@ -4328,7 +4227,7 @@ Arquitectura de la herramienta DiscoTect
 La red de Petri coloreada se obtiene como resultado de la compilación de
  una especiﬁcación escrita en un lenguaje especial llamado DiscoStep.
  DiscoStep fue diseñado para traducir la ejecución de instrucciones Java
- a eventos arquitectonicamente signiﬁcativos, considerando que la aridad
+ a eventos arquitectónicamente signiﬁcativos, considerando que la aridad
  de esta relación entre ambos tipos es n-m y que normalmente los eventos
  de alto nivel pueden ocurrir simultáneamente cuando el sistema bajo análisis
  posee varios procesos o hilos de ejecución concurrentes.
@@ -4723,8 +4622,11 @@ DSM permite a los desarrolladores comunicar la arquitectura de productos
  de futuras revisiones y evaluar los riesgos asociados con las tareas de
  desarrollo.
  Lattix LDM realiza un análisis de dependencias a partir de la estructura
- de paquetes del sistema en el caso de java, namespaces en .Net y en la estructur
-a del sistema de archivos para el caso de C/C++.
+ de paquetes del sistema en el caso de java, 
+\emph on
+namespaces
+\emph default
+ en .Net y en la estructura del sistema de archivos para el caso de C/C++.
 \end_layout
 
 \begin_layout Standard
@@ -4743,7 +4645,11 @@ reference "fig:Comparación-Ant"
 
 \end_inset
 
- muestra el modelo UML de Ant, una herramienta para hacer builds de aplicaciones.
+ muestra el modelo UML de Ant, una herramienta para hacer 
+\emph on
+builds
+\emph default
+ de aplicaciones.
  En ella se puede ver el primer problema: la escalabilidad.
  Mientras UML es excelente para mostrar las relaciones entre clases, grandes
  proyectos rápidamente rebalsan este tipo de representaciones gráficas al
@@ -4808,7 +4714,11 @@ Structure 101
 \begin_layout Standard
 Structure101, desarrollado por Headway Software Technologies, es una herramienta
  versátil de análisis estático de código orientada al análisis de estructura
- (diseño, arquitectura y packaging) del código java, C/C++ y Ada.
+ (diseño, arquitectura y 
+\emph on
+packaging
+\emph default
+) del código java, C/C++ y Ada.
  Structure 101 evalúa el código desde varias perspectivas.
  Dispone de una perspectiva cualitativa, en la que mejora el entendimiento
  de la estructura del código.
@@ -10910,20 +10820,6 @@ DRArch
 FLAbot
 \emph default
 .
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-podemos relacionarlo con el req de cambio de 
-\series bold
-dibujador
-\series default
- de diagramas
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -11176,7 +11072,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename img/QueryEngineAdapter.png
-	scale 70
+	scale 45
 
 \end_inset
 
@@ -11937,7 +11833,7 @@ checkboxes
 \emph on
 Observer-Observable
 \emph default
-, en la figura\InsetSpace ~
+, en la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Vista-de-sugerencias"
@@ -11977,7 +11873,10 @@ name "fig:Vista-de-sugerencias"
 
 \end_inset
 
-Vista de sugerencias para una fase interactiva
+Diagrama de componentes y vista de sugerencias para una fase interactiva
+ para el ejemplo 
+\emph on
+Observer-Observable
 \end_layout
 
 \end_inset
@@ -12076,10 +11975,6 @@ Rule Manager
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -12689,18 +12584,10 @@ El nivel de profundidad en el que se va a guardar la información.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-como se usan los mappings para construir el log (configuracion de los puntos
- a instrumentar)??? [sig.
- parrafo]
-\end_layout
-
-\end_inset
-
-
+Para crear el log de ejecución, es necesario indicar qué es lo que se va
+ a instrumentar en la aplicación.
+ Esto se realiza por medio del mapeo entre los artefactos arquitectónicos
+ y el código fuente, es decir, entre responsabilidades y métodos.
 \end_layout
 
 \begin_layout Standard
@@ -13968,10 +13855,10 @@ Como les puse antes, esto require que previamente se haya explicado el protocolo
  hay un único punto de entrada al sistema que ejecuta todos los casos de
  uso sin interface de gráfica (modo consola) y sin necesidad de utilizar
  datos de entrada.
- En la figura\InsetSpace ~
+ En la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "fig:Configuración-del-log"
+reference "fig:Configuración-de-ejecución"
 
 \end_inset
 
@@ -13995,51 +13882,6 @@ reference "ite:Asociación-Tarea-Evento-2"
 
 ) en las que se necesita acceder a información de los objetos contenidos
  en otra instancia.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/EclipseRunFlabotConfiguration.png
-	width 60theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Configuración-del-log"
-
-\end_inset
-
-Configuración para la generación del log de ejecución en 
-\emph on
-Eclipse
-\emph default
- utilizando 
-\emph on
-FLAbot.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -15510,7 +15352,7 @@ removeUser
 \end_layout
 
 \begin_layout Standard
-La figura\InsetSpace ~
+La Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Instrumentación-de-la"
@@ -15791,7 +15633,8 @@ s de activar los agentes que ejecutan las tareas y de abstraer el acceso
 \end_layout
 
 \begin_layout Standard
-Las figuras 
+Las figuras\InsetSpace ~
+
 \begin_inset LatexCommand ref
 reference "fig:Diagrama-de-componentes-DRArch-remove-user"
 
@@ -15815,7 +15658,7 @@ removeUser
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -15875,7 +15718,7 @@ removeUser
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -15981,7 +15824,7 @@ reference "fig:G2-Structure101"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -16044,12 +15887,12 @@ DRArch
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename img/G2-Layers-User.png
-	width 50text%
+	width 100text%
 
 \end_inset
 
@@ -16233,12 +16076,13 @@ La precisión, en este ejemplo, es el tamaño del grupo de flechas.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename img/FormulaExactitud.png
+	width 50text%
 
 \end_inset
 
@@ -16326,9 +16170,13 @@ reference "tab:Eficacia-del-DRArch-parcial"
 \end_inset
 
  muestra la exactitud de los artefactos arquitectónicos (componentes, relaciones
- y responsabilidades) del Market y del G2.
- La cantidad de artefactos arquitectónicos esperados se calculó teniendo
- en cuenta la documentación original.
+ y responsabilidades) del Market y del G2 reconstruidos con 
+\emph on
+DRArch
+\emph default
+ y con Structure 101.
+ La cantidad de artefactos arquitectónicos que se deben reconstruir se calculó
+ teniendo en cuenta la documentación original.
  Por ejemplo, en uno de los diagramas que describe el 
 \emph on
 framework
@@ -16910,7 +16758,7 @@ Promedio de la exactitud (Structure101)
 \begin_inset Text
 
 \begin_layout Standard
-
+0,58
 \end_layout
 
 \end_inset
@@ -16919,7 +16767,7 @@ Promedio de la exactitud (Structure101)
 \begin_inset Text
 
 \begin_layout Standard
-
+0,49
 \end_layout
 
 \end_inset
@@ -16928,7 +16776,7 @@ Promedio de la exactitud (Structure101)
 \begin_inset Text
 
 \begin_layout Standard
-
+0,66
 \end_layout
 
 \end_inset
@@ -16937,7 +16785,7 @@ Promedio de la exactitud (Structure101)
 \begin_inset Text
 
 \begin_layout Standard
-
+0,41
 \end_layout
 
 \end_inset
@@ -16973,7 +16821,7 @@ DRArch
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 La pregunta sobre que tan fair es el analisis para Structure101: - Porque
@@ -17017,7 +16865,7 @@ name "fig:Eficacia-entre-los-artefactos"
 
 \end_inset
 
-Eficiencia entre los distintos artefactos arquitectónicos para los proyectos
+Exactitud entre los distintos artefactos arquitectónicos para los proyectos
  Market y G2.
 \end_layout
 
@@ -17082,7 +16930,7 @@ Mejora de la eficiencia luego de la incorporación de nuevas reglas.
 
 \begin_layout Standard
 Para poder darnos cuentas del impacto que tiene la complejidad ciclomática
- de los proyectos en la eficiencia del 
+ de los proyectos en la exactitud del 
 \emph on
 DRArch
 \emph default
@@ -17106,9 +16954,12 @@ reference "fig:Eficiencia-vs.-Complejidad"
 \end_inset
 
  se pueden observar estos índices.
+ La cantidad de artefactos arquitectónicos que se deben reconstruir se calculó
+ realizando la suma de la cantidad de compnentes, relaciones y responsabilidades
+ que se deben reconstruir.
  La primer conclusión que puede derivarse de estos valores es que cuanto
- menos complejidad tenga el sistema, más eficiente es la reconstrucción
- arquitectónica que realiza la herramienta 
+ menos complejidad tenga el sistema, mas exacta es la reconstrucción arquitectón
+ica que realiza la herramienta 
 \emph on
 DRArch
 \emph default
@@ -17126,7 +16977,7 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="7">
 <features>
-<column alignment="left" valignment="top" rightline="true" width="0">
+<column alignment="left" valignment="top" rightline="true" width="1in">
 <column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" width="0">
@@ -17668,7 +17519,7 @@ N/A
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Mismos comentarios que para Tabla 6.1 arriba: - como se determino lo que
@@ -17864,17 +17715,34 @@ reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
 
 \end_inset
 
- extraida de la documentación de G2 podemos ver que la responsabilidad ListUsers
- se ejecuta y el path de ejecución continua hasta el componente ResponseGenerato
-r .
+ extraida de la documentación de G2 podemos ver que la responsabilidad 
+\family typewriter
+ListUsers
+\family default
+ se ejecuta y el path de ejecución continua hasta el componente 
+\family typewriter
+ResponseGenerator
+\family default
+ .
  En la vista reconstruida 
 \begin_inset LatexCommand ref
 reference "fig:Diagrama-UCM-DRArch-remove-user"
 
 \end_inset
 
-, se observa que luego de ejecutarse la tarea ListUserTask el path de ejecución
- vuelve al componente DBView que ejecuta la consulta en la base de datos.
+, se observa que luego de ejecutarse la tarea 
+\family typewriter
+ListUserTask
+\family default
+ el 
+\emph on
+path
+\emph default
+ de ejecución vuelve al componente 
+\noun on
+DBView
+\noun default
+ que ejecuta la consulta en la base de datos.
  No se trata de un error en la reconstrucción sino que la documentación
  no refleja ese comportamiento.
 \end_layout
@@ -18246,7 +18114,7 @@ No entiendo este supuesto problema de los sistemas de reglas...
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 ver nota y aclararlo
