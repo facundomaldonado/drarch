@@ -10955,7 +10955,7 @@ reference "fig:Ejemplo-de-la-representación-del-código-fuente"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -11066,7 +11066,7 @@ QueryEngine
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -11211,7 +11211,7 @@ reference "fig:Modelo-de-reglas"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -11457,7 +11457,7 @@ el nuevo modelo y los incorpora a la base de conocimientos.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -11553,7 +11553,7 @@ reference "fig:Phase-model"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -14484,7 +14484,7 @@ reference "fig:Structure101-Buble"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -14531,7 +14531,7 @@ es dependientes.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -14635,7 +14635,7 @@ reference "fig:Market-Layering"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -14731,7 +14731,7 @@ cluster
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -14835,7 +14835,7 @@ te a nivel arquitectónico por 34 escenarios UCM.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -15652,6 +15652,38 @@ reference "fig:Diagrama-UCM-DRArch-remove-user"
 removeUser
 \emph default
 .
+ Se pueden observar que la funcionalidad esta determinada por los componentes
+ 
+\emph on
+Tasks
+\emph default
+, que son los responsables de actualizar y consultar la base de datos, represent
+ada por el componente 
+\emph on
+DBView
+\emph default
+.
+ En la figura 
+\begin_inset LatexCommand ref
+reference "fig:Diagrama-UCM-DRArch-remove-user"
+
+\end_inset
+
+ se detalla el path de ejecución del caso de uso.
+ Llega el request para remover un usuario de la base de datos, responsabilidad
+ que tiene el componente 
+\emph on
+RemoveUserTask
+\emph default
+ y luego se ejecuta la tarea 
+\emph on
+ListUserTask
+\emph default
+ que vuelve a consultar la base de datos con el objetivo de recuperar un
+ listado actualizado de usuarios.
+ A comparación del UCM para el mismo caso de uso proporcionado por la documentac
+ión, se puede ver que se reconstruyó una responsabilidad que no estaba en
+ la documentación.
 \end_layout
 
 \begin_layout Standard
@@ -15673,7 +15705,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Interpretar la figura para el usuario!!
