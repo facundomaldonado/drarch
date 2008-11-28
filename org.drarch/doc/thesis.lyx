@@ -5945,7 +5945,7 @@ El enfoque permite recuperar arquitecturas de sistemas de software mostrando
 e para generar sugerencias al usuario sobre el modelo arquitectónico a reconstru
 ir.
  Las sugerencias son afirmaciones que el arquitecto debe aceptar o rechazar.
- Si una suegerencia es aceptada, se realiza una transformación en el modelo.
+ Si una sugerencia es aceptada, se realiza una transformación en el modelo.
  Así es como el modelo se va construyendo y en cada paso se transforma en
  diagramas de componentes y de UCMs que representan aspectos estructurales
  y comportamentales del sistema en un alto nivel de abstracción.
@@ -6212,7 +6212,7 @@ ProLog
 \emph on
 Prolog
 \emph default
- son declarativos (no opracional como programación orientada a objetos),
+ son declarativos (no operacional como programación orientada a objetos),
  permiten hacer inferencias y soportan prototipación de ideas.
  De esta forma, se representan artefactos del código fuente (clases, variables,
  paquetes, etc.) sobre una base de conocimiento.
@@ -6263,7 +6263,7 @@ abstract syntax tree
 \end_layout
 
 \begin_layout Standard
-Esta transformación de código Java a hechos (o representacion) 
+Esta transformación de código Java a hechos (o representación) 
 \emph on
 Prolog
 \emph default
@@ -6289,7 +6289,7 @@ No me den el pantallazo general, prefiero que me cuenten de "un abanico
 \end_inset
 
  de relaciones y consultas diferentes.
- Con la siguiente consulta, se obtienen todos los metodos 
+ Con la siguiente consulta, se obtienen todos los métodos 
 \emph on
 getters
 \emph default
@@ -6318,8 +6318,8 @@ class(?C), method(?C,?M), re_name(?M,/^get/), modifier(?M,public), package(?P),
 
 \begin_layout Standard
 Los tipos de relaciones y consultas se pueden extender en el futuro para
- combinarlos con la infrmación dinámica del sistema y con la información
- arquitectónica reconstruída.
+ combinarlos con la información dinámica del sistema y con la información
+ arquitectónica reconstruida.
  Es decir, en vez de relacionar los 
 \emph on
 getters 
@@ -6495,9 +6495,16 @@ Observable
  Representa los datos y la funcionalidad principal de la aplicación.
  Provee un mecanismo para registrar los observadores.
  De este modo, permite la notificación de los cambios sufridos manteniendo
- la independencia del modelo con sus diferentes vistas u otros observers
- (los observers pueden ser parte del modelo, por ejemplo, la notificación
- entre celdas de una planilla de cálculo).
+ la independencia del modelo con sus diferentes vistas u otros 
+\emph on
+observers
+\emph default
+ (los 
+\emph on
+observers
+\emph default
+ pueden ser parte del modelo, por ejemplo, la notificación entre celdas
+ de una planilla de cálculo).
  
 \end_layout
 
@@ -6756,7 +6763,7 @@ Prolog
 \emph default
  que proponen cambios al modelo arquitectónico que se aplican cuando una
  sugerencia es aceptada.
- Dentro de este conjunto se encuentran los hechos que estan relacionados
+ Dentro de este conjunto se encuentran los hechos que están relacionados
  con el mapeo del modelo arquitectónico al código fuente.
  Generalmente, la creación de un componente (agregar un hecho como 
 \family typewriter
@@ -7048,7 +7055,7 @@ Al igual que la información estática, la información dinámica es representad
 ProLog
 \emph default
  y sobre la misma base del conocimiento.
- Para obtener dicha i nformación, primero se debe instrumentar la aplicación
+ Para obtener dicha información, primero se debe instrumentar la aplicación
  para poder generar logs de ejecución.
  Luego, es necesario realizar un análisis de los 
 \emph on
@@ -7179,9 +7186,9 @@ Los hechos generados por el análisis dinámico, se almacenan en la base de
 te se está generando y la información aportada por experiencia y el conocimiento
  de las personas involucradas en el proceso de reconstrucción.
  De esta manera, al termino de cada fase los diagramas son generados y el
- experto en reconstrucción tiene la posibilidad de agragar, quitar o modificar
+ experto en reconstrucción tiene la posibilidad de agregar, quitar o modificar
  artefactos arquitectónicos directamente sobre los diagramas.
- Luego, las modificaciónes realizadas sobre los diagramas se sincronizan
+ Luego, las modificaciones realizadas sobre los diagramas se sincronizan
  con el modelo para continuar con el proceso de reconstrucción.
  Por ejemplo, si alguna de las personas involucradas en el proceso de reconstruc
 ción sabe que existe un componente 
@@ -7390,7 +7397,7 @@ Hechos
 \emph on
 Prolog
 \emph default
- que representan la infromación dinámica pare el ejemplo 
+ que representan la información dinámica pare el ejemplo 
 \emph on
 Observer-Observable
 \end_layout
@@ -7417,7 +7424,7 @@ executedMethod
 snapshot 
 \family default
 el primer argumento es el identificador de ejecución, el segundo, la propiedad
- del objeto afectada y el tercero el valor de la propidedad del objeto.
+ del objeto afectada y el tercero el valor de la propiedad del objeto.
 \end_layout
 
 \begin_layout Subsection
@@ -7630,10 +7637,10 @@ Especificación de reglas
 \begin_layout Standard
 El enfoque provee un conjunto de reglas basadas en patrones de diseño y
  en un análisis realizado sobre diversos sistemas.
- El proposito de estas reglas es la codificacion de heuristicas que buscan
+ El propósito de estas reglas es la codificación de heurísticas que buscan
  ciertas estructuras y evidencias en el codigo para determinar la (posible)
- presencia de un artefacto arquitectonico particular.
- Estas heuristicas han sido compiladas a partir de enfoques como DiscoTech
+ presencia de un artefacto arquitectónico particular.
+ Estas heurísticas han sido compiladas a partir de enfoques como DiscoTech
  
 \begin_inset LatexCommand ref
 reference "par:DiscoTect"
@@ -8333,7 +8340,7 @@ Incluir referencia de donde sale esta heuristica [ref a la matriz de dependencia
 \end_layout
 
 \begin_layout Standard
-Utilizando un enfoque similar al descripto anteriormente es posiblecalcular
+Utilizando un enfoque similar al descripto anteriormente es posible calcular
  una medida de acoplamiento entre clases.
  Se define acoplamiento como el grado en que un componente esta conectado
  a otros componentes del sistema, es decir, su 
@@ -8411,7 +8418,7 @@ reference "fig:Grafo-de-dependencias-acoplamiento"
 
 En la figura pueden verse claramente dos conjuntos de clases (Modelo y Presentac
 ión) agrupados por el grado de acoplamiento entre sus clases vecinas.
- De esta forma es posible realizar reglas que reconozcan este tipo de agrupación
+ De esta forma es posible realizar reglas que reconozcan este tipo de agrupacion
 es y el asistente las sugerirá como componentes del modelo.
 \end_layout
 
@@ -9160,7 +9167,7 @@ La método
 \emph on
 template
 \emph default
- invoca el metodo 
+ invoca el método 
 \emph on
 hook
 \emph default
@@ -9371,8 +9378,8 @@ Consumer
 Hook
 \emph default
 .
- Ambos casos con sus correspondietes contrapartes en el ejemplo Observer-Observa
-ble.
+ Ambos casos con sus correspondientes contra-partes en el ejemplo Observer-Obser
+vable.
 \end_layout
 
 \end_inset
@@ -9744,8 +9751,8 @@ Requerimietos funcionales abstractos
 \end_layout
 
 \begin_layout Enumerate
-El sistema tiene que ser capaz de generar información visual, grácos o texto
- para mostrar y almacenar los datos producidos.
+El sistema tiene que ser capaz de generar información visual, gráficos o
+ texto para mostrar y almacenar los datos producidos.
  Prioridad: 3
 \end_layout
 
@@ -9763,13 +9770,13 @@ La información extraída debe provenir del código fuente, del sistema en
 
 \begin_layout Enumerate
 El sistema debe ofrecer la posibilidad de realizar una búsqueda en la informació
-n extraída mediante criterios de búsqueda especícos.
+n extraída mediante criterios de búsqueda específicos.
  Prioridad: 1
 \end_layout
 
 \begin_layout Enumerate
-El sistema debe ofrecer al usuario la posibilidad de crear, modicar u optimizar
- criterios de búsqueda sobre la información extraída.
+El sistema debe ofrecer al usuario la posibilidad de crear, modificar u
+ optimizar criterios de búsqueda sobre la información extraída.
  Prioridad: 4
 \end_layout
 
@@ -9818,7 +9825,7 @@ Se describen los siguientes escenarios de calidad:
 \end_layout
 
 \begin_layout Enumerate
-Modicabilidad 
+Modificabilidad 
 \end_layout
 
 \begin_deeper
@@ -9877,7 +9884,7 @@ Prioridad: 4
 
 \end_deeper
 \begin_layout Enumerate
-Un desarrollador desea manipular (agregar, modicar, consultar) información
+Un desarrollador desea manipular (agregar, modificar, consultar) información
  relevante a la información del sistema a recuperar.
  Dicha manipulación se debe realizar sin afectar otros componentes.
  
@@ -9926,7 +9933,7 @@ Flexibilidad
 
 \begin_deeper
 \begin_layout Enumerate
-Un usuario decide optimizar una búsqueda sobre el sistema a analizar deniendo
+Un usuario decide optimizar una búsqueda sobre el sistema a analizar definiendo
  su propio criterio antes de empezar el proceso de recuperación.
  El cambio deberá llevarse a cabo instantáneamente sin afectar otros componentes.
  
@@ -9968,8 +9975,8 @@ Prioridad: 3
 
 \end_deeper
 \begin_layout Enumerate
-Por cada criterio de búsqueda, un usuario dene qué información se debe agregar
- al diseño que se va a recuperando.
+Por cada criterio de búsqueda, un usuario define qué información se debe
+ agregar al diseño que se va a recuperando.
  El cambio deberá llevarse a cabo instantáneamente sin afectar otros componentes.
  
 \end_layout
@@ -9981,7 +9988,7 @@ Fuente del estímulo: usuario.
 \end_layout
 
 \begin_layout Itemize
-Estímulo: denir qué información se debe agregar al diseño recuperado.
+Estímulo: definir qué información se debe agregar al diseño recuperado.
  
 \end_layout
 
@@ -10383,25 +10390,39 @@ BlackBoard
 \emph default
  
 \series default
-se utilizan tres tipos de componentes: blackboard, fuente de conocimiento
- y sub-sistema de control (los mismos pueden observarse en la figura 
+se utilizan tres tipos de componentes: 
+\emph on
+blackboard
+\emph default
+, fuente de conocimiento y sub-sistema de control (los mismos pueden observarse
+ en la figura 
 \begin_inset LatexCommand ref
 reference "fig:Modelo-Blackboard-DRArch"
 
 \end_inset
 
 ).
- El blackboard, es un repositorio de datos, la base de conocimientos.
+ El 
+\emph on
+blackboard
+\emph default
+, es un repositorio de datos, la base de conocimientos.
  Las fuentes de conocimiento son los expertos, los especialistas en resolver
  un aspecto del problema global.
  Cada fuente de conocimiento implementa una regla o algoritmo que colabora
  para obtener una solución parcial.
- Cuando una fuente de conocimiento es ejecutada el estado del blackboard
- es actualizado con las trasnformaciones propias de la fuente.
+ Cuando una fuente de conocimiento es ejecutada el estado del 
+\emph on
+blackboard
+\emph default
+ es actualizado con las transformaciones propias de la fuente.
  El subsistema de control es el encargado de coordinar la actividad de las
  fuentes de conocimiento.
- El control monitorea los cambios en el blackboard y decide que fuente de
- conocimiento debe ejecutarse.
+ El control monitorea los cambios en el 
+\emph on
+blackboard
+\emph default
+ y decide que fuente de conocimiento debe ejecutarse.
 \end_layout
 
 \begin_layout Standard
@@ -10430,7 +10451,11 @@ name "fig:Modelo-Blackboard-DRArch"
 
 \end_inset
 
-Modelo Blackboard utilizado por 
+Modelo 
+\emph on
+Blackboard
+\emph default
+ utilizado por 
 \emph on
 DRArch
 \emph default
@@ -10605,7 +10630,11 @@ key "Garlan1996"
  Sin embargo, en este estilo es muy difícil crear aplicaciones interactivas:
  no hay forma que los filtros interactúen de forma cooperativa para resolver
  un problema.
- Debido a este tradeof el estilo 
+ Debido a este 
+\emph on
+tradeoff
+\emph default
+ el estilo 
 \emph on
 pipes and filters
 \emph default
@@ -10678,8 +10707,8 @@ key "Garlan1996"
 
 .
  Si bien no se empleó el estilo tal cual esta definido, se usó la orientación
- al uso de reglas y hechos para ralizar consultas sobre una base del conocimient
-o.
+ al uso de reglas y hechos para realizar consultas sobre una base del conocimien
+to.
  Este estilo permite una gran flexibilidad a la hora de realizar consultas
  sobre la información.
  También permite incorporar información de manera sencilla para que pueda
@@ -10741,7 +10770,7 @@ do desde
 JQuery
 \emph default
 , además de aportar el motor y el lenguaje, proporciona capacidades para
- realizar analisis sintatico (
+ realizar análisis sintáctico (
 \emph on
 parsing
 \emph default
@@ -11342,8 +11371,11 @@ RuleModelFactory
 .
  Se decidió la utilización de este patrón por la necesidad de alcanzar la
  independencia entre la creación de los elementos del modelo y su implementación
-, ya que cada formato de query dependerá del lenguaje lógico que se utilice
- en las consultas.
+, ya que cada formato de 
+\emph on
+query
+\emph default
+ dependerá del lenguaje lógico que se utilice en las consultas.
  El patrón 
 \emph on
 Singleton
@@ -11441,9 +11473,12 @@ reference "fig:Actualización-del-modelo"
 \end_inset
 
  se muestra un diagrama de secuencias con el orden de invocación de los
- elementos involvucrados en este proceso.
- La acción LoadCoreModel es disparada cuando el arquitecto ejecuta un comando
- en el editor gráfico.
+ elementos involucrados en este proceso.
+ La acción 
+\family typewriter
+LoadCoreModel
+\family default
+ es disparada cuando el arquitecto ejecuta un comando en el editor gráfico.
  Es responsabilidad de la acción recuperar el modelo del diagrama mostrado
  en el editor y volcar dicho modelo al componente DiagramManager.
  Éste a su vez traduce a hechos 
@@ -11617,7 +11652,7 @@ Se dijo anteriormente que existen dos tipos de fases: las interactivas y
 JQuery
 \emph default
  y utilizar dichas reglas en la fase inicial de recolección de información
- agrupandolas en una fase no interactiva.
+ agrupándolas en una fase no interactiva.
  Esta selección la hace el arquitecto al momento de creación de la fase
  junto con la elección del 
 \emph on
@@ -11840,8 +11875,8 @@ reference "fig:Vista-de-sugerencias"
 
 \end_inset
 
- se muestra la vista de sugerencias para la regla que detecta componentes
- 
+ se muestran los componentes y la vista de sugerencias para la regla que
+ detecta componentes 
 \emph on
 Observer.
  
@@ -11851,7 +11886,7 @@ Observer.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -11936,7 +11971,7 @@ QueryEngine
 status open
 
 \begin_layout Standard
-corregir esta imgen porque se va d ela pagina
+corregir esta imagen porque se va d ella pagina
 \end_layout
 
 \end_inset
@@ -12116,71 +12151,16 @@ reference "fig:Especificando-Reglas"
 
 \end_inset
 
- son aceptadas, el proceso de reconstrucción genera el diagrama de la figura\InsetSpace ~
+ son aceptadas, el proceso de reconstrucción genera el diagrama de la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
-reference "fig:Diagrama-de-componentes-de-los-Observers"
+reference "fig:Vista-de-sugerencias"
 
 \end_inset
 
 .
  Además, una vez que se termine la actualización de las vistas, el arquitecto
  tiene la posibilidad de modificar los diagramas desde el editor gráfico.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename img/ObserversComponentDiagram.jpg
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esta figura se puede jungar con la figura 5.6 (vista de sugerencias) en una
- sola figura
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-de-componentes-de-los-Observers"
-
-\end_inset
-
-Diagrama de componentes de los 
-\emph on
-Observers
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -12204,7 +12184,7 @@ reference "fig:Diagrama-de-secuencias"
 
 \end_inset
 
- se detalla el orden en el cual estos componentes interactuan ante dos situacion
+ se detalla el orden en el cual estos componentes interactúan ante dos situacion
 es.
  Por un lado la ejecución de una fase, donde el arquitecto selecciona la
  fase y lanza su ejecución.
@@ -12631,7 +12611,7 @@ run
 \family typewriter
 AddUser
 \family default
-, se desa saber qué usuario lanzó el evento que disparó dicha tarea.
+, se desea saber qué usuario lanzó el evento que disparó dicha tarea.
  Esa información es un atributo (del tipo 
 \family typewriter
 String
@@ -12640,7 +12620,7 @@ String
 \family typewriter
 n
 \family default
- niveles de anidamiento (produndidad) contenida en la instancia 
+ niveles de anidamiento (profundidad) contenida en la instancia 
 \family typewriter
 AddUser
 \family default
@@ -13058,10 +13038,10 @@ Eclipse
  es el entorno de desarrollo Java más popular en la actualidad y fue seleccionad
 o principalmente por ofrecer un mecanismo de extensión (plugins) que permite
  la integración de nuevas herramientas.
- Ofrece tambien un framework para implementar modelos extensibles (EMF)
+ Ofrece también un framework para implementar modelos extensibles (EMF)
  que permite el desarrollo de modelos y crear editores y diagramas en base
  a estos modelos.
- Posee tambien un metamodelo del lenguaje Java idóneo para la manipulación
+ Posee también un metamodelo del lenguaje Java idóneo para la manipulación
  del código fuente.
 \end_layout
 
@@ -13073,8 +13053,8 @@ JQuery
 se realizó en base a varios factores.
  En primer lugar y más importante, gran parte de las tareas necesarias por
  el enfoque DRArch son cubiertas por esta herramienta.
- La definición del lenguaje lógico y el motor de inferencias estan basados
- en TyRuBa que forman parte de la JQuery.
+ La definición del lenguaje lógico y el motor de inferencias están basados
+ en Turba que forman parte de la JQuery.
  El parseo de código fuente junto con la generación de hechos lógicos también
  es provista por la herramienta.
  En segundo lugar, JQuery ofrece una vista en la cual es posible "ensayar"
@@ -13136,9 +13116,9 @@ status collapsed
 
 \begin_layout Standard
 Para tal propósito se creó un editor utilizando las ventajas que ofrece
- SWT, un 
+ SET, un 
 \emph on
-toolkit
+tolete
 \emph default
  de elementos gráficos diseñados para ser portables y aprovechar las capacidades
  de los sistemas operativos sobre los que se ejecuta.
@@ -13256,9 +13236,9 @@ reference "sec:Análisis-de-resultados"
 status collapsed
 
 \begin_layout Standard
-2- Los casos de estudio, como estan presentados, no muestran mucha informacion
+2- Los casos de estudio, como están presentados, no muestran mucha información
  de como se fueron reconstruyendo las vistas, que limitaciones hubo, que
- cosas el tool pudo reconstruir y cuales no, ...
+ cosas el tolo pudo reconstruir y cuales no, ...
  ...Algunos cabos "sueltos" mientras leia respecto a esto: 
 \end_layout
 
@@ -13399,8 +13379,8 @@ key "Smith1980"
 \end_inset
 
 .
- CNP consiste en la automaticación de la negociación entre compradores y
- vendedores a traves del comercio electrónico.
+ CNP consiste en la automatización de la negociación entre compradores y
+ vendedores a través del comercio electrónico.
  El protocolo define dos tipos de agentes, inicializadores y participantes.
  De esta forma, el mercado es un contenedor de agentes en donde compradores
  (participantes) y vendedores (inicializadores) son simples agentes (
@@ -13650,7 +13630,7 @@ startAction
 \family typewriter
 afferProduct
 \family default
-) y un cliente recive (
+) y un cliente recibe (
 \family typewriter
 listenToBids
 \family default
@@ -13667,7 +13647,11 @@ initializeRequest
 \family typewriter
 placeOrder
 \family default
-), luego el vendedor acepta el pedido (acceptRequest) y lo registra (
+), luego el vendedor acepta el pedido (
+\family typewriter
+acceptRequest
+\family default
+) y lo registra (
 \family typewriter
 storeRequest
 \family default
@@ -13727,12 +13711,12 @@ Es necesario realizar una fase inicial (fase cero o
 setup
 \emph default
 ) en la que se realizan entrevistas con los expertos del sistema (a recuperar)
- y se reavisa la documentación del sistema con el objetivo de llegar a un
- entendimiento común sobre cuáles son los elementos del sistema de interes
+ y se revisa la documentación del sistema con el objetivo de llegar a un
+ entendimiento común sobre cuáles son los elementos del sistema de interés
  arquitectónico.
  Es el objetivo de esta fase también que juntos, los expertos del sistema
  y el/los expertos en recuperación, armen las reglas y su agrupación en
- fases, como asi también el orden de evaluación de las mismas.
+ fases, como así también el orden de evaluación de las mismas.
  En esta fase se recolecta toda la información necesaria para que el experto
  en recuperación pueda tener conocimiento suficiente como para poder aceptar
  o rechazar las sugerencias de 
@@ -13747,8 +13731,12 @@ Fase cero
 \end_layout
 
 \begin_layout Standard
-En el framework Bubble, el comportamiento de los agentes esta definido mediante
- tareas mediante un mecanismo condición-acción.
+En el 
+\emph on
+framework
+\emph default
+ Bubble, el comportamiento de los agentes esta definido mediante tareas
+ mediante un mecanismo condición-acción.
  Por ejemplo, una tarea es un módulo compuesto por una serie de acciones
  a ser ejecutadas por un agente cuando se cumplen ciertas condiciones.
  De esta forma se ve que la funcionalidad del sistema está organizada alrededor
@@ -13756,15 +13744,23 @@ En el framework Bubble, el comportamiento de los agentes esta definido mediante
 \end_layout
 
 \begin_layout Standard
-De las entrevistas con los expertos surgieron las siguientes especificaciónes
+De las entrevistas con los expertos surgieron las siguientes especificaciones
  de componentes:
 \end_layout
 
 \begin_layout Itemize
-Todo lo que hereda de la clase Task es un componente.
+Todo lo que hereda de la clase 
+\family typewriter
+Task
+\family default
+ es un componente.
  El nombre de la clase es el nombre del componente.
- El método run de la tarea se debe asociar a una responsabilidad con el
- mismo nombre de la tarea.
+ El método 
+\family typewriter
+run
+\family default
+ de la tarea se debe asociar a una responsabilidad con el mismo nombre de
+ la tarea.
 \end_layout
 
 \begin_layout Itemize
@@ -13775,7 +13771,11 @@ name "ite:Asociación-Tarea-Evento-1"
 
 Crear una asociación entre un componente tarea y un evento cuando dentro
  de la implementación de la tarea se encuentra la siguiente porción de código:
- new EventIdCondition( EventHierarchyManager.getEventId(...Event.class)));
+ 
+\family typewriter
+
+\newline
+new EventIdCondition(EventHierarchyManager.getEventId(...Event.class)));
 \end_layout
 
 \begin_layout Itemize
@@ -13785,14 +13785,24 @@ name "ite:Asociación-Tarea-Evento-2"
 \end_inset
 
 Crear una asociación entre un componente tarea y un evento cuando dentro
- de la ejecucion del método run de la tarea se ejecuta un EventManager.publishEve
-nt(anEvent); donde la clase de anEvent es el nombre del componente evento
- que debe ser asociado.
+ de la ejecución del método 
+\family typewriter
+run
+\family default
+ de la tarea se ejecuta un 
+\family typewriter
+EventManager.publishEvent(anEvent);
+\family default
+ donde la clase de 
+\family typewriter
+anEvent
+\family default
+ es el nombre del componente evento que debe ser asociado.
  
 \end_layout
 
 \begin_layout Standard
-Basado en estas reglas se planeo dividir el analisis en x fases.
+Basado en estas reglas se planeo dividir el análisis en cinco fases.
  La primera, la fase de recolección es común a todos los procesos de recuperació
 n.
  La misma consiste en recolectar la información dinámica y en la instrumentación
@@ -13851,10 +13861,13 @@ Como les puse antes, esto require que previamente se haya explicado el protocolo
 \end_inset
 
 .
- Debido a que la aplicación es un ejemplo para utilizar el framework Bubble,
- hay un único punto de entrada al sistema que ejecuta todos los casos de
- uso sin interface de gráfica (modo consola) y sin necesidad de utilizar
- datos de entrada.
+ Debido a que la aplicación es un ejemplo para utilizar el 
+\emph on
+framework
+\emph default
+ Bubble, hay un único punto de entrada al sistema que ejecuta todos los
+ casos de uso sin interface de gráfica (modo consola) y sin necesidad de
+ utilizar datos de entrada.
  En la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
