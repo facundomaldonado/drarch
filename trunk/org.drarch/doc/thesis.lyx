@@ -13808,8 +13808,8 @@ n.
  La misma consiste en recolectar la información dinámica y en la instrumentación
  de código.
  El objetivo de la fase siguiente es reducir el espacio de solución haciendo
- foco principalemente en aquellas porciones de código relevantes a la recuperaci
-ón.
+ foco principalmente en aquellas porciones de código relevantes a la recuperació
+n.
 \end_layout
 
 \begin_layout Standard
@@ -13877,8 +13877,11 @@ reference "fig:Configuración-de-ejecución"
 
  se muestra la configuración necesaria para generar el log de ejecución.
  Cabe destacar que para la instrumentación de Market se incrementó el nivel
- de profundidad del snapshot de objetos (sección Level Of Depth Log de la
- figura).
+ de profundidad del snapshot de objetos (sección 
+\emph on
+Level Of Depth Log
+\emph default
+ de la figura mencionada).
  Esta propiedad que brinda Flabot permitirá obtener la información necesaria
  para la ejecución de las reglas como las descriptas en la sección anterior
  (
@@ -13991,7 +13994,7 @@ market
 \end_layout
 
 \begin_layout Standard
-En este punto se volvio a pedir asistencia a los expertos del sistema, quienes
+En este punto se volvió a pedir asistencia a los expertos del sistema, quienes
  recomendaron descartar el paquete 
 \family typewriter
 distribution 
@@ -14090,7 +14093,7 @@ ren\SpecialChar \-
 cias y es el arquitecto que debe corroborar
  este tipo de supuestos, aceptando o rechazando cada sugerencia.
  En este tipo de sugerencias es donde la herramienta presenta una de sus
- limitaciones ya que la sugerencia presenta una gran ambiguedad.
+ limitaciones ya que la sugerencia presenta una gran ambigüedad.
 \end_layout
 
 \begin_layout Itemize
@@ -14149,8 +14152,8 @@ invocationMethod
 snapshot
 \family default
  dentro de la consulta que compone la regla.
- Esta regla involcra un conocimiento muy fino del modelo Bubble y su implementac
-ión que sólo puede conocerce gracias a las entrevistas realizadas en la
+ Esta regla involucra un conocimiento muy fino del modelo Bubble y su implementa
+ción que sólo puede conocerse gracias a las entrevistas realizadas en la
  fase cero.
 \end_layout
 
@@ -14345,7 +14348,7 @@ framework
  Bubble para el dominio del Market.
  Las consultas realizadas en esta fase están muy relacionadas al caso de
  uso que se utilizó para generar el log de ejecución.
- Las responsabilidades de los componentes estan mapeadas a métodos.
+ Las responsabilidades de los componentes están mapeadas a métodos.
  Los métodos corresponden a las clases que están asociadas con cada componente.
  Esto es de gran utilidad ya que una de las informaciones que provee el
  log de ejecución, indica qué métodos fueron ejecutados y en qué orden.
@@ -14407,7 +14410,7 @@ Request
 \family typewriter
 Dealer
 \family default
-) es quién recive ese pedido.
+) es quién recibe ese pedido.
 \end_layout
 
 \begin_layout Standard
@@ -14464,7 +14467,11 @@ reference "cha:Trabajos-relacionados"
 \end_inset
 
 , Structure 101 es una herramienta de análisis estático de código orientada
- al análisis de estructura (diseño, arquitectura y packaging).
+ al análisis de estructura (diseño, arquitectura y 
+\emph on
+packaging
+\emph default
+).
 \end_layout
 
 \begin_layout Standard
@@ -14490,7 +14497,11 @@ reference "fig:Structure101-Buble"
 
 \end_inset
 
-, el primer nivel de explosion del paquete core.
+, el primer nivel de explosión del paquete 
+\emph on
+core
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -14533,10 +14544,10 @@ Structure 101 - Bubble-Market Estructura de paquetes
 \end_layout
 
 \begin_layout Standard
-Las flechas indican dependecias.
+Las flechas indican dependencias.
  Estas se pueden dar por una relación directa entre dos componentes, como
  una clase extendiendo de otra.
- O debido a relaciones entre items contenidos por los dos componentes, por
+ O debido a relaciones entre ítem contenidos por los dos componentes, por
  ejemplo un método de una clase que invoca a un método de otra clase produce
  una dependencia entre estas dos clases.
  El número junto a la flecha es el número total de referencias entre 2 component
@@ -14566,7 +14577,9 @@ name "fig:Structure101-Buble"
 
 \end_inset
 
-Structure101 - Bubble core
+Structure101 - Bubble 
+\emph on
+core
 \end_layout
 
 \end_inset
@@ -14605,7 +14618,7 @@ reference "sub:Structure-101"
  se describieron las propiedades de Structure101, entre ellas se destacan
  las vistas, agrupadas en perspectivas que denotan características relevantes
  a la estructura y complejidad del sistema.
- Entre ellas se destaca la perspectiva arquitectóinca, y en ella la vista
+ Entre ellas se destaca la perspectiva arquitectónica, y en ella la vista
  con el mismo nombre.
  La notación gráfica para los diagramas de ésta organizada en celdas con
  el objetivo de transmitir una serie de propiedades arquitectónicas:
@@ -14616,11 +14629,22 @@ Composición, es indicada con una o mas celdas contenidas en una celda padre.
 \end_layout
 
 \begin_layout Itemize
-Capas (Layering), es indicada mediante una organización de celdas Top-Down.
+Capas (
+\emph on
+Layering
+\emph default
+), es indicada mediante una organización de celdas Top-Down.
  Las celdas sólo deben ser usadas por celdas de las capas superiores.
- Es posible especificar "strinct layering", es decir, que las celdas solamente
- dependan de aquellas en la próxima capa y no en capas que simplemente se
- encuentren por debajo de ella.
+ Es posible especificar "
+\emph on
+strinct
+\emph default
+ 
+\emph on
+layering
+\emph default
+", es decir, que las celdas solamente dependan de aquellas en la próxima
+ capa y no en capas que simplemente se encuentren por debajo de ella.
 \end_layout
 
 \begin_layout Itemize
@@ -14693,7 +14717,11 @@ Como se mencionó con anterioridad, la herramienta cubre aspectos estructurales
 imports
 \emph default
 " de otros paquetes.
- Para el paquete example.market, bajo la perspectiva DSM, figura 
+ Para el paquete 
+\family typewriter
+example.market
+\family default
+, bajo la perspectiva DSM, figura 
 \begin_inset LatexCommand ref
 reference "fig:Structure-101-Market"
 
@@ -14732,7 +14760,7 @@ clusters
 \emph on
 tangles
 \emph default
- y ningun 
+ y ningún 
 \emph on
 cluster
 \emph default
@@ -14811,7 +14839,11 @@ browser
 web
 \emph default
  para ser delegadas al servidor G2 en la segunda banda, correspondiente
- a la lógica del negocio, por intermedio del componente GateKeeper.
+ a la lógica del negocio, por intermedio del componente 
+\family typewriter
+GateKeeper
+\family default
+.
  Esta banda está implementada mediante la instanciación del framework 
 \emph on
 Bubble
@@ -14831,8 +14863,12 @@ tareas
 agentes reactivos
 \emph default
 .
- GateKeeper traduce cada solicitud para activar a los agentes encargados
- de ejecutar las tareas correspondientes.
+ 
+\family typewriter
+GateKeeper
+\family default
+ traduce cada solicitud para activar a los agentes encargados de ejecutar
+ las tareas correspondientes.
  Las tareas relacionadas con la administración del modelo del negocio normalment
 e interactúan con el componente de persistencia para consultar o alterar
  los datos relevantes del repositorio de datos, en la tercer banda.
@@ -14898,8 +14934,8 @@ tier
 
 \begin_layout Standard
 Con la colaboración de los expertos que desarrollaron el sistema G2, en
- la documentación del sistema se encontraron digramas de componentes y diagramas
- de UCMs.
+ la documentación del sistema se encontraron diagramas de componentes y
+ diagramas de UCMs.
  Estos diagramas resultan de mucha utilidad para poder comparar los resultado
  obtenidos por 
 \emph on
@@ -14913,8 +14949,8 @@ reference "fig:Diagrama-de-componentes-g2-eliminar-usuario"
 
 \end_inset
 
- se muestra un diagrama de componenetes destacando las principales responsabilid
-ades de cada uno y sus relaciones.
+ se muestra un diagrama de componentes destacando las principales responsabilida
+des de cada uno y sus relaciones.
  El componente 
 \family typewriter
 GateKeeper
@@ -15199,7 +15235,7 @@ name "sub:G2-Caso-1"
 De la misma forma que con Market, se realizará una fase cero, con el objetivo
  de recabar información relevante a la arquitectura de G2 que ayude en la
  definición de reglas.
- Dado que G2 tambien está basado en el 
+ Dado que G2 también está basado en el 
 \emph on
 framework
 \emph default
@@ -15216,7 +15252,7 @@ Fase cero
 Al igual que Market la funcionalidad del sistema está organizada alrededor
  de éstas tareas y eventos.
  De las entrevistas con los expertos surgieron consideraciones adicionales
- que  se listarán a continualción junto con las que se definieron para Market:
+ que  se listarán a continuación junto con las que se definieron para Market:
 \end_layout
 
 \begin_layout Itemize
@@ -15240,12 +15276,12 @@ Crear una asociación entre un componente tarea y un evento cuando dentro
 \newline
 
 \family typewriter
-new EventIdCondition( EventHierarchyManager.getEventId(...Event.class)));
+new EventIdCondition(EventHierarchyManager.getEventId(...Event.class)));
 \end_layout
 
 \begin_layout Itemize
 Crear una asociación entre un componente tarea y un evento cuando dentro
- de la ejecucion del método 
+ de la ejecución del método 
 \family typewriter
 run
 \family default
@@ -15322,12 +15358,12 @@ staticGetEventName()
 \end_layout
 
 \begin_layout Standard
-Basado en estas reglas se planeo dividir el analisis en cinco fases.
+Basado en estas reglas se planeo dividir el análisis en cinco fases.
  La primera, la fase de recolección es idéntica a la fase de recolección
  de Market, se utilizó el mismo nivel de profundidad para el log.
  El objetivo de la fase siguiente es reducir el espacio de solución haciendo
- foco principalemente en aquellas porciones de código relevantes a la recuperaci
-ón.
+ foco principalmente en aquellas porciones de código relevantes a la recuperació
+n.
  Se reutilizarán las fases de análisis implementadas en el análisis anterior
  para recuperar la instanciación del 
 \emph on
@@ -15505,7 +15541,7 @@ framework
  De esta forma, se refinan el proceso incorporando nuevas reglas para esta
  fase.
  Es por eso que la fase de invocación implícita se ejecuta nuevamente con
- un conjuto de reglas refinadas.
+ un conjunto de reglas refinadas.
 \end_layout
 
 \begin_layout Subsubsection
@@ -15562,8 +15598,8 @@ Al termino de la ejecución de esta fase se cuenta con la base de conocimientos
  Fases posteriores irán trabajando sobre esta base de conocimiento general
  y la irán enriqueciendo con información que el arquitecto considere relevante
  a las fases posteriores.
- Tambén se cuenta con los diagramas generados que permiten observar parcialmente
- la reconstrucción de la arquitectura del sistema.
+ También se cuenta con los diagramas generados que permiten observar parcialment
+e la reconstrucción de la arquitectura del sistema.
 \end_layout
 
 \begin_layout Subsubsection
@@ -15605,7 +15641,7 @@ threads
 framework
 \emph default
  Bubble: los Sensores.
- Las fases anteriores no descibrieron el nuevo componente debido a que se
+ Las fases anteriores no describieron el nuevo componente debido a que se
  utilizó un caso de uso simple y por esto han quedado fuera del análisis
  dinámico varios eventos de bajo nivel.
  Luego, la riqueza del caso de uso utilizado para ejercitar 
@@ -15640,9 +15676,16 @@ framework
 framework
 \emph default
 .
- De esta forma se descubrieron los componentes GateKeeper y UserDBView encargado
-s de activar los agentes que ejecutan las tareas y de abstraer el acceso
- a la capa de persistencia de datos respectivamente.
+ De esta forma se descubrieron los componentes 
+\family typewriter
+GateKeeper
+\family default
+ y 
+\family typewriter
+UserDBView
+\family default
+ encargados de activar los agentes que ejecutan las tareas y de abstraer
+ el acceso a la capa de persistencia de datos respectivamente.
 \end_layout
 
 \begin_layout Standard
@@ -15667,14 +15710,14 @@ removeUser
 .
  Se pueden observar que la funcionalidad esta determinada por los componentes
  
-\emph on
+\family typewriter
 Tasks
-\emph default
+\family default
 , que son los responsables de actualizar y consultar la base de datos, represent
 ada por el componente 
-\emph on
+\family typewriter
 DBView
-\emph default
+\family default
 .
  En la figura 
 \begin_inset LatexCommand ref
@@ -15683,15 +15726,19 @@ reference "fig:Diagrama-UCM-DRArch-remove-user"
 \end_inset
 
  se detalla el path de ejecución del caso de uso.
- Llega el request para remover un usuario de la base de datos, responsabilidad
- que tiene el componente 
+ Llega el 
 \emph on
+request
+\emph default
+ para remover un usuario de la base de datos, responsabilidad que tiene
+ el componente 
+\family typewriter
 RemoveUserTask
-\emph default
+\family default
  y luego se ejecuta la tarea 
-\emph on
+\family typewriter
 ListUserTask
-\emph default
+\family default
  que vuelve a consultar la base de datos con el objetivo de recuperar un
  listado actualizado de usuarios.
  A comparación del UCM para el mismo caso de uso proporcionado por la documentac
@@ -15829,7 +15876,7 @@ De la misma forma que con Market, se utilizó Structure101 para analizar
 \end_layout
 
 \begin_layout Standard
-Dado que Market es un sistema pequeño, se pudieron detectar facilmente las
+Dado que Market es un sistema pequeño, se pudieron detectar fácilmente las
  extensiones del framework Bubble como son tareas y eventos.
  En el caso de G2, estas extensiones del 
 \emph on
@@ -15839,7 +15886,7 @@ framework
  del proyecto.
  La forma en que Structure 101 trabaja es inherentemente estructural por
  lo que el gran aporte que esta herramienta ofrece en este caso es la comprensió
-n de la forma en que está organizado el sistema y como así tambien permite
+n de la forma en que está organizado el sistema y como así también permite
  visualizar las dependencias entre paquetes.
 \end_layout
 
@@ -15860,9 +15907,16 @@ reference "fig:G2-Structure101"
 \end_inset
 
  muestra las dependencias entre los principales módulos del sistema G2.
- En ella se puede ver la gran dependencia con el módulo bubble y marcadas
- en rojo, las dependencias circulares entre algunos módulos, incluso entre
- el módulo Bubble (core) con un componente de utilidad.
+ En ella se puede ver la gran dependencia con el módulo 
+\family typewriter
+bubble
+\family default
+ y marcadas en rojo, las dependencias circulares entre algunos módulos,
+ incluso entre el módulo Bubble (
+\family typewriter
+core
+\family default
+) con un componente de utilidad.
 \end_layout
 
 \begin_layout Standard
@@ -15912,9 +15966,9 @@ reference "fig:Layering G2"
 \end_inset
 
  se tomó el módulo 
-\series bold
+\family typewriter
 com.delsatgroup.g2.modeladmin.user 
-\series default
+\family default
 para obtener alguna perspectiva mas interesante desde el punto de vista
  de la comparación ya que posee los componentes involucrados en el caso
  de uso utilizado por 
@@ -15922,9 +15976,12 @@ para obtener alguna perspectiva mas interesante desde el punto de vista
 DRArch
 \emph default
  para la reconstrucción.
- En ella se puede observar como está organizado el módulo User, las tareas
- que determinan la funcionalidad del mismo, los eventos que disparan dichas
- tareas y el módulo de acceso a datos.
+ En ella se puede observar como está organizado el módulo 
+\family typewriter
+User
+\family default
+, las tareas que determinan la funcionalidad del mismo, los eventos que
+ disparan dichas tareas y el módulo de acceso a datos.
  
 \end_layout
 
@@ -15953,7 +16010,11 @@ name "fig:Layering G2"
 
 \end_inset
 
-Composición y organización en capas del módulo modeladmin del sistema G2
+Composición y organización en capas del módulo 
+\family typewriter
+modeladmin
+\family default
+ del sistema G2
 \end_layout
 
 \end_inset
@@ -16206,7 +16267,7 @@ fremework
 \emph default
  Bubble, mientras que en el G2, la exactitud fue del 92%.
  Esto quiere decir que las modificaciones realizadas a las reglas asociadas
- a Bubble son válidas ya que la exactitud mojoró luego del refinamiento.
+ a Bubble son válidas ya que la exactitud mejoro luego del refinamiento.
  La Tabla\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -17000,8 +17061,8 @@ reference "fig:Eficiencia-vs.-Complejidad"
 
  se pueden observar estos índices.
  La cantidad de artefactos arquitectónicos que se deben reconstruir se calculó
- realizando la suma de la cantidad de compnentes, relaciones y responsabilidades
- que se deben reconstruir.
+ realizando la suma de la cantidad de componentes, relaciones y responsabilidade
+s que se deben reconstruir.
  La primer conclusión que puede derivarse de estos valores es que cuanto
  menos complejidad tenga el sistema, mas exacta es la reconstrucción arquitectón
 ica que realiza la herramienta 
@@ -17715,8 +17776,11 @@ Rule Model
  También es necesario tener en cuenta la cantidad de hechos que genera la
  representación del log de ejecución.
  Esta cantidad aumenta a medida que se ejecutan los casos de uso instrumentados.
- Esto causa un problema de escalabilidad y representa un tradeoff a las
- buenas capacidades de asistencia del 
+ Esto causa un problema de escalabilidad y representa un 
+\emph on
+tradeoff
+\emph default
+ a las buenas capacidades de asistencia del 
 \emph on
 DRArch
 \emph default
@@ -17760,9 +17824,9 @@ reference "fig:Diagrama-de-UCMs-g2-eliminar-usuario"
 
 \end_inset
 
- extraida de la documentación de G2 podemos ver que la responsabilidad 
+ extraída de la documentación de G2 podemos ver que la responsabilidad 
 \family typewriter
-ListUsers
+Listares
 \family default
  se ejecuta y el path de ejecución continua hasta el componente 
 \family typewriter
@@ -17784,9 +17848,9 @@ ListUserTask
 path
 \emph default
  de ejecución vuelve al componente 
-\noun on
+\family typewriter
 DBView
-\noun default
+\family default
  que ejecuta la consulta en la base de datos.
  No se trata de un error en la reconstrucción sino que la documentación
  no refleja ese comportamiento.
@@ -17797,11 +17861,11 @@ Comparando con la herramienta Structure 101, puede notarse que la misma
  está destinada principalmente a comunicar la arquitectura entre todos los
  roles involucrados en el desarrollo y a asistir a los programadores en
  evitar desviarse de la arquitectura durante el desarrollo.
- Si bien la herramienta es muy atractiva en terminos visuales y de navegación
+ Si bien la herramienta es muy atractiva en términos visuales y de navegación
  de la información, carece totalmente de aspectos comportamentales que ayuden
  a visualizar el sistema en funcionamiento.
  Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
- del sistema y de qué manera interactuan los componentes en tiempo de ejecución.
+ del sistema y de qué manera interactúan los componentes en tiempo de ejecución.
  No tiene noción de responsabilidades a nivel de componentes o mejor dicho
  celdas en las vistas arquitectónicas.
  
@@ -17818,7 +17882,7 @@ DRArch
  La naturaleza de estas reglas hace que el mapeo entre componentes arquitectónic
 os y artefactos de código (clases) se en muchos casos directo, por lo que
  las mediciones fueron en cierta medida muy acertadas.
- La falta de información dinámica extraida a travéz de trazas de ejecución
+ La falta de información dinámica extraída a través de trazas de ejecución
  deja ocultas relaciones entre componentes que se resuelven en tiempo de
  ejecución.
 \end_layout
@@ -17830,16 +17894,20 @@ DRArch
 \emph default
  son principalmente la velocidad de análisis del código fuente, la gran
  variedad de vistas y perspectivas entre las que figura una vista de mediciones
- de complejidad muy util para el análisis y su posible aplicación a la reingenie
-ria.
- El tiempo de setup de la herramienta es cero en comparación con 
+ de complejidad muy útil para el análisis y su posible aplicación a la reingenie
+ría.
+ El tiempo de 
+\emph on
+setup
+\emph default
+ de la herramienta es cero en comparación con 
 \emph on
 DRArch
 \emph default
 .
  Si bien es necesario invertir el mismo tiempo con los expertos a fin de
  adquirir el conocimiento necesario sobre el sistema, la herramienta no
- necesita definir reglas ni ningun tipo de configuración extra.
+ necesita definir reglas ni ningún tipo de configuración extra.
 \end_layout
 
 \begin_layout Standard
@@ -17925,7 +17993,7 @@ El contar con los expertos que desarrollaron el sistema permitió obtener
  un panorama muy acertado de los elementos arquitectónicos que se deberían
  construir.
  Este hecho permitió que la documentación original del sistema fuera tenida
- en cuenta solamente para realizar comparaciones y asi poder medir la eficiencia
+ en cuenta solamente para realizar comparaciones y así poder medir la eficiencia
  de la herramienta.
  
 \end_layout
@@ -17984,7 +18052,7 @@ stakeholders
 \emph on
 DRArch
 \emph default
- ofrece sugerencias de recontrucccion al arquitecto, quien pueden aceptar
+ ofrece sugerencias de reconstrucción al arquitecto, quien pueden aceptar
  o rechazar estas sugerencias para generar diagramas de componentes y de
  UCMs.
 \end_layout
@@ -18014,7 +18082,7 @@ FLABot.
 \emph on
 JQuery
 \emph default
- permitó utilizar las ventajas de 
+ permitió utilizar las ventajas de 
 \emph on
 Eclipse
 \emph default
@@ -18033,7 +18101,7 @@ DRArch
 \emph default
  permite reconstruir la arquitectura de software de un sistema generando
  vistas que describan el comportamiento a un alto nivel de abstracción.
- Generalmente, las vistas reconstruídas son utilizadas para colaborar en
+ Generalmente, las vistas reconstruidas son utilizadas para colaborar en
  la re-documentación del sistema.
  Al mismo tiempo, el enfoque realiza un mapeo entre el código fuente y las
  vistas generadas.
@@ -18123,11 +18191,11 @@ El haber utilizado programación lógica para definir el modelo de reglas
  brinda flexibilidad a la hora de realizar consultas, pero acarrea los problemas
  típicos en los lenguajes interpretados.
  Una de las principales desventajas del enfoque, es que a medida que el
- numero de reglas aumenta, pueden existir conflictos de activacion (o activarse
+ numero de reglas aumenta, pueden existir conflictos de activación (o activarse
  muchas reglas al mismo tiempo) entre las reglas, que el arquitecto debe
  resolver.
  En general, el orden de activación de las reglas hace que se activen ciertas
- reglas (que estan primero) y no las que uno quiere que se activen.
+ reglas (que están primero) y no las que uno quiere que se activen.
  Por otro lado, la eficiencia de las inferencias puede ser un problema.
 \begin_inset Note Note
 status collapsed
@@ -18179,7 +18247,7 @@ DRArch
 ades, que es reforzada mediante los mapeos componente-clase y responsabilidad-mé
 todo.
  Sin embargo, esta información no puede considerarse una documentación completa
- de un sistema a nivel arquitectónico por los siguietnes motivos: 
+ de un sistema a nivel arquitectónico por los siguientes motivos: 
 \end_layout
 
 \begin_layout Itemize
@@ -18197,7 +18265,7 @@ La información no captura ni casos de uso ni escenarios para atributos de
 
 \begin_layout Itemize
 La información de mapeos esta en la herramienta, pero no es fácil de comprender
- por el usuario (ya que se captura mediante dialogos) y no cuenta con el
+ por el usuario (ya que se captura mediante diálogos) y no cuenta con el
  racional que justifica dichos mapeos.
 \end_layout
 
@@ -18297,7 +18365,7 @@ introduciendo una nueva unidad modular, llamada
 aspecto.
  
 \emph default
-Existen técnicas de DSOA que proveen modios sitemáticos para identificación,
+Existen técnicas de DSOA que proveen modios sistemáticos para identificación,
  modularización, representación y composición de 
 \emph on
 crosscutting concerns
@@ -18341,8 +18409,8 @@ key "GarciaMay2005"
  y se realiza en dos etapas.
  La primera etapa conocida como Aspect Mining se encarga del reconocimiento
  de aspectos.
- Una vez reconocidos los aspectos, se aplican técnicas de "Aspect Refactoring"pa
-ra su migración a un sistema orientado a aspectos 
+ Una vez reconocidos los aspectos, se aplican técnicas de "Aspect Refactoring"
+ para su migración a un sistema orientado a aspectos 
 \begin_inset LatexCommand cite
 key "Fowler"
 
@@ -18516,14 +18584,17 @@ Ejercitación de la herramienta con casos de test
 \end_layout
 
 \begin_layout Standard
-Un aspecto debil de DRArch es el hecho de ejecutar manualmente los casos
- de uso para ejercitar la herramienta con el propósito de loguear la información
- de ejecución.
+Un aspecto débil de DRArch es el hecho de ejecutar manualmente los casos
+ de uso para ejercitar la herramienta con el propósito de 
+\emph on
+loguear
+\emph default
+ la información de ejecución.
 \end_layout
 
 \begin_layout Standard
 Un trabajo futuro para mitigar este hecho es el de utilizar los casos de
- test, más específicamente los test funcionales automatizados, para automátizar
+ test, más específicamente los test funcionales automatizados, para automatizar
  el proceso de extracción de la información dinámica.
 \begin_inset Note Note
 status open
