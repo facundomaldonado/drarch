@@ -10627,7 +10627,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 La figura esta "estatica" esta bien, pero tambien haria falta mostrar una
@@ -10745,12 +10745,8 @@ key "Garlan1996"
 
  como el estilo dominante para la arquitectura (ver Figura\InsetSpace ~
 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-ref a la figura del estilo
-\end_layout
+\begin_inset LatexCommand ref
+reference "fig:Modelo-Blackboard-DRArch"
 
 \end_inset
 
@@ -11475,16 +11471,6 @@ name "sec:Phase-Engine"
 \end_inset
 
 Phase Engine
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Este este el componente que actua como Control en el esquema de Blackboard???
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -11495,19 +11481,6 @@ Este componente es el encargado de la coordinación y mediación entre los
 DRArch
 \emph default
  posee las propiedades de ser interactivo, iterativo e incremental.
- En el diseño del componente Phase Engine, con el fin de dar soporte a distintos
- tipos de fases, se utilizó una clase abstracta para representar una fase.
- Luego, los distintos tipos de fase pueden extender de la clase abstracta.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esta explicacion es muy general, ser mas concretos please [ultima oracion]
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -11517,7 +11490,6 @@ o las sugerencias propuestas por la herramienta.
  Para satisfacer las demás características se implementó un mecanismo de
  fases iterativas que permite la composición de los resultados de las evaluacion
 es realizadas en iteraciones previas.
- 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -11560,17 +11532,78 @@ FLABot
 FLABot
 \emph default
  a hechos lógicos.
- Por ejemplo, por medio del editor gráfico el arcquitecto crea un nuevo
- componente y luego realiza explícitamente la sincronización con 
+ Por ejemplo, por medio del editor gráfico el arquitecto crea un nuevo component
+e y luego realiza explícitamente la sincronización con 
 \emph on
 DRArch
 \emph default
  para que la base del conocimiento se actualice.
+ En la figura 
+\begin_inset LatexCommand ref
+reference "fig:Actualización-del-modelo"
+
+\end_inset
+
+ se muestra un diagrama de secuencias con el orden de invocación de los
+ elementos involvucrados en este proceso.
+ La acción LoadCoreModel es disparada cuando el arquitecto ejecuta un comando
+ en el editor gráfico.
+ Es responsabilidad de la acción recuperar el modelo del diagrama mostrado
+ en el editor y volcar dicho modelo al componente DiagramManager.
+ Éste a su vez traduce a hechos 
+\emph on
+Prolog 
+\emph default
+el nuevo modelo y los incorpora a la base de conocimientos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/Update Model Sequence Diagram.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Actualización-del-modelo"
+
+\end_inset
+
+Actualización del modelo arquitectónico a partir de cambios en el modelo
+ gráfico.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Esto quedaria mas claro si se agrega un diagrama de secuencia mostrando
@@ -11665,7 +11698,7 @@ Modelo de fases
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 El parrafo esta contado bastante general ...Los diferentes tipos de fases habria
@@ -11677,7 +11710,8 @@ El parrafo esta contado bastante general ...Los diferentes tipos de fases habria
 
 \end_inset
 
-Existen dos tipos de fases: las interactivas y las no interactivas.
+Se dijo anteriormente que existen dos tipos de fases: las interactivas y
+ las no interactivas.
  Las fases interactivas son aquellas que al finalizar la ejecución de cada
  regla se presentan las sugerencias al usuario para que este las acepte
  o las rechace.
@@ -11690,7 +11724,14 @@ Existen dos tipos de fases: las interactivas y las no interactivas.
 \emph on
 JQuery
 \emph default
- y utilizar dichas reglas en la fase inicial de recolección de información.
+ y utilizar dichas reglas en la fase inicial de recolección de información
+ agrupandolas en una fase no interactiva.
+ Esta selección la hace el arquitecto al momento de creación de la fase
+ junto con la elección del 
+\emph on
+working-set
+\emph default
+ que se evaluará en dicha fase.
 \end_layout
 
 \begin_layout Standard
