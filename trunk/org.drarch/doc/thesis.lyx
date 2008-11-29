@@ -541,7 +541,11 @@ Otro comentario es que Reconstruccion es una forma de chequear Architecture
 \begin_layout Standard
 La documentación de una arquitectura es fundamental para el desarrollo de
  software ya que ésta actúa como vehículo comunicacional entre los diferentes
- stakeholders que participan en las diferentes etapas del desarrollo.
+ 
+\emph on
+stakeholders
+\emph default
+ que participan en las diferentes etapas del desarrollo.
  La documentación permite que el sistema se diseñe, implemente, pruebe,
  instale y mantenga de acuerdo a las prescripciones arquitectónicas.
  A continuación, se discuten los principales factores que motivan la reconstrucc
@@ -789,7 +793,7 @@ key "Tilley1996"
 
 \begin_layout Standard
 Una definición genérica de la Reconstrucción de Arquitecturas de Software
- es la que proponen Bass et.al.
+ es la que proponen Bass et al.
  en 
 \begin_inset LatexCommand cite
 key "SAIP"
@@ -847,8 +851,11 @@ status collapsed
 
 \begin_layout Standard
 Es comúnmente aceptado que una arquitectura de software puede ser utilizada
- como vehículo de comunicación entre los stakeholders (personas con diferentes
- necesidades de un sistema).
+ como vehículo de comunicación entre los 
+\emph on
+stakeholders
+\emph default
+ (personas con diferentes necesidades de un sistema).
  Sin embargo puede verse la falta de documentación arquitectónica en la
  mayoría de los proyectos de desarrollo actuales, especialmente en empresas
  de software pequeñas.
@@ -1334,7 +1341,7 @@ key "SAIP"
 
 
 \emph default
-, Bass et.al.
+, Bass et al.
  proponen una definición que abarca gran parte de las características antes
  mencionadas:
 \end_layout
@@ -6291,7 +6298,7 @@ key "Volder1998"
  código Java siendo un lenguaje más declarativo.
  El lenguaje de programación 
 \emph on
-ProLog
+Prolog
 \emph default
  está basado en la lógica de predicados.
  Los lenguajes de programación tipo 
@@ -7136,7 +7143,7 @@ Análisis dinámico
 Al igual que la información estática, la información dinámica es representada
  en forma de hechos al estilo 
 \emph on
-ProLog
+Prolog
 \emph default
  y sobre la misma base del conocimiento.
  Para obtener dicha información, primero se debe instrumentar la aplicación
@@ -9923,7 +9930,11 @@ release
 
 \begin_deeper
 \begin_layout Itemize
-Fuente del estímulo: stakeholder.
+Fuente del estímulo: 
+\emph on
+stakeholder
+\emph default
+.
  
 \end_layout
 
@@ -12996,7 +13007,11 @@ DRArch
 FLAbot
 \emph default
 , es analizado por el componente TraceLog Analizer para generar los hechos
- ProLog correspondientes al 
+ 
+\emph on
+Prolog
+\emph default
+ correspondientes al 
 \emph on
 log
 \emph default
@@ -13162,7 +13177,7 @@ TraceLog Analyzer
  para realizar una transformación de la información en hechos al estilo
  
 \emph on
-ProLog
+Prolog
 \emph default
 .
 \end_layout
@@ -18170,7 +18185,7 @@ Eclipse
  sobre el metamodelo del lenguaje Java para realizar la transformación del
  código fuente a una representación de hechos al estilo 
 \emph on
-ProLog
+Prolog
 \emph default
 .
 \end_layout
