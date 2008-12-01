@@ -491,8 +491,7 @@ ción disponible es inválida,
 \end_layout
 
 \begin_layout Standard
-En estas situaciones, dado que una arquitectura existe independientemente
- de su especificación, es que cobran importancia los enfoques de reconstrucción
+En estas situaciones es que cobran importancia los enfoques de reconstrucción
  de arquitecturas 
 \begin_inset LatexCommand cite
 key "SAIP"
@@ -911,7 +910,14 @@ ión es indispensable.
 
 \begin_layout Standard
 En algunas soluciones a la Reconstrucción de Arquitecturas que se han propuesto
- la arquitectura del sistema se extrae principalmente por medio del análisis
+ (ver capítulo\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "cha:Trabajos-relacionados"
+
+\end_inset
+
+), la arquitectura del sistema se extrae principalmente por medio del análisis
  del código fuente.
  En otras, se utilizan enfoques que reconstruyen patrones de diseño porque
  esto asegura que la reconstrucción sea más precisa pero restringe el análisis
