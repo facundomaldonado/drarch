@@ -965,15 +965,15 @@ El usuario debe planificar cuál va a ser la estrategia de reconstrucción
 es, documentos, etc.), y seleccionar cómo los conceptos relevantes del diseño
  del sistema se van a mapear a tipos específicos de artefactos arquitectónicos.
  Es decir, el usuario debe definir cuáles son los conceptos arquitectónicos
- que se desean reconstruir y a qué granularidad (por ej., subsistema, componentes
-, módulos o clases, etc.).
+ que se desean reconstruir y a qué granularidad (subsistema, componentes,
+ módulos o clases, etc.).
  Por ejemplo, en algunos casos al arquitecto puede bastarle el mapear un
  componente con un paquete, en otros, es necesario un nivel más de detalle
  y requerir que los componentes estén determinados por tareas y eventos
  en un sistema orientado a eventos.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Por ejemplo, en determinados sistemas el usuario puede estar interesado
@@ -1449,12 +1449,12 @@ Eventos)
 \begin_layout Standard
 La idea principal del estilo de Invocación Implícita es desacoplar el componente
  que invoca una acción de aquel que la ejecuta.
- Por ejemplo en lugar de que una tarea conozca qe otras tareas necesita
+ Por ejemplo en lugar de que una tarea conozca que otras tareas necesita
  invocar para llevar a cabo una acción, la tarea puede producir uno o más
  eventos.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 que en vez de invocar directamente a una tarea, un componente puede producir
@@ -5669,7 +5669,7 @@ Resumiendo, la gran mayoría de los enfoques apuntan a aspectos estructurales
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Falta una vuelta de rosca al ultimo párrafo.
@@ -6213,7 +6213,7 @@ Comenten tambien la contrapartida de usar Prolog, que son: la consistencia
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 El ejemplo esta Ok para aclarar porque el Prolog puede ser ventajoso.
@@ -6345,21 +6345,6 @@ Observable
 \emph on
 observers
 \emph default
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-(los 
-\emph on
-observers
-\emph default
- pueden ser parte del modelo, por ejemplo, la notificación entre celdas
- de una planilla de cálculo) DICE QUE ESTA DE MAS, PARA MI NO JODE.
-\end_layout
-
-\end_inset
-
 .
  
 \end_layout
@@ -9307,12 +9292,7 @@ s arquitectonicas explicadas en seccion 4.2
 
 \begin_layout Standard
 d) como dije antes, toda la seccion 4.2 esta pobre y hay que ponerle un poco
- de garra :-) - en pagina 46: El parrafo "El proceso de reconstrucción es
- controlado por el arquitecto en todo momento.
- Su modelo de generación de reglas permite al arquitecto tener el control
- de cuándo y cómo actualizar el modelo arquitectónico." esta medio redundante,
- directamente empezar con "El modelo basado en reglas de DRArch permite
- al arquitecto .." 
+ de garra :-)  
 \end_layout
 
 \end_inset
@@ -9344,8 +9324,11 @@ queda descolgada de la linea general..
 \end_layout
 
 \begin_layout Standard
-Una sugerencia en DRArch es el resultado de evaluar una de las reglas sobre
- la base del conocimiento.
+Una sugerencia en 
+\emph on
+DRArch
+\emph default
+ es el resultado de evaluar una regla sobre la base del conocimiento.
  La importancia de estas decisiones de diseño varía para cada sistema de
  software, y está dada en función de los 
 \emph on
@@ -9413,7 +9396,7 @@ Una vez que la vista es generada, el arquitecto pude realizar modificaciones
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Es importante destacar que los componentes pueden estar mapeados al código
