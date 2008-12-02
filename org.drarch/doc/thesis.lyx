@@ -123,20 +123,7 @@ ron el sistema se han ido de la organizaci
 \begin_layout Standard
 El problema de la falta de documentación arquitectónica ha sido tratado
  por medio de enfoques basados en ingeniería reversa, con resultados dispares.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] CUales enfoques??? cuales problemas tienen esos enfoques...
- (solo consideran estructura...
- )Hacer énfasis en considerar informacion dinámica del sistema a reconstruir...
- 
-\end_layout
-
-\end_inset
-
-La Reconstrucción de Arquitecturas de Software es una técnica para generar
+ La Reconstrucción de Arquitecturas de Software es una técnica para generar
  representaciones arquitectónicas de un sistema que puede ser usada para
  re-documentar la arquitectura de un sistema.
  Sin embargo, no hay una herramienta que resuelva todos los problemas, y
@@ -180,18 +167,7 @@ Use-Case Maps
  de las personas que desarrollaron el sistema.
  Los UCMs son una notación práctica para especificar tanto componentes como
  flujos de responsabilidades.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] Esta notación no solo el comportamiento sino que ademas la estructura
- del sistema..
-\end_layout
-
-\end_inset
-
-Esto permite describir el sistema mediante un conjunto de vistas de alto
+ Esto permite describir el sistema mediante un conjunto de vistas de alto
  nivel que abarcan tanto aspectos estructurales como de comportamiento.
 \end_layout
 
@@ -237,38 +213,6 @@ DRArch
  y analizar los beneficios y limitaciones del enfoque 
 \emph on
 DRArch.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres]
-\end_layout
-
-\begin_layout Standard
-agregar una linea con informacion resumida de: - Uds realizaron experimentos
- de reconstruccion que mostraron resultados positivos en cuanto a ....
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]Agregar parte del resultado de las experiencias ..
- es decir, que en base a experiencias a demostrado su ...
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter*
@@ -361,42 +305,9 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y]
-\end_layout
-
-\begin_layout Standard
-Aca poner algo como..
- la tendencia actual en el proceso de desarrollo software es focalizar las
- actividades de este proceso en la arquitectura del sistema.
- A este enfoque se lo conoce como desarrollo centrado en la arquitectura
- (refs)..
- Sin embargo, en la mayoría de los sistemas la documentación es escasa o
- inexistente..
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 La arquitectura de software es una disciplina que cumple un rol central
- en la toma de decisiones de diseño 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] Agregar una linea tipo "Por ejemplo, ...." [ejemplo de decisiones]
-\end_layout
-
-\end_inset
-
- y en la comunicación entre todos los participantes del desarrollo de un
- producto de software.
+ en la toma de decisiones de diseño y en la comunicación entre todos los
+ participantes del desarrollo de un producto de software.
  Por ejemplo, algunas decisiones de diseño que involucra esta disciplina
  son: asignación de recursos, definición de restricciones entre la comunicación
  de los distintos elementos, declaración de responsabilidades, etc.
@@ -419,15 +330,6 @@ key "SAIP"
 \end_inset
 
 .
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] (refs)..
-\end_layout
-
-\end_inset
-
  Sin embargo, en la mayoría de los sistemas, la documentación arquitectónica
  es escasa o inexistente.
  La arquitectura de software captura las principales decisiones de diseño
@@ -930,15 +832,14 @@ reference "cha:Trabajos-relacionados"
 \end_layout
 
 \begin_layout Standard
-Muchos de éstos enfoques presentan el resultado de la reconstrucción en
- un solo paso y el arquitecto no ve el progreso del proceso de reconstrucción.
- Esto hace que el proceso no se pueda “guiar” a medida que se reconstruye
- la arquitectura.
- Es decir, no se tiene control sobre qué y cómo se recupera la información,
- ni se puede intervenir si lo considera necesario.
- Además, no es posible manipular la información de forma interactiva, perdiendo
- así la posibilidad de contar con la experiencia del arquitecto y su conocimient
-o en el dominio.
+Varios pasos y la experiencia del arquitecto contempladas por otros enfoques
+ como parte del proceso (extraer-abstraer-presentar), no han sido automatizadas/
+capturadas dentro de una herramienta.
+ 
+\emph on
+DRArch
+\emph default
+ propone incorporarlas/capturarlas dentro de una sóla herramienta.
 \end_layout
 
 \begin_layout Standard
@@ -948,7 +849,6 @@ r-presentar" que necesariamente requiere de varios pasos y de la experiencia
  (presentarlo).
  Por otro lado, ninguno de estos enfoques mantiene la información recuperada
  de tal forma que sea flexible su manipulación.
- 
 \end_layout
 
 \begin_layout Section
@@ -965,12 +865,12 @@ Como objetivo principal del trabajo se propone definir un enfoque flexible
  relacionar distintas piezas de información.
  Para esta representación se utiliza programación lógica.
  La idea es que una herramienta de asistencia pueda analizar la información
- disponible, y por medio de un mecanismo, generar sugerencias al usuario-desarro
-llador sobre posibles vistas del modelo arquitectónico a reconstruir.
+ disponible para generar sugerencias al usuario-desarrollador sobre posibles
+ vistas del modelo arquitectónico a reconstruir.
  Este proceso se repite, con el fin de ir refinando el modelo arquitectónico
  de manera incremental.
- El modelo que se va construyendo se presenta en diagramas (vistas arquitectónic
-as) que representan aspectos estructurales y comportamentales del sistema.
+ El modelo que se va construyendo se presentan en diagramas (vistas arquitectóni
+cas) que representan aspectos estructurales y comportamentales del sistema.
  Este enfoque, que denominamos 
 \emph on
 DRArch
@@ -1001,8 +901,6 @@ key "AMYOT-SAM02"
 
 , hay casos en los que resulta casi imposible determinar el comportamiento
  real de la aplicación.
- Se puede mencionar por ejemplo casos en los que se explota el polimorfismo
- de la orientación a objetos y las instanciaciones se dan en tiempo de ejecución.
 \end_layout
 
 \begin_layout Standard
@@ -1082,6 +980,10 @@ Por ejemplo, en determinados sistemas el usuario puede estar interesado
  en reconstruir componentes que representen eventos, mientras que en otros
  sistemas, el usuario puede decidir que las fuentes de eventos se modelen
  como tareas (y no como componentes).
+\end_layout
+
+\begin_layout Standard
+[nico: y esto?]
 \end_layout
 
 \end_inset
@@ -1235,23 +1137,18 @@ Contexto
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
-[Y] [andres]
-\end_layout
-
-\begin_layout Standard
-a) La introducción a arquitecturas de software del capitulo 2 es un poco
- corta, con pocos ejemplos, y asume sin mas consideraciones que la "mejor"
- forma de documentar una arquitectura es a través de UCMs.
- No estoy diciendo que UCMs esta mal, pero todos sabes que documentar un
- diseño con UCMs no es tan simple ni efectivo ...
- 
+modelo -> patron, estilo u otra cosa
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 En este capítulo se ofrecerá una introducción a los conceptos centrales
  sobre los que se ha realizado este trabajo.
  En primer lugar se define la noción de 
@@ -1283,34 +1180,6 @@ Use-Case Maps
  como una notación simple y efectiva para la documentación de comportamiento
  a nivel arquitectónico.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Luego, en la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Necesidad-de-Documentación-Arquitectónica"
-
-\end_inset
-
- se introduce un problema relacionado con la falta de documentación arquitectóni
-ca, explicando las condiciones donde ocurre y las graves consecuencias que
- presenta para el desarrollo de software.
- Por último, en la sección\InsetSpace ~
-
-\begin_inset LatexCommand ref
-reference "sec:Conclusión"
-
-\end_inset
-
- y a modo de resumen, se resaltan los conceptos clave detallados en este
- capítulo.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1459,17 +1328,6 @@ separation of concerns
  se dividen y cada implementación puede evolucionar independientemente de
  la otra.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Un método que usualmente se utiliza para dividir el esfuerzo es el de asignar
- diferentes grupos de desarrolladores a diferentes porciones del sistema.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1514,9 +1372,8 @@ Los atributos de calidad y los requerimientos son ortogonales.
 performance
 \emph default
 .
- Generalmente, estilos y modelos arquitectónicos son utilizados como punto
- de partida en la definición de la arquitectura ya que la mayoría de éstos
- se basa en los atributos de calidad.
+ Generalmente, se utilizan estilos arquitectónicos para atacar problemas
+ relacionados con atributos de calidad a nivel diseño.
 \end_layout
 
 \begin_layout Standard
@@ -1539,39 +1396,9 @@ Arquitectónicos
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] Esta definición esta incompleta.
- La parte mas importante de un estilo es que es un "paquete de decisiones
- de diseño" que prescribe los tipos y topología de componentes en una solución
- de software.
- Como resultado,un estilo favorece ciertos atributos de calidad y desfavorece
- otros.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Los estilos arquitectónicos son descripciones de los distintos tipos de
  componentes y su topología.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-También incluyen una descripción del patrón de datos y la interacción de
- control.
- 
-\end_layout
-
-\end_inset
-
-Los estilos arquitectónicos son artefactos de ingeniería muy importantes
+ Los estilos arquitectónicos son artefactos de ingeniería muy importantes
  porque definen soluciones de diseños que pueden ser aplicados a problemas
  recurrentes.
  Los estilos ofrecen modelos que se basan en la experiencia y en cómo fueron
@@ -1580,22 +1407,6 @@ Los estilos arquitectónicos son artefactos de ingeniería muy importantes
  los tipos y topologías de componentes en una solución de software.
  Como resultado, un estilo favorece ciertos atributos de calidad y desfavorece
  otros.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] Insertar un ejemplo de un estilo arquitectonico (para clarificar)
- y como seria la cosa entonces ....
- Esta piola utilizar un estilo que despues pueda aparecer en el Bubble,
- o en alguno de los casos de estudio, asi la cosa queda mas "cohesiva"
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1811,32 +1622,12 @@ performance
  no es de alta prioridad".
 \end_layout
 
-\begin_layout Standard
-Los modelos arquitectónicos se definen como una división de la funcionalidad
- con flujos de dato entre los distintos elementos.
- Es una descomposición estándar de un problema conocido en partes que cooperativ
-amente resuelven el problema.
- Basados en la experiencia, los modelos son una característica de los dominios
- que poseen un alto grado de madurez.
- Por ejemplo, son bien conocidos los elementos estándar de un compilador:
- analizador léxico, analizador sintáctico, analizador semántico y generador
- de código intermedio, a su vez, también es conocido cómo es que estos elementos
- interactúan para realizar el objetivo que poseen en común.
-\end_layout
-
-\begin_layout Standard
-Los estilos y modelos arquitectónicos no son arquitecturas.
- Son conceptos útiles para capturar elementos de una arquitectura.
- Sin embargo, sigue siendo conveniente mostrar una imagen del sistema con
- el estilo arquitectónico como parte de alguna vista.
-\end_layout
-
 \begin_layout Subsection
 Importancia de las arquitecturas de software
 \end_layout
 
 \begin_layout Standard
-Desde el punto de vista técnico, las arquitecturas de software toman un
+Desde el punto de vista técnico, las arquitecturas de software tienen un
  gran valor.
  Algunas de las razones de la importancia de las arquitecturas de software
  son:
@@ -1946,17 +1737,9 @@ Usualmente, los requerimientos que se definen para un sistema no sólo son
 performance
 \emph default
  de los atributos de calidad.
- Los requerimientos funcionales y los atributos de calidad son ortogonales.
- Si esto no fuera así, la incorporación de una nueva funcionalidad del sistema
- podría establecer el nivel de seguridad o el de disponibilidad o el de
- 
-\emph on
-performance
-\emph default
-.
  Es importante que los atributos de calidad tengan participación durante
  el diseño del sistema.
- Éstos deberían poder diseñarse y evaluarse a nivel arquitectónico.
+ Éstos deberían poder resolverse y evaluarse a nivel arquitectónico.
  Si bien la arquitectura del sistema provee las bases para que los atributos
  de calidad se cumplan, esto no es suficiente ya que existen otras dependencias.
  Por ejemplo, la 
@@ -2111,7 +1894,14 @@ name "fig:Atributos-de-Calidad"
 
 \end_inset
 
-Partes de los escenarios de los atributos calidad
+Partes de los escenarios de los atributos calidad\InsetSpace ~
+
+\begin_inset LatexCommand cite
+key "SAIP"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2187,26 +1977,13 @@ managers
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] Me parece que esta explicacion es confusa y de muy alto nivel.Explic
-ar mas concreto please ...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Quizás el concepto más importante asociado con la documentación de arquitecturas
- de software es el de 
+Uno de los conceptos más importantes asociado con la documentación de arquitectu
+ras de software es el de 
 \emph on
 vista
 \emph default
-, por ejemplo, el estilo arquitectónico de Invocación Implícita descripto
+.
+ Por ejemplo, el estilo arquitectónico de Invocación Implícita descripto
  en la sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -2214,28 +1991,16 @@ reference "sub:Estilos-y-Modelos"
 
 \end_inset
 
- es mostrado con la vista de la figura\InsetSpace ~
+ puede mostrarse con la vista de la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Invocación-Implícita-vs."
 
 \end_inset
 
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] [andres] Si es que no se puso una figura para el ejemplo de estilo de
- la seccion anterior, mostrarlo aca para ejemplificar lo de vista (y obvio,
- decir este es el estilo X mostrado con la vista Y)
-\end_layout
-
-\end_inset
-
 .
- Recordando la definición de la arquitectura definida anteriormente, vemos
- a ésta como 
+ Recordando la definición de la arquitectura dada anteriormente, vemos a
+ ésta como 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2252,9 +2017,7 @@ tos, sus
 \emph on
 representación
 \emph default
- coherente de esos los elementos importantes que constituyen un sistema,
- tal como lo son el software o el hardware, respecto a la forma en que los
- involucrados la leen y escriben.
+ coherente de los elementos importantes que constituyen un sistema.
  La vista provee el principio básico de la documentación de una arquitectura
  de software:
 \end_layout
@@ -2465,12 +2228,6 @@ key "Kruchten1995"
 \begin_layout Standard
 Cada una de las cinco vistas del modelo 4 + 1 describen distintos aspectos
  del sistema mientras que intencionalmente ocultan otros.
- El propósito principal de este modelo es que define una excelente forma
- en que los 
-\emph on
-stakeholders
-\emph default
- comprendan la arquitectura del sistema.
  Los arquitectos utilizan este modelo para entender y documentar varias
  capas de una aplicación de forma sistemática y estándar.
  Los documentos creados por el modelo son fácilmente utilizados por todos
@@ -2671,9 +2428,6 @@ reference "fig:Diagrama-de-Secuencia"
 \end_inset
 
 ).
- Los diagramas de secuencia proveen mas detalles que los diagramas de colaboraci
-ón pero siguen manteniendo la distancia de mostrar la arquitectura general
- de todo el sistema.
  Arquitectos y diseñadores suelen utilizar estos diagramas para refinar
  detalles el diseño.
  Por ejemplo, observando el diagrama de la figura\InsetSpace ~
@@ -2683,7 +2437,7 @@ reference "fig:Diagrama-de-Secuencia"
 
 \end_inset
 
- se podría realizar un cambio en el diseño si se desea que un nuevo objeto
+, se podría realizar un cambio en el diseño si se desea que un nuevo objeto
  (
 \family typewriter
 Notifier
@@ -2692,7 +2446,7 @@ Notifier
 \family typewriter
 observer
 \family default
- y que estas notificaciones corran en un proceso distinto.
+ corra en un proceso distinto.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2774,8 +2528,8 @@ La vista de proceso permite describir y estudiar los procesos del sistema
  y como estos se comunican, si es que estos se comunican unos con otros.
  Una vista abstracta de los procesos y la comunicación de estos puede ayudar
  para advertir sobre errores.
- Esta vista es importante cuando el sistema posee múltiples y simultáneos
- procesos o 
+ Esta vista es importante cuando el sistema posee múltiples procesos simultáneos
+ o 
 \emph on
 threads
 \emph default
@@ -2800,7 +2554,6 @@ disponibilidad
 escalabilidad
 \emph default
  entre otros.
- 
 \end_layout
 
 \begin_layout Subsubsection
@@ -3048,7 +2801,7 @@ Use-Case Maps
 \emph default
  (UCM) son una notación para diseño de alto nivel que ayuda a las personas
  tanto a expresar como a razonar acerca de los patrones de comportamiento
- de alta granularidad de un sistema 
+ de un sistema 
 \begin_inset LatexCommand cite
 key "BUHR95"
 
@@ -3057,30 +2810,6 @@ key "BUHR95"
 .
  El nombre proviene del hecho de que son una notación visual para casos
  de uso y una extensión de ellos hacia el diseño de alto nivel.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y ...
- hay un NO son un lenguaje formal...] [andres] Esto esta confuso, y no se entiende
- a que apuntan las frases, por ejemplo palabras tipo: apropiado para especificac
-ion formal (a mi me parece mas una notacion informal), decisiones deliberadament
-e abiertas (cuales son, a que se refiere), y demas...
- Lo que es importante decir (y que el lector quiere sabes) es que "los UCMs
- combinan en una notacion de alto nivel el flujo global de comportamiento
- y la estructura de componentes", o algo similar ...
-\end_layout
-
-\begin_layout Standard
-(si es que esto vino de alguna traduccion, revisarlo please para hacerlo
- mas entendible)
-\end_layout
-
-\end_inset
-
-Sin embargo, el modelo no depende de la definición de casos de uso: provee
- su propia definición en sus propios términos.
 \end_layout
 
 \begin_layout Standard
@@ -3097,11 +2826,6 @@ da\SpecialChar \-
 men\SpecialChar \-
 te dejan algunas decisiones de diseño abiertas
  para ser tomadas durante el diseño detallado.
- Los UCM son solamente una notación para razonar y explicar el comportamiento
- de un sistema.
- Es importante de tener esto presente ya que es fácil caer en la trampa
- de buscar o colocar más información de la que corresponde encontrar en
- ellos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3397,17 +3121,7 @@ UserLoggerObserver
 \end_layout
 
 \begin_layout Standard
-Entre las múltiples representaciones gráficas posibles, una de las descripciones
- arquitectónicas elegidas para representar la arquitectura reconstruida
- de un sistema es la de UCMs, en especial, para representar el comportamiento
- 
-\begin_inset LatexCommand cite
-key "BUHR95"
-
-\end_inset
-
-.
- A diferencia de otras descripciones arquitectónicas (basadas principalmente
+A diferencia de otras descripciones arquitectónicas (basadas principalmente
  en mostrar la estructura de sistemas), este tipo de notaciones ayuda a
  las personas a razonar acerca del comportamiento del sistema.
  Otra de las razones principales de la elección de esta notación se basa
@@ -18098,7 +17812,8 @@ Como aporte principal,
 DRArch
 \emph default
  permite reconstruir la arquitectura de software de un sistema generando
- vistas que describan el comportamiento a un alto nivel de abstracción.
+ vistas que describan el comportamiento del sitema a un alto nivel de abstracció
+n.
  Generalmente, las vistas reconstruidas son utilizadas para colaborar en
  la re-documentación del sistema.
  Al mismo tiempo, el enfoque realiza un mapeo entre el código fuente y las
@@ -18122,45 +17837,17 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-No entiendo que agrega este parrafo (que es redundante con el 1er parrafo
- del capitulo).
- Yo diria mejor poner cosas puntuales (resultados) derivados del capitulo
- de caso de estudio.
- Elaborar sobre esto (o sobre otra cosa), pero ser concretos ...!!! 
+Los casos de estudio mostraron resultados positivos.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
-Adicionalmente, se puede incorporar al análisis información del contexto,
- información aportada por la experiencia del arquitecto, información de
- los 
-\emph on
-stackeholders
-\emph default
- y cualquier otro tipo de información, ya que la representación es lo suficiente
-mente flexible como para traducir este tipo de información.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-[Y] Adicionalmente, se puede incorporar al análisis información del contexto,
- información aportada por la experiencia del arquitecto, información de
- los stackeholders y cualquier otro tipo de información, ya que la representació
-n 
+- en pagina 85: Cuando hablan de las ventajas de DRArch (antes de entrar
+ en seccion 7.1) poner algun parrafo que refiera a la experiencia (positiva,
+ asumo?) con los casos de estudio
 \end_layout
 
 \end_inset
@@ -18187,53 +17874,16 @@ es, la mayoría de estas reglas no aportarían información arquitectónica
 \begin_layout Standard
 El haber utilizado programación lógica para definir el modelo de reglas
  brinda flexibilidad a la hora de realizar consultas, pero acarrea los problemas
- típicos en los lenguajes interpretados.
+ típicos de los lenguajes interpretados.
  Una de las principales desventajas del enfoque, es que a medida que el
  numero de reglas aumenta, pueden existir conflictos de activación entre
  las reglas (o activarse muchas reglas al mismo tiempo), que el arquitecto
  debe resolver.
  En general, el orden de activación de las reglas hace que se activen ciertas
- reglas (que están primero) y no las que uno quiere que se activen.
+ reglas (de acuerdo a como estan definidas en la base de conocimiento),
+ y no necesariamente que se activen las reglas apropiadas para refinar el
+ modelo arquitectonico.
  Por otro lado, la eficiencia de las inferencias puede ser un problema.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-No entiendo este supuesto problema de los sistemas de reglas...
- Los problemas que pueden nombrar son los siguientes: 
-\end_layout
-
-\begin_layout Standard
-- A medida que el numero de reglas aumenta, pueden existir conflictos de
- activacion (o activarse muchas reglas al mismo tiempo) entre las reglas,
- que el arquitecto debe resolver.
- 
-\end_layout
-
-\begin_layout Standard
-- En gral.
- (y relacionado con lo anterior), el orden de activacion de las reglas hace
- que se activen ciertas reglas (que estan primero) y no las que uno quiere
- que se activen.
-\end_layout
-
-\begin_layout Standard
-- La eficiencia de las inferencias puede ser un problema.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-ver nota y aclararlo
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -18268,56 +17918,14 @@ La información de mapeos esta en la herramienta, pero no es fácil de comprende
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Que la info de UCMs + mapeos no puede considerarse una documentacion completa
- esta OK.
- Ahora el porque esta errado!! Aca van algunos motivos mas "interesantes"
- por los cuales la info is not enough:
-\end_layout
-
-\begin_layout Standard
-- La info no considera cuestiones de deployment 
-\end_layout
-
-\begin_layout Standard
-- La info no documenta design rationale 
-\end_layout
-
-\begin_layout Standard
-- La info no captura ni casos de uso ni escenarios para atributos de calidad
- 
-\end_layout
-
-\begin_layout Standard
-- La informacion de mapeos esta en el tool, pero no es facil de comprender
- por el usuario (ya que se captura mediante dialogos) y no cuenta con el
- racional que justifica dichos mapeos.
-\end_layout
-
-\begin_layout Standard
-..., ya que no define de manera explícita las relaciones entre estos elementos
- (por ejemplo, la estructura de herencia en una vista estática o los puertos
- y conectores en tiempo de ejecución).
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Finalmente, es necesario mencionar algunas desventajas inherentes a las
- técnicas de instrumentación de código y análisis de logs de ejecución,
- que fueron acarreadas por este trabajo.
+ técnicas de instrumentación de código y análisis de logs de ejecución.
  El módulo de instrumentación de 
 \emph on
 FLABot
 \emph default
- ha sido utilizado exitosamente en un gran número de aplicaciones; sin embargo,
- la elección de los puntos a inspeccionar para generar un log de ejecución
+ ha sido utilizado exitosamente en varias aplicaciones; sin embargo, la
+ elección de los puntos a inspeccionar para generar un log de ejecución
  implica un 
 \emph on
 tradeoff
@@ -18330,8 +17938,8 @@ li\SpecialChar \-
 zar un análisis más preciso y exhaustivo.
  Sin embargo, la cantidad de información almacenada se volvería inmanejable
  y la aplicación analizada se vería extremadamente afectada en su rendimiento,
- ya que por cada línea ejecutada se activaría el mecanismo de publicación
- y subscripción de eventos del instrumentador.
+ ya que por cada línea ejecutada se activaría el mecanismo de eventos del
+ instrumentador.
  Aunque se pudiera instrumentar todo el código, sería imposible en la practica
  ejecutar "todos los posibles caminos" de cobertura del código.
 \end_layout
@@ -18452,23 +18060,10 @@ key "Gamma94"
 \emph on
 DRArch
 \emph default
- para generar 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-Ampliar un poco el cómo DRArch podria ayudar aca.
- Por ejemplo " que instrumente la aplicacion, y luego chequee sobre el conjunto
- de hechos ...
- blablabla".
- 
-\end_layout
-
-\end_inset
-
-reglas que validen si los patrones de di\SpecialChar \-
+ para generar reglas que validen si los patrones de di\SpecialChar \-
 se\SpecialChar \-
-ño están implementados correctamente.
+ño están implementados
+ correctamente.
  También 
 \emph on
 DRArch
@@ -18478,63 +18073,6 @@ DRArch
  al ejercitar la aplicación.
  El diseño flexible de la herramienta permite realizar esta modificación
  realizando cambios menores en el código fuente.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Subsection
-Algoritmos
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-DRArch
-\emph default
- esta basado en un proceso donde interviene un modelo de reglas.
- Gracias a este modelo de reglas se cuenta con flexibilidad para definir
- consultas sobre la información que se quiere obtener.
- Sin embargo, el modelo de reglas también aporta cierto grado de ambigüedad,
- la cual es resuelta por el arquitecto en el momento de aceptar o rechazar
- cada sugerencia.
- Una forma de evitar esta ambigüedad es incorporando algoritmos que validen
- los resultados de la ejecución de cada regla.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Insertar aca una oracion que diga como se "validarian" estos resultados.
-\end_layout
-
-\end_inset
-
-Esto también aumentaría el grado de automatización del proceso propuesto
- por 
-\emph on
-DRArch
-\emph default
-, ya que la interacción con el arquitecto disminuye al no tener que tomar
- tantas decisiones.
- Mediante técnicas probabilisticas o reglas de ámbito (por nombrar algunas)
- sería posible hacer este tipo 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-que tipo?
-\end_layout
-
-\end_inset
-
- de filtrado antes de presentar los resultados al arquitecto.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -18582,8 +18120,12 @@ Ejercitación de la herramienta con casos de test
 \end_layout
 
 \begin_layout Standard
-Un aspecto débil de DRArch es el hecho de ejecutar manualmente los casos
- de uso para ejercitar la herramienta con el propósito de 
+Un aspecto débil de 
+\emph on
+DRArch
+\emph default
+ es el hecho de ejecutar manualmente los casos de uso para ejercitar la
+ herramienta con el propósito de 
 \emph on
 loguear
 \emph default
@@ -18591,54 +18133,10 @@ loguear
 \end_layout
 
 \begin_layout Standard
-Un trabajo futuro para mitigar este hecho es el de utilizar los casos de
- test, más específicamente los test funcionales automatizados, para automatizar
- el proceso de extracción de la información dinámica.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Una vez que la aplicación que está siendo analizada se ha puesto en ejecución,
- el proceso de ejercitarla con los casos de uso correspondientes a los paths
- de\SpecialChar \-
-sac\SpecialChar \-
-tua\SpecialChar \-
-li\SpecialChar \-
-za\SpecialChar \-
-dos
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Esto sin explicacion no se entiende, es muy criptico.
- - tiene sentido en ArchSync, pero aca "merece" primero un contexto...
- Hablaron en el resto de la tesis de "casos de uso" y "paths desactualizados"?
- Aclarar que son "UCM paths"
-\end_layout
-
-\end_inset
-
- se debe realizar de manera manual.
- En caso de tener que verificar un número considerable de paths, la tarea
- se puede volver muy tediosa, aumentando la probabilidad de introducir errores
- en el análisis por distracciones del usuario.
-\end_layout
-
-\begin_layout Standard
-Un trabajo futuro para mitigar puede ser permitir el mapeo de UCMs con casos
- de test.
- Al contar la herramienta con información acerca de qué caso de test corresponde
- a cada 
-\emph on
-path
-\emph default
-, sería posible la creación de los logs de ejecución necesarios sin intervención
- del usuario.
-\end_layout
-
-\end_inset
-
-
+Un trabajo futuro para mitigar este hecho es la utilización de casos de
+ test para automatizar el proceso de extraccion de la informacion dinámica.
+ Por ejemplo, se podrían aplicar test funcionales automatizados para ejercitar
+ el sistema y generar el log de ejecución.
 \end_layout
 
 \begin_layout Chapter
