@@ -3513,10 +3513,9 @@ Esto podria ir en el contexto..o juntar ambas secciones..
 
 \end_inset
 
-El problema de la falta de documentación arquitectónica o incluso su desactualiz
-ación, como así también la re-ingeniería y la falta de sincronización entre
- arquitectura e implementación constituyen los principales motivadores de
- este trabajo.
+Los principales factores que motivaron este trabajo fueron la falta de documenta
+ción arquitectónica y su desactualización, como así también la re-ingeniería
+ y la falta de sincronización entre arquitectura e implementación.
 \begin_inset Note Note
 status collapsed
 
@@ -3535,7 +3534,7 @@ Y concluir el contexto con los trabajos relaciones que fueron la base de
 \end_layout
 
 \begin_layout Standard
-En este capítulo se brinda una visión más amplia sobre los distintos aportes
+En este capítulo se brinda una visión más amplia sobre los distintos enfoques
  existentes relacionados con la reconstrucción de arquitecturas, destacando
  los rasgos principales de cada enfoque.
 \end_layout
@@ -3557,10 +3556,9 @@ La mayoría de los enfoques y herramientas para reconstrucción de arquitecturas
 \emph on
 extraer-abstraer-presentar
 \emph default
-, en el cual el sistema es analizado con el propósito de popular un repositorio,
- que luego es consultado para poder construir representaciones abstractas
- del sistema para ser presentadas en forma interactiva y adecuada al ingeniero
- de software.
+, en el cual el sistema es analizado con el propósito de llenar un repositorio
+ con datos, que luego es consultado para poder construir representaciones
+ abstractas del sistema para ser presentadas al ingeniero de software.
  Tilley et.
  al 
 \begin_inset LatexCommand cite
@@ -3593,7 +3591,7 @@ Aportes relacionados
 La problemática de descubrir el modelo arquitectónico de un sistema completament
 e implementado ha sido abordado de diversas maneras.
  Entre ellos se encuentran enfoques de reconstrucción manuales apoyados
- con herramientas de visualización o de extracción de información, aquellos
+ con herramientas de visualización o de extracción de información; aquellos
  que implementan lenguajes de consultas para escribir pautas para cons\SpecialChar \-
 tru\SpecialChar \-
 ir
@@ -3601,7 +3599,7 @@ ir
 \emph on
 clusters
 \emph default
- o agregaciones automáticamente, y también aquellos que implementan técnicas
+ o agregaciones automáticamente; y también aquellos que implementan técnicas
  diversas como minería de datos (
 \emph on
 data mining
@@ -3634,9 +3632,9 @@ key "Finnigan97"
 \end_inset
 
 .
- La información contenida en la biblioteca incluye código fuente como también
- así cualquier otra documentación sobre el sistema como pueden ser casos
- de test, análisis de 
+ La información contenida en la biblioteca incluye código fuente así como
+ cualquier otra documentación sobre el sistema, como pueden ser casos de
+ test, análisis de 
 \emph on
 performance
 \emph default
@@ -3722,8 +3720,12 @@ PBS esta compuesto por una serie de herramientas que ayudan en la construcción
 :
 \end_layout
 
-\begin_layout Standard
-Extractores: Los extractores realizan el 
+\begin_layout Itemize
+
+\series bold
+Extractores
+\series default
+: Los extractores realizan el 
 \emph on
 parsing
 \emph default
@@ -3736,17 +3738,25 @@ tes.
  Existen extractores para algunos lenguajes como C y Pascal.
 \end_layout
 
-\begin_layout Standard
-Manipuladores de hechos: Los hechos producidos por los extractores (o por
- alguna otra fuente, incluida la preparación manual) son efectivamente una
- base de datos, la cual puede ser manipulada.
- Una herramienta llamada Grok opera sobre hechos escritos en RSF y es usado
- para leer los hechos y crear los hechos (sub grafos) para cada subsistema.
- 
+\begin_layout Itemize
+
+\series bold
+Manipuladores de hechos
+\series default
+: Los hechos producidos por los extractores (o por alguna otra fuente, incluida
+ la preparación manual) son efectivamente una base de datos, la cual puede
+ ser manipulada.
+ Una herramienta llamada Grok opera sobre hechos escritos en RSF (Rigi Standard
+ Form) y es usado para leer los hechos y crear los hechos (sub grafos) para
+ cada subsistema.
 \end_layout
 
-\begin_layout Standard
-Diseñador de diagramas: Los grafos tienen atributos que determinan el 
+\begin_layout Itemize
+
+\series bold
+Diseñador de diagramas
+\series default
+: Los grafos tienen atributos que determinan el 
 \emph on
 layout
 \emph default
@@ -3761,9 +3771,13 @@ layout
 .
 \end_layout
 
-\begin_layout Standard
-Visualizador de diagramas: Hay una herramienta llamada LS (Landscape) Viewer
- que lee grafos con sus atributos de 
+\begin_layout Itemize
+
+\series bold
+Visualizador de diagramas
+\series default
+: Hay una herramienta llamada LS (Landscape) Viewer que lee grafos con sus
+ atributos de 
 \emph on
 layout
 \emph default
@@ -3775,13 +3789,13 @@ Cada vez que el sistema es compilado (
 \emph on
 build
 \emph default
-), hechos relevantes (como llamadas a pro\SpecialChar \-
+), se extraen hechos relevantes (como llamadas a pro\SpecialChar \-
 ce\SpecialChar \-
 di\SpecialChar \-
 mien\SpecialChar \-
-tos y referencias a datos)
- son extraídas de éste.
- Mediante la comparación con los hechos anteriores con los nuevos, se detectan
+tos y referencias
+ a datos).
+ Mediante la comparación de los hechos anteriores con los nuevos, se detectan
  nuevos archivos, llamados "huerfanos".
  Un algoritmo los asigna automáticamente a un subsistema y también provee
  de información de 
@@ -3999,10 +4013,9 @@ te\SpecialChar \-
 rís\SpecialChar \-
 ti\SpecialChar \-
 cas arquitectónicas en el código fuente mediante
- el uso de una librería de "reconocedores".
- Características arquitectónicas se consideran aquellas partes que constituyen
- los estilos arquitectónicos que a su vez definen los principios organizacionale
-s que guían a los programadores en el desarrollo de código.
+ el uso de una biblioteca de "reconocedores".
+ Son consideradas características arquitectónicas todas aquellas partes
+ que constituyen los estilos arquitectónicos.
  Ejemplos de estilos arquitectónicos son 
 \emph on
 task
@@ -4024,7 +4037,11 @@ and
 filter
 \emph default
  y repositorio de datos.
- ManSART esta construido en base a mecanismos de análisis de código fuente.
+ 
+\end_layout
+
+\begin_layout Standard
+ManSART esta construido en base a mecanismos de análisis de código fuente.
  El proceso de reconstrucción pasa secuencialmente por tres etapas: reconocimien
 to, manipulación y presentación.
  Al comenzar el análisis se genera un conjunto de vistas iniciales del sistema.
@@ -4091,7 +4108,7 @@ reconstrucción y análisis de la arquitectura.
 El mecanismo es simple, reglas que definen patrones son transformadas en
  consultas que serán aplicadas automáticamente para detectar instancias
  de dichos patrones en el modelo.
- Refinando dichas consultas de patrones se puede mejorar la precisión en
+ Refinando dichas consultas de patrones, se puede mejorar la precisión en
  la detección de patrones.
 \end_layout
 
@@ -4350,16 +4367,22 @@ socket
 \emph default
  TCP con el suﬁjo “ServerSocket”, el programador deberá seguir este estándar
  para que el mecanismo sea efectivo.
- Los autores de esta herramienta aseguran bajo la condición de que las implement
-aciones respeten siempre los mismos estilos, que DiscoTect puede monitorear
+\end_layout
+
+\begin_layout Standard
+Los autores de esta herramienta aseguran bajo la condición de que las implementa
+ciones respeten siempre los mismos estilos, que DiscoTect puede monitorear
  diferentes sistemas sin que sea necesario modiﬁcar la especiﬁcación del
  mapeo entre eventos de bajo nivel y eventos de alto nivel, es decir, sin
  cambiar el código DiscoStep.
- Aunque este enfoque es interesante para visualizar la evolución de una
- arquitectura durante la ejecución de su implementación, es importante hacer
- notar que esta evolución se representa en términos estructurales de la
- arquitectura, en otras palabras, como los componentes y sus conectores
- se reconﬁguran entre si de acuerdo a las distintas situaciones que pueden
+ 
+\end_layout
+
+\begin_layout Standard
+Aunque este enfoque es interesante para visualizar la evolución de una arquitect
+ura durante la ejecución de su implementación, es importante hacer notar
+ que esta evolución se representa en términos de los componentes y sus conectore
+s se reconﬁguran entre si de acuerdo a las distintas situaciones que pueden
  ocurrir en el sistema.
  Los autores de DiscoTect han reportado dos casos de estudio de sistemas
  legados, en los que recuperaron tanto un estilo 
@@ -4432,8 +4455,8 @@ key "MEDVIDOVIC06"
 
 \end_inset
 
- propone un enfoque en el cual su objetivo es extraer una descripción estructura
-l de la arquitectura en función de la información provista por su implementación
+ propone un enfoque cuyo objetivo es extraer una descripción estructural
+ de la arquitectura en función de la información provista por su implementación
  y el desarrollador.
  El código fuente de una aplicación es analizado estáticamente para obtener
  un diagrama de clases UML y luego las clases interrelacionadas son agrupadas
@@ -4470,7 +4493,7 @@ key "MEDVIDOVIC06"
  un diagrama de clases UML y luego las clases interrelacionadas son agrupadas
  en componentes.
  Este enfoque mantiene los mapeos entre arquitectura e implementación durante
- la evolución aplicando el proceso de descubrimiento incrementalmente sobre
+ la evolución, aplicando el proceso de descubrimiento incrementalmente sobre
  las porciones de código fuente modiﬁcadas.
  Los mapeos deﬁnen a los componentes como un grupo de clases relacionadas.
  El proceso de 
@@ -4491,8 +4514,8 @@ reference "fig:Ejemplofocus"
 
 \end_inset
 
- ilustra las principales actividades ordenadas parcialmente realizadas por
- Focus para recuperar una arquitectura.
+ ilustra las principales actividades realizadas por Focus para recuperar
+ una arquitectura.
  El enfoque es interesante para propagar cambios desde la implementación
  hacia la arquitectura.
  La virtud principal radica en reﬁnar progresivamente la vista arquitectónica
@@ -4500,8 +4523,7 @@ reference "fig:Ejemplofocus"
 a íntegramente con un único análisis exhaustivo.
  Como desventajas, se puede mencionar la escasa automatización (por ejemplo,
  las abstracciones deben ser realizadas por el usuario) y nuevamente, la
- falta de soporte para aspectos comportamentales de la arquitectura como
- es el caso de las representaciones UCM.
+ falta de soporte para aspectos comportamentales de la arquitectura.
 \end_layout
 
 \begin_layout Standard
@@ -4613,17 +4635,9 @@ ción sub\SpecialChar \-
 si\SpecialChar \-
 guien\SpecialChar \-
 te del modelo queda a cargo del usuario, quien
- tiene a su disposición para este propósito, dos operaciones: agregación
- y ajuste.
+ tiene a su disposición dos operaciones: agregación y ajuste.
  La agregación permite seleccionar distintos bloques y agruparlos creando
  un nuevo nivel en la jerarquía.
- 
-\end_layout
-
-\begin_layout Standard
-El ajuste es otra operación visual donde se mueven bloques para eliminar
- dependencias entre paquetes de niveles mas altos que fueron introducidos
- por emplazamientos accidentales de funcionalidad a nivel de archivo.
  Como las etiquetas se aplicaron antes al código fuente y éste ya ha sido
  abstraído en componentes, la herramienta ahora es capaz de generar Use
  Case Maps como trayectorias a través de las distintas etiquetas colocadas
@@ -4683,12 +4697,12 @@ Ejemplo KAE
 
 \begin_layout Standard
 Aunque éste es uno de los pocos enfoques que apunta a reconstruir aspectos
- de comportamiento, se realizan demasiadas tareas manuales y otras tantas
- aplicando simpliﬁcaciones gruesas, que introducen errores extra, como es
- el caso de suponer que existe una división de componentes que coincide
- perfectamente con la estructura jerárquica de paquetes del proyecto, o
- crear trayectorias UCM en base al análisis estático del código, cuando
- en realidad la especiﬁcación es inherentemente comportamental.
+ de comportamiento, se realizan demasiadas tareas manuales y otras aplicando
+ simpliﬁcaciones gruesas, que introducen errores, como es el caso de suponer
+ que existe una división de componentes que coincide perfectamente con la
+ estructura jerárquica de paquetes del proyecto, o crear trayectorias UCM
+ en base al análisis estático del código, cuando en realidad la especiﬁcación
+ es inherentemente comportamental.
  Además, es el usuario quien determina en todo momento cuáles son las responsabi
 lidades y las trayectorias de los distintos escenarios, limitando considerableme
 nte la extracción de información.
@@ -4699,9 +4713,14 @@ Lattix LDM
 \end_layout
 
 \begin_layout Standard
-Lattix LDM™ ataca los factores de comunicación, visualización, análisis
- y gestión de las arquitecturas mediante una técnica distinta a las descriptas
- anteriormente.
+Lattix LDM™ 
+\begin_inset LatexCommand cite
+key "Lattix"
+
+\end_inset
+
+ ataca los factores de comunicación, visualización, análisis y gestión de
+ las arquitecturas mediante una técnica distinta a las descriptas anteriormente.
  Lattix afirma que el manejo de las dependencia entre los módulos es crítico
  para la gestión de proyectos de software.
 \end_layout
@@ -4730,14 +4749,14 @@ namespaces
 
 \begin_layout Standard
 Esta aplicación esta destinada a ser parte del proceso de desarrollo.
- Ataca el problema de la erosión de la arquitectura, permite mantener actualizad
-a la información arquitectónica con respecto a la implementación.
+ Ataca el problema de la erosión de la arquitectura y permite mantener actualiza
+da la información arquitectónica con respecto a la implementación.
  
 \end_layout
 
 \begin_layout Standard
-La forma de idealización de la arquitectura utilizando DSM tiene beneficios
- en comparación con otras métodos como UML.
+La forma matricial de representar la parte estatica de la arquitectura utilizand
+o DSM tiene beneficios en comparación con otros métodos como UML.
  Por ejemplo, la figura 
 \begin_inset LatexCommand ref
 reference "fig:Comparación-Ant"
@@ -4756,8 +4775,6 @@ builds
 pre\SpecialChar \-
 sen\SpecialChar \-
 tar todo el sistema.
- Además es muy difícil mantener este modelo actualizado a medida que el
- código cambia.
  Por último, es imposible detectar referencias cruzadas en este tipo de
  modelos.
 \end_layout
@@ -4811,9 +4828,15 @@ Structure 101
 \end_layout
 
 \begin_layout Standard
-Structure101, desarrollado por Headway Software Technologies, es una herramienta
- versátil de análisis estático de código orientada al análisis de estructura
- (diseño, arquitectura y 
+Structure101 
+\begin_inset LatexCommand cite
+key "structure101"
+
+\end_inset
+
+, desarrollado por Headway Software Technologies, es una herramienta versátil
+ de análisis estático de código orientada al análisis de estructura (diseño,
+ arquitectura y 
 \emph on
 packaging
 \emph default
@@ -5847,7 +5870,7 @@ ca\SpecialChar \-
 ción como de modularizació
 n.
  Sin embargo, estas técnicas se ven limitadas cuando las estructuras del
- sistema son conocidas en tiempo de ejecución.
+ sistema no son conocidas en tiempo de ejecución.
  Es decir, cuando la determinación del componente responsable de un aspecto
  en particular es realizada en tiempo de ejecución (por ejemplo, clases
  cargadas dinámicamente en los sistemas orientados a objetos).
@@ -5857,7 +5880,7 @@ n.
  perfectamente con la estructura jerárquica de paquetes de proyectos es
  ge\SpecialChar \-
 ne\SpecialChar \-
-rar una simplificación muy gruesa que introduce errores extra.
+rar una simplificación muy gruesa que introduce errores.
  Lo mismo ocurre al basar el 
 \emph on
 clustering
@@ -5872,10 +5895,11 @@ Además, ninguno de estos enfoques ha considerado las extracciones de
 \emph on
 paths
 \emph default
- de ejecución para generar diagramas tales como los UCMs, solo KAE genera
- este tipo de diagramas pero con particularidad de hacerlo a partir de un
- análisis estructural cuando la representación es inherentemente comportamental.
- DiscoTech utiliza información dinámica, pero genera vistas estructurales
+ de ejecución para generar diagramas tales como los UCMs.
+ Solo KAE genera este tipo de diagramas pero con particularidad de hacerlo
+ a partir de un análisis estructural cuando la representación es inherentemente
+ comportamental.
+ DiscoTec utiliza información dinámica, pero genera vistas estructurales
  de la arquitectura.
  
 \end_layout
@@ -5884,13 +5908,13 @@ paths
 Un aspecto débil, ya no de los enfoques sino de las aplicaciones que los
  implementan, es que muy pocas tienen incorporadas las herramientas de extracció
 n de información.
- Otro aspecto a destacar que está fuertemente relacionado con el anterior
+ Otro aspecto a destacar, que está fuertemente relacionado con el anterior,
  es que demasiadas tareas se hacen de forma manual.
- Ya sea el parseo del código fuente, como la instrumentación de dicho código
- son tareas manuales o bien realizadas por otras aplicaciones cuyos resultados
+ Tanto el parseo del código fuente como la instrumentación de dicho código,
+ son tareas manuales o bien realizadas por otras aplicaciones, cuyos resultados
  hay que agregarlos manualmente a la herramienta de análisis.
  Sería deseable que solamente la información que debe ser interpretada por
- el ojo experto sea incorporada manualmente.
+ un experto sea incorporada manualmente.
 \end_layout
 
 \begin_layout Standard
@@ -5904,18 +5928,20 @@ DRArch
  El enfoque Botton-Up y Top-Down propuesto en Mitre es interesante desde
  el punto de vista de la flexibilidad del análisis al poder seguir cualquiera
  de las dos estrategias.
- El uso de programación lógica para realizar las inferencias es mucho mas
- atractivo e intuitivo que utilizar, como lo hace Dali, una combinación
+ El uso de programación lógica para realizar las inferencias (Riva) es mucho
+ mas atractivo e intuitivo que utilizar, como lo hace Dali, una combinación
  de SQL y Perl para la inferencia y la generación de nuevos hechos.
  El uso de programación lógica se enfoca en "qué" recuperar y no "cómo"
  hacerlo.
  Utilizar convenciones de nombres es una alternativa interesante siempre
  y cuando no sea "la única alternativa" (DiscoTect).
- Es decir que el análisis no se base en convenciones sino que aproveche
- sus beneficios ya que es una herramienta poderosa que incorpora en la fase
- de extracción, el conocimiento del arquitecto sobre el código implementado.
- Por último el método propuesto por el SEI, ARM es un mecanismo simple que
- sienta las bases del análisis y permite refinar y aumentar la precisión
+ Es decir, que el análisis no se base simplemente en convenciones sino que
+ aproveche sus beneficios.
+ Las convenciones de nombres son una herramienta poderosa que incorpora,
+ en la fase de extracción, el conocimiento del arquitecto sobre el código
+ implementado.
+ Por último, el método propuesto por el SEI, ARM es un mecanismo simple
+ que sienta las bases del análisis permitiendo refinar y aumentar la precisión
  de los elementos recuperados.
 \end_layout
 
@@ -5980,19 +6006,15 @@ n arquitectónica.
  Como bien se detalló en el capítulo anterior, existen varios enfoques basados
  en reconstrucción de arquitecturas para tratar el problema que causa la
  falta de documentación arquitectónica.
- Si bien estos enfoques no se centran en la reconstrucción de arquitecturas
- que muestren aspectos comportamentales del sistema, su análisis permitió
- detectar ciertos aspectos que colaboran con el enfoque 
-\emph on
-DRArch
-\emph default
- con mecanismos para generar diagramas de UCMs.
+ Si bien estos enfoques no se centran en la reconstrucción de aspectos comportam
+entales de la arquitectura, su analisis nos permitio identificar mecanismos
+ utiles a la hora de diseñar DRArch y generar diagramas de UCMs.
 \end_layout
 
 \begin_layout Standard
 Otro aspecto importante a tener en cuenta durante el proceso de reconstrucción
- de la arquitectura la información que aporten aquellas personas que tengan
- conocimientos sobre el sistema.
+ de la arquitectura es la información que aporten aquellas personas que
+ tengan conocimientos sobre el sistema.
  Por lo general, esta información es la mas difícil de incorporar ya que
  por lo general depende de la naturaleza de cada sistema.
  Por ejemplo, un desarrollador sabe que existe una convención en donde todas
@@ -6033,25 +6055,33 @@ Modelo Conceptual
 \end_layout
 
 \begin_layout Standard
-El enfoque permite recuperar arquitecturas de sistemas de software mostrando
- aspectos estructurales y comportamentales.
- Basandose en el esquema de recolectar-abstraer-presentar, el proceso de
- reconstrucción consiste en recolectar información de distintas fuentes.
- Por ejemplo, los principales artefactos que se tienen en cuenta son: código
- fuente, logs de ejecución, experiencia de los expertos del sistema, etc.
- Esta información se consolida en una representación común llamada base
- del conocimiento.
- Luego, por medio de un mecanismo de reglas, se analiza la información disponibl
-e para generar sugerencias al usuario sobre el modelo arquitectónico a reconstru
-ir.
+El enfoque DRArch permite recuperar arquitecturas de sistemas de software
+ mostrando aspectos estructurales y comportamentales.
+ Basándose en el esquema de recolectar-abstraer-presentar, el proceso de
+ reconstrucción consiste en recolectar información de distintas fuentes,
+ por ejemplo, el código fuente, logs de ejecución, experiencia de los expertos
+ del sistema.
+ Esta información se consolida en una representación común y se almacena
+ en una base de datos llamada base de conocimiento.
+ Luego, por medio de un mecanismo de reglas, se analiza la información con
+ el objetivo de generar sugerencias al usuario sobre el modelo arquitectónico
+ a reconstruir.
  Las sugerencias son afirmaciones que el arquitecto debe aceptar o rechazar.
- Si una sugerencia es aceptada, se realiza una transformación en el modelo.
- Así es como el modelo arquitectónico se va construyendo y en cada paso
- se transforma en diagramas de componentes y de UCMs que representan aspectos
- estructurales y comportamentales del sistema en un alto nivel de abstracción.
- Los UCMs pueden mostrar escenarios de comportamiento, es decir, escenarios
- basados en los requerimientos del sistema en donde se describen los resultados
- esperados de cada componente de la arquitectura.
+ Por ejemplo una sugerencia puede ser: "Dado el paquete 
+\family typewriter
+bubble.core
+\family default
+ se creará al componente 
+\family typewriter
+bubble.core
+\family default
+".
+ Si una sugerencia es aceptada, se realiza una transformación en el modelo
+ que está contenido en el repositorio.
+ De ésta forma el modelo arquitectónico se va construyendo, va evolucionando
+ y es mostrado en cada paso mediante diagramas de componentes y de UCMs.
+ Estos diagramas sirven para refinar el modelo arquitectonico y mostrar
+ el modelo "actual" al arquitecto.
  Este proceso se repite con el fin de ir refinando de forma incremental
  el modelo arquitectónico.
  De esta manera, el proceso de recuperación será una tarea donde el enfoque
@@ -6062,7 +6092,7 @@ ir.
 
 \begin_layout Standard
 La descripción del proceso define seis partes principales del enfoque: el
- análisis estático, análisis dinámico, un modelo de reglas, la identificación
+ análisis estático, el análisis dinámico, un modelo de reglas, la identificación
  de estructuras arquitectónicas, el manejo de las alternativas arquitectónicas
  y la generación de vistas.
  La Figura\InsetSpace ~
@@ -6119,6 +6149,21 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+- en pagina 33: La figura 4.1 esta mucho mejor, pero no muestra las entradas/sali
+das/interacciones que afectan al "experto en reconstruccion" de arriba del
+ todo.
+ Sugiero al menos agregar unas flechas que muestre cuales de las actividades
+ en el loop del proceso DARch "tocan" al Experto en reconstruccion, cosa
+ de hacer EXPLICITO el accept/reject de sugerencias ...
+\end_layout
+
+\end_inset
+
+
 \begin_inset Caption
 
 \begin_layout Standard
@@ -6159,23 +6204,24 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Las iteraciones están representadas por las fases, las cuales realizan actualiza
-ciones al modelo arquitectónico.
- De esta forma, el punto de comienzo de este proceso es la ejecución de
- la fase de recolección de información.
- A partir del código fuente recuperamos la información estática y mediante
- el análisis del sistema en ejecución extraemos la información dinámica
+Las iteraciones involucran etapas de actualización del modelo arquitectonico
+ que se denominan fases.
+ El punto de comienzo de este proceso es la ejecución de la fase de recolección
+ de información.
+ A partir del código fuente se recupera la información estática y mediante
+ el análisis del sistema en ejecución y se extrae la información dinámica
  que complementa el análisis estático.
  Tanto la información estática como la dinámica (recolectadas en las primeras
- fases) son utilizadas por el resto de las fases ya que es considerada como
- información base.
+ fases) son utilizadas por el resto de las fases, ya que es considerada
+ como información base.
  
 \end_layout
 
 \begin_layout Standard
 Luego de la fase de recolección de información empiezan las fases de especializa
-ción, las cuales van iterativa e incrementalmente modificando el modelo
- arquitectónico elevando en cada fase el nivel de abstracción y detalle.
+ción.
+ Cada fase de especialización eleva el nivel de abstracción del modelo arquitect
+ónico actual, o bien proporciona información más detallada del mismo.
  En estas fases, la herramienta sugiere un conjunto de modificaciones a
  la descripción del modelo arquitectónico.
  Estas modificaciones representan cambios a diferentes partes de la representaci
@@ -6183,18 +6229,18 @@ ción, las cuales van iterativa e incrementalmente modificando el modelo
  como de comportamiento.
  A partir de estas sugerencias, el arquitecto decide cuál de estas modificacione
 s representan fielmente los conceptos arquitectónicos que se está intentando
- reconstruir como así también descartar todas las sugerencias porque no
+ reconstruir, como así también descarta todas las sugerencias porque no
  aportan información relevante al análisis.
  Adicionalmente, el arquitecto puede refinar la especificación representada
- por los diferentes diagramas aumentando el nivel de detalle, incorporando
- modificaciones o elementos que pueden aportar mayor nivel de detalle en
- sucesivas fases que utilizan el modelo transformado por la fase en curso.
+ por los diferentes diagramas, incorporando modificaciones o elementos que
+ pueden aportar mayor nivel de detalle en sucesivas fases que utilizan el
+ modelo transformado por la fase en curso.
 \end_layout
 
 \begin_layout Standard
-Con el objetivo de poder comprender el enfoque pragmáticamente, en la siguiente
- sub-sección se presenta un ejemplo simple de una pieza de un sistema, en
- donde se utiliza el patrón de diseño 
+Con el objetivo de poder comprender el enfoque, en la siguiente sub-sección
+ se presenta un ejemplo simple reconstrucción de un sistema, en donde se
+ utiliza el patrón de diseño 
 \emph on
 Observer-Observable
 \emph default
@@ -6211,28 +6257,16 @@ Ejemplo: Observer-Observable
 \end_layout
 
 \begin_layout Standard
-Una vista importante en 
-\emph on
-DRArch
-\emph default
- es la de UCMs que muestra comportamiento.
- Retomando el ejemplo de Sección\InsetSpace ~
+En el ejemplo de UCM dado en Sección\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "sub:Ejemplo-UCM"
 
 \end_inset
 
-, se puede observar cómo se comporta la aplicación y cómo se instancia el
- patrón de diseño 
-\emph on
-Observer-Observable
-\emph default
-.
-\end_layout
-
-\begin_layout Standard
-El patrón 
+ se modeló una aplicacion que utilizaba el patron de disenio Observer-Observable
+ para observar cómo se comporta la aplicación.
+ El patrón 
 \emph on
 Observer-Observable\InsetSpace ~
 
@@ -6245,7 +6279,9 @@ key "gamma93design"
 
  se aplica en el contexto de aplicaciones interactivas que demandan un alto
  grado de interacción con el usuario.
- El principal objetivo es desacoplar la vista de los datos.
+ Uno de los posibles usos de éste patrón es desacoplar la vista de los datos.
+ También se puede usar para notificaciones de otro tipo, como por ejemplo
+ cambios entre modelos, etc.
  En el estilo 
 \emph on
 Observer-Observable
@@ -6265,11 +6301,11 @@ Observer
 Como primer paso, el arquitecto debe definir qué reglas se van a incluir
  en la fase que se quiere ejecutar.
  Cada fase debería tener un objetivo claro, por ejemplo, una fase podría
- enfocarse en descubrir si existen implementaciones del patrón 
+ enfocarse en descubrir si existen instanciaciones del patrón 
 \emph on
 Observer-Observable
 \emph default
- o de algún otro patrón de diseño.
+ o de algún otro patrón de diseño en la implementacion del sistema.
 \end_layout
 
 \begin_layout Subsection
@@ -6299,9 +6335,6 @@ key "Volder1998"
 \end_inset
 
 .
- TyRuBa es un motor lógico de inferencia que a diferencia del paradigma
- de programación lógica tradicional, éste fue diseñado para representar
- código Java siendo un lenguaje más declarativo.
  El lenguaje de programación 
 \emph on
 Prolog
@@ -6311,10 +6344,13 @@ Prolog
 \emph on
 Prolog
 \emph default
- son declarativos (no operacional como programación orientada a objetos),
- permiten hacer inferencias y soportan prototipación de ideas.
+ son declarativos (a diferencia de lenguajes operacionales como la programación
+ orientada a objetos), permiten hacer inferencias y soportan prototipación
+ de ideas.
+ TyRuBa es un motor lógico de inferencia que fue diseñado para representar
+ código Java.
  De esta forma, se representan artefactos del código fuente (clases, variables,
- paquetes, etc.) sobre una base de conocimiento.
+ paquetes, etc.) mediante hechos sobre una base de conocimiento.
  Por ejemplo, la clase 
 \family typewriter
 UserModel
@@ -6362,7 +6398,7 @@ abstract syntax tree
 \end_layout
 
 \begin_layout Standard
-Esta transformación de código Java a hechos (o representación) 
+La transformación de código Java a hechos (o representación) 
 \emph on
 Prolog
 \emph default
@@ -6402,7 +6438,7 @@ class(?C), method(?C,?M), re_name(?M,/^get/), modifier(?M,public).
 
 \begin_layout Standard
 Para reducir el espacio de búsqueda y poder organizar el resultado en paquetes,
- la consulta queda de la siguiente forma:
+ la consulta puede reformularse como sigue:
 \end_layout
 
 \begin_layout Standard
@@ -6426,18 +6462,18 @@ con paquetes, es posible relacionarlos con componentes arquitectónicos.
 
 \begin_layout Standard
 Por ejemplo, si se considera un escenario en donde un desarrollador quiere
- reutilizar una parte en particular del código de una aplicación porque
- contiene funcionalidad que necesita en otra aplicación que esta desarrollando,
- dicho desarrollador debería realizar una búsqueda por todo el código fuente
- para poder capturar las partes del código que necesita.
- Inspeccionar directamente en el código fuente sería muy tedioso y llevaría
- mucho tiempo, pero si el código fuente esta representado en forma de hechos
- 
+ reutilizar una parte del código de una aplicación porque contiene funcionalidad
+ que necesita en otra aplicación que esta desarrollando, dicho desarrollador
+ debería realizar una búsqueda por todo el código fuente para poder capturar
+ las partes del código que necesita.
+ Inspeccionar directamente el código fuente sería tedioso y llevaría mucho
+ tiempo.
+ Si el código fuente esta representado en forma de hechos 
 \emph on
 Prolog
 \emph default
-, sería sencillo realizar algunas consultas para identificar partes del
- código.
+ la realizacion de consultas para identificar partes del codigo se vuelve
+ mas sencillo.
  Por otro lado, transformar el código fuente a hechos 
 \emph on
 Prolog 
@@ -6498,8 +6534,7 @@ reference "fig:Diagrama-de-componentes"
 \end_inset
 
  se presenta un diagrama con los dos componentes principales de este patrón
- arquitectónico, detallando en cada uno de ellos las responsabilidades asociadas
-:
+ arquitectónico, detallando en cada uno de ellos las responsabilidades asociadas.
 \end_layout
 
 \begin_layout Standard
@@ -6596,12 +6631,22 @@ Observable
 \emph on
 observers
 \emph default
- (los 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+(los 
 \emph on
 observers
 \emph default
  pueden ser parte del modelo, por ejemplo, la notificación entre celdas
- de una planilla de cálculo).
+ de una planilla de cálculo) DICE QUE ESTA DE MAS, PARA MI NO JODE.
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -6642,10 +6687,9 @@ Observer
 \family typewriter
 User\SpecialChar \-
 Logger\SpecialChar \-
-Observer
+Observer,
 \family default
- en donde denotan que existe un mecanismo de notificación entre estos componente
-s.
+ en donde existe un mecanismo de notificación entre estos componentes.
 \end_layout
 
 \begin_layout Standard
@@ -7126,7 +7170,7 @@ Hechos
 \emph on
 Prolog
 \emph default
- que representan la información estática pare el ejemplo 
+ que representan la información estática para el ejemplo 
 \emph on
 Observer-Observable
 \end_layout
@@ -7151,7 +7195,7 @@ Al igual que la información estática, la información dinámica es representad
 \emph on
 Prolog
 \emph default
- y sobre la misma base del conocimiento.
+ y sobre la misma base de conocimiento.
  Para obtener dicha información, primero se debe instrumentar la aplicación
  para poder generar logs de ejecución.
  Luego, es necesario realizar un análisis sobre éstos.
@@ -7272,15 +7316,15 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Los hechos generados por el análisis dinámico, se almacenan en la base de
- conocimientos junto con el resto de la información para que las consultas
+Los hechos generados por el análisis dinámico se almacenan en la base de
+ conocimiento junto con el resto de la información, para que las consultas
  que se realicen puedan relacionar tanto información estática como dinámica.
  Adicionalmente, es posible relacionar información del modelo que incrementalmen
-te se está generando y la información aportada por experiencia y el conocimiento
- de las personas involucradas en el proceso de reconstrucción.
- De esta manera, al termino de cada fase los diagramas son generados y el
- experto en reconstrucción tiene la posibilidad de agregar, quitar o modificar
- artefactos arquitectónicos directamente sobre los diagramas.
+te se está generando y la información aportada por experiencia de las personas
+ involucradas en el proceso de reconstrucción.
+ Al termino de cada fase, cuando se generan los diagramas, el experto en
+ reconstrucción tiene la posibilidad de agregar, quitar o modificar artefactos
+ arquitectónicos directamente sobre los diagramas.
  Luego, las modificaciones realizadas sobre los diagramas se sincronizan
  con el modelo para continuar con el proceso de reconstrucción.
  Por ejemplo, si alguna de las personas involucradas en el proceso de reconstruc
@@ -7288,8 +7332,8 @@ ción sabe que existe un componente
 \emph on
 observer
 \emph default
- que no ha sido detectado, este nuevo componente se agrega directamente
- al diagrama.
+ que no ha sido detectado, este nuevo componente es agregado por el experto
+ directamente al diagrama.
 \end_layout
 
 \begin_layout Standard
@@ -7493,7 +7537,7 @@ Hechos
 \emph on
 Prolog
 \emph default
- que representan la información dinámica pare el ejemplo 
+ que representan la información dinámica para el ejemplo 
 \emph on
 Observer-Observable
 \end_layout
@@ -7509,7 +7553,7 @@ Observer-Observable
 \end_layout
 
 \begin_layout Standard
-En predicado 
+En predicado el 
 \family typewriter
 executedMethod
 \family default
@@ -7517,7 +7561,7 @@ executedMethod
  el tercero el tipo de retorno y el cuarto, el valor de retorno.
  Y en el predicado 
 \family typewriter
-snapshot 
+snapshot, 
 \family default
 el primer argumento es el identificador de ejecución, el segundo, la propiedad
  del objeto afectada y el tercero el valor de la propiedad del objeto.
@@ -7528,15 +7572,13 @@ Reglas para la identificación de artefactos arquitectónicos
 \end_layout
 
 \begin_layout Standard
-Las iteraciones están representadas por las fases las cuales realizan actualizac
-iones al modelo arquitectónico.
- Cada fase recibe como entrada un 
+Cada fase recibe como entrada un 
 \emph on
 snapshot
 \emph default
- del modelo recuperado por fases anteriores, y produce como salida un nuevo
- modelo que es el resultado de aplicar las transformaciones seleccionadas
- por el arquitecto en la fase actual sobre el modelo de entrada.
+ del modelo arquitectónico recuperado por fases anteriores, y produce como
+ salida un nuevo modelo que es el resultado de aplicar las transformaciones
+ seleccionadas por el arquitecto en la fase actual sobre el modelo de entrada.
 \end_layout
 
 \begin_layout Standard
@@ -7574,7 +7616,7 @@ reference "alg:Ejemplo de regla"
 
 \end_inset
 
- muestra un ejemplo concreto de una regla con las 3 partes antes descripta.
+ muestra un ejemplo concreto de una regla con las 3 partes antes descriptas.
  El arquitecto encargado de la reconstrucción es el responsable de la especifica
 ción de las reglas.
 \end_layout
@@ -7736,7 +7778,7 @@ El enfoque provee un conjunto de reglas basadas en patrones de diseño y
  El propósito de estas reglas es la codificación de heurísticas que buscan
  ciertas estructuras y evidencias en el codigo para determinar la (posible)
  presencia de un artefacto arquitectónico particular.
- Estas heurísticas han sido compiladas a partir de enfoques como DiscoTech
+ Estas heurísticas han sido compiladas a partir de enfoques como DiscoTect
  (sección 
 \begin_inset LatexCommand ref
 reference "par:DiscoTect"
@@ -7796,7 +7838,7 @@ Observer
  se mapea a un componente arquitectónico.
  Si bien esto se define como una regla, durante el proceso de reconstrucción
  esta regla se presenta como sugerencia y es responsabilidad del arquitecto
- aceptar o refutar la generación un nuevo componente.
+ aceptar o no la generación un nuevo componente.
  
 \end_layout
 
@@ -7898,7 +7940,7 @@ SACAR --> A su vez, es posible construir reglas mas complejas que ayuden
 
 \end_inset
 
-Como se mencionó anteriormente, se decidió codificar en 
+Se decidió codificar en 
 \emph on
 DRArch
 \emph default
@@ -7906,10 +7948,21 @@ DRArch
  la detección de artefactos arquitectónicos.
  Las reglas se basan en enfoques preexistentes y se describen en las secciones
  subsiguientes.
+ 
 \end_layout
 
 \begin_layout Subsubsection
 Estructura De Paquetes 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Referencia
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8057,7 +8110,11 @@ status collapsed
 El grafo de dependencias de clases es un grafo dirigido donde los nodos
  son las clases del sistema y los arcos representan las relaciones entre
  las clases.
- Por ejemplo, si agregamos una nueva clase llamada 
+\end_layout
+
+\begin_layout Standard
+\align block
+Por ejemplo, si agregamos una nueva clase llamada 
 \family typewriter
 Helper
 \family default
@@ -8449,7 +8506,7 @@ status collapsed
 
 \end_inset
 
-grado de dependencia que tiene 
+grado de dependencia 
 \begin_inset LatexCommand cite
 key "DSMWeb"
 
@@ -9035,7 +9092,7 @@ binding
 \emph default
  dinámico son las claves para llevar a cabo esto en lenguajes orientados
  a objetos.
- A partir de estos conceptos los 
+ A partir de estos conceptos, los 
 \emph on
 frameworks
 \emph default
@@ -9204,7 +9261,7 @@ String message)
 update
 \family default
 .
- Así el método 
+ Así, el método 
 \family typewriter
 update
 \family default
@@ -9248,8 +9305,8 @@ agregar el diagrama de clases que muestre este concepto
 \end_layout
 
 \begin_layout Standard
-En base a esto, se decidió utilizar una estrategia para identificar componentes
- arquitectónicos.
+En base al conocimiento de frameworks, se decidió utilizar una estrategia
+ para identificar componentes arquitectónicos.
  En primer lugar identificamos los métodos 
 \emph on
 hook
@@ -9474,8 +9531,8 @@ Consumer
 Hook
 \emph default
 .
- Ambos casos con sus correspondientes contra-partes en el ejemplo Observer-Obser
-vable.
+ Ambos casos con sus correspondientes instanciaciones en el ejemplo Observer-Obs
+ervable.
 \end_layout
 
 \end_inset
@@ -9489,7 +9546,64 @@ vable.
 \end_layout
 
 \begin_layout Section
-Manipulación de alternativas arquitectónica
+Manipulación de alternativas arquitectónicas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+- en pagina 45: La seccion 4.3 esta en general "fulerita" y necesita re-work
+ (mas elaboracion, cosas concretas) Algunas (strong) recomendations: 
+\end_layout
+
+\begin_layout Standard
+c) El parrafo que empiza con el ya famoso conector "De esta forma, aceptar
+ o rechazar una sugerencia se convierte en una decisión de la arquitectura.Las
+ decisiones de la arquitectura se concentran en lo que es esencial en un
+ sistema.
+ Estas elecciones pueden incluir estructura, organización, funcionalidad,
+ comportamiento, o más propiedades no funcionales como la usabilidad, exibilidad
+, seguridad, etc." es re-general, especialmente luego de "Las decisiones
+ de la arquitectura ...", eso ya se re-sabe, es teoria no practica!! Yo creo
+ que lo que Uds quieren decir es lo de las "decisiones de la arquitectura"
+ que el architecto va aceptando (como diciendo "si, esto debiera ser parte
+ de mi modelo" o "no, esto no").
+ Por ahi un ejemplo ayuda ...(aunque creo que esta dado en el parrafo de mas
+ arriba de la secccion 4.1) 
+\end_layout
+
+\begin_layout Standard
+d) En el parrafo "Al termino de cada fase, se cuenta con una representación
+ grá ca del modelo arquitect ónico la cual cubre dos aspectos fundamentales
+ de la arquitectura del sistema: estructura y comportamiento.
+ Las sugerencias aceptadas de las reglas que fueron ejecutadas, agregaron
+ hechos a la base de conocimiento.
+ Los hechos agregados representan aspectos del sistema de alto nivel, y
+ son interpretados como tales para generar vistas que permitan mostrar la
+ arquitectura del sistema.
+ Cuando un conjunto de reglas naliza su ejecución, se generan diagramas
+ de componentes y de UCMs." se recapitula por enesima vez sobre las representacio
+nes fundamentales de componentes y UCMs que ya se dijo, lo que hay que hacer
+ es centrarse en la parte de "modificaciones" surgidas a partir de las reglas,
+ y por ejemplo, relacionarlo con las estrategias de identificacion de estructura
+s arquitectonicas explicadas en seccion 4.2 
+\end_layout
+
+\begin_layout Standard
+d) como dije antes, toda la seccion 4.2 esta pobre y hay que ponerle un poco
+ de garra :-) - en pagina 46: El parrafo "El proceso de reconstrucción es
+ controlado por el arquitecto en todo momento.
+ Su modelo de generación de reglas permite al arquitecto tener el control
+ de cuándo y cómo actualizar el modelo arquitectónico." esta medio redundante,
+ directamente empezar con "El modelo basado en reglas de DRArch permite
+ al arquitecto .." 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9516,22 +9630,26 @@ queda descolgada de la linea general..
 \end_layout
 
 \begin_layout Standard
-Como se mencionó anteriormente una sugerencia es el resultado de evaluar
- una de las reglas disponibles sobre la base del conocimiento.
+Una sugerencia en DRArch es el resultado de evaluar una de las reglas sobre
+ la base del conocimiento.
  La importancia de estas decisiones de diseño varía para cada sistema de
- software y está dada en función de los interesados en el sistema, sus preocupac
-iones, y sus necesidades específicas.
+ software, y está dada en función de los 
+\emph on
+stakeholders
+\emph default
+ del sistema y sus necesidades específicas.
  Por ejemplo, es posible que una sugerencia proponga la creación de uno
  de los componentes mas importantes del sistema, pero el arquitecto no desea
  mostrar ese componente en la vista que esta trabajando, ya que no esta
- interesado en ese aspecto del sistema.
+ interesado en ese aspecto de la arquitectura.
  En ese caso, el arquitecto decide rechazar la sugerencia y continuar analizando
  el resto de las sugerencias.
+ 
 \end_layout
 
 \begin_layout Standard
-De esta forma, aceptar o rechazar una sugerencia se convierte en una decisión
- de la arquitectura.
+Aceptar o rechazar una sugerencia se convierte en una decisión de la arquitectur
+a que se esta reconstruyendo.
  Las decisiones de la arquitectura se concentran en lo que es esencial en
  un sistema.
  Estas elecciones pueden incluir estructura, organización, funcionalidad,
@@ -9545,9 +9663,8 @@ Al termino de cada fase, se cuenta con una representación gráfica del modelo
  del sistema: estructura y comportamiento.
  Las sugerencias aceptadas de las reglas que fueron ejecutadas, agregaron
  hechos a la base de conocimiento.
- Los hechos agregados representan aspectos del sistema de alto nivel, y
- son interpretados como tales para generar vistas que permitan mostrar la
- arquitectura del sistema.
+ Estos hechos representan aspectos del sistema de alto nivel, y son interpretado
+s como tales para generar vistas que muestren la arquitectura del sistema.
  Cuando un conjunto de reglas finaliza su ejecución, se generan diagramas
  de componentes y de UCMs.
 \begin_inset Note Note
@@ -9574,19 +9691,15 @@ FLAbot
 \end_layout
 
 \begin_layout Standard
-Modelar o capturar las decisiones de diseño arquitectónico está estrechamente
- ligado con la visualización arquitectónica y con la forma en que las decisiones
- de diseño son representadas y manipuladas por los interesados.
- Cada visualización tiene diferentes ventajas y desventajas que un arquitecto
- debe considerar.
-\end_layout
-
-\begin_layout Standard
 Una vez que la vista es generada, el arquitecto pude realizar modificaciones
  sobre los diagramas.
  Las modificaciones realizadas son sincronizadas con la base de conocimiento
  para reflejar los cambios.
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
 Es importante destacar que los componentes pueden estar mapeados al código
@@ -9606,6 +9719,11 @@ reference "fig:Diagrama-de-clases-UML-para-el-ejemplo-Observer-Observable"
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9663,58 +9781,32 @@ idas" para ciertos estilos arquitectonicos, es asi?
 \end_layout
 
 \begin_layout Standard
-El proceso de reconstrucción es controlado por el arquitecto en todo momento.
- Su modelo 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-flexible (ANDRES: Nunca se dijo claramente en el capitulo que las reglas
- se puede generar "flexiblemente" (por ahi esto esta en el capitulo que
- sigue))
-\end_layout
-
-\end_inset
-
- de generación de reglas permite al arquitecto tener el control de cuándo
- y cómo actualizar el modelo arquitectónico.
-\end_layout
-
-\begin_layout Standard
-Si bien la implementación por defecto de 
-\emph on
-DRArch
-\emph default
- es para Java, no se imponen restricciones de un lenguaje específico en
- el que este implementado el sistema a analizar.
- El hecho de transformar la información del sistema a una base de conocimientos
- permite la aplicación del enfoque en muchos lenguajes existentes.
-\end_layout
-
-\begin_layout Standard
-Debemos admitir que no existe la magia.
- Es imposible, desde nuestro punto de vista, que una herramienta pueda recuperar
-, sin ayuda alguna, el diseño arquitectónico de un sistema.
- Se necesita del conocimiento del dominio de la aplicación y fundamentalmente
- de la ex\SpecialChar \-
+Como comentario, debemos admitir que no es posible que una herramienta pueda
+ recuperar el diseño arquitectonico de un sistema no trivial sin ayuda alguna.
+ Siempre es necesario un grado de participacion del arquitecto, se necesita
+ del conocimiento del dominio de la aplicación y fundamentalmente de la
+ ex\SpecialChar \-
 pe\SpecialChar \-
 rien\SpecialChar \-
-cia del usuario.
- Utilizando el enfoque 
-\emph on
-DRArch
-\emph default
-, es posible alcanzar una aproximación de la arquitectura.
+cia de éste.
+ Utilizando el enfoque DRArch es posible obtener una aproximación de la
+ arquitectura, pero la arquitectura recuperada no puede ser equiparada a
+ una buena documentación arquitectónica producida al comienzo del desarrollo.
+\end_layout
+
+\begin_layout Standard
+El modelo basado en reglas de DRArch permite al arquitecto tener el control
+ de cuándo y cómo actualizar el modelo arquitectónico.
  
 \end_layout
 
 \begin_layout Standard
-En el siguiente capítulo se muestran en detalle algunos aspectos de la implement
-ación de 
-\emph on
-DRArch
-\emph default
-.
+La implementación por defecto del enfoque DArch se hizo para Java.
+ Sin embargo, el hecho de poder transformar la información estática y dinámica
+ del sistema a una base de conocimiento Prolog permite extender el enfoque
+ de reconstrucción a otros lenguajes de implementacion en el futuro.
+ En el siguiente capítulo se muestran en detalle algunos aspectos de la
+ implementación de DRArch.
 \end_layout
 
 \begin_layout Chapter
