@@ -9836,37 +9836,9 @@ key "BURKHARDT97"
 \end_inset
 
 , presentando los aspectos más importantes de su implementación.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-A su vez, a medida que se describen los componentes, se muestra cómo hace
- la herramienta 
-\emph on
-DRArch
-\emph default
- para satisfacer las necesidades del enfoque mencionado, siguiendo el ejemplo
- de la sección 
-\begin_inset LatexCommand ref
-reference "sec:Ejemplo"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-[andres]Me perdi algo aca (al menos la seccion que falta en la referencia).
- El recorrido de la herramienta va en este capitulo o va en el capitulo
- anterior?
-\end_layout
-
-\end_inset
-
- El recorrido mencionado en este apartado es un ejemplo simple de una iteración
- en donde se puede observar la intervención del arquitecto en el momento
- de tomar las decisiones que modifican el modelo arquitectónico.
+ Se presenta en este capítulo un ejemplo simple de una iteración, en donde
+ se puede observar la intervención del arquitecto en el momento de tomar
+ las decisiones que modifican el modelo arquitectónico.
 \end_layout
 
 \begin_layout Standard
@@ -9886,8 +9858,8 @@ reference "sec:Arquitectura"
  Con\SpecialChar \-
 ti\SpecialChar \-
 nu\SpecialChar \-
-a con una descripción de cada uno de los componentes más importantes
- de la arquitectura.
+a con una descripción de los componentes más importantes de la arquitect
+ura.
  En las secciones siguientes se explican en detalle cómo fueron diseñados
  e implementados los componentes 
 \emph on
@@ -9930,7 +9902,7 @@ arquitectural drivers
 \end_layout
 
 \begin_layout Subsection
-Requerimietos funcionales abstractos
+Requerimientos funcionales abstractos
 \end_layout
 
 \begin_layout Enumerate
@@ -10023,96 +9995,16 @@ release
 \emph default
 .
  El cambio deberá llevarse a cabo en una semana sin afectar otros componentes.
- 
+ Prioridad: 4
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Fuente del estímulo: 
-\emph on
-stakeholder
-\emph default
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Estímulo: cambio en la herramienta de visualización.
- 
-\end_layout
-
-\begin_layout Itemize
-Ambiente: luego del 
-\emph on
-release
-\emph default
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Artefacto: código.
- 
-\end_layout
-
-\begin_layout Itemize
-Respuesta: el cambio es llevado a cabo sin afectar otros componentes.
- 
-\end_layout
-
-\begin_layout Itemize
-Medición de la respuesta: una semana.
- 
-\end_layout
-
-\begin_layout Itemize
-Prioridad: 4
-\end_layout
-
-\end_deeper
 \begin_layout Enumerate
 Un desarrollador desea manipular (agregar, modificar, consultar) información
  relevante a la información del sistema a recuperar.
  Dicha manipulación se debe realizar sin afectar otros componentes.
- 
+ Prioridad: 1
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Fuente del estímulo: desarrollador.
- 
-\end_layout
-
-\begin_layout Itemize
-Estímulo: manipular información.
-\end_layout
-
-\begin_layout Itemize
-Ambiente: en tiempo de ejecución.
- 
-\end_layout
-
-\begin_layout Itemize
-Artefacto: base de datos.
- 
-\end_layout
-
-\begin_layout Itemize
-Respuesta: la manipulación de la información es llevada a cabo sin afectar
- otros componentes.
- 
-\end_layout
-
-\begin_layout Itemize
-Medición de la respuesta: En dos horas.
- 
-\end_layout
-
-\begin_layout Itemize
-Prioridad: 1
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Flexibilidad 
@@ -10123,129 +10015,24 @@ Flexibilidad
 Un usuario decide optimizar una búsqueda sobre el sistema a analizar definiendo
  su propio criterio antes de empezar el proceso de recuperación.
  El cambio deberá llevarse a cabo instantáneamente sin afectar otros componentes.
- 
+ Prioridad: 3
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Fuente del estímulo: usuario.
- 
-\end_layout
-
-\begin_layout Itemize
-Estímulo: optimización de búsqueda de información.
- 
-\end_layout
-
-\begin_layout Itemize
-Ambiente: antes de empezar el proceso de recuperación (en tiempo de ejecución).
- 
-\end_layout
-
-\begin_layout Itemize
-Artefacto : sistema.
- 
-\end_layout
-
-\begin_layout Itemize
-Respuesta: el cambio es llevado a cabo sin afectar otros componentes.
-\end_layout
-
-\begin_layout Itemize
-Medición de la respuesta: instantáneamente.
- 
-\end_layout
-
-\begin_layout Itemize
-Prioridad: 3
-\end_layout
-
-\end_deeper
 \begin_layout Enumerate
 Por cada criterio de búsqueda, un usuario define qué información se debe
  agregar al diseño que se va a recuperando.
  El cambio deberá llevarse a cabo instantáneamente sin afectar otros componentes.
- 
+ Prioridad: 2
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Fuente del estímulo: usuario.
- 
-\end_layout
-
-\begin_layout Itemize
-Estímulo: definir qué información se debe agregar al diseño recuperado.
- 
-\end_layout
-
-\begin_layout Itemize
-Ambiente: antes de empezar el proceso de recuperación (en tiempo de ejecución).
-\end_layout
-
-\begin_layout Itemize
-Artefacto : sistema.
- 
-\end_layout
-
-\begin_layout Itemize
-Respuesta: el cambio es llevado a cabo sin afectar otros componentes.
- 
-\end_layout
-
-\begin_layout Itemize
-Medición de la respuesta: instantáneamente.
- 
-\end_layout
-
-\begin_layout Itemize
-Prioridad: 2
-\end_layout
-
-\end_deeper
 \begin_layout Enumerate
 Un usuario acepta las decisiones propuestas por el sistema en tiempo de
  ejecución.
  Esta información queda disponible para las siguientes búsquedas instantáneament
 e.
- 
+ Prioridad: 6
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Fuente del estímulo: usuario.
- 
-\end_layout
-
-\begin_layout Itemize
-Estímulo: aceptación de las propuestas del sistema.
- 
-\end_layout
-
-\begin_layout Itemize
-Ambiente: tiempo de ejecución.
- 
-\end_layout
-
-\begin_layout Itemize
-Artefacto : sistema.
-\end_layout
-
-\begin_layout Itemize
-Respuesta: la información queda disponible para las siguientes búsquedas.
- 
-\end_layout
-
-\begin_layout Itemize
-Medición de la respuesta: instantáneamente.
- 
-\end_layout
-
-\begin_layout Itemize
-Prioridad: 6
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Usabilidad 
@@ -10256,43 +10043,9 @@ Usabilidad
 El usuario desea aprender cómo crear un criterio de búsqueda.
  El sistema provee ayuda para realizar esta tarea.
  El usuario aprende cómo armar el criterio en 30 min.
- 
+ Prioridad: 5
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Fuente del estímulo: usuario.
-\end_layout
-
-\begin_layout Itemize
-Estímulo: aprender cómo crear un criterio de búsqueda 
-\end_layout
-
-\begin_layout Itemize
-Ambiente: antes de empezar el proceso de recuperación (en tiempo de ejecución).
- 
-\end_layout
-
-\begin_layout Itemize
-Artefacto: sistema.
- 
-\end_layout
-
-\begin_layout Itemize
-Respuesta: proveer ayuda para poder realizar la tarea.
- 
-\end_layout
-
-\begin_layout Itemize
-Medición de la respuesta: 30 min.
- 
-\end_layout
-
-\begin_layout Itemize
-Prioridad: 5
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Section
 \begin_inset LatexCommand label
@@ -10448,7 +10201,7 @@ reference "sec:JQuery"
 JQuery
 \emph default
  también ha sido desarrollado como plug-in, en este trabajo se utilizo a
- modo biblioteca.
+ modo de biblioteca.
  El diseño de 
 \emph on
 DRArch
@@ -10582,8 +10335,8 @@ reference "fig:Modelo-Blackboard-DRArch"
 \emph on
 blackboard
 \emph default
-, es un repositorio de datos, la base de conocimientos.
- Las fuentes de conocimiento son los expertos, los especialistas en resolver
+, es un repositorio de datos o la base de conocimientos.
+ Las fuentes de conocimiento son los expertos o los especialistas en resolver
  un aspecto del problema global.
  Cada fuente de conocimiento implementa una regla o algoritmo que colabora
  para obtener una solución parcial.
@@ -10653,11 +10406,11 @@ La base de conocimiento (
 \emph on
 Blackboard
 \emph default
-) está determinada por una base de hechos lógicos estilo 
+) está formada por una base de hechos lógicos estilo 
 \emph on
-Prolog
+Prolog,
 \emph default
- la cual es cargada en una fase inicial de recolección de información estática
+ la cuál es cargada en una fase inicial de recolección de información estática
  (código fuente) y dinámica (logs de ejecución).
  Las fuentes de conocimiento encargadas de evaluar el estado de la base
  de conocimiento y actualizarlo, están materializadas mediante un modelo
@@ -10692,7 +10445,7 @@ iones que actualizarán el estado del modelo arquitectónico bajo análisis.
 \family typewriter
 PhaseManager
 \family default
- que es responsable de guiar el proceso y coordinar la interoperabilidad
+, que es responsable de guiar el proceso y coordinar la interoperabilidad
  entre los módulos.
  El arquitecto asistido por este componente de gestión de fases, conforman
  el componente de control del modelo.
@@ -10808,13 +10561,13 @@ key "Garlan1996"
 .
  Simplifica el mantenimiento del sistema, permite el reuso y la extensibilidad.
  Sin embargo, en este estilo es muy difícil crear aplicaciones interactivas:
- no hay forma que los filtros interactúen de forma cooperativa para resolver
+ es complicado que los filtros interactúen de forma cooperativa para resolver
  un problema.
  Debido a este 
 \emph on
 tradeoff
 \emph default
- el estilo 
+, el estilo 
 \emph on
 pipes and filters
 \emph default
@@ -10910,11 +10663,7 @@ El componente
 RuleModel 
 \family default
 se encarga de visualizar y editar de forma gráfica y amigable el modelo;
- y hay que salvar su estado de forma persistente por medio del 
-\emph on
-framework
-\emph default
- EMF de Eclipse.
+ y hay que salvar su estado de forma persistente.
  Es necesario que un conjunto de reglas pueda ser reutilizado y ejecutado
  varias veces y sobre distintas instancias de la base de conocimiento.
  Por esta razón es necesario persistir las reglas creadas para su posterior
@@ -10945,7 +10694,7 @@ adapters
 \end_layout
 
 \begin_layout Standard
-Para el componente Query Engine se utilizó el motor de consultas que provee
+Para el componente Query Engine, se utilizó el motor de consultas que provee
  el plug-in 
 \emph on
 JQuery
@@ -10954,8 +10703,10 @@ JQuery
 ni\SpecialChar \-
 pu\SpecialChar \-
 la\SpecialChar \-
-do desde
+ble desde
  un API en Java.
+ En esta decisión se tuvo en cuenta el atributo de calidad de Flexibilidad
+ 2.a.
  
 \emph on
 JQuery
@@ -11011,17 +10762,22 @@ DRArch
  Para evitar esto, se pueden agrupar estas reglas en fases que no requieran
  la interacción del usuario.
  Así, en el diseño del componente Phase Engine se modelaron dos tipos de
- fases: Interactivas y No Interactivas (acepta todas las sugerencias elevando
+ fases: interactivas y no interactivas (acepta todas las sugerencias elevando
  el nivel de automatización del proceso).
  Para orquestar la lógica del motor de fases, se utilizó una entidad 
 \family typewriter
 PhaseManager
 \family default
  responsable de coordinar y dirigir el estado de cada fase.
- En este componente se incluye la generación y modelado de diagramas, acción
- que es llevada a cabo mediante el modelo de diagramas de 
+ Para el atributo de calidad de Modificabilidad 1.a y el requerimiento funcional
+ número 1, se incluye la generación y modelado de diagramas en éste componente
+ (
+\family typewriter
+PhaseManager
+\family default
+), acción que es llevada a cabo mediante el modelo de diagramas de 
 \emph on
-Flabot
+FLAbot
 \emph default
 .
  Este modelo es expuesto mediante un API lo que facilitó su integración.
@@ -11046,9 +10802,9 @@ FLAbot
 Por último, para el componente Trace Log Analizer, se decidió utilizar el
  
 \emph on
-Flabot
+FLAbot
 \emph default
- como herramienta de instrumentación de código ya que la instrumentación
+ como herramienta de instrumentación de código, ya que la instrumentación
  no es intrusiva (no es necesario modificar el código) y genera un log de
  ejecución en formato XML de forma que se posible su análisis.
  
@@ -11065,7 +10821,7 @@ Query Engine
 
 \begin_layout Standard
 Este componente tiene como principal responsabilidad la ejecución de las
- consultas sobre la base de conocimiento y la gestión de esta.
+ consultas sobre la base de conocimiento y la gestión de ésta.
  El motor de consultas y la base de conocimiento forman parte de este componente.
  Ambas entidades están construidas sobre el plug-in 
 \emph on
@@ -11099,7 +10855,7 @@ key "Volder2006"
 
 \emph default
  que es un lenguaje de programación lógica implementado en Java.
- De esta forma 
+ 
 \emph on
 JQuery
 \emph default
@@ -11410,7 +11166,7 @@ wildcard
 \end_layout
 
 \begin_layout Standard
-Por ultimo cada 
+Por último, cada 
 \family typewriter
 FactTemplate
 \family default
@@ -11604,8 +11360,8 @@ DRArch
 
 \begin_layout Standard
 La primera de estas características se da al brindarle al arquitecto el
- control de lo que se evalúa, tomando todas las decisiones aceptando o rechazand
-o las sugerencias propuestas por la herramienta.
+ control de lo que se evalúa, tomando decisiones de aceptar o rechazar las
+ sugerencias propuestas por la herramienta.
  Para satisfacer las demás características se implementó un mecanismo de
  fases iterativas que permite la composición de los resultados de las evaluacion
 es realizadas en iteraciones previas.
@@ -11640,7 +11396,7 @@ FLABot
 \end_layout
 
 \begin_layout Standard
-Alternativamente, se puede enriquecer la base de conocimientos de la fase,
+Alternativamente, se puede enriquecer la base de conocimiento de la fase,
  incorporando un archivo 
 \emph on
 FLABot
@@ -11651,8 +11407,8 @@ FLABot
 FLABot
 \emph default
  a hechos lógicos.
- Por ejemplo, por medio del editor gráfico el arquitecto crea un nuevo component
-e y luego realiza explícitamente la sincronización con 
+ Por ejemplo, por medio del editor gráfico, el arquitecto crea un nuevo
+ componente y luego realiza explícitamente la sincronización con 
 \emph on
 DRArch
 \emph default
@@ -11676,7 +11432,7 @@ LoadCoreModel
 \emph on
 Prolog 
 \emph default
-el nuevo modelo y los incorpora a la base de conocimientos.
+el nuevo modelo y los incorpora a la base de conocimiento.
 \end_layout
 
 \begin_layout Standard
@@ -11689,7 +11445,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Update Model Sequence Diagram.png
-	width 50text%
+	width 90text%
 
 \end_inset
 
@@ -11755,7 +11511,7 @@ PhaseManager
 RuleManger
 \family default
  que transforme las sugerencias en hechos concretos y luego agrega dichos
- hechos a la base de conocimientos.
+ hechos a la base de conocimiento.
  Luego, le da la orden a la entidad 
 \family typewriter
 DiagramManager
@@ -12037,7 +11793,7 @@ reference "alg:Algoritmo-ejecución-de-fases"
 \end_inset
 
 , en donde cada una de éstas obtiene la primer regla y la ejecuta.
- Luego muestra las sugerencias y si el arquitecto aceptas, agrega los nuevos
+ Luego muestra las sugerencias y si el arquitecto acepta, agrega los nuevos
  hechos a la base de conocimiento.
  Posteriormente carga el nuevo modelo, actualiza los diagramas, y vuelve
  a ejecutar la siguiente regla.
@@ -12134,8 +11890,7 @@ RuleManager
  aceptada el conjunto de hechos correspondiente según lo define el modelo
  de reglas.
  También es responsable de incorporar estos a la base de conocimiento.
- La ejecución de las consultas como se dijo anteriormente está a cargo de
- la entidad 
+ La ejecución de las consultas está a cargo de la entidad 
 \family typewriter
 QueryEngine
 \family default
@@ -12158,23 +11913,10 @@ QueryEngine
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-corregir esta imagen porque se va d ella pagina
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -12230,28 +11972,23 @@ RuleManager
 parsing
 \emph default
  de los resultados, tanto a sugerencias como a hechos.
- Así, se evita que cada uno de los componentes que se encargan de evaluar
- la consulta (
+ Así, se evita que cada uno de los componentes (
 \family typewriter
 QueryEngine
 \family default
-), realizar el 
-\emph on
-parsing
-\emph default
- de los resultados a sugerencias (
+,
 \family typewriter
-SuggestMaker
+ SuggestMaker
 \family default
-) y realizar el 
-\emph on
-parsing
-\emph default
- de de los hechos (
+,
 \family typewriter
-FactGenerator
+ SuggestMaker
 \family default
-) se comuniquen entre ellos.
+ y
+\family typewriter
+ FactGenerator
+\family default
+) se comuniquen diréctamente entre ellos.
 \end_layout
 
 \begin_layout Standard
@@ -12334,7 +12071,11 @@ rendering
 \end_layout
 
 \begin_layout Standard
-Es decir, la entidad es responsable de la generación de vistas.
+Es decir, 
+\family typewriter
+DiagramManager
+\family default
+ responsable de la generación de vistas.
  Si las sugerencias de la regla especificada en el ejemplo\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -12512,9 +12253,8 @@ TraceLog Analyzer
 Es necesario registrar los eventos de bajo nivel que ocurren en la aplicación
  mientras el usuario la ejercita con los casos de uso del sistema.
  Estos casos de uso son seleccionados por los expertos del sistema y por
- los expertos en reconstrucción ya que deben ser los casos que más participen
- con los artefactos arquitectónicos que se desean reconstruir.
- 
+ los expertos en reconstrucción, ya que deben ser los casos que involucren
+ a los artefactos arquitectónicos más importantes.
 \end_layout
 
 \begin_layout Standard
@@ -12603,8 +12343,9 @@ FlabotFileContextProvider
  (ubicación del archivo de sa\SpecialChar \-
 li\SpecialChar \-
 da, tipos de eventos a registrar, profundidad
- de la inspección, etc.), mientras que las de la segunda interfaz proveen
- esta información al módulo de instrumentación.
+ de la inspección, etc.).
+ Mientras que las de la segunda interfaz proveen esta información al módulo
+ de instrumentación.
  La relación entre 
 \emph on
 DRArch
@@ -12647,7 +12388,7 @@ name "fig:Configuración-de-ejecución"
 
 \end_inset
 
-Configuración de ejecución en Eclipse
+Configuración de ejecución con instrumentación en Eclipse
 \end_layout
 
 \end_inset
@@ -13082,8 +12823,8 @@ Algoritmo Log Analyzer
 \end_layout
 
 \begin_layout Standard
-Los hechos generados por este componente son almacenados en la base de datos
- del conocimiento junto con el resto de la información.
+Los hechos generados por TraceLog Analyzer son almacenados en la base de
+ datos del conocimiento junto con el resto de la información.
  De esta forma, queda disponible la posibilidad de relacionar información
  tanto estática como dinámica.
 \end_layout
@@ -13114,7 +12855,7 @@ Prolog
 log
 \emph default
  de ejecución.
- De esta forma, en la figura\InsetSpace ~
+ En la figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Observer-Observable-TraceLog"
@@ -13246,10 +12987,14 @@ La selección de
 JQuery 
 \emph default
 se realizó en base a varios factores.
- En primer lugar y más importante, gran parte de las tareas necesarias por
- el enfoque DRArch son cubiertas por esta herramienta.
+ En primer lugar, gran parte de las tareas necesarias por el enfoque DRArch
+ son cubiertas por esta herramienta.
  La definición del lenguaje lógico y el motor de inferencias están basados
- en TyRuBa que forman parte de la JQuery.
+ en TyRuBa que forman parte de 
+\emph on
+JQuery
+\emph default
+.
  El parseo de código fuente junto con la generación de hechos lógicos también
  es provista por la herramienta.
  En segundo lugar, JQuery ofrece una vista en la cual es posible "ensayar"
@@ -13576,8 +13321,60 @@ key "Smith1980"
 .
  CNP consiste en la automatización de la negociación entre compradores y
  vendedores a través del comercio electrónico.
- El protocolo define dos tipos de agentes, inicializadores y participantes.
- De esta forma, el mercado es un contenedor de agentes en donde compradores
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Standard
+- en pagina 65: Cuando hablan del CNP, despues de "El protocolo define dos
+ tipos de agentes, inicializadores y participantes." necesito un parrafito
+ que describa las fases del protocolo (para que se entienda luego porque
+ en Market los agentes tienen tales o cuales tareas).
+ Una descripcion cortita de las fases esta en el slide 4 de http://www.is.pku.edu.cn
+/dis/ppt/cnpbcp.pdf (hay otras posibles fuentes en la web)
+\end_layout
+
+\begin_layout Standard
+CNP 
+\end_layout
+
+\begin_layout Standard
+-Sequence of Steps 
+\end_layout
+
+\begin_layout Standard
+1.Initiator sends out a Call for Proposals (CFP) 
+\end_layout
+
+\begin_layout Standard
+2.Each Participant reviews CFPsand bids on feasible ones 
+\end_layout
+
+\begin_layout Standard
+3.Initiator chooses the best bid and awards a contract to that Participant
+ 
+\end_layout
+
+\begin_layout Standard
+4.Initiator rejects other bids
+\end_layout
+
+\end_inset
+
+El protocolo define dos tipos de agentes, inicializadores y participantes.
+ La secuencia de pasos del protocolo comienza cuando un inicializador envía
+ un mensaje CPF (
+\emph on
+Call for Proposals
+\emph default
+) indicando que tiene un producto para vender.
+ Luego, cada participante revisa los mensajes CFP y envía una oferta si
+ lo desea.
+ Finalmente, el inicializador selecciona la mejor oferta y rechaza el resto.
+\end_layout
+
+\begin_layout Standard
+De esta forma, el mercado es un contenedor de agentes en donde compradores
  (participantes) y vendedores (inicializadores) son simples agentes (
 \emph on
 agents
@@ -13634,45 +13431,6 @@ status open
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename img/BubbleCoreClassDiagram.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Diagrama-de-clases-Bubble"
-
-\end_inset
-
-Diagrama de clases del framework Bubble.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
 	filename img/MarketModeloConceptual.png
 	width 100text%
 
@@ -13695,6 +13453,45 @@ Modelo arquitectónico Market instanciado por el
 framework
 \emph default
  Bubble.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/BubbleCoreClassDiagramMethods.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Diagrama-de-clases-Bubble"
+
+\end_inset
+
+Diagrama de clases del framework Bubble.
 \end_layout
 
 \end_inset
@@ -13879,7 +13676,7 @@ name "fig:Market-UCMs"
 
 \end_inset
 
-Diagramas UCMs para el proyecto Market
+Diagramas UCMs existentes para el proyecto Market
 \emph on
 .
 \end_layout
@@ -13959,11 +13756,6 @@ run
 \end_layout
 
 \begin_layout Itemize
-\begin_inset LatexCommand label
-name "ite:Asociación-Tarea-Evento-1"
-
-\end_inset
-
 Crear una asociación entre un componente tarea y un evento cuando dentro
  de la implementación de la tarea se encuentra la siguiente porción de código:
  
@@ -13974,11 +13766,6 @@ new EventIdCondition(EventHierarchyManager.getEventId(...Event.class)));
 \end_layout
 
 \begin_layout Itemize
-\begin_inset LatexCommand label
-name "ite:Asociación-Tarea-Evento-2"
-
-\end_inset
-
 Crear una asociación entre un componente tarea y un evento cuando dentro
  de la ejecución del método 
 \family typewriter
@@ -14071,28 +13858,30 @@ reference "fig:Configuración-de-ejecución"
 \end_inset
 
  se muestra la configuración necesaria para generar el log de ejecución.
- Cabe destacar que para la instrumentación de Market se incrementó el nivel
- de profundidad del snapshot de objetos (sección 
+ Cabe destacar que para la instrumentación de Market se incrementó a 5 el
+ nivel de profundidad del snapshot de objetos (sección 
 \emph on
 Level Of Depth Log
 \emph default
  de la figura mencionada).
- Esta propiedad que brinda Flabot permitirá obtener la información necesaria
- para la ejecución de las reglas como las descriptas en la sección anterior
- (
-\begin_inset LatexCommand ref
-reference "ite:Asociación-Tarea-Evento-1"
-
-\end_inset
-
-
-\begin_inset LatexCommand ref
-reference "ite:Asociación-Tarea-Evento-2"
-
-\end_inset
-
-) en las que se necesita acceder a información de los objetos contenidos
- en otra instancia.
+ El incremento del nivel de profundidad, aumenta la cantidad de iformación
+ que se graba en el log cuando se ejecuta un método.
+ Gracias a éste incremento, es posible recuperar información cómo por ejemplo:
+ qué usuario disparó un evento, en el momento en el que se ejecuta el método
+ 
+\family typewriter
+run
+\family default
+ de una tarea.
+ Esta información se encuentra a 4 niveles de anidamiento del objeto que
+ contiene el método 
+\family typewriter
+run
+\family default
+.
+ Esta propiedad permitirá obtener la información necesaria para la ejecución
+ de las reglas, como las descriptas en la sección anterior, en las que se
+ necesita acceder a información de los objetos contenidos en otra instancia.
 \end_layout
 
 \begin_layout Standard
@@ -14112,7 +13901,7 @@ Luego de generar el log,
 \emph on
 DRArch
 \emph default
- traduce automáticamente la información del log a la base de conocimientos
+ traduce automáticamente la información del log a la base de conocimiento
  para que se pueda tener en cuenta en el análisis.
 \end_layout
 
@@ -14195,7 +13984,16 @@ En este punto se volvió a pedir asistencia a los expertos del sistema, quienes
 distribution 
 \family default
 dado que es irrelevante desde el punto de vista de la reconstrucción de
- Market (no lo usa) dado que es una extensión Bubble.
+ Market.
+ El paquete 
+\family typewriter
+distribution
+\family default
+ es una extensión del 
+\emph on
+framework
+\emph default
+ Bubble, que no se usa en la aplicación Market.
 \end_layout
 
 \begin_layout Subsubsection
@@ -14288,7 +14086,7 @@ ren\SpecialChar \-
 cias y es el arquitecto que debe corroborar
  este tipo de supuestos, aceptando o rechazando cada sugerencia.
  En este tipo de sugerencias es donde la herramienta presenta una de sus
- limitaciones ya que la sugerencia presenta una gran ambigüedad.
+ limitaciones, ya que la sugerencia presenta una ambigüedad.
 \end_layout
 
 \begin_layout Itemize
@@ -14329,7 +14127,7 @@ EventManager.publishEvent(anEvent);
 \family default
  
 \newline
-Donde la clase 
+donde la clase 
 \family typewriter
 anEvent
 \family default
@@ -14348,13 +14146,13 @@ snapshot
 \family default
  dentro de la consulta que compone la regla.
  Esta regla involucra un conocimiento muy fino del modelo Bubble y su implementa
-ción que sólo puede conocerse gracias a las entrevistas realizadas en la
+ción, que sólo puede conocerse gracias a las entrevistas realizadas en la
  fase cero.
 \end_layout
 
 \begin_layout Standard
 El resultado obtenido luego de la ejecución de esta fase es un conjunto
- de diagramas y los más importantes se muestran en la Figura\InsetSpace ~
+ de diagramas, y los más importantes se muestran en la Figura\InsetSpace ~
 
 \begin_inset LatexCommand ref
 reference "fig:Resultado-de-la-fase-de-invocacion-implicita-market"
@@ -14368,7 +14166,7 @@ reference "fig:Resultado-de-la-fase-de-invocacion-implicita-market"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Standard
 \align center
@@ -14740,13 +14538,16 @@ Structure 101 - Bubble-Market Estructura de paquetes
 
 \begin_layout Standard
 Las flechas indican dependencias.
- Estas se pueden dar por una relación directa entre dos componentes, como
- una clase extendiendo de otra.
- O debido a relaciones entre ítems contenidos por los dos componentes, por
- ejemplo un método de una clase que invoca a un método de otra clase produce
- una dependencia entre estas.
+ Estas se pueden dar por una relación directa entre dos componentes o bien
+ debido a relaciones entre ítems contenidos por los dos ejemplos.
+ Un ejemplo del primer caso es cuando una clase extendiendo de otra.
+ Un ejemplo del segundo caso es cuando un método de una clase que invoca
+ a un método de otra clase produce una dependencia entre estas.
  El número junto a la flecha es el número total de referencias entre 2 component
 es dependientes.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -14815,8 +14616,8 @@ reference "sub:Structure-101"
  a la estructura y complejidad del sistema.
  Entre ellas se destaca la perspectiva arquitectónica, y en ella la vista
  con el mismo nombre.
- La notación gráfica para los diagramas de ésta organizada en celdas con
- el objetivo de transmitir una serie de propiedades arquitectónicas:
+ La notación gráfica para los diagramas esta organizada en celdas con el
+ objetivo de transmitir una serie de propiedades arquitectónicas:
 \end_layout
 
 \begin_layout Itemize
@@ -14832,21 +14633,21 @@ Layering
  Las celdas sólo deben ser usadas por celdas de las capas superiores.
  Es posible especificar "
 \emph on
-strinct
+strict
 \emph default
  
 \emph on
 layering
 \emph default
 ", es decir, que las celdas solamente dependan de aquellas en la próxima
- capa y no en capas que simplemente se encuentren por debajo de ella.
+ capa y no en capas que se encuentren por debajo de ella.
 \end_layout
 
 \begin_layout Itemize
 Violaciones a la estructura de capas.
  Las violaciones (llamadas a capas superiores) son marcadas en el diagrama
  mediante flechas.
- Por defecto las flechas hacia abajo no se muestran.
+ Por defecto, las flechas hacia abajo no se muestran.
 \end_layout
 
 \begin_layout Standard
@@ -14873,7 +14674,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Structure101Market-Core Layers.png
-	width 50text%
+	width 90text%
 
 \end_inset
 
@@ -14945,12 +14746,12 @@ clusters
 \emph on
 tangles
 \emph default
- no son deseables desde el punto de vista de la herramienta mientras los
- 
+ no son deseables desde el punto de vista de la herramienta mientras que
+ los 
 \emph on
 clusters
 \emph default
- si.
+ si lo son.
  En Market, el asistente resaltó tres componentes como 
 \emph on
 tangles
@@ -15306,7 +15107,7 @@ Otro escenario donde puede verse la implementación del
 \emph on
 framework
 \emph default
- Bubble es en caso de uso 
+ Bubble es en el caso de uso 
 \emph on
 logout
 \emph default
@@ -15444,8 +15245,8 @@ Fase cero
 \end_layout
 
 \begin_layout Standard
-Al igual que Market la funcionalidad del sistema está organizada alrededor
- de éstas tareas y eventos.
+La funcionalidad del sistema está organizada alrededor de éstas tareas y
+ eventos.
  De las entrevistas con los expertos surgieron consideraciones adicionales
  que  se listarán a continuación junto con las que se definieron para Market:
 \end_layout
@@ -15553,7 +15354,7 @@ staticGetEventName()
 \end_layout
 
 \begin_layout Standard
-Basado en estas reglas se planeo dividir el análisis en cinco fases.
+Basado en estas reglas, se planeo dividir el análisis en cinco fases.
  La primera, la fase de recolección es idéntica a la fase de recolección
  de Market, se utilizó el mismo nivel de profundidad para el log.
  El objetivo de la fase siguiente es reducir el espacio de solución haciendo
@@ -15758,8 +15559,8 @@ framework
  se buscaron los componentes específicos del dominio de G2.
  Estos componentes responden a la instanciación del framework para el caso
  específico del sistema G2.
- De esta forma, algunos de los componentes que se detectaron basados en
- la ejecución de 
+ Algunos de los componentes que se detectaron basados en la ejecución de
+ 
 \emph on
 DRArch
 \emph default
@@ -15787,7 +15588,7 @@ StaticHTMLStaticTask
 \end_layout
 
 \begin_layout Standard
-Al termino de la ejecución de esta fase se cuenta con la base de conocimientos
+Al termino de la ejecución de esta fase se cuenta con la base de conocimiento
  cargada con la información específica del framework y su instanciación
  en el dominio de G2.
  Fases posteriores irán trabajando sobre esta base de conocimiento general
@@ -15802,8 +15603,11 @@ Fase de instanciación
 \end_layout
 
 \begin_layout Standard
-Durante esta fase se trabajó sobre el caso de uso utilizado para ejercitar
- la herramienta, RemoveUser.
+Durante esta fase se trabajó sobre el caso de uso 
+\emph on
+removeUser
+\emph default
+ utilizado para ejercitar la herramienta.
  Para elevar el nivel de detalle de la información recuperada se buscó seguir
  el 
 \emph on
@@ -15815,19 +15619,20 @@ ilidades que se ejecutaron.
 \emph on
 multithread
 \emph default
- no es recomendable realizar un seguimiento de la ejecución a nivel de 
+, no es recomendable realizar un seguimiento de la ejecución a nivel de
+ 
 \emph on
 thread
 \emph default
 .
- En lugar de esto se hizo a nivel de datos.
+ En lugar de esto se hizo un seguimiento a nivel de datos.
  Es decir, un elemento es compartido y/o utilizado en la comunicación de
  cada uno de los distintos 
 \emph on
 threads
 \emph default
  que componen la ejecución del sistema.
- En el caso de G2 y mas específicamente de Bubble estos elementos son los
+ En el caso de G2 y mas específicamente de Bubble, estos elementos son los
  eventos.
  Así, siguiendo el rastro de un evento a lo largo de la ejecución del caso
  de uso, se encontró un nuevo tipo de componente que no había sido descubierto
@@ -15936,9 +15741,9 @@ ListUserTask
 \family default
  que vuelve a consultar la base de datos con el objetivo de recuperar un
  listado actualizado de usuarios.
- A comparación del UCM para el mismo caso de uso proporcionado por la documentac
-ión, se puede ver que se reconstruyó una responsabilidad que no estaba en
- la documentación.
+ En la comparación del UCM para el mismo caso de uso proporcionado por la
+ documentación, se puede ver que se reconstruyó una responsabilidad que
+ no estaba en la documentación.
 \end_layout
 
 \begin_layout Standard
@@ -16020,7 +15825,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 Interpretar la figura para el usuario!!
@@ -16080,13 +15885,13 @@ framework
  se encuentran desperdigadas a lo largo de toda la estructura de paquetes
  del proyecto.
  La forma en que Structure 101 trabaja es inherentemente estructural por
- lo que el gran aporte que esta herramienta ofrece en este caso es la comprensió
-n de la forma en que está organizado el sistema y como así también permite
- visualizar las dependencias entre paquetes.
+ lo que el aporte que esta herramienta ofrece en este caso, es la comprensión
+ de la forma en que está organizado el sistema y permite visualizar las
+ dependencias entre paquetes.
 \end_layout
 
 \begin_layout Standard
-A nuestro entender, G2 al igual que Market son sistemas donde lo más importante
+A nuestro entender, G2 al igual que Market, son sistemas donde lo más importante
  es saber cómo funcionan.
  Así, las vistas estructurales no aportan el conocimiento necesario sobre
  su funcionamiento como si lo harían representaciones UCMs o diagramas UML
@@ -16165,7 +15970,7 @@ reference "fig:Layering G2"
 com.delsatgroup.g2.modeladmin.user 
 \family default
 para obtener alguna perspectiva mas interesante desde el punto de vista
- de la comparación ya que posee los componentes involucrados en el caso
+ de la comparación, ya que posee los componentes involucrados en el caso
  de uso utilizado por 
 \emph on
 DRArch
@@ -16285,10 +16090,10 @@ Si bien es importante tener en cuenta la cantidad de clases como medida
 \end_layout
 
 \begin_layout Standard
-En el análisis se incluye el concepto de exactitud, ya que es de utilidad
+En el análisis se incluye el concepto de precisión, ya que es de utilidad
  medir qué tan cerca del valor real se encuentra el valor medido.
  Por ejemplo, si una porción de la arquitectura original del sistema muestra
- 15 componentes, y la reconstrucción muestra 10, la exactitud describe la
+ 15 componentes, y la reconstrucción muestra 10, la precisión describe la
  proximidad del valor medido (10 artefactos arquitectónicos) al valor real
  (15 artefactos arquitectónicos).
  Cuanto más cerca están las medidas a un valor aceptado, más exacto es un
@@ -16300,12 +16105,12 @@ reference "fig:Fórmula-de-Exactitud"
 
 \end_inset
 
- se muestra la fórmula utilizada para calcular la exactitud.
+ se muestra la fórmula utilizada para calcular la precisión.
  Es por esto que en la fase de recolección de información de los casos de
  estudio, los casos de uso que se seleccionaron para generar el log de ejecución
 , se basaron en los escenarios UCM disponibles en la documentación arquitectura
  de cada proyecto.
- De esta forma, es posible medir la exactitud del 
+ De esta forma, es posible medir la precisión del 
 \emph on
 DRArch
 \emph default
@@ -16399,7 +16204,7 @@ name "fig:Fórmula-de-Exactitud"
 
 \end_inset
 
-Fórmula de Exactitud para Artefactos Arquitectónicos
+Fórmula de Precisión para Artefactos Arquitectónicos
 \end_layout
 
 \end_inset
@@ -16460,9 +16265,9 @@ detectó un 78% de los artefactos arquitectónicos pertenecientes al
 \emph on
 framework
 \emph default
- Bubble, mientras que en el G2, la exactitud fue del 92%.
+ Bubble, mientras que en el G2, la precisión fue del 92%.
  Esto quiere decir que las modificaciones realizadas a las reglas asociadas
- a Bubble son válidas ya que la exactitud mejoro luego del refinamiento.
+ a Bubble son válidas ya que la precisión mejoro luego del refinamiento.
  La Tabla\InsetSpace ~
 
 \begin_inset LatexCommand ref
@@ -16470,7 +16275,7 @@ reference "tab:Eficacia-del-DRArch-parcial"
 
 \end_inset
 
- muestra la exactitud de los artefactos arquitectónicos (componentes, relaciones
+ muestra la precisión de los artefactos arquitectónicos (componentes, relaciones
  y responsabilidades) del Market y del G2 reconstruidos con 
 \emph on
 DRArch
@@ -16999,7 +16804,7 @@ N/A
 \begin_inset Text
 
 \begin_layout Standard
-Promedio de la exactitud (
+Promedio de la precisión (
 \emph on
 DRArch
 \emph default
@@ -17050,7 +16855,7 @@ DRArch
 \begin_inset Text
 
 \begin_layout Standard
-Promedio de la exactitud (Structure101)
+Promedio de la precisión (Structure101)
 \end_layout
 
 \end_inset
@@ -17108,7 +16913,7 @@ name "tab:Eficacia-del-DRArch-parcial"
 
 \end_inset
 
-Exactitud por artefactos arquitectónicos del 
+Precisión por artefactos arquitectónicos del 
 \emph on
 DRArch
 \emph default
@@ -17166,7 +16971,7 @@ name "fig:Eficacia-entre-los-artefactos"
 
 \end_inset
 
-Exactitud entre los distintos artefactos arquitectónicos para los proyectos
+Precisión entre los distintos artefactos arquitectónicos para los proyectos
  Market y G2.
 \end_layout
 
@@ -17231,7 +17036,7 @@ Mejora de la eficiencia luego de la incorporación de nuevas reglas.
 
 \begin_layout Standard
 Para poder darnos cuentas del impacto que tiene la complejidad ciclomática
- de los proyectos en la exactitud del 
+ de los proyectos en la precisión del 
 \emph on
 DRArch
 \emph default
@@ -17751,7 +17556,7 @@ N/A
 \begin_inset Text
 
 \begin_layout Standard
-% Exactitud
+% Precisión
 \end_layout
 
 \end_inset
@@ -17842,7 +17647,7 @@ name "tab:Eficacia-del-DRArch"
 
 \end_inset
 
-Exactitud total del 
+Precisión total del 
 \emph on
 DRArch
 \emph default
@@ -17905,7 +17710,7 @@ name "fig:Eficiencia-vs.-Complejidad"
 
 \end_inset
 
-Exactitud vs.
+Precisión vs.
  Complejidad
 \end_layout
 
@@ -18048,7 +17853,7 @@ DBView
 \family default
  que ejecuta la consulta en la base de datos.
  No se trata de un error en la reconstrucción sino que la documentación
- no refleja ese comportamiento.
+ esta desactualizada y no refleja ese comportamiento.
 \end_layout
 
 \begin_layout Standard
@@ -18057,8 +17862,8 @@ Comparando con la herramienta Structure 101, puede notarse que la misma
  roles involucrados en el desarrollo y a asistir a los programadores en
  evitar desviarse de la arquitectura durante el desarrollo.
  Si bien la herramienta es muy atractiva en términos visuales y de navegación
- de la información, carece totalmente de aspectos comportamentales que ayuden
- a visualizar el sistema en funcionamiento.
+ de la información, carece de aspectos comportamentales que ayuden a visualizar
+ el sistema en funcionamiento.
  Con ver y analizar los diagramas se sabe muy poco de cómo es el funcionamiento
  del sistema y de qué manera interactúan los componentes en tiempo de ejecución.
  No tiene noción de responsabilidades a nivel de componentes o mejor dicho
@@ -18143,12 +17948,12 @@ No estoy seguro que esta subseccion de suposiciones tenga que ir aca...
 \end_layout
 
 \begin_layout Standard
-Si bien los casos de uso se basan en un mismo estilo arquitectónico subyacente
- (
+El hecho de que los casos de estudio se basaron en un mismo estilo arquitectonic
+o subyacente (
 \emph on
 framework
 \emph default
- de invocación implícita), esto no implica que la herramienta 
+ de invocación implícita) no implica que la herramienta 
 \emph on
 DRArch
 \emph default
@@ -18184,8 +17989,7 @@ DRArch
 
 \begin_layout Standard
 El contar con los expertos que desarrollaron el sistema permitió obtener
- un panorama muy acertado de los elementos arquitectónicos que se deberían
- construir.
+ un panorama acertado de los elementos arquitectónicos que se deberían construir.
  Este hecho permitió que la documentación original del sistema fuera tenida
  en cuenta solamente para realizar comparaciones y así poder medir la eficiencia
  de la herramienta.
