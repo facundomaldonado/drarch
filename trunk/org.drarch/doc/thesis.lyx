@@ -9316,7 +9316,7 @@ DRArch
 \emph on
 stakeholders
 \emph default
- del sistema y sus necesidades específicas.
+ y sus necesidades específicas.
  Por ejemplo, es posible que una sugerencia proponga la creación de uno
  de los componentes mas importantes del sistema, pero el arquitecto no desea
  mostrar ese componente en la vista que esta trabajando, ya que no esta
