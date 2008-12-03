@@ -1136,19 +1136,6 @@ Contexto
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-modelo -> patron, estilo u otra cosa
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 En este capítulo se ofrecerá una introducción a los conceptos centrales
  sobre los que se ha realizado este trabajo.
  En primer lugar se define la noción de 
@@ -1377,8 +1364,8 @@ performance
 \end_layout
 
 \begin_layout Standard
-A continuación, se presentan los estilos y modelos arquitectónicos que nos
- ayudan a des\SpecialChar \-
+A continuación, se presentan los estilos arquitectónicos que nos ayudan
+ a des\SpecialChar \-
 cri\SpecialChar \-
 bir los distintos tipos de componentes y su tipología.
 \end_layout
@@ -1390,8 +1377,6 @@ name "sub:Estilos-y-Modelos"
 \end_inset
 
 Estilos\InsetSpace ~
-y\InsetSpace ~
-Modelos\InsetSpace ~
 Arquitectónicos
 \end_layout
 
@@ -1749,8 +1734,8 @@ performance
  incluye aspectos arquitectónicos como qué responsabilidad debe ser asignada
  a cada componente y no arquitectónicos como la elección de algoritmos para
  implementar determinada responsabilidad.
- Los estilos y modelos arquitectónicos se basan principalmente en los atributos
- de calidad.
+ Los estilos arquitectónicos se basan principalmente en los atributos de
+ calidad.
 \end_layout
 
 \begin_layout Standard
@@ -7501,6 +7486,11 @@ Un conjunto inicial de reglas genéricas es provista por la herramienta,
 \end_layout
 
 \begin_layout Section
+\begin_inset LatexCommand label
+name "sec:Identificación-de-estructuras"
+
+\end_inset
+
 Identificación de estructuras arquitectónicas
 \end_layout
 
@@ -9250,7 +9240,7 @@ Manipulación de alternativas arquitectónicas
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 - en pagina 45: La seccion 4.3 esta en general "fulerita" y necesita re-work
@@ -9298,9 +9288,6 @@ d) como dije antes, toda la seccion 4.2 esta pobre y hay que ponerle un poco
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -9341,50 +9328,52 @@ stakeholders
  interesado en ese aspecto de la arquitectura.
  En ese caso, el arquitecto decide rechazar la sugerencia y continuar analizando
  el resto de las sugerencias.
- 
 \end_layout
 
 \begin_layout Standard
-Aceptar o rechazar una sugerencia se convierte en una decisión de la arquitectur
-a que se esta reconstruyendo.
- Las decisiones de la arquitectura se concentran en lo que es esencial en
- un sistema.
- Estas elecciones pueden incluir estructura, organización, funcionalidad,
- comportamiento, o más propiedades no funcionales como la usabilidad, flexibilid
-ad, seguridad, etc.
-\end_layout
+Es necesario que el arquitecto acepte una sugerencia para modificar el modelo
+ arquitectónico.
+ Por ejemplo, si se ejecutan reglas que identifican estructuras de paquetes
+ (sección\InsetSpace ~
 
-\begin_layout Standard
-Al termino de cada fase, se cuenta con una representación gráfica del modelo
- arquitectónico la cual cubre dos aspectos fundamentales de la arquitectura
- del sistema: estructura y comportamiento.
- Las sugerencias aceptadas de las reglas que fueron ejecutadas, agregaron
- hechos a la base de conocimiento.
- Estos hechos representan aspectos del sistema de alto nivel, y son interpretado
-s como tales para generar vistas que muestren la arquitectura del sistema.
- Cuando un conjunto de reglas finaliza su ejecución, se generan diagramas
- de componentes y de UCMs.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Standard
-ANDRES: Esto sale out of nowhere.
- Porque el mapeo es "correspondiente"?, y donde se hablo de FLABot antes?
-\end_layout
-
-\begin_layout Standard
-Saco esto --> con su correspondiente mapeo al código fuente.
- Estos diagramas están representados en 
-\emph on
-FLAbot
-\emph default
-.
- 
-\end_layout
+\begin_inset LatexCommand ref
+reference "sec:Identificación-de-estructuras"
 
 \end_inset
 
+), una sugerencia podría indicar la creación de un componente 
+\family typewriter
+view
+\family default
+ que asocie a todas las clases contenidas dentro de un paquete 
+\family typewriter
+view
+\family default
+.
+ Al aceptar la sugerencia, el modelo arquitectónico que se esta reconstruyendo
+ se actualiza incorporando los nuevos cambios.
+\end_layout
 
+\begin_layout Standard
+En un esenario donde se ejecuten reglas relacionadas con la identificación
+ de componentes de utilidad (sección\InsetSpace ~
+
+\begin_inset LatexCommand ref
+reference "sec:Identificación-de-estructuras"
+
+\end_inset
+
+), aceptar una sugerencia generalmente implíca la creación de un componente
+ y su respectivo mapeo con una clase.
+ Si la sugerencia aceptada fue la de crear un componente 
+\family typewriter
+DBHelperUtility
+\family default
+ y asociarlo con la clase 
+\family typewriter
+DBHelper
+\family default
+, el modelo sería modificado con la incorporación del nuevo componente.
 \end_layout
 
 \begin_layout Standard
@@ -9392,6 +9381,9 @@ Una vez que la vista es generada, el arquitecto pude realizar modificaciones
  sobre los diagramas.
  Las modificaciones realizadas son sincronizadas con la base de conocimiento
  para reflejar los cambios.
+ Por ejemplo, si el arquitecto agrega un nuevo componente en el diagrama,
+ las próximas consultas (ejecución de reglas) podrán contar con el nuevo
+ componente.
 \end_layout
 
 \begin_layout Standard
