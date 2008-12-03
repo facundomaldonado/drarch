@@ -17812,7 +17812,57 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Los casos de estudio mostraron resultados positivos.
+Más allá de mecionar los aspectos técnicos que significan un beneficio en
+ el enfoque 
+\emph on
+DRArch,
+\emph default
+ es válido también mencionar la experiencia como usuarios de la herramienta
+ en la ejercitación de ésta con los casos de estudio.
+ La utilización del editor gráfico para contruir y agrupar reglas hace más
+ sencillo el armado las mismas.
+ Deja ver en una sola vista las tres partes que forman una regla, junto
+ con un arbol de navegación que permite moverse entre las reglas agrupadas
+ en un mismo archivo.
+ Contar con editor de consultas de 
+\emph on
+JQuery
+\emph default
+ significó de gran ayuda al momento de testear las consultas que forman
+ parte de las reglas.
+ El hecho de que existan fases no interactivas es un punto muy importante
+ en cuanto a la usabilidad del sistema.
+ Permitió agilizar las fases iniciales, que de otra forma hubieran resultado
+ tediosas.
+ Otro factor importante es contar con la posibilidad de modificar el diagrama
+ y luego poder "bajar" esa información a la base de conocimiento quedando
+ disponible para consultas posteriores.
+ Al otorgarle al usuario la posibilidad de aceptar o no las sugerencias
+ se da éste el beneficio de decidir qué artefactos considerar para su modelo
+ y cuales no.
+ En algunos casos, el usuario puede decir "si, me interesa este componente
+ en mi modelo" o "no incluyo este componente en esta vista del modelo que
+ quiero construir".
+ En el caso de estudio 
+\emph on
+Market
+\emph default
+ por ejemplo, se decidió no incluir en el análisis el paquete 
+\family typewriter
+bubble.distribution 
+\family default
+por no considerarse relevante al aspecto del sistema que se quería reconstruir.
+ Como desventaja a nivel usabilidad, se puede mencionar el tiempo que le
+ lleva a 
+\emph on
+JQuery
+\emph default
+ parsear el código fuente y cargar la base de conocimientos con los hechos
+ 
+\emph on
+Prolog
+\emph default
+ generados.
 \end_layout
 
 \begin_layout Standard
