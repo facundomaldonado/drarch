@@ -7642,23 +7642,18 @@ DRArch
 
 \begin_layout Subsubsection
 Estructura De Paquetes 
-\begin_inset Note Note
-status open
+\end_layout
 
 \begin_layout Standard
-Referencia
-\end_layout
+Cualquier sistema grande se debe dividir en unidades más pequeñas 
+\begin_inset LatexCommand cite
+key "Parmas"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Cualquier sistema grande se debe dividir en unidades más pequeñas, de modo
- que las personas puedan trabajar con una cantidad de información limitada,
- a la vez y de modo que los equipos de trabajo no interfieran con el trabajo
- de los otros.
+, de modo que las personas puedan trabajar con una cantidad de información
+ limitada, a la vez y de modo que los equipos de trabajo no interfieran
+ con el trabajo de los otros.
  Un paquete es una parte de un modelo.
  Cada parte del modelo debe pertenecer a un paquete.
  Pero para ser funcional, la asignación debe seguir un cierto principio
