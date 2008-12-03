@@ -5848,21 +5848,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-- en pagina 33: La figura 4.1 esta mucho mejor, pero no muestra las entradas/sali
-das/interacciones que afectan al "experto en reconstruccion" de arriba del
- todo.
- Sugiero al menos agregar unas flechas que muestre cuales de las actividades
- en el loop del proceso DARch "tocan" al Experto en reconstruccion, cosa
- de hacer EXPLICITO el accept/reject de sugerencias ...
-\end_layout
-
-\end_inset
-
-
 \begin_inset Caption
 
 \begin_layout Standard
