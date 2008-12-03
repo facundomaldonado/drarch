@@ -10033,7 +10033,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/Modelo Blackboard Drarch.png
-	width 65text%
+	width 95text%
 
 \end_inset
 
@@ -17792,18 +17792,18 @@ DRArch
 \end_layout
 
 \begin_layout Standard
-Más allá de mecionar los aspectos técnicos que significan un beneficio en
- el enfoque 
+Más allá de mencionar los aspectos técnicos que significan un beneficio
+ en el enfoque 
 \emph on
 DRArch,
 \emph default
  es válido también mencionar la experiencia como usuarios de la herramienta
  en la ejercitación de ésta con los casos de estudio.
- La utilización del editor gráfico para contruir y agrupar reglas hace más
- sencillo el armado las mismas.
- Deja ver en una sola vista las tres partes que forman una regla, junto
- con un arbol de navegación que permite moverse entre las reglas agrupadas
- en un mismo archivo.
+ La utilización del editor gráfico para construir y agrupar reglas hace
+ más sencillo el armado las mismas.
+ Muestra en una sola vista las tres partes que forman una regla, junto con
+ un árbol de navegación que permite moverse entre las reglas agrupadas en
+ un mismo archivo.
  Contar con editor de consultas de 
 \emph on
 JQuery
@@ -17823,11 +17823,8 @@ JQuery
  En algunos casos, el usuario puede decir "si, me interesa este componente
  en mi modelo" o "no incluyo este componente en esta vista del modelo que
  quiero construir".
- En el caso de estudio 
-\emph on
-Market
-\emph default
- por ejemplo, se decidió no incluir en el análisis el paquete 
+ En el caso de estudio Market por ejemplo, se decidió no incluir en el análisis
+ el paquete 
 \family typewriter
 bubble.distribution 
 \family default
@@ -17837,8 +17834,11 @@ por no considerarse relevante al aspecto del sistema que se quería reconstruir.
 \emph on
 JQuery
 \emph default
- parsear el código fuente y cargar la base de conocimientos con los hechos
- 
+ realizar el 
+\emph on
+parsing
+\emph default
+ del código fuente y cargar la base de conocimientos con los hechos 
 \emph on
 Prolog
 \emph default
@@ -17847,7 +17847,7 @@ Prolog
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Standard
 - en pagina 85: Cuando hablan de las ventajas de DRArch (antes de entrar
