@@ -1,0 +1,757 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass IEEEtran
+\use_default_options false
+\language english
+\inputencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\float_placement tbh
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+DRArch: The Art of Software Architecture Reconstruction
+\end_layout
+
+\begin_layout Author
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Remember that initial submissions don't show the authors
+\end_layout
+
+\begin_layout Plain Layout
+names so you'll need to make this a 'Comment'.
+\end_layout
+
+\end_inset
+
+Nicolas Frontini, Facundo Maldonado
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Your name is with xyz Department\SpecialChar \ldots{}
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Architecture reconstruction is the process where the “as-built” architecture
+ of an implemented system is obtained from an existing software system.
+ In this paper, we present the DRArch method, designed to help architects
+ to obtain architectural documentation expressed through UCMs with implementatio
+n, based on an iterative and interactive process.
+ Our approach ….
+ [extract-abtract-present] [that guides a user in the reconstruction of
+ software architectures based on an iterative and interactive process.] If
+ the reconstruction is successful, the end result is an architectural representa
+tion of the system that aids in reasoning about the system.
+ In some cases, it may not be possible to generate a useful representation
+ due to the system.
+ 
+\end_layout
+
+\begin_layout Keywords
+simplicity, beauty, elegance
+\end_layout
+
+\begin_layout MarkBoth
+This is for left pages
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\end_inset
+
+and this is for right pages
+\end_layout
+
+\begin_layout Section
+Introduction
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Don't panic the section numbering may look different in
+\end_layout
+
+\begin_layout Plain Layout
+LyX but LaTeX uses the correct Roman numerals and
+\end_layout
+
+\begin_layout Plain Layout
+Alpha for section counters.
+\end_layout
+
+\begin_layout Plain Layout
+It's just that LyX doesn't handle counters other than arabic
+\end_layout
+
+\begin_layout Plain Layout
+numerals.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+PARstart{T}{here}
+\end_layout
+
+\end_inset
+
+ he software architecture of a program or computing system is the structure
+ or structures of the system, which comprise software elements, the externally
+ visible properties of those elements, and the relationships among them.
+ [parafrasear a algo mas agile] According to this principle, architecture-centri
+c development is being widely adopted as a software engineering practice
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEEEexample:book"
+
+\end_inset
+
+.
+ More and more, researchers and practitioners recognize that software architectu
+res are very convenient models to the software development process, because
+ these models allows different stakeholders to show how objectives are accomplis
+hed during the development process.
+ This makes the architectural documentation critical.
+ Nevertheless, this situation is not common in the majority of the development
+ projects.
+ Not at least, those architecture-centric developments maintain an updated
+ architectural description.
+ Therefore it is important to provide mechanisms that allow to obtain an
+ updated snapshot between architectural documentation and it's correspondent
+ implementation.
+ Architecture reconstruction is the process where the “as-built” architecture
+ of an implemented system is obtained from the existing legacy system.
+ This is done through a detailed analysis of the system using tool support.
+ The tools extract information about the system and aid in building and
+ aggregating successive levels of abstraction.
+ If the reconstruction is successful, the end result is an architectural
+ representation of the system that aids in reasoning about the system.
+ The architectural representation can be used in several ways.
+ One of the main uses is for documenting the architecture.
+ Several notations and profiles are nowadays available for this purpose,
+ among them Use-Case Maps are one of the most practical one [CLEMENTS02,
+ BUHR95] to specify both components and flows of responsibilities.
+ [nombrar otras tools] ……[Resumir (una oracion)] Architecture reconstruction
+ generates an architectural representation that can be used in several ways.
+ One of the main uses is for documenting the existing architecture.
+ If no documentation exists or it is out of date, the recovered architectural
+ representation can be used as a basis for re-documenting the architecture.
+ The recovered “as-built” architecture of the system can be used to check
+ conformance against an “as-designed” architecture.
+ The architectural representation can also be used as a starting point for
+ reengineering the system to a new desired architecture.
+ Finally, the representation can be used to help identify components for
+ reuse, or to help establish a software product line…….
+ [Darle un poquito mas porque lo pusimo en el abstract] In this paper, we
+ present DRArch a tool designed to help architects to obtain architectural
+ documentation expressed through UCMs with implementation, based on an iterative
+ and interactive process.
+ [El analisis esta basado en info dinamica y estatica].
+ Static information is recovered from the source code and dynamic one is
+ obtained through the system analysis in execution.
+ This information is represented by a knowledge base, in the shape of prolog
+ facts, representing an architectural model snapshot.
+ Then, DRArch is able to suggest several changes to the architectural model.
+ These suggestions are represented in terms of rules (logic programing queries)
+ that's makes completely flexible the manipulation of the data obtained
+ from the model.
+ The rest of the article is organized into 5 sections.
+ Section 2 provides some core concepts regarding architectural Reconstruction
+ and use-case maps, and also explains DRArch behavior through an illustrative
+ example.
+ Section 3 presents the details of the DRArch architectural design describing
+ some implementation details.
+ Section 4 presents experimental results and section 5 discusses some related
+ work.
+ Finally, section 6 summarizes the conclusions of this work and comments
+ on future lines of research.
+\end_layout
+
+\begin_layout Section
+Previous Work
+\end_layout
+
+\begin_layout Standard
+This is only a template remember.
+\end_layout
+
+\begin_layout Section
+Methodology
+\end_layout
+
+\begin_layout Theorem
+\begin_inset OptArg
+status collapsed
+
+\begin_layout Plain Layout
+Theorem name
+\end_layout
+
+\end_inset
+
+For a named theorem or theorem-like environment you need to insert the name
+ through 
+\family sans
+Insert\SpecialChar \menuseparator
+Short Title
+\family default
+, as done here.
+\end_layout
+
+\begin_layout Lemma
+If you don't want a theorem or lemma name don't add one.
+\end_layout
+
+\begin_layout Proof
+And here's the proof!
+\end_layout
+
+\begin_layout Standard
+[high level approach description + figure] [Con la ayuda de la herramienta
+ DRArch, el arquitecto encargado de la reconstrucción sigue un proceso iterativo
+ de refinamiento de la información recolectada.
+ Durante el proceso, el arquitecto interactúa con la herramienta DRArch
+ tomando ciertas decisiones sobre alternativas de reconstrucción y en cada
+ paso DRArch genera diagramas de componentes y UCMs del sistema.
+ El proceso termina cuando los diagramas obtenidos satisfacen los objetivos
+ planteados por el arquitecto.] [ Extract] -static & dynamic //// ++ diagramas
+ ++ reglas [No mencionar tools – Mencionar info estatica extraida del analisis
+ sintactico y la dinamica de los traces de ejecucion] [Abstract] Fact-rules-inte
+rnal model representation-suggestions [Present] Component Diagram & UCMs
+ Lifting the information of a system to higher level of abstraction is a
+ central concern.
+ An architectural description gives basically a high-level decomposition
+ of the system in terms of: design elements, coarse-grained pieces of functional
+ity, plus interactions and constraints among them.
+ When the architecture of a developed system is recovered, the main problem
+ usually arises when the information is extracted and analyzed to generate
+ several views.
+ Different kinds of information extracted from a system and a flexible analysis
+ of that information are key aspect to take into account.
+ Gather static information from a source code without a tool is very even
+ when the architect have knowledge about the hole system.
+ DRArch is intended to help in this stage in the context of Eclipse projects
+ .
+ Assuming that there exists a conceptual integrity in the implemented system,
+ DRArch is capable to gather any kind of information, analise that information
+ and generates UCMs diagrams describing the arhitecture of the system.
+ The approach follows an iterative and interactive process of the continuous
+ architectural model specialization.
+ Before we give a detailed description of the steps, we will give some definitio
+n and assumptions on which this process is based.
+ The relevant information of the system is represented in the shape of prolog
+ facts, stored in a Knowledge Base.
+ Phases represent iterative processes, and they are in charge of the architectur
+al model update.
+ Each Phase receives, as an input, a recovered model snapshot already done
+ by previous phases and delivers an output based on the transformations
+ applied on the input during the phase execution.
+ Thus the Phase appears as a reusable as well as adjustable component, independe
+nt of the architectural input model.
+ The Figure [cap:Drarch-process] shows how the process works.
+ Each phase execution is also an interactive process.
+ Every one of them contains a group of rules set to determine the transformation
+s suffered by the model.
+ These transformations will allow the architect to relate architectural
+ elements (such as components, the interaction between them, etc.) to different
+ coding structures (eg.:classes, methods, etc.).
+ Each rule has three parts: a "query" (prolog), which consults the knowledge
+ base; a "suggestion", built on each one of the results of the query; and
+ a series of facts (based on the acceptance of the suggestion) that turn
+ into the knowledge base transformations.
+ Thus, the recovery process will be task that will suggest a set of architectura
+l transformations to the architect, who will analyze them and decide which
+ of them is the most suitable for the system whose architecture is being
+ rebuilt.
+ After each phase, a graphic representation of the architectural model is
+ done, showing two main aspects of the system architecture: structure and
+ behavior.
+ 2.1 Phase 1 The starting point in this process is the execution of the "informat
+ion collecting" phase.
+ Static information is recovered from the source code.
+ Dynamic one is obtained through the system analysis in execution, as a
+ complement to the static analysis.
+ Right after the information collecting phase come the specialization ones
+ which modify the architectural model in a repetitive and increasingly way
+ raising the level of abstraction and detail in each phase.
+ Once the static information as well as the dynamic one is extracted, the
+ tool displays a suggested set of modifications to be applied to the architectur
+al model description.
+ These modifications symbolize changes to different parts of the existing
+ system representation, involving structural modifications as well as scenario
+ behavior ones.
+ Using the suggestions as a starting point, the architect decides which
+ of these modifications is the best way to represent the architectural concepts
+ to be built and which suggestions are to be discarded for not adding relevant
+ information to the analysis.
+ In addition, the architect is able to refine the specification (represented
+ by the different diagrams) by increasing the detail level, incorporating
+ modifications or elements capable of bringing a higher level of detail
+ in several phases that use the transformed model for the actual phase.
+ Visualization and interaction provides a mechanism by which the architect
+ may interactively visualize, explore, and manipulate views.
+ This approach based on phases allows the partition of the analysis space
+ (the system to be discovered) in smaller units to increase the size of
+ the mentioned space in several posterior phases, as well as to build the
+ results of the previous executed phases.
+ The "definition of a phase by aspect of the system" is one way to increase
+ the analysis specialization.
+ The phases could be reused for every considered aspect.
+ In each new scenario the level of detail brought by the phase increases,
+ uncovering relations that maybe, in previous tests (different scenarios)
+ were not discovered.
+ 2.2 The Example In one of our case studies, the Pipe and Filter style is
+ implemented with an Observer-Observable pattern.
+ Assuming that the documentation doesn't exist, that source code is written
+ in Java and also that the architect has knowledge about logic programing,
+ the DRArch tool works as follows: First, the architect must execute the
+ gather information phase.
+ In this phase, the static (source code) and the dynamic (generated log)
+ information are translated into prolog facts which will be added to the
+ knowledge base.
+ Once completed, the specialization phases are ready to be executed.
+ Those phases execute rules that suggest transformations to the current
+ architectural model by accepting or refusing each suggestion.
+ We used sets of rules provided by DRArch to detect several pipe and filter
+ implementations.
+ The next phase to be executed is the Pipe and Filter detection phase and
+ the most relevant rules used are: 
+\end_layout
+
+\begin_layout Itemize
+Filter detection: Identify filters as components.
+ A description of this rule is shown in Figure [cap:Filter-Detection-Rule-DRArch
+].
+ 
+\end_layout
+
+\begin_layout Itemize
+Pipe detection: Identify pipes as components.
+\end_layout
+
+\begin_layout Itemize
+Mapping of Filter responsibilities: Materialize methods to responsibilities
+ in the filter components.
+ 
+\end_layout
+
+\begin_layout Itemize
+Mapping of Pipe responsibilities: Materialize methods to responsibilities
+ in the pipe components.
+ 
+\end_layout
+
+\begin_layout Itemize
+Relationship between pipes and filters: Define a relationship between pipes
+ and filters.
+ After the execution of the Pipe and Filter detection phase, the Sequence
+ of Filters phase is executed.
+ The input is the information generated by the previous phases and the most
+ relevant rules used are: 
+\end_layout
+
+\begin_layout Itemize
+Components roles: Instantiation of each filter component.
+ 
+\end_layout
+
+\begin_layout Itemize
+Filter executed paths: Creates paths using the dynamic information.
+ The Figure [cap:Pipe-And-Filter-Component-View-DRArch] shows the component
+ diagram and the Figure [cap:Pipe-And-Filter-UCM-View-DRArch] shows the
+ UCMs diagram generated.
+ At this point, we should remark that the solutions proposed by DRArch match
+ correctly with the expected architecture views.
+ 
+\end_layout
+
+\begin_layout Standard
+In general, the variations in the solutions depends on the use-cases used
+ to generate the dynamic information (log trace) and the rule set used to
+ generate the diagrams.
+ Also, the architect is responsible for choosing the solution that is most
+ appropriate for the actual design context.
+ UCMs are a quite abstract notation, and thus, it gives a palette of options
+ for solution to the same conceptual use-case.
+ Likewise, as causal paths do not imply a strict flow of execution, a single
+ execution trace might correspond to many different paths.
+ This is why the solutions generated by DRArch are considered as correct
+ ones.
+ Knowledge of some kind about the system to be discovered can be very useful
+ to the reconstruction process.
+ For example, if the architect knows that a Filter component is the one
+ that implements the MyFilter interface, then it is simple to add a rule
+ that allows us to detect all the Filter components existing in the system.
+ 2.3 Efective Rules A key aspect of the approach is the definition of the
+ rules.
+ 2.4 Implementation Issues The DRArch prototype has been implemented as an
+ Eclipse plug-in, allowing the tool to be integrated within the development
+ process....
+ 3 Related Work In this section, we summarize those approaches that deal
+ with software architecture reconstruction and discuss the process elements
+ covered by them.
+ Existing architecture Reconstruction techniques can be categorized as manual,
+ automatic or semi automatic.
+ Manual approaches typically use simple, general-purpose tools and manual
+ inspection of the system.
+ While they use reconstruction specific tools such as SHRiMp, Rigi, PBS
+ and Bauhaus to help visualize intermediate resultAn architectural description
+ gives basically a high-level decomposition of the system in terms of: design
+ elements, coarse-grained pieces of functionality, plus interactions and
+ constraints among them.s [pela_0], there is no automated support for the
+ process (for example [pela_1]).
+ Semi-automatic approaches help the reconstructor create architAn architectural
+ description gives basically a high-level decomposition of the system in
+ terms of: design elements, coarse-grained pieces of functionality, plus
+ interactions and constraints among them.ectural views in an interactive
+ or formal way.
+ Differences among the approaches concern the expressiveness of the language
+ used for defining the transformations, support for calculating transitive
+ closures of relations, degree of repeatability of the process, amount of
+ interaction required by the user, and the types of architectural views
+ that can be generated.
+ Relational algebra approaches allow the architect to define a repeatable
+ set of the transformations for creating a particular architectural view.
+ In the work of Holt [pela_2] relational algebra is used for creating a
+ hierarchical module view of the source code (by grouping source files into
+ modules and calculating the module dependencies).
+ The architect must manually prepare the containment relations, but new
+ relationships can also be inferred using algebra propositions.
+ Postma [pela_3] uses relational partition algebra (RPA) [pela_4] to calculate
+ module dependencies from dependencies extracted from the code.
+ RPA is also used to check the conformance of an extracted target view with
+ a hypothetical view (established in the design phase).
+ The process is repeatable and is part of the build process.
+ Riva has proposed a method for inferring the architectural information
+ based on relational algebra and Prolog [pela_5].
+ Mens [pela_6] uses logic meta programming (Prolog) for mapping implementation
+ artifacts to high level design and for checking conformance of architectural
+ rules.
+ More light-weight examples are the Reflexion Model [pela_7], Tcl scripts
+ for defining graph transformations in Rigi, SQL queries for defining grouping
+ rules (Dali).
+ Many reverse engineering approaches are based on an extract–abstract–present
+ cycle, in which sources are analyzed in order to populate a repository,
+ which is queried in order to yield abstract system representations, which
+ are then presented in a suitable interactive form to the software engineer.
+ Tilley [pela_8] describes the extract–abstract–present approach in more
+ detail, referring to the steps as data gathering, knowledge inference,
+ and information presentation.
+ A number of reverse engineering activities focus on software architecture
+ reconstruction.
+ Kazman [pela_9] proposes an iterative reconstruction process where the
+ historical design decisions are discovered by empirically formulating/validatin
+g architectural hypotheses.
+ They also point out the importance of modeling not only system information
+ but also a description of the underlying semantics [pela_9].
+ Their approach is currently extended to include the reorganization of recovered
+ assets into software product lines [pela_10].
+ Finnigan [pela_11] proposes the Software Bookshelf: a toolkit to generate
+ architecture diagrams from source text.
+ Ding and Medvidovic describe the Focus approach, which contrasts a logical
+ (idealized, high-level) architecture with a physical (as implemented, as
+ recovered) one [pela_12].
+ By applying refinement to the logical and abstraction to the physical architect
+ure, the two are brought together incrementally.
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\family sans
+A single column figure goes here
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captions go 
+\emph on
+under
+\emph default
+ the figure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float table
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Table captions go 
+\emph on
+above
+\emph default
+ the table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+delete
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+example
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+table
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+In this paper, we have introduced a tool approach to deal with implemented
+ systems that no documentation exists or it is out of date.
+ The contributions of DRArch to...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Change this paragraphs style to 'Standard' to enable
+\end_layout
+
+\begin_layout Plain Layout
+BibTeX bibliography generation.
+\end_layout
+
+\begin_layout Plain Layout
+Remember though that your final submission is supposed to have
+\end_layout
+
+\begin_layout Plain Layout
+all the bibliography entries embedded in the latex file.
+ This means
+\end_layout
+
+\begin_layout Plain Layout
+you eventually have to copy the .bbl file into the latex file and
+\end_layout
+
+\begin_layout Plain Layout
+remove the bibtex lines.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "IEEEexample"
+options "bibtotoc,IEEEbib"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Biography
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Your Name
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ All about you and the what your interests are.
+ Don't forget to put your name in between a pair of {}'s that are set as
+ raw TeX.
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Biography
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Coauthor
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+Same again for the co-author.
+\end_layout
+
+\end_body
+\end_document
